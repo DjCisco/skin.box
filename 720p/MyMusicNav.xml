@@ -2,7 +2,8 @@
 <window id="502">
     <defaultcontrol always="true">50</defaultcontrol>
     <allowoverlay>yes</allowoverlay>
-    <views>50,59,503,504,505,508,519,521,527,528,529,530,531,590,58,56,51,52,55</views>
+    <views>50,56,59,508,503,519,521,527,528,529,530,531,590</views>
+	<!--<views>50,59,503,504,505,508,519,521,527,528,529,530,531,590,58,56,51,52,55</views>-->
     <controls>
         <control type="group">
             <include>HomeBackground</include>
@@ -11,52 +12,32 @@
                 <visible>Container.Content(songs)</visible>
                 <include>BackgroundTextScroll</include>
             </control>
-            <include>Viewtype_Songs</include>
-            <include>View_50_List</include>
-            <include>Viewtype_Panel_Square</include>
-            <include>Viewtype_Panel_Square_List</include>
-			<include>Viewtype_Panel_Square_Wide</include>
-			<include>Viewtype_Artists</include>
-			<include>Viewtype_Artists_List</include>
-			<include>Viewtype_Panel_Genre</include>
-			<include>Viewtype_Panel_Year</include>
-			<include>Viewtype_Artist_Albums</include>
-			<include>Viewtype_Panel_Wide</include>
+            <include>View_50_List</include><!-- 50 -->
+			<include>Viewtype_Panel_Genre</include><!-- 56 -->
 			<include>Viewtype_MusicVideos</include><!-- 59 -->
-            <include>Viewtype_MusicVideos_List</include><!-- 590 -->
+			<include>Viewtype_Songs</include><!-- 503 -->
+			<include>Viewtype_Panel_Square_List</include><!-- 508 -->
+			<include>Viewtype_Panel_Square</include><!-- 519 -->
+			<include>Viewtype_Panel_Square_Wide</include><!-- 521 -->
+			<include>Viewtype_Artists</include><!-- 527 -->
+			<include>Viewtype_Artist_Albums</include><!-- 529 -->	
+			<include>Viewtype_Artists_List</include><!-- 528 -->
+			<include>Viewtype_Panel_Wide</include><!-- 530 -->
+			<include>Viewtype_Panel_Year</include><!-- 531 -->
+			<include>Viewtype_MusicVideos_List</include><!-- 590 -->
 		</control>
-		<!-- This control displays a black background if the left settings menu is called -->
-        <control type="image">
-            <animation type="Conditional" condition="!ControlGroup(9000).HasFocus() | Window.IsActive(PlayerControls)">
-                <effect type="fade" time="300" start="100" end="0" />
-            </animation>
-            <posx>0</posx>
-            <posy>0</posy>
-            <width>1280</width>
-            <height>720</height>
-            <texture border="2">other_textures/black-back.png</texture>
-        </control>
         <!-- This control displays a a color background behind the left settings menu -->
 		<control type="group">
 			<animation type="Conditional" condition="!ControlGroup(9000).HasFocus() | Window.IsActive(PlayerControls)">
                 <effect type="slide" start="0,0" end="-320,0" time="300" easing="inout" tween="cubic" />
             </animation>
 			<include>LeftMenuBackground</include>
-			<control type="fadelabel">
+			<control type="label">
                 <description>Menu Title</description>
-                <posx>20</posx>
-                <posy>0</posy>
-                <width>280</width>
+                <include>LeftMenuTitle</include>
                 <label>OPTIONS</label>
-                <font>Panel_Description_Title</font>
-                <align>left</align>
             </control>
 		</control>	
-        <!-- UNCLEAR: --> 
-		<control type="radiobutton" id="19">
-            <description>Filter (hidden)</description>
-            <include>HiddenButton</include>
-        </control>
 		<!-- This control defines the elements of the left settings menu -->
         <control type="grouplist" id="9000">
             <posx>20</posx>
@@ -114,41 +95,6 @@
                 <font>Panel_Info</font>
 				<texturefocus>button.png</texturefocus>
             </control>
-            <control type="button" id="21">
-                <description>Activate Filter</description>
-                <width>280</width>
-				<textoffsetx>10</textoffsetx>
-                <align>left</align>
-                <label>305</label>
-                <onclick>SendClick(musiclibrary,19)</onclick>
-                <onclick>SetFocus(22)</onclick>
-                <visible>IsEmpty(Window.Property(filter))</visible>
-                <font>Panel_Info</font>
-				<texturefocus>button.png</texturefocus>
-            </control>
-            <control type="button" id="22">
-                <description>Show Filter Label</description>
-                <width>280</width>
-				<textoffsetx>10</textoffsetx>
-                <align>left</align>
-                <label>$LOCALIZE[587] - $INFO[Window.Property(filter)]</label>
-                <onclick>SendClick(musiclibrary,19)</onclick>
-                <onclick>SetFocus(21)</onclick>
-                <visible>!IsEmpty(Window.Property(filter))</visible>
-                <font>Panel_Info</font>
-				<texturefocus>button.png</texturefocus>
-            </control>
-            <control type="button" id="98">
-                <description>Open Player Controls</description>
-                <width>280</width>
-				<textoffsetx>10</textoffsetx>
-                <align>left</align>
-                <label>$LOCALIZE[13350]</label>
-                <font>Panel_Info</font>
-                <onclick>ActivateWindow(playercontrols)</onclick>
-                <visible>Player.HasMedia</visible>
-				<texturefocus>button.png</texturefocus>
-            </control>
 			<control type="radiobutton" id="101">
                 <description>Wide List</description>
                 <width>280</width>
@@ -159,9 +105,9 @@
                 <onclick>Skin.ToggleSetting(musicwidelist)</onclick>
                 <selected>Skin.HasSetting(musicwidelist)</selected>
 				<texturefocus>button.png</texturefocus>
-				<visible>SubString(Control.GetLabel(2),List) + Container.Content(albums)</visible>
+				<visible>SubString(Control.GetLabel(2),List Info) + Container.Content(albums)</visible>
             </control>
-			<control type="radiobutton" id="101">
+			<control type="radiobutton" id="102">
                 <description>Wide List</description>
                 <width>280</width>
 				<textoffsetx>10</textoffsetx>
@@ -171,7 +117,7 @@
                 <onclick>Skin.ToggleSetting(musicartistswidelist)</onclick>
                 <selected>Skin.HasSetting(musicartistswidelist)</selected>
 				<texturefocus>button.png</texturefocus>
-				<visible>SubString(Control.GetLabel(2),List) + Container.Content(artists)</visible>
+				<visible>SubString(Control.GetLabel(2),List Info) + Container.Content(artists)</visible>
             </control>
         </control>
     </controls>

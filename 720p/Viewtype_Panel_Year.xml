@@ -22,7 +22,7 @@
                 <effect type="fade" time="300" />
             </animation>
             <control type="panel" id="531">
-                <viewtype label="Years">Years</viewtype>
+                <viewtype label="Panel">Years</viewtype>
                 <posx>50</posx>
                 <posy>290</posy>
                 <width>1200</width>

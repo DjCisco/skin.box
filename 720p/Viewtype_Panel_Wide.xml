@@ -23,7 +23,7 @@
             </animation>
 			
             <control type="panel" id="530">
-                <viewtype label="Wide Panel">Wide_Panel</viewtype>
+                <viewtype label="Panel">Wide_Panel</viewtype>
                 <posx>50</posx>
 				<posy>290</posy>
 				<width>1200</width>

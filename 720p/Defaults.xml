@@ -5,13 +5,13 @@
         <posx>0</posx>
         <posy>0</posy>
         <label></label>
-        <height>44</height>
+        <height>45</height>
         <align>left</align>
         <aligny>center</aligny>
         <font>Small</font>
         <textcolor>White</textcolor>
         <focusedcolor>White</focusedcolor>
-        <selectedcolor>White</selectedcolor>
+        <selectedcolor>Accent</selectedcolor>
         <disabledcolor>Red</disabledcolor>
 	</default>
 	<default type="title">
@@ -30,7 +30,7 @@
         <font>Small</font>
         <textcolor>White</textcolor>
         <focusedcolor>White</focusedcolor>
-        <selectedcolor>White</selectedcolor>
+        <selectedcolor>Accent</selectedcolor>
         <disabledcolor>Red</disabledcolor>
         <scrollout>false</scrollout>
         <pauseatend>2000</pauseatend>

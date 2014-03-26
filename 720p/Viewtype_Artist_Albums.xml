@@ -23,7 +23,7 @@
                 <effect type="fade" time="300" />
             </animation>
 		    <control type="fixedlist" id="529">
-                <viewtype label="Artist Albums View">Artist Albums View</viewtype>
+                <viewtype label="Cover">Artist Albums View</viewtype>
 				<visible>SubString(Container.FolderPath, albumartistsonly) + Container.Content(albums)</visible>
                 <posx>50</posx>
                 <posy>290</posy>

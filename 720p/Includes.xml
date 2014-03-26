@@ -133,7 +133,7 @@
             <!-- This Displays the Movie Fanart of the last 9 added Movies while in the films section of the Home Screen -->
 			<control type="group">
                 <animation effect="fade" time="500">VisibleChange</animation>
-                <visible>[Container(5000).HasFocus(501) + Control.HasFocus(5000)] | [Container(5000).HasFocus(501) + ControlGroup(9000).HasFocus() + SubString(Window(Home).Property(menu),main)] | Control.HasFocus(66) | Control.HasFocus(701) | Control.HasFocus(702) | Control.HasFocus(703) | Control.HasFocus(704) | Control.HasFocus(705)</visible>
+                <visible>[Container(5000).HasFocus(501) + Control.HasFocus(5000)] | [Container(5000).HasFocus(501) + ControlGroup(9000).HasFocus() + SubString(Window(Home).Property(menu),main)] | Control.HasFocus(66) | Control.HasFocus(701) | Control.HasFocus(702) | Control.HasFocus(703) | Control.HasFocus(704) | Control.HasFocus(705) | Control.HasFocus(2001) </visible>
                 <control type="image">
                     <animation effect="fade" time="500">VisibleChange</animation>
                     <include>Dimensions_Fullscreen</include>
@@ -210,7 +210,7 @@
             <!-- This Displays the TV Shows Fanart of the last 9 added Episodes while in the tv shows section of the Home Screen -->
 			<control type="group">
                 <animation effect="fade" time="500">VisibleChange</animation>
-                <visible>[[Container(5000).HasFocus(503) | Container(5000).HasFocus(504)] + Control.HasFocus(5000)] | [[Container(5000).HasFocus(503) | Container(5000).HasFocus(504)] + ControlGroup(9000).HasFocus() + SubString(Window(Home).Property(menu),main)] | Control.HasFocus(68) | Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(63) | Control.HasFocus(301) | Control.HasFocus(302) | Control.HasFocus(303) | Control.HasFocus(304) | Control.HasFocus(305)</visible>
+                <visible>[[Container(5000).HasFocus(503) | Container(5000).HasFocus(504)] + Control.HasFocus(5000)] | [[Container(5000).HasFocus(503) | Container(5000).HasFocus(504)] + ControlGroup(9000).HasFocus() + SubString(Window(Home).Property(menu),main)] | Control.HasFocus(68) | Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(63) | Control.HasFocus(301) | Control.HasFocus(302) | Control.HasFocus(303) | Control.HasFocus(304) | Control.HasFocus(305) | Control.HasFocus(2002) </visible>
                 <control type="image">
                     <animation effect="fade" time="500">VisibleChange</animation>
                     <include>Dimensions_Fullscreen</include>
@@ -287,7 +287,7 @@
 			<!-- This Displays the Music Fanart of the last 9 added Albums while in the music section of the Home Screen -->
             <control type="group">
                 <animation effect="fade" time="500">VisibleChange</animation>
-                <visible>[Container(5000).HasFocus(502) + Control.HasFocus(5000)] | [Container(5000).HasFocus(502) + ControlGroup(9000).HasFocus() + SubString(Window(Home).Property(menu),main)] | Control.HasFocus(67) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Control.HasFocus(605)</visible>
+                <visible>[Container(5000).HasFocus(502) + Control.HasFocus(5000)] | [Container(5000).HasFocus(502) + ControlGroup(9000).HasFocus() + SubString(Window(Home).Property(menu),main)] | Control.HasFocus(67) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Control.HasFocus(605) | Control.HasFocus(2003) </visible>
                 <control type="image">
                     <animation effect="fade" time="500">VisibleChange</animation>
                     <include>Dimensions_Fullscreen</include>
@@ -1369,6 +1369,14 @@
 		<posx>50</posx>
 		<posy>290</posy>
 	</include>
+	<include name="LeftMenuTitle">
+		<posx>20</posx>
+		<posy>20</posy>
+		<width>280</width>
+		<font>Left_Menu_Title</font>
+		<align>left</align>
+	</include>
+	
 	<!-- This defines 8 Items as recommended TV Episodes -->
 	<include name="RecommendedItemsTV">
       <item id="11">

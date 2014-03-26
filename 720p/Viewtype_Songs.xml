@@ -38,7 +38,7 @@
 			
 			<!-- This Control displays the list of songs-->
             <control type="fixedlist" id="503">
-                <viewtype label="Song View">Song View</viewtype>
+                <viewtype label="List">Song View</viewtype>
 				<posx>370</posx>
                 <posy>290</posy>
                 <width>890</width>

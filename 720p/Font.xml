@@ -364,6 +364,14 @@
             <size>20</size>
         </font>
 		<font>
+            <name>Left_Menu_Title</name>
+            <filename>MC360.ttf</filename>
+			<style>bold uppercase</style>
+            <aspect>0.8</aspect>
+			<linespacing>1.0</linespacing>
+            <size>32</size>
+        </font>
+		<font>
             <name>Home_header</name>
             <filename>GeosansLight.ttf</filename>
             <size>80</size>

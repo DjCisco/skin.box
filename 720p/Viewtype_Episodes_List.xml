@@ -147,7 +147,7 @@
                 <onleft>9000</onleft>
 				<movement>3</movement>
 				<focusposition>3</focusposition>
-                <viewtype label="Episodes List View">Episodes List View</viewtype>
+                <viewtype label="List Info">Episodes List View</viewtype>
                 <pagecontrol>63</pagecontrol>
                 <visible>Container.Content(episodes)</visible>
                 <itemlayout height="45" condition="!Skin.HasSetting(episodewidelist)">

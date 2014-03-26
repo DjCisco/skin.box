@@ -22,7 +22,7 @@
                 <effect type="fade" time="300" />
             </animation>
             <control type="panel" id="56">
-                <viewtype label="Genres">Genres</viewtype>
+                <viewtype label="Panel">Genres</viewtype>
                 <posx>50</posx>
                 <posy>290</posy>
                 <width>1200</width>

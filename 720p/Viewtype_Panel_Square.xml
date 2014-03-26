@@ -20,7 +20,7 @@
 			
 				<!-- This Control defines the Albums Panel-->
 				<control type="panel" id="519">
-					<viewtype label="Album Cover Info">info</viewtype>
+					<viewtype label="Thumb Info">info</viewtype>
 					<posx>370</posx>
 					<posy>290</posy>
 					<width>400</width>

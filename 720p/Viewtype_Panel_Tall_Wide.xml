@@ -20,7 +20,7 @@
             </animation>
             <!-- This definition of a Panel Container used for Movies and Tv Shows -->
 			<control type="panel" id="524">
-                <viewtype label="Poster">Poster</viewtype>
+                <viewtype label="Thumb">Poster</viewtype>
                 <posx>270</posx>
                 <posy>290</posy>
                 <width>945</width>

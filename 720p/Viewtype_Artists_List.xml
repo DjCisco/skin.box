@@ -65,7 +65,7 @@
                 <onup>228</onup>
                 <ondown>528</ondown>
                 <pagecontrol>60</pagecontrol>
-                <viewtype label="Artists List">Artists List</viewtype>
+                <viewtype label="List Info">Artists List</viewtype>
                 <scrolltime>200</scrolltime>
                 <!-- This Control defines the unfocused item layout-->
 				<itemlayout height="45" condition="!Skin.HasSetting(musicartistswidelist)">

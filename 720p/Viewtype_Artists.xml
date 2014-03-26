@@ -32,7 +32,7 @@
 				<movement>6</movement>
 				<focusposition>6</focusposition>
                 <pagecontrol>60</pagecontrol>
-                <viewtype label="Artists">Artists</viewtype>
+                <viewtype label="List">Artists</viewtype>
                 <scrolltime>200</scrolltime>
                 <itemlayout width="1000" height="50">
                     <control type="label">

@@ -24,7 +24,7 @@
             </animation>
 		
             <control type="wraplist" id="532">
-                <viewtype label="Posters View">Posters View</viewtype>
+                <viewtype label="Poster">Posters View</viewtype>
                 <include>PanelCoordinates</include>
                 <width>1230</width>
                 <height>315</height>

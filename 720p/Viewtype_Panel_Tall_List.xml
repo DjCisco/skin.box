@@ -50,7 +50,7 @@
 				
 
 				<control type="fixedlist" id="523">
-					<viewtype label="Poster List View">Poster List View</viewtype>
+					<viewtype label="List Info">List Info</viewtype>
 					<posx>270</posx>
 					<posy>290</posy>
 					<width>990</width>

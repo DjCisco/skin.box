@@ -3,16 +3,16 @@
     <defaultcontrol always="true">901</defaultcontrol>
     <allowoverlay>yes</allowoverlay>
     <visible>[VideoPlayer.IsFullscreen | Window.IsVisible(visualisation)] + [Player.Seeking | Player.DisplayAfterSeek | Player.paused | Player.Forwarding | Player.rewinding]</visible>
-    <onload>ActivateWindow(fullscreeninfo)</onload>
-	<onunload>Dialog.Close(fullscreeninfo)</onunload>
+    <onload condition="Player.HasVideo">ActivateWindow(fullscreeninfo)</onload>
+	<onload condition="Player.HasAudio">ActivateWindow(musicosd)</onload>
+	<onunload condition="Window.IsActive(fullscreeninfo)">Dialog.Close(fullscreeninfo)</onunload>
+	<onunload condition="Window.IsActive(musicosd)">Dialog.Close(musicosd)</onunload>
 	<controls>
         <control type="group">
-           
             <posy>150</posy>
             <visible>!Player.Caching</visible>
             <control type="label">
-				
-                <width>1280</width>
+				<width>1280</width>
                 <height>32</height>
                 <align>center</align>
                 <font>SeekBarState</font>

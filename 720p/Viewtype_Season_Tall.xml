@@ -24,7 +24,7 @@
             </animation>
 		
             <control type="fixedlist" id="55">
-                <viewtype label="Seasons View">Seasons View</viewtype>
+                <viewtype label="Poster">Seasons View</viewtype>
                 <posx>50</posx>
                 <posy>215</posy>
                 <width>1200</width>

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window type="dialog" id="142">
     <controls>
+		<control type="group">
+			<visible>Player.HasVideo</visible>
 		<!-- This Displays the Current Time on the Top Right -->
 			<control type="label">
 				<animation effect="fade" start="0" end="100" time="600" >WindowOpen</animation>
@@ -386,6 +388,6 @@
 				</control>
 			</control>
 		</control>
-
+		</control>
 	</controls>
 </window>

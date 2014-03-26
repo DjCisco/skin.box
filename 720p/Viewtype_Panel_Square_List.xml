@@ -41,7 +41,7 @@
             </control>
             <!-- This Control defines the album list-->
 			<control type="fixedlist" id="508">
-                <viewtype label="Album List">Album List</viewtype>
+                <viewtype label="List Info">Album List</viewtype>
                 <posx>370</posx>
                 <posy>290</posy>
                 <width>890</width>
