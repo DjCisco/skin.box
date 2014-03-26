@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window id="128">
+    <!-- Window to add a New Network Location -->
+	<defaultcontrol always="true">10</defaultcontrol>
+    <allowoverlay>yes</allowoverlay>
+    <controls>
+        <include>GlobalOverlay</include>
+        <!-- Dialog Background -->
+		<control type="group">
+			<include>BigDialogCoordinates</include>
+			<include>BigDialogBackground</include>
+		</control>
+		
+		
+		<control type="group">
+            <include>BigDialogCoordinates</include>
+            <control type="label" id="2">
+                <description>Heading</description>
+                <posx>25</posx>
+				<posy>20</posy>
+                <width>610</width>
+                <font>Panel_Hint</font>
+                <label>1007</label>
+                <align>center</align>
+				<aligny>top</aligny>
+            </control>
+            <control type="spincontrolex" id="10">
+                <description>Protocol</description>
+                <posx>25</posx>
+                <posy>60</posy>
+                <width>610</width>
+				<height>40</height>
+                <label>1008</label>
+                <onup>18</onup>
+                <ondown>11</ondown>
+                <onleft>10</onleft>
+                <onright>10</onright>
+				<font>Panel_Info</font>
+				<texturefocus>button.png</texturefocus>
+				<texturenofocus>tile.png</texturenofocus>				
+            </control>
+            <control type="button" id="11">
+                <description>Server Address</description>
+                <posx>25</posx>
+                <posy>105</posy>
+                <width>460</width>
+				<height>40</height>
+                <align>left</align>
+                <label></label>
+                <textoffsetx>20</textoffsetx>
+                <onup>10</onup>
+                <onleft>12</onleft>
+                <onright>12</onright>
+                <ondown>16</ondown>
+				<font>Panel_Info</font>
+				<texturefocus>button.png</texturefocus>
+				<texturenofocus>tile.png</texturenofocus>
+            </control>
+            <control type="button" id="12">
+                <description>Server Browse</description>
+                <posx>490</posx>
+                <posy>105</posy>
+                <width>145</width>
+				<height>40</height>
+                <label>1024</label>
+                <onup>10</onup>
+                <onleft>11</onleft>
+                <onright>11</onright>
+                <ondown>16</ondown>
+				<font>Panel_Info</font>
+				<texturefocus>button.png</texturefocus>
+				<texturenofocus>tile.png</texturenofocus>
+            </control>
+            <control type="button" id="16">
+                <description>Remote</description>
+                <posx>25</posx>
+                <posy>150</posy>
+                <width>610</width>
+				<height>40</height>
+                <label></label>
+                <onup>11</onup>
+                <onleft>16</onleft>
+                <onright>16</onright>
+                <ondown>13</ondown>
+				<font>Panel_Info</font>
+				<texturefocus>button.png</texturefocus>
+				<texturenofocus>tile.png</texturenofocus>
+            </control>
+            <control type="button" id="13">
+                <description>Port</description>
+                <posx>25</posx>
+                <posy>195</posy>
+                <width>610</width>
+				<height>40</height>
+                <label>1013</label>
+                <onup>16</onup>
+                <onleft>13</onleft>
+                <onright>13</onright>
+                <ondown>14</ondown>
+				<font>Panel_Info</font>
+				<texturefocus>button.png</texturefocus>
+				<texturenofocus>tile.png</texturenofocus>
+				
+            </control>
+            <control type="button" id="14">
+                <description>Username</description>
+                <posx>25</posx>
+                <posy>240</posy>
+                <width>610</width>
+				<height>40</height>
+                <align>left</align>
+                <label>1014</label>
+                <onup>13</onup>
+                <onleft>14</onleft>
+                <onright>14</onright>
+                <ondown>15</ondown>
+				<font>Panel_Info</font>
+				<texturefocus>button.png</texturefocus>
+				<texturenofocus>tile.png</texturenofocus>
+            </control>
+            <control type="button" id="15">
+                <description>password</description>
+                <posx>25</posx>
+                <posy>285</posy>
+                <width>610</width>
+				<height>40</height>
+                <align>left</align>
+                <label>15052</label>
+                <onup>14</onup>
+                <onleft>15</onleft>
+                <onright>15</onright>
+                <ondown>18</ondown>
+				<font>Panel_Info</font>
+				<texturefocus>button.png</texturefocus>
+				<texturenofocus>tile.png</texturenofocus>
+            </control>
+        </control>
+		<!-- OK & Cancel Buttons-->
+		<control type="group">
+			<include>BigDialogCoordinates</include>
+			<control type="grouplist" id="9001">
+				<posx>140</posx>
+				<posy>390</posy>
+				<itemgap>10</itemgap>
+				<ondown>10</ondown>
+				<onup>15</onup>
+				<orientation>horizontal</orientation>
+				 <control type="button" id="18">
+					<description>Ok</description>
+					<width>180</width>
+					<label>186</label>
+					<font>Panel_Hint</font>
+					<texturefocus>button.png</texturefocus>
+					<texturenofocus>tile.png</texturenofocus>
+				</control>
+				<control type="button" id="19">
+					<description>Cancel</description>
+					<width>180</width>
+					<label>222</label>
+					<font>Panel_Hint</font>	
+					<texturefocus>button.png</texturefocus>
+					<texturenofocus>tile.png</texturenofocus>
+				</control>
+			 </control>
+		</control>
+		
+    </controls>
+</window>

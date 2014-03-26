@@ -1,0 +1,2193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<includes>
+    <include file="Defaults.xml" />
+    <include file="View_50_List.xml" />
+    <include file="Viewtype_PVR.xml" />
+    <include file="Viewtype_Songs.xml" />
+	<include file="Viewtype_Artists.xml" />
+	<include file="Viewtype_Artists_List.xml" />
+    <include file="Viewtype_Episodes.xml" />
+    <include file="Viewtype_Episodes_List.xml" />
+    <include file="Viewtype_MusicVideos.xml" />
+    <include file="Viewtype_MusicVideos_List.xml" />
+	<include file="Viewtype_Artist_Albums.xml" />
+	<include file="Viewtype_Panel_Tall.xml" />
+	<include file="Viewtype_Panel_Tall_List.xml" />
+	<include file="Viewtype_Panel_Tall_Wide.xml" />
+    <include file="Viewtype_Panel_Genre.xml" />
+	<include file="Viewtype_Panel_Year.xml" />
+	<include file="Viewtype_Panel_Wide.xml" />
+    <include file="Viewtype_Season_Tall.xml" />
+    <include file="Viewtype_Panel_Square.xml" />
+    <include file="Viewtype_Panel_Square_List.xml" />
+	<include file="Viewtype_Panel_Square_Wide.xml" />
+	<include file="Viewtype_Posters.xml" />
+    <include file="Variables.xml" />
+    <include name="HiddenButton">
+        <posx>-20</posx>
+        <posy>-20</posy>
+        <width>1</width>
+        <height>1</height>
+        <label></label>
+        <texturenofocus>-</texturenofocus>
+        <texturefocus>-</texturefocus>
+    </include>
+    <!-- This Displays the Time and Date on the Top Right -->
+	<include name="BarClock">
+		<control type="group">
+			<animation effect="slide" start="0,0" end="0,30" time="300"  delay="200" easing="inout" condition="Window.IsActive(138)">conditional</animation>
+			<!-- This Displays the Current Time on the Top Right -->
+			<control type="label">
+				<label>$INFO[System.Time(hh:mm)][COLOR Accent]$INFO[System.Time(xx), ][/COLOR]</label>
+				<posx>1270</posx>
+				<posy>10</posy>
+				<height>50</height>
+				<width>550</width>
+				<font>Clock</font>
+				<shadowcolor>black</shadowcolor>
+				<align>right</align>
+			</control>
+			<!-- This Displays the Current Date on the Top Right -->
+			<control type="label">
+				<label>$INFO[System.Date(dd)] $INFO[System.Date(MMM)]</label>
+				<posx>1270</posx>
+				<posy>30</posy>
+				<height>100</height>
+				<width>750</width>
+				<font>Clock_Footer</font>
+				<shadowcolor>black</shadowcolor>
+				<align>right</align>
+			</control>
+		    <control type="label">
+				<label>[COLOR Accent]$INFO[System.Date(DDD)][/COLOR]</label>
+				<posx>1270</posx>
+				<posy>60</posy>
+				<height>100</height>
+				<width>750</width>
+				<font>Clock_Footer_2</font>
+				<shadowcolor>black</shadowcolor>
+				<align>right</align>
+			</control>
+		</control>
+    </include>
+	<!-- This Places an object on the origin and stretches it to Full-screen 1280x720 -->
+    <include name="Dimensions_Fullscreen">
+        <posx>0</posx>
+        <posy>0</posy>
+        <width>1280</width>
+        <height>720</height>
+    </include>
+	<!-- This Displays a Dark Edge Shadow provided by black-back.png over the entire user Interface -->
+    <include name="GlobalOverlay">
+     	<control type="image">
+            <!-- It is only visible if the window is NOT the Add-on Settings window--> 
+			<visible>!Window.IsVisible(10140)</visible>
+            <animation type="WindowOpen">
+                <effect type="fade" time="300" start="0" end="100" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="fade" time="300" start="100" end="0" />
+            </animation>
+            <animation type="Visible">
+                <effect type="fade" time="300" start="0" end="100" />
+            </animation>
+            <animation type="Hidden">
+                <effect type="fade" time="300" start="100" end="0" />
+            </animation>
+            <include>Dimensions_Fullscreen</include>
+            <texture>other_textures/black-back.png</texture>
+        </control>
+		
+    </include>
+    <!-- Main Include Managing the display of Fanart throught the entire Skin -->
+	<include name="HomeBackground">
+        <!-- Blue Background -->
+ 		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<texture>music_fanart_diffuse_blue.png</texture>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
+			<visible>!Skin.HasSetting(ThemeBackgroundColor)</visible>
+		</control>
+		<!-- Theme Color Background -->
+		<control type="group">
+			<visible>Skin.HasSetting(ThemeBackgroundColor)</visible>
+			<control type="image">
+				<include>Dimensions_Fullscreen</include>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture>button.png</texture>
+			</control>
+			<control type="image">
+				<include>Dimensions_Fullscreen</include>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture>tile.png</texture>
+			</control>
+			<control type="image">
+				<include>Dimensions_Fullscreen</include>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture>music_fanart_diffuse.png</texture>
+			</control>
+		</control>
+		<!-- This Displays the Fanart of Home Sections, Music Visualization and List Items-->
+		<control type="group">
+            <visible>!Skin.HasSetting(Fanart) + !Player.HasVideo()</visible>
+            <!-- This Displays the Movie Fanart of the last 9 added Movies while in the films section of the Home Screen -->
+			<control type="group">
+                <animation effect="fade" time="500">VisibleChange</animation>
+                <visible>[Container(5000).HasFocus(501) + Control.HasFocus(5000)] | [Container(5000).HasFocus(501) + ControlGroup(9000).HasFocus() + SubString(Window(Home).Property(menu),main)] | Control.HasFocus(66) | Control.HasFocus(701) | Control.HasFocus(702) | Control.HasFocus(703) | Control.HasFocus(704) | Control.HasFocus(705)</visible>
+                <control type="image">
+                    <animation effect="fade" time="500">VisibleChange</animation>
+                    <include>Dimensions_Fullscreen</include>
+                    <fadetime>800</fadetime>
+                    <texture background="true">$INFO[Window.Property(LatestMovie.1.Fanart)]</texture>
+                    <colordiffuse>FanartDiffuse</colordiffuse>
+                    <visible>!IntegerGreaterThan(System.Time(ss),6)</visible>
+                </control>
+                <control type="image">
+                    <animation effect="fade" time="500">VisibleChange</animation>
+                    <include>Dimensions_Fullscreen</include>
+                    <fadetime>800</fadetime>
+                    <texture background="true">$INFO[Window.Property(LatestMovie.2.Fanart)]</texture>
+                    <colordiffuse>FanartDiffuse</colordiffuse>
+                    <visible>IntegerGreaterThan(System.Time(ss),6) + !IntegerGreaterThan(System.Time(ss),12)</visible>
+                </control>
+                <control type="image">
+                    <animation effect="fade" time="500">VisibleChange</animation>
+                    <include>Dimensions_Fullscreen</include>
+                    <fadetime>800</fadetime>
+                    <texture background="true">$INFO[Window.Property(LatestMovie.3.Fanart)]</texture>
+                    <colordiffuse>FanartDiffuse</colordiffuse>
+                    <visible>IntegerGreaterThan(System.Time(ss),12) + !IntegerGreaterThan(System.Time(ss),18)</visible>
+                </control>
+                <control type="image">
+                    <animation effect="fade" time="500">VisibleChange</animation>
+                    <include>Dimensions_Fullscreen</include>
+                    <fadetime>800</fadetime>
+                    <texture background="true">$INFO[Window.Property(LatestMovie.4.Fanart)]</texture>
+                    <colordiffuse>FanartDiffuse</colordiffuse>
+                    <visible>IntegerGreaterThan(System.Time(ss),18) + !IntegerGreaterThan(System.Time(ss),24)</visible>
+                </control>
+                <control type="image">
+                    <animation effect="fade" time="500">VisibleChange</animation>
+                    <include>Dimensions_Fullscreen</include>
+                    <fadetime>800</fadetime>
+                    <texture background="true">$INFO[Window.Property(LatestMovie.5.Fanart)]</texture>
+                    <colordiffuse>FanartDiffuse</colordiffuse>
+                    <visible>IntegerGreaterThan(System.Time(ss),24) + !IntegerGreaterThan(System.Time(ss),30)</visible>
+                </control>
+                <control type="image">
+                    <animation effect="fade" time="500">VisibleChange</animation>
+                    <include>Dimensions_Fullscreen</include>
+                    <fadetime>800</fadetime>
+                    <texture background="true">$INFO[Window.Property(LatestMovie.6.Fanart)]</texture>
+                    <visible>IntegerGreaterThan(System.Time(ss),30) + !IntegerGreaterThan(System.Time(ss),38)</visible>
+                    <colordiffuse>FanartDiffuse</colordiffuse>
+                </control>
+                <control type="image">
+                    <animation effect="fade" time="500">VisibleChange</animation>
+                    <include>Dimensions_Fullscreen</include>
+                    <fadetime>800</fadetime>
+                    <texture background="true">$INFO[Window.Property(LatestMovie.7.Fanart)]</texture>
+                    <colordiffuse>FanartDiffuse</colordiffuse>
+                    <visible>IntegerGreaterThan(System.Time(ss),38) + !IntegerGreaterThan(System.Time(ss),46)</visible>
+                </control>
+                <control type="image">
+                    <animation effect="fade" time="500">VisibleChange</animation>
+                    <include>Dimensions_Fullscreen</include>
+                    <fadetime>800</fadetime>
+                    <texture background="true">$INFO[Window.Property(LatestMovie.8.Fanart)]</texture>
+                    <visible>IntegerGreaterThan(System.Time(ss),46) + !IntegerGreaterThan(System.Time(ss),54)</visible>
+                     <colordiffuse>FanartDiffuse</colordiffuse>
+                </control>
+                <control type="image">
+                    <animation effect="fade" time="500">VisibleChange</animation>
+                    <include>Dimensions_Fullscreen</include>
+                    <fadetime>800</fadetime>
+                    <texture background="true">$INFO[Window.Property(LatestMovie.9.Fanart)]</texture>
+                    <visible>IntegerGreaterThan(System.Time(ss),54)</visible>
+                      <colordiffuse>FanartDiffuse</colordiffuse>
+                </control>
+            </control>
+            <!-- This Displays the TV Shows Fanart of the last 9 added Episodes while in the tv shows section of the Home Screen -->
+			<control type="group">
+                <animation effect="fade" time="500">VisibleChange</animation>
+                <visible>[[Container(5000).HasFocus(503) | Container(5000).HasFocus(504)] + Control.HasFocus(5000)] | [[Container(5000).HasFocus(503) | Container(5000).HasFocus(504)] + ControlGroup(9000).HasFocus() + SubString(Window(Home).Property(menu),main)] | Control.HasFocus(68) | Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(63) | Control.HasFocus(301) | Control.HasFocus(302) | Control.HasFocus(303) | Control.HasFocus(304) | Control.HasFocus(305)</visible>
+                <control type="image">
+                    <animation effect="fade" time="500">VisibleChange</animation>
+                    <include>Dimensions_Fullscreen</include>
+                    <fadetime>800</fadetime>
+                    <texture background="true">$INFO[Window.Property(LatestEpisode.1.Fanart)]</texture>
+                    <colordiffuse>FanartDiffuse</colordiffuse>
+                    <visible>!IntegerGreaterThan(System.Time(ss),6)</visible>
+                </control>
+                <control type="image">
+                    <animation effect="fade" time="500">VisibleChange</animation>
+                    <include>Dimensions_Fullscreen</include>
+                    <fadetime>800</fadetime>
+                    <texture background="true">$INFO[Window.Property(LatestEpisode.2.Fanart)]</texture>
+                    <colordiffuse>FanartDiffuse</colordiffuse>
+                    <visible>IntegerGreaterThan(System.Time(ss),6) + !IntegerGreaterThan(System.Time(ss),12)</visible>
+                </control>
+                <control type="image">
+                    <animation effect="fade" time="500">VisibleChange</animation>
+                    <include>Dimensions_Fullscreen</include>
+                    <fadetime>800</fadetime>
+                    <texture background="true">$INFO[Window.Property(LatestEpisode.3.Fanart)]</texture>
+                    <colordiffuse>FanartDiffuse</colordiffuse>
+                    <visible>IntegerGreaterThan(System.Time(ss),12) + !IntegerGreaterThan(System.Time(ss),18)</visible>
+                </control>
+                <control type="image">
+                    <animation effect="fade" time="500">VisibleChange</animation>
+                    <include>Dimensions_Fullscreen</include>
+                    <fadetime>800</fadetime>
+                    <texture background="true">$INFO[Window.Property(LatestEpisode.4.Fanart)]</texture>
+                    <colordiffuse>FanartDiffuse</colordiffuse>
+                    <visible>IntegerGreaterThan(System.Time(ss),18) + !IntegerGreaterThan(System.Time(ss),24)</visible>
+                </control>
+                <control type="image">
+                    <animation effect="fade" time="500">VisibleChange</animation>
+                    <include>Dimensions_Fullscreen</include>
+                    <fadetime>800</fadetime>
+                    <texture background="true">$INFO[Window.Property(LatestEpisode.5.Fanart)]</texture>
+                    <colordiffuse>FanartDiffuse</colordiffuse>
+                    <visible>IntegerGreaterThan(System.Time(ss),24) + !IntegerGreaterThan(System.Time(ss),30)</visible>
+                </control>
+                <control type="image">
+                    <animation effect="fade" time="500">VisibleChange</animation>
+                    <include>Dimensions_Fullscreen</include>
+                    <fadetime>800</fadetime>
+                    <texture background="true">$INFO[Window.Property(LatestEpisode.6.Fanart)]</texture>
+                    <visible>IntegerGreaterThan(System.Time(ss),30) + !IntegerGreaterThan(System.Time(ss),38)</visible>
+                    <colordiffuse>FanartDiffuse</colordiffuse>
+                </control>
+                <control type="image">
+                    <animation effect="fade" time="500">VisibleChange</animation>
+                    <include>Dimensions_Fullscreen</include>
+                    <fadetime>800</fadetime>
+                    <texture background="true">$INFO[Window.Property(LatestEpisode.7.Fanart)]</texture>
+                    <colordiffuse>FanartDiffuse</colordiffuse>
+                    <visible>IntegerGreaterThan(System.Time(ss),38) + !IntegerGreaterThan(System.Time(ss),46)</visible>
+                </control>
+                <control type="image">
+                    <animation effect="fade" time="500">VisibleChange</animation>
+                    <include>Dimensions_Fullscreen</include>
+                    <fadetime>800</fadetime>
+                    <texture background="true">$INFO[Window.Property(LatestEpisode.8.Fanart)]</texture>
+                    <visible>IntegerGreaterThan(System.Time(ss),46) + !IntegerGreaterThan(System.Time(ss),54)</visible>
+                    <colordiffuse>FanartDiffuse</colordiffuse>
+                </control>
+                <control type="image">
+                    <animation effect="fade" time="500">VisibleChange</animation>
+                    <include>Dimensions_Fullscreen</include>
+                    <fadetime>800</fadetime>
+                    <texture background="true">$INFO[Window.Property(LatestEpisode.9.Fanart)]</texture>
+                    <visible>IntegerGreaterThan(System.Time(ss),54)</visible>
+                    <colordiffuse>FanartDiffuse</colordiffuse>
+                </control>
+            </control>
+			<!-- This Displays the Music Fanart of the last 9 added Albums while in the music section of the Home Screen -->
+            <control type="group">
+                <animation effect="fade" time="500">VisibleChange</animation>
+                <visible>[Container(5000).HasFocus(502) + Control.HasFocus(5000)] | [Container(5000).HasFocus(502) + ControlGroup(9000).HasFocus() + SubString(Window(Home).Property(menu),main)] | Control.HasFocus(67) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Control.HasFocus(605)</visible>
+                <control type="image">
+                    <animation effect="fade" time="500">VisibleChange</animation>
+                    <include>Dimensions_Fullscreen</include>
+                    <fadetime>800</fadetime>
+                    <texture background="true">$INFO[Window.Property(LatestAlbum.1.Fanart)]</texture>
+                    <colordiffuse>FanartDiffuse</colordiffuse>
+                    <visible>!IntegerGreaterThan(System.Time(ss),6)</visible>
+                </control>
+                <control type="image">
+                    <animation effect="fade" time="500">VisibleChange</animation>
+                    <include>Dimensions_Fullscreen</include>
+                    <fadetime>800</fadetime>
+                    <texture background="true">$INFO[Window.Property(LatestAlbum.2.Fanart)]</texture>
+                    <colordiffuse>FanartDiffuse</colordiffuse>
+                    <visible>IntegerGreaterThan(System.Time(ss),6) + !IntegerGreaterThan(System.Time(ss),12)</visible>
+                </control>
+                <control type="image">
+                    <animation effect="fade" time="500">VisibleChange</animation>
+                    <include>Dimensions_Fullscreen</include>
+                    <fadetime>800</fadetime>
+                    <texture background="true">$INFO[Window.Property(LatestAlbum.3.Fanart)]</texture>
+                    <colordiffuse>FanartDiffuse</colordiffuse>
+                    <visible>IntegerGreaterThan(System.Time(ss),12) + !IntegerGreaterThan(System.Time(ss),18)</visible>
+                </control>
+                <control type="image">
+                    <animation effect="fade" time="500">VisibleChange</animation>
+                    <include>Dimensions_Fullscreen</include>
+                    <fadetime>800</fadetime>
+                    <texture background="true">$INFO[Window.Property(LatestAlbum.4.Fanart)]</texture>
+                    <colordiffuse>FanartDiffuse</colordiffuse>
+                    <visible>IntegerGreaterThan(System.Time(ss),18) + !IntegerGreaterThan(System.Time(ss),24)</visible>
+                </control>
+                <control type="image">
+                    <animation effect="fade" time="500">VisibleChange</animation>
+                    <include>Dimensions_Fullscreen</include>
+                    <fadetime>800</fadetime>
+                    <texture background="true">$INFO[Window.Property(LatestAlbum.5.Fanart)]</texture>
+                    <colordiffuse>FanartDiffuse</colordiffuse>
+                    <visible>IntegerGreaterThan(System.Time(ss),24) + !IntegerGreaterThan(System.Time(ss),30)</visible>
+                </control>
+                <control type="image">
+                    <animation effect="fade" time="500">VisibleChange</animation>
+                    <include>Dimensions_Fullscreen</include>
+                    <fadetime>800</fadetime>
+                    <texture background="true">$INFO[Window.Property(LatestAlbum.6.Fanart)]</texture>
+                    <visible>IntegerGreaterThan(System.Time(ss),30) + !IntegerGreaterThan(System.Time(ss),38)</visible>
+                    <colordiffuse>FanartDiffuse</colordiffuse>
+                </control>
+                <control type="image">
+                    <animation effect="fade" time="500">VisibleChange</animation>
+                    <include>Dimensions_Fullscreen</include>
+                    <fadetime>800</fadetime>
+                    <texture background="true">$INFO[Window.Property(LatestAlbum.7.Fanart)]</texture>
+                    <colordiffuse>FanartDiffuse</colordiffuse>
+                    <visible>IntegerGreaterThan(System.Time(ss),38) + !IntegerGreaterThan(System.Time(ss),46)</visible>
+                </control>
+                <control type="image">
+                    <animation effect="fade" time="500">VisibleChange</animation>
+                    <include>Dimensions_Fullscreen</include>
+                    <fadetime>800</fadetime>
+                    <texture background="true">$INFO[Window.Property(LatestAlbum.8.Fanart)]</texture>
+                    <visible>IntegerGreaterThan(System.Time(ss),46) + !IntegerGreaterThan(System.Time(ss),54)</visible>
+                    <colordiffuse>FanartDiffuse</colordiffuse>
+                </control>
+                <control type="image">
+                    <animation effect="fade" time="500">VisibleChange</animation>
+                    <include>Dimensions_Fullscreen</include>
+                    <fadetime>800</fadetime>
+                    <texture background="true">$INFO[Window.Property(LatestAlbum.9.Fanart)]</texture>
+                    <visible>IntegerGreaterThan(System.Time(ss),54)</visible>
+                    <colordiffuse>FanartDiffuse</colordiffuse>
+                </control>
+            </control>
+            <!-- Displays Fanart of  Movie EPisode Tv Show Item selected from a list-->
+			<control type="group">
+				<visible>Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)</visible>
+				<control type="image">
+					<animation effect="fade" time="500">VisibleChange</animation>
+					<include>Dimensions_Fullscreen</include>
+					<fadetime>800</fadetime>
+					<texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
+				</control>
+				<control type="image">
+					<include>Dimensions_Fullscreen</include>
+					<fadetime>800</fadetime>
+					<texture background="true">music_fanart_diffuse.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<visible>!IsEmpty(ListItem.Property(Fanart_Image))</visible>
+				</control>
+				 
+			 </control>
+			<!-- Displays Fanart of  Artist Album Item selected from a list -->
+			<control type="group">
+				<visible>Container.Content(Albums) | Container.Content(Artists) | Container.Content(musicvideos)</visible>
+				<!-- Artist Fanart from Music Player in Case no Fanart.jpg in Album Folder-->
+				<control type="image" id="8872">
+					<description>Fanart Image for Artist</description>
+					<include>Dimensions_Fullscreen</include>
+					<texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
+					<animation effect="fade" start="0" end="100" time="550" delay="0" tween="sine" easing="inout">VisibleChange</animation>
+					<visible>IsEmpty(Control.getLabel(8870)) | IsEmpty(Skin.String(ArtistsFanartPath))</visible>	
+					<fadetime>600</fadetime>
+				</control>
+				<!-- Display Aritst Fanart from extrafanrt folder in Music Libray Path-->
+				<control type="multiimage" id ="8870">
+					<include>Dimensions_Fullscreen</include>
+					<randomize>false</randomize>
+					<timeperimage>10000</timeperimage>
+					<fadetime>2000</fadetime>
+					<pauseatend>0</pauseatend>
+					<loop>true</loop>
+					<imagepath>$INFO[Skin.String(ArtistsFanartPath)]$INFO[ListItem.Artist,,/extrafanart/]</imagepath>
+					<visible>!IsEmpty(Skin.String(ArtistsFanartPath))</visible>
+				</control>
+				<control type="image">
+					<include>Dimensions_Fullscreen</include>
+					<fadetime>800</fadetime>
+					<texture background="true">music_fanart_diffuse.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+				</control>
+		
+			</control>
+			<!-- Displays Fanart or Song Items selected from a list -->
+			<control type="group">
+				<visible>Container.Content(Songs)</visible>
+
+				<!-- Artist Fanart from Music Player in Case no Fanart.jpg in Album Folder-->
+				<control type="image" id="8875">
+					<description>Fanart Image for Artist</description>
+					<include>Dimensions_Fullscreen</include>
+					<texture>$INFO[ListItem.Property(Fanart_Image)]</texture>
+					<animation effect="fade" start="0" end="100" time="550" delay="0" tween="sine" easing="inout">VisibleChange</animation>
+					<visible>IsEmpty(Control.getLabel(8871)) + IsEmpty(Control.getLabel(8873))</visible>	
+					<fadetime>600</fadetime>
+				</control>
+				
+				<!-- Artist Fanart from cd Folder   if no extrafanart folder is available-->
+				<control type="image" id="8873">
+					<description>Fanart Image for Artist</description>
+					<include>Dimensions_Fullscreen</include>
+					<texture>$INFO[ListItem.Path]fanart.jpg</texture>
+					<animation effect="fade" start="0" end="100" time="550" delay="0" tween="sine" easing="inout">VisibleChange</animation>
+					<visible>IsEmpty(Control.getLabel(8871)) | IsEmpty(Skin.String(ArtistsFanartPath))</visible>		
+					<fadetime>600</fadetime>
+				</control>
+
+				<!-- Display Aritst Fanart from extrafanrt folder in Music Libray Path-->
+				<control type="multiimage" id ="8871">
+					<include>Dimensions_Fullscreen</include>
+					<randomize>false</randomize>
+					<timeperimage>5000</timeperimage>
+					<fadetime>2000</fadetime>
+					<pauseatend>0</pauseatend>
+					<loop>true</loop>
+					<imagepath>$INFO[Skin.String(ArtistsFanartPath)]$INFO[ListItem.Artist,,/extrafanart/]</imagepath>
+					<visible>!IsEmpty(Skin.String(ArtistsFanartPath))</visible>
+				 </control>
+							
+				<control type="image">
+					<include>Dimensions_Fullscreen</include>
+					<fadetime>800</fadetime>
+					<texture background="true">music_fanart_diffuse.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+				</control>
+		
+			</control>
+		</control>
+		<control type="videowindow">
+                    <description>video</description>
+                    <include>Dimensions_Fullscreen</include>
+					<visible>Player.HasVideo() + Skin.HasSetting(PlayingVideoOnBackground) + !VideoPlayer.IsFullscreen</visible>
+        </control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<texture>music_fanart_diffuse_blue.png</texture>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
+			<visible>Player.HasVideo() + Skin.HasSetting(PlayingVideoOnBackground) + !VideoPlayer.IsFullscreen + !Skin.HasSetting(ThemeBackgroundColor)</visible>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<texture>button.png</texture>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
+			<colordiffuse>88FFFFFF</colordiffuse>
+			<visible>Player.HasVideo() + Skin.HasSetting(PlayingVideoOnBackground) + !VideoPlayer.IsFullscreen + Skin.HasSetting(ThemeBackgroundColor)</visible>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<texture>tile.png</texture>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
+			<colordiffuse>88FFFFFF</colordiffuse>
+			<visible>Player.HasVideo() + Skin.HasSetting(PlayingVideoOnBackground) + !VideoPlayer.IsFullscreen + Skin.HasSetting(ThemeBackgroundColor)</visible>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<texture>music_fanart_diffuse.png</texture>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
+			<visible>Player.HasVideo() + Skin.HasSetting(PlayingVideoOnBackground) + !VideoPlayer.IsFullscreen + Skin.HasSetting(ThemeBackgroundColor)</visible>
+		</control>
+	</include>
+	<include name="BackgroundTextScroll">
+        <animation effect="fade" time="5000" easing="out" tween="quadratic">Visible</animation>
+        <animation effect="fade" time="5000" easing="out" tween="quadratic">WindowOpen</animation>
+        <animation effect="fade" time="1000" easing="out" tween="quadratic">Hidden</animation>
+        <animation effect="fade" time="1000" easing="out" tween="quadratic">WindowClose</animation>
+        <!-- This displays the Currently playing Music Album and Artist as scrolling Text during Music Visualization Display -->
+		<control type="group">
+            <visible>Window.IsVisible(2006) + Skin.HasSetting(DisplayScrollingText)</visible>
+            <!-- This displays the Currently playing Music Album and Artist as scrolling Text at a 45 Degree Angle -->
+			<control type="group" id="3333">
+                <visible> IntegerGreaterThan(System.Time(ss),41)</visible>
+                <animation effect="fade" time="2000">Visible</animation>
+                <animation effect="fade" time="2000">Hidden</animation>
+				<control type="label">
+					<description>Now Playing</description>
+					<posx>-5</posx>
+					<posy>900</posy>
+					<width>1350</width>
+					<label>$INFO[MusicPlayer.Title,,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]</label>
+                    <scroll>true</scroll>
+					<font>ScrollText1</font>
+					<pauseatend>0</pauseatend>
+					<textcolor>55FFFFFF</textcolor>
+					<shadowcolor>11000000</shadowcolor>
+					<angle>45</angle>
+					<align>left</align>
+				</control>
+                <!-- This displays the Currently playing Music Artist as scrolling Text at a 45 Degree Angle -->
+				<control type="label">
+                    <description>Now Playing</description>
+                    <posx>220</posx>
+                    <posy>900</posy>
+                    <width>1350</width>
+                    <label>$INFO[MusicPlayer.Artist,,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]</label>
+                    <scroll>true</scroll>
+                    <font>ScrollText2</font>
+                    <pauseatend>0</pauseatend>
+                    <textcolor>55FFFFFF</textcolor>
+					<shadowcolor>11000000</shadowcolor>
+                    <angle>45</angle>
+                    <align>left</align>
+					<scrollspeed>100</scrollspeed>
+                </control>
+				 <!-- This displays the Currently playing Music Album as scrolling Text at a 45 Degree Angle -->
+                <control type="label">
+                    <description>Now Playing</description>
+                    <posx>335</posx>
+                    <posy>900</posy>
+                    <width>1350</width>
+                    <label>$INFO[MusicPlayer.Album,,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]</label>
+                    <scroll>true</scroll>
+                    <pauseatend>0</pauseatend>
+                    <font>ScrollText3</font>
+                    <textcolor>55FFFFFF</textcolor>
+					<shadowcolor>11000000</shadowcolor>
+                    <angle>45</angle>
+                    <align>left</align>
+                    <scrollspeed>40</scrollspeed>
+                </control>
+				<control type="label">
+					<description>Now Playing</description>
+					<posx>850</posx>
+					<posy>610</posy>
+					<width>1000</width>
+					<height>25</height>
+					<label>$INFO[MusicPlayer.Year]</label>
+					<scroll>true</scroll>
+					<font>ScrollText</font>
+					<pauseatend>0</pauseatend>
+					<textcolor>55FFFFFF</textcolor>
+					<shadowcolor>11000000</shadowcolor>
+					<angle>45</angle>
+					<align>left</align>
+				</control>
+				<control type="label">
+					<description>Player Times</description>
+					<posx>85</posx>
+					<posy>35</posy>
+					<width>1000</width>
+					<label>$INFO[MusicPlayer.Time(mm:ss)]</label>
+					<font>ScrollText</font>
+					<textcolor>55FFFFFF</textcolor>
+					<shadowcolor>11000000</shadowcolor>
+					<align>left</align>
+					<angle>-45</angle>
+				</control>
+			</control>
+            <!-- This displays the Currently playing Music Album and Artist as scrolling Text at a 0 Degree Angle -->
+			<control type="group" id="3334">
+                <visible> IntegerGreaterThan(System.Time(ss),0) + !IntegerGreaterThan(System.Time(ss),21)</visible>
+                <animation effect="fade" time="2000">Visible</animation>
+                <animation effect="fade" time="2000">Hidden</animation>
+				<control type="label">
+					<description>Now Playing</description>
+					<posx>0</posx>
+					<posy>250</posy>
+					<width>1300</width>
+					<label>$INFO[MusicPlayer.Title,,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]</label>
+                    <scroll>true</scroll>
+					<font>ScrollText1</font>
+					<shadowcolor>11000000</shadowcolor>
+					<pauseatend>0</pauseatend>
+					<textcolor>55FFFFFF</textcolor>
+					<align>left</align>
+				</control>
+                <control type="label">
+                    <description>Now Playing</description>
+                    <posx>0</posx>
+                    <posy>385</posy>
+                    <width>1300</width>
+                    <label>$INFO[MusicPlayer.Artist,,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]</label>
+                    <scroll>true</scroll>
+                    <pauseatend>0</pauseatend>
+                    <font>ScrollText2</font>
+                    <textcolor>55FFFFFF</textcolor>
+					<shadowcolor>11000000</shadowcolor>
+                    <align>left</align>
+                    <scrollspeed>100</scrollspeed>
+                </control>
+				<control type="label">
+                    <description>Now Playing</description>
+                    <posx>0</posx>
+                    <posy>455</posy>
+                    <width>1300</width>
+                    <label>$INFO[MusicPlayer.Album,,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]</label>
+                    <scroll>true</scroll>
+                    <font>ScrollText3</font>
+                    <pauseatend>0</pauseatend>
+                    <textcolor>55FFFFFF</textcolor>
+					<shadowcolor>11000000</shadowcolor>
+                    <align>left</align>
+					<scrollspeed>40</scrollspeed>
+                </control>
+				<control type="label">
+					<description>Now Playing</description>
+					<posx>1260</posx>
+					<posy>575</posy>
+					<width>1000</width>
+					<height>25</height>
+					<label>$INFO[MusicPlayer.Year]</label>
+					<scroll>true</scroll>
+					<font>ScrollText1</font>
+					<pauseatend>0</pauseatend>
+					<textcolor>55FFFFFF</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label">
+					<description>Player Times</description>
+					<posx>20</posx>
+					<posy>75</posy>
+					<width>1000</width>
+					<label>$INFO[MusicPlayer.Time(mm:ss)]</label>
+					<font>ScrollText1</font>
+					<textcolor>55FFFFFF</textcolor>
+					<shadowcolor>11000000</shadowcolor>
+					<align>left</align>
+				</control>
+            </control>
+             <!-- This displays the Currently playing Music Album and Artist as scrolling Text at a 90 Degree Angle -->
+			<control type="group" id="3335">
+                <visible> IntegerGreaterThan(System.Time(ss),21) + !IntegerGreaterThan(System.Time(ss),41)</visible>
+                <animation effect="fade" time="2000">Visible</animation>
+                <animation effect="fade" time="2000">Hidden</animation>
+				<control type="label">
+                    <description>Now Playing</description>
+                    <posx>420</posx>
+                    <posy>850</posy>
+                    <width>900</width>
+                    <label>$INFO[MusicPlayer.Title,,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[MusicPlayer.Title, - ,]</label>
+                    <scroll>true</scroll>
+                    <pauseatend>0</pauseatend>
+                    <font>ScrollText1</font>
+                    <textcolor>55FFFFFF</textcolor>
+					<shadowcolor>11000000</shadowcolor>
+                    <align>left</align>
+					<angle>90</angle>
+                </control>
+                <control type="label">
+                    <description>Now Playing</description>
+                    <posx>630</posx>
+                    <posy>850</posy>
+                    <width>900</width>
+                    <label>$INFO[MusicPlayer.Artist,,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]$INFO[MusicPlayer.Artist, - ,]</label>
+                    <scroll>true</scroll>
+                    <pauseatend>0</pauseatend>
+                    <font>ScrollText2</font>
+                    <textcolor>55FFFFFF</textcolor>
+					<shadowcolor>11000000</shadowcolor>
+                    <align>left</align>
+                    <angle>90</angle>
+                    <scrollspeed>100</scrollspeed>
+                </control>
+				<control type="label">
+                    <description>Now Playing</description>
+                    <posx>735</posx>
+                    <posy>750</posy>
+                    <width>800</width>
+                    <label>$INFO[MusicPlayer.Album,,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]$INFO[MusicPlayer.Album, - ,]</label>
+                    <scroll>true</scroll>
+                    <font>ScrollText3</font>
+                    <pauseatend>0</pauseatend>
+                    <angle>90</angle>
+					 <scrollspeed>40</scrollspeed>
+                    <textcolor>55FFFFFF</textcolor>
+					<shadowcolor>11000000</shadowcolor>
+                </control>
+				<control type="label">
+                    <description>Now Playing</description>
+                    <posx>1275</posx>
+                    <posy>360</posy>
+                    <width>720</width>
+                    <label>$INFO[MusicPlayer.Year]</label>
+                    <scroll>true</scroll>
+                    <pauseatend>0</pauseatend>
+                    <font>ScrollText</font>
+                    <textcolor>55FFFFFF</textcolor>
+					<shadowcolor>11000000</shadowcolor>
+                    <align>right</align>
+                    <scrollspeed>100</scrollspeed>
+				</control>
+				<control type="label">
+					<description>Player Times</description>
+					<posx>5</posx>
+                    <posy>360</posy>
+                    <width>720</width>
+					<label>$INFO[MusicPlayer.Time(mm:ss)]</label>
+					<font>ScrollText</font>
+					<textcolor>55FFFFFF</textcolor>
+					<shadowcolor>11000000</shadowcolor>
+					<align>left</align>
+				</control>
+            </control>
+        </control>
+        <!-- This displays the from a list Currently Selected Music Album and Artist as scrolling Text in the background -->
+		<control type="group">
+            <visible>!Window.IsVisible(2006) + Skin.HasSetting(DisplayScrollingText)</visible>
+            <!-- This displays the from a list Currently Selected Music Album and Artist as scrolling Text in the background at a 45 degree Angle -->
+			<!-- This displays the Currently playing Music Album and Artist as scrolling Text at a 45 Degree Angle -->
+			<control type="group" id="3333">
+                <visible> IntegerGreaterThan(System.Time(ss),41)</visible>
+                <animation effect="fade" time="2000">Visible</animation>
+                <animation effect="fade" time="2000">Hidden</animation>
+				<control type="label">
+					<description>Now Playing</description>
+					<posx>-100</posx>
+					<posy>900</posy>
+					<width>1350</width>
+					<label>$INFO[ListItem.Title,,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[MusicPlayer.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]</label>
+                    <scroll>true</scroll>
+					<font>ScrollText1</font>
+					<pauseatend>0</pauseatend>
+					<textcolor>55FFFFFF</textcolor>
+					<angle>45</angle>
+					<align>left</align>
+				</control>
+                <!-- This displays the Currently playing Music Artist as scrolling Text at a 45 Degree Angle -->
+				<control type="label">
+                    <description>Now Playing</description>
+                    <posx>125</posx>
+                    <posy>900</posy>
+                    <width>1350</width>
+                    <label>$INFO[ListItem.Artist,,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]</label>
+                    <scroll>true</scroll>
+                    <font>ScrollText2</font>
+                    <pauseatend>0</pauseatend>
+                    <textcolor>55FFFFFF</textcolor>
+                    <angle>45</angle>
+                    <align>left</align>
+					<scrollspeed>100</scrollspeed>
+                </control>
+				 <!-- This displays the Currently playing Music Album as scrolling Text at a 45 Degree Angle -->
+                <control type="label">
+                    <description>Now Playing</description>
+                    <posx>240</posx>
+                    <posy>900</posy>
+                    <width>1350</width>
+                    <label>$INFO[ListItem.Album,,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]</label>
+                    <scroll>true</scroll>
+                    <pauseatend>0</pauseatend>
+                    <font>ScrollText3</font>
+                    <textcolor>55FFFFFF</textcolor>
+                    <angle>45</angle>
+                    <align>left</align>
+                    <scrollspeed>40</scrollspeed>
+                </control>
+			</control>
+            <!-- This displays the Currently playing Music Album and Artist as scrolling Text at a 0 Degree Angle -->
+			<control type="group" id="3334">
+                <visible> IntegerGreaterThan(System.Time(ss),0) + !IntegerGreaterThan(System.Time(ss),21)</visible>
+                <animation effect="fade" time="2000">Visible</animation>
+                <animation effect="fade" time="2000">Hidden</animation>
+				<control type="label">
+					<description>Now Playing</description>
+					<posx>0</posx>
+					<posy>340</posy>
+					<width>1300</width>
+					<label>$INFO[ListItem.Title,,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]</label>
+                    <scroll>true</scroll>
+					<font>ScrollText1</font>
+					<pauseatend>0</pauseatend>
+					<textcolor>55FFFFFF</textcolor>
+					<align>left</align>
+				</control>
+                <control type="label">
+                    <description>Now Playing</description>
+                    <posx>0</posx>
+                    <posy>475</posy>
+                    <width>1300</width>
+                    <label>$INFO[ListItem.Artist,,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]</label>
+                    <scroll>true</scroll>
+                    <pauseatend>0</pauseatend>
+                    <font>ScrollText2</font>
+                    <textcolor>55FFFFFF</textcolor>
+                    <align>left</align>
+                    <scrollspeed>100</scrollspeed>
+                </control>
+				<control type="label">
+                    <description>Now Playing</description>
+                    <posx>0</posx>
+                    <posy>545</posy>
+                    <width>1300</width>
+                    <label>$INFO[ListItem.Album,,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]</label>
+                    <scroll>true</scroll>
+                    <font>ScrollText3</font>
+                    <pauseatend>0</pauseatend>
+                    <textcolor>55FFFFFF</textcolor>
+                    <align>left</align>
+					<scrollspeed>40</scrollspeed>
+                </control>
+            </control>
+             <!-- This displays the Currently playing Music Album and Artist as scrolling Text at a 90 Degree Angle -->
+			<control type="group" id="3335">
+                <visible> IntegerGreaterThan(System.Time(ss),21) + !IntegerGreaterThan(System.Time(ss),41)</visible>
+                <animation effect="fade" time="2000">Visible</animation>
+                <animation effect="fade" time="2000">Hidden</animation>
+				<control type="label">
+                    <description>Now Playing</description>
+                    <posx>420</posx>
+                    <posy>850</posy>
+                    <width>900</width>
+                    <label>$INFO[ListItem.Title,,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]$INFO[ListItem.Title, - ,]</label>
+                    <scroll>true</scroll>
+                    <pauseatend>0</pauseatend>
+                    <font>ScrollText1</font>
+                    <textcolor>55FFFFFF</textcolor>
+                    <align>left</align>
+					<angle>90</angle>
+                </control>
+                <control type="label">
+                    <description>Now Playing</description>
+                    <posx>630</posx>
+                    <posy>850</posy>
+                    <width>900</width>
+                    <label>$INFO[ListItem.Artist,,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]$INFO[ListItem.Artist, - ,]</label>
+                    <scroll>true</scroll>
+                    <pauseatend>0</pauseatend>
+                    <font>ScrollText2</font>
+                    <textcolor>55FFFFFF</textcolor>
+                    <align>left</align>
+                    <angle>90</angle>
+                    <scrollspeed>100</scrollspeed>
+                </control>
+				<control type="label">
+                    <description>Now Playing</description>
+                    <posx>735</posx>
+                    <posy>750</posy>
+                    <width>800</width>
+                    <label>$INFO[ListItem.Album,,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]$INFO[ListItem.Album, - ,]</label>
+                    <scroll>true</scroll>
+                    <font>ScrollText3</font>
+                    <pauseatend>0</pauseatend>
+                    <angle>90</angle>
+					<scrollspeed>40</scrollspeed>
+                    <textcolor>55FFFFFF</textcolor>
+                </control>
+			</control>
+        
+	
+		</control>
+    </include>
+    <include name="BigDialogCoordinates">
+		<posx>310</posx>
+		<posy>130</posy>
+	</include>
+	<include name="BigDialogBackground">	
+		<control type="image">
+			<posx></posx>
+			<posy></posy>
+			<width>660</width>
+			<height>460</height>
+			<texture>button.png</texture>
+		</control>
+		<control type="group">
+			<visible>!Skin.HasSetting(ThemeBackgroundColor)</visible>
+			<control type="image">
+				<posx>5</posx>
+				<posy>5</posy>
+				<width>650</width>
+				<height>450</height>
+				<texture>other_textures/black-back.png</texture>
+			</control>
+			<control type="image">
+				<posx>5</posx>
+				<posy>5</posy>
+				<width>650</width>
+				<height>450</height>
+				<texture>other_textures/black-back.png</texture>
+			</control>
+			<control type="image">
+				<posx>5</posx>
+				<posy>5</posy>
+				<width>645</width>
+				<height>450</height>
+				<texture>other_textures/black-back.png</texture>
+			</control>
+			<control type="image">
+			<posx>5</posx>
+			<posy>5</posy>
+			<width>650</width>
+			<height>450</height>
+			<texture>music_fanart_diffuse_blue.png</texture>
+		</control>
+		</control>
+		<control type="group">
+			<visible>Skin.HasSetting(ThemeBackgroundColor)</visible>
+			<control type="image">
+				<posx>5</posx>
+				<posy>5</posy>
+				<width>650</width>
+				<height>450</height>
+				<texture>tile.png</texture>
+			</control>
+			<control type="image">
+				<posx>5</posx>
+				<posy>5</posy>
+				<width>650</width>
+				<height>450</height>
+				<texture>music_fanart_diffuse.png</texture>
+			</control>
+		</control>
+	
+	</include>
+	<include name="MediumDialogCoordinates">
+		<posx>415</posx>
+        <posy>195</posy>
+	</include>
+	<include name="MediumDialogBackground">	
+		<control type="image">
+            <width>450</width>
+            <height>270</height>
+            <texture>button.png</texture>
+        </control>
+		<control type="group">
+			<visible>!Skin.HasSetting(ThemeBackgroundColor)</visible>
+			<control type="image">
+                <posx>5</posx>
+                <posy>5</posy>
+                <width>440</width>
+                <height>260</height>
+                <texture>other_textures/black-back.png</texture>
+            </control>
+			<control type="image">
+                <posx>5</posx>
+                <posy>5</posy>
+                <width>440</width>
+                <height>260</height>
+                <texture>other_textures/black-back.png</texture>
+            </control>
+			<control type="image">
+                <posx>5</posx>
+                <posy>5</posy>
+                <width>440</width>
+                <height>260</height>
+                <texture>other_textures/black-back.png</texture>
+            </control>
+			<control type="image">
+                <posx>5</posx>
+                <posy>5</posy>
+                <width>440</width>
+                <height>260</height>
+                <texture>music_fanart_diffuse_blue.png</texture>
+            </control>
+		</control>
+		<control type="group">
+			<visible>Skin.HasSetting(ThemeBackgroundColor)</visible>
+			<control type="image">
+                <posx>5</posx>
+                <posy>5</posy>
+                <width>440</width>
+                <height>260</height>
+                <texture>button.png</texture>
+            </control>
+			<control type="image">
+                <posx>5</posx>
+                <posy>5</posy>
+                <width>440</width>
+                <height>260</height>
+                <texture>tile.png</texture>
+            </control>
+			<control type="image">
+                <posx>5</posx>
+                <posy>5</posy>
+                <width>440</width>
+                <height>260</height>
+                <texture>music_fanart_diffuse.png</texture>
+            </control>
+		</control>
+    </include>        
+	<include name="SmallDialogCoordinates">
+		<posx>415</posx>
+        <posy>235</posy>
+	</include>
+	<include name="SmallDialogBackground">	
+		<control type="image">
+            <width>450</width>
+            <height>230</height>
+            <texture>button.png</texture>
+        </control>
+		<control type="group">
+			<visible>!Skin.HasSetting(ThemeBackgroundColor)</visible>
+			<control type="image">
+                <posx>5</posx>
+                <posy>5</posy>
+                <width>440</width>
+                <height>220</height>
+                <texture>other_textures/black-back.png</texture>
+            </control>
+			<control type="image">
+                <posx>5</posx>
+                <posy>5</posy>
+                <width>440</width>
+                <height>220</height>
+                <texture>other_textures/black-back.png</texture>
+            </control>
+			<control type="image">
+                <posx>5</posx>
+                <posy>5</posy>
+                <width>440</width>
+                <height>220</height>
+                <texture>other_textures/black-back.png</texture>
+            </control>
+			<control type="image">
+                <posx>5</posx>
+                <posy>5</posy>
+                <width>440</width>
+                <height>220</height>
+                <texture>music_fanart_diffuse_blue.png</texture>
+            </control>
+		</control>
+		<control type="group">
+			<visible>Skin.HasSetting(ThemeBackgroundColor)</visible>
+			<control type="image">
+                <posx>5</posx>
+                <posy>5</posy>
+                <width>440</width>
+                <height>220</height>
+                <texture>button.png</texture>
+            </control>
+			<control type="image">
+                <posx>5</posx>
+                <posy>5</posy>
+                <width>440</width>
+                <height>220</height>
+                <texture>tile.png</texture>
+            </control>
+			<control type="image">
+                <posx>5</posx>
+                <posy>5</posy>
+                <width>440</width>
+                <height>220</height>
+                <texture>music_fanart_diffuse.png</texture>
+            </control>
+		</control>
+    </include>        
+	<include name="RightMenuBackground">
+		<control type="group">
+			<visible>!Skin.HasSetting(ThemeBackgroundColor)</visible>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>320</width>
+				<height>720</height>
+				<texture>other_textures/black-back.png</texture>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>320</width>
+				<height>720</height>
+				<texture>other_textures/black-back.png</texture>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>320</width>
+				<height>720</height>
+				<texture>other_textures/black-back.png</texture>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>640</width>
+				<height>720</height>
+				<texture>music_fanart_diffuse_Blue.png</texture>
+			</control>
+		</control>
+		<control type="group">
+			<visible>Skin.HasSetting(ThemeBackgroundColor)</visible>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>320</width>
+				<height>720</height>
+				<texture>button.png</texture>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>320</width>
+				<height>720</height>
+				<texture>tile.png</texture>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>640</width>
+				<height>720</height>
+				<texture>music_fanart_diffuse.png</texture>
+			</control>
+		</control>
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>2</width>
+			<height>720</height>
+			<texture>button.png</texture>
+		</control>
+    </include>
+	<include name="LeftMenuBackground">
+		<control type="group">
+			<visible>!Skin.HasSetting(ThemeBackgroundColor)</visible>
+			<control type="image">
+				<description>background image</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>320</width>
+				<height>720</height>
+				<texture>other_textures/black-back.png</texture>
+			</control>
+			<control type="image">
+				<description>background image</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>320</width>
+				<height>720</height>
+				<texture>other_textures/black-back.png</texture>
+			</control>
+			<control type="image">
+				<description>background image</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>320</width>
+				<height>720</height>
+				<texture>other_textures/black-back.png</texture>
+			</control>
+			<control type="image">
+				<description>background image</description>
+				<posx>-320</posx>
+				<posy>0</posy>
+				<width>640</width>
+				<height>720</height>
+				<texture>music_fanart_diffuse_Blue.png</texture>
+			</control>
+		</control>
+		<control type="group">
+			<visible>Skin.HasSetting(ThemeBackgroundColor)</visible>
+			<control type="image">
+				<description>background image</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>320</width>
+				<height>720</height>
+				<texture>button.png</texture>
+			</control>
+			<control type="image">
+				<description>background image</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>320</width>
+				<height>720</height>
+				<texture>tile.png</texture>
+			</control>
+			<control type="image">
+				<description>background image</description>
+				<posx>-320</posx>
+				<posy>0</posy>
+				<width>640</width>
+				<height>720</height>
+				<texture>music_fanart_diffuse.png</texture>
+			</control>
+		</control>
+		<control type="image">
+			<description>background image</description>
+			<posx>318</posx>
+			<posy>0</posy>
+			<width>2</width>
+			<height>720</height>
+			<texture>button.png</texture>
+	    </control>
+	</include>
+	<include name="PanelWideButtonTitle">	
+		<posx>10</posx>
+        <posy>120</posy>
+        <height>30</height>
+        <width>280</width>
+        <font>Panel_Button_Title</font>
+        <align>left</align>
+	</include>
+	<include name="PanelWideButtonIcon">	
+		<posx>102</posx>
+        <posy>22</posy>
+        <height>90</height>
+        <width>90</width>
+        <aspectratio scalediffuse="false">stretch</aspectratio>
+	</include>
+	<include name="PanelWideButtonImageNF">
+		<width>295</width>
+        <height>155</height>
+        <texture background="true">tile.png</texture>
+        <aspectratio scalediffuse="false">stretch</aspectratio>
+	</include>
+	<include name="PanelWideButtonImageFO">
+		<width>295</width>
+        <height>155</height>
+        <texture>button.png</texture>
+        <animation type="Focus" reversible="false">
+            <effect type="fade" start="0" end="100" time="400" easing="out" tween="square" />
+        </animation>
+        <aspectratio scalediffuse="false">stretch</aspectratio>
+	</include>
+	<include name="PanelButtonTitle">	
+		<posx>10</posx>
+        <posy>120</posy>
+        <height>30</height>
+        <width>135</width>
+        <font>Panel_Button_Title</font>
+        <align>left</align>
+	</include>
+	<include name="PanelButtonHeaderTitle">
+		<posx>150</posx>
+		<posy>0</posy>
+		<height>25</height>
+		<width>125</width>
+		<font>Panel_Button_Title</font>
+		<align>right</align>
+	</include>
+ 	<include name="PanelButtonIcon">	
+		<posx>42</posx>
+        <posy>32</posy>
+        <height>70</height>
+        <width>70</width>
+        <aspectratio scalediffuse="false">stretch</aspectratio>
+	</include>
+	<include name="PanelButtonImageNF">
+		<width>155</width>
+        <height>155</height>
+        <texture background="true">tile.png</texture>
+        <aspectratio scalediffuse="false">stretch</aspectratio>
+	</include>
+	<include name="PanelButtonImageFO">
+		<width>155</width>
+        <height>155</height>
+        <texture>button.png</texture>
+        <animation type="Focus" reversible="false">
+            <effect type="fade" start="0" end="100" time="400" easing="out" tween="square" />
+        </animation>
+        <aspectratio scalediffuse="false">stretch</aspectratio>
+	</include>
+	<include name="PanelButtonTitle2ndCol">	
+		<posx>170</posx>
+        <posy>120</posy>
+        <height>30</height>
+        <width>135</width>
+        <font>Panel_Button_Title</font>
+        <align>left</align>
+	</include>
+	<include name="PanelButtonHeaderTitle2ndCol">
+		<posx>310</posx>
+		<posy>0</posy>
+		<height>25</height>
+		<width>125</width>
+		<font>Panel_Button_Title</font>
+		<align>right</align>
+	</include>
+	<include name="PanelButtonIcon2ndCol">	
+		<posx>202</posx>
+        <posy>32</posy>
+        <height>70</height>
+        <width>70</width>
+        <aspectratio scalediffuse="false">stretch</aspectratio>
+	</include>
+	<include name="PanelButtonImageNF2ndCol">
+		<posx>160</posx>
+		<width>155</width>
+        <height>155</height>
+        <texture background="true">tile.png</texture>
+        <aspectratio scalediffuse="false">stretch</aspectratio>
+	</include>
+	<include name="PanelButtonImageFO2ndCol">
+		<posx>160</posx>
+		<width>155</width>
+        <height>155</height>
+        <texture>button.png</texture>
+        <animation type="Focus" reversible="false">
+            <effect type="fade" start="0" end="100" time="400" easing="out" tween="square" />
+        </animation>
+        <aspectratio scalediffuse="false">stretch</aspectratio>
+	</include>
+	<include name="PanelRectButtonTitle">	
+		<posx>10</posx>
+        <posy>120</posy>
+        <height>30</height>
+        <width>280</width>
+        <font>Panel_Button_Title</font>
+        <align>left</align>
+	</include>
+	<include name="PanelRectButtonIcon">	
+		<posx>112</posx>
+        <posy>22</posy>
+        <height>90</height>
+        <width>90</width>
+        <aspectratio scalediffuse="false">stretch</aspectratio>
+	</include>
+	<include name="PanelRectButtonImageNF">
+		<width>315</width>
+        <height>155</height>
+        <texture background="true">tile.png</texture>
+        <aspectratio scalediffuse="false">stretch</aspectratio>
+	</include>
+	<include name="PanelRectButtonImageFO">
+		<width>315</width>
+        <height>155</height>
+        <texture>button.png</texture>
+        <animation type="Focus" reversible="false">
+            <effect type="fade" start="0" end="100" time="400" easing="out" tween="square" />
+        </animation>
+        <aspectratio scalediffuse="false">stretch</aspectratio>
+	</include>
+	<include name="PanelRectButtonHeaderTitle">
+		<posx>300</posx>
+		<posy>5</posy>
+		<height>30</height>
+		<width>275</width>
+		<font>Panel_Button_Title</font>
+		<align>right</align>
+	</include>
+	<include name="ViewMainTitle">	
+		<posx>50</posx>
+        <posy>215</posy>
+        <height>30</height>
+        <width>1180</width>
+        <font>Panel_Title</font>
+        <scroll>true</scroll>
+        <scrollout>false</scrollout>
+        <pauseatend>600</pauseatend>
+        <scrollspeed>50</scrollspeed>
+        <aligny>top</aligny>
+		<align>left</align>
+	</include>
+	<include name="ViewFooterTitle">	
+		<posx>50</posx>
+		<posy>610</posy>
+		<width>600</width>
+		<height>50</height>
+		<align>left</align>
+		<aligny>top</aligny>
+		<font>Panel_Title_Footer</font>
+	</include>
+	<include name="PanelCoordinates">
+		<posx>50</posx>
+		<posy>290</posy>
+	</include>
+	<!-- This defines 8 Items as recommended TV Episodes -->
+	<include name="RecommendedItemsTV">
+      <item id="11">
+          <label>$INFO[Window(Home).Property(RecommendedEpisode.1.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedEpisode.1.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RecommendedEpisode.1.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedEpisode.1.Art(tvshow.poster))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RecommendedEpisode.1.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.1.TVshowTitle))</visible>
+      </item>
+      <item id="12">
+          <label>$INFO[Window(Home).Property(RecommendedEpisode.2.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedEpisode.2.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RecommendedEpisode.2.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedEpisode.2.Art(tvshow.poster))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RecommendedEpisode.2.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.2.TVshowTitle))</visible>
+      </item>
+      <item id="13">
+          <label>$INFO[Window(Home).Property(RecommendedEpisode.3.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedEpisode.3.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RecommendedEpisode.3.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedEpisode.3.Art(tvshow.poster))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RecommendedEpisode.3.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.3.TVshowTitle))</visible>
+      </item>
+      <item id="14">
+          <label>$INFO[Window(Home).Property(RecommendedEpisode.4.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedEpisode.4.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RecommendedEpisode.4.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedEpisode.4.Art(tvshow.poster))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RecommendedEpisode.4.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.4.TVshowTitle))</visible>
+      </item>
+      <item id="15">
+          <label>$INFO[Window(Home).Property(RecommendedEpisode.5.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedEpisode.5.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RecommendedEpisode.5.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedEpisode.5.Art(tvshow.poster))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RecommendedEpisode.5.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.5.TVshowTitle))</visible>
+      </item>
+      <item id="16">
+          <label>$INFO[Window(Home).Property(RecommendedEpisode.6.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedEpisode.6.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RecommendedEpisode.6.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedEpisode.6.Art(tvshow.poster))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RecommendedEpisode.6.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.6.TVshowTitle))</visible>
+      </item>
+      <item id="17">
+          <label>$INFO[Window(Home).Property(RecommendedEpisode.7.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedEpisode.7.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RecommendedEpisode.7.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedEpisode.7.Art(tvshow.poster))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RecommendedEpisode.7.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.7.TVshowTitle))</visible>
+      </item>
+      <item id="18">
+          <label>$INFO[Window(Home).Property(RecommendedEpisode.8.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedEpisode.8.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RecommendedEpisode.8.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedEpisode.8.Art(tvshow.poster))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RecommendedEpisode.8.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.8.TVshowTitle))</visible>
+      </item>
+  </include>
+  	<include name="RecommendedItemsTVThumbs">
+      <item id="11">
+          <label>$INFO[Window(Home).Property(RecommendedEpisode.1.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedEpisode.1.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RecommendedEpisode.1.Play)]</onclick>
+		  <thumb>$INFO[Window(Home).Property(RecommendedEpisode.1.Art(thumb))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RecommendedEpisode.1.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.1.TVshowTitle))</visible>
+      </item>
+      <item id="12">
+          <label>$INFO[Window(Home).Property(RecommendedEpisode.2.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedEpisode.2.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RecommendedEpisode.2.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedEpisode.2.Art(thumb))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RecommendedEpisode.2.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.2.TVshowTitle))</visible>
+      </item>
+      <item id="13">
+          <label>$INFO[Window(Home).Property(RecommendedEpisode.3.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedEpisode.3.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RecommendedEpisode.3.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedEpisode.3.Art(thumb))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RecommendedEpisode.3.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.3.TVshowTitle))</visible>
+      </item>
+      <item id="14">
+          <label>$INFO[Window(Home).Property(RecommendedEpisode.4.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedEpisode.4.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RecommendedEpisode.4.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedEpisode.4.Art(thumb))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RecommendedEpisode.4.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.4.TVshowTitle))</visible>
+      </item>
+      <item id="15">
+          <label>$INFO[Window(Home).Property(RecommendedEpisode.5.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedEpisode.5.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RecommendedEpisode.5.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedEpisode.5.Art(thumb))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RecommendedEpisode.5.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.5.TVshowTitle))</visible>
+      </item>
+      <item id="16">
+          <label>$INFO[Window(Home).Property(RecommendedEpisode.6.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedEpisode.6.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RecommendedEpisode.6.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedEpisode.6.Art(thumb))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RecommendedEpisode.6.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.6.TVshowTitle))</visible>
+      </item>
+      <item id="17">
+          <label>$INFO[Window(Home).Property(RecommendedEpisode.7.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedEpisode.7.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RecommendedEpisode.7.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedEpisode.7.Art(thumb))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RecommendedEpisode.7.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.7.TVshowTitle))</visible>
+      </item>
+      <item id="18">
+          <label>$INFO[Window(Home).Property(RecommendedEpisode.8.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedEpisode.8.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RecommendedEpisode.8.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedEpisode.8.Art(thumb))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RecommendedEpisode.8.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.8.TVshowTitle))</visible>
+      </item>
+  </include>
+    <!-- This defines 8 Items as recommended Movies -->
+  <include name="RecommendedItemsMovies">
+      <item id="11">
+          <label>$INFO[Window(Home).Property(RecommendedMovie.1.Year)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedMovie.1.Title)]</label2>
+          <onclick>PlayMedia($ESCINFO[Window(Home).Property(RecommendedMovie.1.File)])</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedMovie.1.Art(poster))]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))</visible>
+      </item>
+      <item id="12">
+          <label>$INFO[Window(Home).Property(RecommendedMovie.2.Year)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedMovie.2.Title)]</label2>
+          <onclick>PlayMedia($ESCINFO[Window(Home).Property(RecommendedMovie.2.File)])</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedMovie.2.Art(poster))]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedMovie.2.Title))</visible>
+      </item>
+      <item id="13">
+          <label>$INFO[Window(Home).Property(RecommendedMovie.3.Year)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedMovie.3.Title)]</label2>
+          <onclick>PlayMedia($ESCINFO[Window(Home).Property(RecommendedMovie.3.File)])</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedMovie.3.Art(poster))]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedMovie.3.Title))</visible>
+      </item>
+      <item id="14">
+          <label>$INFO[Window(Home).Property(RecommendedMovie.4.Year)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedMovie.4.Title)]</label2>
+          <onclick>PlayMedia($ESCINFO[Window(Home).Property(RecommendedMovie.4.File)])</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedMovie.4.Art(poster))]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedMovie.4.Title))</visible>
+      </item>
+      <item id="15">
+          <label>$INFO[Window(Home).Property(RecommendedMovie.5.Year)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedMovie.5.Title)]</label2>
+          <onclick>PlayMedia($ESCINFO[Window(Home).Property(RecommendedMovie.5.File)])</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedMovie.5.Art(poster))]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedMovie.5.Title))</visible>
+      </item>
+      <item id="16">
+          <label>$INFO[Window(Home).Property(RecommendedMovie.6.Year)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedMovie.6.Title)]</label2>
+          <onclick>PlayMedia($ESCINFO[Window(Home).Property(RecommendedMovie.6.File)])</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedMovie.6.Art(poster))]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedMovie.6.Title))</visible>
+      </item>
+      <item id="17">
+          <label>$INFO[Window(Home).Property(RecommendedMovie.7.Year)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedMovie.7.Title)]</label2>
+          <onclick>PlayMedia($ESCINFO[Window(Home).Property(RecommendedMovie.7.File)])</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedMovie.7.Art(poster))]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedMovie.7.Title))</visible>
+      </item>
+      <item id="18">
+          <label>$INFO[Window(Home).Property(RecommendedMovie.8.Year)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedMovie.8.Title)]</label2>
+          <onclick>PlayMedia($ESCINFO[Window(Home).Property(RecommendedMovie.8.File)])</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedMovie.8.Art(poster))]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedMovie.8.Title))</visible>
+      </item>
+  </include>
+   <!-- This defines 10 Items as recommended Albums -->
+  <include name="RecommendedItemsMusic">
+      <item id="11">
+          <label>$INFO[Window(Home).Property(RecommendedAlbum.1.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedAlbum.1.Artist)]</label2>
+          <onclick>PlayList.Clear</onclick>
+          <onclick>$INFO[Window(Home).Property(RecommendedAlbum.1.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedAlbum.1.Thumb)]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))</visible>
+      </item>
+      <item id="12">
+          <label>$INFO[Window(Home).Property(RecommendedAlbum.2.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedAlbum.2.Artist)]</label2>
+          <onclick>PlayList.Clear</onclick>
+          <onclick>$INFO[Window(Home).Property(RecommendedAlbum.2.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedAlbum.2.Thumb)]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedAlbum.2.Title))</visible>
+      </item>
+      <item id="13">
+          <label>$INFO[Window(Home).Property(RecommendedAlbum.3.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedAlbum.3.Artist)]</label2>
+          <onclick>PlayList.Clear</onclick>
+          <onclick>$INFO[Window(Home).Property(RecommendedAlbum.3.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedAlbum.3.Thumb)]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedAlbum.3.Title))</visible>
+      </item>
+      <item id="14">
+          <label>$INFO[Window(Home).Property(RecommendedAlbum.4.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedAlbum.4.Artist)]</label2>
+          <onclick>PlayList.Clear</onclick>
+          <onclick>$INFO[Window(Home).Property(RecommendedAlbum.4.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedAlbum.4.Thumb)]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedAlbum.4.Title))</visible>
+      </item>
+      <item id="15">
+          <label>$INFO[Window(Home).Property(RecommendedAlbum.5.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedAlbum.5.Artist)]</label2>
+          <onclick>PlayList.Clear</onclick>
+          <onclick>$INFO[Window(Home).Property(RecommendedAlbum.5.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedAlbum.5.Thumb)]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedAlbum.5.Title))</visible>
+      </item>
+      <item id="16">
+          <label>$INFO[Window(Home).Property(RecommendedAlbum.6.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedAlbum.6.Artist)]</label2>
+          <onclick>PlayList.Clear</onclick>
+          <onclick>$INFO[Window(Home).Property(RecommendedAlbum.6.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedAlbum.6.Thumb)]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedAlbum.6.Title))</visible>
+      </item>
+      <item id="17">
+          <label>$INFO[Window(Home).Property(RecommendedAlbum.7.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedAlbum.7.Artist)]</label2>
+          <onclick>PlayList.Clear</onclick>
+          <onclick>$INFO[Window(Home).Property(RecommendedAlbum.7.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedAlbum.7.Thumb)]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedAlbum.7.Title))</visible>
+      </item>
+      <item id="18">
+          <label>$INFO[Window(Home).Property(RecommendedAlbum.8.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedAlbum.8.Artist)]</label2>
+          <onclick>PlayList.Clear</onclick>
+          <onclick>$INFO[Window(Home).Property(RecommendedAlbum.8.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedAlbum.8.Thumb)]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedAlbum.8.Title))</visible>
+      </item>
+	  <item id="19">
+          <label>$INFO[Window(Home).Property(RecommendedAlbum.9.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedAlbum.9.Artist)]</label2>
+          <onclick>PlayList.Clear</onclick>
+          <onclick>$INFO[Window(Home).Property(RecommendedAlbum.9.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedAlbum.9.Thumb)]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedAlbum.9.Title))</visible>
+      </item>
+	  <item id="110">
+          <label>$INFO[Window(Home).Property(RecommendedAlbum.10.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RecommendedAlbum.10.Artist)]</label2>
+          <onclick>PlayList.Clear</onclick>
+          <onclick>$INFO[Window(Home).Property(RecommendedAlbum.10.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RecommendedAlbum.10.Thumb)]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RecommendedAlbum.10.Title))</visible>
+      </item>
+  </include>
+  <!-- This defines 8 Items as recent Movies -->
+  <include name="RecentItemsMovies">
+      <item id="11">
+          <label>$INFO[Window.Property(LatestMovie.1.Year)]</label>
+          <label2>$INFO[Window.Property(LatestMovie.1.Title)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestMovie.1.Path)])</onclick>
+          <thumb>$INFO[Window.Property(LatestMovie.1.Thumb)]</thumb>
+          <visible>!IsEmpty(Window.Property(LatestMovie.1.Title))</visible>
+      </item>
+      <item id="12">
+          <label>$INFO[Window.Property(LatestMovie.2.Year)]</label>
+          <label2>$INFO[Window.Property(LatestMovie.2.Title)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestMovie.2.Path)])</onclick>
+          <thumb>$INFO[Window.Property(LatestMovie.2.Thumb)]</thumb>
+          <visible>!IsEmpty(Window.Property(LatestMovie.2.Title))</visible>
+      </item>
+      <item id="13">
+          <label>$INFO[Window.Property(LatestMovie.3.Year)]</label>
+          <label2>$INFO[Window.Property(LatestMovie.3.Title)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestMovie.3.Path)])</onclick>
+          <thumb>$INFO[Window.Property(LatestMovie.3.Thumb)]</thumb>
+          <visible>!IsEmpty(Window.Property(LatestMovie.3.Title))</visible>
+      </item>
+      <item id="14">
+          <label>$INFO[Window.Property(LatestMovie.4.Year)]</label>
+          <label2>$INFO[Window.Property(LatestMovie.4.Title)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestMovie.4.Path)])</onclick>
+          <thumb>$INFO[Window.Property(LatestMovie.4.Thumb)]</thumb>
+          <visible>!IsEmpty(Window.Property(LatestMovie.4.Title))</visible>
+      </item>
+      <item id="15">
+          <label>$INFO[Window.Property(LatestMovie.5.Year)]</label>
+          <label2>$INFO[Window.Property(LatestMovie.5.Title)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestMovie.5.Path)])</onclick>
+          <thumb>$INFO[Window.Property(LatestMovie.5.Thumb)]</thumb>
+          <visible>!IsEmpty(Window.Property(LatestMovie.5.Title))</visible>
+      </item>
+      <item id="16">
+          <label>$INFO[Window.Property(LatestMovie.6.Year)]</label>
+          <label2>$INFO[Window.Property(LatestMovie.6.Title)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestMovie.6.Path)])</onclick>
+          <thumb>$INFO[Window.Property(LatestMovie.6.Thumb)]</thumb>
+          <visible>!IsEmpty(Window.Property(LatestMovie.6.Title))</visible>
+      </item>
+      <item id="17">
+          <label>$INFO[Window.Property(LatestMovie.7.Year)]</label>
+          <label2>$INFO[Window.Property(LatestMovie.7.Title)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestMovie.7.Path)])</onclick>
+          <thumb>$INFO[Window.Property(LatestMovie.7.Thumb)]</thumb>
+          <visible>!IsEmpty(Window.Property(LatestMovie.7.Title))</visible>
+      </item>
+      <item id="18">
+          <label>$INFO[Window.Property(LatestMovie.8.Year)]</label>
+          <label2>$INFO[Window.Property(LatestMovie.8.Title)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestMovie.8.Path)])</onclick>
+          <thumb>$INFO[Window.Property(LatestMovie.8.Thumb)]</thumb>
+          <visible>!IsEmpty(Window.Property(LatestMovie.8.Title))</visible>
+      </item>
+
+  </include>
+   <!-- This defines 8 Items as recent Tv Episodes -->
+  <include name="RecentItemsTV">
+      <item id="11">
+          <label>$INFO[Window(Home).Property(LatestEpisode.1.EpisodeTitle)]</label>
+          <label2>$INFO[Window(Home).Property(LatestEpisode.1.ShowTitle)]</label2>
+		  <onclick>PlayMedia($INFO[Window.Property(LatestEpisode.1.Path)])</onclick>
+          <thumb>$INFO[Window(Home).Property(RecentEpisode.1.Art(tvshow.poster))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RecentEpisode.1.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(LatestEpisode.1.EpisodeTitle))</visible>
+		</item>
+      <item id="12">
+          <label>$INFO[Window(Home).Property(LatestEpisode.2.EpisodeTitle)]</label>
+          <label2>$INFO[Window(Home).Property(LatestEpisode.2.ShowTitle)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestEpisode.2.Path)])</onclick>
+          <thumb>$INFO[Window(Home).Property(LatestEpisode.2.ShowThumb)]</thumb>
+          <property name="EpisodeNo">$INFO[Window(Home).Property(LatestEpisode.2.EpisodeNo)]</property>
+		  <visible>!IsEmpty(Window(Home).Property(LatestEpisode.2.EpisodeTitle))</visible>
+	  </item>
+      <item id="13">
+          <label>$INFO[Window(Home).Property(LatestEpisode.3.EpisodeTitle)]</label>
+          <label2>$INFO[Window(Home).Property(LatestEpisode.3.ShowTitle)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestEpisode.3.Path)])</onclick>
+          <thumb>$INFO[Window(Home).Property(RecentEpisode.3.Art(tvshow.poster))]</thumb>
+          <property name="EpisodeNo">$INFO[Window(Home).Property(LatestEpisode.3.EpisodeNo)]</property>
+		  <visible>!IsEmpty(Window(Home).Property(LatestEpisode.3.EpisodeTitle))</visible>
+      </item>
+      <item id="14">
+          <label>$INFO[Window(Home).Property(LatestEpisode.4.EpisodeTitle)]</label>
+          <label2>$INFO[Window(Home).Property(LatestEpisode.4.ShowTitle)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestEpisode.4.Path)])</onclick>
+          <thumb>$INFO[Window(Home).Property(LatestEpisode.4.ShowThumb)]</thumb>
+          <property name="EpisodeNo">$INFO[Window(Home).Property(LatestEpisode.4.EpisodeNo)]</property>
+		  <visible>!IsEmpty(Window(Home).Property(LatestEpisode.4.EpisodeTitle))</visible>
+      </item>
+      <item id="15">
+          <label>$INFO[Window(Home).Property(LatestEpisode.5.EpisodeTitle)]</label>
+          <label2>$INFO[Window(Home).Property(LatestEpisode.5.ShowTitle)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestEpisode.5.Path)])</onclick>
+          <thumb>$INFO[Window(Home).Property(LatestEpisode.5.ShowThumb)]</thumb>
+          <property name="EpisodeNo">$INFO[Window(Home).Property(LatestEpisode.5.EpisodeNo)]</property>
+		  <visible>!IsEmpty(Window(Home).Property(LatestEpisode.5.EpisodeTitle))</visible>
+      </item>
+      <item id="16">
+          <label>$INFO[Window(Home).Property(LatestEpisode.6.EpisodeTitle)]</label>
+          <label2>$INFO[Window(Home).Property(LatestEpisode.6.ShowTitle)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestEpisode.6.Path)])</onclick>
+          <thumb>$INFO[Window(Home).Property(LatestEpisode.6.ShowThumb)]</thumb>
+          <property name="EpisodeNo">$INFO[Window(Home).Property(LatestEpisode.6.EpisodeNo)]</property>
+		  <visible>!IsEmpty(Window(Home).Property(LatestEpisode.6.EpisodeTitle))</visible>
+      </item>
+      <item id="17">
+          <label>$INFO[Window(Home).Property(LatestEpisode.7.EpisodeTitle)]</label>
+          <label2>$INFO[Window(Home).Property(LatestEpisode.7.ShowTitle)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestEpisode.7.Path)])</onclick>
+          <thumb>$INFO[Window(Home).Property(LatestEpisode.7.ShowThumb)]</thumb>
+          <property name="EpisodeNo">$INFO[Window(Home).Property(LatestEpisode.7.EpisodeNo)]</property>
+		  <visible>!IsEmpty(Window(Home).Property(LatestEpisode.7.EpisodeTitle))</visible>
+      </item>
+      <item id="18">
+          <label>$INFO[Window(Home).Property(LatestEpisode.8.EpisodeTitle)]</label>
+          <label2>$INFO[Window(Home).Property(LatestEpisode.8.ShowTitle)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestEpisode.8.Path)])</onclick>
+          <thumb>$INFO[Window(Home).Property(LatestEpisode.8.ShowThumb)]</thumb>
+          <property name="EpisodeNo">$INFO[Window(Home).Property(LatestEpisode.8.EpisodeNo)]</property>
+		  <visible>!IsEmpty(Window(Home).Property(LatestEpisode.8.EpisodeTitle))</visible>
+      </item>
+  </include>
+	<include name="RecentItemsTVThumbs">
+      <item id="11">
+          <label>$INFO[Window(Home).Property(LatestEpisode.1.EpisodeTitle)]</label>
+          <label2>$INFO[Window(Home).Property(LatestEpisode.1.ShowTitle)]</label2>
+		  <onclick>PlayMedia($INFO[Window.Property(LatestEpisode.1.Path)])</onclick>
+          <thumb>$INFO[Window(Home).Property(LatestEpisode.1.Thumb)]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RecentEpisode.1.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(LatestEpisode.1.EpisodeTitle))</visible>
+		</item>
+      <item id="12">
+          <label>$INFO[Window(Home).Property(LatestEpisode.2.EpisodeTitle)]</label>
+          <label2>$INFO[Window(Home).Property(LatestEpisode.2.ShowTitle)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestEpisode.2.Path)])</onclick>
+          <thumb>$INFO[Window(Home).Property(LatestEpisode.2.Thumb)]</thumb>
+          <property name="EpisodeNo">$INFO[Window(Home).Property(LatestEpisode.2.EpisodeNo)]</property>
+		  <visible>!IsEmpty(Window(Home).Property(LatestEpisode.2.EpisodeTitle))</visible>
+	  </item>
+      <item id="13">
+          <label>$INFO[Window(Home).Property(LatestEpisode.3.EpisodeTitle)]</label>
+          <label2>$INFO[Window(Home).Property(LatestEpisode.3.ShowTitle)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestEpisode.3.Path)])</onclick>
+          <thumb>$INFO[Window(Home).Property(LatestEpisode.3.Thumb)]</thumb>
+          <property name="EpisodeNo">$INFO[Window(Home).Property(LatestEpisode.3.EpisodeNo)]</property>
+		  <visible>!IsEmpty(Window(Home).Property(LatestEpisode.3.EpisodeTitle))</visible>
+      </item>
+      <item id="14">
+          <label>$INFO[Window(Home).Property(LatestEpisode.4.EpisodeTitle)]</label>
+          <label2>$INFO[Window(Home).Property(LatestEpisode.4.ShowTitle)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestEpisode.4.Path)])</onclick>
+          <thumb>$INFO[Window(Home).Property(LatestEpisode.4.Thumb)]</thumb>
+          <property name="EpisodeNo">$INFO[Window(Home).Property(LatestEpisode.4.EpisodeNo)]</property>
+		  <visible>!IsEmpty(Window(Home).Property(LatestEpisode.4.EpisodeTitle))</visible>
+      </item>
+      <item id="15">
+          <label>$INFO[Window(Home).Property(LatestEpisode.5.EpisodeTitle)]</label>
+          <label2>$INFO[Window(Home).Property(LatestEpisode.5.ShowTitle)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestEpisode.5.Path)])</onclick>
+          <thumb>$INFO[Window(Home).Property(LatestEpisode.5.Thumb)]</thumb>
+          <property name="EpisodeNo">$INFO[Window(Home).Property(LatestEpisode.5.EpisodeNo)]</property>
+		  <visible>!IsEmpty(Window(Home).Property(LatestEpisode.5.EpisodeTitle))</visible>
+      </item>
+      <item id="16">
+          <label>$INFO[Window(Home).Property(LatestEpisode.6.EpisodeTitle)]</label>
+          <label2>$INFO[Window(Home).Property(LatestEpisode.6.ShowTitle)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestEpisode.6.Path)])</onclick>
+          <thumb>$INFO[Window(Home).Property(LatestEpisode.6.Thumb)]</thumb>
+          <property name="EpisodeNo">$INFO[Window(Home).Property(LatestEpisode.6.EpisodeNo)]</property>
+		  <visible>!IsEmpty(Window(Home).Property(LatestEpisode.6.EpisodeTitle))</visible>
+      </item>
+      <item id="17">
+          <label>$INFO[Window(Home).Property(LatestEpisode.7.EpisodeTitle)]</label>
+          <label2>$INFO[Window(Home).Property(LatestEpisode.7.ShowTitle)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestEpisode.7.Path)])</onclick>
+          <thumb>$INFO[Window(Home).Property(LatestEpisode.7.Thumb)]</thumb>
+          <property name="EpisodeNo">$INFO[Window(Home).Property(LatestEpisode.7.EpisodeNo)]</property>
+		  <visible>!IsEmpty(Window(Home).Property(LatestEpisode.7.EpisodeTitle))</visible>
+      </item>
+      <item id="18">
+          <label>$INFO[Window(Home).Property(LatestEpisode.8.EpisodeTitle)]</label>
+          <label2>$INFO[Window(Home).Property(LatestEpisode.8.ShowTitle)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestEpisode.8.Path)])</onclick>
+          <thumb>$INFO[Window(Home).Property(LatestEpisode.8.Thumb)]</thumb>
+          <property name="EpisodeNo">$INFO[Window(Home).Property(LatestEpisode.8.EpisodeNo)]</property>
+		  <visible>!IsEmpty(Window(Home).Property(LatestEpisode.8.EpisodeTitle))</visible>
+      </item>
+  </include>
+   
+  <!-- This defines 10 Items as recent Music Albums -->
+  <include name="RecentItemsMusic">
+      <item id="11">
+          <label>$INFO[Window.Property(LatestAlbum.1.Title)]</label>
+          <label2>$INFO[Window.Property(LatestAlbum.1.Artist)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestAlbum.1.Path)])</onclick>
+          <thumb>$INFO[Window.Property(LatestAlbum.1.Thumb)]</thumb>
+          <visible>!IsEmpty(Window.Property(LatestAlbum.1.Title))</visible>
+      </item>
+      <item id="12">
+          <label>$INFO[Window.Property(LatestAlbum.2.Title)]</label>
+          <label2>$INFO[Window.Property(LatestAlbum.2.Artist)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestAlbum.2.Path)])</onclick>
+          <thumb>$INFO[Window.Property(LatestAlbum.2.Thumb)]</thumb>
+          <visible>!IsEmpty(Window.Property(LatestAlbum.2.Title))</visible>
+      </item>
+      <item id="13">
+          <label>$INFO[Window.Property(LatestAlbum.3.Title)]</label>
+          <label2>$INFO[Window.Property(LatestAlbum.3.Artist)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestAlbum.3.Path)])</onclick>
+          <thumb>$INFO[Window.Property(LatestAlbum.3.Thumb)]</thumb>
+          <visible>!IsEmpty(Window.Property(LatestAlbum.3.Title))</visible>
+      </item>
+      <item id="14">
+          <label>$INFO[Window.Property(LatestAlbum.4.Title)]</label>
+          <label2>$INFO[Window.Property(LatestAlbum.4.Artist)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestAlbum.4.Path)])</onclick>
+          <thumb>$INFO[Window.Property(LatestAlbum.4.Thumb)]</thumb>
+          <visible>!IsEmpty(Window.Property(LatestAlbum.4.Title))</visible>
+      </item>
+      <item id="15">
+          <label>$INFO[Window.Property(LatestAlbum.5.Title)]</label>
+          <label2>$INFO[Window.Property(LatestAlbum.5.Artist)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestAlbum.5.Path)])</onclick>
+          <thumb>$INFO[Window.Property(LatestAlbum.5.Thumb)]</thumb>
+          <visible>!IsEmpty(Window.Property(LatestAlbum.5.Title))</visible>
+      </item>
+      <item id="16">
+          <label>$INFO[Window.Property(LatestAlbum.6.Title)]</label>
+          <label2>$INFO[Window.Property(LatestAlbum.6.Artist)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestAlbum.6.Path)])</onclick>
+          <thumb>$INFO[Window.Property(LatestAlbum.6.Thumb)]</thumb>
+          <visible>!IsEmpty(Window.Property(LatestAlbum.6.Title))</visible>
+      </item>
+      <item id="17">
+          <label>$INFO[Window.Property(LatestAlbum.7.Title)]</label>
+          <label2>$INFO[Window.Property(LatestAlbum.7.Artist)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestAlbum.7.Path)])</onclick>
+          <thumb>$INFO[Window.Property(LatestAlbum.7.Thumb)]</thumb>
+          <visible>!IsEmpty(Window.Property(LatestAlbum.7.Title))</visible>
+      </item>
+      <item id="18">
+          <label>$INFO[Window.Property(LatestAlbum.8.Title)]</label>
+          <label2>$INFO[Window.Property(LatestAlbum.8.Artist)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestAlbum.8.Path)])</onclick>
+          <thumb>$INFO[Window.Property(LatestAlbum.8.Thumb)]</thumb>
+          <visible>!IsEmpty(Window.Property(LatestAlbum.8.Title))</visible>
+      </item>
+      <item id="19">
+          <label>$INFO[Window.Property(LatestAlbum.9.Title)]</label>
+          <label2>$INFO[Window.Property(LatestAlbum.9.Artist)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestAlbum.9.Path)])</onclick>
+          <thumb>$INFO[Window.Property(LatestAlbum.9.Thumb)]</thumb>
+          <visible>!IsEmpty(Window.Property(LatestAlbum.9.Title))</visible>
+      </item>
+	 <item id="110">
+          <label>$INFO[Window.Property(LatestAlbum.10.Title)]</label>
+          <label2>$INFO[Window.Property(LatestAlbum.10.Artist)]</label2>
+          <onclick>PlayMedia($INFO[Window.Property(LatestAlbum.10.Path)])</onclick>
+          <thumb>$INFO[Window.Property(LatestAlbum.10.Thumb)]</thumb>
+          <visible>!IsEmpty(Window.Property(LatestAlbum.10.Title))</visible>
+      </item>
+  </include>
+  <!-- This defines 8 Items as random Movies -->
+  <include name="RandomItemsMovies">
+      <item id="11">
+          <label>$INFO[Window(Home).Property(RandomMovie.1.Year)]</label>
+          <label2>$INFO[Window(Home).Property(RandomMovie.1.Title)]</label2>
+          <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovie.1.File)])</onclick>
+          <thumb>$INFO[Window(Home).Property(RandomMovie.1.Art(poster))]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RandomMovie.1.Title))</visible>
+      </item>
+      <item id="12">
+          <label>$INFO[Window(Home).Property(RandomMovie.2.Year)]</label>
+          <label2>$INFO[Window(Home).Property(RandomMovie.2.Title)]</label2>
+          <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovie.2.File)])</onclick>
+          <thumb>$INFO[Window(Home).Property(RandomMovie.2.Art(poster))]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RandomMovie.2.Title))</visible>
+      </item>
+      <item id="13">
+          <label>$INFO[Window(Home).Property(RandomMovie.3.Year)]</label>
+          <label2>$INFO[Window(Home).Property(RandomMovie.3.Title)]</label2>
+          <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovie.3.File)])</onclick>
+          <thumb>$INFO[Window(Home).Property(RandomMovie.3.Art(poster))]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RandomMovie.3.Title))</visible>
+      </item>
+      <item id="14">
+          <label>$INFO[Window(Home).Property(RandomMovie.4.Year)]</label>
+          <label2>$INFO[Window(Home).Property(RandomMovie.4.Title)]</label2>
+          <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovie.4.File)])</onclick>
+          <thumb>$INFO[Window(Home).Property(RandomMovie.4.Art(poster))]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RandomMovie.4.Title))</visible>
+      </item>
+      <item id="15">
+          <label>$INFO[Window(Home).Property(RandomMovie.5.Year)]</label>
+          <label2>$INFO[Window(Home).Property(RandomMovie.5.Title)]</label2>
+          <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovie.5.File)])</onclick>
+          <thumb>$INFO[Window(Home).Property(RandomMovie.5.Art(poster))]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RandomMovie.5.Title))</visible>
+      </item>
+      <item id="16">
+          <label>$INFO[Window(Home).Property(RandomMovie.6.Year)]</label>
+          <label2>$INFO[Window(Home).Property(RandomMovie.6.Title)]</label2>
+          <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovie.6.File)])</onclick>
+          <thumb>$INFO[Window(Home).Property(RandomMovie.6.Art(poster))]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RandomMovie.6.Title))</visible>
+      </item>
+      <item id="17">
+          <label>$INFO[Window(Home).Property(RandomMovie.7.Year)]</label>
+          <label2>$INFO[Window(Home).Property(RandomMovie.7.Title)]</label2>
+          <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovie.7.File)])</onclick>
+          <thumb>$INFO[Window(Home).Property(RandomMovie.7.Art(poster))]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RandomMovie.7.Title))</visible>
+      </item>
+      <item id="18">
+          <label>$INFO[Window(Home).Property(RandomMovie.8.Year)]</label>
+          <label2>$INFO[Window(Home).Property(RandomMovie.8.Title)]</label2>
+          <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovie.8.File)])</onclick>
+          <thumb>$INFO[Window(Home).Property(RandomMovie.8.Art(poster))]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RandomMovie.8.Title))</visible>
+      </item>
+
+  </include>
+  <!-- This defines 8 Items as random Tv Episodes -->
+  <include name="RandomItemsTV">
+      <item id="11">
+          <label>$INFO[Window(Home).Property(RandomEpisode.1.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RandomEpisode.1.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RandomEpisode.1.Play)]</onclick>
+           <thumb>$INFO[Window(Home).Property(RandomEpisode.1.Art(tvshow.poster))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RandomEpisode.1.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RandomEpisode.1.TVshowTitle))</visible>
+      </item>
+      <item id="12">
+          <label>$INFO[Window(Home).Property(RandomEpisode.2.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RandomEpisode.2.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RandomEpisode.2.Play)]</onclick>
+           <thumb>$INFO[Window(Home).Property(RandomEpisode.2.Art(tvshow.poster))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RandomEpisode.2.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RandomEpisode.2.TVshowTitle))</visible>
+      </item>
+      <item id="13">
+          <label>$INFO[Window(Home).Property(RandomEpisode.3.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RandomEpisode.3.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RandomEpisode.3.Play)]</onclick>
+           <thumb>$INFO[Window(Home).Property(RandomEpisode.3.Art(tvshow.poster))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RandomEpisode.3.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RandomEpisode.3.TVshowTitle))</visible>
+      </item>
+      <item id="14">
+          <label>$INFO[Window(Home).Property(RandomEpisode.4.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RandomEpisode.4.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RandomEpisode.4.Play)]</onclick>
+           <thumb>$INFO[Window(Home).Property(RandomEpisode.4.Art(tvshow.poster))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RandomEpisode.4.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RandomEpisode.4.TVshowTitle))</visible>
+      </item>
+      <item id="15">
+          <label>$INFO[Window(Home).Property(RandomEpisode.5.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RandomEpisode.5.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RandomEpisode.5.Play)]</onclick>
+           <thumb>$INFO[Window(Home).Property(RandomEpisode.5.Art(tvshow.poster))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RandomEpisode.5.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RandomEpisode.5.TVshowTitle))</visible>
+      </item>
+      <item id="16">
+          <label>$INFO[Window(Home).Property(RandomEpisode.6.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RandomEpisode.6.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RandomEpisode.6.Play)]</onclick>
+           <thumb>$INFO[Window(Home).Property(RandomEpisode.6.Art(tvshow.poster))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RandomEpisode.6.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RandomEpisode.6.TVshowTitle))</visible>
+      </item>
+      <item id="17">
+          <label>$INFO[Window(Home).Property(RandomEpisode.7.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RandomEpisode.7.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RandomEpisode.7.Play)]</onclick>
+           <thumb>$INFO[Window(Home).Property(RandomEpisode.7.Art(tvshow.poster))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RandomEpisode.7.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RandomEpisode.7.TVshowTitle))</visible>
+      </item>
+      <item id="18">
+          <label>$INFO[Window(Home).Property(RandomEpisode.8.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RandomEpisode.8.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RandomEpisode.8.Play)]</onclick>
+           <thumb>$INFO[Window(Home).Property(RandomEpisode.8.Art(tvshow.poster))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RandomEpisode.8.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RandomEpisode.8.TVshowTitle))</visible>
+      </item>
+
+  </include>
+  <include name="RandomItemsTVThumbs">
+      <item id="11">
+          <label>$INFO[Window(Home).Property(RandomEpisode.1.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RandomEpisode.1.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RandomEpisode.1.Play)]</onclick>
+           <thumb>$INFO[Window(Home).Property(RandomEpisode.1.Art(thumb))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RandomEpisode.1.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RandomEpisode.1.TVshowTitle))</visible>
+      </item>
+      <item id="12">
+          <label>$INFO[Window(Home).Property(RandomEpisode.2.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RandomEpisode.2.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RandomEpisode.2.Play)]</onclick>
+           <thumb>$INFO[Window(Home).Property(RandomEpisode.2.Art(thumb))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RandomEpisode.2.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RandomEpisode.2.TVshowTitle))</visible>
+      </item>
+      <item id="13">
+          <label>$INFO[Window(Home).Property(RandomEpisode.3.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RandomEpisode.3.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RandomEpisode.3.Play)]</onclick>
+           <thumb>$INFO[Window(Home).Property(RandomEpisode.3.Art(thumb))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RandomEpisode.3.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RandomEpisode.3.TVshowTitle))</visible>
+      </item>
+      <item id="14">
+          <label>$INFO[Window(Home).Property(RandomEpisode.4.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RandomEpisode.4.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RandomEpisode.4.Play)]</onclick>
+           <thumb>$INFO[Window(Home).Property(RandomEpisode.4.Art(thumb))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RandomEpisode.4.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RandomEpisode.4.TVshowTitle))</visible>
+      </item>
+      <item id="15">
+          <label>$INFO[Window(Home).Property(RandomEpisode.5.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RandomEpisode.5.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RandomEpisode.5.Play)]</onclick>
+           <thumb>$INFO[Window(Home).Property(RandomEpisode.5.Art(thumb))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RandomEpisode.5.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RandomEpisode.5.TVshowTitle))</visible>
+      </item>
+      <item id="16">
+          <label>$INFO[Window(Home).Property(RandomEpisode.6.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RandomEpisode.6.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RandomEpisode.6.Play)]</onclick>
+           <thumb>$INFO[Window(Home).Property(RandomEpisode.6.Art(thumb))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RandomEpisode.6.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RandomEpisode.6.TVshowTitle))</visible>
+      </item>
+      <item id="17">
+          <label>$INFO[Window(Home).Property(RandomEpisode.7.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RandomEpisode.7.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RandomEpisode.7.Play)]</onclick>
+           <thumb>$INFO[Window(Home).Property(RandomEpisode.7.Art(thumb))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RandomEpisode.7.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RandomEpisode.7.TVshowTitle))</visible>
+      </item>
+      <item id="18">
+          <label>$INFO[Window(Home).Property(RandomEpisode.8.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RandomEpisode.8.TVshowTitle)]</label2>
+          <onclick>$INFO[Window(Home).Property(RandomEpisode.8.Play)]</onclick>
+           <thumb>$INFO[Window(Home).Property(RandomEpisode.8.Art(thumb))]</thumb>
+		  <property name="EpisodeNo">$INFO[Window(Home).Property(RandomEpisode.8.EpisodeNo)]</property>
+          <visible>!IsEmpty(Window(Home).Property(RandomEpisode.8.TVshowTitle))</visible>
+      </item>
+
+  </include>
+  
+  <!-- This defines 10 Items as random Music Albums -->
+  <include name="RandomItemsMusic">
+      <item id="11">
+          <label>$INFO[Window(Home).Property(RandomAlbum.1.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RandomAlbum.1.Artist)]</label2>
+          <onclick>PlayList.Clear</onclick>
+          <onclick>$INFO[Window(Home).Property(RandomAlbum.1.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RandomAlbum.1.Thumb)]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RandomAlbum.1.Title))</visible>
+      </item>
+      <item id="12">
+          <label>$INFO[Window(Home).Property(RandomAlbum.2.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RandomAlbum.2.Artist)]</label2>
+          <onclick>PlayList.Clear</onclick>
+          <onclick>$INFO[Window(Home).Property(RandomAlbum.2.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RandomAlbum.2.Thumb)]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RandomAlbum.2.Title))</visible>
+      </item>
+      <item id="13">
+          <label>$INFO[Window(Home).Property(RandomAlbum.3.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RandomAlbum.3.Artist)]</label2>
+          <onclick>PlayList.Clear</onclick>
+          <onclick>$INFO[Window(Home).Property(RandomAlbum.3.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RandomAlbum.3.Thumb)]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RandomAlbum.3.Title))</visible>
+      </item>
+      <item id="14">
+          <label>$INFO[Window(Home).Property(RandomAlbum.4.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RandomAlbum.4.Artist)]</label2>
+          <onclick>PlayList.Clear</onclick>
+          <onclick>$INFO[Window(Home).Property(RandomAlbum.4.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RandomAlbum.4.Thumb)]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RandomAlbum.4.Title))</visible>
+      </item>
+      <item id="15">
+          <label>$INFO[Window(Home).Property(RandomAlbum.5.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RandomAlbum.5.Artist)]</label2>
+          <onclick>PlayList.Clear</onclick>
+          <onclick>$INFO[Window(Home).Property(RandomAlbum.5.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RandomAlbum.5.Thumb)]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RandomAlbum.5.Title))</visible>
+      </item>
+      <item id="16">
+          <label>$INFO[Window(Home).Property(RandomAlbum.6.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RandomAlbum.6.Artist)]</label2>
+          <onclick>PlayList.Clear</onclick>
+          <onclick>$INFO[Window(Home).Property(RandomAlbum.6.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RandomAlbum.6.Thumb)]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RandomAlbum.6.Title))</visible>
+      </item>
+      <item id="17">
+          <label>$INFO[Window(Home).Property(RandomAlbum.7.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RandomAlbum.7.Artist)]</label2>
+          <onclick>PlayList.Clear</onclick>
+          <onclick>$INFO[Window(Home).Property(RandomAlbum.7.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RandomAlbum.7.Thumb)]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RandomAlbum.7.Title))</visible>
+      </item>
+      <item id="18">
+          <label>$INFO[Window(Home).Property(RandomAlbum.8.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RandomAlbum.8.Artist)]</label2>
+          <onclick>PlayList.Clear</onclick>
+          <onclick>$INFO[Window(Home).Property(RandomAlbum.8.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RandomAlbum.8.Thumb)]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RandomAlbum.8.Title))</visible>
+      </item>
+      <item id="19">
+          <label>$INFO[Window(Home).Property(RandomAlbum.9.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RandomAlbum.9.Artist)]</label2>
+          <onclick>PlayList.Clear</onclick>
+          <onclick>$INFO[Window(Home).Property(RandomAlbum.9.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RandomAlbum.9.Thumb)]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RandomAlbum.9.Title))</visible>
+      </item>
+	   <item id="110">
+          <label>$INFO[Window(Home).Property(RandomAlbum.10.Title)]</label>
+          <label2>$INFO[Window(Home).Property(RandomAlbum.10.Artist)]</label2>
+          <onclick>PlayList.Clear</onclick>
+          <onclick>$INFO[Window(Home).Property(RandomAlbum.10.Play)]</onclick>
+          <thumb>$INFO[Window(Home).Property(RandomAlbum.10.Thumb)]</thumb>
+          <visible>!IsEmpty(Window(Home).Property(RandomAlbum.10.Title))</visible>
+      </item>
+  </include>
+</includes>

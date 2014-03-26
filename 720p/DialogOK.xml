@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window id="2002">
+    <defaultcontrol always="true">10</defaultcontrol>
+    <allowoverlay>yes</allowoverlay>
+    <controls>
+        <include>GlobalOverlay</include>
+        <control type="group">
+            <include>MediumDialogCoordinates</include>
+			<include>MediumDialogBackground</include>
+		 </control>	
+		 <control type="group">	
+            <posx>420</posx>
+            <posy>240</posy>
+			<control type="label" id="1">
+                <description>heading</description>
+                <posx>20</posx>
+                <posy>20</posy>
+                <width>400</width>
+                <label></label>
+                <font>Panel_Description_Title</font>
+                <align>center</align>
+            </control>
+            <control type="label" id="2">
+                <description>Line 1</description>
+                <posx>20</posx>
+                <posy>55</posy>
+                <width>400</width>
+                <label></label>
+              <font>Panel_Info</font>
+            </control>
+            <control type="label" id="3">
+                <description>Line 2</description>
+                <posx>20</posx>
+                <posy>80</posy>
+                <width>400</width>
+                <label></label>
+              <font>Panel_Info</font>
+            </control>
+            <control type="label" id="4">
+                <description>Line 3</description>
+                <posx>20</posx>
+                <posy>105</posy>
+                <width>400</width>
+                <label></label>
+              <font>Panel_Info</font>
+            </control>
+            <control type="button" id="10">
+                <description>Ok</description>
+                <posx>130</posx>
+                <posy>155</posy>
+                <width>180</width>
+                <label>186</label>
+                <onleft>10</onleft>
+                <onright>10</onright>
+                <onup>10</onup>
+                <ondown>10</ondown>
+				<font>Panel_Hint</font>
+				<texturefocus>button.png</texturefocus>
+				<texturenofocus>tile.png</texturenofocus>				
+            </control>
+        </control>
+    </controls>
+</window>

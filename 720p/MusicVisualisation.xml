@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window id="2006">
+     <allowoverlay>yes</allowoverlay>
+    <visible>Window.IsVisible(visualisation) | Window.IsVisible(122) | Player.Paused</visible>
+	<controls>
+		<control type="group">
+			<visible>Player.HasAudio</visible>
+			<!-- Blue Background -->
+			<control type="image">
+				<include>Dimensions_Fullscreen</include>
+				<texture>music_fanart_diffuse_blue.png</texture>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<visible>!Skin.HasSetting(ThemeBackgroundColor)</visible>
+			</control>
+			<!-- Theme Color Background -->
+			<control type="group">
+				<visible>Skin.HasSetting(ThemeBackgroundColor)</visible>
+				<control type="image">
+					<include>Dimensions_Fullscreen</include>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture>button.png</texture>
+				</control>
+				<control type="image">
+					<include>Dimensions_Fullscreen</include>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture>tile.png</texture>
+				</control>
+				<control type="image">
+					<include>Dimensions_Fullscreen</include>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture>music_fanart_diffuse.png</texture>
+				</control>
+			</control>
+			<!-- Color Walls in Case no Fanart Available at all -->
+			<control type="multiimage">
+				<include>Dimensions_Fullscreen</include>
+				<randomize>true</randomize>
+				<timeperimage>10000</timeperimage>
+				<fadetime>5000</fadetime>
+				<pauseatend>0</pauseatend>
+				<loop>true</loop>
+				<aspectratio background="true" aligny="top">stretch</aspectratio>
+				<imagepath background="true">walls</imagepath>
+				<animation effect="fade" start="0" end="100" time="550" delay="0" tween="sine" easing="inout">VisibleChange</animation>
+				<visible>IsEmpty(Control.getLabel(8870)) + IsEmpty(Control.getLabel(8872)) + IsEmpty(Control.getLabel(8874))</visible>	
+			</control>
+			<!-- Artist Fanart from Music Player in Case no Fanart.jpg in Album Folder-->
+			<control type="image" id="8874">
+				<description>Fanart Image for Artist</description>
+				<include>Dimensions_Fullscreen</include>
+				<texture>$INFO[MusicPlayer.Property(Fanart_Image)]</texture>
+				<animation effect="fade" start="0" end="100" time="550" delay="0" tween="sine" easing="inout">VisibleChange</animation>
+				<visible>IsEmpty(Control.getLabel(8870)) + IsEmpty(Control.getLabel(8872))</visible>	
+				<fadetime>600</fadetime>
+			</control>
+			 <!-- Artist Fanart from cd Folder   if no extrafanart folder is available-->
+			<control type="image" id="8872">
+				<description>Fanart Image for Artist</description>
+				<include>Dimensions_Fullscreen</include>
+				<texture>$INFO[Player.FolderPath]fanart.jpg</texture>
+				<animation effect="fade" start="0" end="100" time="550" delay="0" tween="sine" easing="inout">VisibleChange</animation>
+				<visible>[IsEmpty(Control.getLabel(8870)] | IsEmpty(Skin.String(ArtistsFanartPath))</visible>			
+				<fadetime>600</fadetime>
+			</control>
+			<!-- Display Aritst Fanart from extrafanrt folder in Music Libray Path-->
+			<control type="multiimage" id ="8870">
+				<animation type="Conditional" condition="!IsEmpty(Control.getLabel(8870)">
+					<effect type="fade" start="0" end="100" time="550" delay="0" tween="sine" easing="inout" />
+				</animation>
+				<include>Dimensions_Fullscreen</include>
+				<randomize>false</randomize>
+				<timeperimage>10000</timeperimage>
+				<fadetime>2000</fadetime>
+				<pauseatend>0</pauseatend>
+				<loop>true</loop>
+				<imagepath>$INFO[Skin.String(ArtistsFanartPath)]$INFO[MusicPlayer.Artist,,/extrafanart/]</imagepath>
+				<visible>!IsEmpty(Skin.String(ArtistsFanartPath))</visible>
+			 </control>
+			<control type="visualisation" id="2">
+			</control>
+			<include>BackgroundTextScroll</include>
+			<!-- Info Display -->
+			<control type="group">
+				<visible>[Player.ShowInfo | Window.IsActive(musicosd)]</visible>
+				<animation effect="slide" start="0,0" end="0,-200" time="900" tween="cubic" easing="inout" delay="0" condition="Window.IsVisible(script-XBMC_Lyrics-main.xml)">conditional</animation>
+				<!-- Info Background / Album /Artist / Track -->
+				<control type="Group">
+					<animation effect="slide" start="1010" end="0" time="900" tween="cubic" easing="out" delay="0">WindowOpen</animation>
+					<animation effect="slide" start="0" end="1300" time="900" tween="cubic" easing="in" delay="0">WindowClose</animation>
+					<!-- Info Background -->
+					<control type="image">
+						<description>Music bar</description>
+						<posx>0</posx>
+						<posy>440</posy>
+						<width>1280</width>
+						<height>240</height>
+						<texture background="true">music_fanart_diffuse.png</texture>
+					</control>
+					<!-- Artist Album & Track-->
+					<control type="group">
+						<posx>390</posx>
+						<posy>450</posy>
+							<!-- Artist Name -->
+							<control type="label">
+								<description>Artist</description>
+								<width>855</width>
+								<label>$INFO[MusicPlayer.Artist]</label>
+								<scroll>true</scroll>
+								<font>Music_Vis_Title</font>
+								<align>left</align>
+								<shadowcolor>black</shadowcolor>
+							</control>
+							 <!-- Album & Year -->
+							<control type="label">
+								<description>Album</description>
+								<posy>52</posy>
+								<width>855</width>
+								<label>$INFO[MusicPlayer.Album] [COLOR Accent]$INFO[MusicPlayer.Year][/COLOR]</label>
+								<scroll>true</scroll>
+								<font>Music_Vis_Title2</font>
+								<align>left</align>
+								<shadowcolor>black</shadowcolor>
+							</control>
+							<!-- Track Nr & Title -->
+							<control type="label">
+								<description>Track</description>
+								<posy>97</posy>
+								<width>855</width>
+								<label>[COLOR Accent]$INFO[MusicPlayer.TrackNumber][/COLOR] $INFO[MusicPlayer.Title]</label>
+								<scroll>true</scroll>
+								<font>Music_Vis_Title3</font>
+								<align>left</align>
+								<shadowcolor>black</shadowcolor>
+							</control>
+							<!-- Track Rating -->
+							<control type="image">
+								<description>Rating image</description>
+								<posx>0</posx>
+								<posy>130</posy>
+								<width>140</width>
+								<height>60</height>
+								<aspectratio align="left">keep</aspectratio>
+								<texture>other_textures/colorrating/$INFO[Player.StarRating]</texture>
+							</control>
+					</control>
+				</control>
+				<!-- Album Cover and Album CD-->
+				<control type="group">
+					<description>Cd Disc and Cover</description>
+					<posx>30</posx>
+					<posy>440</posy>
+					<animation effect="slide" start="-380" end="0" time="900" tween="cubic" easing="out" delay="0">WindowOpen</animation>
+					<animation effect="slide" start="0" end="-380" time="900" tween="cubic" easing="in" delay="0">WindowClose</animation>
+					<!-- Cdart-->
+					<control type="image">
+						<posx>115</posx>
+						<posy>5</posy>
+						<description>Cd Disc</description>
+						<animation effect="fade" start="100" end="0" time="700" tween="cubic" easing="out" condition="Window.IsActive(musicosd)">Conditional</animation>
+						<animation effect="slide" start="0" end="-110" time="900" tween="cubic" easing="out" delay="800">WindowOpen</animation>
+						<animation effect="slide" start="-110" end="0" time="900" tween="cubic" easing="out">WindowClose</animation>
+						<animation effect="rotate" end="-360" center="auto" time="4000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+						<width>230</width>
+						<height>230</height>
+						<texture>$INFO[Player.FolderPath]cdart.png</texture>
+						<aspectratio align="bottom">keep</aspectratio>
+					</control>
+					<!-- Album Cover-->
+					<control type="image">
+						<description>Music cover image</description>
+						<width>240</width>
+						<height>240</height>
+						<posx>110</posx>
+						<bordertexture border="5">white_box.png</bordertexture>
+						<bordersize>5</bordersize>
+						<texture background="true">$INFO[MusicPlayer.cover]</texture>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

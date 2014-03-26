@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window id="151">
+    <defaultcontrol></defaultcontrol>
+    <allowoverlay>yes</allowoverlay>
+    <controls>
+        <control type="group">
+            <visible>!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)</visible>
+            <animation type="WindowOpen">
+                <effect type="slide" time="300" start="0,-40" end="0,0" easing="out" tween="cubic" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="slide" time="300" start="0,0" end="0,-40" easing="in" tween="cubic" />
+            </animation>
+            <animation type="Visible">
+                <effect type="slidey" time="300" start="0,-40" end="0,0" easing="out" tween="cubic" />
+            </animation>
+            <animation type="Hidden">
+                <effect type="slidey" time="300" start="0,0" end="0,-40" easing="in" tween="cubic" />
+            </animation>
+			<animation effect="slide" start="0,0" end="0,30" time="300" easing="inout" tween="cubic"condition="Window.IsVisible(107)">Conditional</animation>
+            <control type="image">
+                <description>background image</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1280</width>
+                <height>30</height>
+                <aspectratio>scale</aspectratio>
+                <texture>tile.png</texture>
+            </control>
+            <control type="label" id="30">
+                <description>heading</description>
+                <posx>350</posx>
+                <posy>5</posy>
+				<aligny>top</aligny>
+                <width>580</width>
+                <label></label>
+                <font>-</font>
+				<textcolor>Accent</textcolor>
+                <scroll>true</scroll>
+				<align>center</align>
+            </control>
+            <control type="label" id="31">
+                <description>message</description>
+                <posx>350</posx>
+                <posy>25</posy>
+				<aligny>top</aligny>
+                <width>580</width>
+                <label></label>
+                <textcolor>white</textcolor>
+                <scroll>true</scroll>
+                <font>-</font>
+				<align>center</align>
+            </control>
+			<control type="label" description="Message">
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>30</height>
+				<width>1280</width>
+				<scroll>true</scroll>
+				<font>Panel_Hint</font>
+				<label>[COLOR=Accent]$INFO[Control.GetLabel(30)][/COLOR]$INFO[Control.GetLabel(31), • ]</label>
+			</control>
+            <control type="progress" id="32">
+                <description>progress control</description>
+                <posx>0</posx>
+                <posy>30</posy>
+                <width>1280</width>
+                <height>5</height>
+                <texturebg>progressnotification.png</texturebg>
+                <midtexture>progresslime.png</midtexture>
+            </control>
+        </control>
+
+    </controls>
+</window>

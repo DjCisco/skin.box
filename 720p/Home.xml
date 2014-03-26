@@ -1,0 +1,2765 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window id="0">
+    <defaultcontrol always="false">20000</defaultcontrol>
+    <allowoverlay>yes</allowoverlay>
+	<onload condition="IsEmpty(Skin.String(ItemsTypeTV))">Skin.SetString(ItemsTypeTV,$LOCALIZE[31709])</onload>
+    <onload condition="IsEmpty(Skin.String(ItemsTypeMovies))">Skin.SetString(ItemsTypeMovies,$LOCALIZE[31709])</onload>
+    <onload condition="IsEmpty(Skin.String(ItemsTypeMusic))">Skin.SetString(ItemsTypeMusic,$LOCALIZE[31709])</onload>
+    <controls>
+	<include>HomeBackground</include>
+	<!-- Color Walls for Now Playing  -->
+	<control type="multiimage">
+		<include>Dimensions_Fullscreen</include>
+		<randomize>true</randomize>
+		<timeperimage>6000</timeperimage>
+		<fadetime>3300</fadetime>
+		<pauseatend>0</pauseatend>
+		<loop>true</loop>
+		<aspectratio background="true" aligny="top">stretch</aspectratio>
+		<imagepath background="true">walls</imagepath>
+		<animation effect="fade" start="0" end="100" time="550" delay="0" tween="sine" easing="out">Visible</animation>
+		<visible>SubString(Window(Home).Property(menu),nowplaying)</visible>
+    </control>
+	
+	<include>BarClock</include>
+	<control type="grouplist">
+		<animation type="WindowClose">
+			<effect type="fade" time="300" />
+			<effect type="slide" end="+1500,0" time="300" />
+		</animation>
+		<animation type="WindowOpen">
+			<effect type="fade" time="300" />
+			<effect type="slide" start="+1500,0" time="300" />
+		</animation>
+		<posx>50</posx>
+		<posy>10</posy>
+		<width>350</width>
+		<height>70</height>
+		<itemgap>10</itemgap>
+		<orientation>horizontal</orientation>
+		<visible>Skin.HasSetting(DisplayHomeMenu)</visible>
+		<!-- Movies -->
+		<control type="group">
+			<width>55</width>
+			<height>55</height>
+			<visible>!Skin.HasSetting(HideMovies)</visible>
+			<control type="image">
+				<width>55</width>
+				<height>55</height>
+				<texture>RingNF.png</texture>
+				<visible>!SubString(Window(Home).Property(menu),movie)</visible>
+			</control>
+			<control type="image">
+				<width>55</width>
+				<height>55</height>
+				<texture>RingFO.png</texture>
+				<visible>SubString(Window(Home).Property(menu),movie)</visible>
+			</control>
+			<control type="image">
+				<posx>15</posx>
+				<posy>15</posy>
+				<width>25</width>
+				<height>25</height>
+				<texture>HomeMoviesNF.png</texture>
+				<visible>!Control.HasFocus(2001)</visible>
+			</control>
+			<control type="image">
+				<posx>15</posx>
+				<posy>15</posy>
+				<width>25</width>
+				<height>25</height>
+				<texture>HomeMoviesFO.png</texture>
+				<visible>Control.HasFocus(2001)</visible>
+			</control>
+			<control type="image">
+				<posx></posx>
+				<posy>60</posy>
+				<width>55</width>
+				<height>5</height>
+				<texture>button.png</texture>
+				<visible>Control.HasFocus(2001)</visible>
+			</control>
+		</control>
+		<!-- Tv Shows -->
+		<control type="group">
+			<width>55</width>
+			<height>55</height>
+			<visible>!Skin.HasSetting(HideTv)</visible>
+			<control type="image">
+				<width>55</width>
+				<height>55</height>
+				<texture>RingNF.png</texture>
+				<visible>!SubString(Window(Home).Property(menu),tv)</visible>
+			</control>
+			<control type="image">
+				<width>55</width>
+				<height>55</height>
+				<texture>RingFO.png</texture>
+				<visible>SubString(Window(Home).Property(menu),tv)</visible>
+			</control>
+			<control type="image">
+				<posx>15</posx>
+				<posy>15</posy>
+				<width>25</width>
+				<height>25</height>
+				<texture>HomeTvShowsNF.png</texture>
+				<visible>!Control.HasFocus(2002)</visible>
+			</control>
+			<control type="image">
+				<posx>15</posx>
+				<posy>15</posy>
+				<width>25</width>
+				<height>25</height>
+				<texture>HomeTvShowsFO.png</texture>
+				<visible>Control.HasFocus(2002)</visible>
+			</control>
+			<control type="image">
+				<posx></posx>
+				<posy>60</posy>
+				<width>55</width>
+				<height>5</height>
+				<texture>button.png</texture>
+				<visible>Control.HasFocus(2002)</visible>
+			</control>
+		</control>
+		<!-- Music -->
+		<control type="group">
+			<width>55</width>
+			<height>55</height>
+			<visible>!Skin.HasSetting(HideMusic)</visible>
+			<control type="image">
+				<width>55</width>
+				<height>55</height>
+				<texture>RingNF.png</texture>
+				<visible>!SubString(Window(Home).Property(menu),music)</visible>
+			</control>
+			<control type="image">
+				<width>55</width>
+				<height>55</height>
+				<texture>RingFO.png</texture>
+				<visible>SubString(Window(Home).Property(menu),music)</visible>
+			</control>
+			<control type="image">
+				<posx>15</posx>
+				<posy>15</posy>
+				<width>25</width>
+				<height>25</height>
+				<texture>HomeMusicNF.png</texture>
+				<visible>!Control.HasFocus(2003)</visible>
+			</control>
+			<control type="image">
+				<posx>15</posx>
+				<posy>15</posy>
+				<width>25</width>
+				<height>25</height>
+				<texture>HomeMusicFO.png</texture>
+				<visible>Control.HasFocus(2003)</visible>
+			</control>
+			<control type="image">
+				<posx></posx>
+				<posy>60</posy>
+				<width>55</width>
+				<height>5</height>
+				<texture>button.png</texture>
+				<visible>Control.HasFocus(2003)</visible>
+			</control>
+		</control>
+		<!-- Live Tv -->
+		<control type="group">
+			<width>55</width>
+			<height>55</height>
+			<visible>System.GetBool(pvrmanager.enabled)</visible>>
+			<control type="image">
+				<width>55</width>
+				<height>55</height>
+				<texture>RingNF.png</texture>
+				<visible>!SubString(Window(Home).Property(menu),pvr)</visible>
+			</control>
+			<control type="image">
+				<width>55</width>
+				<height>55</height>
+				<texture>RingFO.png</texture>
+				<visible>SubString(Window(Home).Property(menu),pvr)</visible>
+			</control>
+			<control type="image">
+				<posx>15</posx>
+				<posy>15</posy>
+				<width>25</width>
+				<height>25</height>
+				<texture>HomeLiveTvNF.png</texture>
+				<visible>!Control.HasFocus(2004)</visible>
+			</control>
+			<control type="image">
+				<posx>15</posx>
+				<posy>15</posy>
+				<width>25</width>
+				<height>25</height>
+				<texture>HomeLiveTvFO.png</texture>
+				<visible>Control.HasFocus(2004)</visible>
+			</control>
+			<control type="image">
+				<posx></posx>
+				<posy>60</posy>
+				<width>55</width>
+				<height>5</height>
+				<texture>button.png</texture>
+				<visible>Control.HasFocus(2004)</visible>
+			</control>
+		</control>
+		<!-- CD /DVD -->
+		<control type="group">
+			<width>55</width>
+			<height>55</height>
+			<visible>System.HasMediaDVD</visible>
+			<control type="image">
+				<width>55</width>
+				<height>55</height>
+				<texture>RingNF.png</texture>
+				<visible>!SubString(Window(Home).Property(menu),discplayer)</visible>
+			</control>
+			<control type="image">
+				<width>55</width>
+				<height>55</height>
+				<texture>RingFO.png</texture>
+				<visible>SubString(Window(Home).Property(menu),discplayer)</visible>
+			</control>
+			<control type="image">
+				<posx>15</posx>
+				<posy>15</posy>
+				<width>25</width>
+				<height>25</height>
+				<texture>HomeDiscNF.png</texture>
+				<visible>!Control.HasFocus(2005)</visible>
+			</control>
+			<control type="image">
+				<posx>15</posx>
+				<posy>15</posy>
+				<width>25</width>
+				<height>25</height>
+				<texture>HomeDiscFO.png</texture>
+				<visible>Control.HasFocus(2005)</visible>
+			</control>
+			<control type="image">
+				<posx></posx>
+				<posy>60</posy>
+				<width>55</width>
+				<height>5</height>
+				<texture>button.png</texture>
+				<visible>Control.HasFocus(2005)</visible>
+			</control>
+		</control>
+	
+	</control>
+	<!-- This Control defines the Group of elements conforming the Home Menu-->
+	<control type="group">
+        <animation type="WindowClose">
+            <effect type="fade" time="300" />
+            <effect type="slide" end="+1500,0" time="300" />
+        </animation>
+        <animation type="WindowOpen">
+			<effect type="fade" time="300" />
+			<effect type="slide" start="+1500,0" time="300" />
+		</animation>
+		<animation type="Conditional" condition="ControlGroup(9000).HasFocus()">
+			<effect type="slide" start="0,0" end="+230,0" time="200" />
+		</animation>
+		<animation type="Conditional" condition="Window.IsVisible(favourites)" reversible="false">
+			<effect type="fade" time="300" />
+			<effect type="slide" start="0,0" end="+1500,0" time="300" />
+		</animation>
+		<animation type="Conditional" condition="!Window.IsVisible(favourites)" reversible="false">
+			<effect type="fade" time="300" />
+			<effect type="slide" start="+1500,0" end="0,0" time="300" />
+		</animation>
+		<!-- Navigation Hint Extra Menu -->
+		<control type="group">
+			<visible>[!Control.HasFocus(901)] + [!Control.HasFocus(902)] + [!Control.HasFocus(903)] + [!Control.HasFocus(904)] + [!Control.HasFocus(905)] + [!Control.HasFocus(906)] + [!Control.HasFocus(907)]</visible>
+			<control type="group">
+				<animation effect="slide" start="-35" end="0" time="300" tween="cubic" easing="inout">VisibleChange</animation>
+				<visible>[Control.HasFocus(701)] | [Control.HasFocus(702)] | [Control.HasFocus(704)] | [Control.HasFocus(801)] | [Control.HasFocus(802)] | [Control.HasFocus(804)] | [Control.HasFocus(601)] | [Control.HasFocus(602)] | [Control.HasFocus(604)] | [Control.HasFocus(606)] | [Control.HasFocus(301)] | [Control.HasFocus(302)] | [Control.HasFocus(304)]</visible>
+				<control type="image">
+					<posx>-5</posx>
+					<posy>420</posy>
+					<width>35</width>
+					<height>55</height>
+					<texture>button.png</texture>
+				</control>
+				<control type="image">
+					<posx>-5</posx>
+					<posy>420</posy>
+					<width>35</width>
+					<height>55</height>
+					<texture>tile.png</texture>
+				</control>
+				<control type="image">
+					<posx>-5</posx>
+					<posy>425</posy>
+					<width>30</width>
+					<height>45</height>
+					<texture>button.png</texture>
+				</control>
+				<control type="image">
+					<posx>-15</posx>
+					<posy>420</posy>
+					<width>55</width>
+					<height>55</height>
+					<texture flipx="true">icons/music.png</texture>
+				</control>
+			</control>
+		</control>
+		<!--HOME MENU CTRL-->
+		<control type="grouplist" id="20000">
+			<posx>-1200</posx>
+			<posy>100</posy>
+			<width>600</width>
+			<height>30</height>
+			<orientation>horizontal</orientation>
+			<pagecontrol>20001</pagecontrol>
+			<!--MOVIES PANELS-->
+			<control type="group" id="355">
+				<width>50</width>
+				<height>30</height>
+				<posx>0</posx>
+					<posy>30</posy>
+				<control  type="button" id="2001">
+					<width>30</width>
+					<height>30</height>
+					<align>left</align>
+					<onright>2002</onright>
+					<onleft>2005</onleft>
+					<ondown>7000</ondown>
+					<onfocus>SetProperty(menu,movie)</onfocus>
+					<onclick>Control.SetFocus(7000)</onclick>
+					<visible>!Skin.HasSetting(HideMovies)</visible>
+				</control>
+			</control>
+			<!--TV SHOWS - PANELS -->
+			<control type="group" id="375">
+				<width>50</width>
+				<height>30</height>
+				<posx>100</posx>
+					<posy>30</posy>
+				<control  type="button" id="2002">
+					
+					<width>30</width>
+					<height>30</height>
+					<align>left</align>
+					<onleft>2001</onleft>
+					<onright>2003</onright>
+					<ondown>8000</ondown>
+					<onfocus>SetProperty(menu,tv)</onfocus>
+					<onclick>Control.SetFocus(8000)</onclick>
+					<visible>!Skin.HasSetting(HideTV)</visible>
+				</control>
+			</control>
+			 <!-- MUSIC PANEL-->
+			<control  type="group" id="335">
+				<width>50</width>
+				<height>30</height>
+				<posx>200</posx>
+					<posy>30</posy>
+				<control type="button" id="2003">
+					
+					<width>30</width>
+					<height>30</height>
+					<align>left</align>
+					<onleft>2002</onleft>
+					<onright>2004</onright>
+					<ondown>6000</ondown>
+					<onfocus>SetProperty(menu,music)</onfocus>
+					<onclick>Control.SetFocus(6000)</onclick>>
+					<visible>!Skin.HasSetting(HideMusic)</visible>
+				</control>
+			</control>
+			<!-- LIVE TV PANEL-->
+			<control type="group" id="395">
+				<control id="2004">
+					<posx>300</posx>
+					<posy>30</posy>
+					<type>button</type>
+					<width>50</width>
+					<height>30</height>
+					<align>left</align>
+					<onleft>2003</onleft>
+					<onright>2005</onright>
+					<ondown>3000</ondown>
+					<onfocus>SetProperty(menu,pvr)</onfocus>
+					<onclick>Control.SetFocus(3000)</onclick>>
+					<visible>System.GetBool(pvrmanager.enabled)</visible>
+				</control>
+			</control>
+			<!-- DISC PANEL-->
+			<control type="group" id="315">
+				<control id="2005">
+					<posx>400</posx>
+					<posy>30</posy>
+					<type>button</type>
+					<width>50</width>
+					<height>30</height>
+					<align>left</align>
+					<onleft>2004</onleft>
+					<onright>2001</onright>
+					<ondown>49</ondown>
+					<onfocus>SetProperty(menu,discplayer)</onfocus>
+					<onclick>Control.SetFocus(49)</onclick>>
+					<visible>System.HasMediaDVD</visible>
+				</control>
+			</control>
+		</control>
+		<!--  Movies Panel Menu Elements-->
+		<control type="group">
+			<!--<animation effect="slide" start="-1500" end="0" time="700" tween="cubic" easing="inout">VisibleChange</animation>-->
+			<animation type="Visible" condition="!Skin.HasSetting(DisableHomeAnimations)" reversible="false">
+				<effect type="slide" start="-1500" end="0" time="700" tween="cubic" easing="inout"/>
+			</animation>
+			<animation type="Hidden" condition="!Skin.HasSetting(DisableHomeAnimations)" reversible="false">
+					<effect type="slide" start="0" end="-1500" time="700" tween="cubic" easing="inout"/>
+			</animation>
+			<visible>SubString(Window(Home).Property(menu),movie)</visible>
+			<!-- This control displays the Main Title of the Panel-->
+			<control type="label">
+				<width>300</width>
+				<include>ViewMainTitle</include>
+				<label>MOVIES</label>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="image">
+				<posx>5</posx>
+				<posy>227</posy>
+				<width>40</width>
+				<height>40</height>
+				<texture>marker.png</texture>
+				<visible>[Control.HasFocus(2001)]</visible>
+				<animation effect="fade" start="20" time="1200" condition="Control.HasFocus(2001)" pulse="true">Conditional</animation>
+				<animation effect="slide" start="-50" time="200" easing="inout" condition="Control.HasFocus(2001)">Conditional</animation>
+				<animation effect="fade" time="200" delay="200">Hidden</animation>
+				<visible>!Skin.HasSetting(DisplayHomeMenu)</visible>
+			</control>	
+			<!-- This control displays the Movies Library Panel-->
+			<control type="grouplist" id="7000">
+				<include>PanelCoordinates</include>
+				<width>315</width>
+				<height>315</height>
+				<itemgap>5</itemgap>
+				<pagecontrol>7001</pagecontrol>
+				<!-- This control displays the All Movies Element-->
+				<control type="group">
+					<width>315</width>
+					<height>155</height>
+					<!-- This control displays the All Movies Background-->
+					<control type="image">
+						<include>PanelRectButtonImageNF</include>
+					</control>
+					<!-- This control displays the All Movies Highlighted Button-->
+					<control type="image">
+						<include>PanelRectButtonImageFO</include>
+						<visible>[Control.HasFocus(701)]</visible>
+						<animation effect="fade" time="300" tween="square" easing="inout">VisibleChange</animation>
+					</control>
+					<!-- This control defines the All Movies Button behaviour-->
+					<control id="701">
+						<type>button</type>
+						<label>$LOCALIZE[31700]</label>
+						<width>315</width>
+						<height>155</height>
+						<align>left</align>
+						<onup>2001</onup>
+						<ondown>702</ondown>
+						<onleft>9000</onleft>
+						<onright>66</onright>
+						
+						<onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
+					</control>
+					<!-- This control defines the icon displayed in the All Movies Button-->
+					<control type="image">
+						<include>PanelRectButtonIcon</include>
+						<texture>DefaultMovies.png</texture>
+					</control>
+					<!-- This control defines the All Movies Count Display-->
+					<control type="label">
+						<include>PanelRectButtonHeaderTitle</include>
+						<label>$INFO[Window.Property(Movies.Count)]$INFO[Movies.Count]</label>
+					</control>
+					<!-- This control defines the All Movies Button Title-->
+					<control type="label">
+						<include>PanelRectButtonTitle</include>
+						<label>$LOCALIZE[31701]</label>
+					</control>
+				</control>
+				<!-- This control displays the Movie Library  & All Recent Element-->
+				<control type="group">
+					<width>315</width>
+					<height>155</height>
+					<!-- This control displays the Movie Library Background-->
+					<control type="image">
+						<include>PanelButtonImageNF</include>
+					</control>
+					<!-- This control displays the Movie Library Highlighted Button-->
+					<control type="image">
+						<include>PanelButtonImageFO</include>
+						<visible>[Control.HasFocus(702)]</visible>
+						<animation effect="fade" time="300" tween="square">VisibleChange</animation>
+					</control>
+					<!-- This control defines the Movie Library Button Behaviour-->
+					<control id="702">
+						<posx></posx>
+						<type>button</type>
+						<label>$LOCALIZE[31704]</label>
+						<posy>0</posy>
+						<width>155</width>
+						<height>155</height>
+						<align>left</align>
+						<onup>701</onup>
+						<ondown>704</ondown>
+						<onleft>9000</onleft>
+						<onright>703</onright>
+						<onclick>ActivateWindow(Videos,Movies,return)</onclick>
+					</control>
+					<!-- This control display the Movie Library Button Title-->
+					<control type="label">
+						<label>$LOCALIZE[31704]</label>
+						<include>PanelButtonTitle</include>
+					</control>
+					<!-- This control display the Movie Library Button Icon-->
+					<control type="image">
+						<include>PanelButtonIcon</include>
+						<texture>icons/MovieLibrary.png</texture>
+					</control>
+					<!-- This control displays the Movie All Recent Background-->
+					<control type="image">
+						<include>PanelButtonImageNF2ndCol</include>
+					</control>
+					<!-- This control displays the Movie All Recent Highlighted Button-->
+					<control type="image">
+						<include>PanelButtonImageFO2ndCol</include>
+						<visible>[Control.HasFocus(703)]</visible>
+						<animation effect="fade" time="300" tween="square">VisibleChange</animation>
+					</control>
+					<!-- This control defines the Movie All Recent Button Behaviour-->
+					<control id="703">
+						<posx>160</posx>
+						<type>button</type>
+						<label>$LOCALIZE[31702]</label>
+						<posx>1</posx>
+						<width>155</width>
+						<height>155</height>
+						<align>left</align>
+						<onup>701</onup>
+						<ondown>705</ondown>
+						<onleft>702</onleft>
+						<onright>66</onright>
+						<onclick>ActivateWindow(Videos, RecentlyAddedMovies,return)</onclick>
+					</control>
+					<!-- This control defines the Movie All Recent Button Title-->
+					<control type="label">
+						<include>PanelButtonTitle2ndCol</include>
+						<label>$LOCALIZE[31702]</label>
+					</control>
+					<!-- This control defines the Movie All Recent Button Icon-->
+					<control type="image">
+						<include>PanelButtonIcon2ndCol</include>
+						<texture>DefaultRecentlyAddedMovies.png</texture>
+					</control>
+				</control>
+				<!-- This control displays the Videos & Video Add-On Elements -->
+				<control type="group">
+					<width>315</width>
+					<height>155</height>
+					<!-- This control displays the Videos Button Background-->
+					<control type="image">
+						<include>PanelButtonImageNF</include>
+					</control>
+					<!-- This control displays the Videos Highlighted Button-->
+					<control type="image">
+						<include>PanelButtonImageFO</include>
+						<visible>[Control.HasFocus(704)]</visible>
+						<animation effect="fade" time="300" tween="square">VisibleChange</animation>
+					</control>
+					<!-- This control displays the Videos Button Behaviour-->
+					<control id="704">
+						<posx></posx>
+						<type>button</type>
+						<label>$LOCALIZE[31704]</label>
+						<posy>0</posy>
+						<width>155</width>
+						<height>155</height>
+						<align>left</align>
+						<onup>702</onup>
+						<ondown condition="!Player.HasMedia">701</ondown>
+						<ondown condition="Player.HasMedia">6500</ondown>
+						<onleft>9000</onleft>
+						<onright>705</onright>
+						<onclick>ActivateWindow(Videos,TvShows)</onclick>
+						<onclick>Back</onclick>
+					</control>
+					<!-- This control displays the Videos Button Title-->
+					<control type="label">
+						<include>PanelButtonTitle</include>
+						<label>VIDEOS</label>
+					</control>
+					<!-- This control displays the Videos Button Icon-->
+					<control type="image">
+						<include>PanelButtonIcon</include>
+						<texture>DefaultVideo.png</texture>
+					</control>
+					<!-- This control displays the Video Add-ons Button Background-->
+					<control type="image">
+						<include>PanelButtonImageNF2ndCol</include>
+					</control>
+					<!-- This control displays the Video Add-ons Highlighted Button-->
+					<control type="image">
+						<include>PanelButtonImageFO2ndCol</include>
+						<visible>[Control.HasFocus(705)]</visible>
+						<animation effect="fade" time="300" tween="square">VisibleChange</animation>
+					</control>
+					<!-- This control defines the Video Add-ons Button Behaviour-->
+					<control id="705">
+						<posx>160</posx>
+						<type>button</type>
+						<label>$LOCALIZE[1037]</label>
+						<posx>1</posx>
+						<width>155</width>
+						<height>155</height>
+						<align>left</align>
+						<onup>703</onup>
+						<ondown condition="!Player.HasMedia">701</ondown>
+						<ondown condition="Player.HasMedia">6500</ondown>
+						<onleft>704</onleft>
+						<onright>66</onright>
+						<onclick>ActivateWindow(Videos,Addons,return)</onclick>
+					</control>
+					<!-- This control defines the Video Add-ons Button Title-->
+					<control type="label">
+						<include>PanelButtonTitle2ndCol</include>
+						<label>$LOCALIZE[1037]</label>
+					</control>
+					<!-- This control defines the Video Add-ons Button Icon-->
+					<control type="image">
+						<include>PanelButtonIcon2ndCol</include>
+						<texture>DefaultAddonVideo.png</texture>
+					</control>
+				</control>
+			</control>
+			<!-- This control defines the scrollbar managing the Movies Panel -->
+			<control type="scrollbar" id="7001">
+				<posx>370</posx>
+				<posy>290</posy>
+				<width>5</width>
+				<height>315</height>
+				<texturesliderbackground></texturesliderbackground>
+				<textureslidernib>bar.png</textureslidernib>
+				<textureslidernibfocus>scroll_nib.png</textureslidernibfocus>
+				<texturesliderbar></texturesliderbar>
+				<texturesliderbarfocus></texturesliderbarfocus>
+				<showonepage>true</showonepage>
+				<orientation>vertical</orientation>
+				<visible>[Control.HasFocus(701) | Control.HasFocus(702) | Control.HasFocus(703) | Control.HasFocus(704) | Control.HasFocus(705)]</visible>
+			</control>
+		</control>
+		<!--  Movies Panel Recent - Recommended - Random Elements-->
+		<control type="group">
+			<animation type="Visible" condition="!Skin.HasSetting(DisableHomeAnimations)" reversible="false">
+				<effect type="slide" start="2500" end="0" time="700" tween="cubic" easing="inout"/>
+			</animation>
+			<animation type="Hidden" condition="!Skin.HasSetting(DisableHomeAnimations)" reversible="false">
+				<effect type="slide" start="0" end="2500" time="700" tween="cubic" easing="inout"/>
+			</animation>
+			<visible>SubString(Window(Home).Property(menu),movie)  + !Control.HasFocus(6500)</visible>
+			<!-- This control displays the Recent Recommended Random library label footer-->
+			<control type="label">
+				<label>[COLOR Accent]$VAR[ShowMovies][/COLOR]</label>
+				<posx>380</posx>
+				<posy>610</posy>
+				<height>30</height>
+				<width>400</width>
+				<align>left</align>
+				<font>Panel_Hint</font>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<!-- This control defines  Recent Random Recommended Movies Panel -->
+			<control type="panel" id="66">
+				<posx>380</posx>
+				<posy>290</posy>
+				<width>880</width>
+				<height>320</height>
+				<preloaditems>2</preloaditems>
+				<visible>true</visible>
+				<onup>2001</onup>
+				<ondown>66</ondown>
+				<onleft>701</onleft>
+				<onright>66</onright>
+				<orientation>vertical</orientation>
+				<pagecontrol>98</pagecontrol>
+				<focusposition>0</focusposition>
+				<scrolltime tween="cubic" easing="out">400</scrolltime>
+				<!-- This control defines the default item layout of the Movies Panel -->
+				<itemlayout width="220" height="320">
+					<!-- This control defines the background of the item -->
+					<control type="image">
+						<width>215</width>
+						<height>315</height>
+						<texture>tile.png</texture>
+						<aspectratio>scale</aspectratio>
+					</control>
+					<!-- This control defines the Poster of the Item -->
+					<control type="image">
+						<width>215</width>
+						<height>315</height>
+						<texture>$INFO[ListItem.Thumb]</texture>
+						<aspectratio>scale</aspectratio>
+						<!--<colordiffuse>ImageDiffuse</colordiffuse>-->
+						<bordersize>5</bordersize>
+					</control>
+				</itemlayout>
+				<focusedlayout width="220" height="320">
+					<!-- This control defines the Poster of the Item when the item is selected -->
+					<control type="image">
+						<width>215</width>
+						<height>315</height>
+						<texture>$INFO[ListItem.Thumb]</texture>
+						<aspectratio>scale</aspectratio>
+						<bordersize>5</bordersize>
+						<bordertexture>button.png</bordertexture>
+					</control>
+				</focusedlayout>
+				<!-- This control defines the content nside the movies panel -->
+				<content>
+					<include condition="Stringcompare(Skin.String(ItemsTypeMovies),$LOCALIZE[31738])">RandomItemsMovies</include>
+					<include condition="Stringcompare(Skin.String(ItemsTypeMovies),$LOCALIZE[31709]) | IsEmpty(Skin.String(ItemsTypeMovies))">RecentItemsMovies</include>
+					<include condition="Stringcompare(Skin.String(ItemsTypeMovies),$LOCALIZE[31739])">RecommendedItemsMovies</include>
+				</content>
+			</control>
+			<!-- This control displays the name of the current selected movie -->
+			<control type="label">
+				<label>$INFO[Container(66).ListItem.Label2] [COLOR Accent]$INFO[Container(66).ListItem.Label][/COLOR]</label>
+				<posx>380</posx>
+				<posy>235</posy>
+				<height>60</height>
+				<width>800</width>
+				<font>Panel_Title_Footer</font>
+				<align>left</align>
+				<visible>Control.HasFocus(66)</visible>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<!-- This control defines the scrollbar managing the Recent Random Recommended Movies Panel -->
+			<control type="scrollbar" id="98">
+				<posx>1260</posx>
+				<posy>290</posy>
+				<width>5</width>
+				<height>320</height>
+				<texturesliderbackground></texturesliderbackground>
+				<textureslidernib>bar.png</textureslidernib>
+				<textureslidernibfocus>scroll_nib.png</textureslidernibfocus>
+				<texturesliderbar></texturesliderbar>
+				<texturesliderbarfocus></texturesliderbarfocus>
+				<showonepage>true</showonepage>
+				<orientation>vertical</orientation>
+				<visible>Control.HasFocus(66)</visible>
+			</control>
+		</control>
+		 <!--  TV Shows Panel Menu Elements-->
+		<control type="group">
+			<animation type="Visible" condition="!Skin.HasSetting(DisableHomeAnimations)">
+				<effect type="slide" start="-1500" end="0" time="700" tween="cubic" easing="inout"/>
+			</animation>
+			<animation type="Hidden" condition="!Skin.HasSetting(DisableHomeAnimations)">
+					<effect type="slide" start="0" end="-1500" time="700" tween="cubic" easing="inout"/>
+			</animation>
+			<visible>SubString(Window(Home).Property(menu),tv)</visible>	
+			<!-- This control displays the Main Title of the Panel-->
+			<control type="label">
+				<width>300</width>
+				<include>ViewMainTitle</include>
+				<label>TV SHOWS</label>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="image">
+				<posx>5</posx>
+				<posy>227</posy>
+				<width>40</width>
+				<height>40</height>
+				<texture>marker.png</texture>
+				<visible>[Control.HasFocus(2002)]</visible>
+				<animation effect="fade" start="20" time="1200" condition="Control.HasFocus(2002)" pulse="true">Conditional</animation>
+				<animation effect="slide" start="-50" time="200" easing="inout" condition="Control.HasFocus(2002)">Conditional</animation>
+				<animation effect="fade" time="200" delay="200">Hidden</animation>
+				<visible>!Skin.HasSetting(DisplayHomeMenu)</visible>
+			</control>
+			<!-- This control displays the Tv Shows Library Panel-->
+			<control type="grouplist" id="8000">
+				<include>PanelCoordinates</include>
+				<width>315</width>
+				<height>315</height>
+				<itemgap>5</itemgap>
+				<pagecontrol>8001</pagecontrol>
+				<!-- This control displays the All Tv Shows Elements-->
+				<control type="group">
+					<width>315</width>
+					<height>155</height>
+					<!-- This control displays the All Tv Shows Button Background-->
+					<control type="image">
+						<include>PanelRectButtonImageNF</include>
+					</control>
+					<!-- This control displays the All Tv Shows Highlighted Button-->
+					<control type="image">
+						<include>PanelRectButtonImageFO</include>
+						<visible>[Control.HasFocus(801)]</visible>
+						<animation effect="fade" time="300" tween="square">VisibleChange</animation>
+					</control>
+					<!-- This control defines the All Tv Shows Button behaviour-->
+					<control id="801">
+						<posx></posx>
+						<posy></posy>
+						<type>button</type>
+						<label>$LOCALIZE[20342]</label>
+						<width>315</width>
+						<height>155</height>
+						<align>left</align>
+						<onup>2002</onup>
+						<ondown>802</ondown>
+						<onleft>9000</onleft>
+						<onright>68</onright>
+						<onclick>ActivateWindow(VideoLibrary,tvshowtitles,return)</onclick>
+					</control>
+					<!-- This control displays the All Tv Shows Button Icon-->
+					<control type="image">
+						<include>PanelRectButtonIcon</include>
+						<texture>DefaultTVShows.png</texture>
+					</control>
+					<!-- This control displays the All Tv Shows Count-->
+					<control type="label">
+						<include>PanelRectButtonHeaderTitle</include>
+						<label>$INFO[Window.Property(TVShows.Count)]$INFO[TVShows.Count]</label>
+					</control>
+					<!-- This control displays the All Tv Shows Button Label-->
+					<control type="label">
+						<include>PanelRectButtonTitle</include>
+						<label>TV SHOWS</label>
+					</control>
+				</control>
+				<!-- This control displays the TV Library & All Recent Elements-->
+				<control type="group">
+					<width>315</width>
+					<height>155</height>
+					<!-- This control displays the TV Library Button Background-->
+					<control type="image">
+						<include>PanelButtonImageNF</include>
+					</control>
+					<!-- This control displays the TV Library Highlighted Button-->
+					<control type="image">
+						<include>PanelButtonImageFO</include>
+						<visible>[Control.HasFocus(802)]</visible>
+						<animation effect="fade" time="300" tween="square">VisibleChange</animation>
+					</control>
+					<!-- This control defines the TV Library Button Behaviour-->
+					<control id="802">
+						<posx></posx>
+						<type>button</type>
+						<label>$LOCALIZE[31704]</label>
+						<posy>0</posy>
+						<width>155</width>
+						<height>155</height>
+						<align>left</align>
+						<onup>801</onup>
+						<ondown>804</ondown>
+						<onleft>9000</onleft>
+						<onright>803</onright>
+						<onclick>ActivateWindow(Videos,TvShows,return)</onclick>
+					</control>
+					<!-- This control displays the TV Libray Button Title-->
+					<control type="label">
+						<include>PanelButtonTitle</include>
+						<label>$LOCALIZE[31704]</label>
+					</control>
+					<!-- This control displays the TV Libray Button Icon-->
+					<control type="image">
+						<include>PanelButtonIcon</include>
+						<texture>icons/TvShowLibrary.png</texture>
+					</control>
+					<!-- This control displays the TV All Recent Button Background-->
+					<control type="image">
+						<include>PanelButtonImageNF2ndCol</include>
+					</control>
+					<!-- This control displays the TV All Recent Highlighted Button-->
+					<control type="image">
+						<include>PanelButtonImageFO2ndCol</include>
+						<visible>[Control.HasFocus(803)]</visible>
+						<animation effect="fade" time="200" tween="square">VisibleChange</animation>
+					</control>
+					<!-- This control defines the TV All Recent Button Behaviour-->
+					<control id="803">
+						<posx>160</posx>
+						<type>button</type>
+						<label>$LOCALIZE[31702]</label>
+						<posx>1</posx>
+						<width>155</width>
+						<height>155</height>
+						<align>left</align>
+						<onup>801</onup>
+						<ondown>805</ondown>
+						<onleft>802</onleft>
+						<onright>68</onright>
+						<onclick>ActivateWindow(Videos, RecentlyAddedEpisodes,return)</onclick>
+					</control>
+					<!-- This control displays the TV All Recent Button Title-->
+					<control type="label">
+						<include>PanelButtonTitle2ndCol</include>
+						<label>$LOCALIZE[31702]</label>
+					</control>
+					<!-- This control displays the TV All Recent Button Icon-->
+					<control type="image">
+						<include>PanelButtonIcon2ndCol</include>
+						<texture>DefaultRecentlyAddedEpisodes.png</texture>
+					</control>
+				</control>
+				<!-- This control displays the Videos and Video Add-ons Elements-->
+				<control type="group">
+					<width>315</width>
+					<height>155</height>
+					<!-- This control displays the Videos Button Background-->
+					<control type="image">
+						<include>PanelButtonImageNF</include>
+					</control>
+					<!-- This control displays the Videos Highlighted Button-->
+					<control type="image">
+						<include>PanelButtonImageFO</include>
+						<visible>[Control.HasFocus(804)]</visible>
+						<animation effect="fade" time="300" tween="square">VisibleChange</animation>
+					</control>
+					<!-- This control defines the Videos Button Behaviour-->
+					<control id="804">
+						<posx></posx>
+						<type>button</type>
+						<label>VIDEOS</label>
+						<posy>0</posy>
+						<width>155</width>
+						<height>155</height>
+						<align>left</align>
+						<onup>802</onup>
+						<ondown condition="!Player.HasMedia">801</ondown>
+						<ondown condition="Player.HasMedia">6500</ondown>
+						<onleft>9000</onleft>
+						<onright>805</onright>
+						<onclick>ActivateWindow(Videos,TvShows)</onclick>
+						<onclick>Back</onclick>
+					</control>
+					<!-- This control displays the Videos Button Title-->
+					<control type="label">
+						<include>PanelButtonTitle</include>
+						<label>VIDEOS</label>
+					</control>
+					<!-- This control displays the Videos Button Icon-->
+					<control type="image">
+						<include>PanelButtonIcon</include>
+						<texture>DefaultVideo.png</texture>
+					</control>
+					<!-- This control displays the Video Add-ons Button Background-->
+					<control type="image">
+						<include>PanelButtonImageNF2ndCol</include>
+					</control>
+					<!-- This control displays the Video Add-ons Highlighted Button-->
+					<control type="image">
+						<include>PanelButtonImageFO2ndCol</include>
+						<visible>[Control.HasFocus(805)]</visible>
+						<animation effect="fade" time="300" tween="square">VisibleChange</animation>
+					</control>
+					<!-- This control defines the Video Add-ons Button behvaiour-->
+					<control id="805">
+						<posx>160</posx>
+						<type>button</type>
+						<label>$LOCALIZE[1037]</label>
+						<posx>1</posx>
+						<width>155</width>
+						<height>155</height>
+						<align>left</align>
+						<onup>803</onup>
+						<ondown condition="!Player.HasMedia">801</ondown>
+						<ondown condition="Player.HasMedia">6500</ondown>
+						<onleft>804</onleft>
+						<onright>68</onright>
+						<onclick>ActivateWindow(Videos,Addons,return)</onclick>
+					</control>
+					<!-- This control displays the Video Add-ons Button Title-->
+					<control type="label">
+						<include>PanelButtonTitle2ndCol</include>
+						<label>$LOCALIZE[1037]</label>
+					</control>
+					<!-- This control displays the Video Add-ons Button Icon-->
+					<control type="image">
+						<include>PanelButtonIcon2ndCol</include>
+						<texture>DefaultAddonVideo.png</texture>
+					</control>
+				</control>
+			</control>
+			 <!-- This control defines the scrollbar managing the TV Shows Library Panel -->
+			<control type="scrollbar" id="8001">
+				<posx>370</posx>
+				<posy>290</posy>
+				<width>5</width>
+				<height>315</height>
+				<texturesliderbackground></texturesliderbackground>
+				<textureslidernib>bar.png</textureslidernib>
+				<textureslidernibfocus>scroll_nib.png</textureslidernibfocus>
+				<texturesliderbar></texturesliderbar>
+				<texturesliderbarfocus></texturesliderbarfocus>
+				<showonepage>true</showonepage>
+				<orientation>vertical</orientation>
+				<visible>[Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805)]</visible>
+			</control>
+		</control>
+		 <!--  TV shows  Panel Recent - Recommeded - Random Elements-->
+		<control type="group">
+			<!--<animation effect="slide" start="2500" end="0" time="700" tween="cubic" easing="inout">VisibleChange</animation>-->
+			<animation type="Visible" condition="!Skin.HasSetting(DisableHomeAnimations)">
+				<effect type="slide" start="2500" end="0" time="700" tween="cubic" easing="inout"/>
+			</animation>
+			<animation type="Hidden" condition="!Skin.HasSetting(DisableHomeAnimations)">
+				<effect type="slide" start="0" end="2500" time="700" tween="cubic" easing="inout"/>
+			</animation>	
+			<visible>SubString(Window(Home).Property(menu),tv) + !Control.HasFocus(6500)</visible>			 
+			<!-- This control displays the Recent Recommended Random library label footer-->
+			<control type="label">
+				<label>[COLOR Accent]$VAR[ShowTV][/COLOR]</label>
+				<posx>380</posx>
+				<posy>610</posy>
+				<height>30</height>
+				<width>400</width>
+				<font>Panel_Hint</font>
+				<align>left</align>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<!-- This control defines  Recent Random Recommended Tv Shows Panel -->
+			<control type="panel" id="68">
+				<posx>380</posx>
+				<posy>290</posy>
+				<width>880</width>
+				<height>320</height>
+				<preloaditems>3</preloaditems>
+				<visible>true</visible>
+				<onup>2002</onup>
+				<ondown>68</ondown>
+				<onleft>801</onleft>
+				<onright>68</onright>
+				<orientation>vertical</orientation>
+				<pagecontrol>98</pagecontrol>
+				<scrolltime tween="cubic" easing="out">400</scrolltime>
+				<!-- This control defines the default item layout of the TV Shows Panel with Posters-->	
+				<itemlayout width="220" height="320" condition="!Skin.HasSetting(EpisodeThumbsOnHome)">
+					<control type="image">
+						<width>215</width>
+						<height>315</height>
+						<texture>tile.png</texture>
+						<aspectratio>scale</aspectratio>
+					</control>
+					<control type="image">
+						<width>215</width>
+						<height>315</height>
+						<texture>$INFO[ListItem.Thumb]</texture>
+						<aspectratio>scale</aspectratio>
+						<bordersize>5</bordersize>
+					</control>
+					<control type="label">
+						<label>$INFO[ListItem.Property(EpisodeNo)]</label>
+						<posx>205</posx>
+						<posy>280</posy>
+						<height>30</height>
+						<width>145</width>
+						<font>Panel_Title_Footer</font>
+						<align>right</align>
+					</control>
+					<control type="image">
+						<posx>5</posx>
+						<posy>280</posy>
+						<width>205</width>
+						<height>30</height>
+						<texture>tile.png</texture>
+					</control>
+					
+				</itemlayout>
+				<!-- This control defines the focused item layout of the TV Shows Panel with Posters -->	
+				<focusedlayout width="220" height="320" condition="!Skin.HasSetting(EpisodeThumbsOnHome)">
+					<!-- This control defines the Color Ring Background of the Item when the item is selected -->
+					<control type="image">
+						<width>215</width>
+						<height>315</height>
+						<texture>button.png</texture>
+						<aspectratio>scale</aspectratio>
+					</control>
+					<control type="image">
+						<width>215</width>
+						<height>315</height>
+						<texture>$INFO[ListItem.Thumb]</texture>
+						<aspectratio>scale</aspectratio>
+						<bordersize>5</bordersize>
+					</control>
+					<control type="image">
+						<posx>5</posx>
+						<posy>280</posy>
+						<width>205</width>
+						<height>30</height>
+						<texture>tile.png</texture>
+					</control>
+					<control type="label">
+						<label>$INFO[ListItem.Property(EpisodeNo)]</label>
+						<posx>205</posx>
+						<posy>280</posy>
+						<height>30</height>
+						<width>145</width>
+						<font>Panel_Title_Footer</font>
+						<align>right</align>
+					</control>
+				</focusedlayout>
+				<!-- This control defines the default item layout of the TV Shows Panel with Episodes-->	
+				<itemlayout width="220" height="160" condition="Skin.HasSetting(EpisodeThumbsOnHome)">
+					<control type="image">
+						<width>215</width>
+						<height>155</height>
+						<texture>tile.png</texture>
+						<aspectratio>scale</aspectratio>
+					</control>
+					<control type="image">
+						<width>215</width>
+						<height>155</height>
+						<texture>$INFO[ListItem.Thumb]</texture>
+						<aspectratio>scale</aspectratio>
+						<bordersize>5</bordersize>
+					</control>
+					<control type="label">
+						<label>$INFO[ListItem.Property(EpisodeNo)]</label>
+						<posx>205</posx>
+						<posy>120</posy>
+						<height>30</height>
+						<width>145</width>
+						<font>Panel_Title_Footer</font>
+						<align>right</align>
+					</control>
+					<control type="image">
+						<posx>5</posx>
+						<posy>120</posy>
+						<width>205</width>
+						<height>30</height>
+						<texture>tile.png</texture>
+					</control>
+					
+				</itemlayout>
+				<!-- This control defines the focused item layout of the TV Shows Panel with Episodes-->	
+				<focusedlayout width="220" height="160" condition="Skin.HasSetting(EpisodeThumbsOnHome)">
+					<!-- This control defines the Color Ring Background of the Item when the item is selected -->
+					<control type="image">
+						<width>215</width>
+						<height>155</height>
+						<texture>button.png</texture>
+						<aspectratio>scale</aspectratio>
+					</control>
+					<control type="image">
+						<width>215</width>
+						<height>155</height>
+						<texture>$INFO[ListItem.Thumb]</texture>
+						<aspectratio>scale</aspectratio>
+						<bordersize>5</bordersize>
+					</control>
+					<control type="image">
+						<posx>5</posx>
+						<posy>120</posy>
+						<width>205</width>
+						<height>30</height>
+						<texture>tile.png</texture>
+					</control>
+					<control type="label">
+						<label>$INFO[ListItem.Property(EpisodeNo)]</label>
+						<posx>205</posx>
+						<posy>120</posy>
+						<height>30</height>
+						<width>145</width>
+						<font>Panel_Title_Footer</font>
+						<align>right</align>
+					</control>
+				</focusedlayout>
+				<content>
+					<include condition="Stringcompare(Skin.String(ItemsTypeTV),$LOCALIZE[31738]) + !Skin.HasSetting(EpisodeThumbsOnHome)">RandomItemsTV</include>
+					<include condition="Stringcompare(Skin.String(ItemsTypeTV),$LOCALIZE[31738]) + Skin.HasSetting(EpisodeThumbsOnHome)">RandomItemsTVThumbs</include>
+					<include condition="[Stringcompare(Skin.String(ItemsTypeTV),$LOCALIZE[31709]) | IsEmpty(Skin.String(ItemsTypeTV))] + !Skin.HasSetting(EpisodeThumbsOnHome)">RecentItemsTV</include>
+					<include condition="[Stringcompare(Skin.String(ItemsTypeTV),$LOCALIZE[31709]) | IsEmpty(Skin.String(ItemsTypeTV))] + Skin.HasSetting(EpisodeThumbsOnHome)">RecentItemsTVThumbs</include>
+					<include condition="Stringcompare(Skin.String(ItemsTypeTV),$LOCALIZE[31739]) + !Skin.HasSetting(EpisodeThumbsOnHome)">RecommendedItemsTV</include>
+					<include condition="Stringcompare(Skin.String(ItemsTypeTV),$LOCALIZE[31739]) + Skin.HasSetting(EpisodeThumbsOnHome)">RecommendedItemsTVThumbs</include>
+				</content>
+			</control>
+			<!-- This control displays the name of the current selected tv show -->
+			<control type="label">
+				<label>$INFO[Container(68).ListItem.Label2]</label>
+				<posx>380</posx>
+				<posy>205</posy>
+				<height>60</height>
+				<width>800</width>
+				<font>Panel_Title_Footer</font>
+				<align>left</align>
+				<visible>Control.HasFocus(68)</visible>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="label">
+				<label>[COLOR Accent]$INFO[Container(68).ListItem.Label][/COLOR]</label>
+				<posx>380</posx>
+				<posy>235</posy>
+				<height>60</height>
+				<width>800</width>
+				<font>Panel_Title_Footer</font>
+				<align>left</align>
+				<visible>Control.HasFocus(68)</visible>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="scrollbar" id="98">
+				<posx>1260</posx>
+				<posy>290</posy>
+				<width>5</width>
+				<height>320</height>
+				<texturesliderbackground></texturesliderbackground>
+				<textureslidernib>bar.png</textureslidernib>
+				<textureslidernibfocus>scroll_nib.png</textureslidernibfocus>
+				<texturesliderbar></texturesliderbar>
+				<texturesliderbarfocus></texturesliderbarfocus>
+				<showonepage>true</showonepage>
+				<orientation>vertical</orientation>
+				<visible>Control.HasFocus(68)</visible>
+			</control>
+		</control>
+		<!--  Music Panel Menu Elements-->
+		<control type="group">
+			<animation type="Visible" condition="!Skin.HasSetting(DisableHomeAnimations)">
+				<effect type="slide" start="-1500" end="0" time="700" tween="cubic" easing="inout"/>
+			</animation>
+			<animation type="Hidden" condition="!Skin.HasSetting(DisableHomeAnimations)">
+					<effect type="slide" start="0" end="-1500" time="700" tween="cubic" easing="inout"/>
+			</animation>
+			<visible>SubString(Window(Home).Property(menu),music)</visible>			
+			<!-- This control displays the Main Title of the Panel-->
+			<control type="label">
+				<width>300</width>
+				<include>ViewMainTitle</include>
+				<label>MUSIC</label>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="image">
+				<posx>5</posx>
+				<posy>227</posy>
+				<width>40</width>
+				<height>40</height>
+				<texture>marker.png</texture>
+				<visible>[Control.HasFocus(2003)]</visible>
+				<animation effect="fade" start="20" time="1200" condition="Control.HasFocus(2003)" pulse="true">Conditional</animation>
+				<animation effect="slide" start="-50" time="200" easing="inout" condition="Control.HasFocus(2003)">Conditional</animation>
+				<animation effect="fade" time="200" delay="200">Hidden</animation>
+				<visible>!Skin.HasSetting(DisplayHomeMenu)</visible>
+			</control>	
+			<control type="grouplist" id="6000">
+				<include>PanelCoordinates</include>
+				<width>315</width>
+				<height>315</height>
+				<itemgap>5</itemgap>
+				<pagecontrol>6001</pagecontrol>
+				<!-- This control displays the Albums Elements-->
+				<control type="group">
+					<width>315</width>
+					<height>155</height>
+					<!-- This control displays the Albums Button Background-->
+					<control type="image">
+						<include>PanelRectButtonImageNF</include>
+					</control>
+					<!-- This control displays the Albums Highlighted Button-->
+					<control type="image">
+						<include>PanelRectButtonImageFO</include>
+						<visible>[Control.HasFocus(601)]</visible>
+						<animation effect="fade" time="300" tween="square">VisibleChange</animation>
+					</control>
+					<!-- This control defines the Albums Button behaviour-->
+					<control id="601">
+						<posx></posx>
+						<posy></posy>
+						<type>button</type>
+						<label>music</label>
+						<width>315</width>
+						<height>155</height>
+						<align>left</align>
+						<onup>2003</onup>
+						<ondown>602</ondown>
+						<onleft>9000</onleft>
+						<onright>67</onright>
+						<onclick>ActivateWindow(MusicLibrary,Albums,return)</onclick>
+					</control>
+					<!-- This control displays the Albums Icon-->
+					<control type="image">
+						<include>PanelRectButtonIcon</include>
+						<texture>DefaultMusicAlbums.png</texture>
+					</control>
+					<control type="label">
+						<include>PanelRectButtonHeaderTitle</include>
+						<label>$INFO[Window.Property(Music.AlbumsCount)]$INFO[Music.AlbumsCount]</label>
+					</control>
+					<!-- This control displays the Albums Button Label-->
+					<control type="label">
+						<include>PanelRectButtonTitle</include>
+						<label>ALBUMS</label>
+					</control>
+				</control>
+				<!-- Library & Artists Panel Elements -->
+				<control type="group">
+					<width>315</width>
+					<height>155</height>
+					<control type="image">
+						<include>PanelButtonImageNF</include>
+					</control>
+					<control type="image">
+						<include>PanelButtonImageFO</include>
+						<visible>[Control.HasFocus(602)]</visible>
+						<animation effect="fade" time="300" tween="square">VisibleChange</animation>
+					</control>
+					<control type="image">
+						<include>PanelButtonIcon</include>
+						<texture>icons/MusicLibrary.png</texture>
+					</control>
+					<control id="602">
+						<posx></posx>
+						<type>button</type>
+						<label>$LOCALIZE[31704]</label>
+						<width>315</width>
+						<height>155</height>
+						<align>left</align>
+						<onup>601</onup>
+						<ondown>604</ondown>
+						<onleft>9000</onleft>
+						<onright>603</onright>
+						<onclick>ActivateWindow(musiclibrary,Genres)</onclick>
+						<onclick>Back</onclick>
+					</control>
+					<control type="label">
+						<include>PanelButtonTitle</include>
+						<label>$LOCALIZE[31704]</label>
+					</control>
+					<control type="image">
+						<include>PanelButtonImageNF2ndCol</include>
+					</control>
+					<control type="image">
+						<include>PanelButtonImageFO2ndCol</include>
+						<visible>[Control.HasFocus(603)]</visible>
+						<animation effect="fade" time="300" tween="square">VisibleChange</animation>
+					</control>
+					<control type="image">
+						<include>PanelButtonIcon2ndCol</include>
+						<texture>DefaultMusicArtists.png</texture>
+					</control>
+					<control id="603">
+						<posx>160</posx>
+						<type>button</type>
+						<label>$LOCALIZE[31735]</label>
+						<width>315</width>
+						<height>155</height>
+						<align>left</align>
+						<onup>601</onup>
+						<ondown>605</ondown>
+						<onleft>602</onleft>
+						<onright>67</onright>
+						<onclick>ActivateWindow(MusicLibrary,Artists,return)</onclick>
+					</control>
+					<control type="label">
+						<include>PanelButtonHeaderTitle2ndCol</include>
+						<label>$INFO[Window.Property(Music.ArtistsCount)]$INFO[Music.ArtistsCount]</label>
+					</control>
+					<control type="label">
+						<include>PanelButtonTitle2ndCol</include>
+						<label>ARTISTS</label>
+					</control>
+				</control>
+				<!-- Playlists & Recent Panel Elements -->
+				<control type="group">
+					<width>315</width>
+					<height>155</height>
+					<control type="image">
+						<include>PanelButtonImageNF</include>
+					</control>
+					<control type="image">
+						<include>PanelButtonImageFO</include>
+						<visible>[Control.HasFocus(604)]</visible>
+						<animation effect="fade" time="300" tween="square">VisibleChange</animation>
+					</control>
+					<control id="604">
+						<posx></posx>
+						<type>button</type>
+						<label>$LOCALIZE[136]</label>
+						<posy>0</posy>
+						<width>155</width>
+						<height>155</height>
+						<align>left</align>
+						<onup>602</onup>
+						<ondown>606</ondown>
+						<onleft>9000</onleft>
+						<onright>605</onright>
+						<onclick>ActivateWindow(MusicLibrary, Playlists,return)</onclick>
+					</control>
+					<control type="label">
+						<include>PanelButtonTitle</include>
+						<label>$LOCALIZE[136]</label>
+					</control>
+					<control type="image">
+						<include>PanelButtonIcon</include>
+						<texture>DefaultMusicPlaylists.png</texture>
+					</control>
+					<control type="image">
+						<include>PanelButtonImageNF2ndCol</include>
+					</control>
+					<control type="image">
+						<include>PanelButtonImageFO2ndCol</include>
+						<visible>[Control.HasFocus(605)]</visible>
+						<animation effect="fade" time="300" tween="square">VisibleChange</animation>
+					</control>
+					<control id="605">
+						<posx>160</posx>
+						<type>button</type>
+						<label>$LOCALIZE[31737]</label>
+						<posx>1</posx>
+						<width>155</width>
+						<height>155</height>
+						<align>left</align>
+						<onup>603</onup>
+						<ondown>607</ondown>
+						<onleft>604</onleft>
+						<onright>67</onright>
+						<onclick>ActivateWindow(Videos,MusicVideoTitles,return)</onclick>
+					</control>
+					<control type="label">
+						<include>PanelButtonTitle2ndCol</include>
+						<label>$LOCALIZE[31737]</label>
+					</control>
+					<control type="image">
+						<include>PanelButtonIcon2ndCol</include>
+						<texture>DefaultMusicVideos.png</texture>
+					</control>
+				</control>
+				<!-- Music  & Music Addons Panel Elements-->
+				<control type="group">
+					<width>315</width>
+					<height>155</height>
+					<control type="image">
+						<include>PanelButtonImageNF</include>
+					</control>
+					<control type="image">
+						<include>PanelButtonImageFO</include>
+						<visible>[Control.HasFocus(606)]</visible>
+						<animation effect="fade" time="300" tween="square">VisibleChange</animation>
+					</control>
+					<control id="606">
+						<posx></posx>
+						<type>button</type>
+						<label>MUSIC</label>
+						<posy>0</posy>
+						<width>155</width>
+						<height>155</height>
+						<align>left</align>
+						<onup>604</onup>
+						<ondown condition="!Player.HasMedia">601</ondown>
+						<ondown condition="Player.HasMedia">6500</ondown>
+						<onleft>9000</onleft>
+						<onright>607</onright>
+						<onclick>ActivateWindow(musicfiles)</onclick>
+						<!---
+						<onclick>ActivateWindow(MusicLibrary, Playlists)</onclick>
+						<onclick>back</onclick>-->
+					</control>
+					<control type="label">
+						<include>PanelButtonTitle</include>
+						<label>MUSIC FILES</label>
+					</control>
+					<control type="image">
+						<include>PanelButtonIcon</include>
+						<texture>DefaultMusicSongs.png</texture>
+					</control>
+					
+					<control type="image">
+						<include>PanelButtonImageNF2ndCol</include>
+					</control>
+					<control type="image">
+						<include>PanelButtonImageFO2ndCol</include>
+						<visible>[Control.HasFocus(607)]</visible>
+						<animation effect="fade" time="200" tween="square">VisibleChange</animation>
+					</control>
+					<control id="607">
+						<posx>160</posx>
+						<type>button</type>
+						<label>$LOCALIZE[1038]</label>
+						<posx>1</posx>
+						<width>155</width>
+						<height>155</height>
+						<align>left</align>
+						<onup>605</onup>
+						<ondown condition="!Player.HasMedia">601</ondown>
+						<ondown condition="Player.HasMedia">6500</ondown>
+						<onleft>606</onleft>
+						<onright>67</onright>
+						<onclick>ActivateWindow(Music,Addons,return)</onclick>
+					</control>
+					<control type="label">
+					<include>PanelButtonTitle2ndCol</include>
+						<label>$LOCALIZE[1038]</label>
+					</control>
+					<control type="image">
+						<include>PanelButtonIcon2ndCol</include>
+						<texture>DefaultAddonMusic.png</texture>
+					</control>
+				</control>
+			</control>
+			<control type="scrollbar" id="6001">
+				<posx>370</posx>
+				<posy>290</posy>
+				<width>5</width>
+				<height>315</height>
+				<texturesliderbackground></texturesliderbackground>
+				<textureslidernib>bar.png</textureslidernib>
+				<textureslidernibfocus>scroll_nib.png</textureslidernibfocus>
+				<texturesliderbar></texturesliderbar>
+				<texturesliderbarfocus></texturesliderbarfocus>
+				<showonepage>true</showonepage>
+				<orientation>vertical</orientation>
+				<visible>[Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Control.HasFocus(605) | Control.HasFocus(606) | Control.HasFocus(607)]</visible>
+			</control>
+		</control>
+		<!-- Music  Panel Recent - Recommeded - Random Elements-->
+		<control type="group">
+			<!--<animation effect="slide" start="2500" end="0" time="700" tween="cubic" easing="inout">VisibleChange</animation>-->
+			<animation type="Visible" condition="!Skin.HasSetting(DisableHomeAnimations)">
+					<effect type="slide" start="2500" end="0" time="700" tween="cubic" easing="inout"/>
+			</animation>
+			<animation type="Hidden" condition="!Skin.HasSetting(DisableHomeAnimations)">
+					<effect type="slide" start="0" end="2500" time="700" tween="cubic" easing="inout"/>
+			</animation>
+			<visible>SubString(Window(Home).Property(menu),music) + !Control.HasFocus(6500)</visible>	
+			<control type="label">
+				<label>[COLOR Accent]$VAR[ShowMusic][/COLOR]</label>
+				<posx>380</posx>
+				<posy>610</posy>
+				<height>30</height>
+				<width>400</width>
+				<font>Panel_Hint</font>
+				<align>left</align>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="panel" id="67">
+				<posx>380</posx>
+				<posy>290</posy>
+				<width>800</width>
+				<height>320</height>
+				<preloaditems>2</preloaditems>
+				<visible>true</visible>
+				<onup>2003</onup>
+				<ondown>67</ondown>
+				<onleft>601</onleft>
+				<onright>67</onright>
+				<orientation>vertical</orientation>
+				<pagecontrol>97</pagecontrol>
+				<focusposition>0</focusposition>
+				<scrolltime tween="cubic" easing="out">400</scrolltime>
+				<itemlayout width="160" height="160">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>155</width>
+						<height>155</height>
+						<texture>tile.png</texture>
+						<aspectratio>scale</aspectratio>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>155</width>
+						<height>155</height>
+						<texture>$INFO[ListItem.Thumb]</texture>
+						<aspectratio>scale</aspectratio>
+						<bordersize>5</bordersize>
+						<!--<colordiffuse>ImageDiffuse</colordiffuse>-->
+					</control>
+				</itemlayout>
+				<focusedlayout width="160" height="160">
+					<!-- This control defines color ring background of the Item when the item is selected--> 
+					<control type="image">
+						<width>155</width>
+						<height>155</height>
+						<texture>button.png</texture><aspectratio>scale</aspectratio>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>155</width>
+						<height>155</height>
+						<texture>$INFO[ListItem.Thumb]</texture>
+						<aspectratio>scale</aspectratio>
+						<bordersize>5</bordersize>
+					</control>
+				</focusedlayout>
+				<content>
+					<include condition="Stringcompare(Skin.String(ItemsTypeMusic),$LOCALIZE[31738])">RandomItemsMusic</include>
+					<include condition="Stringcompare(Skin.String(ItemsTypeMusic),$LOCALIZE[31709]) | IsEmpty(Skin.String(ItemsTypeMusic))">RecentItemsMusic</include>
+					<include condition="Stringcompare(Skin.String(ItemsTypeMusic),$LOCALIZE[31739])">RecommendedItemsMusic</include>
+				</content>
+			</control>
+			<control type="label">
+				<label>$INFO[Container(67).ListItem.Label2]</label>
+				<posx>380</posx>
+				<posy>205</posy>
+				<height>60</height>
+				<width>800</width>
+				<font>Panel_Title_Footer</font>
+				<align>left</align>
+				<visible>Control.HasFocus(67)</visible>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="label">
+				<label>[COLOR Accent]$INFO[Container(67).ListItem.Label][/COLOR]</label>
+				<posx>380</posx>
+				<posy>235</posy>
+				<height>60</height>
+				<width>800</width>
+				<font>Panel_Title_Footer</font>
+				<align>left</align>
+				<visible>Control.HasFocus(67)</visible>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="scrollbar" id="97">
+				<posx>1180</posx>
+				<posy>290</posy>
+				<width>5</width>
+				<height>320</height>
+				<texturesliderbackground></texturesliderbackground>
+				<textureslidernib>bar.png</textureslidernib>
+				<textureslidernibfocus>scroll_nib.png</textureslidernibfocus>
+				<texturesliderbar></texturesliderbar>
+				<texturesliderbarfocus></texturesliderbarfocus>
+				<showonepage>true</showonepage>
+				<orientation>vertical</orientation>
+				<visible>Control.HasFocus(67)</visible>
+			</control>
+		</control>
+		<!--  LIVE TV Panel Menu Elements-->
+		 <control type="group">
+			<!--<animation effect="slide" start="-1500" end="0" time="700" tween="cubic" easing="inout">VisibleChange</animation>-->
+			<animation type="Visible" condition="!Skin.HasSetting(DisableHomeAnimations)">
+				<effect type="slide" start="-1500" end="0" time="700" tween="cubic" easing="inout"/>
+			</animation>
+			<animation type="Hidden" condition="!Skin.HasSetting(DisableHomeAnimations)">
+					<effect type="slide" start="0" end="-1500" time="700" tween="cubic" easing="inout"/>
+			</animation>
+			<visible>SubString(Window(Home).Property(menu),pvr)</visible>	
+			<!-- This control displays the Main Title of the Panel-->
+			<control type="label">
+				<label>LIVE TV</label>
+				<posx>50</posx>
+				<posy>215</posy>
+				<width>250</width>
+				<height>60</height>
+				<align>left</align>
+				<font>Panel_Title</font>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="image">
+				<posx>5</posx>
+				<posy>227</posy>
+				<width>40</width>
+				<height>40</height>
+				<texture>marker.png</texture>
+				<visible>[Control.HasFocus(2004)]</visible>
+				<animation effect="fade" start="20" time="1200" condition="Control.HasFocus(2004)" pulse="true">Conditional</animation>
+				<animation effect="slide" start="-50" time="200" easing="inout" condition="Control.HasFocus(2004)">Conditional</animation>
+				<animation effect="fade" time="200" delay="200">Hidden</animation>
+				<visible>!Skin.HasSetting(DisplayHomeMenu)</visible>
+			</control>	
+			<!-- TO DO ------------------------- This control displays the Main Title of the Panel-->				
+			<control type="label">
+				<label>$LOCALIZE[19043]</label>
+				<posx>720</posx>
+				<posy>200</posy>
+				<height>30</height>
+				<width>400</width>
+				<font>Panel_Hint</font>
+				<align>left</align>
+				<visible>PVR.HasNonRecordingTimer | PVR.IsRecording</visible>
+			</control>
+			<!-- This control displays the Live TV Library Panel-->
+			<control type="grouplist" id="3000">
+				<posx>50</posx>
+				<posy>290</posy>
+				<width>315</width>
+				<height>315</height>
+				<itemgap>5</itemgap>
+				<pagecontrol>3001</pagecontrol>
+				<!-- This control displays All Channels the Elements-->
+				<control type="group">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>315</width>
+					<height>155</height>
+					<!-- This control displays the Button Background-->
+					<control type="image">
+						<posx></posx>
+						<posy></posy>
+						<width>315</width>
+						<height>155</height>
+						<texture>tile.png</texture>
+					</control>
+					<!-- This control displays the Highlighted Button-->
+					<control type="image">
+						<posx></posx>
+						<posy></posy>
+						<width>315</width>
+						<height>155</height>
+						<texture>button.png</texture>
+						<visible>[Control.HasFocus(301)]</visible>
+						<animation effect="fade" time="200" tween="square">VisibleChange</animation>
+						<animation effect="fade" start="0" end="100" time="400" easing="Out" tween="square" condition="Control.HasFocus(301)">Conditional</animation>
+					</control>
+					<!-- This control defines the Button behaviour-->
+					<control id="301">
+						<posx></posx>
+						<posy></posy>
+						<type>button</type>
+						<label>$LOCALIZE[31708]</label>
+						<width>315</width>
+						<height>155</height>
+						<align>left</align>
+						<onup>2004</onup>
+						<ondown>302</ondown>
+						<onleft>9000</onleft>
+						<onright>63</onright>
+						<onclick>ActivateWindow(PVR)</onclick>
+						<onclick>Setfocus(32)</onclick>
+						<onclick>Setfocus(11)</onclick>
+					</control>
+					<!-- This control displays the Button Icon-->
+					<control type="image">
+						<posx>110</posx>
+						<posy>25</posy>
+						<width>90</width>
+						<height>90</height>
+						<texture>DefaultTvChannels.png</texture>
+					</control>
+					<!-- This control displays the number Label-->
+					<control type="label">
+						<label>$INFO[PVR.BackendChannels]</label>
+						<posx>300</posx>
+						<posy>5</posy>
+						<height>30</height>
+						<width>160</width>
+						<font>Panel_Button_Title</font>
+						<align>right</align>
+					</control>
+					<!-- This control displays the Button Label-->
+					<control type="label">
+						<label>$LOCALIZE[31708]</label>
+						<posx>10</posx>
+						<posy>120</posy>
+						<height>30</height>
+						<width>280</width>
+						<font>Panel_Button_Title</font>
+						<align>left</align>
+					</control>
+				</control>
+				<!-- This control displays the Guides & Radio Elements-->
+				<control type="group">
+					<posx>0</posx>
+					<posy>159</posy>
+					<width>155</width>
+					<height>155</height>
+					<!-- This control displays the Button Background-->
+					<control type="image">
+						<posx></posx>
+						<posy>0</posy>
+						<width>155</width>
+						<height>155</height>
+						<texture>tile.png</texture>
+					</control>
+					<!-- This control displays the Highlighted Button-->
+					<control type="image">
+						<posx></posx>
+						<posy>0</posy>
+						<width>155</width>
+						<height>155</height>
+						<texture>button.png</texture>
+						<visible>[Control.HasFocus(302)]</visible>
+						<animation effect="fade" time="200" tween="square">VisibleChange</animation>
+						<animation effect="fade" start="0" end="100" time="400" easing="Out" tween="square" condition="Control.HasFocus(302)">Conditional</animation>
+					</control>
+					<!-- This control defines the Button Behaviour-->
+					<control id="302">
+						<posx></posx>
+						<type>button</type>
+						<label>$LOCALIZE[22020]</label>
+						<posy>0</posy>
+						<width>155</width>
+						<height>155</height>
+						<align>left</align>
+						<onup>301</onup>
+						<ondown>304</ondown>
+						<onleft>9000</onleft>
+						<onright>303</onright>
+						<onclick>ActivateWindow(PVR)</onclick>
+						<onclick>Setfocus(31)</onclick>
+						<onclick>Setfocus(10)</onclick>
+					</control>
+					<!-- This control displays the Button Title-->
+					<control type="label">
+						<label>$LOCALIZE[22020]</label>
+						<posx>10</posx>
+						<posy>120</posy>
+						<height>30</height>
+						<width>250</width>
+						<font>Panel_Button_Title</font>
+						<align>left</align>
+					</control>
+					<!-- This control displays the Button Icon-->
+					<control type="image">
+						<posx>35</posx>
+						<posy>26</posy>
+						<width>90</width>
+						<height>90</height>
+						<texture>DefaultEPG.png</texture>
+					</control>
+					<!-- This control displays the Button Background-->
+					<control type="image">
+						<posy></posy>
+						<posx>160</posx>
+						<width>155</width>
+						<height>155</height>
+						<texture>tile.png</texture>
+					</control>
+					<!-- This control displays the Highlighted Button-->
+					<control type="image">
+						<posy></posy>
+						<posx>160</posx>
+						<width>155</width>
+						<height>155</height>
+						<texture>button.png</texture>
+						<visible>[Control.HasFocus(303)]</visible>
+						<animation effect="fade" time="200" tween="square">VisibleChange</animation>
+						<animation effect="fade" start="0" end="100" time="400" easing="Out" tween="square" condition="Control.HasFocus(303)">Conditional</animation>
+					</control>
+					<!-- This control defines the Button Behaviour-->
+					<control id="303">
+						<posy></posy>
+						<type>button</type>
+						<label>$LOCALIZE[19021]</label>
+						<posx>1</posx>
+						<width>155</width>
+						<height>155</height>
+						<align>left</align>
+						<onup>301</onup>
+						<ondown>305</ondown>
+						<onleft>302</onleft>
+						<onright>66</onright>
+						<onclick>ActivateWindow(PVR)</onclick>
+						<onclick>Setfocus(33)</onclick>
+						<onclick>Setfocus(12)</onclick>
+					</control>
+					<!-- This control displays the Button Title-->
+					<control type="label">
+						<label>$LOCALIZE[19021]</label>
+						<posx>170</posx>
+						<posy>120</posy>
+						<height>30</height>
+						<width>250</width>
+						<font>Panel_Button_Title</font>
+						<align>left</align>
+					</control>
+					<!-- This control displays the Button Icon-->
+					<control type="image">
+						<posx>190</posx>
+						<posy>25</posy>
+						<width>90</width>
+						<height>90</height>
+						<texture>DefaultRadio.png</texture>
+					</control>
+				</control>
+				<!-- This control displays the Recordings & Timers Elements-->
+				<control type="group">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>155</width>
+					<height>155</height>
+					<!-- This control displays the Button Background-->
+					<control type="image">
+						<posx></posx>
+						<posy>0</posy>
+						<width>155</width>
+						<height>155</height>
+						<texture>tile.png</texture>
+					</control>
+					<!-- This control displays the Highlighted Button-->
+					<control type="image">
+						<posx></posx>
+						<posy>0</posy>
+						<width>155</width>
+						<height>155</height>
+						<texture>button.png</texture>
+						<visible>[Control.HasFocus(304)]</visible>
+						<animation effect="fade" time="200" tween="square">VisibleChange</animation>
+						<animation effect="fade" start="0" end="100" time="400" easing="Out" tween="square" condition="Control.HasFocus(304)">Conditional</animation>
+					</control>
+					<!-- This control defines the Button Behaviour-->
+					<control id="304">
+						<posx></posx>
+						<type>button</type>
+						<label>$LOCALIZE[19163]</label>
+						<posy>0</posy>
+						<width>155</width>
+						<height>155</height>
+						<align>left</align>
+						<onup>302</onup>
+						<ondown condition="!Player.HasMedia">301</ondown>
+						<ondown condition="Player.HasMedia">6500</ondown>
+						<onleft>9000</onleft>
+						<onright>305</onright>
+						<onclick>ActivateWindow(PVR)</onclick>
+						<onclick>Setfocus(34)</onclick>
+						<onclick>Setfocus(14)</onclick>
+					</control>
+					<!-- This control displays the Button Title-->
+					<control type="label">
+						<label>$LOCALIZE[19163]</label>
+						<posx>10</posx>
+						<posy>119</posy>
+						<height>30</height>
+						<width>250</width>
+						<font>Panel_Button_Title</font>
+						<align>left</align>
+					</control>
+					<!-- This control displays the Button Icon-->
+					<control type="image">
+						<posx>35</posx>
+						<posy>26</posy>
+						<width>90</width>
+						<height>90</height>
+						<texture>DefaultTvRecordings.png</texture>
+					</control>
+					<!-- This control displays the Button Background-->
+					<control type="image">
+						<posy></posy>
+						<posx>160</posx>
+						<width>155</width>
+						<height>155</height>
+						<texture>tile.png</texture>
+					</control>
+					<!-- This control displays the Highlighted Button-->
+					<control type="image">
+						<posy></posy>
+						<posx>160</posx>
+						<width>155</width>
+						<height>155</height>
+						<texture>button.png</texture>
+						<visible>[Control.HasFocus(305)]</visible>
+						<animation effect="fade" time="200" tween="square">VisibleChange</animation>
+						<animation effect="fade" start="0" end="100" time="400" easing="Out" tween="square" condition="Control.HasFocus(305)">Conditional</animation>
+					</control>
+					<!-- This control defines the Button Behaviour-->
+					<control id="305">
+						<posy></posy>
+						<type>button</type>
+						<label>$LOCALIZE[31710]</label>
+						<posx>1</posx>
+						<width>155</width>
+						<height>155</height>
+						<align>left</align>
+						<onup>303</onup>
+						<ondown condition="!Player.HasMedia">301</ondown>
+						<ondown condition="Player.HasMedia">6500</ondown>
+						<onleft>304</onleft>
+						<onright>66</onright>
+						<onclick>ActivateWindow(PVR)</onclick>
+						<onclick>Setfocus(35)</onclick>
+						<onclick>Setfocus(14)</onclick>
+					</control>
+					<!-- This control displays the Button Title-->
+					<control type="label">
+						<label>$LOCALIZE[31710]</label>
+						<posx>170</posx>
+						<posy>120</posy>
+						<height>30</height>
+						<width>250</width>
+						<font>Panel_Button_Title</font>
+						<align>left</align>
+					</control>
+					<!-- This control displays the Button Icon-->
+					<control type="image">
+						<posx>190</posx>
+						<posy>25</posy>
+						<width>90</width>
+						<height>90</height>
+						<texture>DefaultTimer.png</texture>
+					</control>
+				</control>
+			</control>
+			<!-- This control defines the scrollbar managing the Live TV Library Panel -->	
+			<control type="scrollbar" id="3001">
+				<posx>370</posx>
+				<posy>290</posy>
+				<width>5</width>
+				<height>315</height>
+				<texturesliderbackground></texturesliderbackground>
+				<textureslidernib>bar.png</textureslidernib>
+				<textureslidernibfocus>scroll_nib.png</textureslidernibfocus>
+				<texturesliderbar></texturesliderbar>
+				<texturesliderbarfocus></texturesliderbarfocus>
+				<showonepage>true</showonepage>
+				<orientation>vertical</orientation>
+				<visible>[Control.HasFocus(301) | Control.HasFocus(302) | Control.HasFocus(303) | Control.HasFocus(304) | Control.HasFocus(305)]</visible>
+			</control>
+		</control>
+		<!--  LIVE TV Panel Extra Elements-->
+		<control type="grouplist">
+			<!--<animation effect="slide" start="2500" end="0" time="700" tween="cubic" easing="inout">VisibleChange</animation>-->
+			<animation type="Visible" condition="!Skin.HasSetting(DisableHomeAnimations)">
+					<effect type="slide" start="2500" end="0" time="700" tween="cubic" easing="inout"/>
+				</animation>
+			<animation type="Hidden" condition="!Skin.HasSetting(DisableHomeAnimations)">
+					<effect type="slide" start="0" end="2500" time="700" tween="cubic" easing="inout"/>
+			</animation>
+			<visible>SubString(Window(Home).Property(menu),pvr) + !Control.HasFocus(6500)</visible>	
+					<posx>380</posx>
+					<posy>290</posy>
+					<control type="group">
+						<height>155</height>
+						<visible>PVR.IsRecording</visible>
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>470</width>
+							<height>155</height>
+							<texture>tile.png</texture>
+						</control>
+						<control type="image">
+							<posx>360</posx>
+							<posy>5</posy>
+							<width>30</width>
+							<height>25</height>
+							<aspectratio>keep</aspectratio>
+							<texture>PVR-IsRecording.png</texture>
+						</control>
+						<control type="label">
+							<description>Is Recording Header label</description>
+							<posx>10</posx>
+							<posy>119</posy>
+							<height>30</height>
+							<width>295</width>
+							<font>Panel_Button_Title</font>
+							<align>left</align>
+							<label>$LOCALIZE[19158]</label>
+						</control>
+						<control type="label">
+							<description>NextRecordingDateTime</description>
+							<posx>465</posx>
+							<posy>119</posy>
+							<height>30</height>
+							<width>295</width>
+							<font>Panel_Button_Title</font>
+							<align>right</align>
+							<label>$INFO[PVR.NowRecordingDateTime]</label>
+						</control>
+						<control type="fadelabel">
+							<description>NextRecordingTitle Channel</description>
+							<posx>10</posx>
+							<posy>60</posy>
+							<height>30</height>
+							<width>470</width>
+							<font>Panel_Button_Title</font>
+							<align>left</align>
+							<label> [COLOR Accent]$INFO[PVR.NowRecordingTitle][/COLOR] $INFO[PVR.NowRecordingChannel]</label>
+						</control>
+					</control>
+					<control type="group">
+						<height>155</height>
+						<visible>PVR.HasNonRecordingTimer</visible>
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>470</width>
+							<height>155</height>
+							<texture>tile.png</texture>
+						</control>
+						<control type="image">
+							<posx>365</posx>
+							<posy>5</posy>
+							<width>25</width>
+							<height>25</height>
+							<aspectratio>keep</aspectratio>
+							<texture>PVR-HasTimer.png</texture>
+						</control>
+						<control type="label">
+							<description>Next Timer Header label</description>
+							<posx>10</posx>
+							<posy>119</posy>
+							<height>30</height>
+							<width>295</width>
+							<font>Panel_Button_Title</font>
+							<align>left</align>
+							<label>$LOCALIZE[19157]</label>
+						</control>
+						<control type="label">
+							<description>NextRecordingDateTime</description>
+							<posx>465</posx>
+							<posy>119</posy>
+							<height>30</height>
+							<width>295</width>
+							<font>Panel_Button_Title</font>
+							<align>right</align>
+							<label>$INFO[PVR.NextRecordingDateTime]</label>
+						</control>
+						<control type="fadelabel">
+							<description>NextRecordingTitle Channel</description>
+							<posx>10</posx>
+							<posy>60</posy>
+							<height>30</height>
+							<width>470</width>
+							<font>Panel_Button_Title</font>
+							<align>left</align>
+							<label> [COLOR Accent]$INFO[PVR.NextRecordingTitle][/COLOR] $INFO[PVR.NextRecordingChannel]</label>
+						</control>
+					</control>
+				</control>
+		<!-- DISC -->
+		<control type="group">
+			<!--<animation effect="slide" start="-1500" end="0" time="700" tween="cubic" easing="inout">VisibleChange</animation>-->
+			<animation type="Visible" condition="!Skin.HasSetting(DisableHomeAnimations)">
+				<effect type="slide" start="-1500" end="0" time="700" tween="cubic" easing="inout"/>
+			</animation>
+			<animation type="Hidden" condition="!Skin.HasSetting(DisableHomeAnimations)">
+					<effect type="slide" start="0" end="-1500" time="700" tween="cubic" easing="inout"/>
+			</animation>
+			<visible>SubString(Window(Home).Property(menu),discplayer)</visible>
+			
+			<!-- This control displays the Main Title of the Panel-->
+			<control type="label">
+				<label>CD / DVD</label>
+				<posx>50</posx>
+				<posy>215</posy>
+				<width>250</width>
+				<height>60</height>
+				<align>left</align>
+				<font>Panel_Title</font>
+				
+			</control>
+			<control type="image">
+				<posx>5</posx>
+				<posy>227</posy>
+				<width>40</width>
+				<height>40</height>
+				<texture>marker.png</texture>
+				<visible>[Control.HasFocus(2005)]</visible>
+				<animation effect="fade" start="20" time="1200" condition="Control.HasFocus(2005)" pulse="true">Conditional</animation>
+				<animation effect="slide" start="-50" time="200" easing="inout" condition="Control.HasFocus(2005)">Conditional</animation>
+				<animation effect="fade" time="200" delay="200">Hidden</animation>
+				<visible>!Skin.HasSetting(DisplayHomeMenu)</visible>
+			</control>	
+				<control type="panel" id="49">
+					<posx>50</posx>
+					<posy>290</posy>
+					<width>800</width>
+					<height>320</height>
+					<preloaditems>2</preloaditems>
+					<visible>true</visible>
+					<onup>2005</onup>
+					<ondown>49</ondown>
+					<onleft>9000</onleft>
+					<onright>49</onright>
+					<orientation>vertical</orientation>
+					<focusposition>0</focusposition>
+					<scrolltime tween="cubic" easing="out">400</scrolltime>
+					<itemlayout width="160" height="160">
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>155</width>
+							<height>155</height>
+							<texture>tile.png</texture>
+							<aspectratio>scale</aspectratio>
+						</control>
+						<control type="label">
+							<label>$INFO[ListItem.Label]</label>
+							<posx>10</posx>
+							<posy>120</posy>
+							<height>30</height>
+							<width>153</width>
+							<font>Panel_Button_Title</font>
+							<align>left</align>
+							<animation effect="fade" delay="200" start="0" time="300" easing="out" tween="square">Focus</animation>
+						</control>
+						<control type="image">
+							<posx>32</posx>
+							<posy>26</posy>
+							<width>90</width>
+							<height>90</height>
+							<texture>$INFO[ListItem.Thumb]</texture>
+							<aspectratio>scale</aspectratio>
+						</control>
+					</itemlayout>
+					<focusedlayout width="160" height="160">
+						<control type="group">
+							<posx>0</posx>
+							<posy>0</posy>
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>155</width>
+								<height>155</height>
+								<texture>button.png</texture>
+								<animation effect="fade" start="0" time="400" easing="out" tween="square">Focus</animation>
+							</control>
+							<control type="image">
+								<posx>32</posx>
+								<posy>26</posy>
+								<width>90</width>
+								<height>90</height>
+								<texture>$INFO[ListItem.Thumb]</texture>
+								<aspectratio>scale</aspectratio>
+							</control>
+						</control>
+						<control type="label">
+							<label>$INFO[ListItem.Label]</label>
+							<posx>10</posx>
+							<posy>120</posy>
+							<height>30</height>
+							<width>153</width>
+							<font>Panel_Button_Title</font>
+							<align>left</align>
+						</control>
+					</focusedlayout>
+					<content>
+						<item id="1">
+							<description>Play Disc</description>
+							<label>$LOCALIZE[341]</label>
+							<thumb>icons/music.png</thumb>
+							<onclick>XBMC.PlayDVD()</onclick>
+						</item>
+						<item id="2">
+							<description>Eject Disc</description>
+							<label>$LOCALIZE[13391]</label>
+							<thumb>eject.png</thumb>
+							<onclick>XBMC.EjectTray()</onclick>
+						</item>
+					</content>
+				</control>
+			</control>
+		<!-- This control manages the the now playing button-->
+		<control type="group" id="777">
+			<!-- This control manages the behaviour of the now playing menu-->
+			<control type="button" id="6500">
+				<posx>-760</posx>
+				<posy>177</posy>
+				<width>650</width>
+				<height>366</height>
+				<onfocus>SetProperty(menu,nowplaying)</onfocus>
+				<onup>20000</onup>
+				<onleft>9000</onleft>
+				<ondown>20000</ondown>
+				<onclick>fullscreen</onclick>
+				<visible>Window.IsVisible(2904) | Window.IsVisible(2903)</visible>
+			</control>
+			 <!-- This control displays the pulsing color bar-->
+			<control id="6501">
+				<type>image</type>
+				<posx>0</posx>
+				<posy>685</posy>
+				<height>30</height>
+				<width>1280</width>
+				<align>left</align>
+				<texture>button.png</texture>
+				<visible>Control.HasFocus(6500)</visible>
+				<animation effect="fade" start="20" time="1200" condition="Control.HasFocus(6500)" pulse="true">Conditional</animation>
+				<animation effect="fade" time="200" delay="200">Hidden</animation>
+			</control>
+		</control>
+		<!-- Now Playing -->		
+		<control type="group">
+			<visible>SubString(Window(Home).Property(menu),nowplaying)</visible>
+			<animation effect="fade" time="400">VisibleChange</animation>
+			<animation effect="slide" start="+800,0" time="500" easing="out" tween="cubic" condition="[ControlGroup(9000).HasFocus() + SubString(Window(Home).Property(menu),nowplaying)] | Control.HasFocus(6500)">Conditional</animation>
+			<control type="label">
+				<label>$LOCALIZE[31707]</label>
+				<posx>370</posx>
+				<posy>215</posy>
+				<height>30</height>
+				<width>560</width>
+				<font>Panel_Title</font>
+				<align>left</align>
+				<aligny>top</aligny>
+			</control>
+			<control type="button" id="6002">
+				<visible>SubString(Window(Home).Property(menu),nowplaying)</visible>
+			</control>
+			<!-- Border Image -->
+			<control type="image">
+				<posx>370</posx>
+				<posy>290</posy>
+				<width>560</width>
+				<height>315</height>
+				<texture>button.png</texture>
+			</control>
+			<!--  Black Background -->
+			<control type="image">
+				<posx>370</posx>
+				<posy>290</posy>
+				<width>560</width>
+				<height>315</height>
+				<texture>black.png</texture>
+				<bordersize>5</bordersize>
+			</control>
+			<!-- Fanart Image For Audio -->
+			<control type="group">
+				<visible>Player.HasAudio</visible>
+				<!-- Color Walls -->
+				<control type="multiimage">
+					<posx>375</posx>
+					<posy>295</posy>
+					<width>550</width>
+					<height>305</height>
+					<randomize>true</randomize>
+					<timeperimage>6000</timeperimage>
+					<fadetime>3300</fadetime>
+					<pauseatend>0</pauseatend>
+					<loop>true</loop>
+					<aspectratio background="true" aligny="top">stretch</aspectratio>
+					<imagepath background="true">walls</imagepath>
+					<animation effect="fade" start="0" end="100" time="550" delay="0" tween="sine" easing="out">Visible</animation>
+				</control>
+				<control type="group">
+					<posx>390</posx>
+					<posy>310</posy>
+					<!-- Artist Name -->
+					<control type="label">
+						<description>Artist</description>
+						<width>540</width>
+						<label>$INFO[MusicPlayer.Artist]</label>
+						<scroll>true</scroll>
+						<font>Music_Vis_Title</font>
+						<align>left</align>
+						<shadowcolor>black</shadowcolor>
+					</control>
+					 <!-- Album & Year -->
+					<control type="label">
+						<description>Album</description>
+						<posy>52</posy>
+						<width>540</width>
+						<label>$INFO[MusicPlayer.Album] [COLOR Accent]$INFO[MusicPlayer.Year][/COLOR]</label>
+						<scroll>true</scroll>
+						<font>Music_Vis_Title2</font>
+						<align>left</align>
+						<shadowcolor>black</shadowcolor>
+					</control>
+					<!-- Track Nr & Title -->
+					<control type="label">
+						<description>Track</description>
+						<posy>97</posy>
+						<width>540</width>
+						<label>[COLOR Accent]$INFO[MusicPlayer.TrackNumber][/COLOR] $INFO[MusicPlayer.Title]</label>
+						<scroll>true</scroll>
+						<font>Music_Vis_Title3</font>
+						<align>left</align>
+						<shadowcolor>black</shadowcolor>
+					</control>
+					<!-- Track Rating -->
+					<control type="image">
+						<description>Rating image</description>
+						<posx>0</posx>
+						<posy>130</posy>
+						<width>140</width>
+						<height>60</height>
+						<aspectratio align="left">keep</aspectratio>
+						<texture>other_textures/colorrating/$INFO[Player.StarRating]</texture>
+					</control>
+				</control>
+			</control>
+			<!-- Video Display -->
+			<control type="videowindow">
+				<description>video</description>
+				<posx>375</posx>
+				<posy>295</posy>
+				<width>550</width>
+				<height>305</height>
+			</control>
+			<!-- Tv Show Poster -->
+			<control type="image">
+				<posx>935</posx>
+				<posy>290</posy>
+				<width>214</width>
+				<height>315</height>
+				<texture border="2">$INFO[Player.Art(tvshow.poster)]</texture>
+				<bordertexture border="5">button.png</bordertexture>
+				<bordersize>5</bordersize>
+				<aspectratio align="right" aligny="top">stretch</aspectratio>
+				<visible>!IsEmpty(VideoPlayer.TVShowTitle)</visible>
+			</control>
+			<!-- Movies Poster-->
+			<control type="image">
+				<posx>935</posx>
+				<posy>290</posy>
+				<width>214</width>
+				<height>315</height>
+				<texture border="2">$INFO[Player.Art(poster)]</texture>
+				<bordertexture border="5">button.png</bordertexture>
+				<bordersize>5</bordersize>
+				<aspectratio align="right" aligny="top">stretch</aspectratio>
+				<visible>IsEmpty(VideoPlayer.TVShowTitle) + !VideoPlayer.Content(musicvideos)</visible>
+			</control>
+			<!-- Music Videos Poster -->
+			<control type="image">
+				<posx>935</posx>
+				<posy>290</posy>
+				<width>315</width>
+				<height>315</height>
+				<texture border="2">$INFO[Player.Art(poster)]</texture>
+				<bordertexture border="5">button.png</bordertexture>
+				<bordersize>5</bordersize>
+				<aspectratio align="right" aligny="top">stretch</aspectratio>
+				<visible>VideoPlayer.Content(musicvideos)</visible>
+			</control>
+			<!-- Music Poster -->
+			<control type="image">
+				<posx>935</posx>
+				<posy>290</posy>
+				<width>315</width>
+				<height>315</height>
+				<texture border="2">$INFO[MusicPlayer.Cover]</texture>
+				<bordertexture border="5">button.png</bordertexture>
+				<bordersize>5</bordersize>
+				<aspectratio align="right" aligny="top">stretch</aspectratio>
+				<visible>Player.HasAudio</visible>
+			</control>
+		</control>
+	</control>
+        <!-- This controls defines the left hidden menu -->
+		<control type="group">
+            <animation type="Conditional" condition="!ControlGroup(9000).HasFocus()" reversible="true">
+                <effect type="slide" start="0,0" end="-250,0" time="200" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="slide" start="0,0" end="-250,0" time="200" />
+            </animation>
+            <animation type="WindowOpen">
+                <effect type="slide" start="250,0" end="0,0" time="200" />
+            </animation>
+            <animation type="Conditional" condition="Window.IsVisible(favourites)" reversible="false">
+                <effect type="slide" start="0,0" end="-250,0" time="200" />
+            </animation>
+            <animation type="Conditional" condition="!Window.IsVisible(favourites)" reversible="false">
+                <effect type="slide" start="-250,0" end="0,0" time="200" />
+            </animation>
+            <control type="grouplist" id="9000">
+              	<include>PanelCoordinates</include>
+                <width>155</width>
+                <height>315</height>
+                <pagecontrol>9001</pagecontrol>
+                <!-- This control defines the weather element -->
+				<control type="group">
+					<width>155</width>
+                    <height>155</height>
+					<control type="image">
+						<include>PanelButtonImageNF</include>
+                    </control>
+                    <control type="image">
+                        <include>PanelButtonImageFO</include>
+                        <visible>[Control.HasFocus(901)]</visible>
+                        <animation effect="fade" time="300" tween="square">VisibleChange</animation>
+                    </control>
+                    <control id="901">
+                        <type>button</type>
+                        <label>$LOCALIZE[8]</label>
+                        <width>155</width>
+                        <height>155</height>
+                        <align>left</align>
+                        <onup>907</onup>
+                        <ondown>902</ondown>
+                        <onright condition="SubString(Window(Home).Property(menu),music)">6000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),movie)">7000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),tv)">8000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),pvr)">3000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),discplayer)">49</onright>
+						<onright condition="SubString(Window(Home).Property(menu),nowplaying)">6500</onright>
+						<onclick>ActivateWindow(Weather,return)</onclick>
+                    </control>
+                    <control type="label">
+						<include>PanelButtonTitle</include>
+                        <label>$LOCALIZE[8]</label>
+                    </control>
+                    <control type="label">
+						<include>PanelButtonHeaderTitle</include>
+                        <label>$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits]</label>
+                        <visible>!IsEmpty(Window(Weather).Property(Current.Temperature))</visible>
+                    </control>
+                    <control type="image">
+                        <include>PanelButtonIcon</include>
+                        <texture>DefaultWeather.png</texture>
+                    </control>
+                </control>
+                <!-- This control defines the favourites element -->
+				<control type="group">
+					<width>155</width>
+                    <height>155</height>
+                    <control type="image">
+					    <include>PanelButtonImageNF</include>
+                    </control>
+                    <control type="image">
+					    <include>PanelButtonImageFO</include>
+                        <visible>Control.HasFocus(902)</visible>
+                        <animation effect="fade" time="300" tween="square">VisibleChange</animation>
+                     </control>
+                    <control id="902">
+                        <type>button</type>
+                        <label>$LOCALIZE[1036]</label>
+                        <posx>1</posx>
+                        <width>155</width>
+                        <height>155</height>
+                        <align>left</align>
+                        <onup>901</onup>
+                        <ondown>903</ondown>
+                        <onright condition="SubString(Window(Home).Property(menu),music)">6000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),movie)">7000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),tv)">8000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),pvr)">3000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),discplayer)">49</onright>
+						<onright condition="SubString(Window(Home).Property(menu),nowplaying)">6500</onright>
+                        <onclick>ActivateWindow(Favourites,return)</onclick>
+                    </control>
+                    <control type="label">
+						<include>PanelButtonTitle</include>
+                        <label>$LOCALIZE[1036]</label>
+                    </control>
+                    <control type="image">
+                        <include>PanelButtonIcon</include>
+                        <texture>top.png</texture>
+                    </control>
+                </control>
+                <!-- This control defines the pictures element -->
+				<control type="group">
+                    <width>155</width>
+                    <height>155</height>
+                    <control type="image">
+                        <include>PanelButtonImageNF</include>
+                    </control>
+                    <control type="image">
+                        <include>PanelButtonImageFO</include>
+                        <visible>[Control.HasFocus(903)]</visible>
+                        <animation effect="fade" time="300" tween="square">VisibleChange</animation>
+                    </control>
+                    <control id="903">
+                        <posx></posx>
+                        <type>button</type>
+                        <label>$LOCALIZE[1]</label>
+                        <posy>0</posy>
+                        <width>155</width>
+                        <height>155</height>
+                        <align>left</align>
+                        <onup>902</onup>
+                        <ondown>904</ondown>
+                        <onright condition="SubString(Window(Home).Property(menu),music)">6000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),movie)">7000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),tv)">8000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),pvr)">3000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),discplayer)">49</onright>
+						<onright condition="SubString(Window(Home).Property(menu),nowplaying)">6500</onright>
+                        <onclick>ActivateWindow(Pictures)</onclick>
+                    </control>
+                    <control type="label">
+						<include>PanelButtonTitle</include>
+                        <label>$LOCALIZE[1]</label>
+                    </control>
+                    <control type="image">
+                        <include>PanelButtonIcon</include>
+                        <texture>DefaultPicture.png</texture>
+                    </control>
+                </control>
+                <!-- This control defines the programs element -->
+				<control type="group">
+                    <width>155</width>
+                    <height>155</height>
+                    <control type="image">
+                        <include>PanelButtonImageNF</include>
+                    </control>
+                    <control type="image">
+                        <include>PanelButtonImageFO</include>
+                        <visible>[Control.HasFocus(904)]</visible>
+                        <animation effect="fade" time="300" tween="square">VisibleChange</animation>
+                    </control>
+                    <control id="904">
+                        <posy></posy>
+                        <type>button</type>
+                        <label>$LOCALIZE[0]</label>
+                        <posx>1</posx>
+                        <width>155</width>
+                        <height>155</height>
+                        <align>left</align>
+                        <onup>903</onup>
+                        <ondown>905</ondown>
+                        <onright condition="SubString(Window(Home).Property(menu),music)">6000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),movie)">7000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),tv)">8000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),pvr)">3000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),discplayer)">49</onright>
+						<onright condition="SubString(Window(Home).Property(menu),nowplaying)">6500</onright>
+                        <onclick>ActivateWindow(Programs)</onclick>
+                    </control>
+                    <control type="label">
+						<include>PanelButtonTitle</include>
+                        <label>$LOCALIZE[0]</label>
+                    </control>
+                    <control type="image">
+                       <include>PanelButtonIcon</include>
+                        <texture>DefaultProgram.png</texture>
+                    </control>
+                </control>
+				<!-- This control defines the settings element -->
+                <control type="group">
+                    <width>155</width>
+                    <height>155</height>
+                    <control type="image">
+                        <include>PanelButtonImageNF</include>
+                    </control>
+                    <control type="image">
+                        <include>PanelButtonImageFO</include>
+                        <visible>[Control.HasFocus(905)]</visible>
+                        <animation effect="fade" time="§00" tween="square">VisibleChange</animation>
+                    </control>
+                    <control id="905">
+                        <type>button</type>
+                        <label>$LOCALIZE[10004]</label>
+                        <posx>1</posx>
+                        <width>155</width>
+                        <height>155</height>
+                        <align>left</align>
+                        <onup>904</onup>
+                        <ondown>906</ondown>
+                        <onright condition="SubString(Window(Home).Property(menu),music)">6000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),movie)">7000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),tv)">8000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),pvr)">3000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),discplayer)">49</onright>
+						<onright condition="SubString(Window(Home).Property(menu),nowplaying)">6500</onright>
+                        <onclick>ActivateWindow(Settings, return)</onclick>
+                    </control>
+                    <control type="label">
+						<include>PanelButtonTitle</include>
+                        <label>$LOCALIZE[10004]</label>
+                    </control>
+                    <control type="image">
+                        <include>PanelButtonIcon</include>
+                        <texture>icons/Settings.png</texture>
+                    </control>
+                </control>
+				<!-- This control defines the files element -->
+                <control type="group">
+                    <width>155</width>
+                    <height>155</height> 
+                    <control type="image">
+                        <include>PanelButtonImageNF</include>
+                    </control>
+                    <control type="image">
+                        <include>PanelButtonImageFO</include>
+                        <visible>[Control.HasFocus(906)]</visible>
+                        <animation effect="fade" time="300" tween="square">VisibleChange</animation>
+                    </control>
+                    <control id="906">
+                        <type>button</type>
+                        <label>$LOCALIZE[744]</label>
+                        <posx>1</posx>
+                        <width>155</width>
+                        <height>155</height>
+                        <align>left</align>
+                        <onup>905</onup>
+                        <ondown>907</ondown>
+                        <onright condition="SubString(Window(Home).Property(menu),music)">6000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),movie)">7000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),tv)">8000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),pvr)">3000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),discplayer)">49</onright>
+						<onright condition="SubString(Window(Home).Property(menu),nowplaying)">6500</onright>
+                        <onclick>ActivateWindow(filemanager)</onclick>
+                    </control>
+                    <control type="label">
+						<include>PanelButtonTitle</include>
+                        <label>FILE MANAGER</label>
+                        </control>
+                    <control type="image">
+                        <include>PanelButtonIcon</include>
+                        <texture>icons/FileManager.png</texture>
+                    </control>
+                </control>
+            	<!-- This control defines the shutdown element -->
+                <control type="group">
+                    <width>155</width>
+                    <height>155</height>
+                    <control type="image">
+                        <include>PanelButtonImageNF</include>
+                    </control>
+                    <control type="image">
+                        <include>PanelButtonImageFO</include>
+                        <visible>[Control.HasFocus(907)]</visible>
+                        <animation effect="fade" time="300" tween="square">VisibleChange</animation>
+                    </control>
+                    <control id="907">
+                        <type>button</type>
+                        <label>$LOCALIZE[13005]</label>
+                        <posx>1</posx>
+                        <width>155</width>
+                        <height>155</height>
+                        <align>left</align>
+                        <onup>906</onup>
+                        <ondown>901</ondown>
+                        <onright condition="SubString(Window(Home).Property(menu),music)">6000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),movie)">7000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),tv)">8000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),pvr)">3000</onright>
+						<onright condition="SubString(Window(Home).Property(menu),discplayer)">49</onright>
+						<onright condition="SubString(Window(Home).Property(menu),nowplaying)">6500</onright>
+                        <onclick>ActivateWindow(shutdownmenu)</onclick>
+						<onfocus>SetProperty(nowplaying,hide)</onfocus>
+                    </control>
+                    <control type="label">
+						<include>PanelButtonTitle</include>
+                        <label>$LOCALIZE[13005]</label>
+                    </control>
+                    <control type="image">
+                        <include>PanelButtonIcon</include>
+                        <texture>icons/Power.png</texture>
+                    </control>
+                </control>
+            </control>
+            <control type="scrollbar" id="9001">
+                <posx>210</posx>
+                <posy>290</posy>
+                <width>6</width>
+                <height>315</height>
+				<texturesliderbackground></texturesliderbackground>
+                <textureslidernib>bar.png</textureslidernib>
+                <textureslidernibfocus>scroll_nib.png</textureslidernibfocus>
+                <texturesliderbar></texturesliderbar>
+                <texturesliderbarfocus></texturesliderbarfocus>
+                <showonepage>true</showonepage>
+                <orientation>vertical</orientation>
+                <visible>[Control.HasFocus(901) | Control.HasFocus(902) | Control.HasFocus(903) | Control.HasFocus(904) | Control.HasFocus(905)| Control.HasFocus(906)| Control.HasFocus(907)]</visible>
+                <animation effect="fade" time="200" tween="square">Visible</animation>
+                <animation type="Conditional" condition="Control.HasFocus(901)">
+                    <effect type="fade" start="100" end="0" time="200" delay="3000" />
+                </animation>
+                <animation type="Conditional" condition="Control.HasFocus(902)">
+                    <effect type="fade" start="100" end="0" time="200" delay="3000" />
+                </animation>
+                <animation type="Conditional" condition="Control.HasFocus(903)">
+                    <effect type="fade" start="100" end="0" time="200" delay="3000" />
+                </animation>
+                <animation type="Conditional" condition="Control.HasFocus(904)">
+                    <effect type="fade" start="100" end="0" time="200" delay="3000" />
+                </animation>
+                <animation type="Conditional" condition="Control.HasFocus(905)">
+                    <effect type="fade" start="100" end="0" time="200" delay="3000" />
+                </animation>
+				<animation type="Conditional" condition="Control.HasFocus(906)">
+                    <effect type="fade" start="100" end="0" time="200" delay="3000" />
+                </animation>
+				<animation type="Conditional" condition="Control.HasFocus(907)">
+                    <effect type="fade" start="100" end="0" time="200" delay="3000" />
+                </animation>
+            </control>
+        </control>
+    </controls>
+</window>

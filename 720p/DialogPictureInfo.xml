@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window id="139">
+    <defaultcontrol always="true">5</defaultcontrol>
+    <allowoverlay>yes</allowoverlay>
+    <controls>
+		<control type="group">
+            <visible>!Window.IsActive(slideshow)</visible>
+            <animation type="WindowClose">
+                <effect type="fade" time="300" />
+                <effect type="slide" end="+1500,0" time="300" />
+            </animation>
+            <animation type="WindowOpen">
+                <effect type="fade" time="300" />
+                <effect type="slide" start="+1500,0" time="300" />
+            </animation>
+            <control type="group">
+                <posx></posx>
+                <posy></posy>
+                <!-- Background -->               
+				<control type="image">
+                    <posx>615</posx>
+                    <posy>180</posy>
+                    <width>635</width>
+                    <height>425</height>
+                    <texture>music_fanart_diffuse.png</texture>
+                </control>
+				<!-- Cover --> 				
+                <control type="image">
+                    <description>Cover Image</description>
+                    <posx>180</posx>
+                    <posy>180</posy>
+                    <width>425</width>
+                    <height>425</height>
+                    <texture>$INFO[ListItem.Icon]</texture>
+                    <aspectratio align="right" aligny="center">scale</aspectratio>
+                    <bordertexture border="5">white_box.png</bordertexture>
+                    <bordersize>5</bordersize>
+                </control>
+                <!-- Picture Title -->
+				<control type="fadelabel">
+                    <posx>635</posx>
+                    <posy>185</posy>
+                    <height>30</height>
+                    <width>595</width>
+                    <font>Panel_Title</font>
+                    <aligny>top</aligny>
+                    <label>[COLOR Accent]$INFO[ListItem.Label][/COLOR]</label>
+                    <visible>true</visible>
+                    <scroll>true</scroll>
+                    <scrollout>false</scrollout>
+                    <pauseatend>600</pauseatend>
+                    <scrollspeed>50</scrollspeed>
+                </control>
+				<control type="label">
+					<description>Camera Specs</description>
+					<posx>635</posx>
+					<posy>245</posy>
+					<width>610</width>
+					<height>50</height>
+					<aligny>top</aligny>
+					<font>Panel_Title_Footer</font>
+					<label>[COLOR Accent]$INFO[ListItem.PictureCamMake][/COLOR] $INFO[ListItem.PictureCamModel]</label>
+					<scroll>true</scroll>
+                </control>
+				<!-- Picture Specs -->
+				<control type="list" id="5">
+                    <posx>635</posx>
+                    <posy>280</posy>
+                    <width>585</width>
+                    <height>315</height>
+                    <onleft>10</onleft>
+                    <onright>5</onright>
+                    <onup>5</onup>
+                    <ondown>5</ondown>
+                    <pagecontrol>64</pagecontrol>
+                    <visible>!Window.IsActive(slideshow)</visible>
+                    <itemlayout height="45">
+                        <control type="label">
+                            <posx>15</posx>
+                            <width>290</width>
+							<font>Panel_Description</font>
+                            <info>ListItem.Label</info>
+                        </control>
+                        <control type="label">
+                            <posx>570</posx>
+                            <width>290</width>
+                            <align>right</align>
+							<font>Panel_Description</font>
+                            <info>ListItem.Label2</info>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="45">
+                        <control type="image">
+                            <width>585</width>
+                            <height>45</height>
+                            <texture>other_textures/buttonfo.png</texture>
+							<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(5)">Conditional</animation>
+                        </control>
+                        <control type="image">
+                            <width>5</width>
+                            <height>45</height>
+                            <texture>button.png</texture>
+							<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(5)">Conditional</animation>
+						</control>
+						<control type="label">
+                            <posx>15</posx>
+                            <width>290</width>
+                            <info>ListItem.Label</info>
+                            <textcolor>Accent</textcolor>
+							<font>Panel_Description</font>
+							<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(5)">Conditional</animation>
+                        </control>
+                        <control type="label">
+                            <posx>570</posx>
+                            <width>290</width>
+                            <align>right</align>
+                            <info>ListItem.Label2</info>
+							<font>Panel_Description</font>
+                            <textcolor>Accent</textcolor>
+							<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(5)">Conditional</animation>
+                        </control>
+                    </focusedlayout>
+                </control>
+                <control type="scrollbar" id="64">
+                    <posx>1220</posx>
+                    <posy>280</posy>
+                    <width>5</width>
+                    <height>315</height>
+                    <texturesliderbackground></texturesliderbackground>
+                    <textureslidernib>bar.png</textureslidernib>
+                    <textureslidernibfocus>scroll_nib.png</textureslidernibfocus>
+                    <texturesliderbar></texturesliderbar>
+                    <texturesliderbarfocus></texturesliderbarfocus>
+                    <showonepage>true</showonepage>
+                    <orientation>vertical</orientation>
+                </control>
+                
+				<control type="grouplist" id="9001">
+                    <posx>25</posx>
+                    <posy>240</posy>
+                    <width>145</width>
+                    <height>430</height>
+                    <itemgap>-</itemgap>
+                    <onup>9001</onup>
+                    <ondown>9001</ondown>
+                    <onright>5</onright>
+                    <onleft>9001</onleft>
+                    <orientation>vertical</orientation>
+                    <control type="button" id="10">
+                        <description>OK</description>
+                        <label>$LOCALIZE[186]</label>
+                        <width>145</width>
+						<textoffsetx>10</textoffsetx>
+						<font>Panel_Hint</font>						
+                        <align>center</align>
+       					<texturefocus>button.png</texturefocus>
+						<texturenofocus>tile.png</texturenofocus>
+                    	<onclick>Back</onclick>
+					</control>
+                </control>
+            </control>
+        </control>
+        <control type="group">
+            <visible>Window.IsActive(slideshow)</visible>
+            <posx>0</posx>
+            <posy>0</posy>
+            <control type="list" id="5">
+                <posx>20</posx>
+                <posy>50</posy>
+                <width>425</width>
+                <height>720</height>
+                <onleft>10</onleft>
+                <onright>10</onright>
+                <onup>5</onup>
+                <ondown>5</ondown>
+                <visible>Window.IsActive(slideshow)</visible>
+                <itemlayout height="45">
+					<control type="image">
+                        <width>425</width>
+                        <height>40</height>
+                        <texture>tile.png</texture>
+                    </control>
+					<control type="label">
+                        <posx>10</posx>
+                        <width>200</width>
+                        <info>ListItem.Label</info>
+                        <font>Panel_Info</font>
+                    </control>
+                    <control type="label">
+                        <posx>415</posx>
+                        <width>200</width>
+                        <align>right</align>
+                        <info>ListItem.Label2</info>
+                        <font>Panel_Info</font>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="45">
+                    <control type="image">
+                        <width>425</width>
+                        <height>40</height>
+                        <texture>button.png</texture>
+                    </control>
+                    <control type="label">
+                        <posx>10</posx>
+                        <width>200</width>
+                        <info>ListItem.Label</info>
+                        <font>Panel_Info</font>
+                    </control>
+                    <control type="label">
+                        <posx>415</posx>
+                        <width>200</width>
+                        <align>right</align>
+                        <info>ListItem.Label2</info>
+						<font>Panel_Info</font>
+                    </control>
+                </focusedlayout>
+            </control>
+        </control>
+    </controls>
+</window>

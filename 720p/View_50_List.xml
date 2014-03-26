@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<includes>
+    <include name="View_50_List">
+        <control type="group">
+            <visible>Control.IsVisible(50)</visible>
+            <animation type="TYPE" condition="Window.IsVisible(2001) | Window.IsVisible(139) | Window.IsVisible(136 | Window.IsVisible(addonsettings)" reversible="false">
+                <effect type="slide" end="-1500,0" time="200" />
+            </animation>
+            <animation type="TYPE" condition="!Window.IsVisible(2001) + !Window.IsVisible(139) + !Window.IsVisible(136) + !Window.IsVisible(addonsettings)" reversible="false">
+                <effect type="slide" start="-1500,0" time="200" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="fade" time="300" />
+                <effect type="slide" end="+1500,0" time="300" />
+            </animation>
+            <animation type="WindowOpen">
+                <effect type="fade" time="300" />
+                <effect type="slide" start="+1500,0" time="300" />
+            </animation>
+            <!--This control shows the label of the folder name -->
+			<control type="label">
+                <label>$INFO[Container.FolderName]</label>
+                <posx>50</posx>
+                <posy>215</posy>
+                <height>30</height>
+                <width>884</width>
+                <font>Panel_Title</font>
+				<aligny>top</aligny>
+				<align>left</align>
+            </control>
+			<!-- Group Displaying elements for Small List-->
+			<control type="group">
+				<visible>!IsEmpty(Container.FolderName) + !StringCompare(Container.FolderPath,addons://all/) + !SubString(Container.FolderPath,plugin) + !Container.Content(files) + !Container.Content(years) + !Container.Content(actors) + !Container.Content(tags) + !Container.Content(countries) + !Container.Content(studios) + !Container.Content(sets) + !Container.Content(directors) + !StringCompare(Container.FolderPath,sources://video/) + !StringCompare(Container.FolderPath,musicdb://5/) + !StringCompare(Container.FolderPath,videodb://3/) + !Container.Content(playlists)</visible>
+				<!--This control displays background behind the item list -->
+				<control type="image">
+					<posx>370</posx>
+					<posy>290</posy>
+					<width>400</width>
+					<height>315</height>
+					<texture>music_fanart_diffuse.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+				</control>
+				<!--This control displays the background of the description field -->
+				<control type="image">
+					<posx>785</posx>
+					<posy>290</posy>
+					<width>475</width>
+					<height>315</height>
+					<texture background="true">music_fanart_diffuse.png</texture>
+					<fadetime>200</fadetime>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+				</control>
+				<!--This control shows the label of the add-on creator on the bottom of the description field -->
+				<control type="label">
+					<posx>800</posx>
+					<posy>565</posy>
+					<width>435</width>
+					<height>25</height>
+					<align>left</align>
+					<scroll>true</scroll>
+					<font>Panel_Description_Footer</font>
+					<label>$LOCALIZE[21863]: [COLOR Accent]$INFO[ListItem.Property(Addon.Creator)][/COLOR]</label>
+					<visible>!IsEmpty(ListItem.Property(Addon.Creator))</visible>
+				</control>
+				<!--This control shows the label of the date of a picture on the bottom of the description field -->
+				<control type="label">
+					<posx>800</posx>
+					<posy>565</posy>
+					<width>600</width>
+					<height>25</height>
+					<font>Panel_Description_Footer</font>
+					<label>[COLOR Accent]$INFO[ListItem.PictureDateTime, [COLOR white]$LOCALIZE[552]: [/COLOR]][/COLOR]</label>
+					<visible>Window.IsVisible(Pictures) + !IsEmpty(ListItem.PicturePath)</visible>
+				</control>
+				<!--This control shows the Addon Version or the Picture resolution on the top right of the description field -->
+				<control type="label">
+					<posx>1245</posx>
+					<posy>300</posy>
+					<width>400</width>
+					<height>50</height>
+					<textcolor>Accent</textcolor>
+					<align>right</align>
+					<font>Panel_Description_Title</font>
+					<visible>true</visible>
+					<label>[COLOR Accent]$INFO[ListItem.Property(Addon.Version)]$INFO[ListItem.PictureResolution][/COLOR]</label>
+				</control>
+				<!--This control shows labels for Addd-on items-->			
+				<control type="group">
+					<visible>!IsEmpty(ListItem.Property(Addon.Name))</visible>
+					<!--This control shows the label Description -->
+					<control type="label">
+						<posx>800</posx>
+						<posy>300</posy>
+						<width>330</width>
+						<height>50</height>
+						<font>Panel_Description_Title</font>
+						<label>$LOCALIZE[21821]</label>
+					</control>
+					<!--This control shows the item summary -->
+					<control type="label">
+						<posx>800</posx>
+						<posy>330</posy>
+						<width>445</width>
+						<height>50</height>
+						<scroll>true</scroll>
+						<font>Panel_Description</font>
+						<label>[COLOR Accent]$INFO[ListItem.Property(Addon.Summary)][/COLOR]</label>
+					</control>
+					<!--This control shows the Item Description -->
+					<control type="textbox">
+						<posx>800</posx>
+						<posy>375</posy>
+						<width>445</width>
+						<height>180</height>
+						<font>Panel_Description</font>
+						<info>ListItem.Property(Addon.Description)</info>
+						<align>justify</align>
+						<aligny>top</aligny>
+						<autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
+					</control>
+				</control>
+				<!--This control shows labels for picture items-->
+				<control type="group">
+					<visible>Window.IsVisible(Pictures) + !IsEmpty(ListItem.PicturePath)</visible>
+					<!-- This control shows the label Description-->
+					<control type="label">
+						<posx>800</posx>
+						<posy>300</posy>
+						<width>330</width>
+						<height>50</height>
+						<font>Panel_Description_Title</font>
+						<label>$LOCALIZE[21821]</label>
+						<visible>!IsEmpty(ListItem.Description) | !IsEmpty(ListItem.PictureComment)</visible>
+					</control>
+					<!-- This control shows the label Information-->
+					<control type="label">
+						<posx>800</posx>
+						<posy>300</posy>
+						<width>330</width>
+						<height>50</height>
+						<font>Panel_Description_Title</font>
+						<label>$LOCALIZE[19033]</label>
+						<visible>IsEmpty(ListItem.Description) + IsEmpty(ListItem.PictureComment)</visible>
+					</control>
+					<!-- This control shows the Picture Caption-->
+					<control type="label">
+						<posx>800</posx>
+						<posy>330</posy>
+						<width>445</width>
+						<height>50</height>
+						<scroll>true</scroll>
+						<font>Panel_Description</font>
+						<label>[COLOR Accent]$INFO[ListItem.PictureCaption][/COLOR]</label>
+					</control>
+					<!-- This control shows the Picture Camera Info-->
+					<control type="label">
+						<posx>800</posx>
+						<posy>330</posy>
+						<width>445</width>
+						<height>50</height>
+						<scroll>true</scroll>
+						<font>Panel_Description</font>
+						<label>[COLOR Accent]$INFO[ListItem.PictureCamMake][/COLOR] $INFO[ListItem.PictureCamModel]</label>
+					</control>
+					  <!-- This control shows the Picture Description-->
+					<control type="textbox">
+						<posx>800</posx>
+						<posy>365</posy>
+						<width>445</width>
+						<height>180</height>
+						<font>Panel_Description</font>
+						<info>ListItem.PictureDesc</info>
+						<align>justify</align>
+						<autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
+						<visible>!IsEmpty(ListItem.PictureDesc)</visible>
+					</control>
+					 <!-- This control shows the Picture Comment-->
+					<control type="textbox">
+						<posx>800</posx>
+						<posy>365</posy>
+						<width>445</width>
+						<height>180</height>
+						<font>Panel_Description</font>
+						<info>ListItem.PictureComment</info>
+						<align>justify</align>
+						<autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
+						<visible>IsEmpty(ListItem.PictureDesc)</visible>
+					</control>
+            </control>
+				<!--This control defines the scrollbar controlling the small list -->
+				<control type="scrollbar" id="60">
+					<posx>775</posx>
+					<posy>290</posy>
+					<width>5</width>
+					<height>315</height>
+					<texturesliderbackground></texturesliderbackground>
+					<textureslidernib>bar.png</textureslidernib>
+					<textureslidernibfocus>scroll_nib.png</textureslidernibfocus>
+					<texturesliderbar></texturesliderbar>
+					<texturesliderbarfocus></texturesliderbarfocus>
+					<showonepage>true</showonepage>
+					<orientation>vertical</orientation>
+				</control>
+            </control>
+			<!-- Group Displaying elements for Large List-->
+			<control type="group">
+				<visible>IsEmpty(Container.FolderName) | StringCompare(Container.FolderPath,addons://all/) | SubString(Container.FolderPath,plugin) | Container.Content(files) | Container.Content(years) | Container.Content(actors) | Container.Content(tags)  | Container.Content(countries) | Container.Content(studios) | Container.Content(sets) | Container.Content(directors) | StringCompare(Container.FolderPath,sources://video/) | StringCompare(Container.FolderPath,musicdb://5/) | StringCompare(Container.FolderPath,videodb://3/) | Container.Content(playlists)</visible>
+				<!--This control displays  larger background behind the item list -->
+				<control type="image">
+					<posx>370</posx>
+					<posy>290</posy>
+					<width>880</width>
+					<height>315</height>
+					<texture background="true">music_fanart_diffuse.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+				</control>
+				<!--This control defines the scrollbar controlling the large list list -->
+				<control type="scrollbar" id="60">
+					<posx>1255</posx>
+					<posy>290</posy>
+					<width>5</width>
+					<height>315</height>
+					<texturesliderbackground></texturesliderbackground>
+					<textureslidernib>bar.png</textureslidernib>
+					<textureslidernibfocus>scroll_nib.png</textureslidernibfocus>
+					<texturesliderbar></texturesliderbar>
+					<texturesliderbarfocus></texturesliderbarfocus>
+					<showonepage>true</showonepage>
+					<orientation>vertical</orientation>
+				</control>
+			
+			
+			
+	
+			
+			</control>
+			<!--This control shows the label in case no Folder Name is Available -->
+			<control type="group">
+				<visible>IsEmpty(Container.FolderName)</visible>
+				<!--This control shows the label Videos -->
+				<control type="label">
+					<label>VIDEOS</label>
+					<posx>50</posx>
+					<posy>215</posy>
+					<height>30</height>
+					<width>884</width>
+					<font>Panel_Title</font>
+					<aligny>top</aligny>
+					<align>left</align>
+					<visible>!Window.IsVisible(Pictures) + !Window.IsVisible(Programs) + !Window.IsActive(musicfiles] + !Window.IsActive(musiclibrary) + !Window.IsActive(addonBrowser)</visible>
+				</control>
+				 <!--This control shows the label MUSIC -->
+				<control type="label">
+					<include>ViewMainTitle</include>
+					<label>MUSIC</label>
+					<visible>Window.IsActive(musiclibrary)</visible>
+				</control>
+				<!--This control shows the label MUSIC FILES -->
+				<control type="label">
+					<include>ViewMainTitle</include>
+					<label>MUSIC FILES</label>
+					<visible>Window.IsActive(musicfiles)</visible>
+				</control>
+				<!--This control shows the label Programs -->
+				<control type="label">
+					<include>ViewMainTitle</include>
+					<label>PROGRAMS</label>
+					<visible>Window.IsActive(Programs)</visible>
+				</control>
+				<!--This control shows the label Pictures -->
+				<control type="label">
+					<include>ViewMainTitle</include>
+					<label>$LOCALIZE[1]</label>
+					<visible>Window.IsActive(Pictures)</visible>
+				</control>
+				<!--This control shows the Add-On label -->
+				<control type="label">
+					<include>ViewMainTitle</include>
+					<label>ADD-ONS</label>
+					<visible>Window.IsActive(AddonBrowser)</visible>
+				</control>
+			</control>	
+			<!--This control defines the list that will display the items -->
+			<control type="list" id="50">
+                <visible>!Container.Content(artists) + !Container.Content(episodes) + !Container.Content(tvshows) + !Container.Content(movies) + !Container.Content(seasons) + !Container.Content(genres) + !Container.Content(songs) + !Container.Content(albums) + !Container.Content(musicvideos) + !Container.Content(years)</visible>
+                <posx>370</posx>
+                <posy>290</posy>
+                <width>880</width>
+                <height>315</height>
+                <onleft>9000</onleft>
+                <onup>50</onup>
+                <ondown>50</ondown>
+                <pagecontrol>60</pagecontrol>
+                <viewtype label="List">List</viewtype>
+                <scrolltime>200</scrolltime>
+                <itemlayout width="400" height="45" condition="!IsEmpty(Container.FolderName) + !StringCompare(Container.FolderPath,addons://all/) + !SubString(Container.FolderPath,plugin) + !Container.Content(files) + !Container.Content(actors) + !Container.Content(tags)  + !Container.Content(countries) + !Container.Content(studios) + !Container.Content(sets) + !Container.Content(directors) + !StringCompare(Container.FolderPath,sources://video/) + !StringCompare(Container.FolderPath,musicdb://5/) + !StringCompare(Container.FolderPath,videodb://3/) + !Container.Content(playlists)" >
+                    <control type="image">
+                        <width>400</width>
+                        <height>45</height>
+                        <texture border="2">other_textures/buttonnf.png</texture>
+                        <visible>!IsEmpty(ListItem.PicturePath) | !IsEmpty(ListItem.Property(Addon.Name))</visible>
+                    </control>
+                    <control type="label">
+                        <posx>10</posx>
+                        <width>380</width>
+						<font>List_Unfocused</font>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+					<!--This control shows the Addon Status Label -->
+					<control type="label">
+						<posx>390</posx>
+						<width>100</width>
+						<align>right</align>
+						<textcolor>Accent</textcolor>
+						<font>List_Unfocused</font>
+						<label>$INFO[ListItem.Property(Addon.status)]</label>
+						<visible>!IsEmpty(ListItem.Property(Addon.status)) + IsEmpty(ListItem.Property(Addon.Broken))</visible>
+					</control>
+					<!--This control shows the Addon Broken Label -->
+					<control type="label">
+						<posx>390</posx>
+						<width>100</width>
+						<align>right</align>
+						<textcolor>Accent</textcolor>
+						<font>List_Unfocused</font>
+						<label>$INFO[ListItem.Property(Addon.Broken)]</label>
+						<visible>!IsEmpty(ListItem.Property(Addon.Broken))</visible>
+					</control>
+				</itemlayout>
+                <focusedlayout width="400" height="45" condition="!IsEmpty(Container.FolderName) + !StringCompare(Container.FolderPath,addons://all/) + !SubString(Container.FolderPath,plugin) + !Container.Content(files) + !Container.Content(actors) + !Container.Content(tags)  + !Container.Content(countries) + !Container.Content(studios) + !Container.Content(sets) + !Container.Content(directors) + !StringCompare(Container.FolderPath,sources://video/) + !StringCompare(Container.FolderPath,musicdb://5/) + !StringCompare(Container.FolderPath,videodb://3/) + !Container.Content(playlists)">
+                    <control type="image">
+                        <width>400</width>
+                        <height>45</height>
+                        <texture border="2">button.png</texture>
+                    </control>
+                    <control type="label">
+                        <posx>10</posx>
+                        <width>380</width>
+						<font>List_Focused</font>
+                        <label>$INFO[ListItem.Label]</label>
+                        <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
+                    </control>
+					<!--This control shows the Addon Status Label -->
+					<control type="label">
+						<posx>390</posx>
+						<width>100</width>
+						<align>right</align>
+						<font>List_Unfocused</font>
+						<label>$INFO[ListItem.Property(Addon.status)]</label>
+						<visible>!IsEmpty(ListItem.Property(Addon.status)) + IsEmpty(ListItem.Property(Addon.Broken))</visible>
+					</control>
+					<!--This control shows the Addon Broken Label -->
+					<control type="label">
+						<posx>390</posx>
+						<width>100</width>
+						<align>right</align>
+						<font>List_Unfocused</font>
+						<label>$INFO[ListItem.Property(Addon.Broken)]</label>
+						<visible>!IsEmpty(ListItem.Property(Addon.Broken))</visible>
+					</control>
+                </focusedlayout>
+				<itemlayout width="880" height="45" condition="IsEmpty(Container.FolderName) | StringCompare(Container.FolderPath,addons://all/) | SubString(Container.FolderPath,plugin) | Container.Content(files) | Container.Content(actors) | Container.Content(tags)  | Container.Content(countries) | Container.Content(studios) | Container.Content(sets) | Container.Content(directors) | StringCompare(Container.FolderPath,sources://video/) | StringCompare(Container.FolderPath,musicdb://5/) | StringCompare(Container.FolderPath,videodb://3/) | Container.Content(playlists)"  >
+					<control type="image">
+						<width>880</width>
+						<height>45</height>
+						<texture border="2">other_textures/buttonnf.png</texture>
+						<visible>IsEmpty(ListItem.PicturePath) + IsEmpty(ListItem.Property(Addon.Name))</visible>
+					</control>
+					<control type="label">
+						<posx>10</posx>
+						<width>860</width>
+						<font>List_Unfocused</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="880" height="45" condition="IsEmpty(Container.FolderName) | StringCompare(Container.FolderPath,addons://all/) | SubString(Container.FolderPath,plugin) | Container.Content(files)  | Container.Content(actors) | Container.Content(tags)  | Container.Content(countries) | Container.Content(studios) | Container.Content(sets) | Container.Content(directors) | StringCompare(Container.FolderPath,sources://video/) | StringCompare(Container.FolderPath,musicdb://5/) | StringCompare(Container.FolderPath,videodb://3/) | Container.Content(playlists)">
+					<control type="image">
+						<width>880</width>
+						<height>45</height>
+						<texture border="2">button.png</texture>
+					</control>
+					<control type="label">
+						<posx>10</posx>
+						<width>860</width>
+						<font>List_Focused</font>
+						<label>$INFO[ListItem.Label]</label>
+						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
+					</control>
+				</focusedlayout>
+			</control>
+			<!--This control displays the White Background of the main icon -->
+			<control type="image">
+                <posx>50</posx>
+                <posy>290</posy>
+                <width>315</width>
+                <height>315</height>
+                <texture>white_box.png</texture>
+                <visible>!IsEmpty(ListItem.PicturePath) | !IsEmpty(ListItem.Property(Addon.Name))</visible>
+            </control>
+			<!--This control displays the main icon and keeps its ratio -->
+			<control type="image">
+                <posx>50</posx>
+                <posy>290</posy>
+                <width>315</width>
+                <height>315</height>
+                <texture>$INFO[ListItem.Icon]</texture>
+                <aspectratio scalediffuse="false">keep</aspectratio>
+                <bordersize>5</bordersize>
+                <visible>!Window.IsVisible(Pictures)</visible>
+            </control>
+            <!--This control displays the main icon and scales it to fit the square -->
+			<control type="image">
+                <posx>50</posx>
+                <posy>290</posy>
+                <width>315</width>
+                <height>315</height>
+                <texture>$INFO[ListItem.Icon]</texture>
+                <aspectratio scalediffuse="false">scale</aspectratio>
+				<bordersize>5</bordersize>
+                <visible>Window.IsVisible(Pictures)</visible>
+            </control>
+		</control>
+    </include>
+</includes>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window id="34">
+    <defaultcontrol always="true">9004</defaultcontrol>
+    <allowoverlay>yes</allowoverlay>
+    <controls>
+        <include>HomeBackground</include>
+        <include>BarClock</include>
+		<control type="group">
+            <animation type="WindowClose">
+                <effect type="fade" time="300" />
+                <effect type="slide" end="+1500,0" time="300" />
+            </animation>
+            <animation type="WindowOpen">
+                <effect type="fade" time="300" />
+                <effect type="slide" start="+1500,0" time="300" />
+            </animation>
+			<control type="image">
+                <description>background image</description>
+                <posx>50</posx>
+                <posy>290</posy>
+                <width>290</width>
+                <height>370</height>
+                <aspectratio>scale</aspectratio>
+                <texture>tile.png</texture>
+            </control>			
+			<control type="image">
+                <description>background image</description>
+                <posx>345</posx>
+                <posy>290</posy>
+                <width>810</width>
+                <height>370</height>
+                <aspectratio>scale</aspectratio>
+                <texture>tile.png</texture>
+            </control>
+            <control type="label">
+                <label>$LOCALIZE[5]</label>
+                <posx>50</posx>
+                <posy>215</posy>
+                <height>30</height>
+                <width>290</width>
+                <font>Panel_Title</font>
+                <align>left</align>
+				<aligny>top</aligny>
+            </control>
+            <control type="label">
+                <label>[COLOR Accent]$LOCALIZE[13200][/COLOR]</label>
+                <posx>345</posx>
+                <posy>215</posy>
+                <height>30</height>
+                <width>810</width>
+                <font>Panel_Title</font>
+                <align>left</align>
+				<aligny>top</aligny>
+            </control>
+            <control type="grouplist" id="9004">
+                <posx>50</posx>
+                <posy>290</posy>
+                <width>290</width>
+                <height>370</height>
+                <itemgap>2</itemgap>
+                <onleft>noop</onleft>
+                <onright>noop</onright>
+                <onup>9004</onup>
+                <ondown>9004</ondown>
+                <control type="button" id="4495">
+                    <description>General</description>
+                    <width>290</width>
+                    <label>$LOCALIZE[13200]</label>
+                    <align>right</align>
+                    <onright>4</onright>
+                    <focusedcolor>Accent</focusedcolor>
+					<font>List_Unfocused</font>
+                </control>
+            </control>
+            <control type="group">
+                <posx>345</posx>
+                <posy>290</posy>
+                <width>810</width>
+                <height>370</height>
+                <control type="radiobutton" id="4">
+                    <description>Enable Login Screen</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>810</width>
+                    <label>20096</label>
+                    <align>left</align>
+                    <onright>noop</onright>
+                    <onleft>4495</onleft>
+                    <onup>noop</onup>
+                    <ondown>2</ondown>
+                    <focusedcolor>Accent</focusedcolor>
+					<font>List_Settings</font>
+                    <textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
+                    <textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
+                </control>
+                <control type="list" id="2">
+                    <posx>0</posx>
+                    <posy>44</posy>
+                    <width>810</width>
+                    <height>300</height>
+                    <onleft>4495</onleft>
+                    <onright>noop</onright>
+                    <onup>4</onup>
+                    <ondown>noop</ondown>
+                    <itemlayout height="100">
+                        <control type="image">
+							<width>810</width>
+                            <height>100</height>
+                            <texture>other_textures/buttonnf.png</texture>
+							<visible>!SubString(ListItem.Label,$LOCALIZE[20058])</visible>
+                        </control>
+                        <control type="image">
+                            <width>810</width>
+                            <height>44</height>
+                            <texture>other_textures/buttonnf.png</texture>
+							<visible>SubString(ListItem.Label,$LOCALIZE[20058])</visible>
+                        </control>
+                        <control type="image">
+                            <posx>10</posx>
+                            <posy>10</posy>
+                            <width>80</width>
+                            <height>80</height>
+                            <texture fallback="DefaultUser.png">$INFO[Listitem.Icon]</texture>
+							<visible>!SubString(ListItem.Label,$LOCALIZE[20058])</visible>
+                        </control>
+                        <control type="label">
+                            <posx>110</posx>
+                            <width>810</width>
+                            <height>90</height>
+                            <info>ListItem.Label</info>
+							<font>List_Settings</font>
+                            <visible>!SubString(ListItem.Label,$LOCALIZE[20058])</visible>
+                        </control>
+                        <control type="label">
+                            <posx>15</posx>
+                            <width>810</width>
+                            <info>ListItem.Label</info>
+							<font>List_Settings</font>
+                            <visible>SubString(ListItem.Label,$LOCALIZE[20058])</visible>
+                        </control>
+                        <control type="label">
+                            <posx>800</posx>
+                            <width>810</width>
+                            <height>90</height>
+                            <align>right</align>
+							<font>List_Settings</font>
+                            <info>ListItem.Label2</info>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="100">
+                        <control type="image">
+                            <width>810</width>
+                            <height>100</height>
+                            <texture>other_textures/buttonfo.png</texture>
+                            <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(2)">Conditional</animation>
+                            <visible>!SubString(ListItem.Label,$LOCALIZE[20058])</visible>
+                        </control>
+                        <control type="image">
+                            <width>810</width>
+                            <height>44</height>
+                            <texture>other_textures/buttonfo.png</texture>
+                            <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(2)">Conditional</animation>
+                            <visible>SubString(ListItem.Label,$LOCALIZE[20058])</visible>
+                        </control>
+                        <control type="image">
+                            <posx>10</posx>
+                            <posy>10</posy>
+                            <width>80</width>
+                            <height>80</height>
+                            <texture fallback="DefaultUser.png">$INFO[Listitem.Icon]</texture>
+							<visible>!SubString(ListItem.Label,$LOCALIZE[20058])</visible>
+                        </control>
+                        <control type="label">
+                            <posx>110</posx>
+                            <width>810</width>
+                            <height>90</height>
+                            <info>ListItem.Label</info>
+							<font>List_Settings</font>
+                            <visible>!SubString(ListItem.Label,$LOCALIZE[20058])</visible>
+                            <textcolor>Accent</textcolor>
+                        </control>
+                        <control type="label">
+                            <posx>15</posx>
+                            <width>810</width>
+                            <info>ListItem.Label</info>
+							<font>List_Settings</font>
+                            <visible>SubString(ListItem.Label,$LOCALIZE[20058])</visible>
+                            <textcolor>Accent</textcolor>
+                        </control>
+                        <control type="label">
+                            <posx>800</posx>
+                            <width>810</width>
+                            <height>90</height>
+                            <align>right</align>
+							<font>List_Settings</font>
+                            <info>ListItem.Label2</info>
+                            <textcolor>Accent</textcolor>
+                        </control>
+                    </focusedlayout>
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>

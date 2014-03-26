@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window id="126">
+    <defaultcontrol always="true">450</defaultcontrol>
+    <allowoverlay>yes</allowoverlay>
+    <controls>
+        <include>GlobalOverlay</include>
+        <control type="group">
+            <posx>960</posx>
+            <posy>0</posy>
+            <animation type="WindowOpen">
+                <effect type="slide" time="300" start="+320, 0" end="0,0" easing="out" tween="cubic" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="slide" time="300" start="0,0" end="+320,0" easing="in" tween="cubic" />
+            </animation>
+            <animation type="Hidden">
+                <effect type="slide" time="300" start="0,0" end="+320,0" easing="in" tween="cubic" />
+            </animation>
+            <animation type="Visible">
+                <effect type="slide" time="300" start="+320, 0" end="0,0" easing="out" tween="cubic" />
+            </animation>
+            <control type="image">
+                <description>Large Icon Image</description>
+                <posx>-765</posx>
+                <posy>110</posy>
+                <width>650</width>
+                <height>500</height>
+                <texture fallback="defaultaddonnone.png">$INFO[Container(450).ListItem.Icon]</texture>
+                <aspectratio align="center" aligny="center">keep</aspectratio>
+                <bordertexture border="5">white_box.png</bordertexture>
+                <bordersize>5</bordersize>
+                <visible>!IsEmpty(Container(450).ListItem(0).Icon) + [SubString(Container(450).ListItem(0).Label,.jpg) | SubString(Container(450).ListItem(0).Label,.png) | SubString(Container(450).ListItem(0).Label,Current thumb) | SubString(Container(450).ListItem(0).Label,Remote thumb) | SubString(Container(450).ListItem(0).Label,Current art) | SubString(Container(450).ListItem(0).Label,Remote art) | SubString(Container(450).ListItem(0).Label,Remote fanart) | SubString(Container(450).ListItem(0).Label,Local art) | SubString(Container(450).ListItem(0).Label,Local fanart)]</visible>
+                <animation type="WindowOpen">
+                    <effect type="slide" time="300" start="+1165, 0" end="0,0" easing="out" tween="cubic" />
+                </animation>
+                <animation type="WindowClose">
+                    <effect type="slide" time="300" start="0,0" end="+1165,0" easing="in" tween="cubic" />
+                </animation>
+            </control>
+			<include>RightMenuBackground</include>
+			<control type="fadelabel">
+                <description>Heading</description>
+                <posx>20</posx>
+                <posy>0</posy>
+                <width>280</width>
+                <align>right</align>
+                <font>Panel_Description_Title</font>
+                 <label>$LOCALIZE[1024]</label>
+            </control>
+            <control type="label" id="412">
+                <description>Path</description>
+                <posx>300</posx>
+                <posy>45</posy>
+                <width>280</width>
+				<align>right</align>
+                <haspath>true</haspath>
+                <font>Panel_Info</font>
+            </control>
+            <control type="list" id="450">
+                <posx>20</posx>
+                <posy>90</posy>
+                <width>280</width>
+                <height>360</height>
+                <onup>450</onup>
+                <onleft>9000</onleft>
+                <onright>9000</onright>
+                <ondown>450</ondown>
+                <itemlayout height="45">
+                    <control type="image">
+                        <width>340</width>
+                        <height>45</height>
+                        <texture>other_textures/buttonnf.png</texture>
+                    </control>
+                     <control type="label">
+                        <posx>270</posx>
+                        <width>260</width>
+                        <info>ListItem.Label</info>
+						<font>Panel_Info</font>
+						<align>right</align>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="45">
+                    <control type="image">
+                        <width>340</width>
+                        <height>45</height>
+                        <texture>button.png</texture>
+                        <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(450)">Conditional</animation>
+                    </control>
+                     <control type="label">
+                        <posx>270</posx>
+                        <width>260</width>
+                        <info>ListItem.Label</info>
+						<font>Panel_Info</font>
+						<align>right</align>
+                    </control>
+                </focusedlayout>
+            </control>
+			<control type="image">
+                <posx>70</posx>
+                <posy>465</posy>
+                <width>180</width>
+                <height>180</height>
+                <texture>$INFO[Listitem.Icon]</texture>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+           </control>
+            <control type="grouplist" id="9000">
+                <posx>20</posx>
+                <posy>655</posy>
+                <itemgap>10</itemgap>
+                <orientation>horizontal</orientation>
+                <onup>450</onup>
+                <ondown>450</ondown>
+                <control type="button" id="413">
+                    <description>Ok</description>
+                    <width>135</width>
+                    <label>186</label>
+                    <font>Panel_Hint</font>
+					<texturefocus>button.png</texturefocus>
+					<texturenofocus>tile.png</texturenofocus>
+                </control>
+                <control type="button" id="414">
+                    <description>Cancel</description>
+                    <width>135</width>
+                    <label>222</label>
+                    <font>Panel_Hint</font>
+					<texturefocus>button.png</texturefocus>
+					<texturenofocus>tile.png</texturenofocus>
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>

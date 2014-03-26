@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window type="dialog" id="142">
+    <controls>
+		<!-- This Displays the Current Time on the Top Right -->
+			<control type="label">
+				<animation effect="fade" start="0" end="100" time="600" >WindowOpen</animation>
+				<animation effect="fade" start="100" end="0" time="600">WindowClose</animation>
+				<animation effect="fade" start="100" end="0" time="600" condition="Window.IsActive(videoosd)">conditional</animation>
+				<label>$INFO[System.Time(hh:mm)][COLOR Accent]$INFO[System.Time(xx), ][/COLOR]</label>
+				<posx>1270</posx>
+				<posy>5</posy>
+				<height>50</height>
+				<width>550</width>
+				<font>Clock</font>
+				<align>right</align>
+			</control>
+		<!-- Covers -->
+		<control type="group">
+			<animation effect="slide" start="-180" end="0" time="600" tween="cubic" easing="out">WindowOpen</animation>
+			<animation effect="slide" start="0" end="-180" time="600" tween="cubic" easing="in">WindowClose</animation>
+			<animation effect="fade" start="100" end="0" time="300" condition="Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(script-XBMC-Subtitles-main.xml)">conditional</animation>
+			<posy>455</posy>
+			<!-- Poster Bg -->
+			<control type="image">
+				<posx>0</posx>
+				<posy>5</posy>
+				<width>180</width>
+				<height>260</height>
+				<texture>tile.png</texture>
+				<visible>!VideoPlayer.Content(musicvideos) + !VideoPlayer.Content(livetv)</visible>
+			</control>
+			<!-- Square Bg -->
+			<control type="image">
+				<posx>0</posx>
+				<posy>5</posy>
+				<width>260</width>
+				<height>260</height>
+				<texture>tile.png</texture>
+				<visible>VideoPlayer.Content(musicvideos) | VideoPlayer.Content(livetv)</visible>
+			</control>
+			<!-- TV Show Cover -->
+			<control type="image">
+				<description>Tv Show Cover</description>
+				<posx>10</posx>
+				<posy>15</posy>
+				<width>160</width>
+				<height>240</height>
+				<texture background="true">$INFO[Player.Art(tvshow.poster)]</texture>
+				<bordertexture border="5">white_box.png</bordertexture>
+				<bordersize>5</bordersize>
+				<visible>VideoPlayer.Content(Episodes)</visible>
+			</control>
+			<!-- Movie Cover -->
+			<control type="image">
+				<description>Movie cover image</description>
+				<posx>10</posx>
+				<posy>15</posy>
+				<width>160</width>
+				<height>240</height>
+				<texture background="true">$INFO[VideoPlayer.Cover]</texture>
+				<bordertexture border="5">white_box.png</bordertexture>
+				<bordersize>5</bordersize>
+				<visible>VideoPlayer.Content(Movies)</visible>
+			</control>
+			 <!-- Non Movie Non Tv Show Non Music Video Cover -->
+			<control type="image">
+				<description>Non Movie Non Tv Show cover image</description>
+				<posx>10</posx>
+				<posy>15</posy>
+				<width>160</width>
+				<height>240</height>
+				<texture background="true">$INFO[VideoPlayer.Cover]</texture>
+				<bordertexture border="5">white_box.png</bordertexture>
+				<bordersize>5</bordersize>
+				<visible>!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes) + !VideoPlayer.Content(musicvideos) + !VideoPlayer.Content(livetv)</visible>
+			</control>
+			<!-- Music Videos Cover -->
+			<control type="image">
+				<description>Non Movie Non Tv Show cover image</description>
+				<posx>10</posx>
+				<posy>15</posy>
+				<width>240</width>
+				<height>240</height>
+				<texture background="true">$INFO[VideoPlayer.Cover]</texture>
+				<bordertexture border="5">white_box.png</bordertexture>
+				<bordersize>5</bordersize>
+				<visible>VideoPlayer.Content(musicvideos)</visible>
+			</control>
+			<!-- live tv Cover -->
+			<control type="image">
+				<description>live  Tv cover image</description>
+				<posx>10</posx>
+				<posy>15</posy>
+				<width>240</width>
+				<height>240</height>
+				<aspectratio>keep</aspectratio>
+				<texture background="true">$INFO[VideoPlayer.Cover]</texture>
+				<visible>VideoPlayer.Content(livetv)</visible>
+			</control>
+		</control>
+		<!-- Movie & Episode Info -->
+		<control type="group">
+			<visible>VideoPlayer.Content(episodes) | VideoPlayer.Content(movies)</visible>
+			<posy>455</posy>
+			<posx>190</posx>
+			<!-- INFO -->
+			<control type="group">
+				<animation effect="slide" start="1100" end="0" time="600" tween="cubic" easing="out">WindowOpen</animation>
+				<animation effect="slide" start="0" end="1100" time="600" tween="cubic" easing="in">WindowClose</animation>
+				<animation effect="fade" start="100" end="0" time="300" condition="Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(script-XBMC-Subtitles-main.xml)">conditional</animation>
+				<control type="image">
+					<description>black bar</description>
+					<posy>5</posy>
+					<width>1100</width>
+					<height>230</height>
+					<fadetime>200</fadetime>
+					<texture background="true">tile.png</texture>
+				</control>
+				<!-- Episode Title & Show Name  & Episode Number -->
+				<control type="group">
+					<posy>20</posy>
+					<posx>15</posx>
+					<visible>VideoPlayer.Content(episodes)</visible>
+					<control type="label">
+						<description>Tv Show Title</description>
+						<width>1050</width>
+						<scroll>true</scroll>
+						<font>Music_Vis_Title</font>
+						<align>left</align>
+						<label>$INFO[VideoPlayer.Title]</label>
+					</control>
+					<control type="label">
+						<description>Episode Title</description>
+						<posy>52</posy>
+						<width>1050</width>
+						<label>$INFO[VideoPlayer.TVShowTitle]</label>
+						<scroll>true</scroll>
+						<font>Music_Vis_Title2</font>
+						<align>left</align>
+					</control>
+					<!-- Display of Season Episode -->
+					<control type="label">
+						<label>[COLOR Accent]$INFO[VideoPlayer.Season,[COLOR White]Season [/COLOR]] $INFO[VideoPlayer.Episode,[COLOR White]Episode [/COLOR] ][/COLOR] </label>
+						<posy>97</posy>
+						<width>1050</width>
+						<font>Music_Vis_Title3</font>
+					</control>
+				</control>
+				<!-- Movie Title & Tagline -->
+				<control type="group">
+					<posx>15</posx>
+					<posy>20</posy>
+					<visible>VideoPlayer.Content(movies)</visible>
+					<!-- Movie Title-->
+					<control type="label">
+						<description>Movie Title</description>
+						<width>1050</width>
+						<scroll>true</scroll>
+						<font>Music_Vis_Title</font>
+						<align>left</align>
+						<label>$INFO[VideoPlayer.Title] [COLOR Accent]$INFO[VideoPlayer.Year][/COLOR]</label>
+					</control>
+					<!-- Movie Tagline-->
+					<control type="label">
+						<description>Movie Tagline</description>
+						<posy>52</posy>
+						<width>1050</width>
+						<label>$INFO[VideoPlayer.Tagline]</label>
+						<scroll>true</scroll>
+						<font>Music_Vis_Title2</font>
+						<align>left</align>
+						<visible>!IsEmpty(VideoPlayer.Tagline)</visible>
+					</control>
+					<!-- Movie Director if Tagline Not Avail-->
+					<control type="label">
+						<description>Movie Director</description>
+						<posy>52</posy>
+						<width>1050</width>
+						<label>[COLOR Accent]$INFO[VideoPlayer.Director,[COLOR White]Director [/COLOR]][/COLOR]</label>
+						<scroll>true</scroll>
+						<font>Music_Vis_Title2</font>
+						<align>left</align>
+						<visible>IsEmpty(VideoPlayer.Tagline)</visible>
+					</control>
+					<!-- Movie Director if Tagline Avail-->
+					<control type="label">
+						<description>Movie Director</description>
+						<posy>97</posy>
+						<width>1050</width>
+						<label>[COLOR Accent]$INFO[VideoPlayer.Director,[COLOR White]Director [/COLOR]][/COLOR]</label>
+						<scroll>true</scroll>
+						<font>Music_Vis_Title3</font>
+						<align>left</align>
+						<visible>!IsEmpty(VideoPlayer.Tagline)</visible>
+					</control>
+					<!-- Movie Duration if Tagline not Avail-->
+					<control type="label">
+						<description>Movie Director</description>
+						<posy>97</posy>
+						<width>1050</width>
+						<label>[COLOR Accent]$INFO[VideoPlayer.Duration,[COLOR White]Duration [/COLOR]][/COLOR]</label>
+						<scroll>true</scroll>
+						<font>Music_Vis_Title3</font>
+						<align>left</align>
+						<visible>IsEmpty(VideoPlayer.Tagline)</visible>
+					</control>
+				</control>
+				<!-- End Time -->
+				<control type="label">
+					<posx>15</posx>
+					<posy>157</posy>
+					<width>785</width>
+					<label>[COLOR Accent]$INFO[Player.FinishTime,[COLOR White]$LOCALIZE[19127]: [/COLOR] ][/COLOR]</label>
+					<scroll>true</scroll>
+					<font>Music_Vis_Title4</font>
+					<align>left</align>
+				</control>
+				<!-- Track Rating -->
+				<control type="image">
+					<description>Rating image</description>
+					<posx>15</posx>
+					<posy>182</posy>
+					<width>140</width>
+					<height>60</height>
+					<aspectratio align="left">keep</aspectratio>
+					<texture>other_textures/colorrating/$INFO[Player.StarRating]</texture>
+				</control>
+			</control>
+			<!-- Progress Bar -->
+			<control type="group">	
+				<animation effect="slide" start="0,60" end="0,0" time="600" tween="cubic" easing="out">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="0,60" time="600" tween="cubic" easing="in">WindowClose</animation>
+				<animation effect="fade" start="100" end="0" time="300" condition="Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(script-XBMC-Subtitles-main.xml)">conditional</animation>
+				<posy>230</posy>
+				<!-- Background for Progress Bar -->
+				<control type="image">
+					<description>black bar</description>
+					<posx>0</posx>
+					<posy>10</posy>
+					<width>1090</width>
+					<height>25</height>
+					<fadetime>200</fadetime>
+					<texture background="true">tile.png</texture>
+				</control>
+				<!-- Progress Bar -->
+				<control type="progress">
+					<description>Progressbar</description>
+					<posx>110</posx>
+					<posy>20</posy>
+					<width>870</width>
+					<height>5</height>
+					<info>Player.Progress</info>
+					<texturebg>progresswhite.png</texturebg>
+					<midtexture>progresslime.png</midtexture>
+				</control>
+				<!-- Player Time Elapsed-->
+				<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>100</width>
+					<label>$INFO[MusicPlayer.Time]</label>
+					<align>center</align>
+					<font>Panel_Hint</font>
+					<textcolor>Accent</textcolor>
+				</control>
+				<!-- Player Time Remaining-->
+				<control type="label">
+					<posx>990</posx>
+					<posy>0</posy>
+					<width>100</width>
+					<label>$INFO[MusicPlayer.TimeRemaining,-]</label>
+					<align>center</align>
+					<font>Panel_Hint</font>
+				</control>
+			</control>
+		</control>
+		<!-- Music Video & Live TV Info -->
+		<control type="group">
+			<visible>VideoPlayer.Content(musicvideos) | VideoPlayer.Content(livetv)</visible>
+			<posy>455</posy>
+			<posx>270</posx>
+			<!-- INFO -->
+			<control type="group">
+				<animation effect="slide" start="1100" end="0" time="600" tween="cubic" easing="out">WindowOpen</animation>
+				<animation effect="slide" start="0" end="1100" time="600" tween="cubic" easing="in">WindowClose</animation>
+				<animation effect="fade" start="100" end="0" time="300" condition="Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(script-XBMC-Subtitles-main.xml)">conditional</animation>
+				<control type="image">
+					<description>black bar</description>
+					<posy>5</posy>
+					<width>1100</width>
+					<height>230</height>
+					<fadetime>200</fadetime>
+					<texture background="true">tile.png</texture>
+				</control>
+				<!-- Music Video Artist , Album & Track -->
+				<control type="group">
+					<posx>15</posx>
+					<posy>20</posy>
+					<visible>VideoPlayer.Content(musicvideos)</visible>
+					<!-- Artist -->	
+					<control type="label">
+						<description>Artist</description>
+						<width>1050</width>
+						<scroll>true</scroll>
+						<font>Music_Vis_Title</font>
+						<align>left</align>
+						<label>$INFO[VideoPlayer.Artist]</label>
+					 </control>
+					<!-- Album -->	
+					<control type="label">
+						<description>Album</description>
+						<posy>52</posy>
+						<width>1050</width>
+						<label>$INFO[VideoPlayer.Album] [COLOR Accent]$INFO[VideoPlayer.Year][/COLOR]</label>
+						<scroll>true</scroll>
+						<font>Music_Vis_Title2</font>
+						<align>left</align>
+					</control>
+					<!-- Title -->	
+					<control type="label">
+						<description>Title</description>
+						<posy>97</posy>
+						<width>1050</width>
+						<label>$INFO[VideoPlayer.Title]</label>
+						<scroll>true</scroll>
+						<font>Music_Vis_Title3</font>
+						<align>left</align>
+					</control>
+				</control>
+				<!-- End Time-->
+				<control type="label">
+						<posx>15</posx>
+						<posy>157</posy>
+						<width>785</width>
+						<label>[COLOR Accent]$INFO[Player.FinishTime,[COLOR White]$LOCALIZE[19127]: [/COLOR] ][/COLOR]</label>
+						<scroll>true</scroll>
+						<font>Music_Vis_Title4</font>
+						<align>left</align>
+				</control>
+			</control>
+			<!-- Progress Bar -->
+			<control type="group">	
+				<animation effect="slide" start="0,60" end="0,0" time="600" tween="cubic" easing="out">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="0,60" time="600" tween="cubic" easing="in">WindowClose</animation>
+				<animation effect="fade" start="100" end="0" time="300" condition="Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(script-XBMC-Subtitles-main.xml)">conditional</animation>
+				<posy>230</posy>
+				<!-- Background for Progress Bar -->
+				<control type="image">
+					<description>black bar</description>
+					<posx>0</posx>
+					<posy>10</posy>
+					<width>1010</width>
+					<height>25</height>
+					<fadetime>200</fadetime>
+					<texture background="true">tile.png</texture>
+				</control>
+				<!-- Progress Bar -->
+				<control type="progress">
+					<description>Progressbar</description>
+					<posx>110</posx>
+					<posy>20</posy>
+					<width>790</width>
+					<height>5</height>
+					<info>Player.Progress</info>
+					<texturebg>progresswhite.png</texturebg>
+					<midtexture>progresslime.png</midtexture>
+				</control>
+				<!-- Player Time Elapsed-->
+				<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>100</width>
+					<label>$INFO[MusicPlayer.Time]</label>
+					<align>center</align>
+					<font>Panel_Hint</font>
+					<textcolor>Accent</textcolor>
+				</control>
+				<!-- Player Time Remaining-->
+				<control type="label">
+					<posx>910</posx>
+					<posy>0</posy>
+					<width>100</width>
+					<label>$INFO[MusicPlayer.TimeRemaining,-]</label>
+					<align>center</align>
+					<font>Panel_Hint</font>
+				</control>
+			</control>
+		</control>
+
+	</controls>
+</window>

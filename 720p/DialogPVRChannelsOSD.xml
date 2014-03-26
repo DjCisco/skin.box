@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+    <defaultcontrol always="true">11</defaultcontrol>
+    <controls>
+
+        <control type="group">
+            <posx>880</posx>
+            <posy>0</posy>
+
+			<animation type="WindowOpen">
+                <effect type="slide" time="300" start="+400, 0" end="0,0" easing="out" tween="cubic" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="slide" time="300" start="0,0" end="+400,0" easing="in" tween="cubic" />
+            </animation>
+            <animation type="Hidden">
+                <effect type="slide" time="300" start="0,0" end="+400,0" easing="in" tween="cubic" />
+            </animation>
+            <animation type="Visible">
+                <effect type="slide" time="300" start="+400, 0" end="0,0" easing="out" tween="cubic" />
+            </animation>
+	
+            <visible>!Window.IsVisible(DialogPVRGuideInfo.xml)</visible>
+           
+			<control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>400</width>
+                <height>720</height>
+                <texture>tile.png</texture>
+                <fadetime>200</fadetime>
+                <aspectratio scalediffuse="false">stretch</aspectratio>
+            </control>
+			<control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>5</width>
+                <height>720</height>
+                <texture>button.png</texture>
+                <fadetime>200</fadetime>
+                <aspectratio scalediffuse="false">stretch</aspectratio>
+            </control>
+
+
+			<control type="label">
+                <description>header label</description>
+                <posx>20</posx>
+                <posy>20</posy>
+                <font>Panel_Title</font>
+                <align>left</align>
+                <label>$INFO[VideoPlayer.ChannelGroup]</label>
+                <visible>!pvr.IsPlayingRadio</visible>
+            </control>
+            <control type="label">
+                <description>header label</description>
+                <posx>20</posx>
+                <posy>20</posy>
+                <font>Panel_Title</font>
+                <align>left</align>
+                <label>$INFO[MusicPlayer.ChannelGroup]</label>
+                <visible>pvr.IsPlayingRadio</visible>
+            </control>
+            <control type="list" id="11">
+                <posx>20</posx>
+                <posy>80</posy>
+                <width>380</width>
+                <height>620</height>
+                <onleft>PreviousChannelGroup</onleft>
+                <onright>NextChannelGroup</onright>
+                <onup>11</onup>
+                <ondown>11</ondown>
+                <scrolltime>200</scrolltime>
+                <itemlayout height="55">
+					<control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>360</width>
+                        <height>50</height>
+                        <texture>tile.png</texture>
+                    </control>
+					<control type="image">
+                        <posx>300</posx>
+                        <posy></posy>
+                        <width>50</width>
+                        <height>50</height>
+                        <texture>$INFO[ListItem.Icon]</texture>
+                    </control>
+		            <control type="label">
+						<posy></posy>
+                        <posx>20</posx>
+                        <width>40</width>
+						<height>40</height>
+                        <align>center</align>
+						<aligny>top</aligny>
+						<font>Music_Vis_Title4</font>
+                        <label>$INFO[ListItem.ChannelNumber]</label>
+                    </control>
+                    <control type="label">
+                        <posx>40</posx>
+						<posy></posy>
+                        <width>340</width>
+                        <font>List_Hint</font>
+						<aligny>top</aligny>
+                        <label>$INFO[ListItem.Label] [COLOR Accent]$INFO[ListItem.Title][/COLOR]</label>
+                    </control>
+                    <control type="label">
+                        <posx>40</posx>
+                        <posy>20</posy>
+                        <width>400</width>
+                        <aligny>top</aligny>
+						<font>List_Hint</font>
+                        <label>$INFO[ListItem.StartTime,, / ]$INFO[ListItem.EndTime]</label>
+                        <visible>ListItem.HasEpg</visible>
+                    </control>
+                    <control type="progress">
+                        <description>Progressbar</description>
+                        <posx>0</posx>
+                        <posy>45</posy>
+                        <width>360</width>
+                        <height>5</height>
+                        <info>ListItem.Progress</info>
+                        <visible>ListItem.HasEpg</visible>
+                        <texturebg>progressnotification.png</texturebg>
+                        <midtexture>progresslime.png</midtexture>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="55">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>360</width>
+                        <height>50</height>
+                        <texture>button.png</texture>
+                    </control>
+					<control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>360</width>
+                        <height>50</height>
+                        <texture>tile.png</texture>
+                    </control>
+					<control type="image">
+                        <posx>300</posx>
+                        <posy></posy>
+                        <width>50</width>
+                        <height>50</height>
+                        <texture>$INFO[ListItem.Icon]</texture>
+                    </control>
+		            <control type="label">
+						<posy></posy>
+                        <posx>20</posx>
+                        <width>40</width>
+						<height>40</height>
+                        <align>center</align>
+						<aligny>top</aligny>
+						<font>Music_Vis_Title4</font>
+                        <label>$INFO[ListItem.ChannelNumber]</label>
+                    </control>
+                    <control type="label">
+                        <posx>40</posx>
+						<posy></posy>
+                        <width>340</width>
+                        <font>List_Hint</font>
+						<aligny>top</aligny>
+                        <label>$INFO[ListItem.Label] [COLOR Accent]$INFO[ListItem.Title][/COLOR]</label>
+                    </control>
+                    <control type="label">
+                        <posx>40</posx>
+                        <posy>20</posy>
+                        <width>400</width>
+                        <aligny>top</aligny>
+						<font>List_Hint</font>
+                        <label>$INFO[ListItem.StartTime,, / ]$INFO[ListItem.EndTime]</label>
+                        <visible>ListItem.HasEpg</visible>
+                    </control>
+                    <control type="progress">
+                        <description>Progressbar</description>
+                        <posx>0</posx>
+                        <posy>45</posy>
+                        <width>360</width>
+                        <height>5</height>
+                        <info>ListItem.Progress</info>
+                        <visible>ListItem.HasEpg</visible>
+                        <texturebg>progressnotification.png</texturebg>
+                        <midtexture>progresslime.png</midtexture>
+                    </control>
+				</focusedlayout>
+			</control>
+        </control>
+    </controls>
+</window>

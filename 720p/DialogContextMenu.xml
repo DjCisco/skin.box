@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window id="106">
+    <defaultcontrol always="true">1000</defaultcontrol>
+    <allowoverlay>yes</allowoverlay>
+    <controls>
+        <include>GlobalOverlay</include>
+        <control type="group">
+            <posx>960</posx>
+            <posy>0</posy>
+            <animation type="WindowOpen">
+                <effect type="slide" time="300" start="+320, 0" end="0,0" easing="out" tween="cubic" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="slide" time="300" start="0,0" end="+320,0" easing="in" tween="cubic" />
+            </animation>
+			<include>RightMenuBackground</include>
+			<control type="fadelabel">
+                <description>Menu Title</description>
+                <posx>20</posx>
+                <posy>0</posy>
+                <width>280</width>
+                <label>$LOCALIZE[33061]</label>
+                <font>Panel_Description_Title</font>
+                <align>right</align>
+            </control>
+            <control type="button" id="1000">
+                <animation type="WindowOpen">
+                    <effect type="slide" time="300" start="+1280, +70" end="+960,+70" easing="out" tween="cubic" />
+                </animation>
+                <animation type="WindowClose">
+                    <effect type="slide" time="300" start="+960,+70" end="+1280,+70" easing="in" tween="cubic" />
+                </animation>
+                <description>Buttons</description>
+                <posx>20</posx>
+                <posy>0</posy>
+                <width>280</width>
+				<textoffsetx>10</textoffsetx>
+                <font>Panel_Info</font>
+                <align>right</align>
+				<texturefocus>button.png</texturefocus>
+            </control>
+        </control>
+    </controls>
+</window>
