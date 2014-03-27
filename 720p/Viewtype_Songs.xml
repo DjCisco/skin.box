@@ -35,7 +35,6 @@
                 <height>315</height>
                 <texture>other_textures/black-back.png</texture>
             </control>
-			
 			<!-- This Control displays the list of songs-->
             <control type="fixedlist" id="503">
                 <viewtype label="List">Song View</viewtype>
@@ -51,7 +50,7 @@
                 <onleft>9000</onleft>
                 <scrolltime>0</scrolltime>
                 <orientation>vertical</orientation>
-				<visible>Container.Content(songs) | Window.IsActive(musicplaylist)</visible>
+				<visible>Container.Content(songs) | Container.Content(playlists) | Window.IsActive(musicplaylist)</visible>
 				<pagecontrol>63</pagecontrol>
                 <!-- This Control defines the unfocused item layout -->
 				<itemlayout height="45">
@@ -179,7 +178,6 @@
                 <showonepage>true</showonepage>
                 <orientation>vertical</orientation>
             </control>
-
             <!-- This Control displays the Album Title-->
 			<control type="label">
                 <label>$INFO[ListItem.Album]</label>
@@ -262,9 +260,6 @@
                 <visible>true</visible>
                 <bordersize>5</bordersize>
             </control>
-       
-
-
-		</control>
+        </control>
     </include>
 </includes>

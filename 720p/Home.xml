@@ -309,99 +309,97 @@
 		</control>
 		<!--HOME MENU CTRL-->
 		<control type="grouplist" id="20000">
-			<posx>-1200</posx>
-			<posy>100</posy>
-			<width>600</width>
-			<height>30</height>
+			<animation type="Conditional" condition="!Skin.HasSetting(DisplayHomeMenu)">
+				<effect type="slide" start="0,0" end="-400,0" time="200" />
+			</animation>
+			<posx>50</posx>
+			<posy>10</posy>
+			<width>350</width>
+			<height>70</height>
+			<itemgap>10</itemgap>
 			<orientation>horizontal</orientation>
 			<pagecontrol>20001</pagecontrol>
 			<!--MOVIES PANELS-->
 			<control type="group" id="355">
-				<width>50</width>
-				<height>30</height>
-				<posx>0</posx>
-					<posy>30</posy>
-				<control  type="button" id="2001">
-					<width>30</width>
-					<height>30</height>
+				<width>55</width>
+				<height>55</height>
+				<control  id="2001">
+					<width>55</width>
+					<height>55</height>
+					<type>button</type>
 					<align>left</align>
 					<onright>2002</onright>
 					<onleft>2005</onleft>
 					<ondown>7000</ondown>
 					<onfocus>SetProperty(menu,movie)</onfocus>
-					<onclick>Control.SetFocus(7000)</onclick>
 					<visible>!Skin.HasSetting(HideMovies)</visible>
 				</control>
 			</control>
 			<!--TV SHOWS - PANELS -->
 			<control type="group" id="375">
-				<width>50</width>
-				<height>30</height>
-				<posx>100</posx>
-					<posy>30</posy>
-				<control  type="button" id="2002">
-					
-					<width>30</width>
-					<height>30</height>
+				<width>55</width>
+				<height>55</height>
+				<control  id="2002">
+					<width>55</width>
+					<height>55</height>
+					<type>button</type>
 					<align>left</align>
 					<onleft>2001</onleft>
 					<onright>2003</onright>
 					<ondown>8000</ondown>
 					<onfocus>SetProperty(menu,tv)</onfocus>
-					<onclick>Control.SetFocus(8000)</onclick>
 					<visible>!Skin.HasSetting(HideTV)</visible>
 				</control>
 			</control>
 			 <!-- MUSIC PANEL-->
 			<control  type="group" id="335">
-				<width>50</width>
-				<height>30</height>
-				<posx>200</posx>
-					<posy>30</posy>
-				<control type="button" id="2003">
-					
-					<width>30</width>
-					<height>30</height>
+				<width>55</width>
+				<height>55</height>
+				<control id="2003">
+					<width>55</width>
+					<height>55</height>
+					<type>button</type>
 					<align>left</align>
 					<onleft>2002</onleft>
 					<onright>2004</onright>
 					<ondown>6000</ondown>
 					<onfocus>SetProperty(menu,music)</onfocus>
-					<onclick>Control.SetFocus(6000)</onclick>>
 					<visible>!Skin.HasSetting(HideMusic)</visible>
 				</control>
 			</control>
 			<!-- LIVE TV PANEL-->
 			<control type="group" id="395">
+				<width>55</width>
+				<height>55</height>
 				<control id="2004">
 					<posx>300</posx>
 					<posy>30</posy>
 					<type>button</type>
-					<width>50</width>
-					<height>30</height>
+					<width>55</width>
+					<height>55</height>
 					<align>left</align>
 					<onleft>2003</onleft>
 					<onright>2005</onright>
 					<ondown>3000</ondown>
 					<onfocus>SetProperty(menu,pvr)</onfocus>
-					<onclick>Control.SetFocus(3000)</onclick>>
 					<visible>System.GetBool(pvrmanager.enabled)</visible>
 				</control>
 			</control>
 			<!-- DISC PANEL-->
 			<control type="group" id="315">
+				<width>55</width>
+				<height>55</height>
 				<control id="2005">
 					<posx>400</posx>
 					<posy>30</posy>
 					<type>button</type>
-					<width>50</width>
-					<height>30</height>
+					<width>55</width>
+					<height>55</height>
 					<align>left</align>
 					<onleft>2004</onleft>
 					<onright>2001</onright>
 					<ondown>49</ondown>
 					<onfocus>SetProperty(menu,discplayer)</onfocus>
-					<onclick>Control.SetFocus(49)</onclick>>
 					<visible>System.HasMediaDVD</visible>
 				</control>
 			</control>

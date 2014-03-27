@@ -2,8 +2,8 @@
 <window id="502">
     <defaultcontrol always="true">50</defaultcontrol>
     <allowoverlay>yes</allowoverlay>
-    <views>50,56,59,508,503,519,521,527,528,529,530,531,590</views>
-	<!--<views>50,59,503,504,505,508,519,521,527,528,529,530,531,590,58,56,51,52,55</views>-->
+    <!--<views>50,56,59,508,503,519,521,527,528,529,530,531,590</views>-->
+	<views>50,59,503,504,505,508,519,521,527,528,529,530,531,590,58,56,51,52,55</views>
     <controls>
         <control type="group">
             <include>HomeBackground</include>
@@ -12,10 +12,10 @@
                 <visible>Container.Content(songs)</visible>
                 <include>BackgroundTextScroll</include>
             </control>
+			<include>Viewtype_Songs</include><!-- 503 -->
             <include>View_50_List</include><!-- 50 -->
 			<include>Viewtype_Panel_Genre</include><!-- 56 -->
 			<include>Viewtype_MusicVideos</include><!-- 59 -->
-			<include>Viewtype_Songs</include><!-- 503 -->
 			<include>Viewtype_Panel_Square_List</include><!-- 508 -->
 			<include>Viewtype_Panel_Square</include><!-- 519 -->
 			<include>Viewtype_Panel_Square_Wide</include><!-- 521 -->
