@@ -50,7 +50,7 @@
                 <onleft>9000</onleft>
                 <scrolltime>0</scrolltime>
                 <orientation>vertical</orientation>
-				<visible>Container.Content(songs) | Container.Content(playlists) | Window.IsActive(musicplaylist)</visible>
+				<visible>Container.Content(songs) | Window.IsActive(musicplaylist)</visible>
 				<pagecontrol>63</pagecontrol>
                 <!-- This Control defines the unfocused item layout -->
 				<itemlayout height="45">

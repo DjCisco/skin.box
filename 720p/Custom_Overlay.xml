@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="50">
-	<zorder>1</zorder>
+	<zorder>2</zorder>
 	<visible>!Window.IsVisible(startup)</visible>
 	<controls>
 
@@ -27,7 +27,216 @@
 			<height>450</height>
 			<itemgap>12</itemgap>
 			<visible>Skin.HasSetting(DebugInfo)</visible>
-
+			<!-- Content Labels -->
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Files</label>
+				<visible>Container.Content(files)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Movies</label>
+				<visible>Container.Content(movies)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Tv Shows</label>
+				<visible>Container.Content(tvshows)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Songs</label>
+				<visible>Container.Content(songs)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Music Videos</label>
+				<visible>Container.Content(musicvideos)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: artists</label>
+				<visible>Container.Content(artists)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Years</label>
+				<visible>Container.Content(years)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Genres</label>
+				<visible>Container.Content(genres)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Playlists</label>
+				<visible>Container.Content(playlists)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Seasons</label>
+				<visible>Container.Content(seasons)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Seasons</label>
+				<visible>Container.Content(episodes)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Actors</label>
+				<visible>Container.Content(actors)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Plugins</label>
+				<visible>Container.Content(plugins)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Studios</label>
+				<visible>Container.Content(studios)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Directors</label>
+				<visible>Container.Content(directors)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: tags</label>
+				<visible>Container.Content(tags)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Sets</label>
+				<visible>Container.Content(sets)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Add-Ons</label>
+				<visible>Container.Content(addons)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Pictures</label>
+				<visible>Container.Content(pictures)</visible>
+			</control>
+			
 			<!-- Window labels -->
 
 			<control type="label">

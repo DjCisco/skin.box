@@ -5,6 +5,9 @@
 	<onload condition="IsEmpty(Skin.String(ItemsTypeTV))">Skin.SetString(ItemsTypeTV,$LOCALIZE[31709])</onload>
     <onload condition="IsEmpty(Skin.String(ItemsTypeMovies))">Skin.SetString(ItemsTypeMovies,$LOCALIZE[31709])</onload>
     <onload condition="IsEmpty(Skin.String(ItemsTypeMusic))">Skin.SetString(ItemsTypeMusic,$LOCALIZE[31709])</onload>
+	<onunload>CancelAlarm(Movie9600,silent)</onunload>
+	<onunload>CancelAlarm(Movie9601,silent)</onunload>
+	<onunload>CancelAlarm(Movie9602,silent)</onunload>
     <controls>
 	<include>HomeBackground</include>
 	<!-- Color Walls for Now Playing  -->
@@ -332,6 +335,9 @@
 					<onleft>2005</onleft>
 					<ondown>7000</ondown>
 					<onfocus>SetProperty(menu,movie)</onfocus>
+					<onfocus>CancelAlarm(Movie9601,silent)</onfocus>
+					<onfocus>CancelAlarm(Movie9602,silent)</onfocus>
+					<onfocus>AlarmClock(Move9600,Control.Move(9600,1),00:8,silent,loop)</onfocus>
 					<visible>!Skin.HasSetting(HideMovies)</visible>
 				</control>
 			</control>
@@ -348,6 +354,10 @@
 					<onright>2003</onright>
 					<ondown>8000</ondown>
 					<onfocus>SetProperty(menu,tv)</onfocus>
+					<onfocus>CancelAlarm(Movie9600,silent)</onfocus>
+					<onfocus>CancelAlarm(Movie9602,silent)</onfocus>
+					<onfocus>AlarmClock(Move9601,Control.Move(9601,1),00:8,silent,loop)</onfocus>
+					
 					<visible>!Skin.HasSetting(HideTV)</visible>
 				</control>
 			</control>
@@ -364,6 +374,9 @@
 					<onright>2004</onright>
 					<ondown>6000</ondown>
 					<onfocus>SetProperty(menu,music)</onfocus>
+					<onfocus>CancelAlarm(Movie9600,silent)</onfocus>
+					<onfocus>CancelAlarm(Movie9601,silent)</onfocus>
+					<onfocus>AlarmClock(Move9602,Control.Move(9602,1),00:8,silent,loop)</onfocus>
 					<visible>!Skin.HasSetting(HideMusic)</visible>
 				</control>
 			</control>
