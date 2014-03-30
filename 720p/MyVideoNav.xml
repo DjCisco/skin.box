@@ -2,7 +2,7 @@
 <window id="6">
     <defaultcontrol always="true">50</defaultcontrol>
     <allowoverlay>yes</allowoverlay>
-    <views>50,55,56,59,508,519,521,522,523,524,525,526,527,528,530,531,532,590</views>
+    <views>50,51,52,55,56,59,508,519,521,522,523,524,525,526,527,528,530,531,532,590</views>
 	<!--
 	<views>50,54,55,56,57,58,59,508,519,521,522,523,524,525,526,527,528,530,531,532,590</views>
 	
@@ -13,6 +13,8 @@
             <include>HomeBackground</include>
             <include>BarClock</include>
             <include>View_50_List</include><!-- id 50-->
+			<include>View_51_List</include><!-- id 51-->
+			<include>View_52_Thumbs</include><!-- id 52-->
 			<include>Viewtype_Season_Tall</include><!-- id 55-->
             <include>Viewtype_Panel_Genre</include><!-- id 56-->
 			<include>Viewtype_MusicVideos</include><!-- id 59-->

@@ -34,8 +34,10 @@
                 <onleft>9000</onleft>
                 <pagecontrol>62</pagecontrol>
                 <preloaditems>2</preloaditems>
-                <visible>stringCompare(Container.FolderName,Music Videos) | stringCompare(Container.FolderName,Tv Shows) | stringCompare(Container.FolderName,Movies) | [IsEmpty(Container.FolderName) + [!Window.IsVisible(AddonBrowser.xml) + !Window.IsVisible(Pictures) + !Window.IsVisible(Programs)]]</visible>
-                <itemlayout width="300" height="160">
+                <!--<visible>stringCompare(Container.FolderName,Music Videos) | stringCompare(Container.FolderName,Tv Shows) | stringCompare(Container.FolderName,Movies) | [IsEmpty(Container.FolderName) + [!Window.IsVisible(AddonBrowser.xml) + !Window.IsVisible(Pictures) + !Window.IsVisible(Programs)]]</visible>-->
+                <visible>[Window.IsVisible(videolibrary) | Window.IsVisible(musiclibrary)] + [IsEmpty(Container.FolderName) | StringCompare(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,library://video/movies/) | StringCompare(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,library://video/tvshows/) | StringCompare(Container.FolderPath,videodb://3/)] | StringCompare(Container.FolderPath,library://video/musicvideos/)] </visible>
+               
+				<itemlayout width="300" height="160">
                     <control type="image">
 						<include>PanelWideButtonImageNF</include>
                     </control>

@@ -2,6 +2,8 @@
 <includes>
     <include file="Defaults.xml" />
     <include file="View_50_List.xml" />
+	<include file="View_51_List.xml" />
+	<include file="View_52_Thumbs.xml" />
     <include file="Viewtype_PVR.xml" />
     <include file="Viewtype_Songs.xml" />
 	<include file="Viewtype_Artists.xml" />
@@ -1216,7 +1218,7 @@
 	<include name="ViewFooterTitle">	
 		<posx>50</posx>
 		<posy>610</posy>
-		<width>600</width>
+		<width>1200</width>
 		<height>50</height>
 		<align>left</align>
 		<aligny>top</aligny>
