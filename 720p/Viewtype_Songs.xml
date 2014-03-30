@@ -130,6 +130,7 @@
                         <width>45</width>
                         <align>center</align>
 						<font>List_Focused</font>
+						<selectedcolor>White</selectedcolor>
                         <label>$INFO[ListItem.TrackNumber]</label>
                     </control>
                     <!-- This Control displays the Focused Track Title-->
@@ -137,12 +138,14 @@
                         <posx>65</posx>
                         <width>645</width>
 						<font>List_Focused</font>
+						<selectedcolor>White</selectedcolor>
                         <label>$INFO[ListItem.Title]</label>
 					</control>
 						<control type="label">
                         <posx>65</posx>
                         <width>730</width>
 						<font>List_Focused</font>
+						<selectedcolor>White</selectedcolor>
                         <label>$INFO[ListItem.Label]</label>
 						<visible>StringCompare(ListItem.Label,..)</visible>
                     </control>
@@ -160,6 +163,7 @@
                         <align>right</align>
                         <width>100</width>
 						<font>List_Focused</font>
+						<selectedcolor>White</selectedcolor>
                         <label>$INFO[ListItem.Duration]</label>
                     </control>
                 </focusedlayout>

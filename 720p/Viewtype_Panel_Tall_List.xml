@@ -102,6 +102,7 @@
 							<posx>25</posx>
 							<width>525</width>
 							<font>List_Focused</font>
+							<selectedcolor>White</selectedcolor>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
@@ -139,7 +140,7 @@
 							<height>30</height>
 							<align>center</align>
 							<font>List_Unfocused</font>
-							<label>[COLOR Accent]$INFO[ListItem.Year][/COLOR]</label>
+							<label>$INFO[ListItem.Year]</label>
 						</control>
 						<control type="image">
 							<posx>840</posx>
@@ -188,6 +189,7 @@
 							<width>820</width>
 							<height>30</height>
 							<font>List_Focused</font>
+							<selectedcolor>White</selectedcolor>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
@@ -198,6 +200,7 @@
 							<height>30</height>
 							<align>left</align>
 							<font>List_Hint</font>
+							<selectedcolor>White</selectedcolor>
 							<label>$INFO[ListItem.Duration,, $LOCALIZE[31299]]</label>
 							<visible>Container.Content(Movies)</visible>
 						</control>
@@ -206,7 +209,8 @@
 							<width>100</width>
 							<height>30</height>
 							<align>center</align>
-							<font>List_Unfocused</font>
+							<font>List_Focused</font>
+							<selectedcolor>White</selectedcolor>
 							<label>$INFO[ListItem.Year]</label>
 						
 						</control>
@@ -217,6 +221,7 @@
 							<height>30</height>
 							<align>left</align>
 							<font>List_Hint</font>
+							<selectedcolor>White</selectedcolor>
 							<label>$INFO[ListItem.Property(TotalSeasons),, $LOCALIZE[33054]$COMMA ]$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]</label>
 							<visible>!Container.Content(movies) + IntegerGreaterThan(ListItem.Property(TotalSeasons),1) + IntegerGreaterThan(ListItem.Property(TotalEpisodes),1)</visible>
 						</control>
@@ -227,6 +232,7 @@
 							<height>30</height>
 							<align>left</align>
 							<font>List_Hint</font>
+							<selectedcolor>White</selectedcolor>
 							<label>$INFO[ListItem.Property(TotalSeasons),, $LOCALIZE[20373]$COMMA ]$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]</label>
 							<visible>!Container.Content(movies) + !IntegerGreaterThan(ListItem.Property(TotalSeasons),1) + IntegerGreaterThan(ListItem.Property(TotalEpisodes),1)</visible>
 						</control>
@@ -237,6 +243,7 @@
 							<height>30</height>
 							<align>left</align>
 							<font>List_Hint</font>
+							<selectedcolor>White</selectedcolor>
 							<label>$INFO[ListItem.Property(TotalSeasons),, $LOCALIZE[33054]$COMMA ]$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20359]]</label>
 							<visible>!Container.Content(movies) + IntegerGreaterThan(ListItem.Property(TotalSeasons),1) + !IntegerGreaterThan(ListItem.Property(TotalEpisodes),1)</visible>
 						</control>
@@ -247,6 +254,7 @@
 							<height>30</height>
 							<align>left</align>
 							<font>List_Hint</font>
+							<selectedcolor>White</selectedcolor>
 							<label>$INFO[ListItem.Property(TotalSeasons),, $LOCALIZE[20373]$COMMA ]$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20359]]</label>
 							<visible>!Container.Content(movies) + !IntegerGreaterThan(ListItem.Property(TotalSeasons),1) + !IntegerGreaterThan(ListItem.Property(TotalEpisodes),1)</visible>
 						</control>

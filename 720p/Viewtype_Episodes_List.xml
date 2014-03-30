@@ -219,6 +219,7 @@
                         <width>45</width>
                         <align>center</align>
 						<font>Panel_Description_Header</font>
+						<selectedcolor>White</selectedcolor>
                         <label>$INFO[ListItem.Episode]</label>
                     </control>
                     <control type="image">
@@ -242,6 +243,7 @@
                         <width>415</width>
 						<font>List_Focused</font>
                         <label>$INFO[ListItem.Title]</label>
+						<selectedcolor>White</selectedcolor>
 						<visible>stringcompare(ListItem.Overlay,OverlayWatched.png) | [ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
                     </control>
 					<control type="label">
@@ -249,12 +251,14 @@
                         <width>450</width>
 						<font>List_Focused</font>
                         <label>$INFO[ListItem.Title]</label>
+						<selectedcolor>White</selectedcolor>
 						<visible>!stringcompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable </visible>
                     </control>
 					<control type="label">
                         <posx>65</posx>
                         <width>460</width>
 						<font>List_Focused</font>
+						<selectedcolor>White</selectedcolor>
                         <label>$INFO[ListItem.Label]</label>
 						<visible>IsEmpty(ListItem.Title)</visible>
                     </control>
@@ -344,6 +348,7 @@
                         <width>45</width>
                         <align>center</align>
 						<height>63</height>
+						<selectedcolor>White</selectedcolor>
 						<font>Panel_Description_Header</font>
 						<aligny>center</aligny>
                         <label>$INFO[ListItem.Episode]</label>
@@ -369,6 +374,7 @@
                         <width>790</width>
 						<height>30</height>
 						<font>List_Focused</font>
+						<selectedcolor>White</selectedcolor>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Title]</label>
                     </control>
@@ -377,6 +383,7 @@
                         <width>790</width>
 						<height>30</height>
 						<font>List_Focused</font>
+						<selectedcolor>White</selectedcolor>
 						<aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
 						<visible>IsEmpty(ListItem.Title)</visible>
@@ -396,6 +403,7 @@
 							<height>30</height>
 							<align>center</align>
 							<font>Panel_Description_Header</font>
+							<selectedcolor>White</selectedcolor>
 							<label>$INFO[ListItem.Premiered]</label>
 						
 						</control>
@@ -406,6 +414,7 @@
 							<height>30</height>
 							<align>left</align>
 							<font>List_Hint</font>
+							<selectedcolor>White</selectedcolor>
 							<label>$INFO[ListItem.Duration,, $LOCALIZE[31299]]</label>
 						</control>
                 </focusedlayout>
