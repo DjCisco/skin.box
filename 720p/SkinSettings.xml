@@ -239,11 +239,11 @@
                         <description>Home Menu</description>
                         <width>810</width>
                         <align>left</align>
-                        <label>Show Home Menu Icons</label>
+                        <label>Hide Home Menu Navigation Icons</label>
                         <focusedcolor>Accent</focusedcolor>
 						<font>List_Settings</font>
-                        <onclick>Skin.ToggleSetting(DisplayHomeMenu)</onclick>
-                        <selected>Skin.HasSetting(DisplayHomeMenu)</selected>
+                        <onclick>Skin.ToggleSetting(HideHomeMenuIcons)</onclick>
+                        <selected>Skin.HasSetting(HideHomeMenuIcons)</selected>
                         <textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
                         <textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
                     </control>

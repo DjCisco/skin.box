@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window id="2006">
-     <allowoverlay>yes</allowoverlay>
+     <allowoverlay>no</allowoverlay>
     <visible>Window.IsVisible(visualisation) | Window.IsVisible(122) | Player.Paused</visible>
 	<controls>
 		<control type="group">
@@ -77,11 +77,18 @@
 				<visible>!IsEmpty(Skin.String(ArtistsFanartPath))</visible>
 			 </control>
 			<control type="visualisation" id="2">
+			<!-- Visualization needs to have an id of 2 in this window to be able to lock or change preset -->
+				<description>visualisation</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<visible>Skin.HasSetting(Visualization)</visible>
 			</control>
 			<include>BackgroundTextScroll</include>
 			<!-- Info Display -->
 			<control type="group">
-				<visible>[Player.ShowInfo | Window.IsActive(musicosd)]</visible>
+				<visible>[Player.ShowInfo | Window.IsActive(musicosd)] + !Window.IsVisible(AddonSettings) + !Window.IsVisible(SelectDialog) + !Window.IsVisible(VisualisationPresetList)</visible>
 				<animation effect="slide" start="0,0" end="0,-200" time="900" tween="cubic" easing="inout" delay="0" condition="Window.IsVisible(script-XBMC_Lyrics-main.xml)">conditional</animation>
 				<!-- Info Background / Album /Artist / Track -->
 				<control type="Group">
@@ -178,5 +185,6 @@
 				</control>
 			</control>
 		</control>
+		
 	</controls>
 </window>

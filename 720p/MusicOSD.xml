@@ -3,7 +3,7 @@
     <defaultcontrol always="true">15</defaultcontrol>
     <controls>
         <control type="group">
-            <visible>!Window.IsVisible(10140)</visible>
+            <visible>!Window.IsVisible(AddonSettings) + !Window.IsVisible(VisualisationPresetList)</visible>
 			<!-- Progress Info Display -->
 			<control type="group">
 				<!-- Progress Bar Background -->
@@ -273,6 +273,7 @@
                         <font>-</font>
                         <texturefocus>other_textures/osd/vizfo.png</texturefocus>
                         <texturenofocus>other_textures/osd/viznf.png</texturenofocus>
+						<visible>Skin.HasSetting(Visualization)</visible>
                     </control>
                     <control type="button" id="19">
                         <description>Visualisation settings</description>

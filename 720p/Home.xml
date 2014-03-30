@@ -40,7 +40,7 @@
 		<height>70</height>
 		<itemgap>10</itemgap>
 		<orientation>horizontal</orientation>
-		<visible>Skin.HasSetting(DisplayHomeMenu)</visible>
+		<visible>!Skin.HasSetting(HideHomeMenuIcons)</visible>
 		<!-- Movies -->
 		<control type="group">
 			<width>55</width>
@@ -312,7 +312,7 @@
 		</control>
 		<!--HOME MENU CTRL-->
 		<control type="grouplist" id="20000">
-			<animation type="Conditional" condition="!Skin.HasSetting(DisplayHomeMenu)">
+			<animation type="Conditional" condition="Skin.HasSetting(HideHomeMenuIcons)">
 				<effect type="slide" start="0,0" end="-400,0" time="200" />
 			</animation>
 			<posx>50</posx>
@@ -444,7 +444,7 @@
 				<animation effect="fade" start="20" time="1200" condition="Control.HasFocus(2001)" pulse="true">Conditional</animation>
 				<animation effect="slide" start="-50" time="200" easing="inout" condition="Control.HasFocus(2001)">Conditional</animation>
 				<animation effect="fade" time="200" delay="200">Hidden</animation>
-				<visible>!Skin.HasSetting(DisplayHomeMenu)</visible>
+				<visible>Skin.HasSetting(HideHomeMenuIcons)</visible>
 			</control>	
 			<!-- This control displays the Movies Library Panel-->
 			<control type="grouplist" id="7000">
@@ -794,7 +794,7 @@
 				<animation effect="fade" start="20" time="1200" condition="Control.HasFocus(2002)" pulse="true">Conditional</animation>
 				<animation effect="slide" start="-50" time="200" easing="inout" condition="Control.HasFocus(2002)">Conditional</animation>
 				<animation effect="fade" time="200" delay="200">Hidden</animation>
-				<visible>!Skin.HasSetting(DisplayHomeMenu)</visible>
+				<visible>Skin.HasSetting(HideHomeMenuIcons)</visible>
 			</control>
 			<!-- This control displays the Tv Shows Library Panel-->
 			<control type="grouplist" id="8000">
@@ -1259,7 +1259,7 @@
 				<animation effect="fade" start="20" time="1200" condition="Control.HasFocus(2003)" pulse="true">Conditional</animation>
 				<animation effect="slide" start="-50" time="200" easing="inout" condition="Control.HasFocus(2003)">Conditional</animation>
 				<animation effect="fade" time="200" delay="200">Hidden</animation>
-				<visible>!Skin.HasSetting(DisplayHomeMenu)</visible>
+				<visible>Skin.HasSetting(HideHomeMenuIcons)</visible>
 			</control>	
 			<control type="grouplist" id="6000">
 				<include>PanelCoordinates</include>
@@ -1677,7 +1677,7 @@
 				<animation effect="fade" start="20" time="1200" condition="Control.HasFocus(2004)" pulse="true">Conditional</animation>
 				<animation effect="slide" start="-50" time="200" easing="inout" condition="Control.HasFocus(2004)">Conditional</animation>
 				<animation effect="fade" time="200" delay="200">Hidden</animation>
-				<visible>!Skin.HasSetting(DisplayHomeMenu)</visible>
+				<visible>Skin.HasSetting(HideHomeMenuIcons)</visible>
 			</control>	
 			<!-- TO DO ------------------------- This control displays the Main Title of the Panel-->				
 			<control type="label">
@@ -2161,7 +2161,7 @@
 				<animation effect="fade" start="20" time="1200" condition="Control.HasFocus(2005)" pulse="true">Conditional</animation>
 				<animation effect="slide" start="-50" time="200" easing="inout" condition="Control.HasFocus(2005)">Conditional</animation>
 				<animation effect="fade" time="200" delay="200">Hidden</animation>
-				<visible>!Skin.HasSetting(DisplayHomeMenu)</visible>
+				<visible>Skin.HasSetting(HideHomeMenuIcons)</visible>
 			</control>	
 				<control type="panel" id="49">
 					<posx>50</posx>

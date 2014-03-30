@@ -109,16 +109,6 @@
                 <font>small</font>
                 <textcolor>black</textcolor>
             </control>
-            <control type="button" id="98">
-                <description>Open Player Controls</description>
-                <width>240</width>
-                <align>left</align>
-                <label>$LOCALIZE[13350]</label>
-                <font>small</font>
-                <textcolor>black</textcolor>
-                <onclick>ActivateWindow(playercontrols)</onclick>
-                <visible>Player.HasMedia</visible>
-            </control>
         </control>
     </controls>
 </window>
