@@ -97,7 +97,6 @@
 						
                 </itemlayout>
                 <focusedlayout width="240" height="315">
-					
 					<control type="image">
                         <posy>75</posy>
 						<width>215</width>
@@ -145,7 +144,7 @@
                         <height>40</height>
                         <texture>DefaultTvShows.png</texture>
                         <aspectratio scalediffuse="false">stretch</aspectratio>
-                        <visible>StringCompare(ListItem.Title,* ALL SEASONS ) | StringCompare(ListItem.Title,SPECIALS) | StringCompare(ListItem.label,..)</visible>
+                        <visible>StringCompare(ListItem.Title,$LOCALIZE[20366]) | StringCompare(ListItem.Title,$LOCALIZE[20381]) | StringCompare(ListItem.label,..)</visible>
                     </control>
 					<control type="image">
 						<posy>25</posy>
@@ -154,7 +153,7 @@
                         <height>40</height>
                         <texture>DefaultMovies.png</texture>
                         <aspectratio scalediffuse="false">stretch</aspectratio>
-                        <visible>IsEmpty(ListItem.Season) + !IsEmpty(ListItem.Title) + !StringCompare(ListItem.Title,* ALL SEASONS ) + !StringCompare(ListItem.Title,SPECIALS)</visible>
+                        <visible>IsEmpty(ListItem.Season) + !IsEmpty(ListItem.Title) + !StringCompare(ListItem.Title,$LOCALIZE[20366]) + !StringCompare(ListItem.Title,$LOCALIZE[20381])</visible>
                     </control>
 					<control type="image">
 						<posy>75</posy>
@@ -210,7 +209,6 @@
                         </animation>
                         <visible>Container.Content(TVShows) + !Skin.HasSetting(HideNewEpisodes) + !stringcompare(ListItem.Overlay,OverlayWatched.png) + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.Label)]</visible>
                     </control>
-					
 					<control type="label">
 					 	<posy>15</posy>
 						<posx>185</posx>
@@ -220,6 +218,7 @@
 						<aligny>center</aligny>
 						<align>center</align>
 						<label>$INFO[ListItem.Season]</label>
+						<shadowcolor>55000000</shadowcolor>
 						<visible>!IsEmpty(ListItem.Season)</visible>
 					</control>
 					<control type="label">
@@ -242,7 +241,7 @@
 						<aligny>center</aligny>
 						<align>center</align>
 						<label>$INFO[ListItem.Label]</label>
-						<visible>StringCompare(ListItem.Title,SPECIALS )</visible>
+						<visible>StringCompare(ListItem.Title,$LOCALIZE[20381])</visible>
 					</control>
 					<control type="label">
 					 	<posy>15</posy>
@@ -252,7 +251,7 @@
 						<font>Panel_Title2</font>
 						<aligny>center</aligny>
 						<align>center</align>
-						<label>BACK</label>
+						<label>$LOCALIZE[31741]</label>
 						<visible>StringCompare(ListItem.Label,.. )</visible>
 					</control>
 					<control type="label">
@@ -263,8 +262,8 @@
 						<font>Panel_Title2</font>
 						<aligny>center</aligny>
 						<align>center</align>
-						<label>MOVIE</label>
-						<visible>IsEmpty(ListItem.Season) + !IsEmpty(ListItem.Title) + !StringCompare(ListItem.Title,* ALL SEASONS ) + !StringCompare(ListItem.Title,SPECIALS)</visible>
+						<label>$LOCALIZE[20338]</label>
+						<visible>IsEmpty(ListItem.Season) + !IsEmpty(ListItem.Title) + !StringCompare(ListItem.Title,$LOCALIZE[20366] ) + !StringCompare(ListItem.Title,$LOCALIZE[20381])</visible>
 					</control>
 					<control type="label">
 					 	<posy>15</posy>
@@ -274,13 +273,10 @@
 						<font>Panel_Title2</font>
 						<aligny>center</aligny>
 						<align>center</align>
-						<label>ALL</label>
-						<visible>stringcompare(ListItem.Label,* ALL SEASONS)</visible>
+						<label>$LOCALIZE[31740]</label>
+						<visible>stringcompare(ListItem.Label,$LOCALIZE[20366])</visible>
 					</control>
-					
-					
-								
-                </focusedlayout>
+				</focusedlayout>
             </control>
            <!-- Episodes number info -->
 			<control type="label">
@@ -291,8 +287,8 @@
                 <align>left</align>
 				<aligny>top</aligny>
                 <font>Panel_Hint</font>
-                <label>EPISODES [COLOR Accent]$INFO[ListItem.Property(TotalEpisodes)][/COLOR] UNWATCHED [COLOR Accent]$INFO[ListItem.Property(UnWatchedEpisodes)][/COLOR]</label>
-				<visible>!IsEmpty(ListItem.Season) | StringCompare(ListItem.Title,* ALL SEASONS ) | StringCompare(ListItem.Title,SPECIALS)</visible>
+                <label>$LOCALIZE[20360] [COLOR Accent]$INFO[ListItem.Property(TotalEpisodes)][/COLOR] $LOCALIZE[16101] [COLOR Accent]$INFO[ListItem.Property(UnWatchedEpisodes)][/COLOR]</label>
+				<visible>!IsEmpty(ListItem.Season) | StringCompare(ListItem.Title,$LOCALIZE[20366]) | StringCompare(ListItem.Title,$LOCALIZE[20381])</visible>
 
             </control>
 			
@@ -306,7 +302,7 @@
 				<aligny>top</aligny>
                 <font>Panel_Hint</font>
                 <label>$INFO[ListItem.Label]</label>
-				<visible>IsEmpty(ListItem.Season) + !IsEmpty(ListItem.Title) + !StringCompare(ListItem.Title,* ALL SEASONS ) + !StringCompare(ListItem.Title,SPECIALS)</visible>
+				<visible>IsEmpty(ListItem.Season) + !IsEmpty(ListItem.Title) + !StringCompare(ListItem.Title,$LOCALIZE[20366] ) + !StringCompare(ListItem.Title,$LOCALIZE[20381])</visible>
 
             </control>
 			

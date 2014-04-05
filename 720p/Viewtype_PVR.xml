@@ -685,6 +685,7 @@
 						<height>45</height>
                         <width>140</width>
 						<bordersize>1</bordersize>
+						<aspectratio>stretch</aspectratio>
                         <texture>tile.png</texture>
                     </control>
 					<control type="label" id="1">

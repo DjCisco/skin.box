@@ -15,20 +15,7 @@
 		<value condition="Stringcompare(Skin.String(ItemsTypeMusic),$LOCALIZE[31738])">$LOCALIZE[31738]</value>
 	</variable>
 	<variable name="SeasonPoster">    
-    <value condition="StringCompare(ListItem.Season,1)">$INFO[ListItem.Path,,../season01-poster.jpg]</value>
-    <value condition="StringCompare(ListItem.Season,2)">$INFO[ListItem.Path,,../season02-poster.jpg]</value>
-    <value condition="StringCompare(ListItem.Season,3)">$INFO[ListItem.Path,,../season03-poster.jpg]</value>
-	<value condition="StringCompare(ListItem.Season,4)">$INFO[ListItem.Path,,../season04-poster.jpg]</value>
-	<value condition="StringCompare(ListItem.Season,5)">$INFO[ListItem.Path,,../season05-poster.jpg]</value>
-	<value condition="StringCompare(ListItem.Season,6)">$INFO[ListItem.Path,,../season06-poster.jpg]</value>
-	<value condition="StringCompare(ListItem.Season,7)">$INFO[ListItem.Path,,../season07-poster.jpg]</value>
-	<value condition="StringCompare(ListItem.Season,8)">$INFO[ListItem.Path,,../season08-poster.jpg]</value>
-	<value condition="StringCompare(ListItem.Season,9)">$INFO[ListItem.Path,,../season09-poster.jpg]</value>
-	<value condition="StringCompare(ListItem.Season,10)">$INFO[ListItem.Path,,../season10-poster.jpg]</value>
-	<value condition="StringCompare(ListItem.Season,11)">$INFO[ListItem.Path,,../season11-poster.jpg]</value>
-	<value condition="StringCompare(ListItem.Season,12)">$INFO[ListItem.Path,,../season12-poster.jpg]</value>
-	<value condition="StringCompare(ListItem.Season,13)">$INFO[ListItem.Path,,../season13-poster.jpg]</value>
-	<value condition="StringCompare(ListItem.Season,14)">$INFO[ListItem.Path,,../season14-poster.jpg]</value>
-	<value condition="StringCompare(ListItem.Season,15)">$INFO[ListItem.Path,,../season15-poster.jpg]</value>
-</variable> 
+		<value condition="!IntegerGreaterThan(ListItem.Season,9)">$INFO[ListItem.Path]$INFO[ListItem.Season,../season0,-poster.jpg]</value>
+		<value>$INFO[ListItem.Path]$INFO[ListItem.Season,../season,-poster.jpg]</value> 
+	</variable> 
 </includes>

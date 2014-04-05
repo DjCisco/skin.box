@@ -431,7 +431,7 @@
 			<control type="label">
 				<width>300</width>
 				<include>ViewMainTitle</include>
-				<label>MOVIES</label>
+				<label>$LOCALIZE[20342]</label>
 				<shadowcolor>black</shadowcolor>
 			</control>
 			<control type="image">
@@ -470,7 +470,7 @@
 					<!-- This control defines the All Movies Button behaviour-->
 					<control id="701">
 						<type>button</type>
-						<label>$LOCALIZE[31700]</label>
+						<label>$LOCALIZE[31701]</label>
 						<width>315</width>
 						<height>155</height>
 						<align>left</align>
@@ -515,7 +515,7 @@
 					<control id="702">
 						<posx></posx>
 						<type>button</type>
-						<label>$LOCALIZE[31704]</label>
+						<label>$LOCALIZE[14022]</label>
 						<posy>0</posy>
 						<width>155</width>
 						<height>155</height>
@@ -528,7 +528,7 @@
 					</control>
 					<!-- This control display the Movie Library Button Title-->
 					<control type="label">
-						<label>$LOCALIZE[31704]</label>
+						<label>$LOCALIZE[14022]</label>
 						<include>PanelButtonTitle</include>
 					</control>
 					<!-- This control display the Movie Library Button Icon-->
@@ -606,7 +606,7 @@
 					<!-- This control displays the Videos Button Title-->
 					<control type="label">
 						<include>PanelButtonTitle</include>
-						<label>VIDEOS</label>
+						<label>$LOCALIZE[10006]</label>
 					</control>
 					<!-- This control displays the Videos Button Icon-->
 					<control type="image">
@@ -781,7 +781,7 @@
 			<control type="label">
 				<width>300</width>
 				<include>ViewMainTitle</include>
-				<label>TV SHOWS</label>
+				<label>$LOCALIZE[20343]</label>
 				<shadowcolor>black</shadowcolor>
 			</control>
 			<control type="image">
@@ -845,7 +845,7 @@
 					<!-- This control displays the All Tv Shows Button Label-->
 					<control type="label">
 						<include>PanelRectButtonTitle</include>
-						<label>TV SHOWS</label>
+						<label>$LOCALIZE[31706]</label>
 					</control>
 				</control>
 				<!-- This control displays the TV Library & All Recent Elements-->
@@ -866,7 +866,7 @@
 					<control id="802">
 						<posx></posx>
 						<type>button</type>
-						<label>$LOCALIZE[31704]</label>
+						<label>$LOCALIZE[14022]</label>
 						<posy>0</posy>
 						<width>155</width>
 						<height>155</height>
@@ -880,7 +880,7 @@
 					<!-- This control displays the TV Libray Button Title-->
 					<control type="label">
 						<include>PanelButtonTitle</include>
-						<label>$LOCALIZE[31704]</label>
+						<label>$LOCALIZE[14022]</label>
 					</control>
 					<!-- This control displays the TV Libray Button Icon-->
 					<control type="image">
@@ -957,7 +957,7 @@
 					<!-- This control displays the Videos Button Title-->
 					<control type="label">
 						<include>PanelButtonTitle</include>
-						<label>VIDEOS</label>
+						<label>$LOCALIZE[10006]</label>
 					</control>
 					<!-- This control displays the Videos Button Icon-->
 					<control type="image">
@@ -1069,6 +1069,14 @@
 						<aspectratio>scale</aspectratio>
 						<bordersize>5</bordersize>
 					</control>
+					<control type="image">
+						<posx>5</posx>
+						<posy>280</posy>
+						<width>205</width>
+						<height>30</height>
+						<texture>black.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>
+					</control>
 					<control type="label">
 						<label>$INFO[ListItem.Property(EpisodeNo)]</label>
 						<posx>205</posx>
@@ -1077,13 +1085,6 @@
 						<width>145</width>
 						<font>Panel_Title_Footer</font>
 						<align>right</align>
-					</control>
-					<control type="image">
-						<posx>5</posx>
-						<posy>280</posy>
-						<width>205</width>
-						<height>30</height>
-						<texture>tile.png</texture>
 					</control>
 					
 				</itemlayout>
@@ -1108,7 +1109,8 @@
 						<posy>280</posy>
 						<width>205</width>
 						<height>30</height>
-						<texture>tile.png</texture>
+						<texture>black.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>
 					</control>
 					<control type="label">
 						<label>$INFO[ListItem.Property(EpisodeNo)]</label>
@@ -1117,6 +1119,7 @@
 						<height>30</height>
 						<width>145</width>
 						<font>Panel_Title_Footer</font>
+						<textcolor>Accent</textcolor>
 						<align>right</align>
 					</control>
 				</focusedlayout>
@@ -1135,6 +1138,14 @@
 						<aspectratio>scale</aspectratio>
 						<bordersize>5</bordersize>
 					</control>
+					<control type="image">
+						<posx>5</posx>
+						<posy>120</posy>
+						<width>205</width>
+						<height>30</height>
+						<texture>black.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>
+					</control>
 					<control type="label">
 						<label>$INFO[ListItem.Property(EpisodeNo)]</label>
 						<posx>205</posx>
@@ -1144,14 +1155,6 @@
 						<font>Panel_Title_Footer</font>
 						<align>right</align>
 					</control>
-					<control type="image">
-						<posx>5</posx>
-						<posy>120</posy>
-						<width>205</width>
-						<height>30</height>
-						<texture>tile.png</texture>
-					</control>
-					
 				</itemlayout>
 				<!-- This control defines the focused item layout of the TV Shows Panel with Episodes-->	
 				<focusedlayout width="220" height="160" condition="Skin.HasSetting(EpisodeThumbsOnHome)">
@@ -1174,7 +1177,8 @@
 						<posy>120</posy>
 						<width>205</width>
 						<height>30</height>
-						<texture>tile.png</texture>
+						<texture>black.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>
 					</control>
 					<control type="label">
 						<label>$INFO[ListItem.Property(EpisodeNo)]</label>
@@ -1183,6 +1187,7 @@
 						<height>30</height>
 						<width>145</width>
 						<font>Panel_Title_Footer</font>
+						<textcolor>Accent</textcolor>
 						<align>right</align>
 					</control>
 				</focusedlayout>
@@ -1246,7 +1251,7 @@
 			<control type="label">
 				<width>300</width>
 				<include>ViewMainTitle</include>
-				<label>MUSIC</label>
+				<label>$LOCALIZE[2]</label>
 				<shadowcolor>black</shadowcolor>
 			</control>
 			<control type="image">
@@ -1308,7 +1313,7 @@
 					<!-- This control displays the Albums Button Label-->
 					<control type="label">
 						<include>PanelRectButtonTitle</include>
-						<label>ALBUMS</label>
+						<label>$LOCALIZE[358]</label>
 					</control>
 				</control>
 				<!-- Library & Artists Panel Elements -->
@@ -1343,7 +1348,7 @@
 					</control>
 					<control type="label">
 						<include>PanelButtonTitle</include>
-						<label>$LOCALIZE[31704]</label>
+						<label>$LOCALIZE[14022]</label>
 					</control>
 					<control type="image">
 						<include>PanelButtonImageNF2ndCol</include>
@@ -1376,7 +1381,7 @@
 					</control>
 					<control type="label">
 						<include>PanelButtonTitle2ndCol</include>
-						<label>ARTISTS</label>
+						<label>$LOCALIZE[133]</label>
 					</control>
 				</control>
 				<!-- Playlists & Recent Panel Elements -->
@@ -1476,7 +1481,7 @@
 					</control>
 					<control type="label">
 						<include>PanelButtonTitle</include>
-						<label>MUSIC FILES</label>
+						<label>$LOCALIZE[2] $LOCALIZE[744]</label>
 					</control>
 					<control type="image">
 						<include>PanelButtonIcon</include>
@@ -2688,7 +2693,7 @@
                     </control>
                     <control type="label">
 						<include>PanelButtonTitle</include>
-                        <label>FILE MANAGER</label>
+                        <label>$LOCALIZE[7]</label>
                         </control>
                     <control type="image">
                         <include>PanelButtonIcon</include>

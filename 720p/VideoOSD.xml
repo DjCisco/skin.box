@@ -327,7 +327,7 @@
 							</control>
 							<!-- Display of Season Episode -->
 							<control type="label">
-								<label>[COLOR Accent]$INFO[VideoPlayer.Season,[COLOR White]Season [/COLOR]] $INFO[VideoPlayer.Episode,[COLOR White]Episode [/COLOR] ][/COLOR] </label>
+								<label>[COLOR Accent]$INFO[VideoPlayer.Season,[COLOR White]$LOCALIZE[20373] [/COLOR]] $INFO[VideoPlayer.Episode,[COLOR White]$LOCALIZE[20359] [/COLOR] ][/COLOR] </label>
 								<posy>97</posy>
 								<width>1050</width>
 								<font>Music_Vis_Title3</font>
@@ -363,7 +363,7 @@
 								<description>Movie Director</description>
 								<posy>52</posy>
 								<width>1050</width>
-								<label>[COLOR Accent]$INFO[VideoPlayer.Director,[COLOR White]Director [/COLOR]][/COLOR]</label>
+								<label>[COLOR Accent]$INFO[VideoPlayer.Director,[COLOR White]$LOCALIZE[20339] [/COLOR]][/COLOR]</label>
 								<scroll>true</scroll>
 								<font>Music_Vis_Title2</font>
 								<align>left</align>
@@ -374,7 +374,7 @@
 								<description>Movie Director</description>
 								<posy>97</posy>
 								<width>1050</width>
-								<label>[COLOR Accent]$INFO[VideoPlayer.Director,[COLOR White]Director [/COLOR]][/COLOR]</label>
+								<label>[COLOR Accent]$INFO[VideoPlayer.Director,[COLOR White]$LOCALIZE[20339] [/COLOR]][/COLOR]</label>
 								<scroll>true</scroll>
 								<font>Music_Vis_Title3</font>
 								<align>left</align>
@@ -385,7 +385,7 @@
 								<description>Movie Director</description>
 								<posy>97</posy>
 								<width>1050</width>
-								<label>[COLOR Accent]$INFO[VideoPlayer.Duration,[COLOR White]Duration [/COLOR]][/COLOR]</label>
+								<label>[COLOR Accent]$INFO[VideoPlayer.Duration,[COLOR White]$LOCALIZE[180] [/COLOR]][/COLOR]</label>
 								<scroll>true</scroll>
 								<font>Music_Vis_Title3</font>
 								<align>left</align>

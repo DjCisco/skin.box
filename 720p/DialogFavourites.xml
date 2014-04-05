@@ -14,7 +14,7 @@
             </animation>
             <control type="label">
 			<include>ViewMainTitle</include>
-                <label>FAVOURITES</label>
+                <label>$LOCALIZE[1036]</label>
             </control>
             <control type="panel" id="450">
                 <posx>370</posx>

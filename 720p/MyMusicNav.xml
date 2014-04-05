@@ -36,7 +36,7 @@
 			<control type="label">
                 <description>Menu Title</description>
                 <include>LeftMenuTitle</include>
-                <label>OPTIONS</label>
+                <label>$LOCALIZE[14018]</label>
             </control>
 		</control>	
 		<!-- This control defines the elements of the left settings menu -->

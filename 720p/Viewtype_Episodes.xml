@@ -70,24 +70,35 @@
                 <width>215</width>
                 <height>315</height>
                 <texture background="true">$INFO[ListItem.Art(tvshow.poster)]</texture>
-                <fadetime>200</fadetime>
                 <aspectratio scalediffuse="false">scale</aspectratio>
                 <visible>!StringCompare(ListItem.Label,..)</visible>
                 <bordersize>5</bordersize>
             </control>
-			 <!-- Main Poster from Local Season Poster
-			<control type="image">
+			
+			 <!-- 
+			<control type="image" id="9200">
                 <posx>50</posx>
                 <posy>290</posy>
                 <width>215</width>
                 <height>315</height>
-                <texture background="true">$VAR[SeasonPoster]</texture>
-                <fadetime>200</fadetime>
+                <texture fallback="blank.png" background="true">$INFO[ListItem.Path]$INFO[ListItem.Season,../season0,-poster.jpg]</texture>
                 <aspectratio scalediffuse="false">scale</aspectratio>
-                <visible>!StringCompare(ListItem.Label,..)</visible>
+                <visible>!StringCompare(ListItem.Label,..) + !IntegerGreaterThan(ListItem.Season,9)"</visible>
+                <bordersize>5</bordersize>
+            </control>
+			<control type="image" id="9201">
+                <posx>50</posx>
+                <posy>290</posy>
+                <width>215</width>
+                <height>315</height>
+                <texture fallback="blank.png" background="true">$INFO[ListItem.Path]$INFO[ListItem.Season,../season,-poster.jpg]</texture>
+                <aspectratio scalediffuse="false">scale</aspectratio>
+                <visible>!StringCompare(ListItem.Label,..) + IntegerGreaterThan(ListItem.Season,9)"</visible>
                 <bordersize>5</bordersize>
             </control>
 			-->
+			
+
             <!-- Default Poster-->
 			<control type="image">
                 <posx>50</posx>
@@ -348,7 +359,7 @@
                 <height>25</height>
 				<align>right</align>
 				<font>Panel_Description_Footer</font>
-                <label>[COLOR Accent]$INFO[ListItem.Premiered][/COLOR] AIRED</label>
+                <label>[COLOR Accent]$INFO[ListItem.Premiered][/COLOR] $LOCALIZE[20416]</label>
 				<visible>!StringCompare(ListItem.Label,..)</visible>
 				
             </control>

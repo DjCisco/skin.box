@@ -532,7 +532,7 @@
 					<height>25</height>
 					<align>right</align>
 					<font>Panel_Description_Footer</font>
-					<label>[COLOR Accent]$INFO[ListItem.Premiered][/COLOR] AIRED</label>
+					<label>[COLOR Accent]$INFO[ListItem.Premiered][/COLOR] $LOCALIZE[20416]</label>
 					<visible>!StringCompare(ListItem.Label,.. )</visible>
 				</control>
 			</control>

@@ -155,15 +155,25 @@
 				</control>
 				<control type="image">
 					<include>Dimensions_Fullscreen</include>
+					<texture>black.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+				</control>
+				<control type="image">
+					<include>Dimensions_Fullscreen</include>
+					<texture>music_fanart_diffuse_blue.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+				</control>
+				<control type="image">
+					<include>Dimensions_Fullscreen</include>
 					<fadetime>1000</fadetime>
 					<texture>$INFO[Container(9600).ListItem(0).thumb]</texture>
-					<colordiffuse>FanartDiffuse</colordiffuse>
+					<colordiffuse>AAFFFFFF</colordiffuse>
 				</control>
 			</control>
 			<!-- List to Control the cycle through the tv show Fanart  & Image displaying the fanart	-->
 			<control type="group">
 				<animation effect="fade" time="500">VisibleChange</animation>
-                <visible>!Skin.HasSetting(DisableHomeFanart) + [[[Container(5000).HasFocus(503) | Container(5000).HasFocus(504)] + Control.HasFocus(5000)] | [[Container(5000).HasFocus(503) | Container(5000).HasFocus(504)] + ControlGroup(9000).HasFocus() + SubString(Window(Home).Property(menu),main)] | Control.HasFocus(68) | Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(63) | Control.HasFocus(301) | Control.HasFocus(302) | Control.HasFocus(303) | Control.HasFocus(304) | Control.HasFocus(305) | Control.HasFocus(2002)] </visible>
+                <visible>!Skin.HasSetting(DisableHomeFanart) + [[[Container(5000).HasFocus(503) | Container(5000).HasFocus(504)] + Control.HasFocus(5000)] | [[Container(5000).HasFocus(503) | Container(5000).HasFocus(504)] + ControlGroup(9000).HasFocus() + SubString(Window(Home).Property(menu),main)] | Control.HasFocus(68) | Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(63) | Control.HasFocus(301) | Control.HasFocus(302) | Control.HasFocus(303) | Control.HasFocus(304) | Control.HasFocus(305) | Control.HasFocus(2002) | Control.HasFocus(2004)]] </visible>
                 <control type="list" id="9601">
 					<posx>-1280</posx>
 					<width>1</width>
@@ -183,9 +193,19 @@
 				</control>
 				<control type="image">
 					<include>Dimensions_Fullscreen</include>
+					<texture>black.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+				</control>
+				<control type="image">
+					<include>Dimensions_Fullscreen</include>
+					<texture>music_fanart_diffuse_blue.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+				</control>
+				<control type="image">
+					<include>Dimensions_Fullscreen</include>
 					<fadetime>1000</fadetime>
 					<texture>$INFO[Container(9601).ListItem(0).thumb]</texture>
-					<colordiffuse>FanartDiffuse</colordiffuse>
+					<colordiffuse>AAFFFFFF</colordiffuse>
 				</control>
 			</control>
 			<!-- List to Control the cycle through the music Fanart  & Image displaying the fanart	-->
@@ -211,14 +231,21 @@
 				</control>
 				<control type="image">
 					<include>Dimensions_Fullscreen</include>
+					<texture>black.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+				</control>
+				<control type="image">
+					<include>Dimensions_Fullscreen</include>
+					<texture>music_fanart_diffuse_blue.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+				</control>
+				<control type="image">
+					<include>Dimensions_Fullscreen</include>
 					<fadetime>1000</fadetime>
 					<texture>$INFO[Container(9602).ListItem(0).thumb]</texture>
-					<colordiffuse>FanartDiffuse</colordiffuse>
+					<colordiffuse>AAFFFFFF</colordiffuse>
 				</control>
 			</control>
-	
-			
-
 			<!-- Displays Fanart of  Movie EPisode Tv Show Item selected from a list-->
 			<control type="group">
 				<visible>Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)</visible>
@@ -246,7 +273,7 @@
 					<include>Dimensions_Fullscreen</include>
 					<texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
 					<animation effect="fade" start="0" end="100" time="550" delay="0" tween="sine" easing="inout">VisibleChange</animation>
-					<visible>IsEmpty(Control.getLabel(8870)) | IsEmpty(Skin.String(ArtistsFanartPath))</visible>	
+					<visible>IsEmpty(Control.getLabel(8870)) | IsEmpty(Skin.String(ArtistsFanartPath)) | Skin.HasSetting(DisableArtistExtrafanartInNavigation)</visible>	
 					<fadetime>600</fadetime>
 				</control>
 				<!-- Display Aritst Fanart from extrafanrt folder in Music Libray Path-->
@@ -258,7 +285,7 @@
 					<pauseatend>0</pauseatend>
 					<loop>true</loop>
 					<imagepath>$INFO[Skin.String(ArtistsFanartPath)]$INFO[ListItem.Artist,,/extrafanart/]</imagepath>
-					<visible>!IsEmpty(Skin.String(ArtistsFanartPath))</visible>
+					<visible>!IsEmpty(Skin.String(ArtistsFanartPath)) + !Skin.HasSetting(DisableArtistExtrafanartInNavigation)</visible>
 				</control>
 				<control type="image">
 					<include>Dimensions_Fullscreen</include>
@@ -288,7 +315,7 @@
 					<include>Dimensions_Fullscreen</include>
 					<texture>$INFO[ListItem.Path]fanart.jpg</texture>
 					<animation effect="fade" start="0" end="100" time="550" delay="0" tween="sine" easing="inout">VisibleChange</animation>
-					<visible>IsEmpty(Control.getLabel(8871)) | IsEmpty(Skin.String(ArtistsFanartPath))</visible>		
+					<visible>IsEmpty(Control.getLabel(8871)) | IsEmpty(Skin.String(ArtistsFanartPath)) | Skin.HasSetting(DisableArtistExtrafanartInNavigation)</visible>		
 					<fadetime>600</fadetime>
 				</control>
 
@@ -301,7 +328,7 @@
 					<pauseatend>0</pauseatend>
 					<loop>true</loop>
 					<imagepath>$INFO[Skin.String(ArtistsFanartPath)]$INFO[ListItem.Artist,,/extrafanart/]</imagepath>
-					<visible>!IsEmpty(Skin.String(ArtistsFanartPath))</visible>
+					<visible>!IsEmpty(Skin.String(ArtistsFanartPath)) + !Skin.HasSetting(DisableArtistExtrafanartInNavigation)</visible>
 				 </control>
 							
 				<control type="image">

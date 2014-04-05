@@ -52,7 +52,7 @@
 			<control type="label">
                 <description>Menu Title</description>
                 <include>LeftMenuTitle</include>
-                <label>OPTIONS</label>
+                <label>$LOCALIZE[14018]</label>
             </control>
 		</control>	
 	 <!--This Control defines the left menu Items -->

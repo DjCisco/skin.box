@@ -308,7 +308,20 @@
 			            <textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
                         <textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
 			         </control>
-					<control type="radiobutton" id="204">
+					 <control type="radiobutton" id="204">
+                        <description>Disable Artists Extrafanart</description>
+                        <width>810</width>
+                        <align>left</align>
+                        <label>Disable Artist Extrafanart during Navigation</label>
+                        <focusedcolor>Accent</focusedcolor>
+						<font>List_Settings</font>
+                        <onclick>Skin.ToggleSetting(DisableArtistExtrafanartInNavigation)</onclick>
+                        <selected>Skin.HasSetting(DisableArtistExtrafanartInNavigation)</selected>
+                        <textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
+                        <textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
+						<visible>!IsEmpty(Skin.String(ArtistsFanartPath))</visible>
+                    </control>
+					<control type="radiobutton" id="205">
                         <description>Toggle Video On Background</description>
                         <width>810</width>
                         <align>left</align>
@@ -320,7 +333,7 @@
                         <textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
                         <textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
                     </control>
-					<control type="radiobutton" id="205">
+					<control type="radiobutton" id="206">
                         <description>Toggle Text Scroll On Background</description>
                         <width>810</width>
                         <align>left</align>
@@ -332,7 +345,7 @@
                         <textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
                         <textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
                     </control>
-					<control type="radiobutton" id="206">
+					<control type="radiobutton" id="207">
                         <description>Toggle Bg Color Mode</description>
                         <width>810</width>
                         <align>left</align>

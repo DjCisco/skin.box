@@ -1,7 +1,7 @@
 # XBMC Media Center language file
-# Addon Name: nbox
-# Addon id: skin.nbox
-# Addon Provider: Niamu
+# Addon Name: BOX
+# Addon id: skin.BOX
+# Addon Provider: DjCisco
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Skins\n"
@@ -87,7 +87,7 @@ msgid "Movies"
 msgstr ""
 
 msgctxt "#31701"
-msgid "All Films"
+msgid "All Movies"
 msgstr ""
 
 msgctxt "#31702"
@@ -240,4 +240,12 @@ msgstr ""
 
 msgctxt "#31739"
 msgid "Recommended"
+msgstr ""
+
+msgctxt "#31740"
+msgid "All"
+msgstr ""
+
+msgctxt "#31741"
+msgid "Back"
 msgstr ""
