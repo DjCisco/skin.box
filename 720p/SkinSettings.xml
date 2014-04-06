@@ -180,10 +180,10 @@
                         <label2>$VAR[ShowMovies]</label2>
                         <focusedcolor>Accent</focusedcolor>
 						<font>List_Settings</font>
-                        <onclick condition="Stringcompare(Skin.String(ItemsTypeMovies),$LOCALIZE[31738]) | IsEmpty(Skin.String(ItemsTypeMovies))">Skin.SetString(ItemsTypeMovies,$LOCALIZE[31738])</onclick>
-                        <onclick condition="Stringcompare(Skin.String(ItemsTypeMovies),$LOCALIZE[31709])">Skin.SetString(ItemsTypeMovies,$LOCALIZE[31738])</onclick>
-                        <onclick condition="Stringcompare(Skin.String(ItemsTypeMovies),$LOCALIZE[31739])">Skin.SetString(ItemsTypeMovies,$LOCALIZE[31709])</onclick>
-                        <onclick condition="Stringcompare(Skin.String(ItemsTypeMovies),$LOCALIZE[31738])">Skin.SetString(ItemsTypeMovies,$LOCALIZE[31739])</onclick>
+                        <onclick condition="Stringcompare(Skin.String(ItemsTypeMovies),Random) | IsEmpty(Skin.String(ItemsTypeMovies))">Skin.SetString(ItemsTypeMovies,Random)</onclick>
+                        <onclick condition="Stringcompare(Skin.String(ItemsTypeMovies),Recent)">Skin.SetString(ItemsTypeMovies,Random)</onclick>
+                        <onclick condition="Stringcompare(Skin.String(ItemsTypeMovies),Recommended)">Skin.SetString(ItemsTypeMovies,Recent)</onclick>
+                        <onclick condition="Stringcompare(Skin.String(ItemsTypeMovies),Random)">Skin.SetString(ItemsTypeMovies,Recommended)</onclick>
                     </control>
                     <control type="button" id="105">
                         <description>TV to show:</description>
@@ -193,10 +193,10 @@
                         <label2>$VAR[ShowTV]</label2>
                         <focusedcolor>Accent</focusedcolor>
 						<font>List_Settings</font>
-                        <onclick condition="Stringcompare(Skin.String(ItemsTypeTV),$LOCALIZE[31738]) | IsEmpty(Skin.String(ItemsTypeTV))">Skin.SetString(ItemsTypeTV,$LOCALIZE[31738])</onclick>
-                        <onclick condition="Stringcompare(Skin.String(ItemsTypeTV),$LOCALIZE[31709])">Skin.SetString(ItemsTypeTV,$LOCALIZE[31738])</onclick>
-                        <onclick condition="Stringcompare(Skin.String(ItemsTypeTV),$LOCALIZE[31739])">Skin.SetString(ItemsTypeTV,$LOCALIZE[31709])</onclick>
-                        <onclick condition="Stringcompare(Skin.String(ItemsTypeTV),$LOCALIZE[31738])">Skin.SetString(ItemsTypeTV,$LOCALIZE[31739])</onclick>
+                        <onclick condition="Stringcompare(Skin.String(ItemsTypeTV),Random) | IsEmpty(Skin.String(ItemsTypeTV))">Skin.SetString(ItemsTypeTV,Random)</onclick>
+                        <onclick condition="Stringcompare(Skin.String(ItemsTypeTV),Recent)">Skin.SetString(ItemsTypeTV,Random)</onclick>
+                        <onclick condition="Stringcompare(Skin.String(ItemsTypeTV),Recommended)">Skin.SetString(ItemsTypeTV,Recent)</onclick>
+                        <onclick condition="Stringcompare(Skin.String(ItemsTypeTV),Random)">Skin.SetString(ItemsTypeTV,Recommended)</onclick>
                     </control>
                     <control type="button" id="106">
                         <description>Music to show:</description>
@@ -206,10 +206,10 @@
                         <label2>$VAR[ShowMusic]</label2>
                         <focusedcolor>Accent</focusedcolor>
 						<font>List_Settings</font>
-                        <onclick condition="Stringcompare(Skin.String(ItemsTypeMusic),$LOCALIZE[31738]) | IsEmpty(Skin.String(ItemsTypeMusic))">Skin.SetString(ItemsTypeMusic,$LOCALIZE[31738])</onclick>
-                        <onclick condition="Stringcompare(Skin.String(ItemsTypeMusic),$LOCALIZE[31709])">Skin.SetString(ItemsTypeMusic,$LOCALIZE[31738])</onclick>
-                        <onclick condition="Stringcompare(Skin.String(ItemsTypeMusic),$LOCALIZE[31739])">Skin.SetString(ItemsTypeMusic,$LOCALIZE[31709])</onclick>
-                        <onclick condition="Stringcompare(Skin.String(ItemsTypeMusic),$LOCALIZE[31738])">Skin.SetString(ItemsTypeMusic,$LOCALIZE[31739])</onclick>
+                        <onclick condition="Stringcompare(Skin.String(ItemsTypeMusic),Random) | IsEmpty(Skin.String(ItemsTypeMusic))">Skin.SetString(ItemsTypeMusic,Random)</onclick>
+                        <onclick condition="Stringcompare(Skin.String(ItemsTypeMusic),Recent)">Skin.SetString(ItemsTypeMusic,Random)</onclick>
+                        <onclick condition="Stringcompare(Skin.String(ItemsTypeMusic),Recommended)">Skin.SetString(ItemsTypeMusic,Recent)</onclick>
+                        <onclick condition="Stringcompare(Skin.String(ItemsTypeMusic),Random)">Skin.SetString(ItemsTypeMusic,Recommended)</onclick>
                     </control>
 					<control type="radiobutton" id="107">
                         <description>Disable Home Animations</description>

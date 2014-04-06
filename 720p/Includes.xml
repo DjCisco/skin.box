@@ -148,9 +148,9 @@
 					<focusedlayout  width="1" height="1">
 					</focusedlayout>
 					<content>	
-						<include condition="[Stringcompare(Skin.String(ItemsTypeMovies),$LOCALIZE[31709]) | IsEmpty(Skin.String(ItemsTypeMovies))]">RecentFanartMovies</include>
-						<include condition="Stringcompare(Skin.String(ItemsTypeMovies),$LOCALIZE[31739])">RecommendedFanartMovies</include>
-						<include condition="Stringcompare(Skin.String(ItemsTypeMovies),$LOCALIZE[31738])">RandomFanartMovies</include>
+						<include condition="[Stringcompare(Skin.String(ItemsTypeMovies),Recent) | IsEmpty(Skin.String(ItemsTypeMovies))]">RecentFanartMovies</include>
+						<include condition="Stringcompare(Skin.String(ItemsTypeMovies),Recommended)">RecommendedFanartMovies</include>
+						<include condition="Stringcompare(Skin.String(ItemsTypeMovies),Random)">RandomFanartMovies</include>
 					</content>
 				</control>
 				<control type="image">
@@ -167,7 +167,7 @@
 					<include>Dimensions_Fullscreen</include>
 					<fadetime>1000</fadetime>
 					<texture>$INFO[Container(9600).ListItem(0).thumb]</texture>
-					<colordiffuse>AAFFFFFF</colordiffuse>
+					<colordiffuse>ImageDiffuse</colordiffuse>
 				</control>
 			</control>
 			<!-- List to Control the cycle through the tv show Fanart  & Image displaying the fanart	-->
@@ -186,9 +186,9 @@
 					<focusedlayout width="1" height="1">
 					</focusedlayout>
 					<content>	
-						<include condition="[Stringcompare(Skin.String(ItemsTypeTV),$LOCALIZE[31709]) | IsEmpty(Skin.String(ItemsTypeTV))]">RecentFanartTvShows</include>
-						<include condition="Stringcompare(Skin.String(ItemsTypeTV),$LOCALIZE[31739])">RecommendedFanartTvShows</include>
-						<include condition="Stringcompare(Skin.String(ItemsTypeTV),$LOCALIZE[31738])">RandomFanartTvShows</include>
+						<include condition="[Stringcompare(Skin.String(ItemsTypeTV),Recent) | IsEmpty(Skin.String(ItemsTypeTV))]">RecentFanartTvShows</include>
+						<include condition="Stringcompare(Skin.String(ItemsTypeTV),Recommended)">RecommendedFanartTvShows</include>
+						<include condition="Stringcompare(Skin.String(ItemsTypeTV),Random)">RandomFanartTvShows</include>
 					</content>
 				</control>
 				<control type="image">
@@ -205,7 +205,7 @@
 					<include>Dimensions_Fullscreen</include>
 					<fadetime>1000</fadetime>
 					<texture>$INFO[Container(9601).ListItem(0).thumb]</texture>
-					<colordiffuse>AAFFFFFF</colordiffuse>
+					<colordiffuse>ImageDiffuse</colordiffuse>
 				</control>
 			</control>
 			<!-- List to Control the cycle through the music Fanart  & Image displaying the fanart	-->
@@ -224,9 +224,9 @@
 					<focusedlayout width="1" height="1">
 					</focusedlayout>
 					<content>	
-						<include condition="[Stringcompare(Skin.String(ItemsTypeMusic),$LOCALIZE[31709]) | IsEmpty(Skin.String(ItemsTypeMusic))]">RecentFanartMusic</include>
-						<include condition="Stringcompare(Skin.String(ItemsTypeMusic),$LOCALIZE[31739])">RecommendedFanartMusic</include>
-						<include condition="Stringcompare(Skin.String(ItemsTypeMusic),$LOCALIZE[31738])">RandomFanartMusic</include>
+						<include condition="[Stringcompare(Skin.String(ItemsTypeMusic),Recent) | IsEmpty(Skin.String(ItemsTypeMusic))]">RecentFanartMusic</include>
+						<include condition="Stringcompare(Skin.String(ItemsTypeMusic),Recommended)">RecommendedFanartMusic</include>
+						<include condition="Stringcompare(Skin.String(ItemsTypeMusic),Random)">RandomFanartMusic</include>
 					</content>
 				</control>
 				<control type="image">
@@ -243,7 +243,7 @@
 					<include>Dimensions_Fullscreen</include>
 					<fadetime>1000</fadetime>
 					<texture>$INFO[Container(9602).ListItem(0).thumb]</texture>
-					<colordiffuse>AAFFFFFF</colordiffuse>
+					<colordiffuse>ImageDiffuse</colordiffuse>
 				</control>
 			</control>
 			<!-- Displays Fanart of  Movie EPisode Tv Show Item selected from a list-->
@@ -298,7 +298,6 @@
 			<!-- Displays Fanart or Song Items selected from a list -->
 			<control type="group">
 				<visible>Container.Content(Songs)</visible>
-
 				<!-- Artist Fanart from Music Player in Case no Fanart.jpg in Album Folder-->
 				<control type="image" id="8875">
 					<description>Fanart Image for Artist</description>

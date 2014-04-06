@@ -2,9 +2,9 @@
 <window id="0">
     <defaultcontrol always="false">20000</defaultcontrol>
     <allowoverlay>yes</allowoverlay>
-	<onload condition="IsEmpty(Skin.String(ItemsTypeTV))">Skin.SetString(ItemsTypeTV,$LOCALIZE[31709])</onload>
-    <onload condition="IsEmpty(Skin.String(ItemsTypeMovies))">Skin.SetString(ItemsTypeMovies,$LOCALIZE[31709])</onload>
-    <onload condition="IsEmpty(Skin.String(ItemsTypeMusic))">Skin.SetString(ItemsTypeMusic,$LOCALIZE[31709])</onload>
+	<onload condition="IsEmpty(Skin.String(ItemsTypeTV))">Skin.SetString(ItemsTypeTV,Recent)</onload>
+    <onload condition="IsEmpty(Skin.String(ItemsTypeMovies))">Skin.SetString(ItemsTypeMovies,Recent)</onload>
+    <onload condition="IsEmpty(Skin.String(ItemsTypeMusic))">Skin.SetString(ItemsTypeMusic,Recent)</onload>
 	<onunload>CancelAlarm(Movie9600,silent)</onunload>
 	<onunload>CancelAlarm(Movie9601,silent)</onunload>
 	<onunload>CancelAlarm(Movie9602,silent)</onunload>
@@ -735,9 +735,9 @@
 				</focusedlayout>
 				<!-- This control defines the content nside the movies panel -->
 				<content>
-					<include condition="Stringcompare(Skin.String(ItemsTypeMovies),$LOCALIZE[31738])">RandomItemsMovies</include>
-					<include condition="Stringcompare(Skin.String(ItemsTypeMovies),$LOCALIZE[31709]) | IsEmpty(Skin.String(ItemsTypeMovies))">RecentItemsMovies</include>
-					<include condition="Stringcompare(Skin.String(ItemsTypeMovies),$LOCALIZE[31739])">RecommendedItemsMovies</include>
+					<include condition="Stringcompare(Skin.String(ItemsTypeMovies),Random)">RandomItemsMovies</include>
+					<include condition="Stringcompare(Skin.String(ItemsTypeMovies),Recent) | IsEmpty(Skin.String(ItemsTypeMovies))">RecentItemsMovies</include>
+					<include condition="Stringcompare(Skin.String(ItemsTypeMovies),Recommended)">RecommendedItemsMovies</include>
 				</content>
 			</control>
 			<!-- This control displays the name of the current selected movie -->
@@ -1192,12 +1192,12 @@
 					</control>
 				</focusedlayout>
 				<content>
-					<include condition="Stringcompare(Skin.String(ItemsTypeTV),$LOCALIZE[31738]) + !Skin.HasSetting(EpisodeThumbsOnHome)">RandomItemsTV</include>
-					<include condition="Stringcompare(Skin.String(ItemsTypeTV),$LOCALIZE[31738]) + Skin.HasSetting(EpisodeThumbsOnHome)">RandomItemsTVThumbs</include>
-					<include condition="[Stringcompare(Skin.String(ItemsTypeTV),$LOCALIZE[31709]) | IsEmpty(Skin.String(ItemsTypeTV))] + !Skin.HasSetting(EpisodeThumbsOnHome)">RecentItemsTV</include>
-					<include condition="[Stringcompare(Skin.String(ItemsTypeTV),$LOCALIZE[31709]) | IsEmpty(Skin.String(ItemsTypeTV))] + Skin.HasSetting(EpisodeThumbsOnHome)">RecentItemsTVThumbs</include>
-					<include condition="Stringcompare(Skin.String(ItemsTypeTV),$LOCALIZE[31739]) + !Skin.HasSetting(EpisodeThumbsOnHome)">RecommendedItemsTV</include>
-					<include condition="Stringcompare(Skin.String(ItemsTypeTV),$LOCALIZE[31739]) + Skin.HasSetting(EpisodeThumbsOnHome)">RecommendedItemsTVThumbs</include>
+					<include condition="Stringcompare(Skin.String(ItemsTypeTV),Random) + !Skin.HasSetting(EpisodeThumbsOnHome)">RandomItemsTV</include>
+					<include condition="Stringcompare(Skin.String(ItemsTypeTV),Random) + Skin.HasSetting(EpisodeThumbsOnHome)">RandomItemsTVThumbs</include>
+					<include condition="[Stringcompare(Skin.String(ItemsTypeTV),Recent) | IsEmpty(Skin.String(ItemsTypeTV))] + !Skin.HasSetting(EpisodeThumbsOnHome)">RecentItemsTV</include>
+					<include condition="[Stringcompare(Skin.String(ItemsTypeTV),Recent) | IsEmpty(Skin.String(ItemsTypeTV))] + Skin.HasSetting(EpisodeThumbsOnHome)">RecentItemsTVThumbs</include>
+					<include condition="Stringcompare(Skin.String(ItemsTypeTV),Recommended) + !Skin.HasSetting(EpisodeThumbsOnHome)">RecommendedItemsTV</include>
+					<include condition="Stringcompare(Skin.String(ItemsTypeTV),Recommended) + Skin.HasSetting(EpisodeThumbsOnHome)">RecommendedItemsTVThumbs</include>
 				</content>
 			</control>
 			<!-- This control displays the name of the current selected tv show -->
@@ -1609,9 +1609,9 @@
 					</control>
 				</focusedlayout>
 				<content>
-					<include condition="Stringcompare(Skin.String(ItemsTypeMusic),$LOCALIZE[31738])">RandomItemsMusic</include>
-					<include condition="Stringcompare(Skin.String(ItemsTypeMusic),$LOCALIZE[31709]) | IsEmpty(Skin.String(ItemsTypeMusic))">RecentItemsMusic</include>
-					<include condition="Stringcompare(Skin.String(ItemsTypeMusic),$LOCALIZE[31739])">RecommendedItemsMusic</include>
+					<include condition="Stringcompare(Skin.String(ItemsTypeMusic),Random)">RandomItemsMusic</include>
+					<include condition="Stringcompare(Skin.String(ItemsTypeMusic),Recent) | IsEmpty(Skin.String(ItemsTypeMusic))">RecentItemsMusic</include>
+					<include condition="Stringcompare(Skin.String(ItemsTypeMusic),Recommended)">RecommendedItemsMusic</include>
 				</content>
 			</control>
 			<control type="label">

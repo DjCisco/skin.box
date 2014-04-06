@@ -1,18 +1,18 @@
 <includes>
 	<variable name="ShowMovies">
-		<value condition="Stringcompare(Skin.String(ItemsTypeMovies),$LOCALIZE[31709]) | IsEmpty(Skin.String(ItemsTypeMovies))">$LOCALIZE[31709]</value>
-		<value condition="Stringcompare(Skin.String(ItemsTypeMovies),$LOCALIZE[31739])">$LOCALIZE[31739]</value>
-		<value condition="Stringcompare(Skin.String(ItemsTypeMovies),$LOCALIZE[31738])">$LOCALIZE[31738]</value>
+		<value condition="Stringcompare(Skin.String(ItemsTypeMovies),Recent) | IsEmpty(Skin.String(ItemsTypeMovies))">$LOCALIZE[31709]</value>
+		<value condition="Stringcompare(Skin.String(ItemsTypeMovies),Recommended)">$LOCALIZE[31739]</value>
+		<value condition="Stringcompare(Skin.String(ItemsTypeMovies),Random)">$LOCALIZE[31738]</value>
 	</variable>
 	<variable name="ShowTV">
-		<value condition="Stringcompare(Skin.String(ItemsTypeTV),$LOCALIZE[31709]) | IsEmpty(Skin.String(ItemsTypeTV))">$LOCALIZE[31709]</value>
-		<value condition="Stringcompare(Skin.String(ItemsTypeTV),$LOCALIZE[31739])">$LOCALIZE[31739]</value>
-		<value condition="Stringcompare(Skin.String(ItemsTypeTV),$LOCALIZE[31738])">$LOCALIZE[31738]</value>
+		<value condition="Stringcompare(Skin.String(ItemsTypeTV),Recent) | IsEmpty(Skin.String(ItemsTypeTV))">$LOCALIZE[31709]</value>
+		<value condition="Stringcompare(Skin.String(ItemsTypeTV),Recommended)">$LOCALIZE[31738]</value>
+		<value condition="Stringcompare(Skin.String(ItemsTypeTV),Random)">$LOCALIZE[31739]</value>
 	</variable>
 	<variable name="ShowMusic">
-		<value condition="Stringcompare(Skin.String(ItemsTypeMusic),$LOCALIZE[31709]) | IsEmpty(Skin.String(ItemsTypeMusic))">$LOCALIZE[31709]</value>
-		<value condition="Stringcompare(Skin.String(ItemsTypeMusic),$LOCALIZE[31739])">$LOCALIZE[31739]</value>
-		<value condition="Stringcompare(Skin.String(ItemsTypeMusic),$LOCALIZE[31738])">$LOCALIZE[31738]</value>
+		<value condition="Stringcompare(Skin.String(ItemsTypeMusic),Recent) | IsEmpty(Skin.String(ItemsTypeMusic))">$LOCALIZE[31709]</value>
+		<value condition="Stringcompare(Skin.String(ItemsTypeMusic),Recommended)">$LOCALIZE[31738]</value>
+		<value condition="Stringcompare(Skin.String(ItemsTypeMusic),Random)">$LOCALIZE[31739]</value>
 	</variable>
 	<variable name="SeasonPoster">    
 		<value condition="!IntegerGreaterThan(ListItem.Season,9)">$INFO[ListItem.Path]$INFO[ListItem.Season,../season0,-poster.jpg]</value>
