@@ -44,8 +44,7 @@
                         <width>315</width>
                         <height>315</height>
                         <texture>$INFO[ListItem.Icon]</texture>
-						<colordiffuse>ImageDiffuse</colordiffuse>
-					    <aspectratio scalediffuse="false">scale</aspectratio>
+						<aspectratio scalediffuse="false">scale</aspectratio>
                         <bordersize>5</bordersize>
 						<visible>!IsEmpty(ListItem.Album) | !StringCompare(ListItem.Label,* ALL ALBUMS)</visible>
 					</control>
@@ -53,8 +52,7 @@
                         <width>315</width>
                         <height>315</height>
                         <texture>defaultcdda.png</texture>
-						<colordiffuse>ImageDiffuse</colordiffuse>
-					    <aspectratio scalediffuse="false">scale</aspectratio>
+						<aspectratio scalediffuse="false">scale</aspectratio>
                         <bordersize>5</bordersize>
 						<visible>StringCompare(ListItem.Label,* ALL ALBUMS)</visible>
 					</control>
@@ -62,9 +60,7 @@
                         <width>315</width>
                         <height>315</height>
                         <texture>music_fanart_diffuse.png</texture>
-						<colordiffuse>ImageDiffuse</colordiffuse>
-					    <aspectratio scalediffuse="false">scale</aspectratio>
-                        <bordersize>5</bordersize>
+						<bordersize>5</bordersize>
                      </control>
 				</itemlayout>
                 <focusedlayout width="325" height="315">

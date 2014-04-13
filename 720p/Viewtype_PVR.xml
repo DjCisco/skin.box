@@ -166,6 +166,7 @@
                         <align>center</align>
 						<aligny>center</aligny>
 						<font>List_PVR</font>
+						<selectedcolor>white</selectedcolor>
                         <label>[B]$INFO[ListItem.ChannelNumber][/B]</label>
                     </control>
                     <control type="label">
@@ -173,6 +174,7 @@
 						<width>700</width>
 						<height>30</height>
 						<font>List_Unfocused</font>
+						<selectedcolor>white</selectedcolor>
 						<aligny>center</aligny>
                         <label>$INFO[ListItem.Label]$INFO[ListItem.Title, • ]</label>
                     </control>
@@ -183,6 +185,7 @@
 						<height>30</height>
 						<align>left</align>
 						<font>List_Hint</font>
+						<selectedcolor>white</selectedcolor>
                         <label>$INFO[ListItem.NextTitle,$LOCALIZE[19031] • ]$INFO[ListItem.NextStartTime, • ]/$INFO[ListItem.NextEndTime]</label>
 						<visible>!IsEmpty(ListItem.NextTitle)</visible>
                     </control>
@@ -344,7 +347,7 @@
                         <width>45</width>
                         <align>center</align>
 						<font>List_PVR</font>
-                        <label>[B]$INFO[ListItem.ChannelNumber][/B]</label>
+                        <label>$INFO[ListItem.ChannelNumber]</label>
                     </control>
 					<control type="label">
                         <posx>60</posx>
@@ -378,13 +381,16 @@
                         <posx>22</posx>
                         <width>45</width>
                         <align>center</align>
+						<font>List_Focused</font>
+						<selectedcolor>white</selectedcolor>
                         <label>[B]$INFO[ListItem.ChannelNumber][/B]</label>
                     </control>
                     <control type="label">
                         <posx>60</posx>
                         <width>700</width>
-						<font>List_Unfocused</font>
-                        <label>$INFO[ListItem.Label]$INFO[ListItem.Title, • ]</label>
+						<font>List_Focused</font>
+						<selectedcolor>white</selectedcolor>
+                        <label>[B]$INFO[ListItem.Label]$INFO[ListItem.Title, • ][/B]</label>
                     </control>
                     <control type="progress">
                         <description>Progressbar</description>
@@ -1172,73 +1178,49 @@
         <control type="group">
             <description>TV Guide Channel</description>
             <visible>Control.IsVisible(15)</visible>
-            <control type="label">
-                <posx>75</posx>
-                <posy>220</posy>
-                <width>300</width>
-                <align>left</align>
-                <aligny>top</aligny>
-                <label>[LOWERCASE]$LOCALIZE[31713][/LOWERCASE]: [COLOR Accent][LOWERCASE]$INFO[Control.GetLabel(29)][/LOWERCASE][/COLOR] </label>
-                <font>Sort_Font_Small</font>
-                <textcolor>White</textcolor>
-            </control>
-            <control type="label">
-                <label>[COLOR Accent]$INFO[ListItem.ChannelName][/COLOR] $INFO[ListItem.Title]</label>
-                <posx>395</posx>
-                <posy>171</posy>
-                <height>30</height>
-                <width>885</width>
-                <font>Home_menu</font>
-                <scroll>true</scroll>
-                <scrollout>false</scrollout>
-                <pauseatend>600</pauseatend>
-                <scrollspeed>50</scrollspeed>
-                <aligny>top</aligny>
-            </control>
-            <control type="label">
+			<control type="label">
+				<include>ViewMainTitle</include>	
                 <posx>395</posx>
                 <posy>210</posy>
                 <width>600</width>
                 <height>50</height>
-                <font>Sort_Font_Small</font>
                 <textcolor>White</textcolor>
-                <label>[COLOR Accent]$INFO[Control.GetLabel(30),[COLOR White][LOWERCASE]$LOCALIZE[31714][/LOWERCASE]: [/COLOR]][/COLOR]</label>
-            </control>
-            <control type="image">
-                <include>PanelCoordinates</include>
-                <width>1204</width>
-                <height>315</height>
-                <texture>music_fanart_diffuse.png</texture>
-                <fadetime>200</fadetime>
-                <aspectratio scalediffuse="false">stretch</aspectratio>
+                <label>$INFO[Control.GetLabel(29),, ][COLOR Accent]$INFO[Control.GetLabel(30)][/COLOR]</label>
             </control>
             <control type="group">
                 <include>PanelCoordinates</include>
-                <control type="label">
+				<control type="image">
+					<posx>0</posx>
+					<width>280</width>
+					<height>43</height>
+					<texture>tile.png</texture>
+				</control>
+				<control type="image">
+					<posx>285</posx>
+					<width>900</width>
+					<height>43</height>
+					<texture>tile.png</texture>
+				</control>
+				<control type="label">
                     <description>Date Time label</description>
-                    <posx>10</posx>
+                    <posx>20</posx>
                     <width>300</width>
                     <height>45</height>
+					<font>List_Unfocused</font>
                     <label>[B]$LOCALIZE[21820][/B]</label>
                 </control>
                 <control type="label">
                     <description>Title</description>
-                    <posx>360</posx>
+                    <posx>300</posx>
                     <width>600</width>
                     <height>45</height>
+					<font>List_Unfocused</font>
                     <label>[B]$LOCALIZE[369][/B]</label>
-                </control>
-                <control type="label">
-                    <description>Status header label</description>
-                    <posx>940</posx>
-                    <width>140</width>
-                    <height>45</height>
-                    <label>[B]$LOCALIZE[126][/B]</label>
                 </control>
                 <control type="list" id="15">
                     <posx>0</posx>
                     <posy>45</posy>
-                    <width>1100</width>
+                    <width>1204</width>
                     <height>270</height>
                     <onup>15</onup>
                     <ondown>15</ondown>
@@ -1246,29 +1228,49 @@
                     <pagecontrol>75</pagecontrol>
                     <scrolltime>200</scrolltime>
                     <itemlayout height="45">
-                        <control type="label">
-                            <posx>150</posx>
+						<control type="image">
+							<posx>0</posx>
+							<width>280</width>
+							<height>43</height>
+							<texture>tile.png</texture>
+						</control>
+						<control type="image">
+							<posx>285</posx>
+							<width>900</width>
+							<height>43</height>
+							<texture>tile.png</texture>
+						</control>
+                       <control type="label">
+                            <posx>20</posx>
                             <posy>0</posy>
-                            <width>280</width>
+                            <width>240</width>
                             <height>40</height>
-                            <info>ListItem.Date</info>
+							<font>List_Unfocused</font>
+                            <label>$INFO[ListItem.Date]</label>
                         </control>
-                        <control type="label">
-                            <posx>360</posx>
-                            <posy>0</posy>
-                            <width>640</width>
-                            <height>40</height>
-                            <font>font13</font>
+                         <control type="label">
+                            <posx>300</posx>
+                            <width>620</width>
+                            <font>List_Unfocused</font>
                             <align>left</align>
-                            <info>ListItem.Label</info>
+							<height>43</height>
+                            <label>$INFO[ListItem.Label]</label>
                         </control>
                         <control type="image">
-                            <posx>970</posx>
-                            <posy>10</posy>
-                            <width>30</width>
-                            <height>20</height>
-                            <texture>PVR-IsRecording.png</texture>
+                            <posx>1150</posx>
+							<posy>9</posy>
+                            <width>25</width>
+                            <height>25</height>
+                            <texture>PVRRecording.png</texture>
                             <visible>ListItem.IsRecording</visible>
+                        </control>
+						<control type="image">
+                            <posx>1150</posx>
+							<posy>9</posy>
+                            <width>25</width>
+                            <height>25</height>
+                            <texture>PVRTimer.png</texture>
+                            <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
                         </control>
                         <control type="label">
                             <posx>940</posx>
@@ -1278,14 +1280,6 @@
                             <align>left</align>
                             <label>19043</label>
                             <visible>ListItem.IsRecording</visible>
-                        </control>
-                        <control type="image">
-                            <posx>970</posx>
-                            <posy>10</posy>
-                            <width>20</width>
-                            <height>20</height>
-                            <texture>PVR-HasTimer.png</texture>
-                            <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
                         </control>
                         <control type="label">
                             <posx>940</posx>
@@ -1299,47 +1293,67 @@
                     </itemlayout>
                     <focusedlayout height="135">
                         <control type="image">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>1204</width>
-                            <height>101</height>
-                            <texture border="5">tile.png</texture>
-                        </control>
+							<posx>0</posx>
+							<width>280</width>
+							<height>43</height>
+							<texture>button.png</texture>
+						</control>
+						<control type="image">
+							<posx>285</posx>
+							<width>900</width>
+							<height>43</height>
+							<texture>button.png</texture>
+						</control>
+						<control type="image">
+							<posx>0</posx>
+							<posy>48</posy>
+							<width>1185</width>
+							<height>82</height>
+							<texture>tile.png</texture>
+						</control>
                         <control type="label">
-                            <posx>150</posx>
+                            <posx>20</posx>
                             <posy>0</posy>
-                            <width>280</width>
+                            <width>240</width>
                             <height>40</height>
-                            <textcolor>white</textcolor>
-                            <info>ListItem.Date</info>
+							<font>List_Focused</font>
+                            <label>[B]$INFO[ListItem.Date][/B]</label>
                         </control>
-                        <control type="label">
-                            <posx>360</posx>
-                            <posy>0</posy>
-                            <width>640</width>
-                            <height>40</height>
-                            <font>font13</font>
+                         <control type="label">
+                            <posx>300</posx>
+                            <width>620</width>
+                            <font>List_Focused</font>
                             <align>left</align>
-                            <textcolor>white</textcolor>
-                            <info>ListItem.Label</info>
+							<height>43</height>
+                            <label>[B]$INFO[ListItem.Label][/B]</label>
                         </control>
-                        <control type="textbox">
+                        
+                         <control type="textbox">
                             <description>Plot Value for TVShow</description>
                             <posx>10</posx>
-                            <posy>45</posy>
-                            <width>1184</width>
-                            <height>70</height>
+                            <posy>48</posy>
+                            <width>1165</width>
+                            <height>72</height>
                             <align>justify</align>
+							<font>Panel_Description</font>
                             <pagecontrol>-</pagecontrol>
                             <info>ListItem.Plot</info>
                         </control>
-                        <control type="image">
-                            <posx>970</posx>
-                            <posy>10</posy>
-                            <width>30</width>
-                            <height>20</height>
-                            <texture>PVR-IsRecording.png</texture>
+						<control type="image">
+                            <posx>1150</posx>
+							<posy>9</posy>
+                            <width>25</width>
+                            <height>25</height>
+                            <texture>PVRRecording.png</texture>
                             <visible>ListItem.IsRecording</visible>
+                        </control>
+						<control type="image">
+                            <posx>1150</posx>
+							<posy>9</posy>
+                            <width>25</width>
+                            <height>25</height>
+                            <texture>PVRTimer.png</texture>
+                            <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
                         </control>
                         <control type="label">
                             <posx>940</posx>
@@ -1349,14 +1363,6 @@
                             <align>left</align>
                             <label>19043</label>
                             <visible>ListItem.IsRecording</visible>
-                        </control>
-                        <control type="image">
-                            <posx>970</posx>
-                            <posy>10</posy>
-                            <width>20</width>
-                            <height>20</height>
-                            <texture>PVR-HasTimer.png</texture>
-                            <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
                         </control>
                         <control type="label">
                             <posx>940</posx>
@@ -1545,20 +1551,20 @@
 							<width>90</width>
 							<height>43</height>
 							<align>center</align>
-							<font>List_Unfocused</font>
-							<label>$INFO[ListItem.StartTime]</label>
+							<font>List_Focused</font>
+							<label>[B]$INFO[ListItem.StartTime][/B]</label>
 						</control>
 						<control type="label">
 							<posx>110</posx>
 							<width>185</width>
 							<height>43</height>
-							<font>List_Unfocused</font>
-							<label>$INFO[ListItem.ChannelName]</label>
+							<font>List_Focused</font>
+							<label>[B]$INFO[ListItem.ChannelName][/B]</label>
 						</control>
                         <control type="label">
                             <posx>300</posx>
                             <width>620</width>
-                            <font>List_Settings</font>
+                            <font>List_Focused</font>
                             <align>left</align>
 							<height>43</height>
                             <label>[B]$INFO[ListItem.Label][/B]</label>

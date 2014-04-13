@@ -40,8 +40,8 @@
 						<font>Music_Vis_Title4</font>
 						<aligny>center</aligny>
 						<label>[COLOR Accent]$INFO[ListItem.Label][/COLOR]</label>
-						<animation effect="fade" start="100" end="30" condition="Control.HasFocus(527)">Conditional</animation>
-						<animation effect="fade" start="100" end="30" condition="!Control.HasFocus(527)">Conditional</animation>
+						<animation effect="fade" start="100" end="50" condition="Control.HasFocus(527)">Conditional</animation>
+						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(527)">Conditional</animation>
                     </control>
 				</itemlayout>
                 <focusedlayout width="1000" height="100">
