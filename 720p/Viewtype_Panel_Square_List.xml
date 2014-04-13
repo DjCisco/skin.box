@@ -50,7 +50,7 @@
 				<focusposition>3</focusposition>
                 <scrolltime>200</scrolltime>
                 <onleft>9000</onleft>
-                <onright>58</onright>
+                <onright>61</onright>
                 <pagecontrol>61</pagecontrol>
 				<visible>Window.IsActive(1) | Container.Content(Albums)</visible>
                 <!-- This Control defines the unfocused item layout-->
@@ -205,11 +205,7 @@
 					<posy>290</posy>
 					<width>5</width>
 					<height>315</height>
-					<texturesliderbackground></texturesliderbackground>
-					<textureslidernib>bar.png</textureslidernib>
-					<textureslidernibfocus>scroll_nib.png</textureslidernibfocus>
-					<texturesliderbar></texturesliderbar>
-					<texturesliderbarfocus></texturesliderbarfocus>
+					<onleft>508</onleft>
 					<showonepage>true</showonepage>
 					<orientation>vertical</orientation>
 				</control>
@@ -264,7 +260,16 @@
                 <visible>Container.Scrolling + !container.content(songs)</visible>
             </control>
 
-		
+				<control type="scrollbar" id="61">
+					<posx>1265</posx>
+					<posy>290</posy>
+					<width>5</width>
+					<height>315</height>
+					<onleft>508</onleft>
+					<showonepage>true</showonepage>
+					<orientation>vertical</orientation>
+					<visible>Skin.HasSetting(musicwidelist)</visible>
+				</control>
         </control>
     </include>
 </includes>

@@ -190,14 +190,12 @@
         <textureslidernibfocus border="2">other_textures/osd/slidernibfo.png</textureslidernibfocus>
     </default>
     <default type="scrollbar">
-        <width>25</width>
-        <texturesliderbackground border="0,14,0,14">other_textures/scrollbarv.png</texturesliderbackground>
-        <texturesliderbar border="0,14,0,14">other_textures/scrollbarv_bar_focus.png</texturesliderbar>
-        <texturesliderbarfocus border="0,14,0,14">other_textures/scrollbarv_bar_focus.png</texturesliderbarfocus>
-        <textureslidernib>other_textures/scrollbarnib.png</textureslidernib>
-        <textureslidernibfocus>other_textures/scrollbarnib.png</textureslidernibfocus>
-        <showonepage>true</showonepage>
-        <orientation>vertical</orientation>
+        <texturesliderbackground></texturesliderbackground>
+		<textureslidernib>bar.png</textureslidernib>
+		<textureslidernibfocus>other_textures\radiobutton2fo.png</textureslidernibfocus>
+		<texturesliderbar></texturesliderbar>
+		<texturesliderbarfocus></texturesliderbarfocus>
+	    <orientation>vertical</orientation>
     </default>
     <default type="textbox">
         <label></label>

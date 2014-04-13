@@ -28,13 +28,7 @@
 					<scrolltime>200</scrolltime>
 					<orientation>vertical</orientation>
 					<onleft>9000</onleft>
-					<onright>left</onright>
-					<onright>left</onright>
-					<onright>left</onright>
-					<onright>left</onright>
-					<onright>left</onright>
-					<onright>right</onright>
-					<onright>down</onright>
+					<onright>61</onright>
 					<pagecontrol>61</pagecontrol>
 					<preloaditems>2</preloaditems>
 					<visible>Window.IsActive(1) | Container.Content(Albums)</visible>
@@ -120,11 +114,7 @@
                 <posy>290</posy>
                 <width>5</width>
                 <height>315</height>
-                <texturesliderbackground></texturesliderbackground>
-                <textureslidernib>bar.png</textureslidernib>
-                <textureslidernibfocus>scroll_nib.png</textureslidernibfocus>
-                <texturesliderbar></texturesliderbar>
-                <texturesliderbarfocus></texturesliderbarfocus>
+				<onleft>519</onleft>
                 <showonepage>true</showonepage>
                 <orientation>vertical</orientation>
             </control>

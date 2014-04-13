@@ -28,13 +28,7 @@
                 <scrolltime>200</scrolltime>
                 <orientation>vertical</orientation>
                 <onleft>9000</onleft>
-                <onright>left</onright>
-                <onright>left</onright>
-                <onright>left</onright>
-                <onright>left</onright>
-                <onright>left</onright>
-                <onright>right</onright>
-                <onright>down</onright>
+                <onright>62</onright>
                 <pagecontrol>62</pagecontrol>
                 <preloaditems>2</preloaditems>
                 <visible>Window.IsActive(1) | Container.Content(Movies) | Container.Content(TVShows)</visible>
@@ -204,12 +198,8 @@
                 <posy>290</posy>
                 <width>5</width>
                 <height>315</height>
-                <texturesliderbackground></texturesliderbackground>
-                <textureslidernib>bar.png</textureslidernib>
-                <textureslidernibfocus>scroll_nib.png</textureslidernibfocus>
-                <texturesliderbar></texturesliderbar>
-                <texturesliderbarfocus></texturesliderbarfocus>
-                <showonepage>true</showonepage>
+				<onleft>522</onleft>
+				<showonepage>true</showonepage>
                 <orientation>vertical</orientation>
             </control>
              <!-- This control displays Total Number of Season and Episodes of a TV Shows in the Description Field if more than 1 season an more than 1 episode-->

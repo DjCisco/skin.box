@@ -192,12 +192,7 @@
 					<posy>290</posy>
 					<width>5</width>
 					<height>315</height>
-					<texturesliderbackground></texturesliderbackground>
-					<textureslidernib>bar.png</textureslidernib>
-					<textureslidernibfocus>scroll_nib.png</textureslidernibfocus>
-					<texturesliderbar></texturesliderbar>
-					<texturesliderbarfocus></texturesliderbarfocus>
-					<showonepage>true</showonepage>
+					<onleft>51</onleft>
 					<orientation>vertical</orientation>
 				</control>
             </control>
@@ -209,18 +204,13 @@
                 <width>880</width>
                 <height>315</height>
                 <onleft>9000</onleft>
+				<onright>60</onright>
                 <onup>50</onup>
                 <ondown>50</ondown>
                 <pagecontrol>60</pagecontrol>
                 <viewtype label="List">List</viewtype>
                 <scrolltime>200</scrolltime>
                 <itemlayout width="400" height="45" >
-                    <control type="image">
-                        <width>400</width>
-                        <height>45</height>
-                        <texture border="2">other_textures/buttonnf.png</texture>
-                        <visible>!IsEmpty(ListItem.PicturePath) | !IsEmpty(ListItem.Property(Addon.Name))</visible>
-                    </control>
                     <control type="label">
                         <posx>10</posx>
                         <width>380</width>
@@ -252,14 +242,14 @@
                     <control type="image">
                         <width>400</width>
                         <height>45</height>
-                        <texture border="2">button.png</texture>
+                        <texture>button.png</texture>
+						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(51)">Conditional</animation>
                     </control>
                     <control type="label">
                         <posx>10</posx>
                         <width>380</width>
 						<font>List_Focused</font>
                         <label>$INFO[ListItem.Label]</label>
-                        <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
                     </control>
 					<!--This control shows the Addon Status Label -->
 					<control type="label">

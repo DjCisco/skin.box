@@ -62,6 +62,7 @@
 				<focusposition>3</focusposition>
                 <scrolltime>200</scrolltime>
                 <onleft>9000</onleft>
+				<onright>60</onright>
                 <onup>228</onup>
                 <ondown>528</ondown>
                 <pagecontrol>60</pagecontrol>
@@ -157,13 +158,8 @@
 					<posx>770</posx>
 					<posy>290</posy>
 					<width>5</width>
+					<onleft>528</onleft>
 					<height>315</height>
-					<texturesliderbackground></texturesliderbackground>
-					<textureslidernib>bar.png</textureslidernib>
-					<textureslidernibfocus>scroll_nib.png</textureslidernibfocus>
-					<texturesliderbar></texturesliderbar>
-					<texturesliderbarfocus></texturesliderbarfocus>
-					<showonepage>true</showonepage>
 					<orientation>vertical</orientation>
 				</control>
 				<!-- This control displays the Year of the artist foundation-->

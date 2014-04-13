@@ -27,6 +27,7 @@
                 <width>1000</width>
                 <height>700</height>
                 <onleft>9000</onleft>
+				<onright>60</onright>
                 <onup>527</onup>
                 <ondown>527</ondown>
 				<movement>6</movement>
@@ -58,20 +59,14 @@
 					
                 </focusedlayout>
             </control>	
-   <!--This control defines the scrollbar controlling the large list list -->
+			<!--This control defines the scrollbar controlling the large list list -->
 			<control type="scrollbar" id="60">
-                <posx>5</posx>
-                <posy>50</posy>
+                <posx>1275</posx>
+                <posy>15</posy>
                 <width>5</width>
-                <height>600</height>
-                <texturesliderbackground></texturesliderbackground>
-                <textureslidernib>bar.png</textureslidernib>
-                <textureslidernibfocus>scroll_nib.png</textureslidernibfocus>
-                <texturesliderbar></texturesliderbar>
-                <texturesliderbarfocus></texturesliderbarfocus>
-                <showonepage>true</showonepage>
-                <orientation>vertical</orientation>
-                <visible>IsEmpty(ListItem.PicturePath) + IsEmpty(ListItem.Property(Addon.Name))</visible>
+                <height>690</height>
+				<onleft>527</onleft>
+               <orientation>vertical</orientation>
             </control>
 			
         </control>

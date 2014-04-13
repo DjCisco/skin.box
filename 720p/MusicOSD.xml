@@ -4,52 +4,7 @@
     <controls>
         <control type="group">
             <visible>!Window.IsVisible(AddonSettings) + !Window.IsVisible(VisualisationPresetList)</visible>
-			<!-- Progress Info Display -->
 			<control type="group">
-				<!-- Progress Bar Background -->
-				<control type="image">
-					<description>black bar</description>
-					<posx>0</posx>
-					<posy>690</posy>
-					<width>1280</width>
-					<height>30</height>
-					<fadetime>200</fadetime>
-					<texture background="true">music_fanart_diffuse.png</texture>
-				</control>
-				<!-- Progress Bar -->
-				<control type="progress">
-					<description>Progressbar</description>
-					<posx>100</posx>
-					<posy>702</posy>
-					<width>1080</width>
-					<height>6</height>
-					<info>Player.Progress</info>
-					<texturebg>progressmidgreen.png</texturebg>
-					<midtexture>progresslime.png</midtexture>
-				</control>
-				<!-- Player Time Elapsed-->
-				<control type="label">
-					<posx>10</posx>
-					<posy>690</posy>
-					<width>120</width>
-					<height>30</height>
-					<label>$INFO[MusicPlayer.Time]</label>
-					<align>left</align>
-					<font>Panel_Hint</font>
-					<textcolor>Accent</textcolor>
-				</control>
-				<!-- Player Time Remaining-->
-				<control type="label">
-					<posx>1270</posx>
-					<posy>690</posy>
-					<width>120</width>
-					<height>30</height>
-					<label>$INFO[MusicPlayer.TimeRemaining,-]</label>
-					<align>right</align>
-					<font>Panel_Hint</font>
-				</control>
-			 </control>
-             <control type="group">
                 <animation type="WindowOpen">
                     <effect type="zoom" start="108" end="100" time="400" center="640,360" tween="cubic" easing="out" />
                     <effect type="fade" start="0" end="100" time="400" />

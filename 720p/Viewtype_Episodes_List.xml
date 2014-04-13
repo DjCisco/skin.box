@@ -143,7 +143,7 @@
                 <scrolltime>200</scrolltime>
                 <onup>526</onup>
                 <ondown>526</ondown>
-                <onright>526</onright>
+                <onright>63</onright>
                 <onleft>9000</onleft>
 				<movement>3</movement>
 				<focusposition>3</focusposition>
@@ -463,12 +463,7 @@
                 <posy>290</posy>
                 <width>5</width>
                 <height>315</height>
-                <texturesliderbackground></texturesliderbackground>
-                <textureslidernib>bar.png</textureslidernib>
-                <textureslidernibfocus>scroll_nib.png</textureslidernibfocus>
-                <texturesliderbar></texturesliderbar>
-                <texturesliderbarfocus></texturesliderbarfocus>
-                <showonepage>true</showonepage>
+				<onleft>526</onleft>
                 <orientation>vertical</orientation>
 				<visible>!Skin.HasSetting(episodewidelist)</visible>
             </control>
@@ -477,13 +472,8 @@
                 <posy>290</posy>
                 <width>5</width>
                 <height>315</height>
-                <texturesliderbackground></texturesliderbackground>
-                <textureslidernib>bar.png</textureslidernib>
-                <textureslidernibfocus>scroll_nib.png</textureslidernibfocus>
-                <texturesliderbar></texturesliderbar>
-                <texturesliderbarfocus></texturesliderbarfocus>
-                <showonepage>true</showonepage>
-                <orientation>vertical</orientation>
+				<onleft>526</onleft>
+				<orientation>vertical</orientation>
 				<visible>Skin.HasSetting(episodewidelist)</visible>
             </control>
             

@@ -43,11 +43,7 @@
                 <scrolltime>200</scrolltime>
                 <onup>590</onup>
                 <ondown>590</ondown>
-                <onright>left</onright>
-                <onright>left</onright>
-                <onright>left</onright>
-                <onright>right</onright>
-                <onright>down</onright>
+                <onright>63</onright>
                 <onleft>9000</onleft>
                 <viewtype label="List">Music Videos List View</viewtype>
                 <orientation>vertical</orientation>
@@ -187,11 +183,7 @@
                 <posy>290</posy>
                 <width>5</width>
                 <height>315</height>
-                <texturesliderbackground></texturesliderbackground>
-                <textureslidernib>bar.png</textureslidernib>
-                <textureslidernibfocus>scroll_nib.png</textureslidernibfocus>
-                <texturesliderbar></texturesliderbar>
-                <texturesliderbarfocus></texturesliderbarfocus>
+				<onleft>590</onleft>
                 <showonepage>true</showonepage>
                 <orientation>vertical</orientation>
             </control>
