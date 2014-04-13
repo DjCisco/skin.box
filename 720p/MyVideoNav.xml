@@ -74,7 +74,7 @@
                 <width>280</width>
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
-				<font>Panel_Info</font>
+				<font>List_Left_Menu</font>
 				<texturefocus>button.png</texturefocus>
             </control>
             <control type="button" id="3">
@@ -82,7 +82,7 @@
                 <width>280</width>
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
-				<font>Panel_Info</font>
+				<font>List_Left_Menu</font>
 				<texturefocus>button.png</texturefocus>
             </control>
             <control type="togglebutton" id="4">
@@ -92,7 +92,7 @@
                 <align>left</align>
                 <label>584</label>
                 <altlabel>585</altlabel>
-				<font>Panel_Info</font>
+				<font>List_Left_Menu</font>
 				<texturefocus>button.png</texturefocus>
             </control>
             <control type="button" id="8">
@@ -101,7 +101,7 @@
 				<textoffsetx>10</textoffsetx>
                 <align>left</align>
                 <label>137</label>
-				<font>Panel_Info</font>
+				<font>List_Left_Menu</font>
 				<texturefocus>button.png</texturefocus>
             </control>
             <control type="radiobutton" id="14">
@@ -112,7 +112,7 @@
                 <textoffsetx>10</textoffsetx>
                 <textwidth>200</textwidth>
                 <align>left</align>
-				<font>Panel_Info</font>
+				<font>List_Left_Menu</font>
                 <pulseonselect>false</pulseonselect>
                 <label>$LOCALIZE[20367]</label>
 				<texturefocus>button.png</texturefocus>
@@ -124,7 +124,7 @@
                 <textoffsetx>10</textoffsetx>
                 <align>left</align>
                 <label>Wide List</label>
-   				<font>List_Settings</font>
+   				<font>List_Left_Menu</font>
                 <onclick>Skin.ToggleSetting(moviewidelist)</onclick>
                 <selected>Skin.HasSetting(moviewidelist)</selected>
 				<texturefocus>button.png</texturefocus>
@@ -137,7 +137,7 @@
                 <textoffsetx>10</textoffsetx>
                 <align>left</align>
                 <label>Wide List</label>
-				<font>List_Settings</font>
+				<font>List_Left_Menu</font>
                 <onclick>Skin.ToggleSetting(tvshowwidelist)</onclick>
                 <selected>Skin.HasSetting(tvshowwidelist)</selected>
 				<texturefocus>button.png</texturefocus>
@@ -150,7 +150,7 @@
                 <textoffsetx>10</textoffsetx>
                 <align>left</align>
                 <label>Wide List</label>
-				<font>List_Settings</font>
+				<font>List_Left_Menu</font>
                 <onclick>Skin.ToggleSetting(episodewidelist)</onclick>
                 <selected>Skin.HasSetting(episodewidelist)</selected>
 				<texturefocus>button.png</texturefocus>

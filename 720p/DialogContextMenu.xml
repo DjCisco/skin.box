@@ -35,7 +35,7 @@
                 <posy>0</posy>
                 <width>280</width>
 				<textoffsetx>10</textoffsetx>
-                <font>Panel_Info</font>
+                <font>List_Right_Menu</font>
                 <align>right</align>
 				<texturefocus>button.png</texturefocus>
             </control>

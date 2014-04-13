@@ -58,7 +58,7 @@
                 <width>280</width>
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
-                <font>Panel_Info</font>
+                <font>List_Left_Menu</font>
 				<texturefocus>button.png</texturefocus>
             </control>
             <control type="button" id="3">
@@ -66,7 +66,7 @@
                 <width>280</width>
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
-                <font>Panel_Info</font>
+                <font>List_Left_Menu</font>
 				<texturefocus>button.png</texturefocus>
             </control>
             <control type="togglebutton" id="4">
@@ -76,7 +76,7 @@
                 <align>left</align>
                 <label>584</label>
                 <altlabel>585</altlabel>
-                <font>Panel_Info</font>
+                <font>List_Left_Menu</font>
 				<texturefocus>button.png</texturefocus>
             </control>
             <control type="button" id="8">
@@ -84,7 +84,7 @@
                 <width>280</width>
                 <align>left</align>
                 <label>137</label>
-                <font>Panel_Info</font>
+                <font>List_Left_Menu</font>
 				<texturefocus>button.png</texturefocus>
             </control>
             <control type="radiobutton" id="16">
@@ -93,7 +93,7 @@
 				<textoffsetx>10</textoffsetx>
                 <align>left</align>
                 <label>589</label>
-                <font>Panel_Info</font>
+                <font>List_Left_Menu</font>
 				<texturefocus>button.png</texturefocus>
             </control>
 			<control type="radiobutton" id="101">
@@ -102,7 +102,7 @@
 				<textoffsetx>10</textoffsetx>
                 <align>left</align>
                 <label>Wide List</label>
-       			<font>Panel_Info</font>
+       			<font>List_Left_Menu</font>
                 <onclick>Skin.ToggleSetting(musicwidelist)</onclick>
                 <selected>Skin.HasSetting(musicwidelist)</selected>
 				<texturefocus>button.png</texturefocus>
@@ -114,7 +114,7 @@
 				<textoffsetx>10</textoffsetx>
                 <align>left</align>
                 <label>Wide List</label>
-				<font>Panel_Info</font>
+				<font>List_Left_Menu</font>
                 <onclick>Skin.ToggleSetting(musicartistswidelist)</onclick>
                 <selected>Skin.HasSetting(musicartistswidelist)</selected>
 				<texturefocus>button.png</texturefocus>

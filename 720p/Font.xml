@@ -204,8 +204,23 @@
 			<style>bold uppercase</style>
             <size>22</size>
         </font>
+		
 		<font>
-        <name>List_Hint</name>
+            <name>List_Right_Menu</name>
+            <linespacing>0.7</linespacing>
+            <filename>MC360.ttf</filename>
+			<style>bold</style>
+            <size>22</size>
+        </font>
+		<font>
+            <name>List_Left_Menu</name>
+            <linespacing>0.7</linespacing>
+            <filename>MC360.ttf</filename>
+			<style>bold</style>
+            <size>22</size>
+        </font>
+		<font>
+			<name>List_Hint</name>
             <filename>MC360.ttf</filename>
             <aspect>0.8</aspect>
 			<style>bold uppercase</style>
