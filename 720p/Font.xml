@@ -233,23 +233,30 @@
 			<size>20</size>
         </font>
 		<font>
-        <name>List_Unfocused</name>
+			<name>List_Unfocused</name>
             <filename>MC360.ttf</filename>
             <aspect>0.8</aspect>
             <size>24</size>
         </font>
 		<font>
-        <name>List_Focused</name>
+			<name>List_Focused</name>
             <filename>MC360.ttf</filename>
             <aspect>0.8</aspect>
 			<style>bold</style>
             <size>24</size>
         </font>
 		<font>
-        <name>List_Settings</name>
+			<name>List_Settings</name>
             <filename>MC360.ttf</filename>
             <aspect>0.8</aspect>
 			<size>24</size>
+        </font>
+		 <font>
+			<name>List_Settings_Title</name>
+            <filename>MC360.ttf</filename>
+            <aspect>0.8</aspect>
+			<size>24</size>
+			<style>bold uppercase</style>
         </font>
         <font>
             <name>Window_Settings</name>
@@ -259,7 +266,7 @@
             <size>20</size>
         </font>
 		 <font>
-		<name>List_PVR</name>
+			<name>List_PVR</name>
             <filename>MC360.ttf</filename>
             <aspect>0.8</aspect>
 			<size>24</size>

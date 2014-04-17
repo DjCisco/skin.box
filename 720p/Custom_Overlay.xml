@@ -27,6 +27,20 @@
 			<height>450</height>
 			<itemgap>12</itemgap>
 			<visible>Skin.HasSetting(DebugInfo)</visible>
+			
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Media Window</label>
+				<visible>Window.IsMedia()</visible>
+			</control>
+			
+			
 			<!-- Content Labels -->
 			<control type="label">
 				<width>780</width>

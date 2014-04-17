@@ -55,7 +55,7 @@
                         <posx>270</posx>
                         <width>260</width>
                         <label>$INFO[ListItem.Label] $INFO[ListItem.Label2]</label>
-                        <font>Panel_Info</font>
+                        <font>List_Right_Menu</font>
                         <align>right</align>
                     </control>
                 </itemlayout>
@@ -70,8 +70,9 @@
                         <posx>270</posx>
                         <width>260</width>
                         <label>$INFO[ListItem.Label] $INFO[ListItem.Label2]</label>
-						<font>Panel_Info</font>
-                        <align>right</align>
+						<font>List_Right_Menu</font>
+						<selectedcolor>White</selectedcolor>
+				        <align>right</align>
                     </control>
                 </focusedlayout>
             </control>
