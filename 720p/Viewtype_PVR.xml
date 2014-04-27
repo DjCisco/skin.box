@@ -822,7 +822,7 @@
 					<width>90</width>
 					<height>40</height>
 					<align>center</align>
-					<font>List_Unfocused</font>
+					<font>List_Focused</font>
                     <label>$LOCALIZE[19029]</label>
                 </control>
                 <control type="label">
@@ -830,22 +830,15 @@
                     <posx>200</posx>
                     <width>300</width>
                     <height>40</height>
-					<font>List_Unfocused</font>
-                    <label>[B]$LOCALIZE[369][/B]</label>
-                </control>
-                <control type="label">
-                    <description>Schedule Time header label</description>
-                    <posx>580</posx>
-                    <width>300</width>
-                    <height>45</height>
-                    <label>[B]$LOCALIZE[31610][/B]</label>
+					<font>List_Focused</font>
+                    <label>$LOCALIZE[369]</label>
                 </control>
                 <control type="label">
                     <description>Status header label</description>
                     <posx>1035</posx>
                     <width>150</width>
                     <height>40</height>
-					<font>List_Unfocused</font>
+					<font>List_Focused</font>
 					<align>center</align>
                     <label>$LOCALIZE[126]</label>
                 </control>
@@ -961,7 +954,7 @@
             <visible>Control.IsVisible(17)</visible>
             <control type="label">
                 <include>ViewMainTitle</include>	
-                <label>$INFO[Control.GetLabel(36)]</label>
+                <label>$LOCALIZE[283]</label>
             </control>
             <!-- Backgrounds-->
 			<control type="group">
@@ -1025,7 +1018,7 @@
 					<width>90</width>
 					<height>40</height>
 					<align>center</align>
-					<font>List_Unfocused</font>
+					<font>List_Focused</font>
                     <label>$LOCALIZE[19029]</label>
                 </control>
                 <control type="label">
@@ -1033,15 +1026,15 @@
                     <posx>200</posx>
                     <width>300</width>
                     <height>40</height>
-					<font>List_Unfocused</font>
-                    <label>[B]$LOCALIZE[369][/B]</label>
+					<font>List_Focused</font>
+                    <label>$LOCALIZE[369]</label>
                 </control>
                 <control type="label">
                     <description>Status header label</description>
                     <posx>935</posx>
 					<width>250</width>
                     <height>40</height>
-					<font>List_Unfocused</font>
+					<font>List_Focused</font>
 					<align>center</align>
                     <label>$LOCALIZE[21820]</label>
                 </control>
@@ -1101,19 +1094,19 @@
                 <focusedlayout height="45">
 					<control type="image">
 						<width>185</width>
-						<height>40</height>
+						<height>45</height>
 						<texture>button.png</texture>
 					</control>
 					<control type="image">
 						<posx>190</posx>
 						<width>740</width>
-						<height>40</height>
+						<height>45</height>
 						<texture>button.png</texture>
 					</control>
 					<control type="image">
 						<posx>935</posx>
 						<width>250</width>
-						<height>40</height>
+						<height>45</height>
 						<texture>button.png</texture>
 					</control>
 				    <control type="label">
@@ -1376,9 +1369,9 @@
                     </focusedlayout>
                 </control>
                 <control type="scrollbar" id="75">
-                    <posx>1274</posx>
-                    <posy>288</posy>
-                    <width>6</width>
+                    <posx>1190</posx>
+                    <posy>0</posy>
+                    <width>5</width>
                     <height>315</height>
                     <texturesliderbackground></texturesliderbackground>
                     <textureslidernib>bar.png</textureslidernib>
@@ -1599,9 +1592,9 @@
                     </focusedlayout>
                 </control>
                 <control type="scrollbar" id="76">
-                    <posx>1274</posx>
-                    <posy>288</posy>
-                    <width>6</width>
+                    <posx>1190</posx>
+                    <posy>0</posy>
+                    <width>5</width>
                     <height>315</height>
                     <texturesliderbackground></texturesliderbackground>
                     <textureslidernib>bar.png</textureslidernib>

@@ -4,100 +4,96 @@
     <controls>
         <include>GlobalOverlay</include>
         <control type="group">
-            <posx>880</posx>
+            <posx>960</posx>
             <posy>0</posy>
             <animation type="WindowOpen">
-                <effect type="slide" time="300" start="+400, 0" end="0,0" easing="out" tween="cubic" />
+                <effect type="slide" time="300" start="+320, 0" end="0,0" easing="out" tween="cubic" />
             </animation>
             <animation type="WindowClose">
-                <effect type="slide" time="300" start="0,0" end="+400,0" easing="in" tween="cubic" />
+                <effect type="slide" time="300" start="0,0" end="+320,0" easing="in" tween="cubic" />
             </animation>
-            <control type="image">
-                <posx>0</posx>
-                <posy>0</posy>
-                <width>440</width>
-                <height>720</height>
-                <texture border="22">button.png</texture>
-            </control>
-            <control type="label">
+			<include>RightMenuBackground</include>
+			<control type="fadelabel">
                 <description>Menu Title</description>
-                <posx>30</posx>
-                <posy>70</posy>
-                <width>400</width>
-                <label>[LOWERCASE]$LOCALIZE[19040][/LOWERCASE]</label>
-                <font>Home_sub_header</font>
-                <align>left</align>
-                <textcolor>black</textcolor>
+                <posx>20</posx>
+                <posy>0</posy>
+                <width>280</width>
+                <label>$LOCALIZE[19040]</label>
+                <font>Panel_Description_Title</font>
+                <align>right</align>
             </control>
-            <control type="grouplist" id="5">
+             <control type="grouplist" id="5">
                 <description>control area</description>
-                <posx>30</posx>
-                <posy>130</posy>
-                <width>340</width>
-                <height>510</height>
-                <itemgap>2</itemgap>
+				<posx>10</posx>
+                <posy>70</posy>
+                <width>300</width>
+                <height>540</height>
+                <itemgap></itemgap>
                 <onup>9001</onup>
                 <ondown>9001</ondown>
                 <onleft>9001</onleft>
                 <onright>9001</onright>
             </control>
-            <control type="group" id="9001">
-                <posx>10</posx>
-                <posy>660</posy>
-                <itemgap>2</itemgap>
+            <control type="grouplist" id="9001">
+                <posx>20</posx>
+                <posy>655</posy>
+                <itemgap>10</itemgap>
                 <orientation>horizontal</orientation>
+				<onup>5</onup>
+                <ondown>5</ondown>
                 <control type="button" id="28">
                     <description>OK Button</description>
-                    <width>190</width>
+                   <description>Ok</description>
+                    <width>135</width>
                     <label>186</label>
-                    <textcolor>black</textcolor>
-                    <label>186</label>
-                    <onleft>29</onleft>
-                    <onright>29</onright>
-                    <onup>5</onup>
-                    <ondown>5</ondown>
+                    <font>Panel_Hint</font>
+					<texturefocus>button.png</texturefocus>
+					<texturenofocus>tile.png</texturenofocus>
                 </control>
                 <control type="button" id="29">
                     <description>Cancel Button</description>
-                    <posx>190</posx>
-                    <width>190</width>
-                    <label>222</label>
-                    <textcolor>black</textcolor>
-                    <label>222</label>
-                    <onleft>28</onleft>
-                    <onright>28</onright>
-                    <onup>5</onup>
-                    <ondown>5</ondown>
-                </control>
+					<width>135</width>
+                    <font>Panel_Hint</font>
+					<label>222</label>
+					<texturefocus>button.png</texturefocus>
+					<texturenofocus>tile.png</texturenofocus>
+				</control>
             </control>
+			
             <control type="button" id="7">
                 <description>Default Button</description>
-                <textcolor>black</textcolor>
-                <focusedcolor>white</focusedcolor>
+                <font>List_Settings</font>
                 <align>left</align>
+				<texturefocus>button.png</texturefocus>
+				<texturenofocus>tile.png</texturenofocus>
             </control>
             <control type="radiobutton" id="8">
                 <description>Default RadioButton</description>
-                <textcolor>black</textcolor>
-                <focusedcolor>white</focusedcolor>
+                <font>List_Settings</font>
                 <align>left</align>
+				<texturefocus>button.png</texturefocus>
+				<texturenofocus>tile.png</texturenofocus>
             </control>
             <control type="spincontrolex" id="9">
                 <description>Default spincontrolex</description>
-                <textcolor>black</textcolor>
+                <font>List_Settings</font>
                 <focusedcolor>white</focusedcolor>
                 <aligny>center</aligny>
                 <reverse>yes</reverse>
+				<texturefocus>button.png</texturefocus>
+				<texturenofocus>tile.png</texturenofocus>
             </control>
             <control type="sliderex" id="10">
                 <description>Default Slider</description>
-                <textcolor>black</textcolor>
-                <focusedcolor>white</focusedcolor>
+                <font>List_Settings</font>
+				<texturefocus>button.png</texturefocus>
+				<texturenofocus>tile.png</texturenofocus>
             </control>
             <control type="edit" id="12">
                 <description>Default Edit</description>
-                <textcolor>black</textcolor>
-                <focusedcolor>white</focusedcolor>
+                <font>List_Settings</font>
+				<texturefocus>button.png</texturefocus>
+				<texturenofocus>tile.png</texturenofocus>
             </control>
         </control>
     </controls>

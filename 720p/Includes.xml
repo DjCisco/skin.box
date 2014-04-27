@@ -51,22 +51,12 @@
 			</control>
 			<!-- This Displays the Current Date on the Top Right -->
 			<control type="label">
-				<label>$INFO[System.Date(dd)] $INFO[System.Date(MMM)]</label>
+				<label> $INFO[System.Date(ddd)] • [COLOR Accent]$INFO[System.Date(mmm)] $INFO[System.Date(dd)][/COLOR]</label>
 				<posx>1270</posx>
 				<posy>30</posy>
 				<height>100</height>
 				<width>750</width>
 				<font>Clock_Footer</font>
-				<shadowcolor>black</shadowcolor>
-				<align>right</align>
-			</control>
-		    <control type="label">
-				<label>[COLOR Accent]$INFO[System.Date(DDD)][/COLOR]</label>
-				<posx>1270</posx>
-				<posy>60</posy>
-				<height>100</height>
-				<width>750</width>
-				<font>Clock_Footer_2</font>
 				<shadowcolor>black</shadowcolor>
 				<align>right</align>
 			</control>

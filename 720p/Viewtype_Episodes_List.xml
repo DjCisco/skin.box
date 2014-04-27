@@ -512,7 +512,7 @@
 					<height>50</height>
 					<textcolor>Accent</textcolor>
 					<align>right</align>
-					<font>Panel_Description_Header</font>
+					<font>Panel_Description_Title</font>
 					<label>$INFO[ListItem.Mpaa]</label>
 				</control>
 				<control type="label">

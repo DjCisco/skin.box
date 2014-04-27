@@ -20,7 +20,7 @@
 		<control type="group">
 			<animation effect="slide" start="-180" end="0" time="600" tween="cubic" easing="out">WindowOpen</animation>
 			<animation effect="slide" start="0" end="-180" time="600" tween="cubic" easing="in">WindowClose</animation>
-			<animation effect="fade" start="100" end="0" time="300" condition="Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(script-XBMC-Subtitles-main.xml)">conditional</animation>
+			<animation effect="fade" start="100" end="0" time="300" condition="Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(script-XBMC-Subtitles-main.xml)  | Window.IsActive(PVROSDGuide)">conditional</animation>
 			<posy>455</posy>
 			<!-- Poster Bg -->
 			<control type="image">
@@ -109,7 +109,7 @@
 			<control type="group">
 				<animation effect="slide" start="1100" end="0" time="600" tween="cubic" easing="out">WindowOpen</animation>
 				<animation effect="slide" start="0" end="1100" time="600" tween="cubic" easing="in">WindowClose</animation>
-				<animation effect="fade" start="100" end="0" time="300" condition="Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(script-XBMC-Subtitles-main.xml)">conditional</animation>
+				<animation effect="fade" start="100" end="0" time="300" condition="Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(script-XBMC-Subtitles-main.xml) | Window.IsActive(PVROSDGuide)">conditional</animation>
 				<control type="image">
 					<description>black bar</description>
 					<posy>5</posy>
@@ -232,7 +232,7 @@
 			<control type="group">	
 				<animation effect="slide" start="0,60" end="0,0" time="600" tween="cubic" easing="out">WindowOpen</animation>
 				<animation effect="slide" start="0,0" end="0,60" time="600" tween="cubic" easing="in">WindowClose</animation>
-				<animation effect="fade" start="100" end="0" time="300" condition="Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(script-XBMC-Subtitles-main.xml)">conditional</animation>
+				<animation effect="fade" start="100" end="0" time="300" condition="Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(script-XBMC-Subtitles-main.xml) | Window.IsActive(PVROSDGuide)">conditional</animation>
 				<posy>230</posy>
 				<!-- Background for Progress Bar -->
 				<control type="image">
@@ -285,7 +285,7 @@
 			<control type="group">
 				<animation effect="slide" start="1100" end="0" time="600" tween="cubic" easing="out">WindowOpen</animation>
 				<animation effect="slide" start="0" end="1100" time="600" tween="cubic" easing="in">WindowClose</animation>
-				<animation effect="fade" start="100" end="0" time="300" condition="Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(script-XBMC-Subtitles-main.xml)">conditional</animation>
+				<animation effect="fade" start="100" end="0" time="300" condition="Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(script-XBMC-Subtitles-main.xml) | Window.IsActive(PVROSDGuide)">conditional</animation>
 				<control type="image">
 					<description>black bar</description>
 					<posy>5</posy>
@@ -328,23 +328,56 @@
 						<font>Music_Vis_Title3</font>
 						<align>left</align>
 					</control>
-				</control>
-				<!-- End Time-->
-				<control type="label">
-						<posx>15</posx>
-						<posy>157</posy>
+					<!-- End Time-->
+					<control type="label">
+						<posy>137</posy>
 						<width>785</width>
 						<label>[COLOR Accent]$INFO[Player.FinishTime,[COLOR White]$LOCALIZE[19127]: [/COLOR] ][/COLOR]</label>
 						<scroll>true</scroll>
 						<font>Music_Vis_Title4</font>
 						<align>left</align>
+					</control>
 				</control>
+						<!-- Tv Show Name and Plot -->
+						<control type="group">
+							<posx>15</posx>
+							<posy>20</posy>
+							<visible>VideoPlayer.Content(livetv)</visible>
+							<!-- Title -->	
+							<control type="label">
+								<description>Title</description>
+								<width>980</width>
+								<scroll>true</scroll>
+								<font>Music_Vis_Title</font>
+								<align>left</align>
+								<label>$INFO[VideoPlayer.Title]</label>
+							 </control>
+							<!-- Plot -->	
+							<control type="textbox">
+								<description>Album</description>
+								<posy>60</posy>
+								<width>980</width>
+								<height>100</height>
+								<label>$INFO[VideoPlayer.Plot]</label>
+								<scroll>true</scroll>
+								<align>justify</align>
+								<font>Panel_Description</font>
+							</control>
+							<control type="label">
+								<posy>160</posy>
+								<width>785</width>
+								<label>[COLOR Accent]$INFO[Player.StartTime,[COLOR White]$LOCALIZE[19126]: [/COLOR],[COLOR White] / [/COLOR]][/COLOR] [COLOR Accent]$INFO[Player.FinishTime,[COLOR White]$LOCALIZE[19127]: [/COLOR] ][/COLOR]</label>
+								<scroll>true</scroll>
+								<font>Music_Vis_Title4</font>
+								<align>left</align>
+							</control>
+						</control>
 			</control>
 			<!-- Progress Bar -->
 			<control type="group">	
 				<animation effect="slide" start="0,60" end="0,0" time="600" tween="cubic" easing="out">WindowOpen</animation>
 				<animation effect="slide" start="0,0" end="0,60" time="600" tween="cubic" easing="in">WindowClose</animation>
-				<animation effect="fade" start="100" end="0" time="300" condition="Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(script-XBMC-Subtitles-main.xml)">conditional</animation>
+				<animation effect="fade" start="100" end="0" time="300" condition="Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(script-XBMC-Subtitles-main.xml) | Window.IsActive(PVROSDGuide)">conditional</animation>
 				<posy>230</posy>
 				<!-- Background for Progress Bar -->
 				<control type="image">

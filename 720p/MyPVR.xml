@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window id="601">
     <defaultcontrol>32</defaultcontrol>
-    <allowoverlay>no</allowoverlay>
+    <allowoverlay>yes</allowoverlay>
     <onload>SetProperty(tvlist,$LOCALIZE[19020])</onload>
     <onload>SetProperty(radiolist,$LOCALIZE[19021])</onload>
     <controls>
@@ -208,7 +208,7 @@
                      </control>
                     <control id="35">
                         <type>button</type>
-                        <label>TIMERS</label>
+                        <label>$LOCALIZE[19040]</label>
                         <posx>1</posx>
                         <width>155</width>
                         <height>155</height>
@@ -216,7 +216,7 @@
                         <onup>34</onup>
                         <ondown>36</ondown>
 						<onright>12</onright>
-                    </control>
+	                </control>
                     <control type="label">
 						<include>PanelButtonTitle</include>
                         <label>$LOCALIZE[19040]</label>
@@ -240,7 +240,7 @@
                      </control>
                     <control id="36">
                         <type>button</type>
-                        <label>TIMERS</label>
+                        <label>$LOCALIZE[137]</label>
                         <posx>1</posx>
                         <width>155</width>
                         <height>155</height>
