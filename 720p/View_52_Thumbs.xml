@@ -3,7 +3,7 @@
     <include name="View_52_Thumbs">
         <control type="group">
             <visible>Control.IsVisible(52)</visible>
-            <animation type="TYPE" condition="Window.IsVisible(2001) | Window.IsVisible(139) | Window.IsVisible(136 | Window.IsVisible(addonsettings)" reversible="false">
+            <animation type="TYPE" condition="Window.IsVisible(2001) | Window.IsVisible(139) | Window.IsVisible(136) | Window.IsVisible(addonsettings)" reversible="false">
                 <effect type="slide" end="-1500,0" time="200" />
             </animation>
             <animation type="TYPE" condition="!Window.IsVisible(2001) + !Window.IsVisible(139) + !Window.IsVisible(136) + !Window.IsVisible(addonsettings)" reversible="false">
@@ -29,9 +29,9 @@
             </control>
 			<!--This control defines the list that will display the items -->
 			<control type="panel" id="52">
-                <visible>[SubString(Container.FolderPath,plugin://) | [Container.Content(files) + !StringCompare(Container.FolderPath,videodb://1/) + !StringCompare(Container.FolderPath,library://video/movies/) + !StringCompare(Container.FolderPath,videodb://2/) + !StringCompare(Container.FolderPath,library://video/tvshows/) + !StringCompare(Container.FolderPath,videodb://3/) ] + !StringCompare(Container.FolderPath,library://video/musicvideos/) ] + !Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(songs) + !Container.Content(musicvideos)</visible>
-				<posx>50</posx>
-                <posy>290</posy>
+                <visible>[SubString(Container.FolderPath,plugin://) | [Container.Content(files) + !StringCompare(Container.FolderPath,videodb://movies/) + !StringCompare(Container.FolderPath,library://video/movies/) + !StringCompare(Container.FolderPath,videodb://tvshows/) + !StringCompare(Container.FolderPath,library://video/tvshows/) + !StringCompare(Container.FolderPath,videodb://musicvideos/) ] + !StringCompare(Container.FolderPath,library://video/musicvideos/) ] + !Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(songs) + !Container.Content(musicvideos)</visible>
+				<left>50</left>
+                <top>290</top>
                 <width>1200</width>
                 <height>320</height>
                 <onleft>9000</onleft>
@@ -72,8 +72,8 @@
 					</control>
 					<control type="label">
 						<label>$INFO[ListItem.Label]</label>
-						<posx>10</posx>
-						<posy>120</posy>
+						<left>10</left>
+						<top>120</top>
 						<height>30</height>
 						<width>215</width>
 						<font>List_Hint</font>
@@ -81,8 +81,8 @@
 					</control>
 					<control type="label">
 						<label>$INFO[ListItem.Duration,, MIN]</label>
-						<posx>225</posx>
-						<posy>5</posy>
+						<left>225</left>
+						<top>5</top>
 						<height>30</height>
 						<width>145</width>
 						<font>List_Hint</font>
@@ -116,8 +116,8 @@
 						<aspectratio>scale</aspectratio>
 					</control>
 					<control type="image">
-						<posx>5</posx>
-						<posy>120</posy>
+						<left>5</left>
+						<top>120</top>
 						<width>225</width>
 						<height>30</height>
 						<texture>tile.png</texture>
@@ -125,8 +125,8 @@
 					</control>
 					<control type="label">
 						<label>$INFO[ListItem.Label]</label>
-						<posx>10</posx>
-						<posy>120</posy>
+						<left>10</left>
+						<top>120</top>
 						<height>30</height>
 						<width>215</width>
 						<font>List_Hint</font>
@@ -134,8 +134,8 @@
 					</control>
 					<control type="label">
 						<label>$INFO[ListItem.Duration,, MIN]</label>
-						<posx>225</posx>
-						<posy>5</posy>
+						<left>225</left>
+						<top>5</top>
 						<height>30</height>
 						<width>145</width>
 						<font>List_Hint</font>
@@ -146,8 +146,8 @@
 			</control>
 			<!--This control defines the scrollbar controlling the large list list -->
 				<control type="scrollbar" id="60">
-					<posx>1250</posx>
-					<posy>290</posy>
+					<left>1250</left>
+					<top>290</top>
 					<width>5</width>
 					<height>315</height>
 					<onleft>52</onleft>

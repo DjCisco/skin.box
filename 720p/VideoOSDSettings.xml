@@ -15,28 +15,26 @@
         <animation type="Hidden">
             <effect type="fade" start="100" end="0" time="200" />
         </animation>
-			<control type="image">
-                <posx>0</posx>
-                <posy>0</posy>
-                <width>1280</width>
-                <height>720</height>
-                <texture>music_fanart_diffuse_Blue.png</texture>
+		
+		
+			<control type="group">
 				<visible>!Window.IsVisible(SliderDialog)</visible>
+				<include>SkinTransparentBackground</include>
             </control>
 		<control type="group">
-            <posx>50</posx>
+            <left>50</left>
             <animation effect="fade" start="100" end="0" time="400" condition="Window.IsVisible(SliderDialog) | Window.IsVisible(FileBrowser)">Conditional</animation>
             
 			<!-- Background -->
 			<control type="image">
-                <posy>290</posy>
+                <top>290</top>
                 <width>1160</width>
-                <height>365</height>
+                <height>360</height>
                 <texture>tile.png</texture>
             </control>
 			<control type="label" id="2">
                 <description>Settings</description>
-                <posy>215</posy>
+                <top>215</top>
                 <height>30</height>
                 <width>800</width>
                 <font>Panel_Title</font>
@@ -46,10 +44,10 @@
             </control>
             <control type="grouplist" id="5">
                 <description>Control Area</description>
-                <posy>290</posy>
+                <top>290</top>
                 <width>1160</width>
-                <height>368</height>
-                <itemgap>2</itemgap>
+                <height>360</height>
+                <itemgap>0</itemgap>
                 <orientation>vertical</orientation>
                 <pagecontrol>60</pagecontrol>
                 <onleft>28</onleft>
@@ -67,8 +65,6 @@
                 <description>Default RadioButton</description>
 				<align>left</align>
                 <focusedcolor>Accent</focusedcolor>
-                <textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
-                <textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
 				<font>List_Settings</font>
             </control>
             <control type="spincontrolex" id="9">
@@ -89,8 +85,8 @@
 				<font>List_Settings</font>
             </control>
             <control type="image">
-                <posx>1160</posx>
-                <posy>290</posy>
+                <left>1160</left>
+                <top>290</top>
                 <width>40</width>
                 <height>40</height>
                 <texture flipy="true">down_arrow.png</texture>
@@ -98,8 +94,8 @@
                 <animation effect="fade" time="400">VisibleChange</animation>
             </control>
             <control type="image">
-                <posx>1160</posx>
-                <posy>620</posy>
+                <left>1160</left>
+                <top>620</top>
                 <width>40</width>
                 <height>40</height>
                 <texture>down_arrow.png</texture>

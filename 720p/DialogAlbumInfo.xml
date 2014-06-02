@@ -16,8 +16,8 @@
             <control type="group">
                 <!-- Background -->               
 				<control type="image">
-                    <posx>615</posx>
-                    <posy>180</posy>
+                    <left>615</left>
+                    <top>180</top>
                     <width>635</width>
                     <height>425</height>
                     <texture>music_fanart_diffuse.png</texture>
@@ -25,8 +25,8 @@
                 <!-- Cover --> 				
                 <control type="image">
                     <description>Cover Image</description>
-                    <posx>180</posx>
-                    <posy>180</posy>
+                    <left>180</left>
+                    <top>180</top>
                     <width>425</width>
                     <height>425</height>
                     <texture>$INFO[ListItem.Icon]</texture>
@@ -36,8 +36,8 @@
                 </control>
 				<!-- Title for Albums -->
                 <control type="fadelabel" id="140">
-					<posx>635</posx>
-                    <posy>185</posy>
+					<left>635</left>
+                    <top>185</top>
                     <height>30</height>
                     <width>595</width>
 					<font>Panel_Title</font>
@@ -52,8 +52,8 @@
                 </control>
 				<!-- Title for Artist -->				
                 <control type="fadelabel" id="140">
-					<posx>635</posx>
-                    <posy>185</posy>
+					<left>635</left>
+                    <top>185</top>
                     <height>30</height>
                     <width>595</width>
 					<font>Panel_Title</font>
@@ -69,8 +69,8 @@
                 <!-- SubTitle for Albums -->	
 				<control type="label">
                         <description>Artist</description>
-						<posx>635</posx>
-						<posy>245</posy>
+						<left>635</left>
+						<top>245</top>
 						<width>610</width>
 						<height>50</height>
 						<aligny>top</aligny>
@@ -82,8 +82,8 @@
 				<!-- SubTitle for Artists -->	
 				<control type="label">
                         <description>Genre</description>
-						<posx>635</posx>
-						<posy>245</posy>
+						<left>635</left>
+						<top>245</top>
 						<width>610</width>
 						<height>50</height>
 						<aligny>top</aligny>
@@ -94,16 +94,16 @@
                     </control>
 				<!-- Rating-->
 				<control type="image">
-					<posx>635</posx>
-					<posy>275</posy>
+					<left>635</left>
+					<top>275</top>
 					<width>100</width>
 					<height>25</height>
 					<texture>other_textures/colorrating/$INFO[ListItem.StarRating]</texture>
 				</control>
 				<!-- Genre for Albums-->
 				<control type="label">
-					<posx>635</posx>
-                    <posy>560</posy>
+					<left>635</left>
+                    <top>560</top>
                     <width>610</width>
                     <height>50</height>
                     <aligny>top</aligny>
@@ -118,8 +118,8 @@
                 <!-- Album & Artist Info -->
 				<control type="textbox" id="4">
                     <description>Review</description>
-                    <posx>635</posx>
-                    <posy>300</posy>
+                    <left>635</left>
+                    <top>300</top>
                     <width>595</width>
                     <height>250</height>
                     <align>justify</align>
@@ -129,8 +129,8 @@
                 <!-- Album Tracks & Discography -->
 				<control type="list" id="50">
                     <description>Tracks</description>
-                    <posx>635</posx>
-                    <posy>300</posy>
+                    <left>635</left>
+                    <top>300</top>
                     <width>585</width>
                     <height>264</height>
                     <onup>50</onup>
@@ -147,20 +147,20 @@
                             <texture>other_textures/buttonnf.png</texture>
                         </control>
                         <control type="label">
-                            <posx>22</posx>
+                            <left>22</left>
                             <width>44</width>
                             <align>center</align>
                             <label>$INFO[ListItem.TrackNumber]</label>
 							<font>Panel_Description</font>
                         </control>
                         <control type="label">
-                            <posx>65</posx>
+                            <left>65</left>
                             <width>305</width>
                             <label>$INFO[ListItem.Label]</label>
 							<font>Panel_Description</font>
                         </control>
                         <control type="label">
-                            <posx>575</posx>
+                            <left>575</left>
                             <align>right</align>
                             <width>100</width>
                             <label>$INFO[ListItem.Duration]</label>
@@ -181,7 +181,7 @@
 							<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
                          </control>
                         <control type="label">
-                            <posx>22</posx>
+                            <left>22</left>
                             <width>44</width>
                             <align>center</align>
                             <label>$INFO[ListItem.TrackNumber]</label>
@@ -189,7 +189,7 @@
 							<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
                         </control>
                         <control type="label">
-                            <posx>65</posx>
+                            <left>65</left>
                             <width>305</width>
                             <scroll>true</scroll>
                             <label>[COLOR Accent]$INFO[ListItem.Label][/COLOR]</label>
@@ -197,7 +197,7 @@
 							<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
                         </control>
                         <control type="label">
-                            <posx>575</posx>
+                            <left>575</left>
                             <align>right</align>
                             <width>100</width>
                             <label>[COLOR Accent]$INFO[ListItem.Duration][/COLOR]</label>
@@ -212,16 +212,16 @@
                             <texture>other_textures/buttonnf.png</texture>
                         </control>
                         <control type="label">
-                            <posx>15</posx>
+                            <left>15</left>
                             <width>305</width>
                             <label>$INFO[ListItem.Label]</label>
 							<font>Panel_Description</font>
                         </control>
                         <control type="label">
-                            <posx>575</posx>
+                            <left>575</left>
                             <align>right</align>
                             <width>100</width>
-                            <label>$INFO[ListItem.Duration]</label>
+                            <label>$INFO[ListItem.Label2]</label>
 							<font>Panel_Description</font>
                         </control>
                     </itemlayout>
@@ -239,7 +239,7 @@
 							<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
                         </control>
                         <control type="label">
-                            <posx>15</posx>
+                            <left>15</left>
                             <width>305</width>
                             <scroll>true</scroll>
                             <label>$INFO[ListItem.Label]</label>
@@ -248,10 +248,10 @@
 							<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
                         </control>
                         <control type="label">
-                            <posx>575</posx>
+                            <left>575</left>
                             <align>right</align>
                             <width>100</width>
-                            <label>$INFO[ListItem.Duration]</label>
+                            <label>$INFO[ListItem.Label2]</label>
 							<font>Panel_Description</font>
 							<textcolor>Accent</textcolor>
 							<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
@@ -259,8 +259,8 @@
                     </focusedlayout>
                 </control>
                 <control type="scrollbar" id="64">
-                    <posx>1225</posx>
-                    <posy>300</posy>
+                    <left>1225</left>
+                    <top>300</top>
                     <width>5</width>
                     <height>264</height>
                     <texturesliderbackground></texturesliderbackground>
@@ -274,8 +274,8 @@
                 </control>
                 <!-- Left Menu -->
 				<control type="grouplist" id="9001">
-                    <posx>25</posx>
-                    <posy>240</posy>
+                    <left>25</left>
+                    <top>240</top>
                     <width>145</width>
                     <height>430</height>
                     <itemgap>-</itemgap>
@@ -291,7 +291,6 @@
 						<textoffsetx>10</textoffsetx>
 						<font>Panel_Hint</font>						
                         <align>center</align>
-                        <texturefocus>button.png</texturefocus>
 						<onclick condition="SubString(Control.GetLabel(5),$LOCALIZE[183]) | SubString(Control.GetLabel(5),$LOCALIZE[21887])">right</onclick>
                     </control>
                     <control type="button" id="6">
@@ -301,7 +300,6 @@
 						<font>Panel_Hint</font>						
                         <align>center</align>
                         <label>184</label>
-                        <texturefocus>button.png</texturefocus>
 					</control>
                     <control type="button" id="10">
                         <description>Poster</description>
@@ -310,7 +308,6 @@
 						<font>Panel_Hint</font>						
                         <align>center</align>
                         <label>$LOCALIZE[31723]</label>
-                        <texturefocus>button.png</texturefocus>
                     </control>
                     <control type="button" id="12">
                         <description>Art</description>
@@ -319,7 +316,6 @@
 						<font>Panel_Hint</font>
                         <align>center</align>
                         <label>$LOCALIZE[20445]</label>
-                        <texturefocus>button.png</texturefocus>
 	                </control>
                 </control>
             </control>

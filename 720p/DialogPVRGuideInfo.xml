@@ -20,20 +20,20 @@
                 <effect type="slide" start="+1500,0" time="300" />
             </animation>
             <control type="image">
-                <posx>200</posx>
-                <posy>290</posy>
+                <left>200</left>
+                <top>290</top>
                 <width>1035</width>
                 <height>315</height>
                 <texture>music_fanart_diffuse.png</texture>
             </control>
 			<control type="label">
-				<posx>200</posx>
+				<left>200</left>
 				<include>ViewMainTitle</include>
                 <label>$INFO[ListItem.Title]</label>
             </control>
             <control type="label">
-                <posx>1215</posx>
-                <posy>300</posy>
+                <left>815</left>
+                <top>300</top>
                 <height>50</height>
                 <width>400</width>
 				<align>right</align>
@@ -42,16 +42,16 @@
             </control>
 			<control type="label">
 				<description>Duration value</description>
-				<posx>220</posx>
-				<posy>300</posy>
+				<left>220</left>
+				<top>300</top>
 				<height>50</height>
 				<width>400</width>
 				<font>Panel_Description_Title</font>
 				<label>$INFO[ListItem.StartDate]</label>
 			</control>
 			<control type="label">
-                <posx>1215</posx>
-				<posy>565</posy>
+                <left>815</left>
+				<top>565</top>
 				<width>400</width>
 				<height>25</height>
 				<align>right</align>
@@ -59,8 +59,8 @@
                 <label>$INFO[ListItem.Duration]</label>
             </control>
 			<control type="label">
-                <posx>220</posx>
-				<posy>565</posy>
+                <left>220</left>
+				<top>565</top>
 				<width>400</width>
 				<height>25</height>
 				<font>Panel_Description_Footer</font>
@@ -69,8 +69,8 @@
 		   <!-- Tv Show Plot -->
 			<control type="textbox" id="400">
 				<description>Plot value</description>
-				<posx>220</posx>
-				<posy>355</posy>
+				<left>220</left>
+				<top>355</top>
 				<width>995</width>
 				<height>190</height>
 				<font>Panel_Description</font>
@@ -79,8 +79,8 @@
 				<label fallback="161">$INFO[ListItem.Plot]</label>
 			</control>
 			<control type="grouplist" id="9000">
-				<posx>25</posx>
-				<posy>290</posy>
+				<left>25</left>
+				<top>290</top>
 				<width>165</width>
 				<height>430</height>
 				<itemgap>5</itemgap>
@@ -98,6 +98,7 @@
 					<align>center</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
 				</control>
 				<control type="button" id="5">
 					<description>Switch to Channel</description>
@@ -108,6 +109,7 @@
 					<align>center</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
 				</control>
 				<control type="button" id="6">
 					<description>Record</description>
@@ -118,6 +120,7 @@
 					<align>center</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
 				</control>
 				<control type="image">
 					<texture>$INFO[ListItem.Icon]</texture>

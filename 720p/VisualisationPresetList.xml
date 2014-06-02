@@ -17,8 +17,8 @@
         </animation>
 		<control type="image">
                 <description>Bg</description>
-				<posx>0</posx>
-                <posy>0</posy>
+				<left>0</left>
+                <top>0</top>
                 <width>1280</width>
                 <height>720</height>
                 <texture>music_fanart_diffuse.png</texture>
@@ -34,16 +34,16 @@
 			
 			<control type="image">
                 <description>Bg</description>
-				<posx>50</posx>
-                <posy>290</posy>
+				<left>50</left>
+                <top>290</top>
                 <width>1180</width>
                 <height>315</height>
                 <texture>tile.png</texture>
             </control>
             <control type="label" id="4">
                 <description>No Settings Label</description>
-                <posx>60</posx>
-                <posy>290</posy>
+                <left>60</left>
+                <top>290</top>
                 <width>1160</width>
                 <height>45</height>
                 <align>left</align>
@@ -53,8 +53,8 @@
             </control>
             <control type="list" id="2">
                 <description>Preset List</description>
-                <posx>50</posx>
-                <posy>290</posy>
+                <left>50</left>
+                <top>290</top>
                 <width>1180</width>
                 <height>315</height>
                 <onleft>noop</onleft>
@@ -63,7 +63,7 @@
                 <ondown>2</ondown>
                 <itemlayout height="45">
                     <control type="label">
-                        <posx>10</posx>
+                        <left>10</left>
                         <width>1160</width>
                         <aligny>center</aligny>
                         <align>left</align>
@@ -78,7 +78,7 @@
                         <texture>button.png</texture>
                     </control>
                     <control type="label">
-                        <posx>10</posx>
+                        <left>10</left>
                         <width>1160</width>
                         <aligny>center</aligny>
                         <align>left</align>
@@ -90,8 +90,8 @@
             </control>
         </control>
         <control type="image">
-            <posx>10</posx>
-            <posy>290</posy>
+            <left>10</left>
+            <top>290</top>
             <width>40</width>
             <height>40</height>
             <texture flipy="true">down_arrow.png</texture>
@@ -99,8 +99,8 @@
             <animation effect="fade" time="400">VisibleChange</animation>
         </control>
         <control type="image">
-            <posx>10</posx>
-            <posy>570</posy>
+            <left>10</left>
+            <top>570</top>
             <width>40</width>
             <height>40</height>
             <texture>down_arrow.png</texture>

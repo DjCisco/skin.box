@@ -21,8 +21,8 @@
             </animation>
             <!-- White Background Main Poster -->
 			<control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
+                <left>50</left>
+                <top>290</top>
                 <width>215</width>
                 <height>315</height>
                 <texture>white_box.png</texture>
@@ -30,8 +30,8 @@
                 <aspectratio scalediffuse="false">stretch</aspectratio>
              </control>
 			<control type="image">
-					<posx>50</posx>
-					<posy>290</posy>
+					<left>50</left>
+					<top>290</top>
 					<width>215</width>
 					<height>315</height>
 					<texture background="true">button.png</texture>
@@ -41,8 +41,8 @@
 					<bordersize>5</bordersize>
 				</control>
 			<control type="image">
-					<posx>50</posx>
-					<posy>290</posy>
+					<left>50</left>
+					<top>290</top>
 					<width>215</width>
 					<height>315</height>
 					<texture background="true">tile.png</texture>
@@ -53,8 +53,8 @@
 				</control>
             <!-- Main Poster from Icon-->
 			<control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
+                <left>50</left>
+                <top>290</top>
                 <width>215</width>
                 <height>315</height>
                 <texture background="true">$INFO[ListItem.Icon]</texture>
@@ -65,8 +65,8 @@
             </control>
 			 <!-- Main Poster from Poster-->
 			<control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
+                <left>50</left>
+                <top>290</top>
                 <width>215</width>
                 <height>315</height>
                 <texture background="true">$INFO[ListItem.Art(tvshow.poster)]</texture>
@@ -77,8 +77,8 @@
 			
 			 <!-- 
 			<control type="image" id="9200">
-                <posx>50</posx>
-                <posy>290</posy>
+                <left>50</left>
+                <top>290</top>
                 <width>215</width>
                 <height>315</height>
                 <texture fallback="blank.png" background="true">$INFO[ListItem.Path]$INFO[ListItem.Season,../season0,-poster.jpg]</texture>
@@ -87,8 +87,8 @@
                 <bordersize>5</bordersize>
             </control>
 			<control type="image" id="9201">
-                <posx>50</posx>
-                <posy>290</posy>
+                <left>50</left>
+                <top>290</top>
                 <width>215</width>
                 <height>315</height>
                 <texture fallback="blank.png" background="true">$INFO[ListItem.Path]$INFO[ListItem.Season,../season,-poster.jpg]</texture>
@@ -101,8 +101,8 @@
 
             <!-- Default Poster-->
 			<control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
+                <left>50</left>
+                <top>290</top>
                 <width>215</width>
                 <height>315</height>
                 <texture background="true">defaultvideo.png</texture>
@@ -113,8 +113,8 @@
             </control>
             <!-- Episodes Panel -->
 			<control type="panel" id="525">
-                <posx>270</posx>
-                <posy>290</posy>
+                <left>270</left>
+                <top>290</top>
                 <width>480</width>
                 <height>320</height>
                 <scrolltime>200</scrolltime>
@@ -174,16 +174,16 @@
                     <!-- Episode Number -->
 			        <control type="label">
                         <label>$INFO[ListItem.Episode]</label>
-                        <posx>220</posx>
-                        <posy>115</posy>
+                        <left>220</left>
+                        <top>115</top>
                         <height>30</height>
                         <width>145</width>
 						<font>Panel_Title_Footer</font>
                         <align>right</align>
                     </control>
 	                <control type="image">
-                        <posx>175</posx>
-                        <posy>-</posy>
+                        <left>175</left>
+                        <top>-</top>
                         <width>60</width>
                         <height>60</height>
                         <texture>watched.png</texture>
@@ -194,8 +194,8 @@
                         <visible>[Container.Content(Episodes) + stringcompare(ListItem.Overlay,OverlayWatched.png)] | [Container.Content(TVShows) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
                     </control>
                     <control type="image">
-                        <posx>175</posx>
-                        <posy>-</posy>
+                        <left>175</left>
+                        <top>-</top>
                         <width>60</width>
                         <height>60</height>
                         <texture>watching.png</texture>
@@ -254,16 +254,16 @@
 					<!-- Episode Number -->
 			        <control type="label">
                         <label>$INFO[ListItem.Episode]</label>
-                        <posx>220</posx>
-                        <posy>115</posy>
+                        <left>220</left>
+                        <top>115</top>
                         <height>30</height>
                         <width>145</width>
                         <font>Panel_Title_Footer</font>
                         <align>right</align>
                     </control>
 				    <control type="image">
-                        <posx>175</posx>
-                        <posy>0</posy>
+                        <left>175</left>
+                        <top>0</top>
                         <width>60</width>
                         <height>60</height>
                         <texture>watched.png</texture>
@@ -274,8 +274,8 @@
                         <visible>[Container.Content(Episodes) + stringcompare(ListItem.Overlay,OverlayWatched.png)] | [Container.Content(TVShows) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
                     </control>
                     <control type="image">
-                        <posx>175</posx>
-                        <posy>0</posy>
+                        <left>175</left>
+                        <top>0</top>
                         <width>60</width>
                         <height>60</height>
                         <texture>watching.png</texture>
@@ -289,8 +289,8 @@
             </control>
             <!-- Episode Title Season -->
 			<control type="label" id="140">
-				<posx>50</posx>
-                <posy>215</posy>
+				<left>50</left>
+                <top>215</top>
                 <height>30</height>
                 <width>1200</width>
                 <font>Panel_Title</font>
@@ -306,8 +306,8 @@
             </control>
 			<!-- Tv Show Title & Season -->
 			<control type="label">
-	            <posx>50</posx>
-                <posy>610</posy>
+	            <left>50</left>
+                <top>610</top>
                 <width>600</width>
                 <height>50</height>
                 <align>left</align>
@@ -318,8 +318,8 @@
             </control>
 			<!-- Description Field Background-->
             <control type="image">
-                <posx>760</posx>
-                <posy>290</posy>
+                <left>760</left>
+                <top>290</top>
                 <width>500</width>
                 <height>315</height>
                 <texture background="true">music_fanart_diffuse.png</texture>
@@ -328,8 +328,8 @@
             </control>
 			<!-- List Scrollbar -->
             <control type="scrollbar" id="63">
-                <posx>750</posx>
-                <posy>290</posy>
+                <left>750</left>
+                <top>290</top>
                 <width>5</width>
                 <height>315</height>
 				<onleft>525</onleft>
@@ -338,8 +338,8 @@
             </control>
             <!-- EPISODE DURATION -->
 			<control type="label">
-                <posx>780</posx>
-                <posy>300</posy>
+                <left>780</left>
+                <top>300</top>
                 <width>400</width>
                 <height>50</height>
                 <font>Panel_Description_Title</font>
@@ -348,9 +348,9 @@
 			</control>
 			<!-- Episode Aire Date -->
 			<control type="label">
-                <posx>1245</posx>
-                <posy>565</posy>
-                <width>400</width>
+                <left>960</left>
+                <top>565</top>
+                <width>280</width>
                 <height>25</height>
 				<align>right</align>
 				<font>Panel_Description_Footer</font>
@@ -360,8 +360,8 @@
             </control>
 			<!-- Episode Plot -->			
             <control type="textbox">
-                <posx>780</posx>
-                <posy>355</posy>
+                <left>780</left>
+                <top>355</top>
                 <width>460</width>
                 <height>190</height>
 				<font>Panel_Description</font>
@@ -372,17 +372,17 @@
             </control>
             <!-- Star Rating -->
 			<control type="image">
-                 <posx>780</posx>
-                <posy>565</posy>
+                 <left>780</left>
+                <top>565</top>
                 <width>100</width>
                 <height>25</height>
                 <texture>other_textures/colorrating/$INFO[ListItem.StarRating]</texture>
             </control>
             <!-- MPAA Rating -->
 			<control type="label">
-                <posx>1245</posx>
-                <posy>300</posy>
-                <width>400</width>
+                <left>1060</left>
+                <top>300</top>
+                <width>180</width>
                 <height>50</height>
                 <textcolor>Accent</textcolor>
 				<align>right</align>

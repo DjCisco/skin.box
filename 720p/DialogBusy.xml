@@ -11,11 +11,11 @@
             <animation type="WindowClose">
                 <effect type="slide" time="300" start="0,0" end="0,-30" easing="in" tween="cubic" />
             </animation>
-			<posx>0</posx>
-            <posy>0</posy>
+			<left>0</left>
+            <top>0</top>
 			<control type="image">
                 <description>Busy animation</description>
-                <posx>1230</posx>
+                <left>1230</left>
 				<width>30</width>
                 <height>30</height>
                 <texture>other_textures/busy.png</texture>
@@ -24,9 +24,9 @@
             </control>
             <control type="label">
                 <description>Busy label</description>
-                <posx>1225</posx>
-                <posy>0</posy>
-                <width>200</width>
+                <left>1000</left>
+                <top>0</top>
+                <width>225</width>
                 <height>32</height>
                 <align>right</align>
                 <font>Panel_Hint</font>

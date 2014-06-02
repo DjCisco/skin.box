@@ -4,8 +4,8 @@
     <allowoverlay>no</allowoverlay>
     <coordinates>
         <system>1</system>
-        <posx>0</posx>
-        <posy>0</posy>
+        <left>0</left>
+        <top>0</top>
     </coordinates>
     <controls>
         <include>HomeBackground</include>
@@ -19,41 +19,96 @@
                 <effect type="fade" time="300" />
                 <effect type="slide" start="+1500,0" time="300" />
             </animation>
-			<!-- Navigation Hint Extra Menu -->
+			<!-- Navigation Hint Extra Menu 
 		<control type="group">
 			<visible>[!Control.HasFocus(907)]</visible>
 			<control type="group">
 				<animation effect="slide" start="-35" end="0" time="300" tween="cubic" easing="inout">VisibleChange</animation>
 				<control type="image">
-					<posx>-5</posx>
-					<posy>340</posy>
+					<left>-5</left>
+					<top>340</top>
 					<width>35</width>
 					<height>55</height>
 					<texture>button.png</texture>
 				</control>
 				<control type="image">
-					<posx>-5</posx>
-					<posy>340</posy>
+					<left>-5</left>
+					<top>340</top>
 					<width>35</width>
 					<height>55</height>
 					<texture>tile.png</texture>
 				</control>
 				<control type="image">
-					<posx>-5</posx>
-					<posy>345</posy>
+					<left>-5</left>
+					<top>345</top>
 					<width>30</width>
 					<height>45</height>
 					<texture>button.png</texture>
 				</control>
 				<control type="image">
-					<posx>-15</posx>
-					<posy>340</posy>
+					<left>-15</left>
+					<top>340</top>
 					<width>55</width>
 					<height>55</height>
 					<texture flipx="true">icons/music.png</texture>
 				</control>
 			</control>
 		</control>
+		-->
+		
+		
+			<!-- Navigation Hint Extra Menu
+			<control type="group">
+				<animation effect="slide" end="-55" time="300">WindowClose</animation>
+				<animation effect="slide" start="-55" time="300">WindowOpen</animation>
+				<animation effect="slide" end="-55" condition="Window.IsVisible(favourites)" reversible="false">conditional</animation>
+				<animation effect="slide" start="-55" end="0" time="200" delay="100" condition="!Window.IsVisible(favourites)" reversible="false">conditional</animation>
+				
+				 -->
+				<control type="group">
+					<animation effect="slide" start="-55" end="0" time="200" delay="300">Visible</animation>
+					<visible>!Control.HasFocus(907)</visible>
+					<control type="image">
+						<left>0</left>
+						<top>345</top>
+						<width>25</width>
+						<height>45</height>
+						<texture>tile.png</texture>
+					</control>
+					<control type="image">
+						<left>-15</left>
+						<top>340</top>
+						<width>55</width>
+						<height>55</height>
+						<texture flipx="true">icons/music.png</texture>
+					</control>
+				</control>
+				<control type="group">
+					<animation effect="slide" start="-55" end="0" time="200" delay="300">Visible</animation>
+					<visible>Control.HasFocus(907)</visible>
+					<control type="image">
+						<left>0</left>
+						<top>345</top>
+						<width>25</width>
+						<height>45</height>
+						<texture>tile.png</texture>
+					</control>
+					<control type="image">
+						<left>-15</left>
+						<top>340</top>
+						<width>55</width>
+						<height>55</height>
+						<texture>icons/music.png</texture>
+					</control>
+				</control>
+				
+			<!--</control>-->	
+		
+		
+		
+		
+		
+		
             
         </control>
         <control type="group" id="2055">
@@ -89,7 +144,7 @@
 				<control id="907">
 					<type>button</type>
 					<label>$LOCALIZE[13005]</label>
-					<posx>1</posx>
+					<left>1</left>
 					<width>155</width>
 					<height>155</height>
 					<align>left</align>
@@ -111,8 +166,8 @@
 				</animation>
 				<!-- Up Arrow Image -->    
 				<control type="image">
-					<posx>105</posx>
-					<posy>245</posy>
+					<left>105</left>
+					<top>245</top>
 					<width>45</width>
 					<height>45</height>
 					<texture flipy="true">down_arrow.png</texture>
@@ -121,8 +176,8 @@
 				</control>
 				<!-- Down Arrow Image -->  
 				<control type="image">
-					<posx>105</posx>
-					<posy>445</posy>
+					<left>105</left>
+					<top>445</top>
 					<width>45</width>
 					<height>45</height>
 					<texture>down_arrow.png</texture>
@@ -131,8 +186,8 @@
 				</control>
 				<control type="label">
 					<label>[B][UPPERCASE]$INFO[ListItem.Label][/UPPERCASE][/B]</label>
-					<posx>210</posx>
-					<posy>250</posy>
+					<left>210</left>
+					<top>250</top>
 					<width>1200</width>
 					<font>UserLogin</font>
 					<align>left</align>
@@ -140,8 +195,8 @@
 				</control>
 				<control type="label">
 					<label>[B][COLOR Accent]$INFO[ListItem.Label2][/COLOR][/B]</label>
-					<posx>210</posx>
-					<posy>390</posy>
+					<left>210</left>
+					<top>390</top>
 					<width>1200</width>
 					<font>UserLoginSubtitle</font>
 					<align>left</align>
@@ -177,8 +232,8 @@
 							<visible>!SubString(ListItem.Icon,unknown-user)</visible>
 						</control>
 						<control type="image">
-								<posx>17</posx>
-								<posy>17</posy>
+								<left>17</left>
+								<top>17</top>
 								<height>120</height>
 								<width>120</width>
 							<aspectratio scalediffuse="false">stretch</aspectratio>
@@ -226,13 +281,12 @@
 								<visible>!SubString(ListItem.Icon,unknown-user)</visible>
 							</control>
 							<control type="image">
-								<posx>17</posx>
-								<posy>17</posy>
+								<left>17</left>
+								<top>17</top>
 								<height>120</height>
 								<width>120</width>
 								<aspectratio scalediffuse="false">stretch</aspectratio>
 								<texture>DefaultUser.png</texture>
-								<aspectratio>scale</aspectratio>
 								<visible>SubString(ListItem.Icon,unknown-user)</visible>
 							</control>
 						</control>

@@ -13,24 +13,24 @@
             </animation>
             <!-- This Control displays the background behind the track title-->
 			<control type="image">
-                <posx>420</posx>
-                <posy>290</posy>
+                <left>420</left>
+                <top>290</top>
                 <width>685</width>
                 <height>315</height>
                 <texture>music_fanart_diffuse.png</texture>
              </control>
 			<!-- This Control displays the background behind the track rating-->
 			<control type="image">
-                <posx>1120</posx>
-                <posy>290</posy>
+                <left>1120</left>
+                <top>290</top>
                 <width>140</width>
                 <height>315</height>
                 <texture>other_textures/black-back.png</texture>
              </control>
 			<!-- This Control displays the background behind the track number-->
 			<control type="image">
-                <posx>370</posx>
-                <posy>290</posy>
+                <left>370</left>
+                <top>290</top>
                 <width>45</width>
                 <height>315</height>
                 <texture>other_textures/black-back.png</texture>
@@ -38,8 +38,8 @@
 			<!-- This Control displays the list of songs-->
             <control type="fixedlist" id="503">
                 <viewtype label="List">Song View</viewtype>
-				<posx>370</posx>
-                <posy>290</posy>
+				<left>370</left>
+                <top>290</top>
                 <width>890</width>
                 <height>315</height>
 				<movement>3</movement>
@@ -56,7 +56,7 @@
 				<itemlayout height="45">
                     <!-- This Control displays the Track Number-->
 					<control type="label">
-                        <posx>22</posx>
+                        <left>22</left>
                         <width>45</width>
 						<font>List_Unfocused</font>
                         <align>center</align>
@@ -64,13 +64,13 @@
                     </control>
 					<!-- This Control displays the Track Title-->
                     <control type="label">
-                        <posx>65</posx>
+                        <left>65</left>
                         <width>645</width>
 						<font>List_Unfocused</font>
                         <label>$INFO[ListItem.Title]</label>
                     </control>
 					<control type="label">
-                        <posx>65</posx>
+                        <left>65</left>
                         <width>730</width>
 						<font>List_Unfocused</font>
                         <label>$INFO[ListItem.Label]</label>
@@ -78,15 +78,15 @@
 					</control>
                     <!-- This Control displays the Track Rating-->
 					<control type="image">
-                        <posx>770</posx>
-                        <posy>10</posy>
+                        <left>770</left>
+                        <top>10</top>
                         <width>100</width>
                         <height>25</height>
 						<texture>other_textures/colorrating/$INFO[ListItem.StarRating]</texture>
                     </control>
                     <!-- This Control displays the Track Duration-->
 					<control type="label">
-                        <posx>715</posx>
+                        <left>715</left>
                         <align>right</align>
                         <width>100</width>
 						<font>List_Unfocused</font>
@@ -96,7 +96,7 @@
                 <focusedlayout height="45">
                     <!-- This Control displays the Focused Track Title Highlighted Bg-->
 					<control type="image">
-                        <posx>50</posx>
+                        <left>50</left>
 						<width>685</width>
                         <height>45</height>
                         <texture>button.png</texture>
@@ -107,7 +107,7 @@
                         <texture>button.png</texture>
                     </control>
 					<control type="image">
-					     <posx>750</posx>
+					     <left>750</left>
                         <width>140</width>
                         <height>45</height>
                         <texture>button.png</texture>
@@ -119,14 +119,14 @@
                         <texture border="5">tile.png</texture>
                     </control>
 					<control type="image">
-                        <posx>750</posx>
+                        <left>750</left>
 						<width>140</width>
                         <height>45</height>
                         <texture border="5">tile.png</texture>
                     </control>
 					<!-- This Control displays the Focused Track Nr-->
                     <control type="label">
-                        <posx>22</posx>
+                        <left>22</left>
                         <width>45</width>
                         <align>center</align>
 						<font>List_Focused</font>
@@ -135,14 +135,14 @@
                     </control>
                     <!-- This Control displays the Focused Track Title-->
 					<control type="label">
-                        <posx>65</posx>
+                        <left>65</left>
                         <width>645</width>
 						<font>List_Focused</font>
 						<selectedcolor>White</selectedcolor>
                         <label>$INFO[ListItem.Title]</label>
 					</control>
 						<control type="label">
-                        <posx>65</posx>
+                        <left>65</left>
                         <width>730</width>
 						<font>List_Focused</font>
 						<selectedcolor>White</selectedcolor>
@@ -151,15 +151,15 @@
                     </control>
                     <!-- This Control displays the Focused Track Rating-->
 					<control type="image">
-                        <posx>770</posx>
-                        <posy>10</posy>
+                        <left>770</left>
+                        <top>10</top>
                         <width>100</width>
                         <height>25</height>
 						<texture>other_textures/colorrating/$INFO[ListItem.StarRating]</texture>
                     </control>
                     <!-- This Control displays the Focused Track Duration-->
 					<control type="label">
-                        <posx>715</posx>
+                        <left>715</left>
                         <align>right</align>
                         <width>100</width>
 						<font>List_Focused</font>
@@ -170,8 +170,8 @@
             </control>
             <!-- This Control displays the scrollbar managing the song list-->
 			<control type="scrollbar" id="63">
-                <posx>1110</posx>
-                <posy>290</posy>
+                <left>1110</left>
+                <top>290</top>
                 <width>5</width>
                 <height>315</height>
 				<onleft>503</onleft>
@@ -179,8 +179,8 @@
             <!-- This Control displays the Album Title-->
 			<control type="label">
                 <label>$INFO[ListItem.Album]</label>
-                <posx>50</posx>
-                <posy>215</posy>
+                <left>50</left>
+                <top>215</top>
                 <height>30</height>
                 <width>885</width>
                 <font>Panel_Title</font>
@@ -193,8 +193,8 @@
 			<!-- This Control displays the Album Year-->
 			<control type="label">
                 <label>[COLOR Accent]$INFO[ListItem.Year][/COLOR]</label>
-                <posx>1145</posx>
-                <posy>215</posy>
+                <left>1145</left>
+                <top>215</top>
                 <height>30</height>
                 <width>100</width>
                 <font>Panel_Title</font>
@@ -205,59 +205,16 @@
                 <aligny>top</aligny>
 				<align>left</align>
             </control>
-            <!-- This Control displays the Album Artists-->
-			<control type="label">
-                <posx>50</posx>
-                <posy>610</posy>
-                <width>600</width>
-                <height>50</height>
-                <align>left</align>
-				<aligny>top</aligny>
-                <font>Panel_Title_Footer</font>
-                <label>$INFO[ListItem.Artist]</label>
+
+            <include>ArtistAlbumPanelCover</include>
+			
+			<!-- This control displays the Footer Text below the main Poster-->
+            <control type="label">
+				<include>ViewFooterTitle</include>	
+                <label>$VAR[PanelFooterText]</label>
             </control>
-            <!-- This Control displays a white background behind the album poster-->
-			<control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
-                <width>315</width>
-                <height>315</height>
-                <texture>white_box.png</texture>
-                <aspectratio>stretch</aspectratio>
-             </control>
-			 <control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
-                <width>315</width>
-                <height>315</height>
-                <texture>button.png</texture>
-                <aspectratio>stretch</aspectratio>
-                <visible>true</visible>
-                <bordersize>5</bordersize>
-				<visible>StringCompare(ListItem.Label,..)</visible>
-            </control>
-			 <control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
-                <width>315</width>
-                <height>315</height>
-                <texture>tile.png</texture>
-                <aspectratio>stretch</aspectratio>
-                <visible>true</visible>
-                <bordersize>5</bordersize>
-				<visible>StringCompare(ListItem.Label,..)</visible>
-            </control>
-            <!-- This Control displays  the album poster-->
-			<control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
-                <width>315</width>
-                <height>315</height>
-                <texture>$INFO[ListItem.Icon]</texture>
-                <aspectratio>stretch</aspectratio>
-                <visible>true</visible>
-                <bordersize>5</bordersize>
-            </control>
-        </control>
+             
+		
+		</control>
     </include>
 </includes>

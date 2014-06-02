@@ -12,8 +12,8 @@
             </animation>
             <control type="image">
                 <description>background image</description>
-                <posx>0</posx>
-                <posy>0</posy>
+                <left>0</left>
+                <top>0</top>
                 <width>1280</width>
                 <height>30</height>
                 <aspectratio>scale</aspectratio>
@@ -21,8 +21,8 @@
             </control>
             <control type="label" id="401">
                 <description>heading</description>
-                <posx>350</posx>
-                <posy>5</posy>
+                <left>350</left>
+                <top>5</top>
                 <width>580</width>
                 <label></label>
 				<font>-</font>
@@ -33,8 +33,8 @@
             </control>
             <control type="label" id="402">
                 <description>message</description>
-                <posx>350</posx>
-                <posy>25</posy>
+                <left>350</left>
+                <top>25</top>
                 <width>580</width>
                 <label></label>
                 <scroll>true</scroll>
@@ -42,9 +42,9 @@
 				<aligny>top</aligny>
 				<align>center</align>
             </control>
-			<control type="label" description="Message">
-				<posx>30</posx>
-				<posy>0</posy>
+			<control type="label">
+				<left>30</left>
+				<top>0</top>
 				<height>30</height>
 				<width>1280</width>
 				<scroll>true</scroll>
@@ -53,8 +53,8 @@
 			</control>
 			<control type="image" id="400">
 				<description>avatar</description>
-				<posx>2</posx>
-				<posy>2</posy>
+				<left>2</left>
+				<top>2</top>
 				<width>25</width>
 				<height>25</height>
 				<aspectratio>keep</aspectratio>
@@ -62,8 +62,8 @@
 			</control>
 			<control type="image" id="403">
 				<description>avatar</description>
-				<posx>2</posx>
-				<posy>2</posy>
+				<left>2</left>
+				<top>2</top>
 				<width>25</width>
 				<height>25</height>
 				<aspectratio>keep</aspectratio>
@@ -72,8 +72,8 @@
 			</control>
 			<control type="image" id="404">
 				<description>avatar</description>
-				<posx>2</posx>
-				<posy>2</posy>
+				<left>2</left>
+				<top>2</top>
 				<width>25</width>
 				<height>25</height>
 				<aspectratio>keep</aspectratio>
@@ -82,8 +82,8 @@
 			</control>
 			<control type="image" id="405">
 				<description>avatar</description>
-				<posx>2</posx>
-				<posy>2</posy>
+				<left>2</left>
+				<top>2</top>
 				<width>25</width>
 				<height>25</height>
 				<aspectratio>keep</aspectratio>

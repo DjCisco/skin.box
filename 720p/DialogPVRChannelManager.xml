@@ -19,20 +19,20 @@
                 <effect type="slide" start="+1500,0" time="300" />
             </animation>
             <control type="label">
-				<posx>180</posx>
+				<left>180</left>
 				<include>ViewMainTitle</include>
                 <label>$LOCALIZE[19199]</label>
             </control>
             <control type="image">
-				<posx>25</posx>
-				<posy>440</posy>
+				<left>25</left>
+				<top>440</top>
 				<width>145</width>
 				<height>165</height>
 				<texture>tile.png</texture>
 			</control>
 			<control type="image">
-				<posx>25</posx>
-				<posy>445</posy>
+				<left>25</left>
+				<top>445</top>
 				<width>145</width>
 				<height>145</height>
 				<texture>DefaultTvChannels.png</texture>
@@ -40,8 +40,8 @@
                 <visible>IsEmpty(Window.Property(IsRadio))</visible>
             </control>
             <control type="image">
-				<posx>25</posx>
-				<posy>445</posy>
+				<left>25</left>
+				<top>445</top>
 				<width>145</width>
 				<height>145</height>
 				<texture>DefaultRadio.png</texture>
@@ -50,8 +50,8 @@
             </control>
             <!-- Channel List -->
 			<control type="group">
-                <posx>180</posx>
-                <posy>290</posy>
+                <left>180</left>
+                <top>290</top>
                 <!--  Channel Nr Backgroud -->
 				<control type="image">
                     <width>45</width>
@@ -60,7 +60,7 @@
                 </control>
 				<!--  Channel Name Backgroud -->
 				<control type="image">
-					<posx>50</posx>
+					<left>50</left>
                     <width>300</width>
                     <height>315</height>
                     <texture>music_fanart_diffuse.png</texture>
@@ -77,16 +77,16 @@
                     <scrolltime>200</scrolltime>
                     <itemlayout height="45" width="350">
                         <control type="label">
-							<posx>22</posx>
+							<left>22</left>
 							<width>45</width>
 							<align>center</align>
-							<font>List_PVR</font>
+							<font>List_Unfocused</font>
 							<label>$INFO[ListItem.Property(Number)]</label>
 						</control>
 						<control type="label">
-							<posx>60</posx>
+							<left>60</left>
 							<width>280</width>
-							<font>List_PVR</font>
+							<font>List_Unfocused</font>
 							<label>$INFO[ListItem.Property(Name)]</label>
 						</control>
 					</itemlayout>
@@ -94,48 +94,44 @@
                         <control type="image">
                             <width>45</width>
                             <height>45</height>
-                            <texture>button.png</texture>
-                            <animation effect="fade" start="100" end="50" time="0" condition="!Control.HasFocus(20)">conditional</animation>
-                        </control>
-						<control type="image">
-                            <width>45</width>
-                            <height>45</height>
                             <texture>tile.png</texture>
                             <animation effect="fade" start="100" end="50" time="0" condition="!Control.HasFocus(20)">conditional</animation>
                         </control>
                         <control type="image">
-                            <posx>50</posx>
+                            <left>50</left>
 							<width>300</width>
                             <height>45</height>
-                            <texture>button.png</texture>
+                            <texture>tile.png</texture>
                             <animation effect="fade" start="100" end="50" time="0" condition="!Control.HasFocus(20)">conditional</animation>
                         </control>
                         <control type="label">
-							<posx>22</posx>
+							<left>22</left>
 							<width>45</width>
 							<align>center</align>
-							<font>List_PVR</font>
+							<font>List_Focused</font>
 							<label>$INFO[ListItem.Property(Number)]</label>
+							<textcolor>Accent</textcolor>
 						</control>
 						<control type="label">
-							<posx>60</posx>
+							<left>60</left>
 							<width>280</width>
-							<font>List_PVR</font>
+							<font>List_Focused</font>
 							<label>$INFO[ListItem.Property(Name)]</label>
+							<textcolor>Accent</textcolor>
 						</control>
                     </focusedlayout>
                 </control>
             </control>
           	<control type="image">
-					<posx>545</posx>
-					<posy>290</posy>
+					<left>545</left>
+					<top>290</top>
 					<width>450</width>
 					<height>315</height>
 					<texture>music_fanart_diffuse.png</texture>
 			</control>
 			<control type="image">
-				<posx>545</posx>
-				<posy>335</posy>
+				<left>545</left>
+				<top>335</top>
 				<width>450</width>
 				<height>45</height>
 				<texture>other_textures/buttonfo.png</texture>
@@ -143,32 +139,30 @@
 			</control>
 			<!-- Channel Settings List -->
 			<control type="group" id="9002">
-				<posx>545</posx>
-				<posy>290</posy>
+				<left>545</left>
+				<top>290</top>
 				<orientation>vertical</orientation>
 				<control type="radiobutton" id="7">
 					<description>Channel activated</description>
 					<width>450</width>
 					<height>45</height>
 					<align>left</align>
-					<font>List_PVR</font>
+					<font>List_Settings</font>
 					<label>19074</label>
 					<onleft>20</onleft>
 					<onright>9003</onright>
 					<onup>31</onup>
 					<ondown>8</ondown>
 					<focusedcolor>Accent</focusedcolor>
-					<textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
-					<textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
 				</control>
 				<control type="edit" id="8">
 					<description>Channel name</description>
-					<posx>20</posx>
-					<posy>45</posy>
+					<left>20</left>
+					<top>45</top>
 					<width>410</width>
 					<height>45</height>
 					<aligny>center</aligny>
-					<font>List_PVR</font>
+					<font>List_Settings</font>
 					<textcolor>white</textcolor>
 					<focusedcolor>Accent</focusedcolor>
 					<label>19201</label>
@@ -179,23 +173,21 @@
 				</control>
 				<control type="radiobutton" id="12">
 					<description>EPG activated</description>
-					<posy>90</posy>
+					<top>90</top>
 					<width>450</width>
 					<height>45</height>
 					<align>left</align>
-					<font>List_PVR</font>
+					<font>List_Settings</font>
 					<label>19206</label>
 					<onright>9003</onright>
 					<onleft>20</onleft>
 					<onup>8</onup>
 					<ondown>13</ondown>
 					<focusedcolor>Accent</focusedcolor>
-					<textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
-					<textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
 				</control>
 				<control type="spincontrolex" id="13">
 					<description>EPG source</description>
-					<posy>135</posy>
+					<top>135</top>
 					<width>450</width>
 					<height>45</height>
 					<label>19200</label>
@@ -203,7 +195,7 @@
 					<onleft>20</onleft>
 					<onup>12</onup>
 					<ondown>14</ondown>
-					<font>List_PVR</font>
+					<font>List_Settings</font>
 					<focusedcolor>Accent</focusedcolor>
 					<textureup>other_textures/arrowupfo.png</textureup>
 					<texturedown>other_textures/arrowdownfo.png</texturedown>
@@ -212,28 +204,25 @@
 				</control>
 				<control type="radiobutton" id="14">
 					<description>Parental locked</description>
-					<posy>180</posy>
+					<top>180</top>
 					<width>450</width>
 					<height>45</height>
 					<align>left</align>
-					<font>List_PVR</font>
+					<font>List_Settings</font>
 					<label>19267</label>
 					<onright>9003</onright>
 					<onleft>20</onleft>
 					<onup>13</onup>
 					<ondown>9</ondown>
 					<focusedcolor>Accent</focusedcolor>
-					<textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
-					<textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
 				</control>
 				<control type="button" id ="9">
 					<description>Channel logo Button</description>
-					<posy>225</posy>
+					<top>225</top>
 					<width>450</width>
 					<height>90</height>
-					<font>List_PVR</font>
+					<font>List_Settings</font>
 					<focusedcolor>Accent</focusedcolor>
-					<texture>other_textures/buttonfo.png</texture>
 					<label>19202</label>
 					<align>left</align>
 					<aligny>top</aligny>
@@ -246,8 +235,8 @@
 			<!-- Channel Logo -->
 			<control type="image" id ="10">
 				<description>Current Channel Icon</description>
-				<posx>885</posx>
-				<posy>515</posy>
+				<left>885</left>
+				<top>515</top>
 				<width>90</width>
 				<height>90</height>
 				<aspectratio>keep</aspectratio>
@@ -255,8 +244,8 @@
 			</control>
 			<!-- Edit , delete and add channel bttons-->
 			<control type="grouplist" id="9003">
-				<posx>1000</posx>
-				<posy>290</posy>
+				<left>1000</left>
+				<top>290</top>
 				<onup>9010</onup>
 				<ondown>9010</ondown>
 				<onright>4</onright>
@@ -269,6 +258,7 @@
 					<label>19203</label>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
 				</control>
 				<control type="button" id="32">
 					<description>Delete channel Button</description>
@@ -277,6 +267,7 @@
 					<label>19211</label>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
 				</control>
 				<control type="button" id="33">
 					<description>New channel Button</description>
@@ -285,12 +276,13 @@
 					<label>19204</label>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
 				</control>
 			</control>
 			<!-- Group Management & Radio Channels Buttons-->
 			<control type="grouplist" id="9010">
-				<posx>1000</posx>
-				<posy>510</posy>
+				<left>1000</left>
+				<top>510</top>
 				<width>230</width>
 				<height>145</height>
 				<itemgap>5</itemgap>
@@ -305,6 +297,7 @@
 					<font>Panel_Info</font>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
 				</control>
 				<control type="button" id="34">
 					<description>TV/Radio Button</description>
@@ -314,6 +307,7 @@
 					<font>Panel_Info</font>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
 				</control>
 				<control type="button" id="34">
 					<description>TV/Radio Button</description>
@@ -323,12 +317,13 @@
 					<font>Panel_Info</font>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
 				</control>
 			</control>
             <!-- Channel List Scrollbar -->
 			<control type="scrollbar" id="60">
-                <posx>535</posx>
-                <posy>290</posy>
+                <left>535</left>
+                <top>290</top>
                 <width>5</width>
                 <height>315</height>
                 <texturesliderbackground></texturesliderbackground>
@@ -341,8 +336,8 @@
             </control>
             <!-- OK, Apply and Cancel Buttons -->
 			<control type="grouplist" id="9000">
-                <posx>25</posx>
-				<posy>290</posy>
+                <left>25</left>
+				<top>290</top>
 				<width>145</width>
 				<height>145</height>
 				<itemgap>5</itemgap>
@@ -357,6 +352,7 @@
 					<align>center</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
                 </control>
                 <control type="button" id="5">
                     <description>Apply changes Button</description>
@@ -367,6 +363,7 @@
 					<align>center</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
                 </control>
                 <control type="button" id="6">
                     <description>Cancel Button</description>
@@ -377,6 +374,7 @@
 					<align>center</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
                 </control>
             </control>
         </control>

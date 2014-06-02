@@ -3,23 +3,26 @@
 	<allowoverlay>yes</allowoverlay>
 	<controls>
 		<include>GlobalOverlay</include>
-		<!-- Dialog Background -->
+	
 		<control type="group">
 			<include>BigDialogCoordinates</include>
 			<include>BigDialogBackground</include>
-		</control>
-		
-		<control type="group">
-			<include>BigDialogCoordinates</include>
+			<control type="image">
+				<left>25</left>
+                <top>60</top>
+                <width>610</width>
+                <height>315</height>
+				<texture>tile.png</texture>
+			</control>
 			<control type="label" id="1">
 				<description>Header Label</description>
-				<posx>25</posx>
-                <posy>15</posy>
-                <width>650</width>
+				<left>25</left>
+                <top>15</top>
+                <width>610</width>
                 <align>center</align>
 				<aligny>top</aligny>
                 <font>Panel_Description_Title</font>
-				<label>$LOCALIZE[31736] $LOCALIZE[5]</label>
+				<label>5</label>
 			</control>
 			<control type="button" id="7">
 				<description>Default Button</description>
@@ -27,32 +30,27 @@
                 <align>left</align>
 				<textoffsetx>10</textoffsetx>
 				<font>Panel_Info</font>
-				<texturefocus>button.png</texturefocus>
-				<texturenofocus>tile.png</texturenofocus>
-
+				<texturefocus>tile.png</texturefocus>
 			</control>
 			<control type="radiobutton" id="8">
 				<description>Default RadioButton</description>
 				<width>610</width>
                 <align>left</align>
                 <font>Panel_Info</font>
-				<texturefocus>button.png</texturefocus>
-				<texturenofocus>tile.png</texturenofocus>
+				<texturefocus>tile.png</texturefocus>
 			</control>
 			<control type="spincontrolex" id="9">
 				<description>Default SpinControlex</description>
 				<width>610</width>
                 <align>left</align>
                 <font>Panel_Info</font>
-				<texturefocus>button.png</texturefocus>
-				<texturenofocus>tile.png</texturenofocus>
+				<texturefocus>tile.png</texturefocus>
 			</control>
 			<control type="sliderex" id="10">
 				<description>Default Slider</description>
 				<align>left</align>
                 <font>Panel_Info</font>
-				<texturefocus>button.png</texturefocus>
-				<texturenofocus>tile.png</texturenofocus>
+				<texturefocus>tile.png</texturefocus>
 				<texturesliderbar>other_textures/osd/slider_bg_3.png</texturesliderbar>
 				<textureslidernib border="2">other_textures/osd/slidernibnf.png</textureslidernib>
 				<textureslidernibfocus border="2">other_textures/osd/slidernibnf.png</textureslidernibfocus>
@@ -60,17 +58,18 @@
 			<!-- List Controlling Above Definitions-->
 			<control type="grouplist" id="5">
 				<description>Control Area</description>
-				<posx>25</posx>
-                <posy>60</posy>
+				<left>25</left>
+                <top>60</top>
                 <width>610</width>
                 <height>315</height>
+				<itemgap>0</itemgap>
 				<pagecontrol>60</pagecontrol>
 				<onup>9000</onup>
 				<ondown>9000</ondown>
 			</control>
 			<control type="grouplist" id="9000">
-				<posx>45</posx>
-				<posy>390</posy>
+				<left>45</left>
+				<top>390</top>
                 <itemgap>10</itemgap>
 				<orientation>horizontal</orientation>
 				<onup>5</onup>
@@ -81,6 +80,7 @@
 					<label>$LOCALIZE[222]</label>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
 					<font>Panel_Hint</font>
 				</control>
 				<control type="button" id="28">
@@ -89,6 +89,7 @@
 					<label>$LOCALIZE[186]</label>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
 					<font>Panel_Hint</font>
 				</control>
 				<control type="button" id="50">
@@ -97,6 +98,7 @@
 					<label>$LOCALIZE[409]</label>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
 					<font>Panel_Hint</font>
 				</control>
 			</control>

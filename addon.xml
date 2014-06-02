@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon 
-	id="skin.BOX"
-	version="1.0.0"
-	name="BOX"
+	id="skin.BOX14"
+	version="2.1.0"
+	name="BOX14"
 	provider-name="DjCisco">
 	<requires>
-		<import addon="xbmc.gui" version="4.0.0"/>
-		<import addon="script.xbmc.subtitles" version="3.9.4"/>
-		<import addon="service.skin.widgets" version="0.0.14"/>
+		<import addon="xbmc.gui" version="5.0.1"/>
+		<import addon="service.skin.widgets" version="0.0.29"/>
 	</requires>
 	<extension
 		point="xbmc.gui.skin"

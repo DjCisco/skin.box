@@ -21,8 +21,8 @@
 				<!-- This Control defines the Albums Panel-->
 				<control type="panel" id="519">
 					<viewtype label="Thumb Info">info</viewtype>
-					<posx>370</posx>
-					<posy>290</posy>
+					<left>370</left>
+					<top>290</top>
 					<width>400</width>
 					<height>320</height>
 					<scrolltime>200</scrolltime>
@@ -32,157 +32,50 @@
 					<pagecontrol>61</pagecontrol>
 					<preloaditems>2</preloaditems>
 					<visible>Window.IsActive(1) | Container.Content(Albums)</visible>
-					 <!-- This Control defines the unfocius layout of the panel items-->
-					<itemlayout width="80" height="80">
-						<control type="image">
-							<posx></posx>
-							<posy></posy>
-							<width>75</width>
-							<height>75</height>
-							<texture background="true">tile.png</texture>
-							<aspectratio scalediffuse="false">stretch</aspectratio>
-						</control>
-						<control type="image">
-							<posx></posx>
-							<posy></posy>
-							<width>75</width>
-							<height>75</height>
-							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<colordiffuse>ImageDiffuse</colordiffuse>
-							<bordersize>5</bordersize>
-							<aspectratio scalediffuse="false">stretch</aspectratio>
-						</control>
-					</itemlayout>
-					 <!-- This Control defines the focused layout of the panel items-->
-					<focusedlayout width="80" height="80">
-						<control type="image">
-							<posx></posx>
-							<posy></posy>
-							<width>75</width>
-							<height>75</height>
-							<texture background="true">button.png</texture>
-							<aspectratio scalediffuse="false">stretch</aspectratio>
-						</control>
-						<control type="image">
-							<posx></posx>
-							<posy></posy>
-							<width>75</width>
-							<height>75</height>
-							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<bordersize>5</bordersize>
-							<aspectratio scalediffuse="false">stretch</aspectratio>
-						</control>
-					</focusedlayout>
+					 <!-- This Control defines the unfocused layout of the panel items-->
+					 <include>AlbumPanelItemLayout</include>
+					<!-- This Control defines the focused layout of the panel items-->
+					<include>AlbumPanelFocusedLayout</include>
 				</control>
 				 	
-			<!-- This Control display a white box behind the main big album poster-->
-			<control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
-                <width>315</width>
-                <height>315</height>
-                <texture>white_box.png</texture>
-                <fadetime>200</fadetime>
-                <aspectratio scalediffuse="false">stretch</aspectratio>
-                <visible>!StringCompare(ListItem.Album, )</visible>
-            </control>
-			<!-- This Control display a  the main big album poster-->
-            <control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
-                <width>315</width>
-                <height>315</height>
-                <texture>$INFO[ListItem.Icon]</texture>
-                <fadetime>200</fadetime>
-                <aspectratio scalediffuse="false">stretch</aspectratio>
-                <visible>true</visible>
-                <bordersize>5</bordersize>
-            </control>
-            <!-- This Control defines the Background of the Description Field-->
-			<control type="image">
-                <posx>780</posx>
-                <posy>290</posy>
-                <width>480</width>
-                <height>315</height>
-                <texture>music_fanart_diffuse.png</texture>
-                <fadetime>200</fadetime>
-                <aspectratio scalediffuse="false">stretch</aspectratio>
-            </control>
+			
+			<include>ArtistAlbumPanelCover</include>
+			
             <!-- This Control defines the scrollbar managing the Albums panel-->
 			<control type="scrollbar" id="61">
-                <posx>770</posx>
-                <posy>290</posy>
+                <left>770</left>
+                <top>290</top>
                 <width>5</width>
                 <height>315</height>
 				<onleft>519</onleft>
                 <showonepage>true</showonepage>
                 <orientation>vertical</orientation>
-            </control>
+		    </control>
             <!-- This Control displays the Name of the Album on Top of the Main Poster-->
 			<control type="label">
                 <label>$INFO[ListItem.Album]</label>
-                <posx>50</posx>
-                <posy>215</posy>
+                <left>50</left>
+                <top>215</top>
                 <height>30</height>
-                <width>600</width>
+                <width>1100</width>
 				<aligny>top</aligny>
                 <font>Panel_Title</font>
                 <align>left</align>
                 <visible>Container.Content(Albums)</visible>
             </control>
-			 <!-- This control displays the Year of the album on the description field-->
-			<control type="label">
-                <posx>1245</posx>
-                <posy>300</posy>
-                <width>400</width>
-                <height>50</height>
-                <textcolor>Accent</textcolor>
-				<align>right</align>
-				<font>Panel_Description_Title</font>
-                <label>$INFO[ListItem.Year]</label>
-                <visible>Container.Content(Albums)</visible>
+			 
+			<!-- This control displays the Footer Text below the main Poster-->
+            <control type="label">
+				<include>ViewFooterTitle</include>	
+                <label>$VAR[PanelFooterText]</label>
             </control>
-			<!-- This Control displays the Name of the Artist Currently Selected on the bottom of the Main Poster-->
-			<control type="label" id="144">
-                <posx>50</posx>
-                <posy>610</posy>
-                <width>465</width>
-                <height>50</height>
-                <font>Panel_Title_Footer</font>
-                <scroll>true</scroll>
-                <scrollout>false</scrollout>
-                <pauseatend>600</pauseatend>
-                <scrollspeed>50</scrollspeed>
-                <label>$INFO[ListItem.Artist]</label>
-                <visible>Container.Content(albums)</visible>
-            </control>
-             <!-- This Control displays the Description of the Album and Year on the description field-->
-			<control type="textbox">
-                <posx>795</posx>
-                <posy>350</posy>
-                <width>450</width>
-                <height>215</height>
-                <info>ListItem.Property(Album_Description)</info>
-                <align>justify</align>
-                <autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
-                <font>Panel_Description</font>
-                <visible>!IsEmpty(ListItem.Property(Album_Description))</visible>
-			</control>
-            <!-- This Control displays the genre-->
-			<control type="label">
-                <posx>800</posx>
-                <posy>570</posy>
-                <width>600</width>
-                <height>50</height>
-                <aligny>left</aligny>
-                <font>Panel_Description_Footer</font>
-                <label>$LOCALIZE[515]: [COLOR Accent]$INFO[ListItem.Genre][/COLOR]</label>
-                <visible>Container.Content(Albums) + !IsEmpty(ListItem.Genre)</visible>
-			</control>
-            
-			<control type="label">
-                <posx>796</posx>
-                <posy>320</posy>
+			
+			<include>ArtistAlbumPanelDescription</include>	
+			
+			
+            <control type="label">
+                <left>796</left>
+                <top>320</top>
                 <width>485</width>
                 <height>50</height>
                 <align>center</align>

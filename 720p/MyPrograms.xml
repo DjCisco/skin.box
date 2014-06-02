@@ -5,14 +5,15 @@
     <views>50,51</views>
     <controls>
         <include>HomeBackground</include>
+		<include>BarClock</include>
         <include>View_50_List</include>
 		<include>View_51_List</include>
         <control type="image">
             <animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">
                 <effect type="fade" time="300" start="100" end="0" />
             </animation>
-            <posx>0</posx>
-            <posy>0</posy>
+            <left>0</left>
+            <top>0</top>
             <width>1280</width>
             <height>720</height>
             <texture border="2">other_textures/black-back.png</texture>
@@ -29,8 +30,8 @@
             </control>
         </control>
         <control type="grouplist" id="9000">
-            <posx>20</posx>
-            <posy>70</posy>
+            <left>20</left>
+            <top>70</top>
             <width>280</width>
             <height>500</height>
             <itemgap>0</itemgap>
@@ -46,15 +47,13 @@
                 <description>View</description>
                 <width>280</width>
                 <align>left</align>
-				<font>Window_Settings</font>
-				<texturefocus>button.png</texturefocus>
+				<font>List_Left_Menu</font>
             </control>
             <control type="button" id="3">
                 <description>Sort</description>
                 <width>280</width>
                 <align>left</align>
-				<font>Window_Settings</font>
-				<texturefocus>button.png</texturefocus>
+				<font>List_Left_Menu</font>
             </control>
             <control type="togglebutton" id="4">
                 <description>Ascending</description>
@@ -62,18 +61,7 @@
                 <align>left</align>
                 <label>584</label>
                 <altlabel>585</altlabel>
-				<font>Window_Settings</font>
-				<texturefocus>button.png</texturefocus>
-            </control>
-            <control type="button" id="98">
-                <description>Open Player Controls</description>
-                <width>280</width>
-                <align>left</align>
-                <label>31015</label>
-                <onclick>ActivateWindow(playercontrols)</onclick>
-				<font>Window_Settings</font>
-				<texturefocus>button.png</texturefocus>
-                <visible>Player.HasMedia</visible>
+				<font>List_Left_Menu</font>
             </control>
         </control>
     </controls>

@@ -81,7 +81,7 @@
                     <control id="32">
                         <type>button</type>
                         <label>TV LIST</label>
-                        <posx>1</posx>
+                        <left>1</left>
                         <width>155</width>
                         <height>155</height>
                         <align>left</align>
@@ -113,7 +113,7 @@
                     <control id="33">
                         <type>button</type>
                         <label>Radio LIST</label>
-                        <posx>1</posx>
+                        <left>1</left>
                         <width>155</width>
                         <height>155</height>
                         <align>left</align>
@@ -145,7 +145,7 @@
                     <control id="31">
                         <type>button</type>
                         <label>TV GUIDE</label>
-                        <posx>1</posx>
+                        <left>1</left>
                         <width>155</width>
                         <height>155</height>
                         <align>left</align>
@@ -177,7 +177,7 @@
                     <control id="34">
                         <type>button</type>
                         <label>RECORDINGS</label>
-                        <posx>1</posx>
+                        <left>1</left>
                         <width>155</width>
                         <height>155</height>
                         <align>left</align>
@@ -209,7 +209,7 @@
                     <control id="35">
                         <type>button</type>
                         <label>$LOCALIZE[19040]</label>
-                        <posx>1</posx>
+                        <left>1</left>
                         <width>155</width>
                         <height>155</height>
                         <align>left</align>
@@ -241,7 +241,7 @@
                     <control id="36">
                         <type>button</type>
                         <label>$LOCALIZE[137]</label>
-                        <posx>1</posx>
+                        <left>1</left>
                         <width>155</width>
                         <height>155</height>
                         <align>left</align>

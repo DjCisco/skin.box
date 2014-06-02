@@ -21,23 +21,23 @@
             </animation>
 			<!-- This Control displays the background behind the track title-->
 			<control type="image">
-                <posx>370</posx>
-                <posy>290</posy>
+                <left>370</left>
+                <top>290</top>
                 <width>735</width>
                 <height>315</height>
                 <texture>music_fanart_diffuse.png</texture>
              </control>
 			<!-- This Control displays the background behind the Video rating-->
 			<control type="image">
-                <posx>1120</posx>
-                <posy>290</posy>
+                <left>1120</left>
+                <top>290</top>
                 <width>140</width>
                 <height>315</height>
                 <texture>other_textures/black-back.png</texture>
              </control>
 			<control type="list" id="590">
-                <posx>370</posx>
-                <posy>290</posy>
+                <left>370</left>
+                <top>290</top>
                 <width>890</width>
                 <height>315</height>
                 <scrolltime>200</scrolltime>
@@ -53,36 +53,36 @@
                 <itemlayout height="42">
                     <!-- This Control displays the Track Title-->
                     <control type="label">
-                        <posx>10</posx>
+                        <left>10</left>
                         <width>730</width>
 						<font>List_Unfocused</font>
                         <label>$INFO[ListItem.Title]</label>
                     </control>
 					<control type="label">
-                        <posx>10</posx>
+                        <left>10</left>
                         <width>730</width>
 						<font>List_Unfocused</font>
                         <label>$INFO[ListItem.Label]</label>
 						<visible>StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="label">
-                        <posx>820</posx>
+                        <left>820</left>
 						<width>140</width>
 						<font>List_Unfocused</font>
 						<align>center</align>
                         <label>$INFO[ListItem.Year]</label>
 					</control>
                    	<control type="image">
-                        <posx>700</posx>
-                        <posy>13</posy>
+                        <left>700</left>
+                        <top>13</top>
                         <width>18</width>
                         <height>15</height>
                         <texture>watchedpanel.png</texture>
                         <visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
                     </control>
                     <control type="image">
-                        <posx>700</posx>
-                        <posy>13</posy>
+                        <left>700</left>
+                        <top>13</top>
                         <width>18</width>
                         <height>15</height>
                         <texture>watchingpanel.png</texture>
@@ -97,25 +97,25 @@
 					 </control>
 					<control type="image">
 						<width>735</width>
-						<posy>30</posy>
+						<top>30</top>
 						<height>33</height>
 						<texture>tile.png</texture>
 					 </control>
 					<control type="image">
-						<posx>750</posx>
+						<left>750</left>
 						<width>140</width>
 						<height>63</height>
 						<texture>button.png</texture>
 					 </control>
 					<control type="image">
 						<width>140</width>
-						<posx>750</posx>
-						<posy>30</posy>
+						<left>750</left>
+						<top>30</top>
 						<height>33</height>
 						<texture>tile.png</texture>
 					 </control>
 					<control type="label">
-							<posx>10</posx>
+							<left>10</left>
 							<width>700</width>
 							<height>30</height>
 							<font>List_Focused</font>
@@ -124,8 +124,8 @@
 							<label>$INFO[ListItem.Title]</label>
 						</control>
 					<control type="label">
-						<posx>10</posx>
-						<posy>32</posy>
+						<left>10</left>
+						<top>32</top>
 						<width>700</width>
 						<height>30</height>
 						<align>left</align>
@@ -134,7 +134,7 @@
 						<label>$INFO[ListItem.Album]</label>
 					</control>
 					<control type="label">
-						<posx>820</posx>
+						<left>820</left>
 						<width>140</width>
 						<height>30</height>
 						<align>center</align>
@@ -144,14 +144,14 @@
 					</control>
 					<!-- This control displays the Star rating-->
 					<control type="image">
-						<posx>770</posx>
-						<posy>32</posy>
+						<left>770</left>
+						<top>32</top>
 						<width>100</width>
 						<height>25</height>
 						<texture>other_textures/colorrating/$INFO[ListItem.StarRating]</texture>
 					</control>
 					<control type="label">
-                        <posx>10</posx>
+                        <left>10</left>
 							<width>700</width>
 							<height>30</height>
 							<font>List_Focused</font>
@@ -161,16 +161,16 @@
 						<visible>StringCompare(ListItem.Label,..)</visible>
 					</control>
                     <control type="image">
-                        <posx>700</posx>
-                        <posy>13</posy>
+                        <left>700</left>
+                        <top>13</top>
                         <width>18</width>
                         <height>15</height>
                         <texture>watchedpanel.png</texture>
                         <visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
                     </control>
                     <control type="image">
-                        <posx>700</posx>
-                        <posy>13</posy>
+                        <left>700</left>
+                        <top>13</top>
                         <width>18</width>
                         <height>15</height>
                         <texture>watchingpanel.png</texture>
@@ -179,8 +179,8 @@
 				</focusedlayout>
             </control>
             <control type="scrollbar" id="63">
-                <posx>1110</posx>
-                <posy>290</posy>
+                <left>1110</left>
+                <top>290</top>
                 <width>5</width>
                 <height>315</height>
 				<onleft>590</onleft>
@@ -190,16 +190,16 @@
 			<!-- Album Cover Elements -->
 			<control type="group">
 				<control type="image">
-					<posx>50</posx>
-					<posy>290</posy>
+					<left>50</left>
+					<top>290</top>
 					<width>315</width>
 					<height>315</height>
 					<texture>white_box.png</texture>
 					<aspectratio>stretch</aspectratio>
 				</control>
 				<control type="image">
-					<posx>50</posx>
-					<posy>290</posy>
+					<left>50</left>
+					<top>290</top>
 					<width>315</width>
 					<height>315</height>
 					<texture>button.png</texture>
@@ -208,8 +208,8 @@
 					<visible>StringCompare(ListItem.Label,..) | IsEmpty(ListItem.Icon)</visible>
 				</control>
 				<control type="image">
-					<posx>50</posx>
-					<posy>290</posy>
+					<left>50</left>
+					<top>290</top>
 					<width>315</width>
 					<height>315</height>
 					<texture>tile.png</texture>
@@ -219,8 +219,8 @@
 				</control>
 				<!-- This Control displays  the Main Album Poster-->
 				<control type="image">
-					<posx>100</posx>
-					<posy>340</posy>
+					<left>100</left>
+					<top>340</top>
 					<width>215</width>
 					<height>215</height>
 					<texture>$INFO[ListItem.Icon]</texture>
@@ -229,8 +229,8 @@
 				</control>
 				<!-- This Control displays  the Main Album Poster-->
 				<control type="image">
-					<posx>50</posx>
-					<posy>290</posy>
+					<left>50</left>
+					<top>290</top>
 					<width>315</width>
 					<height>315</height>
 					<texture>$INFO[ListItem.Icon]</texture>
@@ -240,8 +240,8 @@
 				</control>
 				<!-- This Control display the artist name below the main poster-->
 				<control type="label" id="144">
-					<posx>50</posx>
-					<posy>610</posy>
+					<left>50</left>
+					<top>610</top>
 					<width>465</width>
 					<height>50</height>
 					<font>Panel_Title_Footer</font>

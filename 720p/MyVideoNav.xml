@@ -57,10 +57,10 @@
 		</control>	
 	 <!--This Control defines the left menu Items -->
 		<control type="grouplist" id="9000">
-            <posx>20</posx>
-            <posy>70</posy>
+            <left>20</left>
+            <top>70</top>
             <width>280</width>
-            <height>305</height>
+            <height>600</height>
             <itemgap>0</itemgap>
             <onright>50</onright>
             <onup></onup>
@@ -75,7 +75,6 @@
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
 				<font>List_Left_Menu</font>
-				<texturefocus>button.png</texturefocus>
             </control>
             <control type="button" id="3">
                 <description>Sort</description>
@@ -83,7 +82,6 @@
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
 				<font>List_Left_Menu</font>
-				<texturefocus>button.png</texturefocus>
             </control>
             <control type="togglebutton" id="4">
                 <description>Ascending</description>
@@ -93,7 +91,6 @@
                 <label>584</label>
                 <altlabel>585</altlabel>
 				<font>List_Left_Menu</font>
-				<texturefocus>button.png</texturefocus>
             </control>
             <control type="button" id="8">
                 <description>Search</description>
@@ -102,60 +99,71 @@
                 <align>left</align>
                 <label>137</label>
 				<font>List_Left_Menu</font>
-				<texturefocus>button.png</texturefocus>
             </control>
             <control type="radiobutton" id="14">
                 <description>Watched Toggle</description>
                 <height>40</height>
                 <width>280</width>
-                <radioposx>245</radioposx>
                 <textoffsetx>10</textoffsetx>
                 <textwidth>200</textwidth>
                 <align>left</align>
 				<font>List_Left_Menu</font>
                 <pulseonselect>false</pulseonselect>
                 <label>$LOCALIZE[20367]</label>
-				<texturefocus>button.png</texturefocus>
             </control>
 			<control type="radiobutton" id="101">
                 <description>Wide List</description>
                 <width>280</width>
-				<radioposx>245</radioposx>
-                <textoffsetx>10</textoffsetx>
+				<textoffsetx>10</textoffsetx>
                 <align>left</align>
                 <label>Wide List</label>
    				<font>List_Left_Menu</font>
                 <onclick>Skin.ToggleSetting(moviewidelist)</onclick>
                 <selected>Skin.HasSetting(moviewidelist)</selected>
-				<texturefocus>button.png</texturefocus>
 				<visible>SubString(Control.GetLabel(2),List Info) + Container.Content(movies)</visible>
 			</control>
 			<control type="radiobutton" id="102">
                 <description>Wide List</description>
                 <width>280</width>
-				<radioposx>245</radioposx>
-                <textoffsetx>10</textoffsetx>
+				<textoffsetx>10</textoffsetx>
                 <align>left</align>
                 <label>Wide List</label>
 				<font>List_Left_Menu</font>
                 <onclick>Skin.ToggleSetting(tvshowwidelist)</onclick>
                 <selected>Skin.HasSetting(tvshowwidelist)</selected>
-				<texturefocus>button.png</texturefocus>
 				<visible>SubString(Control.GetLabel(2),List Info) + Container.Content(tvshows)</visible>
 			</control>
 			<control type="radiobutton" id="103">
                  <description>Wide List</description>
                 <width>280</width>
-				<radioposx>245</radioposx>
-                <textoffsetx>10</textoffsetx>
+				<textoffsetx>10</textoffsetx>
                 <align>left</align>
                 <label>Wide List</label>
 				<font>List_Left_Menu</font>
                 <onclick>Skin.ToggleSetting(episodewidelist)</onclick>
                 <selected>Skin.HasSetting(episodewidelist)</selected>
-				<texturefocus>button.png</texturefocus>
 				<visible>SubString(Control.GetLabel(2),List Info) + Container.Content(episodes)</visible>
 			</control>
+			<control type="button" id="104">
+                <description>Now Playing</description>
+                <width>280</width>
+				<textoffsetx>10</textoffsetx>
+                <align>left</align>
+                <label>13350</label>
+				<font>List_Left_Menu</font>
+				<onclick>ActivateWindow(videoplaylist)</onclick>
+				<visible>Player.HasVideo</visible>
+            </control>
+			<control type="togglebutton" id="20">
+                <description>Update Libray and Stop Scanning</description>
+                <width>280</width>
+				<textoffsetx>10</textoffsetx>
+                <align>left</align>
+    			<font>List_Left_Menu</font>
+				<label>653</label>
+				<altlabel>13353</altlabel>
+            </control>
+			
 		 </control>
 	</controls>
 </window>

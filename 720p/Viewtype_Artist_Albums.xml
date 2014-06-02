@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-a8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <includes>
     <include name="Viewtype_Artist_Albums">
         <control type="group">
@@ -25,8 +25,8 @@
 		    <control type="fixedlist" id="529">
                 <viewtype label="Cover">Artist Albums View</viewtype>
 				<visible>SubString(Container.FolderPath, albumartistsonly) + Container.Content(albums)</visible>
-                <posx>50</posx>
-                <posy>290</posy>
+                <left>50</left>
+                <top>290</top>
                 <width>1230</width>
                 <height>390</height>
                 <scrolltime>500</scrolltime>
@@ -43,24 +43,25 @@
 					<control type="image">
                         <width>315</width>
                         <height>315</height>
-                        <texture>$INFO[ListItem.Icon]</texture>
+                        <texture>$INFO[ListItem.Thumb]</texture>
+						<colordiffuse>33FFFFFF</colordiffuse>
 						<aspectratio scalediffuse="false">scale</aspectratio>
                         <bordersize>5</bordersize>
-						<visible>!IsEmpty(ListItem.Album) | !StringCompare(ListItem.Label,* ALL ALBUMS)</visible>
 					</control>
 					<control type="image">
                         <width>315</width>
                         <height>315</height>
-                        <texture>defaultcdda.png</texture>
+                        <texture>$INFO[ListItem.Icon]</texture>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-                        <bordersize>5</bordersize>
-						<visible>StringCompare(ListItem.Label,* ALL ALBUMS)</visible>
+                        <bordersize>35</bordersize>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
 					</control>
 					<control type="image">
                         <width>315</width>
                         <height>315</height>
                         <texture>music_fanart_diffuse.png</texture>
 						<bordersize>5</bordersize>
+						<visible>!StringCompare(ListItem.Label,* ALL ALBUMS) + !StringCompare(ListItem.Label,..)</visible>
                      </control>
 				</itemlayout>
                 <focusedlayout width="325" height="315">
@@ -79,20 +80,19 @@
 						<visible>StringCompare(ListItem.Label,* ALL ALBUMS) | StringCompare(ListItem.Label,..) </visible>
                     </control>
 					<control type="image">
-						<width>315</width>
+                        <width>315</width>
                         <height>315</height>
-                        <texture>$INFO[ListItem.Icon]</texture>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture>$INFO[ListItem.Thumb]</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
                         <bordersize>5</bordersize>
-                        <visible>!IsEmpty(ListItem.Album) | !StringCompare(ListItem.Label,* ALL ALBUMS)</visible>
-                    </control>
+					</control>
 					<control type="image">
                         <width>315</width>
                         <height>315</height>
-                        <texture>defaultcdda.png</texture>
+                        <texture>$INFO[ListItem.Icon]</texture>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-                        <bordersize>5</bordersize>
-						<visible>StringCompare(ListItem.Label,* ALL ALBUMS)</visible>
+                        <bordersize>35</bordersize>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
 					</control>
                 </focusedlayout>
             
@@ -103,8 +103,8 @@
 			 <!-- This Control displays the Name of the Album on Top of the Main Poster-->
 			<control type="label">
                 <label>$INFO[ListItem.Album] [COLOR=Accent]$INFO[ListItem.Year][/COLOR]</label>
-                <posx>50</posx>
-                <posy>215</posy>
+                <left>50</left>
+                <top>215</top>
                 <height>30</height>
                 <width>1000</width>
 				<aligny>top</aligny>
@@ -115,8 +115,8 @@
 			
 			<control type="label">
                 <label>ALL</label>
-                <posx>50</posx>
-                <posy>215</posy>
+                <left>50</left>
+                <top>215</top>
                 <height>30</height>
                 <width>1000</width>
 				<aligny>top</aligny>
@@ -127,8 +127,8 @@
 			
 			<control type="label">
                 <label>BACK</label>
-                <posx>50</posx>
-                <posy>215</posy>
+                <left>50</left>
+                <top>215</top>
                 <height>30</height>
                 <width>1000</width>
 				<aligny>top</aligny>
@@ -138,8 +138,8 @@
             </control>
 			
 			<control type="label" id="144">
-                <posx>50</posx>
-                <posy>610</posy>
+                <left>50</left>
+                <top>610</top>
                 <width>465</width>
                 <height>50</height>
                 <font>Panel_Title_Footer</font>

@@ -4,7 +4,7 @@
     <allowoverlay>yes</allowoverlay>
     <visible>[VideoPlayer.IsFullscreen | Window.IsVisible(visualisation)] + [Player.Seeking | Player.DisplayAfterSeek | Player.paused | Player.Forwarding | Player.rewinding]</visible>
     <onload condition="Player.HasVideo + !Player.DisplayAfterSeek">ActivateWindow(videoosd)</onload>
-	<onload condition="Player.HasVideo + Player.DisplayAfterSeek">ActivateWindow(fullscreeninfo)</onload>
+	<onload condition="Player.HasVideo + Player.DisplayAfterSeek + !VideoPlayer.Content(livetv)">ActivateWindow(fullscreeninfo)</onload>
 	<onload condition="Player.HasAudio">ActivateWindow(musicosd)</onload>
 	<onunload condition="Window.IsActive(videoosd)">Dialog.Close(videoosd)</onunload>
 	<onunload condition="Window.IsActive(musicosd)">Dialog.Close(musicosd)</onunload>
@@ -12,7 +12,7 @@
 
 	<controls>
         <control type="group">
-            <posy>150</posy>
+            <top>150</top>
             <visible>!Player.Caching</visible>
             <control type="label">
 				<width>1280</width>
@@ -116,20 +116,20 @@
         </control>
         <control type="group">
             
-            <posy>150</posy>
+            <top>150</top>
             <visible>!IsEmpty(Player.CacheLevel) + Player.Caching</visible>
             <!--
 			<control type="image">
                 <description>Busy animation</description>
-                <posx>20</posx>
-                <posy>20</posy>
+                <left>20</left>
+                <top>20</top>
                 <width>32</width>
                 <height>32</height>
                 <texture>other_textures/busy.png</texture>
                 <aspectratio>keep</aspectratio>
                 <animation effect="rotate" start="360" end="0" center="36,36" time="1200" loop="true" condition="true">conditional</animation>
             </control>
-			--->
+			-->
             <control type="label" id="24">
                 <description>buffering label</description>
                 <width>1280</width>

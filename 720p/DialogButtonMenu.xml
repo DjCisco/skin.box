@@ -6,8 +6,8 @@
 	<!-- This Window appears on the right, when the Shutdown button in the Home Menu is pressed or the letter S is pressed -->
         <include>GlobalOverlay</include>
         <control type="group">
-            <posx>960</posx>
-            <posy>0</posy>
+            <left>960</left>
+            <top>0</top>
             <animation type="WindowOpen">
                 <effect type="slide" time="300" start="+320, 0" end="0,0" easing="out" tween="cubic" />
             </animation>
@@ -17,16 +17,16 @@
 			<include>RightMenuBackground</include>
 			<control type="fadelabel">
                 <description>Menu Title</description>
-                <posx>20</posx>
-                <posy>0</posy>
+                <left>20</left>
+                <top>0</top>
                 <width>280</width>
                 <label>$LOCALIZE[13005]</label>
                 <align>right</align>
                 <font>Panel_Description_Title</font>
             </control>
             <control type="grouplist" id="1">
-                <posx>20</posx>
-                <posy>70</posy>
+                <left>20</left>
+                <top>70</top>
                 <width>280</width>
                 <height>500</height>
                 <itemgap>2</itemgap>
@@ -46,7 +46,6 @@
                         <align>right</align>
                         <font>Panel_Info</font>
                         <textoffsetx>10</textoffsetx>
-						<texturefocus>button.png</texturefocus>
                     </control>
                     <control type="button" id="3112">
                         <description>LogOff Profile</description>
@@ -59,7 +58,6 @@
                         <align>right</align>
                         <font>Panel_Info</font>
                         <textoffsetx>10</textoffsetx>
-						<texturefocus>button.png</texturefocus>
                     </control>
                     <control type="button" id="3115">
                         <description>Shutdown</description>
@@ -69,7 +67,6 @@
                         <align>right</align>
                         <font>Panel_Info</font>
                         <textoffsetx>10</textoffsetx>
-						<texturefocus>button.png</texturefocus>
                     </control>
                     <control type="button" id="3116">
                         <description>Suspend xbmc</description>
@@ -79,7 +76,6 @@
                         <align>right</align>
                         <font>Panel_Info</font>
                         <textoffsetx>10</textoffsetx>
-						<texturefocus>button.png</texturefocus>
                     </control>
                     <control type="button" id="3117">
                         <description>Reboot button</description>
@@ -89,7 +85,6 @@
                         <align>right</align>
                         <font>Panel_Info</font>
                         <textoffsetx>10</textoffsetx>
-						<texturefocus>button.png</texturefocus>
                     </control>
                     <control type="button" id="31151">
                         <description>Exit</description>
@@ -99,9 +94,7 @@
                         <align>right</align>
                         <font>Panel_Info</font>
                         <textoffsetx>10</textoffsetx>
-                        <visible>Skin.HasSetting(Exit)</visible>
-						<texturefocus>button.png</texturefocus>
-                    </control>
+		            </control>
                     <control type="button" id="3113">
                         <description>Custom Shutdown Timer button</description>
                         <width>280</width>
@@ -111,8 +104,7 @@
                         <align>right</align>
                         <font>Panel_Info</font>
                         <textoffsetx>10</textoffsetx>
-						<texturefocus>button.png</texturefocus>
-                    </control>
+		            </control>
                     <control type="button" id="3114">
                         <description>Custom Shutdown Timer button</description>
                         <width>280</width>
@@ -122,8 +114,7 @@
                         <align>right</align>
                         <font>Panel_Info</font>
                         <textoffsetx>10</textoffsetx>
-						<texturefocus>button.png</texturefocus>
-                    </control>
+					</control>
                     <control type="label" id="3118">
                         <description>Alarm Time</description>
                         <width>280</width>
@@ -132,19 +123,7 @@
                         <align>right</align>
                         <font>Panel_Info</font>
 						<textoffsetx>10</textoffsetx>
-						<texturefocus>button.png</texturefocus>
-                    </control>
-                    <control type="button" id="3119">
-                        <description>Open Player Controls</description>
-                        <width>280</width>
-                        <label>31015</label>
-                        <onclick>ActivateWindow(playercontrols)</onclick>
-                        <visible>Player.HasMedia</visible>
-                        <align>right</align>
-                        <font>Panel_Info</font>
-                        <textoffsetx>10</textoffsetx>
-						<texturefocus>button.png</texturefocus>
-                    </control>
+		            </control>
 					<control type="button" id="3120">
                         <description>Open Settings</description>
                         <width>280</width>
@@ -153,7 +132,6 @@
                         <align>right</align>
                         <font>Panel_Info</font>
                         <textoffsetx>10</textoffsetx>
-						<texturefocus>button.png</texturefocus>
                     </control>
                 </control>
             </control>

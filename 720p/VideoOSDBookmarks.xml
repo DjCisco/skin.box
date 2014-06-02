@@ -15,18 +15,13 @@
         <animation type="Hidden">
             <effect type="fade" start="100" end="0" time="200" />
         </animation>
-		<!-- Blue Background -->
-		<control type="image">
-            <posx>0</posx>
-            <posy>0</posy>
-            <width>1280</width>
-            <height>720</height>
-            <texture>music_fanart_diffuse_Blue.png</texture>
-        </control>
+
+		<include>SkinTransparentBackground</include>
+		
 		<!-- Background -->
 		<control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
+                <left>50</left>
+                <top>290</top>
                 <width>280</width>
                 <height>355</height>
                 <texture>tile.png</texture>
@@ -34,8 +29,8 @@
 		<control type="group">
             <control type="label">
                 <description>header label</description>
-				<posx>50</posx>
-				<posy>215</posy>
+				<left>50</left>
+				<top>215</top>
                 <height>30</height>
                 <width>800</width>
                 <font>Panel_Title</font>
@@ -45,8 +40,8 @@
             </control>
 			<!-- Bookmarks Panel-->
             <control type="panel" id="11">
-                <posx>335</posx>
-                <posy>290</posy>
+                <left>335</left>
+                <top>290</top>
                 <width>900</width>
                 <height>360</height>
                 <onleft>9000</onleft>
@@ -64,7 +59,7 @@
                         <texture>tile.png</texture>
                     </control>
 					<control type="image">
-                        <posy>145</posy>
+                        <top>145</top>
 						<width>220</width>
                         <height>30</height>
                         <texture>tile.png</texture>
@@ -76,8 +71,8 @@
                         <info>ListItem.Icon</info>
                     </control>
                     <control type="label">
-                        <posx>110</posx>
-                        <posy>150</posy>
+                        <left>110</left>
+                        <top>150</top>
                         <width>220</width>
                         <height>15</height>
                         <align>center</align>
@@ -93,7 +88,7 @@
                         <texture>button.png</texture>
                     </control>
 					<control type="image">
-                        <posy>145</posy>
+                        <top>145</top>
 						<width>220</width>
                         <height>30</height>
                         <texture>button.png</texture>
@@ -105,8 +100,8 @@
                         <info>ListItem.Icon</info>
                     </control>
                     <control type="label">
-                        <posx>110</posx>
-                        <posy>150</posy>
+                        <left>110</left>
+                        <top>150</top>
                         <width>220</width>
                         <height>15</height>
                         <align>center</align>
@@ -117,8 +112,8 @@
             </control>
             <!-- List of Bookmark Options -->
 			<control type="grouplist" id="9000">
-                <posx>50</posx>
-                <posy>290</posy>
+                <left>50</left>
+                <top>290</top>
                 <width>280</width>
                 <height>200</height>
                 <itemgap>2</itemgap>
@@ -156,8 +151,8 @@
             </control>
         </control>
         <control type="image">
-            <posx>1225</posx>
-            <posy>290</posy>
+            <left>1225</left>
+            <top>290</top>
             <width>40</width>
             <height>40</height>
             <texture flipy="true">down_arrow.png</texture>
@@ -165,8 +160,8 @@
             <animation effect="fade" time="400">VisibleChange</animation>
         </control>
         <control type="image">
-            <posx>1225</posx>
-            <posy>610</posy>
+            <left>1225</left>
+            <top>610</top>
             <width>40</width>
             <height>40</height>
             <texture>down_arrow.png</texture>

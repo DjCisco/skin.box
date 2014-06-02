@@ -3,10 +3,10 @@
     <include name="View_50_List">
         <control type="group">
             <visible>Control.IsVisible(50)</visible>
-            <animation type="TYPE" condition="Window.IsVisible(2001) | Window.IsVisible(139) | Window.IsVisible(136 | Window.IsVisible(addonsettings)" reversible="false">
+            <animation type="TYPE" condition="Window.IsVisible(2001) | Window.IsVisible(139) | Window.IsVisible(136) | Window.IsVisible(135) | Window.IsVisible(addonsettings)" reversible="false">
                 <effect type="slide" end="-1500,0" time="200" />
             </animation>
-            <animation type="TYPE" condition="!Window.IsVisible(2001) + !Window.IsVisible(139) + !Window.IsVisible(136) + !Window.IsVisible(addonsettings)" reversible="false">
+            <animation type="TYPE" condition="!Window.IsVisible(2001) + !Window.IsVisible(139) + !Window.IsVisible(136) + !Window.IsVisible(135) + !Window.IsVisible(addonsettings)" reversible="false">
                 <effect type="slide" start="-1500,0" time="200" />
             </animation>
             <animation type="WindowClose">
@@ -17,11 +17,12 @@
                 <effect type="fade" time="300" />
                 <effect type="slide" start="+1500,0" time="300" />
             </animation>
+			
             <!--This control shows the label of the folder name -->
 			<control type="label">
                 <label>$INFO[Container.FolderName]</label>
-                <posx>50</posx>
-                <posy>215</posy>
+                <left>50</left>
+                <top>215</top>
                 <height>30</height>
                 <width>884</width>
                 <font>Panel_Title</font>
@@ -32,8 +33,8 @@
 			<control type="group">
 				<!--This control displays  larger background behind the item list -->
 				<control type="image">
-					<posx>370</posx>
-					<posy>290</posy>
+					<left>370</left>
+					<top>290</top>
 					<width>880</width>
 					<height>315</height>
 					<texture background="true">music_fanart_diffuse.png</texture>
@@ -41,8 +42,8 @@
 				</control>
 				<!--This control defines the scrollbar controlling the large list list -->
 				<control type="scrollbar" id="60">
-					<posx>1255</posx>
-					<posy>290</posy>
+					<left>1255</left>
+					<top>290</top>
 					<width>5</width>
 					<height>315</height>
 					<onleft>50</onleft>
@@ -55,14 +56,14 @@
 				<!--This control shows the label Videos -->
 				<control type="label">
 					<label>VIDEOS</label>
-					<posx>50</posx>
-					<posy>215</posy>
+					<left>50</left>
+					<top>215</top>
 					<height>30</height>
 					<width>884</width>
 					<font>Panel_Title</font>
 					<aligny>top</aligny>
 					<align>left</align>
-					<visible>!Window.IsVisible(Pictures) + !Window.IsVisible(Programs) + !Window.IsActive(musicfiles] + !Window.IsActive(musiclibrary) + !Window.IsActive(addonBrowser)</visible>
+					<visible>!Window.IsVisible(Pictures) + !Window.IsVisible(Programs) + !Window.IsActive(musicfiles) + !Window.IsActive(musiclibrary) + !Window.IsActive(addonBrowser)</visible>
 				</control>
 				 <!--This control shows the label MUSIC -->
 				<control type="label">
@@ -98,9 +99,9 @@
 			<!--This control defines the list that will display the items -->
 			<control type="list" id="50">
                 <!--<visible>!Container.Content(artists) + !Container.Content(episodes) + !Container.Content(tvshows) + !Container.Content(movies) + !Container.Content(seasons) + !Container.Content(genres) + !Container.Content(songs) + !Container.Content(albums) + !Container.Content(musicvideos) + !Container.Content(years)</visible>-->
-                <visible>![[Window.IsVisible(videolibrary) | Window.IsVisible(musiclibrary)] + [Container.Content(addons) | IsEmpty(Container.FolderName) | StringCompare(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,library://video/movies/) | StringCompare(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,library://video/tvshows/) | StringCompare(Container.FolderPath,videodb://3/)] | StringCompare(Container.FolderPath,library://video/musicvideos/)]] + !Container.Content(artists) + !Container.Content(episodes) + !Container.Content(tvshows) + !Container.Content(movies) + !Container.Content(seasons) + !Container.Content(genres) + !Container.Content(songs) + !Container.Content(albums) + !Container.Content(musicvideos) + !Container.Content(years) + ![Window.IsActive(Pictures) + !IsEmpty(Container.FolderName)] + ![Window.IsActive(addonbrowser) + !IsEmpty(Container.FolderName)]</visible>
-               	<posx>370</posx>
-                <posy>290</posy>
+                <visible>![[Window.IsVisible(videolibrary) | Window.IsVisible(musiclibrary)] + [Container.Content(addons) | IsEmpty(Container.FolderName) | StringCompare(Container.FolderPath,videodb://movies/) | StringCompare(Container.FolderPath,library://video/movies/) | StringCompare(Container.FolderPath,videodb://tvshows/) | StringCompare(Container.FolderPath,library://video/tvshows/) | StringCompare(Container.FolderPath,videodb://musicvideos/) | StringCompare(Container.FolderPath,library://video/musicvideos/)]] + !Container.Content(artists) + !Container.Content(episodes) + !Container.Content(tvshows) + !Container.Content(movies) + !Container.Content(seasons) + !Container.Content(genres) + !Container.Content(songs) + !Container.Content(albums) + !Container.Content(musicvideos) + !Container.Content(years) + ![Window.IsActive(Pictures) + !IsEmpty(Container.FolderName)] + ![Window.IsActive(addonbrowser) + !IsEmpty(Container.FolderName)]</visible>
+               	<left>370</left>
+                <top>290</top>
                 <width>880</width>
                 <height>315</height>
                 <onleft>9000</onleft>
@@ -112,7 +113,7 @@
                 <scrolltime>200</scrolltime>
                 <itemlayout width="880" height="45">
 					<control type="label">
-						<posx>10</posx>
+						<left>10</left>
 						<width>860</width>
 						<font>List_Unfocused</font>
 						<label>$INFO[ListItem.Label]</label>
@@ -126,45 +127,15 @@
 						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
 					</control>
 					<control type="label">
-						<posx>10</posx>
+						<left>10</left>
 						<width>860</width>
 						<font>List_Focused</font>
 						<label>$INFO[ListItem.Label]</label>
-						
+						<selectedcolor>White</selectedcolor>
 					</control>
 				</focusedlayout>
 			</control>
-			<!--This control displays the White Background of the main icon -->
-			<control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
-                <width>315</width>
-                <height>315</height>
-                <texture>white_box.png</texture>
-                <visible>!IsEmpty(ListItem.PicturePath) | !IsEmpty(ListItem.Property(Addon.Name))</visible>
-            </control>
-			<!--This control displays the main icon and keeps its ratio -->
-			<control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
-                <width>315</width>
-                <height>315</height>
-                <texture>$INFO[ListItem.Icon]</texture>
-                <aspectratio scalediffuse="false">keep</aspectratio>
-                <bordersize>5</bordersize>
-                <visible>!Window.IsVisible(Pictures)</visible>
-            </control>
-            <!--This control displays the main icon and scales it to fit the square -->
-			<control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
-                <width>315</width>
-                <height>315</height>
-                <texture>$INFO[ListItem.Icon]</texture>
-                <aspectratio scalediffuse="false">scale</aspectratio>
-				<bordersize>5</bordersize>
-                <visible>Window.IsVisible(Pictures)</visible>
-            </control>
+			<include>ArtistAlbumPanelCover</include>
 		</control>
     </include>
 </includes>

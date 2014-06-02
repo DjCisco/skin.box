@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window id="2006">
      <allowoverlay>no</allowoverlay>
+	 <onload condition="System.HasAddon(script.artistslideshow) + Skin.HasSetting(EnableArtistSlideshowAddon)">RunScript(script.artistslideshow)</onload>
     <visible>Window.IsVisible(visualisation) | Window.IsVisible(122) | Player.Paused</visible>
 	<controls>
 		<control type="group">
@@ -31,56 +32,68 @@
 					<texture>music_fanart_diffuse.png</texture>
 				</control>
 			</control>
-			<!-- Color Walls in Case no Fanart Available at all -->
 			<control type="multiimage">
 				<include>Dimensions_Fullscreen</include>
-				<randomize>true</randomize>
-				<timeperimage>10000</timeperimage>
-				<fadetime>5000</fadetime>
-				<pauseatend>0</pauseatend>
-				<loop>true</loop>
-				<aspectratio background="true" aligny="top">stretch</aspectratio>
-				<imagepath background="true">walls</imagepath>
-				<animation effect="fade" start="0" end="100" time="550" delay="0" tween="sine" easing="inout">VisibleChange</animation>
-				<visible>IsEmpty(Control.getLabel(8870)) + IsEmpty(Control.getLabel(8872)) + IsEmpty(Control.getLabel(8874))</visible>	
-			</control>
-			<!-- Artist Fanart from Music Player in Case no Fanart.jpg in Album Folder-->
-			<control type="image" id="8874">
-				<description>Fanart Image for Artist</description>
-				<include>Dimensions_Fullscreen</include>
-				<texture>$INFO[MusicPlayer.Property(Fanart_Image)]</texture>
-				<animation effect="fade" start="0" end="100" time="550" delay="0" tween="sine" easing="inout">VisibleChange</animation>
-				<visible>IsEmpty(Control.getLabel(8870)) + IsEmpty(Control.getLabel(8872))</visible>	
-				<fadetime>600</fadetime>
-			</control>
-			 <!-- Artist Fanart from cd Folder   if no extrafanart folder is available-->
-			<control type="image" id="8872">
-				<description>Fanart Image for Artist</description>
-				<include>Dimensions_Fullscreen</include>
-				<texture>$INFO[Player.FolderPath]fanart.jpg</texture>
-				<animation effect="fade" start="0" end="100" time="550" delay="0" tween="sine" easing="inout">VisibleChange</animation>
-				<visible>[IsEmpty(Control.getLabel(8870)] | IsEmpty(Skin.String(ArtistsFanartPath))</visible>			
-				<fadetime>600</fadetime>
-			</control>
-			<!-- Display Aritst Fanart from extrafanrt folder in Music Libray Path-->
-			<control type="multiimage" id ="8870">
-				<animation type="Conditional" condition="!IsEmpty(Control.getLabel(8870)">
-					<effect type="fade" start="0" end="100" time="550" delay="0" tween="sine" easing="inout" />
-				</animation>
-				<include>Dimensions_Fullscreen</include>
-				<randomize>false</randomize>
+				<imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
+				<aspectratio>keep</aspectratio>
 				<timeperimage>10000</timeperimage>
 				<fadetime>2000</fadetime>
-				<pauseatend>0</pauseatend>
-				<loop>true</loop>
-				<imagepath>$INFO[Skin.String(ArtistsFanartPath)]$INFO[MusicPlayer.Artist,,/extrafanart/]</imagepath>
-				<visible>!IsEmpty(Skin.String(ArtistsFanartPath))</visible>
-			 </control>
+				<randomize>true</randomize>
+				<visible>Skin.HasSetting(EnableArtistSlideshowAddon)</visible>	
+			</control>
+			<control type="group">
+				<visible>!Skin.HasSetting(EnableArtistSlideshowAddon)</visible>
+				<!-- Color Walls in Case no Fanart Available at all -->
+				<control type="multiimage">
+					<include>Dimensions_Fullscreen</include>
+					<randomize>true</randomize>
+					<timeperimage>10000</timeperimage>
+					<fadetime>5000</fadetime>
+					<pauseatend>0</pauseatend>
+					<loop>true</loop>
+					<aspectratio aligny="top">stretch</aspectratio>
+					<imagepath background="true">walls</imagepath>
+					<animation effect="fade" start="0" end="100" time="550" delay="0" tween="sine" easing="inout">VisibleChange</animation>
+					<visible>IsEmpty(Control.getLabel(8870)) + IsEmpty(Control.getLabel(8872)) + IsEmpty(Control.getLabel(8874))</visible>	
+				</control>			
+				<!-- Artist Fanart from Music Player in Case no Fanart.jpg in Album Folder-->
+				<control type="image" id="8874">
+					<description>Fanart Image for Artist</description>
+					<include>Dimensions_Fullscreen</include>
+					<texture>$INFO[MusicPlayer.Property(Fanart_Image)]</texture>
+					<animation effect="fade" start="0" end="100" time="550" delay="0" tween="sine" easing="inout">VisibleChange</animation>
+					<visible>IsEmpty(Control.getLabel(8870)) + IsEmpty(Control.getLabel(8872))</visible>	
+					<fadetime>600</fadetime>
+				</control>
+				 <!-- Artist Fanart from cd Folder   if no extrafanart folder is available-->
+				<control type="image" id="8872">
+					<description>Fanart Image for Artist</description>
+					<include>Dimensions_Fullscreen</include>
+					<texture>$INFO[Player.FolderPath]fanart.jpg</texture>
+					<animation effect="fade" start="0" end="100" time="550" delay="0" tween="sine" easing="inout">VisibleChange</animation>
+					<visible>IsEmpty(Control.getLabel(8870)) | IsEmpty(Skin.String(ArtistsFanartPath))</visible>			
+					<fadetime>600</fadetime>
+				</control>
+				<!-- Display Aritst Fanart from extrafanrt folder in Music Libray Path-->
+				<control type="multiimage" id ="8870">
+					<animation type="Conditional" condition="!IsEmpty(Control.getLabel(8870))">
+						<effect type="fade" start="0" end="100" time="550" delay="0" tween="sine" easing="inout" />
+					</animation>
+					<include>Dimensions_Fullscreen</include>
+					<randomize>false</randomize>
+					<timeperimage>10000</timeperimage>
+					<fadetime>2000</fadetime>
+					<pauseatend>0</pauseatend>
+					<loop>true</loop>
+					<imagepath>$INFO[Skin.String(ArtistsFanartPath)]$INFO[MusicPlayer.Artist,,/extrafanart/]</imagepath>
+					<visible>!IsEmpty(Skin.String(ArtistsFanartPath))</visible>
+				 </control>
+			</control>
 			<control type="visualisation" id="2">
 			<!-- Visualization needs to have an id of 2 in this window to be able to lock or change preset -->
 				<description>visualisation</description>
-				<posx>0</posx>
-				<posy>0</posy>
+				<left>0</left>
+				<top>0</top>
 				<width>1280</width>
 				<height>720</height>
 				<visible>Skin.HasSetting(Visualization)</visible>
@@ -89,7 +102,6 @@
 			<!-- Info Display -->
 			<control type="group">
 				<visible>[Player.ShowInfo | Window.IsActive(musicosd)] + !Window.IsVisible(AddonSettings) + !Window.IsVisible(SelectDialog) + !Window.IsVisible(VisualisationPresetList)</visible>
-				<animation effect="slide" start="0,0" end="0,-200" time="900" tween="cubic" easing="inout" delay="0" condition="Window.IsVisible(script-XBMC_Lyrics-main.xml)">conditional</animation>
 				<!-- Info Background / Album /Artist / Track -->
 				<control type="Group">
 					<animation effect="slide" start="1010" end="0" time="900" tween="cubic" easing="out" delay="0">WindowOpen</animation>
@@ -97,16 +109,17 @@
 					<!-- Info Background -->
 					<control type="image">
 						<description>Music bar</description>
-						<posx>0</posx>
-						<posy>440</posy>
+						<animation effect="zoom" end="0,0,1280,680" time="500" condition="Window.IsVisible(script-XBMC_Lyrics-main.xml)">Conditional</animation>
+						<left>0</left>
+						<top>440</top>
 						<width>1280</width>
 						<height>240</height>
 						<texture background="true">music_fanart_diffuse.png</texture>
 					</control>
 					<!-- Artist Album & Track-->
 					<control type="group">
-						<posx>390</posx>
-						<posy>450</posy>
+						<left>390</left>
+						<top>450</top>
 							<!-- Artist Name -->
 							<control type="label">
 								<description>Artist</description>
@@ -120,7 +133,7 @@
 							 <!-- Album & Year -->
 							<control type="label">
 								<description>Album</description>
-								<posy>52</posy>
+								<top>52</top>
 								<width>855</width>
 								<label>$INFO[MusicPlayer.Album] [COLOR Accent]$INFO[MusicPlayer.Year][/COLOR]</label>
 								<scroll>true</scroll>
@@ -131,7 +144,7 @@
 							<!-- Track Nr & Title -->
 							<control type="label">
 								<description>Track</description>
-								<posy>97</posy>
+								<top>97</top>
 								<width>855</width>
 								<label>[COLOR Accent]$INFO[MusicPlayer.TrackNumber][/COLOR] $INFO[MusicPlayer.Title]</label>
 								<scroll>true</scroll>
@@ -142,8 +155,8 @@
 							<!-- Track Rating -->
 							<control type="image">
 								<description>Rating image</description>
-								<posx>0</posx>
-								<posy>130</posy>
+								<left>0</left>
+								<top>130</top>
 								<width>140</width>
 								<height>60</height>
 								<aspectratio align="left">keep</aspectratio>
@@ -158,8 +171,8 @@
 					<!-- Progress Bar Background -->
 					<control type="image">
 						<description>black bar</description>
-						<posx>0</posx>
-						<posy>690</posy>
+						<left>0</left>
+						<top>690</top>
 						<width>1280</width>
 						<height>30</height>
 						<fadetime>200</fadetime>
@@ -168,8 +181,8 @@
 					<!-- Progress Bar -->
 					<control type="progress">
 						<description>Progressbar</description>
-						<posx>100</posx>
-						<posy>702</posy>
+						<left>100</left>
+						<top>702</top>
 						<width>1080</width>
 						<height>6</height>
 						<info>Player.Progress</info>
@@ -178,8 +191,8 @@
 					</control>
 					<!-- Player Time Elapsed-->
 					<control type="label">
-						<posx>10</posx>
-						<posy>690</posy>
+						<left>10</left>
+						<top>690</top>
 						<width>120</width>
 						<height>30</height>
 						<label>$INFO[MusicPlayer.Time]</label>
@@ -189,8 +202,8 @@
 					</control>
 					<!-- Player Time Remaining-->
 					<control type="label">
-						<posx>1270</posx>
-						<posy>690</posy>
+						<left>1150</left>
+						<top>690</top>
 						<width>120</width>
 						<height>30</height>
 						<label>$INFO[MusicPlayer.TimeRemaining,-]</label>
@@ -204,14 +217,14 @@
 				<!-- Album Cover and Album CD-->
 				<control type="group">
 					<description>Cd Disc and Cover</description>
-					<posx>30</posx>
-					<posy>440</posy>
+					<left>30</left>
+					<top>440</top>
 					<animation effect="slide" start="-380" end="0" time="900" tween="cubic" easing="out" delay="0">WindowOpen</animation>
 					<animation effect="slide" start="0" end="-380" time="900" tween="cubic" easing="in" delay="0">WindowClose</animation>
 					<!-- Cdart-->
 					<control type="image">
-						<posx>115</posx>
-						<posy>5</posy>
+						<left>115</left>
+						<top>5</top>
 						<description>Cd Disc</description>
 						<animation effect="fade" start="100" end="0" time="700" tween="cubic" easing="out" condition="Window.IsActive(musicosd)">Conditional</animation>
 						<animation effect="slide" start="0" end="-110" time="900" tween="cubic" easing="out" delay="800">WindowOpen</animation>
@@ -220,14 +233,14 @@
 						<width>230</width>
 						<height>230</height>
 						<texture>$INFO[Player.FolderPath]cdart.png</texture>
-						<aspectratio align="bottom">keep</aspectratio>
+						<aspectratio>keep</aspectratio>
 					</control>
 					<!-- Album Cover-->
 					<control type="image">
 						<description>Music cover image</description>
 						<width>240</width>
 						<height>240</height>
-						<posx>110</posx>
+						<left>110</left>
 						<bordertexture border="5">white_box.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$INFO[MusicPlayer.cover]</texture>

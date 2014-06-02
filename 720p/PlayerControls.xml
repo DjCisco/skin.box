@@ -6,8 +6,8 @@
     <controls>
         <control type="group">
 			<visible>Player.HasMedia</visible>
-            <posx>0</posx>
-            <posy>680</posy>
+            <left>0</left>
+            <top>680</top>
 			
             <animation type="WindowOpen">
                 <effect type="slide" time="295" start="0,45" end="0,0" />

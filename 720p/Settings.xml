@@ -4,13 +4,14 @@
     <allowoverlay>yes</allowoverlay>
     <controls>
         <include>HomeBackground</include>
+		<include>BarClock</include>
 		<!-- Settings -->
             <control type="group" id="378">
                         
 			   <control type="label">
                     <label>$LOCALIZE[10004]</label>
-                    <posx>50</posx>
-                    <posy>215</posy>
+                    <left>50</left>
+                    <top>215</top>
                     <height>30</height>
                     <width>250</width>
                     <font>Panel_Title</font>
@@ -18,8 +19,8 @@
 					<aligny>top</aligny>
                 </control>
                 <control type="panel" id="69">
-                    <posx>50</posx>
-                    <posy>290</posy>
+                    <left>50</left>
+                    <top>290</top>
                     <width>1120</width>
                     <height>320</height>
                     <preloaditems>2</preloaditems>
@@ -48,8 +49,8 @@
                     </itemlayout>
                     <focusedlayout width="160" height="160">
                         <control type="group">
-                            <posx>0</posx>
-                            <posy>0</posy>
+                            <left>0</left>
+                            <top>0</top>
                             <control type="image">
                                 <include>PanelButtonImageFO</include>
                                 <animation effect="fade" start="0" time="400" easing="out" tween="square">Focus</animation>
@@ -68,43 +69,43 @@
                         <item id="1">
                             <description>Appearance</description>
                             <label>480</label>
-                            <thumb>DefaultAppearance.png</thumb>
-                            <onclick>activatewindow(AppearanceSettings)</onclick>
+							<thumb>DefaultAppearance.png</thumb>
+							<onclick>activatewindow(AppearanceSettings)</onclick>
                         </item>
                         <item id="2">
                             <description>Videos</description>
                             <label>3</label>
-                            <thumb>DefaultVideo.png</thumb>
+							<thumb>DefaultVideo.png</thumb>
                             <onclick>activatewindow(VideosSettings)</onclick>
                         </item>
                         <item id="3">
                             <description>Live TV</description>
                             <label>$LOCALIZE[31703]</label>
-                            <thumb>DefaultTvChannels.png</thumb>
+							<thumb>DefaultTvChannels.png</thumb>
                             <onclick>activatewindow(PVRSettings,return)</onclick>
                         </item>
                         <item id="4">
                             <description>Music</description>
                             <label>2</label>
-                            <thumb>DefaultAudio.png</thumb>
+							<thumb>DefaultAudio.png</thumb>
                             <onclick>activatewindow(MusicSettings,return)</onclick>
                         </item>
                         <item id="5">
                             <description>Addons</description>
                             <label>24001</label>
-                            <thumb>DefaultAddons.png</thumb>
+							<thumb>DefaultAddons.png</thumb>
                             <onclick>activatewindow(AddonBrowser)</onclick>
                         </item>
                         <item id="6">
                             <description>Pictures</description>
                             <label>1</label>
-                            <thumb>DefaultPicture.png</thumb>
+							<thumb>DefaultPicture.png</thumb>
                             <onclick>activatewindow(PicturesSettings,return)</onclick>
                         </item>
                         <item id="7">
                             <description>Weather</description>
                             <label>8</label>
-                            <thumb>DefaultWeather.png</thumb>
+							<thumb>DefaultWeather.png</thumb>
                             <onclick>activatewindow(WeatherSettings,return)</onclick>
                         </item>
                         <item id="8">
@@ -116,7 +117,7 @@
                         <item id="9">
                             <description>System</description>
                             <label>13000</label>
-                            <thumb>DefaultSystem.png</thumb>
+						   <thumb>DefaultSystem.png</thumb>
                             <onclick>activatewindow(SystemSettings,return)</onclick>
                         </item>
                         <item id="10">
@@ -134,8 +135,8 @@
                     </content>
                 </control>
                 <control type="scrollbar" id="98">
-                    <posx>1170</posx>
-                    <posy>290</posy>
+                    <left>1170</left>
+                    <top>290</top>
                     <width>5</width>
                     <height>315</height>
                     <texturesliderbackground></texturesliderbackground>

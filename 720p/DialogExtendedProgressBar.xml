@@ -17,11 +17,11 @@
             <animation type="Hidden">
                 <effect type="slidey" time="300" start="0,0" end="0,-40" easing="in" tween="cubic" />
             </animation>
-			<animation effect="slide" start="0,0" end="0,30" time="300" easing="inout" tween="cubic"condition="Window.IsVisible(107)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,30" time="300" easing="inout" tween="cubic" condition="Window.IsVisible(107)">Conditional</animation>
             <control type="image">
                 <description>background image</description>
-                <posx>0</posx>
-                <posy>0</posy>
+                <left>0</left>
+                <top>0</top>
                 <width>1280</width>
                 <height>30</height>
                 <aspectratio>scale</aspectratio>
@@ -29,8 +29,8 @@
             </control>
             <control type="label" id="30">
                 <description>heading</description>
-                <posx>350</posx>
-                <posy>5</posy>
+                <left>350</left>
+                <top>5</top>
 				<aligny>top</aligny>
                 <width>580</width>
                 <label></label>
@@ -41,8 +41,8 @@
             </control>
             <control type="label" id="31">
                 <description>message</description>
-                <posx>350</posx>
-                <posy>25</posy>
+                <left>350</left>
+                <top>25</top>
 				<aligny>top</aligny>
                 <width>580</width>
                 <label></label>
@@ -51,9 +51,9 @@
                 <font>-</font>
 				<align>center</align>
             </control>
-			<control type="label" description="Message">
-				<posx>0</posx>
-				<posy>0</posy>
+			<control type="label">
+				<left>0</left>
+				<top>0</top>
 				<height>30</height>
 				<width>1280</width>
 				<scroll>true</scroll>
@@ -62,8 +62,8 @@
 			</control>
             <control type="progress" id="32">
                 <description>progress control</description>
-                <posx>0</posx>
-                <posy>30</posy>
+                <left>0</left>
+                <top>30</top>
                 <width>1280</width>
                 <height>5</height>
                 <texturebg>progressnotification.png</texturebg>

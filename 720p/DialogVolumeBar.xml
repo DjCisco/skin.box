@@ -8,8 +8,8 @@
                 <visible>!player.passthrough</visible>
                 <control type="progress" id="1">
                     <description>progress control</description>
-                    <posx>0</posx>
-                    <posy>0</posy>
+                    <left>0</left>
+                    <top>0</top>
                     <width>1280</width>
                     <height>5</height>
                     <info>Player.Volume</info>

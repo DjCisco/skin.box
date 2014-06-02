@@ -19,8 +19,8 @@
             </animation>
 			<!-- This Control displays the background behind the Album List-->
             <control type="image">
-                <posx>370</posx>
-                <posy>290</posy>
+                <left>370</left>
+                <top>290</top>
                 <width>395</width>
                 <height>315</height>
                 <texture>music_fanart_diffuse.png</texture>
@@ -30,8 +30,8 @@
             </control>
 			<!-- This Control displays the background behind the Album List-->
             <control type="image">
-                <posx>370</posx>
-                <posy>290</posy>
+                <left>370</left>
+                <top>290</top>
                 <width>890</width>
                 <height>315</height>
                 <texture>music_fanart_diffuse.png</texture>
@@ -42,8 +42,8 @@
             <!-- This Control defines the album list-->
 			<control type="fixedlist" id="508">
                 <viewtype label="List Info">Album List</viewtype>
-                <posx>370</posx>
-                <posy>290</posy>
+                <left>370</left>
+                <top>290</top>
                 <width>890</width>
                 <height>315</height>
 				<movement>3</movement>
@@ -56,7 +56,7 @@
                 <!-- This Control defines the unfocused item layout-->
 				<itemlayout height="45" condition="!Skin.HasSetting(musicwidelist)">
                 <control type="label">
-                        <posx>20</posx>
+                        <left>20</left>
                         <width>355</width>
 						<font>List_Unfocused</font>
                         <label>$INFO[ListItem.Label]</label>
@@ -70,7 +70,7 @@
                         <texture>button.png</texture>
                     </control>
                     <control type="label">
-                        <posx>20</posx>
+                        <left>20</left>
                         <width>355</width>
 						<font>List_Focused</font>
                         <label>$INFO[ListItem.Label]</label>
@@ -79,13 +79,13 @@
 				<!-- This Control defines the unfocused wide item layout-->
 				<itemlayout height="45" condition="Skin.HasSetting(musicwidelist)">
                 <control type="label">
-                        <posx>20</posx>
+                        <left>20</left>
                         <width>890</width>
 						<font>List_Unfocused</font>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
 					<control type="label">
-						<posx>880</posx>
+						<left>880</left>
 						<width>160</width>
 						<height>50</height>
 						<textcolor>Accent</textcolor>
@@ -102,13 +102,13 @@
                         <texture>button.png</texture>
                     </control>
                     <control type="label">
-                        <posx>20</posx>
+                        <left>20</left>
                         <width>355</width>
 						<font>List_Focused</font>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
 					<control type="label">
-						<posx>880</posx>
+						<left>880</left>
 						<width>160</width>
 						<height>50</height>
 						<align>right</align>
@@ -117,138 +117,36 @@
 					</control>
                 </focusedlayout>
             </control>
-			<!-- Album Cover Elements -->
-			<control type="group">
-				<control type="image">
-					<posx>50</posx>
-					<posy>290</posy>
-					<width>315</width>
-					<height>315</height>
-					<texture>white_box.png</texture>
-					<aspectratio>stretch</aspectratio>
-				</control>
-				<control type="image">
-					<posx>50</posx>
-					<posy>290</posy>
-					<width>315</width>
-					<height>315</height>
-					<texture>button.png</texture>
-					<aspectratio>stretch</aspectratio>
-					<bordersize>5</bordersize>
-					<visible>StringCompare(ListItem.Label,* ALL ALBUMS) | StringCompare(ListItem.Label,..) | IsEmpty(ListItem.Icon)</visible>
-				</control>
-				<control type="image">
-					<posx>50</posx>
-					<posy>290</posy>
-					<width>315</width>
-					<height>315</height>
-					<texture>tile.png</texture>
-					<aspectratio>stretch</aspectratio>
-					<bordersize>5</bordersize>
-					<visible>StringCompare(ListItem.Label,* ALL ALBUMS) | StringCompare(ListItem.Label,..) | IsEmpty(ListItem.Icon)</visible>
-				</control>
-				<!-- This Control displays  the Main Album Poster-->
-				<control type="image">
-					<posx>100</posx>
-					<posy>340</posy>
-					<width>215</width>
-					<height>215</height>
-					<texture>$INFO[ListItem.Icon]</texture>
-					<aspectratio>stretch</aspectratio>
-					<visible>StringCompare(ListItem.Label,* ALL ALBUMS) | StringCompare(ListItem.Label,..) </visible>
-				</control>
-				<!-- This Control displays  the Main Album Poster-->
-				<control type="image">
-					<posx>50</posx>
-					<posy>290</posy>
-					<width>315</width>
-					<height>315</height>
-					<texture>$INFO[ListItem.Icon]</texture>
-					<aspectratio>stretch</aspectratio>
-					<bordersize>5</bordersize>
-					<visible>!StringCompare(ListItem.Label,* ALL ALBUMS) + !StringCompare(ListItem.Label,..) + !IsEmpty(ListItem.Icon)</visible>
-				</control>
-				<!-- This Control display the artist name below the main poster-->
-				<control type="label" id="144">
-					<posx>50</posx>
-					<posy>610</posy>
-					<width>465</width>
-					<height>50</height>
-					<font>Panel_Title_Footer</font>
-					<align>left</align>
-					<aligny>top</aligny>
-					<visible>true</visible>
-					<scroll>true</scroll>
-					<scrollout>false</scrollout>
-					<pauseatend>600</pauseatend>
-					<scrollspeed>50</scrollspeed>
-					<label>$INFO[ListItem.Artist]</label>
-					<visible>Container.Content(albums)</visible>
-				</control>
-			</control>
+		
+			
+			<include>ArtistAlbumPanelCover</include>
+			<!-- This control displays the Footer Text below the main Poster-->
+            <control type="label">
+				<include>ViewFooterTitle</include>	
+                <label>$VAR[PanelFooterText]</label>
+            </control>
+             
+			
+		
 			<!-- Album Description Elements -->
 			<control type="group">
 				<visible>!Skin.HasSetting(musicwidelist)</visible>
-				<!-- This Control displays the background of the description field-->
-				<control type="image">
-					<posx>780</posx>
-					<posy>290</posy>
-					<width>480</width>
-					<height>315</height>
-					<texture>music_fanart_diffuse.png</texture>
-					<fadetime>200</fadetime>
-					<aspectratio scalediffuse="false">stretch</aspectratio>
-				</control>
 				<!-- This Control defines the scrollbar of the Album list-->
 				<control type="scrollbar" id="61">
-					<posx>770</posx>
-					<posy>290</posy>
+					<left>770</left>
+					<top>290</top>
 					<width>5</width>
 					<height>315</height>
 					<onleft>508</onleft>
 					<showonepage>true</showonepage>
 					<orientation>vertical</orientation>
 				</control>
-				<!-- This control displays the Year of the album on the description field-->
-				<control type="label">
-					<posx>1245</posx>
-					<posy>300</posy>
-					<width>400</width>
-					<height>50</height>
-					<textcolor>Accent</textcolor>
-					<align>right</align>
-					<font>Panel_Description_Title</font>
-					<label>$INFO[ListItem.Year]</label>
-					<visible>Container.Content(Albums)</visible>
-				</control>
-				<!-- This Control displays the descirption on the description field-->
-				<control type="textbox">
-					<posx>795</posx>
-					<posy>350</posy>
-					<width>450</width>
-					<height>215</height>
-					<info>ListItem.Property(Album_Description)</info>
-					<align>justify</align>
-					<autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
-					<font>Panel_Description</font>
-					<visible>!IsEmpty(ListItem.Property(Album_Description))</visible>
-				</control>
-				<!-- This Control displays the album genre-->
-				<control type="label">
-					<posx>800</posx>
-					<posy>570</posy>
-					<width>600</width>
-					<height>50</height>
-					<aligny>left</aligny>
-					<font>Panel_Description_Footer</font>
-					<label>[COLOR Accent]$INFO[ListItem.Genre,[COLOR White]$LOCALIZE[515]: [/COLOR],][/COLOR]</label>
-					<visible>Container.Content(Albums) + !IsEmpty(ListItem.Genre)</visible>
-				</control>
+				<include>ArtistAlbumPanelDescription</include>	
 			</control>
 			<!-- Letter for Scrolling -->
 			<control type="label">
-                <posx>796</posx>
-                <posy>320</posy>
+                <left>796</left>
+                <top>320</top>
                 <width>485</width>
                 <height>50</height>
                 <align>center</align>
@@ -261,8 +159,8 @@
             </control>
 
 				<control type="scrollbar" id="61">
-					<posx>1265</posx>
-					<posy>290</posy>
+					<left>1265</left>
+					<top>290</top>
 					<width>5</width>
 					<height>315</height>
 					<onleft>508</onleft>

@@ -4,19 +4,41 @@
     <allowoverlay>yes</allowoverlay>
     <controls>
 		<include condition="!Window.IsVisible(DialogAddonSettings.xml)">GlobalOverlay</include>
-        <control type="group">
-			 <visible>!Window.IsVisible(AddonSettings)</visible>
-			<include>BigDialogCoordinates</include>
-			<include>BigDialogBackground</include>
-		</control>
 		<control type="group">
 			<include>BigDialogCoordinates</include>
 			 <visible>!Window.IsVisible(AddonSettings)</visible>
+			 <include>BigDialogBackground</include>
+			 
+			 	<control type="image">
+				<left>25</left>
+                <top>105</top>
+			   <width>475</width>
+			   <height>85</height>
+				<texture>tile.png</texture>
+			</control>
+			
+			<control type="image">
+				<left>25</left>
+                <top>195</top>
+			   <width>610</width>
+			   <height>175</height>
+				<texture>tile.png</texture>
+			</control>
+			 
+			 
+			 <control type="image">
+				<left>25</left>
+                <top>60</top>
+			   <width>475</width>
+			   <height>40</height>
+				<texture>tile.png</texture>
+			</control>
+			 
 			<control type="label" id="20">
                 <description>Header Label</description>
-				<posx>25</posx>
-                <posy>15</posy>
-                <width>650</width>
+				<left>0</left>
+                <top>15</top>
+                <width>660</width>
                 <align>center</align>
 				<aligny>top</aligny>
                 <font>Panel_Description_Title</font>
@@ -25,8 +47,8 @@
 			<!-- Content Type Selector--> 
             <control type="spincontrolex" id="3">
                 <description>Directory Content</description>
-                <posx>25</posx>
-                <posy>60</posy>
+                <left>25</left>
+                <top>60</top>
 				<height>40</height>
 				<width>475</width>
                 <font>-</font>
@@ -36,73 +58,99 @@
   				<ondown>4</ondown>
 				<textoffsetx>10</textoffsetx>
                 <font>Panel_Description</font>
-				<texturefocus>button.png</texturefocus>
-				<texturenofocus>tile.png</texturenofocus>
-            </control>
+				<texturefocus>tile.png</texturefocus>
+				<textureup>other_textures/arrowupfo.png</textureup>
+                <texturedown>other_textures/arrowdownfo.png</texturedown>
+                <textureupfocus>other_textures/arrowupg.png</textureupfocus>
+                <texturedownfocus>other_textures/arrowdowng.png</texturedownfocus>
+	        </control>
 			<!-- Content Type Selector Label -->
             <control type="label">
                 <description>Content Picker label</description>
-                <posx>25</posx>
-                <posy>60</posy>
+                <left>25</left>
+                <top>60</top>
 				<height>40</height>
                 <width>475</width>
                 <align>left</align>
                 <label>$INFO[Control.GetLabel(3)]</label>
 				<font>Panel_Description</font>
+				<visible>!Control.HasFocus(3)</visible>
             </control>
+			<!-- Content Type Selector Label Focused-->
+            <control type="label">
+                <description>Content Picker label</description>
+                <left>25</left>
+                <top>60</top>
+				<height>40</height>
+                <width>475</width>
+                <align>left</align>
+                <label>$INFO[Control.GetLabel(3)]</label>
+				<textcolor>Accent</textcolor>
+				<font>Panel_Description</font>
+				<visible>Control.HasFocus(3)</visible>
+            </control>
+			<control type="image">
+                <description>Large Icon Image</description>
+                <left>505</left>
+                <top>60</top>
+                <width>130</width>
+                <height>130</height>
+				<texture>defaultaddsource.png</texture>
+                <aspectratio>scale</aspectratio>
+				<bordersize>5</bordersize>
+				<bordertexture>tile.png</bordertexture>
+	        </control>
 			<!-- Main Icon -->
 		   <control type="image">
                 <description>Large Icon Image</description>
-                <posx>505</posx>
-                <posy>60</posy>
+                <left>505</left>
+                <top>60</top>
                 <width>130</width>
                 <height>130</height>
-				<texture fallback="button.png">$INFO[ListItem.Icon]</texture>
+				<texture>$INFO[Container(4).ListItem.Icon]</texture>
                 <aspectratio>scale</aspectratio>
 				<bordersize>5</bordersize>
 				<bordertexture>white_box.png</bordertexture>
             </control>
+		
+			
 			<!-- List of Available Scrappers-->
 			<control type="list" id="4">
-                <posx>25</posx>
-                <posy>105</posy>
+                <left>25</left>
+                <top>105</top>
                 <width>475</width>
                 <height>90</height>
                 <onup>3</onup>
                 <ondown>5</ondown>
                 <itemlayout height="45">
-                    <control type="image">
-                       <width>475</width>
-					   <height>40</height>
-                        <texture>tile.png</texture>
-                    </control>
-                    <control type="label">
-                        <posx>10</posx>
+                     <control type="label">
+                        <left>10</left>
                         <width>475</width>
                         <info>ListItem.Label</info>
                         <font>Panel_Description</font>
                     </control>
                 </itemlayout>
                 <focusedlayout height="45">
-                    <control type="image">
-                        <width>475</width>
-                        <height>40</height>
-                        <texture>button.png</texture>
-                        <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(4)">Conditional</animation>
+					<control type="image">
+                       <width>475</width>
+					   <height>40</height>
+                        <texture>tile.png</texture>
+						<visible>Control.HasFocus(4)</visible>
                     </control>
                     <control type="label">
-                        <posx>10</posx>
+                        <left>10</left>
                         <width>475</width>
                         <info>ListItem.Label</info>
 						<font>Panel_Description</font>
+						<textcolor>Accent</textcolor>
                     </control>
                 </focusedlayout>
             </control>
 			<!-- Control for List of Content Type Options-->
 			<control type="grouplist" id="5">
                 <description>Control Area</description>
-                <posx>25</posx>
-                <posy>195</posy>
+                <left>25</left>
+                <top>195</top>
                 <width>610</width>
                 <height>300</height>
                 <itemgap>5</itemgap>
@@ -116,8 +164,6 @@
 				<height>40</height>
                 <align>left</align>
 				<textoffsetx>10</textoffsetx>
-				<texturefocus>button.png</texturefocus>
-				<texturenofocus>tile.png</texturenofocus>
             </control> 
             <control type="radiobutton" id="8">
                 <description>radioButton</description>
@@ -125,14 +171,11 @@
                 <align>left</align>
                 <font>Panel_Description</font>
 				<textoffsetx>10</textoffsetx>
-				<scroll>true</scroll>
-				<texturefocus>button.png</texturefocus>
-				<texturenofocus>tile.png</texturenofocus>
 			</control>
 			<!-- Settings Canel & OK Buttons -->
 			<control type="grouplist" id="9000">
-                <posx>45</posx>
-				<posy>390</posy>
+                <left>50</left>
+				<top>390</top>
                 <itemgap>10</itemgap>
                 <orientation>horizontal</orientation>
                 <onup>5</onup>
@@ -143,6 +186,7 @@
 					<width>180</width>
 					<label>5</label>
 					<font>Panel_Hint</font>
+					<focusedcolor>White</focusedcolor>
 					<onfocus>SetProperty(addon,"Content",10140)</onfocus>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
@@ -152,14 +196,16 @@
                     <width>180</width>
                     <label>186</label>
                     <font>Panel_Hint</font>
+					<focusedcolor>White</focusedcolor>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
                 </control>
                 <control type="button" id="29">
                     <description>Cancel</description>
-                    <width>160</width>
+                    <width>180</width>
                     <label>222</label>
                     <font>Panel_Hint</font>
+					<focusedcolor>White</focusedcolor>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
                 </control>

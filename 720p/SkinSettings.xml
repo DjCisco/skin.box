@@ -25,27 +25,26 @@
             
 			<control type="image">
                 <description>background image</description>
-                <posx>50</posx>
-                <posy>290</posy>
+                <left>50</left>
+                <top>290</top>
                 <width>290</width>
-                <height>370</height>
+                <height>315</height>
                 <aspectratio>scale</aspectratio>
                 <texture>tile.png</texture>
             </control>			
 			 <control type="image">
                 <description>background image</description>
-                <posx>345</posx>
-                <posy>290</posy>
+                <left>345</left>
+                <top>290</top>
                 <width>810</width>
-                <height>370</height>
+                <height>315</height>
                 <aspectratio>scale</aspectratio>
                 <texture>tile.png</texture>
             </control>
-			
 			<control type="label">
                 <label>$LOCALIZE[31720]</label>
-                <posx>50</posx>
-                <posy>215</posy>
+                <left>50</left>
+                <top>215</top>
                 <height>30</height>
                 <width>250</width>
                 <font>Panel_Title</font>
@@ -54,8 +53,8 @@
             </control>
             <control type="label">
                 <label>[COLOR Accent]$LOCALIZE[5][/COLOR]</label>
-                <posx>345</posx>
-                <posy>215</posy>
+                <left>345</left>
+                <top>215</top>
                 <height>30</height>
                 <width>450</width>
                 <font>Panel_Title</font>
@@ -64,10 +63,10 @@
             </control>
             <control type="list" id="1000">
                 <description>List</description>
-                <posx>50</posx>
-                <posy>290</posy>
+                <left>50</left>
+                <top>290</top>
                 <width>290</width>
-                <height>370</height>
+                <height>315</height>
                 <onup>1000</onup>
                 <ondown>1000</ondown>
                 <onleft>noop</onleft>
@@ -78,11 +77,11 @@
                 <itemlayout height="46" width="300">
                     <control type="image">
                         <width>300</width>
-                        <height>44</height>
+                        <height>45</height>
                         <texture border="2">other_textures/buttonnf.png</texture>
                     </control>
                     <control type="label">
-                        <posx>280</posx>
+                        <left>280</left>
                         <width>260</width>
                         <align>right</align>
                         <label>$INFO[ListItem.Label]</label>
@@ -92,12 +91,12 @@
                 <focusedlayout height="46" width="300">
                     <control type="image">
                         <width>300</width>
-                        <height>44</height>
+                        <height>45</height>
                         <texture border="5">other_textures/buttonfo.png</texture>
                         <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(1000)">Conditional</animation>
                     </control>
                     <control type="label">
-                        <posx>280</posx>
+                        <left>280</left>
                         <width>260</width>
                         <align>right</align>
 						<font>List_Unfocused</font>
@@ -117,101 +116,26 @@
                     </item>
 					<item id="3">
 						<description>Scripts</description>
-						<label>scripts</label>
+						<label>24001</label>
 						<onclick>noop</onclick>
 					</item>
                 </content>
             </control>
             <control type="group" id="99">
-                <posx>345</posx>
-                <posy>290</posy>
+                <left>345</left>
+                <top>290</top>
                 <control type="grouplist" id="100">
                     <description>Control Area</description>
                     <width>810</width>
-                    <height>370</height>
-                    <itemgap>2</itemgap>
+                    <height>315</height>
+                    <itemgap>0</itemgap>
                     <onup>100</onup>
                     <ondown>100</ondown>
                     <onleft>1000</onleft>
                     <onright>noop</onright>
                     <orientation>vertical</orientation>
                     <visible>Container(1000).Hasfocus(1)</visible>
-                    <control type="radiobutton" id="101">
-                        <description>Toggle Movies</description>
-                        <width>810</width>
-                        <align>left</align>
-                        <label>31727</label>
-                        <focusedcolor>Accent</focusedcolor>
-                        <onclick>Skin.ToggleSetting(HideMovies)</onclick>
-                        <selected>Skin.HasSetting(HideMovies)</selected>
-                        <textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
-                        <textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
-						<font>List_Settings</font>
-                    </control>
-                    <control type="radiobutton" id="102">
-                        <description>Toggle Music</description>
-                        <width>810</width>
-                        <align>left</align>
-                        <label>31728</label>
-                        <focusedcolor>Accent</focusedcolor>
-                        <onclick>Skin.ToggleSetting(HideMusic)</onclick>
-                        <selected>Skin.HasSetting(HideMusic)</selected>
-                        <textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
-                        <textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
-						<font>List_Settings</font>
-                    </control>
-                    <control type="radiobutton" id="103">
-                        <description>Toggle TV</description>
-                        <width>810</width>
-                        <align>left</align>
-                        <label>31729</label>
-                        <focusedcolor>Accent</focusedcolor>
-                        <onclick>Skin.ToggleSetting(HideTV)</onclick>
-                        <selected>Skin.HasSetting(HideTV)</selected>
-                        <textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
-                        <textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
-						<font>List_Settings</font>
-                    </control>
-                    <control type="button" id="104">
-                        <description>Movies to show</description>
-                        <width>810</width>
-                        <align>left</align>
-                        <label>$LOCALIZE[31700]:</label>
-                        <label2>$VAR[ShowMovies]</label2>
-                        <focusedcolor>Accent</focusedcolor>
-						<font>List_Settings</font>
-                        <onclick condition="Stringcompare(Skin.String(ItemsTypeMovies),Random) | IsEmpty(Skin.String(ItemsTypeMovies))">Skin.SetString(ItemsTypeMovies,Random)</onclick>
-                        <onclick condition="Stringcompare(Skin.String(ItemsTypeMovies),Recent)">Skin.SetString(ItemsTypeMovies,Random)</onclick>
-                        <onclick condition="Stringcompare(Skin.String(ItemsTypeMovies),Recommended)">Skin.SetString(ItemsTypeMovies,Recent)</onclick>
-                        <onclick condition="Stringcompare(Skin.String(ItemsTypeMovies),Random)">Skin.SetString(ItemsTypeMovies,Recommended)</onclick>
-                    </control>
-                    <control type="button" id="105">
-                        <description>TV to show:</description>
-                        <width>810</width>
-                        <align>left</align>
-                        <label>$LOCALIZE[19020]:</label>
-                        <label2>$VAR[ShowTV]</label2>
-                        <focusedcolor>Accent</focusedcolor>
-						<font>List_Settings</font>
-                        <onclick condition="Stringcompare(Skin.String(ItemsTypeTV),Random) | IsEmpty(Skin.String(ItemsTypeTV))">Skin.SetString(ItemsTypeTV,Random)</onclick>
-                        <onclick condition="Stringcompare(Skin.String(ItemsTypeTV),Recent)">Skin.SetString(ItemsTypeTV,Random)</onclick>
-                        <onclick condition="Stringcompare(Skin.String(ItemsTypeTV),Recommended)">Skin.SetString(ItemsTypeTV,Recent)</onclick>
-                        <onclick condition="Stringcompare(Skin.String(ItemsTypeTV),Random)">Skin.SetString(ItemsTypeTV,Recommended)</onclick>
-                    </control>
-                    <control type="button" id="106">
-                        <description>Music to show:</description>
-                        <width>810</width>
-                        <align>left</align>
-                        <label>$LOCALIZE[2]:</label>
-                        <label2>$VAR[ShowMusic]</label2>
-                        <focusedcolor>Accent</focusedcolor>
-						<font>List_Settings</font>
-                        <onclick condition="Stringcompare(Skin.String(ItemsTypeMusic),Random) | IsEmpty(Skin.String(ItemsTypeMusic))">Skin.SetString(ItemsTypeMusic,Random)</onclick>
-                        <onclick condition="Stringcompare(Skin.String(ItemsTypeMusic),Recent)">Skin.SetString(ItemsTypeMusic,Random)</onclick>
-                        <onclick condition="Stringcompare(Skin.String(ItemsTypeMusic),Recommended)">Skin.SetString(ItemsTypeMusic,Recent)</onclick>
-                        <onclick condition="Stringcompare(Skin.String(ItemsTypeMusic),Random)">Skin.SetString(ItemsTypeMusic,Recommended)</onclick>
-                    </control>
-					<control type="radiobutton" id="107">
+					<control type="radiobutton" id="101">
                         <description>Disable Home Animations</description>
                         <width>810</width>
                         <align>left</align>
@@ -220,22 +144,8 @@
 						<font>List_Settings</font>
                         <onclick>Skin.ToggleSetting(DisableHomeAnimations)</onclick>
                         <selected>Skin.HasSetting(DisableHomeAnimations)</selected>
-                        <textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
-                        <textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
                     </control>
-					<control type="radiobutton" id="108">
-                        <description>Thumbs for episodes Widget</description>
-                        <width>810</width>
-                        <align>left</align>
-                        <label>Thumbs instead of Posters in Episodes Widget</label>
-                        <focusedcolor>Accent</focusedcolor>
-						<font>List_Settings</font>
-                        <onclick>Skin.ToggleSetting(EpisodeThumbsOnHome)</onclick>
-                        <selected>Skin.HasSetting(EpisodeThumbsOnHome)</selected>
-                        <textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
-                        <textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
-                    </control>
-					<control type="radiobutton" id="109">
+					<control type="radiobutton" id="102">
                         <description>Home Menu</description>
                         <width>810</width>
                         <align>left</align>
@@ -244,10 +154,8 @@
 						<font>List_Settings</font>
                         <onclick>Skin.ToggleSetting(HideHomeMenuIcons)</onclick>
                         <selected>Skin.HasSetting(HideHomeMenuIcons)</selected>
-                        <textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
-                        <textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
                     </control>
-					<control type="radiobutton" id="110">
+					<control type="radiobutton" id="103">
                         <description>Disable Home Fanart</description>
                         <width>810</width>
                         <align>left</align>
@@ -256,16 +164,23 @@
 						<font>List_Settings</font>
                         <onclick>Skin.ToggleSetting(DisableHomeFanart)</onclick>
                         <selected>Skin.HasSetting(DisableHomeFanart)</selected>
-                        <textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
-                        <textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
                     </control>
-					
+					 <control type="button" id="104">
+						<description>Open Customization Window</description>
+                        <width>810</width>
+                        <align>left</align>
+                        <label>Customize Home Menu</label>
+                        <label2></label2>
+                        <focusedcolor>Accent</focusedcolor>
+						<font>List_Settings</font>
+                        <onclick>ActivateWindow(3333,return)</onclick>
+					 </control>
 				</control>
                 <control type="grouplist" id="200">
                     <description>Control Area</description>
                     <width>810</width>
-                    <height>330</height>
-                    <itemgap>2</itemgap>
+                    <height>315</height>
+                    <itemgap>0</itemgap>
                     <onup>200</onup>
                     <ondown>200</ondown>
                     <onleft>1000</onleft>
@@ -281,8 +196,6 @@
 						<font>List_Settings</font>
                         <onclick>Skin.ToggleSetting(Fanart)</onclick>
                         <selected>Skin.HasSetting(Fanart)</selected>
-                        <textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
-                        <textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
                     </control>
                     <control type="radiobutton" id="202">
                         <description>Toggle Visualization</description>
@@ -293,8 +206,6 @@
 						<font>List_Settings</font>
                         <onclick>Skin.ToggleSetting(Visualization)</onclick>
                         <selected>Skin.HasSetting(Visualization)</selected>
-                        <textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
-                        <textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
                     </control>
                     <control type="button" id="203">
 						<description>Set Path to Music Library</description>
@@ -305,10 +216,8 @@
 						<font>List_Settings</font>
 						<onclick>Skin.Reset(ArtistsFanartPath)</onclick>
                         <onclick>Skin.SetPath(ArtistsFanartPath)</onclick>
-			            <textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
-                        <textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
-			         </control>
-					 <control type="radiobutton" id="204">
+					</control>
+					  <control type="radiobutton" id="204">
                         <description>Disable Artists Extrafanart</description>
                         <width>810</width>
                         <align>left</align>
@@ -317,8 +226,6 @@
 						<font>List_Settings</font>
                         <onclick>Skin.ToggleSetting(DisableArtistExtrafanartInNavigation)</onclick>
                         <selected>Skin.HasSetting(DisableArtistExtrafanartInNavigation)</selected>
-                        <textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
-                        <textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
 						<visible>!IsEmpty(Skin.String(ArtistsFanartPath))</visible>
                     </control>
 					<control type="radiobutton" id="205">
@@ -330,8 +237,6 @@
 						<font>List_Settings</font>
                         <onclick>Skin.ToggleSetting(PlayingVideoOnBackground)</onclick>
                         <selected>Skin.HasSetting(PlayingVideoOnBackground)</selected>
-                        <textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
-                        <textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
                     </control>
 					<control type="radiobutton" id="206">
                         <description>Toggle Text Scroll On Background</description>
@@ -342,8 +247,6 @@
 						<font>List_Settings</font>
                         <onclick>Skin.ToggleSetting(DisplayScrollingText)</onclick>
                         <selected>Skin.HasSetting(DisplayScrollingText)</selected>
-                        <textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
-                        <textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
                     </control>
 					<control type="radiobutton" id="207">
                         <description>Toggle Bg Color Mode</description>
@@ -354,16 +257,14 @@
 						<font>List_Settings</font>
                         <onclick>Skin.ToggleSetting(ThemeBackgroundColor)</onclick>
                         <selected>Skin.HasSetting(ThemeBackgroundColor)</selected>
-                        <textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
-                        <textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
                     </control>
 					
 				</control>
 				<control type="label">
 					<description>Display Path to Music Library</description>
 					<visible>Container(1000).Hasfocus(2)</visible>
-                        <posy>95</posy>
-						<posx>790</posx>
+                        <top>95</top>
+						<left>190</left>
 						<width>600</width>
 						<height>40</height>
                         <align>right</align>
@@ -373,31 +274,15 @@
 				<control type="grouplist" id="300">
 					<description>Control Area</description>
                     <width>810</width>
-                    <height>330</height>
-                    <itemgap>2</itemgap>
+                    <height>315</height>
+                    <itemgap>0</itemgap>
                     <onup>200</onup>
                     <ondown>200</ondown>
                     <onleft>1000</onleft>
                     <onright>noop</onright>
                     <orientation>vertical</orientation>
                     <visible>Container(1000).Hasfocus(3)</visible>
-                    <control type="button" id="301">
-						<description>lyrics Button</description>
-						<width>810</width>
-                        <align>left</align>
-						<font>List_Settings</font>
-						<label>Lyrics Addon</label>
-						<onclick>Skin.SetAddon(LyricPath,xbmc.python.lyrics)</onclick>	
-					</control>
-					<control type="button" id="302">
-						<description>Subtitles Button</description>
-						<width>810</width>
-                        <align>left</align>
-						<font>List_Settings</font>
-						<label>Subtitle Addon</label>
-						<onclick>Skin.SetAddon(SubtitlePath,xbmc.python.subtitles)</onclick>						
-					</control>
-					<control type="radiobutton" id="303">
+					<control type="radiobutton" id="3001">
 						<description>Tv Tunes</description>
 						 <width>810</width>
                         <align>left</align>
@@ -406,56 +291,35 @@
 						<font>List_Settings</font>
                         <onclick>Skin.ToggleSetting(ActivateTvTunes)</onclick>
 						<selected>Skin.HasSetting(ActivateTvTunes)</selected>
-						<textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
-                        <textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
 						<visible>System.HasAddon(script.tvtunes)</visible>
 					</control>
-                </control>
-				<control type="grouplist" id="350">
-					<description>Control Area</description>
-                    <width>810</width>
-                    <height>330</height>
-                    <itemgap>2</itemgap>
-                    <orientation>vertical</orientation>
-                    <visible>Container(1000).Hasfocus(3)</visible>
-					<control type="label" id="351">
-						<description>Display Chosen Lyrics Addon</description>
-						<width>790</width>
-						<align>right</align>
+					<control type="radiobutton" id="3002">
+						<description>Artist Slideshow</description>
+						 <width>810</width>
+                        <align>left</align>
+						<label>Enable Artists Slideshow Addon</label>
+                        <focusedcolor>Accent</focusedcolor>
 						<font>List_Settings</font>
-						<label>[COLOR Accent]$INFO[Skin.String(LyricPath)][/COLOR]</label>
-						<visible>!IsEmpty(Skin.String(LyricPath))</visible>
+                        <onclick>Skin.ToggleSetting(EnableArtistSlideshowAddon)</onclick>
+						<selected>Skin.HasSetting(EnableArtistSlideshowAddon)</selected>
+						<visible>System.HasAddon(script.artistslideshow)</visible>
 					</control>
-					<control type="label" id="352">
-						<description>Default Button</description>
-						<width>790</width>
-						<align>right</align>
-						<label>[COLOR Accent]CU Lyrics[/COLOR]</label>
+					<control type="radiobutton" id="3003">
+						<description>Tv Show Next Aired</description>
+						 <width>810</width>
+                        <align>left</align>
+						<label>Enable Tv Show Next Aired</label>
+                        <focusedcolor>Accent</focusedcolor>
 						<font>List_Settings</font>
-						<visible>IsEmpty(Skin.String(LyricPath))</visible>
+                        <onclick>Skin.ToggleSetting(EnableTvShowNexAired)</onclick>
+						<selected>Skin.HasSetting(EnableTvShowNexAired)</selected>
+						<visible>System.HasAddon(script.tv.show.next.aired)</visible>
 					</control>
-					<control type="label" id="353">
-						<description>Default Button</description>
-						<width>790</width>
-						<align>right</align>
-						<label>[COLOR Accent]$INFO[Skin.String(SubtitlePath)][/COLOR]</label>
-						<font>List_Settings</font>
-						<visible>!IsEmpty(Skin.String(SubtitlePath))</visible>
-					</control>
-					<control type="label" id="354">
-						<description>Default Button</description>
-						<width>790</width>
-						<align>right</align>
-						<label>[COLOR Accent]XBMC Subtitles[/COLOR]</label>
-						<font>List_Settings</font>
-						<visible>IsEmpty(Skin.String(SubtitlePath))</visible>
-						
-					</control>
-				 </control>
+				</control>
               </control>
-			<control type="image">
-                <posx>1155</posx>
-                <posy>290</posy>
+        	<control type="image">
+                <left>1155</left>
+                <top>290</top>
                 <width>40</width>
                 <height>40</height>
                 <texture flipy="true">down_arrow.png</texture>
@@ -463,8 +327,8 @@
                 <animation effect="fade" time="400">VisibleChange</animation>
             </control>
             <control type="image">
-                <posx>1155</posx>
-                <posy>620</posy>
+                <left>1155</left>
+                <top>565</top>
                 <width>40</width>
                 <height>40</height>
                 <texture>down_arrow.png</texture>

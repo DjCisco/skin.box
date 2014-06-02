@@ -1,0 +1,12 @@
+[B]2.1.0[/B]
+- Bug Fix Navigation in Screensaver Dimm Settings
+- Added Home Customization Functionality
+
+[B]2.0.1[/B]
+
+- Bug Fix Label of Artist Fanart Path  in Skin Settings
+- Bug Fix Display of MPPA Rating and Air Date for Episode Thumbs View
+
+[B]2.0.0[/B]
+
+- First Major Gotham Release

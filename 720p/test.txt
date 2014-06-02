@@ -1,0 +1,84 @@
+
+
+			
+			<control type="panel" id="555">
+                <left>600</left>
+                <top>10</top>
+                <width>320</width>
+                <height>320</height>
+                <scrolltime>200</scrolltime>
+                <orientation>vertical</orientation>
+                <onright>66</onright>
+                <onleft>9000</onleft>
+                <pagecontrol>7001</pagecontrol>
+                <itemlayout width="160" height="160">
+                    <control type="image">
+						<include>PanelButtonImageNF</include>
+                    </control>
+                    <control type="image">
+                        <include>PanelButtonIcon</include>
+                        <texture>ListItem.Thumb.png</texture>
+                    </control>
+                    <control type="label">
+                        <label>$INFO[ListItem.Label]</label>
+                        <include>PanelButtonTitle</include>
+                    </control>
+			    </itemlayout>
+                <focusedlayout width="160" height="160">
+                    <control type="image">
+                        <include>PanelButtonImageFO</include>
+                    </control>
+                    <control type="image">
+                        <include>PanelButtonIcon</include>
+                        <texture>ListItem.Thumb.png</texture>
+                    </control>
+			        <control type="label">
+                        <label>$INFO[ListItem.Label]</label>
+                        <include>PanelButtonTitle</include>
+					</control>
+                </focusedlayout>
+				<content>
+					<item id="1">
+						<label>$LOCALIZE[31701]</label>
+						<label2></label2>
+						<icon>DefaultMovies.png</icon>
+						<thumb>DefaultMovies.png</thumb>
+						<onclick>ActivateWindow(Videos,MovieTitles,return)<</onclick>
+						<visible>true</visible>
+					 </item>
+					 <item id="2">
+						<label>$LOCALIZE[14022]</label>
+						<label2></label2>
+						<icon>icons/MovieLibrary.png</icon>
+						<thumb>icons/MovieLibrary.png</thumb>
+						<onclick>ActivateWindow(Videos,Movies,return)</onclick>
+						<visible>true</visible>
+					 </item>
+					 <item id="3">
+						<label>$LOCALIZE[31702]/label>
+						<label2></label2>
+						<icon>DefaultRecentlyAddedMovies.png</icon>
+						<thumb>DefaultRecentlyAddedMovies.png</thumb>
+						<onclick>ActivateWindow(Videos, RecentlyAddedMovies,return)</onclick>
+						<visible>true</visible>
+					 </item>
+					 <item id="4">
+						<label>$LOCALIZE[31704]</label>
+						<label2></label2>
+						<icon>DefaultVideo.png/icon>
+						<thumb>DefaultVideo.png</thumb>
+						<onclick>ActivateWindow(Videos,TvShows)</onclick>
+						<onclick>Back</onclick>
+						<visible>true</visible>
+					 </item>
+					 <item id="5">
+						<label>$LOCALIZE[1037]</label>
+						<label2></label2>
+						<icon>DefaultAddonVideo.png</icon>
+						<thumb>DefaultAddonVideo.png</thumb>
+						<onclick>ActivateWindow(Videos,Addons,return)</onclick>
+						<visible>true</visible>
+					 </item>
+				</content>
+            </control>
+            

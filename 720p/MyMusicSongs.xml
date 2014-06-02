@@ -11,14 +11,14 @@
             <animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">
                 <effect type="fade" time="300" start="100" end="0" />
             </animation>
-            <posx>0</posx>
-            <posy>0</posy>
+            <left>0</left>
+            <top>0</top>
             <width>1280</width>
             <height>720</height>
             <texture border="2">other_textures/black-back.png</texture>
         </control>
 		
-		<!-- This control displays a a color background behind the left settings menu -->
+		 <!-- This control displays a a color background behind the left settings menu -->
 		<control type="group">
 			<animation type="Conditional" condition="!ControlGroup(9000).HasFocus() | Window.IsActive(PlayerControls)">
                 <effect type="slide" start="0,0" end="-320,0" time="300" easing="inout" tween="cubic" />
@@ -27,17 +27,17 @@
 			<control type="label">
                 <description>Menu Title</description>
                 <include>LeftMenuTitle</include>
-                <label>OPTIONS</label>
+                <label>$LOCALIZE[14018]</label>
             </control>
-		</control>
+		</control>	
 
         <control type="radiobutton" id="19">
             <description>Filter (hidden)</description>
             <include>HiddenButton</include>
         </control>
         <control type="grouplist" id="9000">
-            <posx>20</posx>
-            <posy>70</posy>
+            <left>20</left>
+            <top>70</top>
             <width>280</width>
             <height>405</height>
             <itemgap>0</itemgap>
@@ -54,8 +54,7 @@
                 <width>280</width>
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
-                <font>Panel_Info</font>
-				<texturefocus>button.png</texturefocus>
+                <font>List_Left_Menu</font>
             </control>
             <control type="togglebutton" id="4">
                 <description>Ascending</description>
@@ -64,8 +63,7 @@
 				<width>280</width>
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
-                <font>Panel_Info</font>
-				<texturefocus>button.png</texturefocus>
+                <font>List_Left_Menu</font>
             </control>
             <control type="button" id="5">
                 <description>Files</description>
@@ -74,8 +72,7 @@
 				<width>280</width>
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
-                <font>Panel_Info</font>
-				<texturefocus>button.png</texturefocus>
+                <font>List_Left_Menu</font>
             </control>
             <control type="button" id="8">
                 <description>Search</description>
@@ -83,8 +80,7 @@
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
 				 <label>137</label>
-                <font>Panel_Info</font>
-				<texturefocus>button.png</texturefocus>
+                <font>List_Left_Menu</font>
             </control>
             <control type="radiobutton" id="16">
                 <description>PartyMode</description>
@@ -92,8 +88,7 @@
 				<width>280</width>
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
-                <font>Panel_Info</font>
-				<texturefocus>button.png</texturefocus>
+                <font>List_Left_Menu</font>
             </control>
             <control type="button" id="21">
                 <description>Activate Filter</description>
@@ -103,8 +98,7 @@
                 <width>280</width>
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
-                <font>Panel_Info</font>
-				<texturefocus>button.png</texturefocus>
+                <font>List_Left_Menu</font>
 				<visible>IsEmpty(Window.Property(filter))</visible>
             </control>
             <control type="button" id="22">
@@ -113,8 +107,7 @@
                 <width>280</width>
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
-                <font>Panel_Info</font>
-				<texturefocus>button.png</texturefocus>
+                <font>List_Left_Menu</font>
 				<onclick>SendClick(musiclibrary,19)</onclick>
                 <onclick>SetFocus(21)</onclick>
                 <visible>!IsEmpty(Window.Property(filter))</visible>

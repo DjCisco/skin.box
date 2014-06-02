@@ -3,8 +3,8 @@
     <defaultcontrol>61</defaultcontrol>
     <controls>
         <control type="group">
-            <posx>140</posx>
-            <posy>140</posy>
+            <left>140</left>
+            <top>140</top>
             <control type="image">
                 <width>1000</width>
                 <height>440</height>
@@ -61,24 +61,24 @@
 			
 			<control type="label" id="1">
                 <description>header label</description>
-                <posx>20</posx>
-                <posy>20</posy>
+                <left>20</left>
+                <top>20</top>
                 <width>950</width>
                 <height>30</height>
                 <font>Panel_Description_Title</font>
                 </control>
             <control type="textbox" id="5">
                 <description>textarea</description>
-                <posx>20</posx>
-                <posy>60</posy>
+                <left>20</left>
+                <top>60</top>
                 <width>950</width>
                 <height>355</height>
                 <align>justify</align>
 				<font>Panel_Info</font>
             </control>
             <control type="scrollbar" id="61">
-                <posx>975</posx>
-                <posy>60</posy>
+                <left>975</left>
+                <top>60</top>
                 <width>5</width>
                 <height>355</height>
                 <onleft>Close</onleft>

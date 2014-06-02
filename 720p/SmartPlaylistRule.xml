@@ -5,68 +5,68 @@
     <controls>
         <include>GlobalOverlay</include>
 		<control type="image">
-                <posx>322</posx>
-                <posy>210</posy>
+                <left>322</left>
+                <top>210</top>
                 <width>635</width>
                 <height>5</height>
                 <texture>button.png</texture>
             </control>
 		<control type="image">
-                <posx>322</posx>
-                <posy>545</posy>
+                <left>322</left>
+                <top>545</top>
                 <width>635</width>
                 <height>5</height>
                 <texture>button.png</texture>
             </control>
 		<control type="image">
-                <posx>317</posx>
-                <posy>210</posy>
+                <left>317</left>
+                <top>210</top>
                 <width>5</width>
                 <height>340</height>
                 <texture>button.png</texture>
             </control>
 		<control type="image">
-                <posx>957</posx>
-                <posy>210</posy>
+                <left>957</left>
+                <top>210</top>
                 <width>5</width>
                 <height>340</height>
                 <texture>button.png</texture>
             </control>
 		<control type="image">
-                <posx>327</posx>
-                <posy>220</posy>
+                <left>327</left>
+                <top>220</top>
                 <width>625</width>
                 <height>320</height>
                 <texture>other_textures/black-back.png</texture>
             </control>
 		<control type="image">
-                <posx>327</posx>
-                <posy>220</posy>
+                <left>327</left>
+                <top>220</top>
                 <width>625</width>
                 <height>320</height>
                 <texture>other_textures/black-back.png</texture>
             </control>
 		<control type="image">
-                <posx>327</posx>
-                <posy>220</posy>
+                <left>327</left>
+                <top>220</top>
                 <width>625</width>
                 <height>320</height>
                 <texture>other_textures/black-back.png</texture>
             </control>
 		<control type="image">
-                <posx>327</posx>
-                <posy>220</posy>
+                <left>327</left>
+                <top>220</top>
                 <width>625</width>
                 <height>320</height>
                 <texture>music_fanart_diffuse_blue.png</texture>
             </control>
 	    <control type="group">
-            <posx>327</posx>
-            <posy>220</posy>
+            <left>327</left>
+            <top>220</top>
             <control type="label">
                 <description>header label</description>
-                <posx>0</posx>
-                <posy>10</posy>
+                <left>0</left>
+                <top>10</top>
                 <width>625</width>
                 <font>Panel_Description_Title</font>
                 <align>center</align>
@@ -74,8 +74,8 @@
             </control>
             <control type="label">
                 <description>Rule match label</description>
-                <posx>0</posx>
-                <posy>50</posy>
+                <left>0</left>
+                <top>50</top>
                 <width>625</width>
                 <align>center</align>
                 <textcolor>Accent</textcolor>
@@ -85,8 +85,8 @@
             <control type="group" id="9001">
                 <control type="spincontrolex" id="15">
                     <description>Rule Field</description>
-                    <posx>10</posx>
-                    <posy>100</posy>
+                    <left>10</left>
+                    <top>100</top>
                     <width>300</width>
                     <font>-</font>
                     <onright>16</onright>
@@ -102,16 +102,16 @@
 				</control>
                 <control type="label">
                     <description>Rule Field label</description>
-                    <posx>20</posx>
-                    <posy>100</posy>
+                    <left>20</left>
+                    <top>100</top>
                     <width>300</width>
 					<font>List_Settings</font>
                     <label>$INFO[Control.GetLabel(15)]</label>
 				</control>
 				<control type="label">
                     <description>Rule Field label</description>
-                    <posx>20</posx>
-                    <posy>100</posy>
+                    <left>20</left>
+                    <top>100</top>
                     <width>300</width>
 					<font>List_Settings</font>
                     <label>[COLOR Accent]$INFO[Control.GetLabel(15)][/COLOR]</label>
@@ -119,8 +119,8 @@
 				</control>
                 <control type="spincontrolex" id="16">
                     <description>Rule operator</description>
-                    <posx>315</posx>
-                    <posy>100</posy>
+                    <left>315</left>
+                    <top>100</top>
                     <width>300</width>
                     <font>-</font>
                     <onright>15</onright>
@@ -136,16 +136,16 @@
 				</control>
                 <control type="label">
                     <description>Rule Field label</description>
-                    <posx>325</posx>
-                    <posy>100</posy>
+                    <left>325</left>
+                    <top>100</top>
                     <width>300</width>
 					<font>List_Settings</font>
                     <label>$INFO[Control.GetLabel(16)]</label>
 				</control>
 				<control type="label">
                     <description>Rule Field label</description>
-                    <posx>325</posx>
-                    <posy>100</posy>
+                    <left>325</left>
+                    <top>100</top>
                     <width>300</width>
 					<font>List_Settings</font>
                     <label>[COLOR Accent]$INFO[Control.GetLabel(16)][/COLOR]</label>
@@ -154,8 +154,8 @@
 			</control>
             <control type="button" id="17">
                 <description>Value Button</description>
-                <posx>10</posx>
-                <posy>150</posy>
+                <left>10</left>
+                <top>150</top>
                 <width>440</width>
                 <label></label>
                 <onup>9001</onup>
@@ -169,8 +169,8 @@
             </control>
             <control type="button" id="20">
                 <description>Browse Button</description>
-                <posx>455</posx>
-                <posy>150</posy>
+                <left>455</left>
+                <top>150</top>
                 <width>160</width>
                 <label>1024</label>
                 <onup>9001</onup>
@@ -183,8 +183,8 @@
             <control type="group" id="9000">
                 <control type="button" id="18">
                     <description>Ok Button</description>
-                    <posx>105</posx>
-                    <posy>224</posy>
+                    <left>105</left>
+                    <top>224</top>
                     <width>200</width>
                     <label>186</label>
                     <onup>17</onup>
@@ -198,8 +198,8 @@
                 </control>
                 <control type="button" id="19">
                     <description>Cancel Button</description>
-                    <posx>320</posx>
-                    <posy>224</posy>
+                    <left>320</left>
+                    <top>224</top>
                     <width>200</width>
                     <label>222</label>
                     <onup>17</onup>

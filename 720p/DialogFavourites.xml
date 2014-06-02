@@ -17,8 +17,8 @@
                 <label>$LOCALIZE[1036]</label>
             </control>
             <control type="panel" id="450">
-                <posx>370</posx>
-                <posy>290</posy>
+                <left>370</left>
+                <top>290</top>
                 <width>850</width>
                 <height>320</height>
                 <scrolltime>200</scrolltime>
@@ -51,16 +51,16 @@
 						<visible>IsEmpty(ListItem.Icon)</visible>
                     </control>
 					<control type="image">
-						<posx>5</posx>
-						<posy>120</posy>
+						<left>5</left>
+						<top>120</top>
                         <width>145</width>
                         <height>30</height>
                         <texture>tile.png</texture>
                     </control>
 					<control type="label">
                         <label>$INFO[ListItem.Label]</label>
-                        <posx>10</posx>
-                        <posy>120</posy>
+                        <left>10</left>
+                        <top>120</top>
                         <height>30</height>
                         <width>140</width>
                         <font>Panel_Scroll_Label</font>
@@ -96,8 +96,8 @@
 						<visible>IsEmpty(ListItem.Icon)</visible>
                     </control>
 					<control type="image">
-						<posx>5</posx>
-						<posy>120</posy>
+						<left>5</left>
+						<top>120</top>
                         <width>145</width>
                         <height>30</height>
                         <texture>tile.png</texture>
@@ -105,8 +105,8 @@
                     
                     <control type="label">
                         <label>$INFO[ListItem.Label]</label>
-                        <posx>10</posx>
-                        <posy>120</posy>
+                        <left>10</left>
+                        <top>120</top>
                         <height>30</height>
                         <width>140</width>
                         <font>Panel_Scroll_Label</font>
@@ -115,8 +115,8 @@
                 </focusedlayout>
             </control>
             <control type="scrollbar" id="451">
-                <posx>1170</posx>
-                <posy>290</posy>
+                <left>1170</left>
+                <top>290</top>
                 <width>5</width>
                 <height>315</height>
                 <texturesliderbackground></texturesliderbackground>
@@ -128,8 +128,8 @@
                 <orientation>vertical</orientation>
             </control>
             <control type="fadelabel" id="140">
-                <posx>370</posx>
-                <posy>215</posy>
+                <left>370</left>
+                <top>215</top>
                 <height>30</height>
                 <width>800</width>
                 <font>Panel_Title</font>
@@ -141,15 +141,15 @@
                 <scrollspeed>50</scrollspeed>
             </control>
 			 <control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
+                <left>50</left>
+                <top>290</top>
                 <width>315</width>
                 <height>315</height>
                 <texture background="true">tile.png</texture>
             </control>
 			 <control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
+                <left>50</left>
+                <top>290</top>
                 <width>315</width>
                 <height>315</height>
                 <texture background="true">$INFO[Container(450).ListItem.Icon]</texture>
@@ -159,8 +159,8 @@
 				<bordertexture>white_box.png</bordertexture>
 			</control>
 			<control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
+                <left>50</left>
+                <top>290</top>
                 <width>315</width>
                 <height>315</height>
                 <texture background="true">button.png</texture>
@@ -172,8 +172,8 @@
 				<visible>IsEmpty(ListItem.Icon)</visible>
             </control>
 			<control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
+                <left>50</left>
+                <top>290</top>
                 <width>315</width>
                 <height>315</height>
                 <texture background="true">tile.png</texture>
@@ -184,8 +184,8 @@
 				<visible>IsEmpty(ListItem.Icon)</visible>
             </control>
 			<control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
+                <left>50</left>
+                <top>290</top>
                 <width>315</width>
                 <height>315</height>
                 <texture background="true">defaultfolder.png</texture>

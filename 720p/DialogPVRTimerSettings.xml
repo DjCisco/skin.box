@@ -4,8 +4,8 @@
     <controls>
         <include>GlobalOverlay</include>
         <control type="group">
-            <posx>960</posx>
-            <posy>0</posy>
+            <left>960</left>
+            <top>0</top>
             <animation type="WindowOpen">
                 <effect type="slide" time="300" start="+320, 0" end="0,0" easing="out" tween="cubic" />
             </animation>
@@ -15,8 +15,8 @@
 			<include>RightMenuBackground</include>
 			<control type="fadelabel">
                 <description>Menu Title</description>
-                <posx>20</posx>
-                <posy>0</posy>
+                <left>20</left>
+                <top>0</top>
                 <width>280</width>
                 <label>$LOCALIZE[19040]</label>
                 <font>Panel_Description_Title</font>
@@ -24,31 +24,31 @@
             </control>
              <control type="grouplist" id="5">
                 <description>control area</description>
-				<posx>10</posx>
-                <posy>70</posy>
+				<left>10</left>
+                <top>70</top>
                 <width>300</width>
                 <height>540</height>
-                <itemgap></itemgap>
+                <itemgap>0</itemgap>
                 <onup>9001</onup>
                 <ondown>9001</ondown>
                 <onleft>9001</onleft>
                 <onright>9001</onright>
             </control>
             <control type="grouplist" id="9001">
-                <posx>20</posx>
-                <posy>655</posy>
+                <left>20</left>
+                <top>655</top>
                 <itemgap>10</itemgap>
                 <orientation>horizontal</orientation>
 				<onup>5</onup>
                 <ondown>5</ondown>
                 <control type="button" id="28">
                     <description>OK Button</description>
-                   <description>Ok</description>
                     <width>135</width>
                     <label>186</label>
                     <font>Panel_Hint</font>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
                 </control>
                 <control type="button" id="29">
                     <description>Cancel Button</description>
@@ -57,6 +57,7 @@
 					<label>222</label>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
 				</control>
             </control>
 			
@@ -64,36 +65,37 @@
                 <description>Default Button</description>
                 <font>List_Settings</font>
                 <align>left</align>
-				<texturefocus>button.png</texturefocus>
-				<texturenofocus>tile.png</texturenofocus>
             </control>
             <control type="radiobutton" id="8">
                 <description>Default RadioButton</description>
                 <font>List_Settings</font>
                 <align>left</align>
-				<texturefocus>button.png</texturefocus>
-				<texturenofocus>tile.png</texturenofocus>
+				<texturefocus>tile.png</texturefocus>
+				<focusedcolor>Accent</focusedcolor>
             </control>
             <control type="spincontrolex" id="9">
                 <description>Default spincontrolex</description>
                 <font>List_Settings</font>
-                <focusedcolor>white</focusedcolor>
                 <aligny>center</aligny>
                 <reverse>yes</reverse>
-				<texturefocus>button.png</texturefocus>
-				<texturenofocus>tile.png</texturenofocus>
+				<texturefocus>tile.png</texturefocus>
+				<focusedcolor>Accent</focusedcolor>
+				<textureup>other_textures/arrowupfo.png</textureup>
+                <texturedown>other_textures/arrowdownfo.png</texturedown>
+                <textureupfocus>other_textures/arrowupg.png</textureupfocus>
+                <texturedownfocus>other_textures/arrowdowng.png</texturedownfocus>
             </control>
             <control type="sliderex" id="10">
                 <description>Default Slider</description>
                 <font>List_Settings</font>
-				<texturefocus>button.png</texturefocus>
-				<texturenofocus>tile.png</texturenofocus>
+				<texturefocus>tile.png</texturefocus>
+				<focusedcolor>Accent</focusedcolor>
             </control>
             <control type="edit" id="12">
                 <description>Default Edit</description>
                 <font>List_Settings</font>
-				<texturefocus>button.png</texturefocus>
-				<texturenofocus>tile.png</texturenofocus>
+				<texturefocus>tile.png</texturefocus>
+				<focusedcolor>Accent</focusedcolor>
             </control>
         </control>
     </controls>

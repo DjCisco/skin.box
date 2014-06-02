@@ -5,40 +5,45 @@
     <allowoverlay>yes</allowoverlay>
     <controls>
         <include>GlobalOverlay</include>
-		<!-- Dialog Background -->
+	       
 		<control type="group">
 			<include>BigDialogCoordinates</include>
 			<include>BigDialogBackground</include>
-		</control>
-        
-		<control type="group">
-			<include>BigDialogCoordinates</include>
 			<control type="fadelabel">
                 <description>Menu Title</description>
-                <posx>25</posx>
-                <posy>20</posy>
+                <left>25</left>
+                <top>20</top>
                 <width>610</width>
-                <label>Enter the $LOCALIZE[573]s or Browse for Media Locations</label>
+                <label>1021</label>
                 <font>Panel_Info</font>
                 <align>left</align>
 				<aligny>top</aligny>
             </control>
+			<control type="image">
+				<left>25</left>
+				<top>60</top>
+                <width>460</width>
+                <height>225</height>
+				<texture>tile.png</texture>
+			</control>
+			<control type="image">
+				<left>25</left>
+				<top>320</top>
+                <width>610</width>
+                <height>45</height>
+				<texture>tile.png</texture>
+			</control>
 			<control type="list" id="10">
-                <posx>25</posx>
-				<posy>60</posy>
+                <left>25</left>
+				<top>60</top>
                 <width>460</width>
                 <height>225</height>
                 <onright>9000</onright>
 				<ondown>12</ondown>
 				<onup>9001</onup>
                 <itemlayout height="45">
-                    <control type="image">
-                        <width>460</width>
-                        <height>40</height>
-                        <texture>tile.png</texture>
-                    </control>
                     <control type="label">
-                        <posx>10</posx>
+                        <left>10</left>
                         <width>440</width>
 						<font>Panel_Info</font>
 						<info>ListItem.Label</info>
@@ -47,27 +52,23 @@
                 <focusedlayout height="45">
                     <control type="image">
                         <width>460</width>
-                        <height>40</height>
-                        <texture>button.png</texture>
-					</control>
-					<control type="image">
-                        <width>460</width>
-                        <height>40</height>
+                        <height>45</height>
                         <texture>tile.png</texture>
-						<visible>!Control.HasFocus(10)</visible>
-                    </control>
-                    <control type="label">
-                        <posx>10</posx>
+						<visible>Control.HasFocus(10)</visible>
+					</control>
+			        <control type="label">
+                        <left>10</left>
                         <width>440</width>
                         <info>ListItem.Label</info>
 						<font>Panel_Info</font>
+						<textcolor>Accent</textcolor>
 					</control>
 	
                 </focusedlayout>
             </control>
 			<control type="grouplist" id="9000">
-                <posx>490</posx>
-                <posy>60</posy>
+                <left>490</left>
+                <top>60</top>
                 <width>145</width>
                 <itemgap>5</itemgap>
                 <orientation>vertical</orientation>
@@ -82,6 +83,7 @@
                     <font>Panel_Hint</font>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
                 </control>
                 <control type="button" id="13">
                     <description>Add</description>
@@ -92,6 +94,7 @@
 					<font>Panel_Hint</font>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
                 </control>
                 <control type="button" id="14">
                     <description>Remove</description>
@@ -102,34 +105,35 @@
 					<font>Panel_Hint</font>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
                 </control>
             </control>
 			<control type="label" id="0">
 				<description>Name Label</description>
-				<posx>0</posx>
-				<posy>280</posy>
+				<left>0</left>
+				<top>280</top>
 				<width>650</width>
-				<label>Enter a Name for this Media Source</label>
+				<label>1022</label>
 				<align>center</align>
 				<font>Panel_Info</font>
 			</control>
 			<control type="button" id="12">
 				<description>Name</description>
-				<posx>25</posx>
-				<posy>320</posy>
+				<left>25</left>
+				<top>320</top>
 				<label></label>
 				<width>610</width>
 				<align>center</align>
 				<textoffsetx>10</textoffsetx>
 				<font>Panel_Info</font>
-				<texturefocus>button.png</texturefocus>
-				<texturenofocus>tile.png</texturenofocus>
+				<texturefocus>tile.png</texturefocus>
+				<texturenofocus></texturenofocus>
 				<onup>10</onup>
 				<ondown>9001</ondown>
 			</control>
 			<control type="grouplist" id="9001">
-                <posx>140</posx>
-                <posy>390</posy>
+                <left>140</left>
+                <top>390</top>
                 <itemgap>10</itemgap>
                 <orientation>horizontal</orientation>
                 <onup>12</onup>
@@ -141,6 +145,7 @@
                     <font>Panel_Hint</font>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
                 </control>
                 <control type="button" id="19">
                     <description>Cancel</description>
@@ -149,6 +154,7 @@
                     <font>Panel_Hint</font>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
 				</control>
 			</control>
 		</control>

@@ -15,8 +15,8 @@
 			<animation effect="slide" start="0,0" end="0,-45" time="300" condition="Window.IsActive(playercontrols)">conditional</animation>
             <visible>!Window.IsActive(visualisation) + !Window.IsActive(karaoke) + !Window.IsActive(slideshow) + ![Skin.HasSetting(ActivateTvTunes) + System.HasAddon(script.tvtunes) + SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]</visible>
             <control type="group">
-                <posx>0</posx>
-                <posy>685</posy>
+                <left>0</left>
+                <top>685</top>
                 
 				<!-- Background -->
 				<control type="image">
@@ -25,8 +25,8 @@
                     <texture>tile.png</texture>
                 </control>
 				<control type="label">
-                    <posx>5</posx>
-					<posy>0</posy>
+                    <left>5</left>
+					<top>0</top>
 					<description>Now Playing</description>
                     <width>920</width>
                     <label>TITLE [COLOR Accent]$INFO[MusicPlayer.Title][/COLOR]</label>
@@ -38,8 +38,8 @@
                 
 				</control>
 				<control type="label">
-                    <posx>5</posx>
-					<posy>0</posy>
+                    <left>5</left>
+					<top>0</top>
 					<description>Now Playing</description>
                     <width>920</width>
                     <label>ARTIST [COLOR Accent]$INFO[MusicPlayer.Artist][/COLOR]</label>
@@ -50,8 +50,8 @@
 					<visible>[IntegerGreaterThan(System.Time(ss),5) + !IntegerGreaterThan(System.Time(ss),10)] | [IntegerGreaterThan(System.Time(ss),20) + !IntegerGreaterThan(System.Time(ss),25)] | [IntegerGreaterThan(System.Time(ss),35) + !IntegerGreaterThan(System.Time(ss),40)] | [IntegerGreaterThan(System.Time(ss),50) + !IntegerGreaterThan(System.Time(ss),55)]</visible>
                 </control>
 				<control type="label">
-                    <posx>5</posx>
-					<posy>0</posy>
+                    <left>5</left>
+					<top>0</top>
 					<description>Now Playing</description>
                     <width>920</width>
                     <label>ALBUM [COLOR Accent]$INFO[MusicPlayer.Album] ($INFO[MusicPlayer.Year])[/COLOR]</label>
@@ -63,8 +63,8 @@
                 </control>
 				<control type="label">
                     <description>Player Times</description>
-                    <posx>1275</posx>
-                    <posy>0</posy>
+                    <left>1275</left>
+                    <top>0</top>
                     <width>240</width>
                     <label>[COLOR Accent]$INFO[Player.Time][/COLOR] / $INFO[Player.Duration]</label>
                     <align>right</align>
@@ -73,8 +73,8 @@
                  </control>
 				<control type="progress">
                     <description>Progressbar</description>
-                    <posy>30</posy>
-					<posx>0</posx>
+                    <top>30</top>
+					<left>0</left>
                     <width>1280</width>
                     <height>5</height>
                     <info>Player.Progress</info>

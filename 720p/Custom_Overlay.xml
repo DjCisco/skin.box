@@ -8,8 +8,8 @@
 
 		<control type="image">
 			<visible>Skin.HasSetting(DebugGrid)</visible>
-			<posx>0</posx>
-			<posy>0</posy>
+			<left>0</left>
+			<top>0</top>
 			<width>1280</width>
 			<height>720</height>
 			<texture>special://skin/debuggrid720.png</texture>
@@ -21,8 +21,8 @@
 		<!-- Window/Dialog debug -->
 
 		<control type="grouplist">
-			<posx>15</posx>
-			<posy>15</posy>
+			<left>15</left>
+			<top>15</top>
 			<width>780</width>
 			<height>450</height>
 			<itemgap>12</itemgap>
@@ -41,6 +41,125 @@
 			</control>
 			
 			
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Player Content: Music Videos</label>
+				<visible>VideoPlayer.Content(musicvideos)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Player Content: Movies</label>
+				<visible>VideoPlayer.Content(movies)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Player Content: Episodes</label>
+				<visible>VideoPlayer.Content(episodes)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Player Content: Live Tv</label>
+				<visible>VideoPlayer.Content(livetv)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Player Content: Files</label>
+				<visible>VideoPlayer.Content(files)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Player Content: Music Videos</label>
+				<visible>VideoPlayer.Content(musicvideos)</visible>
+			</control>
+			
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Player: Media</label>
+				<visible>Player.HasMedia</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Player: Video</label>
+				<visible>Player.HasVideo</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Player: Audio</label>
+				<visible>Player.HasAudioo</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Player: Internet Stream</label>
+				<visible>Player.IsInternetStream</visible>
+			</control>
+			
+			
+			
+			
+			
+			
+			
+			
 			<!-- Content Labels -->
 			<control type="label">
 				<width>780</width>
@@ -51,6 +170,17 @@
 				<align>left</align>
 				<label>Content: Files</label>
 				<visible>Container.Content(files)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Pictures</label>
+				<visible>Container.Content(pictures)</visible>
 			</control>
 			
 			<control type="label">
@@ -84,6 +214,17 @@
 				<align>left</align>
 				<label>Content: Songs</label>
 				<visible>Container.Content(songs)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Albums</label>
+				<visible>Container.Content(albums)</visible>
 			</control>
 			
 			<control type="label">
@@ -159,7 +300,7 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>List_Settings</font>
 				<align>left</align>
-				<label>Content: Seasons</label>
+				<label>Content: Episodes</label>
 				<visible>Container.Content(episodes)</visible>
 			</control>
 			
@@ -1129,9 +1270,9 @@
 		<!-- Control label -->
 
 		<control type="label">
-			<posx>15r</posx>
-			<posy>15</posy>
-			<width>780</width>
+			<left>640</left>
+			<top>15</top>
+			<width>640</width>
 			<height>21</height>
 			<textcolor>FF0000FF</textcolor>
 			<shadowcolor>FF000000</shadowcolor>
@@ -1144,9 +1285,9 @@
 		<!-- Path label -->
 
 		<control type="label">
-			<posx>15r</posx>
-			<posy>48</posy>
-			<width>780</width>
+			<left>640</left>
+			<top>48</top>
+			<width>640</width>
 			<height>21</height>
 			<textcolor>FFFF0000</textcolor>
 			<shadowcolor>FF000000</shadowcolor>

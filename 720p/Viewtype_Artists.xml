@@ -22,8 +22,8 @@
             <!--This control defines the list that will display the items -->
 			<control type="fixedlist" id="527">
                 <visible>Container.Content(artists)</visible>
-                <posx>15</posx>
-                <posy>20</posy>
+                <left>15</left>
+                <top>20</top>
                 <width>1000</width>
                 <height>700</height>
                 <onleft>9000</onleft>
@@ -47,7 +47,7 @@
 				</itemlayout>
                 <focusedlayout width="1000" height="100">
                     <control type="label">
-					<posx>20</posx>
+					<left>20</left>
 						<width>1000</width>
 						<height>90</height>
 						<aligny>center</aligny>
@@ -61,8 +61,8 @@
             </control>	
 			<!--This control defines the scrollbar controlling the large list list -->
 			<control type="scrollbar" id="60">
-                <posx>1275</posx>
-                <posy>15</posy>
+                <left>1275</left>
+                <top>15</top>
                 <width>5</width>
                 <height>690</height>
 				<onleft>527</onleft>

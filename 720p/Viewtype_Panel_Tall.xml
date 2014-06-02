@@ -21,8 +21,8 @@
             <!-- This definition of a Panel Container used for Movies and Tv Shows -->
 			<control type="panel" id="522">
                 <viewtype label="Thumb Info">Poster Info</viewtype>
-                <posx>270</posx>
-                <posy>290</posy>
+                <left>270</left>
+                <top>290</top>
                 <width>525</width>
                 <height>320</height>
                 <scrolltime>200</scrolltime>
@@ -32,288 +32,30 @@
                 <pagecontrol>62</pagecontrol>
                 <preloaditems>2</preloaditems>
                 <visible>Window.IsActive(1) | Container.Content(Movies) | Container.Content(TVShows)</visible>
-                 <!-- The Item Layout Defines The Size Backgrounds and overlays used for any item of the Panel -->
-				<itemlayout width="105" height="160">
-                    <!-- This Control Display the A Transparent Background behind the Movie or Tv Show Poster -->
-					<control type="image">
-                        <width>100</width>
-                        <height>155</height>
-                        <texture background="true">tile.png</texture>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
-                    </control>
-		          <!-- This Control Display the Icon of the Item in the Panel (The Movie or TV Shows Poster) -->
-					<control type="image">
-                        <width>100</width>
-                        <height>155</height>
-                        <texture background="true">$INFO[ListItem.Art(poster)]</texture>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-						<bordersize>5</bordersize>
-                    </control>
-                    <!-- This Control Display the Default Icon of the Item in the Panel (The Level Up Arrow) -->
-					<control type="image">
-                        <posx></posx>
-                        <posy></posy>
-                        <width>100</width>
-                        <height>155</height>
-                        <texture background="true">$INFO[ListItem.Icon]</texture>
-                        <colordiffuse>ImageDiffuse</colordiffuse>
-                        <aspectratio scalediffuse="false">keep</aspectratio>
-						<bordersize>5</bordersize>
-                        <visible>IsEmpty(ListItem.Art(poster))</visible>
-					</control>
-                    <!-- This Control Displays the Watched Icon on the Top Right Corner of an Item of the Panel -->
-					<control type="image">
-                        <posx>40</posx>
-                        <width>60</width>
-                        <height>60</height>
-                        <texture>watched.png</texture>
-                        <animation type="Focus" reversible="false">
-                            <effect type="zoom" center="0,0" start="80" end="120" time="400" tween="back" easing="out" />
-                            <effect type="fade" start="80" end="100" time="400" />
-                        </animation>
-                        <visible>[Container.Content(movies) + stringcompare(ListItem.Overlay,OverlayWatched.png)] | [!Container.Content(movies) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
-                    </control>
-                    <!-- This Control Displays the Watching Icon on the Top Right Corner of an Item of the Panel -->
-					<control type="image">
-                        <posx>40</posx>
-                        <width>60</width>
-                        <height>60</height>
-                        <texture>watching.png</texture>
-                        <animation type="Focus" reversible="false">
-                            <effect type="zoom" center="0,0" start="80" end="120" time="400" tween="back" easing="out" />
-                            <effect type="fade" start="80" end="100" time="400" />
-                        </animation>
-                        <visible>[Container.Content(movies) + ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)] | [!Container.Content(movies) + ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
-                    </control>
-                </itemlayout>
-                <!-- The Focused Layout Defines The Size Backgrounds and overlays used when an item in the Panel is selected -->
-				<focusedlayout width="105" height="160">
-					<!-- This control defines the Background of the Item when the item is selected -->
-					<control type="image">
-                        <width>100</width>
-                        <height>155</height>
-                        <texture>button.png</texture>
-						<aspectratio>scale</aspectratio>
-                    </control>
-					<!-- This Control displays the current poster once the item has been selected -->
-					<control type="image">
-                        <posx></posx>
-                        <posy></posy>
-                        <width>100</width>
-                        <height>155</height>
-                        <texture background="true">$INFO[ListItem.Art(poster)]</texture>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-						<bordersize>5</bordersize>
-                    </control>
-					<!-- This Control Defines the fading out of the default background (used for the up arrow) -->
-                    <control type="image">
-                        <posx></posx>
-                        <posy></posy>
-                        <width>100</width>
-                        <height>155</height>
-                        <texture background="true">$INFO[ListItem.Icon]</texture>
-						<bordersize>5</bordersize>
-                        <animation type="Focus" reversible="false">
-                            <effect type="fade" start="80" end="100" time="300" />
-                        </animation>
-                        <aspectratio scalediffuse="false">keep</aspectratio>
-                        <visible>IsEmpty(ListItem.Art(poster))</visible>
-                    </control>
-                    <!-- This Control Displays the watched Icon -->
-					<control type="image">
-                        <posx>40</posx>
-                        <posy>-</posy>
-                        <width>60</width>
-                        <height>60</height>
-                        <texture>watched.png</texture>
-                        <animation type="Focus" reversible="false">
-                            <effect type="zoom" center="100,0" start="80" end="120" time="400" tween="back" easing="out" />
-                            <effect type="fade" start="80" end="100" time="400" />
-                        </animation>
-                        <visible>[Container.Content(movies) + stringcompare(ListItem.Overlay,OverlayWatched.png)] | [!Container.Content(movies) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
-                    </control>
-					 <!-- This Control Displays the watching Icon -->
-                    <control type="image">
-                        <posx>75</posx>
-                        <posy>9</posy>
-                        <width>18</width>
-                        <height>15</height>
-                        <texture>watchingpanel.png</texture>
-                        <animation type="Focus" reversible="false">
-                            <effect type="zoom" center="100,0" start="80" end="120" time="400" tween="back" easing="out" />
-                            <effect type="fade" start="80" end="100" time="400" />
-                        </animation>
-                        <visible>[Container.Content(movies) + ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)] | [!Container.Content(movies) + ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
-                    </control>
-                </focusedlayout>
-            </control>
-            <!-- This control displays the background of the Description Fields on the right of the poster panel -->
-			<control type="image">
-                <posx>805</posx>
-                <posy>290</posy>
-                <width>455</width>
-                <height>315</height>
-                <texture background="true">music_fanart_diffuse.png</texture>
-                <fadetime>200</fadetime>
-                <aspectratio scalediffuse="false">stretch</aspectratio>
-            </control>
-            <!-- This control displays a White Box behind the Big Poster of the View, it is used as a white Frame -->
-			<control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
-                <width>215</width>
-                <height>315</height>
-                <texture>white_box.png</texture>
-                <fadetime>200</fadetime>
-                <aspectratio scalediffuse="false">stretch</aspectratio>
-                <visible>!StringCompare(ListItem.Title, ) + !SubString(ListItem.Icon,default)</visible>
-            </control>
-            <!-- This control displays a the Big Poster -->
-			<control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
-                <width>215</width>
-                <height>315</height>
-                <texture background="true">$INFO[ListItem.Art(poster)]</texture>
-                <fadetime>200</fadetime>
-                <aspectratio scalediffuse="false">scale</aspectratio>
-                <bordersize>5</bordersize>
-            </control>
-            <!-- This control displays the Up Arrow in the location of the Big Poster -->
-			<control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
-                <width>215</width>
-                <height>315</height>
-                <texture background="true">$INFO[ListItem.Icon]</texture>
-                <fadetime>200</fadetime>
-                <aspectratio scalediffuse="false">keep</aspectratio>
-				 <bordersize>5</bordersize>
-                <visible>IsEmpty(ListItem.Art(poster))</visible>
-               
-            </control>
-            <!-- This control displays the scrollbar next to the Panel -->
+                <!-- The Item Layout Defines The Size Backgrounds and overlays used for any item of the Panel -->
+				<include>MovieTvShowPanelItemLayout</include>
+			    <!-- The Focused Layout Defines The Size Backgrounds and overlays used when an item in the Panel is selected -->
+				<include>MovieTvShowPanelFocusedLayout</include>
+			</control>
+            
+		    <!-- This control displays the scrollbar next to the Panel -->
 			<control type="scrollbar" id="62">
-                <posx>795</posx>
-                <posy>290</posy>
+                <left>795</left>
+                <top>290</top>
                 <width>5</width>
                 <height>315</height>
 				<onleft>522</onleft>
 				<showonepage>true</showonepage>
                 <orientation>vertical</orientation>
             </control>
-             <!-- This control displays Total Number of Season and Episodes of a TV Shows in the Description Field if more than 1 season an more than 1 episode-->
-			<control type="label">
-                <posx>825</posx>
-                <posy>300</posy>
-                <width>420</width>
-                <height>50</height>
-                <font>Panel_Description_Title</font>
-                <label>$INFO[ListItem.Property(TotalSeasons),, $LOCALIZE[33054]$COMMA ]$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]</label>
-                <visible>!Container.Content(movies) + IntegerGreaterThan(ListItem.Property(TotalSeasons),1) + IntegerGreaterThan(ListItem.Property(TotalEpisodes),1)</visible>
-            </control>
-            <!-- This control displays Total Number of Season and Episodes of a TV Shows in the Description Field if only 1 season an more than 1 episode-->
-			<control type="label">
-                <posx>820</posx>
-                <posy>300</posy>
-                <width>400</width>
-                <height>50</height>
-                <font>Panel_Description_Title</font>
-                <textcolor>White</textcolor>
-                <label>$INFO[ListItem.Property(TotalSeasons),, $LOCALIZE[20373]$COMMA ]$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]</label>
-                <visible>!Container.Content(movies) + !IntegerGreaterThan(ListItem.Property(TotalSeasons),1) + IntegerGreaterThan(ListItem.Property(TotalEpisodes),1)</visible>
-            </control>
-            <!-- This control displays Total Number of Season and Episodes of a TV Shows in the Description Field if more than 1 season and only 1 episode-->
-			<control type="label">
-                <posx>825</posx>
-                <posy>300</posy>
-                <width>420</width>
-                <height>50</height>
-                <font>Panel_Description_Title</font>
-                <textcolor>White</textcolor>
-                <label>$INFO[ListItem.Property(TotalSeasons),, $LOCALIZE[33054]$COMMA ]$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20359]]</label>
-                <visible>!Container.Content(movies) + IntegerGreaterThan(ListItem.Property(TotalSeasons),1) + !IntegerGreaterThan(ListItem.Property(TotalEpisodes),1)</visible>
-            </control>
-            <!-- This control displays Total Number of Season and Episodes of a TV Shows in the Description Field if only 1 season and only 1 episode-->
-			<control type="label">
-                <posx>825</posx>
-                <posy>300</posy>
-                <width>420</width>
-                <height>50</height>
-                <font>Panel_Description_Title</font>
-                <textcolor>White</textcolor>
-                <label>$INFO[ListItem.Property(TotalSeasons),, $LOCALIZE[20373]$COMMA ]$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20359]]</label>
-                <visible>!Container.Content(movies) + !IntegerGreaterThan(ListItem.Property(TotalSeasons),1) + !IntegerGreaterThan(ListItem.Property(TotalEpisodes),1)</visible>
-            </control>
-            <!-- This control displays the duration of a Movie in the description field only if the duration itself already contains the string "min"-->
-			<control type="label">
-                <posx>825</posx>
-                <posy>300</posy>
-                <width>420</width>
-                <height>50</height>
-                <font>Panel_Description_Title</font>
-                <label>$INFO[ListItem.Duration]</label>
-                <visible>!IsEmpty(ListItem.Duration) + SubString(ListItem.Duration,$LOCALIZE[31299]) + Container.Content(movies)</visible>
-            </control>
-            <!-- This control displays the duration of a Movie in the description field-->
-			<control type="label">
-                <posx>825</posx>
-                <posy>300</posy>
-                <width>420</width>
-                <height>50</height>
-                <font>Panel_Description_Title</font>
-                <label>$INFO[ListItem.Duration,, $LOCALIZE[31299]]</label>
-                <visible>!IsEmpty(ListItem.Duration) + Container.Content(movies)</visible>
-            </control>
-              <!-- This control displays the rating of Movie Tv Show or Episode-->
-			<control type="image">
-                <posx>825</posx>
-                <posy>565</posy>
-                <width>100</width>
-                <height>25</height>
-                <texture>other_textures/colorrating/$INFO[ListItem.StarRating]</texture>
-                <visible>!IsEmpty(ListItem.Title) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(Episodes)]</visible>
-            </control>
-            <!-- This control displays the Year of Movie Tv Show -->
-			<control type="label">
-                <posx>1245</posx>
-                <posy>300</posy>
-                <width>400</width>
-                <height>50</height>
-                <textcolor>Accent</textcolor>
-				<align>right</align>
-				<font>Panel_Description_Title</font>
-                <label>$INFO[ListItem.Year]</label>
-                <visible>[Container.Content(movies) | Container.Content(tvshows)]</visible>
-            </control>
-            <!-- This control displays the Mpaa Rating-->
-			<control type="label">
-                <posx>1245</posx>
-                <posy>565</posy>
-                <width>400</width>
-                <height>25</height>
-                <textcolor>Accent</textcolor>
-				<align>right</align>
-				<font>Panel_Description_Footer</font>
-                <label>$INFO[ListItem.Mpaa]</label>
-                <visible>[Container.Content(movies) | Container.Content(tvshows)]</visible>
-            </control>
-            <!-- This control displays the Plot of Movie or Tv Show in the descriotin field-->
-			<control type="textbox">
-                <posx>825</posx>
-                <posy>355</posy>
-                <width>420</width>
-                <height>190</height>
-				<font>Panel_Description</font>
-                <info>ListItem.Plot</info>
-                <align>justify</align>
-                <autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
-
-             </control>
-            <!-- This control displays the Movie Tv Show or Episode Title on the Top of the Poster Panel-->
+             
+			<include>MovieTvShowPanelDescription</include>
+			<include>MovieTvShowPanelPoster</include>
+            
+			<!-- This control displays the Movie Tv Show or Episode Title on the Top of the Poster Panel-->
 			<control type="label" id="140">
-                <posx>50</posx>
-                <posy>215</posy>
+                <left>50</left>
+                <top>215</top>
                 <height>30</height>
                 <width>985</width>
                 <font>Panel_Title</font>
@@ -326,113 +68,11 @@
 				<label>$INFO[ListItem.Label]</label>
                 <visible>Window.IsActive(1) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)</visible>
             </control>
-			<!-- This control displays the unwatched episode at the bottom of the poster panel (only 1 Unwatched episode), when viewing tv shows-->
+			
+			<!-- This control displays the Footer Text below the main Poster-->
             <control type="label">
-                <posx>50</posx>
-                <posy>610</posy>
-                <width>600</width>
-                <height>50</height>
-                <aligny>top</aligny>
-                <font>Panel_Title_Footer</font>
-                <label>$INFO[ListItem.Property(UnWatchedEpisodes),, $LOCALIZE[31721]]</label>
-                <visible>[!IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),1) + !StringCompare(ListItem.Property(UnWatchedEpisodes),0)] + Container.Content(tvshows)</visible>
-            </control>
-            <!-- This control displays the unwatched episode at the bottom of the poster panel (more than 1 Unwatched episode), when viewing tv shows-->
-			<control type="label">
-                <posx>50</posx>
-                <posy>610</posy>
-                <width>600</width>
-                <height>50</height>
-                <aligny>top</aligny>
-                <font>Panel_Title_Footer</font>
-				<label>$INFO[ListItem.Property(UnWatchedEpisodes),, [UPPERCASE]$LOCALIZE[31722][/UPPERCASE]]</label>
-                <visible>[IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),1)] + Container.Content(tvshows)</visible>
-            </control>
-            <!-- This controls displays the Date that an episode of a tv shows was last played if the nr of unwatched episodes is 0 -->
-			<control type="label">
-                <posx>50</posx>
-                <posy>610</posy>
-                <width>600</width>
-                <height>50</height>
-                <aligny>top</aligny>
-                <font>Panel_Title_Footer</font>
-                <textcolor>White</textcolor>
-                <label>[COLOR Accent]$INFO[ListItem.LastPlayed,[COLOR White][UPPERCASE]$LOCALIZE[568][/UPPERCASE]: [/COLOR]][/COLOR]</label>
-                <visible>StringCompare(ListItem.Property(UnWatchedEpisodes),0) + !IsEmpty(ListItem.LastPlayed) + !StringCompare(ListItem.LastPlayed,12/31/1969) + Container.Content(tvshows)</visible>
-            </control>
-            <!-- This controls displays the Date that an episode of a tv shows was last played if it was last played on 12/31/1969 and the nr of unwatched items is 0-->
-			<control type="label">
-                <posx>50</posx>
-                <posy>610</posy>
-                <width>600</width>
-                <height>50</height>
-                <aligny>top</aligny>
-                <font>Panel_Title_Footer</font>
-                <textcolor>White</textcolor>
-                <label>[COLOR White][UPPERCASE]$LOCALIZE[568][/UPPERCASE]:[/COLOR] [COLOR Accent][UPPERCASE]$LOCALIZE[13170][/UPPERCASE][/COLOR]</label>
-                <visible>StringCompare(ListItem.Property(UnWatchedEpisodes),0) + StringCompare(ListItem.LastPlayed,12/31/1969) + Container.Content(tvshows)</visible>
-            </control>
-            <!-- This controls displays the tagline of the movie below the Movie Title -->
-			<control type="label">
-                <posx>50</posx>
-                <posy>610</posy>
-                <width>900</width>
-                <height>50</height>
-                <aligny>top</aligny>
-                <font>Panel_Title_Footer</font>
-                <textcolor>White</textcolor>
-                <label>$INFO[ListItem.Tagline]</label>
-                <visible>!IsEmpty(ListItem.Tagline) + Container.Content(Movies)</visible>
-            </control>
-            <!-- This controls displays the director of a Movie instead of the tagline, if there is no tagline -->
-			<control type="label">
-                <posx>50</posx>
-                <posy>610</posy>
-                <width>600</width>
-                <height>50</height>
-                <aligny>top</aligny>
-                <font>Panel_Title_Footer</font>
-                <textcolor>White</textcolor>
-                <label>[UPPERCASE][COLOR White]$LOCALIZE[20339][/COLOR]  [COLOR Accent]$INFO[ListItem.Director][/COLOR][/UPPERCASE]</label>
-				<visible>IsEmpty(ListItem.Tagline) + Container.Content(Movies) + !SubString(ListItem.Icon,default) + !IsEmpty(ListItem.Director)</visible>
-            </control>
-            <!-- This controls displays the Duration of the Movie if no director or Tagline are available if the strig "min" is part of the duration-->
-			<control type="label">
-                <posx>50</posx>
-                <posy>610</posy>
-                <width>600</width>
-                <height>50</height>
-                <aligny>top</aligny>
-                <font>Panel_Title_Footer</font>
-                <textcolor>White</textcolor>
-                <label>$INFO[ListItem.Duration]</label>
-                <visible>!IsEmpty(ListItem.Duration) + SubString(ListItem.Duration,$LOCALIZE[31299]) + IsEmpty(ListItem.Director) + IsEmpty(ListItem.Tagline) + Container.Content(Movies)</visible>
-            </control>
-            <!-- This controls displays the Duration of the Movie if no director or Tagline are available -->
-			<control type="label">
-                <posx>50</posx>
-                <posy>610</posy>
-                <width>600</width>
-                <height>50</height>
-                <aligny>top</aligny>
-                <font>Panel_Title_Footer</font>
-                <textcolor>White</textcolor>
-                <label>$INFO[ListItem.Duration,, [UPPERCASE]$LOCALIZE[31299][/UPPERCASE]]</label>
-                <visible>!IsEmpty(ListItem.Duration) + IsEmpty(ListItem.Director) + IsEmpty(ListItem.Tagline) + Container.Content(Movies)</visible>
-            </control>
-            <!-- This controls displays the sort letter on top of the Description field while scrolling -->
-			<control type="label">
-                <posx>810</posx>
-                <posy>320</posy>
-                <width>460</width>
-                <height>50</height>
-                <align>center</align>
-                <aligny>top</aligny>
-                <font>Large_Letter_Music</font>
-                <textcolor>White</textcolor>
-                <label>$INFO[ListItem.SortLetter]</label>
-                <animation effect="fade" time="500">Visible</animation>
-                <visible>Container.Scrolling + !container.content(episodes)</visible>
+				<include>ViewFooterTitle</include>	
+                <label>$VAR[PanelFooterText]</label>
             </control>
         </control>
     </include>

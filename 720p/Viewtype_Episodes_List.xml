@@ -20,8 +20,8 @@
                 <effect type="slide" start="+1500,0" time="300" />
             </animation>
             <control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
+                <left>50</left>
+                <top>290</top>
                 <width>215</width>
                 <height>315</height>
                 <texture>white_box.png</texture>
@@ -29,8 +29,8 @@
                 <aspectratio scalediffuse="false">stretch</aspectratio>
              </control>
 			<control type="image">
-					<posx>50</posx>
-					<posy>290</posy>
+					<left>50</left>
+					<top>290</top>
 					<width>215</width>
 					<height>315</height>
 					<texture background="true">button.png</texture>
@@ -40,8 +40,8 @@
 					<bordersize>5</bordersize>
 				</control>
 			<control type="image">
-					<posx>50</posx>
-					<posy>290</posy>
+					<left>50</left>
+					<top>290</top>
 					<width>215</width>
 					<height>315</height>
 					<texture background="true">tile.png</texture>
@@ -51,8 +51,8 @@
 					<bordersize>5</bordersize>
 				</control>
 			<control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
+                <left>50</left>
+                <top>290</top>
                 <width>215</width>
                 <height>315</height>
                 <texture background="true">defaultfolder.png</texture>
@@ -62,8 +62,8 @@
                 <bordersize>5</bordersize>
             </control>
 			<control type="image">
-					<posx>50</posx>
-					<posy>290</posy>
+					<left>50</left>
+					<top>290</top>
 					<width>215</width>
 					<height>315</height>
 					<texture background="true">$INFO[ListItem.Icon]</texture>
@@ -73,8 +73,8 @@
 					<bordersize>5</bordersize>
 				</control>
             <control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
+                <left>50</left>
+                <top>290</top>
                 <width>215</width>
                 <height>315</height>
                 <texture background="true">$INFO[ListItem.Art(tvshow.poster)]</texture>
@@ -85,8 +85,8 @@
             </control>
 			 <!-- Main Poster from Local Season Poster
 			<control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
+                <left>50</left>
+                <top>290</top>
                 <width>215</width>
                 <height>315</height>
                 <texture background="true">$VAR[SeasonPoster]</texture>
@@ -98,8 +98,8 @@
 			-->
            
 			<control type="image">
-                <posx>270</posx>
-                <posy>290</posy>
+                <left>270</left>
+                <top>290</top>
                 <width>45</width>
                 <height>315</height>
                 <texture>other_textures/black-back.png</texture>
@@ -107,8 +107,8 @@
             </control>
             		
 			<control type="image">
-					<posx>320</posx>
-					<posy>290</posy>
+					<left>320</left>
+					<top>290</top>
 					<width>475</width>
 					<height>315</height>
 					<texture>music_fanart_diffuse.png</texture>
@@ -117,8 +117,8 @@
 					<visible>!Skin.HasSetting(episodewidelist)</visible>
 			</control>
 			<control type="image">
-					<posx>320</posx>
-					<posy>290</posy>
+					<left>320</left>
+					<top>290</top>
 					<width>815</width>
 					<height>315</height>
 					<texture>music_fanart_diffuse.png</texture>
@@ -127,8 +127,8 @@
 					<visible>Skin.HasSetting(episodewidelist)</visible>
 			</control>
 			<control type="image">
-					<posx>1140</posx>
-					<posy>290</posy>
+					<left>1140</left>
+					<top>290</top>
 					<width>120</width>
 					<height>315</height>
 					<texture>music_fanart_diffuse.png</texture>
@@ -136,8 +136,8 @@
 			</control>
 			
 		    <control type="fixedlist" id="526">
-                <posx>270</posx>
-                <posy>290</posy>
+                <left>270</left>
+                <top>290</top>
                 <width>990</width>
                 <height>315</height>
                 <scrolltime>200</scrolltime>
@@ -152,44 +152,44 @@
                 <visible>Container.Content(episodes)</visible>
                 <itemlayout height="45" condition="!Skin.HasSetting(episodewidelist)">
                     <control type="label">
-                        <posx>22</posx>
+                        <left>22</left>
                         <width>45</width>
                         <align>center</align>
 						<font>Panel_Description_Header</font>
                         <label>$INFO[ListItem.Episode]</label>
                     </control>
                     <control type="label">
-                        <posx>65</posx>
+                        <left>65</left>
                         <width>415</width>
 						<font>List_Unfocused</font>
                         <label>$INFO[ListItem.Title]</label>
 						<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)| [ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
                     </control>
 					<control type="label">
-                        <posx>65</posx>
+                        <left>65</left>
                         <width>450</width>
 						<font>List_Unfocused</font>
                         <label>$INFO[ListItem.Title]</label>
 						<visible>!stringcompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
                     </control>
 					<control type="label">
-                        <posx>65</posx>
+                        <left>65</left>
                         <width>400</width>
 						<font>List_Unfocused</font>
                         <label>$INFO[ListItem.Label]</label>
 						<visible>IsEmpty(ListItem.Title)</visible>
 	                </control>
                     <control type="image">
-                        <posx>490</posx>
-                        <posy>13</posy>
+                        <left>490</left>
+                        <top>13</top>
                         <width>18</width>
                         <height>15</height>
                         <texture>watchedpanel.png</texture>
                         <visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
                     </control>
                     <control type="image">
-                        <posx>490</posx>
-                        <posy>13</posy>
+                        <left>490</left>
+                        <top>13</top>
                         <width>18</width>
                         <height>15</height>
                         <texture>watchingpanel.png</texture>
@@ -203,7 +203,7 @@
                         <texture border="5">button.png</texture>
                     </control>
 					<control type="image">
-                        <posx>50</posx>
+                        <left>50</left>
 						<width>475</width>
                         <height>45</height>
                         <texture border="5">button.png</texture>
@@ -215,7 +215,7 @@
                         <visible>!IsEmpty(ListItem.Episode)</visible>
                     </control>
                     <control type="label">
-                        <posx>22</posx>
+                        <left>22</left>
                         <width>45</width>
                         <align>center</align>
 						<font>Panel_Description_Header</font>
@@ -223,23 +223,23 @@
                         <label>$INFO[ListItem.Episode]</label>
                     </control>
                     <control type="image">
-                        <posx>490</posx>
-                        <posy>13</posy>
+                        <left>490</left>
+                        <top>13</top>
                         <width>18</width>
                         <height>15</height>
                         <texture>watchedpanel.png</texture>
                         <visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
                     </control>
                     <control type="image">
-                        <posx>490</posx>
-                        <posy>13</posy>
+                        <left>490</left>
+                        <top>13</top>
                         <width>18</width>
                         <height>15</height>
                         <texture>watchingpanel.png</texture>
                         <visible>ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
                     </control>
                     <control type="label">
-                        <posx>65</posx>
+                        <left>65</left>
                         <width>415</width>
 						<font>List_Focused</font>
                         <label>$INFO[ListItem.Title]</label>
@@ -247,7 +247,7 @@
 						<visible>stringcompare(ListItem.Overlay,OverlayWatched.png) | [ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
                     </control>
 					<control type="label">
-                        <posx>65</posx>
+                        <left>65</left>
                         <width>450</width>
 						<font>List_Focused</font>
                         <label>$INFO[ListItem.Title]</label>
@@ -255,7 +255,7 @@
 						<visible>!stringcompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable </visible>
                     </control>
 					<control type="label">
-                        <posx>65</posx>
+                        <left>65</left>
                         <width>460</width>
 						<font>List_Focused</font>
 						<selectedcolor>White</selectedcolor>
@@ -265,43 +265,43 @@
                 </focusedlayout>
             	<itemlayout height="42" condition="Skin.HasSetting(episodewidelist)">
                     <control type="label">
-                        <posx>22</posx>
+                        <left>22</left>
                         <width>45</width>
                         <align>center</align>
 						<font>Panel_Description_Header</font>
                         <label>$INFO[ListItem.Episode]</label>
                     </control>
                     <control type="label">
-                        <posx>65</posx>
+                        <left>65</left>
                         <width>790</width>
 						<font>List_Unfocused</font>
                         <label>$INFO[ListItem.Title]</label>
                     </control>
 					<control type="label">
-                        <posx>65</posx>
+                        <left>65</left>
                         <width>790</width>
 						<font>List_Unfocused</font>
                         <label>$INFO[ListItem.Label]</label>
 						<visible>IsEmpty(ListItem.Title)</visible>
                     </control>
                     <control type="image">
-                        <posx>840</posx>
-						<posy>7</posy>
+                        <left>840</left>
+						<top>7</top>
 						<width>18</width>
 						<height>15</height>
                         <texture>watchedpanel.png</texture>
                         <visible>[Container.Content(Episodes) + stringcompare(ListItem.Overlay,OverlayWatched.png)] | [Container.Content(TVShows) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
                     </control>
                     <control type="image">
-                        <posx>840</posx>
-						<posy>7</posy>
+                        <left>840</left>
+						<top>7</top>
 						<width>18</width>
 						<height>15</height>
                         <texture>watchingpanel.png</texture>
                         <visible>Container.Content(Episodes) + ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
                     </control>
 					<control type="label">
-							<posx>930</posx>
+							<left>930</left>
 							<width>100</width>
 							<height>30</height>
 							<align>center</align>
@@ -312,28 +312,28 @@
 				</itemlayout>
                 <focusedlayout height="63" condition="Skin.HasSetting(episodewidelist)">
                     <control type="image">
-						<posx>50</posx>
+						<left>50</left>
 						<width>815</width>
 						<height>63</height>
 						<texture>button.png</texture>
 					 </control>
 					 <control type="image">
-						<posx>50</posx>
+						<left>50</left>
 						<width>815</width>
-						<posy>30</posy>
+						<top>30</top>
 						<height>33</height>
 						<texture>tile.png</texture>
 					 </control>
 					 <control type="image">
-						<posx>870</posx>
+						<left>870</left>
 						<width>120</width>
 						<height>63</height>
 						<texture>button.png</texture>
 					 </control>
 					 <control type="image">
 						<width>120</width>
-						<posx>870</posx>
-						<posy>30</posy>
+						<left>870</left>
+						<top>30</top>
 						<height>33</height>
 						<texture>tile.png</texture>
 					 </control>
@@ -344,7 +344,7 @@
                     </control>
 					<!-- Episode Number -->
                     <control type="label">
-                        <posx>22</posx>
+                        <left>22</left>
                         <width>45</width>
                         <align>center</align>
 						<height>63</height>
@@ -354,23 +354,23 @@
                         <label>$INFO[ListItem.Episode]</label>
                     </control>
                     <control type="image">
-                        <posx>840</posx>
-						<posy>7</posy>
+                        <left>840</left>
+						<top>7</top>
 						<width>18</width>
 						<height>15</height>
                         <texture>watchedpanel.png</texture>
                         <visible>[Container.Content(Episodes) + stringcompare(ListItem.Overlay,OverlayWatched.png)] | [Container.Content(TVShows) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
                     </control>
                     <control type="image">
-                        <posx>840</posx>
-						<posy>7</posy>
+                        <left>840</left>
+						<top>7</top>
 						<width>18</width>
 						<height>15</height>
                         <texture>watchingpanel.png</texture>
                         <visible>Container.Content(Episodes) + ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
                     </control>
                     <control type="label">
-                        <posx>65</posx>
+                        <left>65</left>
                         <width>790</width>
 						<height>30</height>
 						<font>List_Focused</font>
@@ -379,7 +379,7 @@
 						<label>$INFO[ListItem.Title]</label>
                     </control>
 					<control type="label">
-                        <posx>65</posx>
+                        <left>65</left>
                         <width>790</width>
 						<height>30</height>
 						<font>List_Focused</font>
@@ -390,15 +390,15 @@
                     </control>
 					  <!-- This control displays the rating of the Episode-->
 						<control type="image">
-							<posx>880</posx>
-							<posy>32</posy>
+							<left>880</left>
+							<top>32</top>
 							<width>100</width>
 							<height>30</height>
 							<texture>other_textures/colorrating/$INFO[ListItem.StarRating]</texture>
 						</control>
 						
 						<control type="label">
-							<posx>930</posx>
+							<left>930</left>
 							<width>100</width>
 							<height>30</height>
 							<align>center</align>
@@ -408,8 +408,8 @@
 						
 						</control>
 						<control type="label">
-							<posx>65</posx>
-							<posy>32</posy>
+							<left>65</left>
+							<top>32</top>
 							<width>700</width>
 							<height>30</height>
 							<align>left</align>
@@ -422,8 +422,8 @@
 			
 			</control>
             <control type="label" id="140">
-				<posx>50</posx>
-                <posy>215</posy>
+				<left>50</left>
+                <top>215</top>
                 <height>30</height>
                 <width>985</width>
                 <font>Panel_Title</font>
@@ -438,8 +438,8 @@
                 <visible>Container.Content(episodes)</visible>
             </control>
 			<control type="label">
-	            <posx>50</posx>
-                <posy>610</posy>
+	            <left>50</left>
+                <top>610</top>
                 <width>600</width>
                 <height>50</height>
                 <align>left</align>
@@ -449,8 +449,8 @@
                 <visible>Container.Content(episodes)</visible>
             </control>
 			<control type="image">
-                <posx>810</posx>
-                <posy>290</posy>
+                <left>810</left>
+                <top>290</top>
                 <width>450</width>
                 <height>315</height>
                 <texture background="true">music_fanart_diffuse.png</texture>
@@ -459,8 +459,8 @@
 				<visible>!Skin.HasSetting(episodewidelist)</visible>
             </control>
             <control type="scrollbar" id="63">
-                <posx>800</posx>
-                <posy>290</posy>
+                <left>800</left>
+                <top>290</top>
                 <width>5</width>
                 <height>315</height>
 				<onleft>526</onleft>
@@ -468,8 +468,8 @@
 				<visible>!Skin.HasSetting(episodewidelist)</visible>
             </control>
 			<control type="scrollbar" id="63">
-                <posx>1265</posx>
-                <posy>290</posy>
+                <left>1265</left>
+                <top>290</top>
                 <width>5</width>
                 <height>315</height>
 				<onleft>526</onleft>
@@ -480,8 +480,8 @@
 			<control type="group">
 				<visible>!Skin.HasSetting(episodewidelist)</visible>		
 				<control type="label">
-					<posx>825</posx>
-					<posy>300</posy>
+					<left>825</left>
+					<top>300</top>
 					<width>420</width>
 					<height>50</height>
 					<font>Panel_Description_Title</font>
@@ -489,8 +489,8 @@
 					<visible>!StringCompare(ListItem.Label,.. )</visible>
 				</control>
 				<control type="textbox">
-				 <posx>825</posx>
-					<posy>355</posy>
+				 <left>825</left>
+					<top>355</top>
 					<width>420</width>
 					<height>190</height>
 					<font>Panel_Description</font>
@@ -499,16 +499,16 @@
 					<autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
 				</control>
 				<control type="image">
-					<posx>825</posx>
-					<posy>565</posy>
+					<left>825</left>
+					<top>565</top>
 					<width>100</width>
 					<height>25</height>
 					<texture>other_textures/colorrating/$INFO[ListItem.StarRating]</texture>
 				</control>
 				<control type="label">
-					<posx>1245</posx>
-					<posy>300</posy>
-					<width>400</width>
+					<left>1060</left>
+					<top>300</top>
+					<width>180</width>
 					<height>50</height>
 					<textcolor>Accent</textcolor>
 					<align>right</align>
@@ -516,9 +516,9 @@
 					<label>$INFO[ListItem.Mpaa]</label>
 				</control>
 				<control type="label">
-					<posx>1245</posx>
-					<posy>565</posy>
-					<width>400</width>
+					<left>960</left>
+					<top>565</top>
+					<width>280</width>
 					<height>25</height>
 					<align>right</align>
 					<font>Panel_Description_Footer</font>

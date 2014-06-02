@@ -13,8 +13,8 @@
 			<include>BigDialogCoordinates</include>
 			<control type="label">
 				<description>Header Label</description>
-				<posx>25</posx>
-                <posy>15</posy>
+				<left>25</left>
+                <top>15</top>
                 <width>650</width>
 				<align>center</align>
 				<aligny>top</aligny>
@@ -27,8 +27,6 @@
                 <height>45</height>
                 <align>left</align>
                 <font>Panel_Info</font>
-				<texturefocus>button.png</texturefocus>
-				<texturenofocus>tile.png</texturenofocus>
 			</control>
             <control type="radiobutton" id="8">
                 <description>radio_button</description>
@@ -36,8 +34,6 @@
                 <height>45</height>
                 <align>left</align>
                 <font>Panel_Info</font>
-				<texturefocus>button.png</texturefocus>
-				<texturenofocus>tile.png</texturenofocus>
 			</control>
             <control type="spincontrolex" id="9">
                 <description>spin_controlex</description>
@@ -45,8 +41,6 @@
                 <height>45</height>
                 <align>left</align>
                 <font>Panel_Info</font>
-				<texturefocus>button.png</texturefocus>
-				<texturenofocus>tile.png</texturenofocus>
 			</control>
             <control type="sliderex" id="10">
                 <description>slider</description>
@@ -54,13 +48,11 @@
                 <width>180</width>
                 <align>left</align>
                 <font>Panel_Info</font>
-				<texturefocus>button.png</texturefocus>
-				<texturenofocus>tile.png</texturenofocus>
 			</control>
             <control type="grouplist" id="5">
                 <description>Control Area</description>
-                <posx>25</posx>
-                <posy>60</posy>
+                <left>25</left>
+                <top>60</top>
                 <width>610</width>
                 <height>295</height>
                 <itemgap>5</itemgap>
@@ -72,8 +64,8 @@
             </control>
 			<control type="button" id="28">
                 <description>Ok</description>
-                <posx>140</posx>
-                <posy>390</posy>
+                <left>140</left>
+                <top>390</top>
                 <width>180</width>
                 <label>186</label>
                 <onleft>5</onleft>
@@ -83,11 +75,12 @@
 				<font>Panel_Hint</font>
                 <texturefocus>button.png</texturefocus>
 				<texturenofocus>tile.png</texturenofocus>
+				<focusedcolor>White</focusedcolor>
 			</control>
             <control type="button" id="29">
                 <description>Cancel</description>
-                <posx>330</posx>
-                <posy>390</posy>
+                <left>330</left>
+                <top>390</top>
                 <width>180</width>
                 <label>222</label>
                 <onleft>28</onleft>
@@ -97,6 +90,7 @@
 				<font>Panel_Hint</font>
                 <texturefocus>button.png</texturefocus>
 				<texturenofocus>tile.png</texturenofocus>
+				<focusedcolor>White</focusedcolor>
             </control>
         
 		</control>

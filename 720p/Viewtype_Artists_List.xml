@@ -22,8 +22,8 @@
             <!--This control shows the label of the folder name -->
 			<control type="label">
                 <label>$INFO[Container.FolderName]</label>
-                <posx>50</posx>
-                <posy>215</posy>
+                <left>50</left>
+                <top>215</top>
                 <height>30</height>
                 <width>884</width>
                 <font>Panel_Title</font>
@@ -32,8 +32,8 @@
              </control>
  			<!-- This Control displays the background behind the Album List-->
             <control type="image">
-                <posx>370</posx>
-                <posy>290</posy>
+                <left>370</left>
+                <top>290</top>
                 <width>395</width>
                 <height>315</height>
                 <texture>music_fanart_diffuse.png</texture>
@@ -43,8 +43,8 @@
             </control>
 			<!-- This Control displays the background behind the Album List-->
             <control type="image">
-                <posx>370</posx>
-                <posy>290</posy>
+                <left>370</left>
+                <top>290</top>
                 <width>890</width>
                 <height>315</height>
                 <texture>music_fanart_diffuse.png</texture>
@@ -54,8 +54,8 @@
             </control><!--This control defines the list that will display the items -->
 			<control type="fixedlist" id="528">
 				<visible>Container.Content(artists)</visible>
-                <posx>370</posx>
-                <posy>290</posy>
+                <left>370</left>
+                <top>290</top>
                 <width>890</width>
                 <height>315</height>
 				<movement>3</movement>
@@ -67,11 +67,10 @@
                 <ondown>528</ondown>
                 <pagecontrol>60</pagecontrol>
                 <viewtype label="List Info">Artists List</viewtype>
-                <scrolltime>200</scrolltime>
-                <!-- This Control defines the unfocused item layout-->
+				<!-- This Control defines the unfocused item layout-->
 				<itemlayout height="45" condition="!Skin.HasSetting(musicartistswidelist)">
                 <control type="label">
-                        <posx>20</posx>
+                        <left>20</left>
                         <width>355</width>
 						<font>List_Unfocused</font>
                         <label>$INFO[ListItem.Label]</label>
@@ -85,7 +84,7 @@
                         <texture>button.png</texture>
                     </control>
                     <control type="label">
-                        <posx>20</posx>
+                        <left>20</left>
                         <width>355</width>
 						<font>List_Focused</font>
                         <label>$INFO[ListItem.Label]</label>
@@ -94,7 +93,7 @@
 				<!-- This Control defines the unfocused wide item layout-->
 				<itemlayout height="45" condition="Skin.HasSetting(musicartistswidelist)">
                 <control type="label">
-                        <posx>20</posx>
+                        <left>20</left>
                         <width>890</width>
 						<font>List_Unfocused</font>
                         <label>$INFO[ListItem.Label]</label>
@@ -108,7 +107,7 @@
                         <texture>button.png</texture>
                     </control>
                     <control type="label">
-                        <posx>20</posx>
+                        <left>20</left>
                         <width>355</width>
 						<font>List_Focused</font>
                         <label>$INFO[ListItem.Label]</label>
@@ -116,85 +115,20 @@
 				</focusedlayout>
             </control>
 			
-           <!--This control displays the main icon and keeps its ratio -->
-			<control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
-                <width>315</width>
-                <height>315</height>
-                <texture>$INFO[ListItem.Thumb]</texture>
-                <aspectratio scalediffuse="false">scale</aspectratio>
-                <bordertexture>white_box.png</bordertexture>
-				<bordersize>5</bordersize>
-                
-            </control>
-			<control type="image">
-                <posx>50</posx>
-                <posy>290</posy>
-                <width>315</width>
-                <height>315</height>
-                <texture>$INFO[ListItem.Icon]</texture>
-                <aspectratio scalediffuse="false">scale</aspectratio>
-                <bordersize>5</bordersize>
-				<visible>IsEmpty(ListItem.Thumb)</visible>
-                
-            </control>
+			<include>ArtistAlbumPanelCover</include>
 			
 			<!-- Artists Description Elements -->
 			<control type="group">
 				<visible>!Skin.HasSetting(musicartistswidelist)</visible>
-				<!-- This Control displays the background of the description field-->
-				<control type="image">
-					<posx>780</posx>
-					<posy>290</posy>
-					<width>480</width>
-					<height>315</height>
-					<texture>music_fanart_diffuse.png</texture>
-					<fadetime>200</fadetime>
-					<aspectratio scalediffuse="false">stretch</aspectratio>
-				</control>
+				<include>ArtistAlbumPanelDescription</include>	
 				<!-- This Control defines the scrollbar of the Album list-->
 				<control type="scrollbar" id="60">
-					<posx>770</posx>
-					<posy>290</posy>
+					<left>770</left>
+					<top>290</top>
 					<width>5</width>
 					<onleft>528</onleft>
 					<height>315</height>
 					<orientation>vertical</orientation>
-				</control>
-				<!-- This control displays the Year of the artist foundation-->
-				<control type="label">
-					<posx>1245</posx>
-					<posy>300</posy>
-					<width>400</width>
-					<height>50</height>
-					<textcolor>Accent</textcolor>
-					<align>right</align>
-					<font>Panel_Description_Title</font>
-					<label>$INFO[ListItem.Property(Artist_Formed)]</label>
-					
-				</control>
-				<!-- This Control displays the descirption on the description field-->
-				<control type="textbox">
-					<posx>795</posx>
-					<posy>350</posy>
-					<width>450</width>
-					<height>215</height>
-					<info>ListItem.Property(Artist_Description) </info>
-					<align>justify</align>
-					<autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
-					<font>Panel_Description</font>
-				</control>
-				<!-- This Control displays the artist genre-->
-				<control type="label">
-					<posx>800</posx>
-					<posy>570</posy>
-					<width>600</width>
-					<height>50</height>
-					<aligny>left</aligny>
-					<font>Panel_Description_Footer</font>
-					<label>[COLOR Accent]$INFO[ListItem.Property(Artist_Genre),[COLOR White]$LOCALIZE[515]: [/COLOR],][/COLOR]</label>
-			
 				</control>
 			</control>
 			 

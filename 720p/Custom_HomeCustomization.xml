@@ -1,0 +1,740 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="3333">
+	  <defaultcontrol>102</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+	<controls>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<texture colordiffuse="FF000000">button.png</texture>
+		</control>
+		<include>HomeBackground</include>
+		<control type="group">
+			<animation type="Conditional" condition="Window.IsActive(4444) | Window.IsActive(5555) | Window.IsActive(6666)" reversible="true">
+				<effect type="slide" end="0,-195" time="300" tween="cubic" easing="inout"/>
+			</animation>
+	
+			<control type="grouplist">
+				<top>205</top>
+				<left>50</left>
+				<orientation>horizontal</orientation>
+				<itemgap>190</itemgap>
+				<control type="image">
+					<width>45</width>
+					<height>45</height>
+					<texture>$VAR[MainMenu1Icon]</texture>
+					<visible>!Control.HasFocus(100)</visible>
+				</control>
+				<control type="image">
+					<width>45</width>
+					<height>45</height>
+					<texture colordiffuse="Accent">$VAR[MainMenu1Icon]</texture>
+					<visible>Control.HasFocus(100)</visible>
+				</control>
+				<control type="image">
+					<width>45</width>
+					<height>45</height>
+					<texture>$VAR[MainMenu2Icon]</texture>
+					<visible>!Control.HasFocus(200)</visible>
+				</control>
+				<control type="image">
+					<width>45</width>
+					<height>45</height>
+					<texture colordiffuse="Accent">$VAR[MainMenu2Icon]</texture>
+					<visible>Control.HasFocus(200)</visible>
+				</control>
+				<control type="image">
+					<width>45</width>
+					<height>45</height>
+					<texture>$VAR[MainMenu3Icon]</texture>
+					<visible>!Control.HasFocus(300)</visible>
+				</control>
+				<control type="image">
+					<width>45</width>
+					<height>45</height>
+					<texture colordiffuse="Accent">$VAR[MainMenu3Icon]</texture>
+					<visible>Control.HasFocus(300)</visible>
+				</control>
+				<control type="image">
+					<width>45</width>
+					<height>45</height>
+					<texture>$VAR[MainMenu4Icon]</texture>
+					<visible>!Control.HasFocus(400)</visible>
+				</control>
+				<control type="image">
+					<width>45</width>
+					<height>45</height>
+					<texture colordiffuse="Accent">$VAR[MainMenu4Icon]</texture>
+					<visible>Control.HasFocus(400)</visible>
+				</control>
+				<control type="image">
+					<width>45</width>
+					<height>45</height>
+					<texture>$VAR[MainMenu5Icon]</texture>
+					<visible>!Control.HasFocus(500)</visible>
+				</control>
+				<control type="image">
+					<width>45</width>
+					<height>45</height>
+					<texture colordiffuse="Accent">$VAR[MainMenu5Icon]</texture>
+					<visible>Control.HasFocus(500)</visible>
+				</control>
+
+
+	
+			</control>
+			
+			<control type="grouplist">
+				<top>205</top>
+				<left>50</left>
+				<orientation>horizontal</orientation>
+				<itemgap>190</itemgap>
+				<control type="button" id="100">
+					<width>45</width>
+					<height>45</height>
+					<ondown>101</ondown>
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
+					<onclick>Skin.SetString(SelectedHomeMenu,M1)</onclick>
+					<onclick>ActivateWindow(6666,return)</onclick>
+				</control>
+				<control type="button" id="200">
+					<width>45</width>
+					<height>45</height>
+					<ondown>201</ondown>
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
+					<onclick>Skin.SetString(SelectedHomeMenu,M2)</onclick>
+					<onclick>ActivateWindow(6666,return)</onclick>
+				</control>
+				<control type="button" id="300">
+					<width>45</width>
+					<height>45</height>
+					<ondown>301</ondown>
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
+					<onclick>Skin.SetString(SelectedHomeMenu,M3)</onclick>
+					<onclick>ActivateWindow(6666,return)</onclick>
+				</control>
+				<control type="button" id="400">
+					<width>45</width>
+					<height>45</height>
+					<ondown>401</ondown>
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
+					<onclick>Skin.SetString(SelectedHomeMenu,M4)</onclick>
+					<onclick>ActivateWindow(6666,return)</onclick>
+				</control>
+				<control type="button" id="500">
+					<width>45</width>
+					<height>45</height>
+					<ondown>501</ondown>
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
+					<onclick>Skin.SetString(SelectedHomeMenu,M5)</onclick>
+					<onclick>ActivateWindow(6666,return)</onclick>
+				</control>
+	
+			</control>
+		
+			<control type="grouplist">
+				<top>260</top>
+				<left>50</left>
+				<orientation>horizontal</orientation>
+				<itemgap>25</itemgap>
+				<control type="button" id="101">
+					<type>button</type>
+					<textoffsetx>0</textoffsetx>
+					<width>210</width>
+					<height>25</height>
+					<align>left</align>
+					<label>$VAR[MainMenu1Label]</label>
+					<label2></label2>
+					<onup>100</onup>
+					<ondown>102</ondown>
+					<font>Panel_Description_Title</font>
+					<texturefocus></texturefocus>
+					<onclick>Skin.SetString(HomeMenuLabel1)</onclick>
+				</control>
+				<control type="button" id="201">
+					<type>button</type>
+					<textoffsetx>0</textoffsetx>
+					<width>210</width>
+					<height>25</height>
+					<align>left</align>
+					<label>$VAR[MainMenu2Label]</label>
+					<label2></label2>
+					<onup>200</onup>
+					<ondown>202</ondown>
+					<font>Panel_Description_Title</font>
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
+					<onclick>Skin.SetString(HomeMenuLabel2)</onclick>
+				</control>
+				<control type="button" id="301">
+					<type>button</type>
+					<textoffsetx>0</textoffsetx>
+					<width>210</width>
+					<height>25</height>
+					<align>left</align>
+					<label>$VAR[MainMenu3Label]</label>
+					<label2></label2>
+					<onup>300</onup>
+					<ondown>302</ondown>
+					<font>Panel_Description_Title</font>
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
+					<onclick>Skin.SetString(HomeMenuLabel3)</onclick>
+				</control>
+				<control type="button" id="401">
+					<type>button</type>
+					<textoffsetx>0</textoffsetx>
+					<width>210</width>
+					<height>25</height>
+					<align>left</align>
+					<label>$VAR[MainMenu4Label]</label>
+					<label2></label2>
+					<onup>400</onup>
+					<ondown>402</ondown>
+					<font>Panel_Description_Title</font>
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
+					<onclick>Skin.SetString(HomeMenuLabel4)</onclick>
+				</control>
+				<control type="button" id="501">
+					<type>button</type>
+					<textoffsetx>0</textoffsetx>
+					<width>210</width>
+					<height>25</height>
+					<align>left</align>
+					<label>$VAR[MainMenu5Label]</label>
+					<label2></label2>
+					<align>center</align>
+					<onleft>900</onleft>
+					<onup>500</onup>
+					<ondown>502</ondown>
+					<font>Panel_Description_Title</font>
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
+					<onclick>Skin.SetString(HomeMenuLabel5)</onclick>
+				</control>
+			</control>
+	
+			<control type="grouplist">
+				<orientation>horizontal</orientation>
+				<itemgap>25</itemgap>
+				<include>PanelCoordinates</include>
+				<control type="group">
+					<width>210</width>
+					<height>310</height>
+					<control type="button" id="102">
+						<type>button</type>
+						<width>205</width>
+						<height>100</height>
+						<align>left</align>
+						<label></label>
+						<label2></label2>
+						<onleft>noop</onleft>
+						<onup>101</onup>
+						<ondown>103</ondown>
+						<onright>202</onright>
+						<font>List_Settings</font>
+						<texturefocus>button.png</texturefocus>
+						<texturenofocus>tile.png</texturenofocus>
+						<onclick>Skin.SetString(SelectedHomeTitle,1A1)</onclick>
+						<onclick>ActivateWindow(4444,return)</onclick>
+					</control>
+					<control type="Image">
+						<type>button</type>
+						<left>52</left>
+						<width>100</width>
+						<height>100</height>
+						<bordersize>25</bordersize>
+						<texture>$VAR[SubMenu1AIcon1]</texture>
+					</control>
+					<control type="label">
+						<top>80</top>
+						<left>5</left>
+						<height>15</height>
+						<label>$VAR[SubMenu1ALabel1]</label>
+						<font>Panel_ItemChooser</font>
+					</control>
+					<control type="panel" id="103">
+						<top>105</top>
+						<width>210</width>
+						<height>210</height>
+						<onup>102</onup>
+						<ondown>105</ondown>
+						<onright>203</onright>
+						<itemlayout height="105" width="105">
+							<control type="image">
+								<width>100</width>
+								<height>100</height>
+								<texture>tile.png</texture>
+							</control>
+							<control type="image">
+								<width>100</width>
+								<height>100</height>
+								<texture>$INFO[ListItem.Thumb]</texture>
+								<bordersize>25</bordersize>
+							</control>
+							<control type="label">
+								<top>80</top>
+								<left>5</left>
+								<height>15</height>
+								<label>$INFO[ListItem.Label]</label>
+								<font>Panel_ItemChooser</font>
+							</control>
+							
+						</itemlayout>
+						<focusedlayout height="105" width="105">
+							<control type="image">
+								<width>100</width>
+								<height>100</height>
+								<texture>button.png</texture>
+							</control>
+							<control type="image">
+								<width>100</width>
+								<height>100</height>
+								<texture>$INFO[ListItem.Thumb]</texture>
+								<bordersize>25</bordersize>
+							</control>
+							<control type="label">
+								<top>80</top>
+								<left>5</left>
+								<height>15</height>
+								<label>$INFO[ListItem.Label]</label>
+								<font>Panel_ItemChooser</font>
+							</control>
+						</focusedlayout>
+						<content>
+							<include>SubMenu1BCustomization</include>
+						</content>
+					</control>
+
+				</control>
+				<control type="group">
+					<width>210</width>
+					<height>310</height>
+					<control type="button" id="202">
+						<type>button</type>
+						<width>205</width>
+						<height>100</height>
+						<align>left</align>
+						<label></label>
+						<label2></label2>
+						<onup>201</onup>
+						<ondown>203</ondown>
+						<onleft>102</onleft>
+						<onright>302</onright>
+						<font>List_Settings</font>
+						<texturefocus>button.png</texturefocus>
+						<texturenofocus>tile.png</texturenofocus>
+						<onclick>Skin.SetString(SelectedHomeTitle,2A1)</onclick>
+						<onclick>ActivateWindow(4444,return)</onclick>
+					</control>
+					<control type="Image">
+						<type>button</type>
+						<left>52</left>
+						<width>100</width>
+						<height>100</height>
+						<bordersize>25</bordersize>
+						<texture>$VAR[SubMenu2AIcon1]</texture>
+					</control>
+					<control type="label">
+						<top>80</top>
+						<left>5</left>
+						<height>15</height>
+						<label>$VAR[SubMenu2ALabel1]</label>
+						<font>Panel_ItemChooser</font>
+					</control>
+					<control type="panel" id="203">
+						<top>105</top>
+						<width>210</width>
+						<height>210</height>
+						<onup>202</onup>
+						<ondown>205</ondown>
+						<onleft>103</onleft>
+						<onright>303</onright>
+						<itemlayout height="105" width="105">
+							<control type="image">
+								<width>100</width>
+								<height>100</height>
+								<texture>tile.png</texture>
+							</control>
+							<control type="image">
+								<width>100</width>
+								<height>100</height>
+								<texture>$INFO[ListItem.Thumb]</texture>
+								<bordersize>25</bordersize>
+							</control>
+							<control type="label">
+								<top>80</top>
+								<left>5</left>
+								<height>15</height>
+								<label>$INFO[ListItem.Label]</label>
+								<font>Panel_ItemChooser</font>
+							</control>
+						</itemlayout>
+						<focusedlayout height="105" width="105">
+							<control type="image">
+								<width>100</width>
+								<height>100</height>
+								<texture>button.png</texture>
+							</control>
+							<control type="image">
+								<width>100</width>
+								<height>100</height>
+								<texture>$INFO[ListItem.Thumb]</texture>
+								<bordersize>25</bordersize>
+							</control>
+							<control type="label">
+								<top>80</top>
+								<left>5</left>
+								<height>15</height>
+								<label>$INFO[ListItem.Label]</label>
+								<font>Panel_ItemChooser</font>
+							</control>
+						</focusedlayout>
+						<content>
+							<include>SubMenu2BCustomization</include>
+						</content>
+					</control>
+				</control>
+				<control type="group">
+					<width>210</width>
+					<height>310</height>
+					<control type="button" id="302">
+						<type>button</type>
+						<width>205</width>
+						<height>100</height>
+						<align>left</align>
+						<label></label>
+						<label2></label2>
+						<onup>301</onup>
+						<ondown>303</ondown>
+						<onleft>202</onleft>
+						<onright>402</onright>
+						<font>List_Settings</font>
+						<texturefocus>button.png</texturefocus>
+						<texturenofocus>tile.png</texturenofocus>
+						<onclick>Skin.SetString(SelectedHomeTitle,3A1)</onclick>
+						<onclick>ActivateWindow(4444,return)</onclick>
+					</control>
+					<control type="Image">
+						<type>button</type>
+						<left>52</left>
+						<width>100</width>
+						<height>100</height>
+						<bordersize>25</bordersize>
+						<texture>$VAR[SubMenu3AIcon1]</texture>
+					</control>
+					<control type="label">
+						<top>80</top>
+						<left>5</left>
+						<height>15</height>
+						<label>$VAR[SubMenu3ALabel1]</label>
+						<font>Panel_ItemChooser</font>
+					</control>
+					<control type="panel" id="303">
+						<top>105</top>
+						<width>210</width>
+						<height>210</height>
+						<onup>302</onup>
+						<ondown>305</ondown>
+						<onleft>203</onleft>
+						<onright>403</onright>
+						<itemlayout height="105" width="105">
+							<control type="image">
+								<width>100</width>
+								<height>100</height>
+								<texture>tile.png</texture>
+							</control>
+							<control type="image">
+								<width>100</width>
+								<height>100</height>
+								<texture>$INFO[ListItem.Thumb]</texture>
+								<bordersize>25</bordersize>
+							</control>
+							<control type="label">
+								<top>80</top>
+								<left>5</left>
+								<height>15</height>
+								<label>$INFO[ListItem.Label]</label>
+								<font>Panel_ItemChooser</font>
+							</control>
+						</itemlayout>
+						<focusedlayout height="105" width="105">
+							<control type="image">
+								<width>100</width>
+								<height>100</height>
+								<texture>button.png</texture>
+							</control>
+							<control type="image">
+								<width>100</width>
+								<height>100</height>
+								<texture>$INFO[ListItem.Thumb]</texture>
+								<bordersize>25</bordersize>
+							</control>
+							<control type="label">
+								<top>80</top>
+								<left>5</left>
+								<height>15</height>
+								<label>$INFO[ListItem.Label]</label>
+								<font>Panel_ItemChooser</font>
+							</control>
+						</focusedlayout>
+						<content>
+							<include>SubMenu3BCustomization</include>
+						</content>
+					</control>
+				</control>
+				<control type="group">
+					<width>210</width>
+					<height>310</height>
+					<control type="button" id="402">
+						<type>button</type>
+						<width>205</width>
+						<height>100</height>
+						<align>left</align>
+						<label></label>
+						<label2></label2>
+						<onup>401</onup>
+						<ondown>403</ondown>
+						<onleft>302</onleft>
+						<onright>502</onright>
+						<font>List_Settings</font>
+						<texturefocus>button.png</texturefocus>
+						<texturenofocus>tile.png</texturenofocus>
+						<onclick>Skin.SetString(SelectedHomeTitle,4A1)</onclick>
+						<onclick>ActivateWindow(4444,return)</onclick>
+					</control>
+					<control type="Image">
+						<type>button</type>
+						<left>52</left>
+						<width>100</width>
+						<height>100</height>
+						<bordersize>25</bordersize>
+						<texture>$VAR[SubMenu4AIcon1]</texture>
+					</control>
+					<control type="label">
+						<top>80</top>
+						<left>5</left>
+						<height>15</height>
+						<label>$VAR[SubMenu4ALabel1]</label>
+						<font>Panel_ItemChooser</font>
+					</control>
+					<control type="panel" id="403">
+						<top>105</top>
+						<width>210</width>
+						<height>210</height>
+						<onup>402</onup>
+						<ondown>405</ondown>
+						<onleft>303</onleft>
+						<onright>503</onright>
+						<itemlayout height="105" width="105">
+							<control type="image">
+								<width>100</width>
+								<height>100</height>
+								<texture>tile.png</texture>
+							</control>
+							<control type="image">
+								<width>100</width>
+								<height>100</height>
+								<texture>$INFO[ListItem.Thumb]</texture>
+								<bordersize>25</bordersize>
+							</control>
+							<control type="label">
+								<top>80</top>
+								<left>5</left>
+								<height>15</height>
+								<label>$INFO[ListItem.Label]</label>
+								<font>Panel_ItemChooser</font>
+							</control>
+						</itemlayout>
+						<focusedlayout height="105" width="105">
+							<control type="image">
+								<width>100</width>
+								<height>100</height>
+								<texture>button.png</texture>
+							</control>
+							<control type="image">
+								<width>100</width>
+								<height>100</height>
+								<texture>$INFO[ListItem.Thumb]</texture>
+								<bordersize>25</bordersize>
+							</control>
+							<control type="label">
+								<top>80</top>
+								<left>5</left>
+								<height>15</height>
+								<label>$INFO[ListItem.Label]</label>
+								<font>Panel_ItemChooser</font>
+							</control>
+						</focusedlayout>
+						<content>
+							<include>SubMenu4BCustomization</include>
+						</content>
+					</control>
+				</control>
+				<control type="group">
+					<width>210</width>
+					<height>310</height>
+					<control type="button" id="502">
+						<type>button</type>
+						<width>205</width>
+						<height>100</height>
+						<align>left</align>
+						<label></label>
+						<label2></label2>
+						<onup>501</onup>
+						<ondown>503</ondown>
+						<onleft>402</onleft>
+						<onright>602</onright>
+						<font>List_Settings</font>
+						<texturefocus>button.png</texturefocus>
+						<texturenofocus>tile.png</texturenofocus>
+						<onclick>Skin.SetString(SelectedHomeTitle,5A1)</onclick>
+						<onclick>ActivateWindow(4444,return)</onclick>
+					</control>
+					<control type="Image">
+						<type>button</type>
+						<left>52</left>
+						<width>100</width>
+						<height>100</height>
+						<bordersize>25</bordersize>
+						<texture>$VAR[SubMenu5AIcon1]</texture>
+					</control>
+					<control type="label">
+						<top>80</top>
+						<left>5</left>
+						<height>15</height>
+						<label>$VAR[SubMenu5ALabel1]</label>
+						<font>Panel_ItemChooser</font>
+					</control>
+					<control type="panel" id="503">
+						<top>105</top>
+						<width>210</width>
+						<height>210</height>
+						<onup>502</onup>
+						<ondown>505</ondown>
+						<onleft>403</onleft>
+						<onright>603</onright>
+						<itemlayout height="105" width="105">
+							<control type="image">
+								<width>100</width>
+								<height>100</height>
+								<texture>tile.png</texture>
+							</control>
+							<control type="image">
+								<width>100</width>
+								<height>100</height>
+								<texture>$INFO[ListItem.Thumb]</texture>
+								<bordersize>25</bordersize>
+							</control>
+							<control type="label">
+								<top>80</top>
+								<left>5</left>
+								<height>15</height>
+								<label>$INFO[ListItem.Label]</label>
+								<font>Panel_ItemChooser</font>
+							</control>
+						</itemlayout>
+						<focusedlayout height="105" width="105">
+							<control type="image">
+								<width>100</width>
+								<height>100</height>
+								<texture>button.png</texture>
+							</control>
+							<control type="image">
+								<width>100</width>
+								<height>100</height>
+								<texture>$INFO[ListItem.Thumb]</texture>
+								<bordersize>25</bordersize>
+							</control>
+							<control type="label">
+								<top>80</top>
+								<left>5</left>
+								<height>15</height>
+								<label>$INFO[ListItem.Label]</label>
+								<font>Panel_ItemChooser</font>
+							</control>
+						</focusedlayout>
+						<content>
+							<include>SubMenu5BCustomization</include>
+						</content>
+					</control>
+				</control>
+			</control>
+		
+		
+			<control type="grouplist">
+				<top>605</top>
+				<left>50</left>
+				<orientation>horizontal</orientation>
+				<itemgap>30</itemgap>
+				<control type="button" id="105">
+					<width>205</width>
+					<height>40</height>
+					<onup>103</onup>
+					<texturefocus>button.png</texturefocus>
+					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
+					<label>WIDGET:[CR]$INFO[Skin.String(HomeWidgetType1)]</label>
+					<font>Panel_ItemChooser</font>
+					<onclick>Skin.SetString(SelectedHomeWidget,W1)</onclick>
+					<onclick>ActivateWindow(5555,return)</onclick>
+				</control>
+				<control type="button" id="205">
+					<width>205</width>
+					<height>40</height>
+					<onup>203</onup>
+					<focusedcolor>White</focusedcolor>
+					<texturefocus>button.png</texturefocus>
+					<label>WIDGET:[CR]$INFO[Skin.String(HomeWidgetType2)]</label>
+					<texturenofocus>tile.png</texturenofocus>
+					<font>Panel_ItemChooser</font>
+					<onclick>Skin.SetString(SelectedHomeWidget,W2)</onclick>
+					<onclick>ActivateWindow(5555,return)</onclick>
+				</control>
+				<control type="button" id="305">
+					<width>205</width>
+					<height>40</height>
+					<onup>303</onup>
+					<texturefocus>button.png</texturefocus>
+					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
+					<label>WIDGET:[CR]$INFO[Skin.String(HomeWidgetType3)]</label>
+					<font>Panel_ItemChooser</font>
+					<onclick>Skin.SetString(SelectedHomeWidget,W3)</onclick>
+					<onclick>ActivateWindow(5555,return)</onclick>
+				</control>
+				<control type="button" id="405">
+					<width>205</width>
+					<height>40</height>
+					<onup>403</onup>
+					<texturefocus>button.png</texturefocus>
+					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
+					<label>WIDGET:[CR]$INFO[Skin.String(HomeWidgetType4)]</label>
+					<font>Panel_ItemChooser</font>
+					<onclick>Skin.SetString(SelectedHomeWidget,W4)</onclick>
+					<onclick>ActivateWindow(5555,return)</onclick>
+				</control>
+				<control type="button" id="505">
+					<width>205</width>
+					<height>40</height>
+					<onup>503</onup>
+					<texturefocus>button.png</texturefocus>
+					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
+					<font>Panel_ItemChooser</font>
+					<label>WIDGET:[CR]$INFO[Skin.String(HomeWidgetType5)]</label>
+					<onclick>Skin.SetString(SelectedHomeWidget,W5)</onclick>
+					<onclick>ActivateWindow(5555,return)</onclick>
+				</control>
+	
+			</control>
+		
+		</control>
+	</controls>
+</window>

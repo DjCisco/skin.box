@@ -23,8 +23,8 @@
             </animation>
             <control type="panel" id="531">
                 <viewtype label="Panel">Years</viewtype>
-                <posx>50</posx>
-                <posy>290</posy>
+                <left>50</left>
+                <top>290</top>
                 <width>1200</width>
                 <height>360</height>
                 <scrolltime>200</scrolltime>
@@ -44,15 +44,15 @@
 						<texture>tile.png</texture>
 					</control>
 					<control type="image">
-						<posx>20</posx>
-						<posy>20</posy>
+						<left>20</left>
+						<top>20</top>
 						<width>75</width>
 						<height>75</height>
 						<texture>icons/calendar.png</texture>
 					</control>
 					<control type="label">
-						<posx>57</posx>
-						<posy>7</posy>
+						<left>57</left>
+						<top>7</top>
 						<width>115</width>
 						<height>115</height>
 						<align>center</align>
@@ -71,15 +71,15 @@
 						</animation>
 					</control>
 					<control type="image">
-						<posx>20</posx>
-						<posy>20</posy>
+						<left>20</left>
+						<top>20</top>
 						<width>75</width>
 						<height>75</height>
 						<texture>icons/calendar.png</texture>
 					</control>
                     <control type="label">
-						<posx>57</posx>
-						<posy>7</posy>
+						<left>57</left>
+						<top>7</top>
 						<width>115</width>
 						<height>115</height>
 						<align>center</align>

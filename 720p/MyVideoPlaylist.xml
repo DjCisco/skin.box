@@ -6,21 +6,21 @@
     <controls>
         <include>HomeBackground</include>
         <include>View_50_List</include>
-		<!-- This control displays a a color background behind the left settings menu -->
+		<!-- This Control shows the background of the left settings menu -->
 		<control type="group">
-			<animation type="Conditional" condition="!ControlGroup(9000).HasFocus() | Window.IsActive(PlayerControls)">
+		 	<animation type="Conditional" condition="!ControlGroup(9000).HasFocus() | Window.IsActive(PlayerControls)">
                 <effect type="slide" start="0,0" end="-320,0" time="300" easing="inout" tween="cubic" />
             </animation>
 			<include>LeftMenuBackground</include>
 			<control type="label">
                 <description>Menu Title</description>
                 <include>LeftMenuTitle</include>
-                <label>OPTIONS</label>
+                <label>$LOCALIZE[14018]</label>
             </control>
-		</control>
+		</control>	
         <control type="grouplist" id="9000">
-            <posx>20</posx>
-            <posy>70</posy>
+            <left>20</left>
+            <top>70</top>
             <width>280</width>
             <height>405</height>
             <itemgap>0</itemgap>
@@ -37,24 +37,21 @@
                 <width>280</width>
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
-                <font>Panel_Info</font>
-				<texturefocus>button.png</texturefocus>
+                <font>List_Left_Menu</font>
             </control>
             <control type="button" id="3">
                 <description>Sort</description>
                 <width>280</width>
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
-                <font>Panel_Info</font>
-				<texturefocus>button.png</texturefocus>
+                <font>List_Left_Menu</font>
             </control>
             <control type="togglebutton" id="4">
                 <description>Ascending</description>
                 <width>280</width>
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
-                <font>Panel_Info</font>
-				<texturefocus>button.png</texturefocus>
+                <font>List_Left_Menu</font>
                 <label>584</label>
                 <altlabel>585</altlabel>
             </control>
@@ -63,8 +60,7 @@
                 <width>280</width>
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
-                <font>Panel_Info</font>
-				<texturefocus>button.png</texturefocus>
+                <font>List_Left_Menu</font>
                 <label>191</label>
             </control>
             <control type="button" id="21">
@@ -72,8 +68,7 @@
                 <width>280</width>
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
-                <font>Panel_Info</font>
-				<texturefocus>button.png</texturefocus>
+                <font>List_Left_Menu</font>
                 <label>190</label>
             </control>
             <control type="button" id="22">
@@ -81,8 +76,7 @@
                 <width>280</width>
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
-                <font>Panel_Info</font>
-				<texturefocus>button.png</texturefocus>
+                <font>List_Left_Menu</font>
                 <label>192</label>
             </control>
             <control type="button" id="23">
@@ -90,20 +84,8 @@
                 <width>280</width>
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
-                <font>Panel_Info</font>
-				<texturefocus>button.png</texturefocus>
+                <font>List_Left_Menu</font>
                 <label>208</label>
-            </control>
-            <control type="button" id="98">
-                <description>Open Player Controls</description>
-                <width>280</width>
-				<textoffsetx>10</textoffsetx>
-				<align>left</align>
-                <font>Panel_Info</font>
-				<texturefocus>button.png</texturefocus>
-                <label>$LOCALIZE[13350]</label>
-                  <onclick>ActivateWindow(playercontrols)</onclick>
-                <visible>Player.HasMedia</visible>
             </control>
         </control>
     </controls>

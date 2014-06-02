@@ -52,6 +52,10 @@ msgstr ""
 
 #empty strings from id 31041 to 31207
 
+msgctxt "#31142"
+msgid "Settings level"
+msgstr ""
+
 msgctxt "#31208"
 msgid "Last Updated"
 msgstr ""

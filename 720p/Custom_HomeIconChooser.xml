@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="6666">
+	  <defaultcontrol>1</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+	<controls>
+	<control type="group">
+		<animation type="WindowOpen" reversible="false">
+			<effect type="slide" end="0,-270" time="300" tween="cubic" easing="inout"/>
+		</animation>
+		<control type="panel" id="1">
+			<top>730</top>
+			<left>50</left>
+			<width>1160</width>
+			<height>500</height>
+			<itemlayout height="50" width="50">
+				<control type="image">
+					<width>45</width>
+					<height>45</height>
+					<texture>tile.png</texture>
+				</control>
+				<control type="image">
+					<width>45</width>
+					<height>45</height>
+					<texture>$INFO[ListItem.Thumb]</texture>
+					<bordersize>5</bordersize>
+				</control>
+			</itemlayout>
+			<focusedlayout height="50" width="50">
+				<control type="image">
+					<width>45</width>
+					<height>45</height>
+					<texture>button.png</texture>
+				</control>
+				<control type="image">
+					<width>45</width>
+					<height>45</height>
+					<texture>$INFO[ListItem.Thumb]</texture>
+					<bordersize>5</bordersize>
+				</control>
+			</focusedlayout>
+			<content>
+				<include>MainMenuIconChooser</include>
+			</content>
+		</control>
+			
+					
+		</control>
+		
+		</controls>
+</window>

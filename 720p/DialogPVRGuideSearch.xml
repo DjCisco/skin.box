@@ -12,16 +12,16 @@
                 <effect type="slide" start="+1500,0" time="300" />
             </animation>
 			<control type="label">
-				<posx>180</posx>
-				<posy>170</posy>
+				<left>180</left>
+				<top>170</top>
 				<include>ViewMainTitle</include>
 				
                 <label>$LOCALIZE[137]</label>
             </control>
             <control type="edit" id="9">
                 <description>Search string</description>
-                <posx>180</posx>
-                <posy>240</posy>
+                <left>180</left>
+                <top>240</top>
                 <width>1005</width>
                 <height>45</height>
                 <align>left</align>
@@ -40,16 +40,16 @@
 				<pulseonselect>no</pulseonselect>
             </control>
 			<control type="image">
-                <posx>180</posx>
-                <posy>282</posy>
+                <left>180</left>
+                <top>282</top>
                 <width>1005</width>
                 <height>3</height>
 				<texture>button.png</texture>
 				</control>
             <!-- Left Search Settings Group -->
 			<control type="group">
-				<posx>180</posx>
-                <posy>290</posy>
+				<left>180</left>
+                <top>290</top>
 				<control type="image">
 					<width>500</width>
 					<height>360</height>
@@ -59,8 +59,8 @@
 				</control>
 				<control type="grouplist">
 					<itemgap>0</itemgap>
-					<posx>0</posx>
-					<posy>0</posy>
+					<left>0</left>
+					<top>0</top>
 					<onup>9</onup>
 					<ondown>9</ondown>
 					<onleft>26</onleft>
@@ -74,8 +74,6 @@
 						<font>List_Settings</font>
 						<focusedcolor>Accent</focusedcolor>
 						<texturefocus>tile.png</texturefocus>
-						<textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
-						<textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
 					</control>
 					<control type="radiobutton" id="11">
 						<description>Case Sensitive</description>
@@ -87,8 +85,6 @@
 						<font>List_Settings</font>
 						<focusedcolor>Accent</focusedcolor>
 						<texturefocus>tile.png</texturefocus>
-						<textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
-						<textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
 					</control>
 					<control type="edit" id="14">
 						<description>Start Date</description>
@@ -140,8 +136,6 @@
 						<font>List_Settings</font>
 						<focusedcolor>Accent</focusedcolor>
 						<texturefocus>tile.png</texturefocus>
-						<textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
-						<textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
 					</control>
 					<control type="radiobutton" id="22">
 						<description>FTA only</description>
@@ -153,8 +147,6 @@
 						<font>List_Settings</font>
 						<focusedcolor>Accent</focusedcolor>
 						<texturefocus>tile.png</texturefocus>
-						<textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
-						<textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
 					</control>
 					<control type="radiobutton" id="24">
 						<description>Ignore Timers</description>
@@ -166,15 +158,13 @@
 						<font>List_Settings</font>
 						<focusedcolor>Accent</focusedcolor>
 						<texturefocus>tile.png</texturefocus>
-						<textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
-						<textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
 					</control>
 				</control>
 			</control>
             <!-- Right Search Settings Group -->
 			<control type="group">
-				<posx>685</posx>
-                <posy>290</posy>
+				<left>685</left>
+                <top>290</top>
 				<control type="image">
 					<width>500</width>
 					<height>360</height>
@@ -184,8 +174,8 @@
 				</control>
 				<control type="grouplist">
 					<itemgap>0</itemgap>
-					<posx>0</posx>
-					<posy>0</posy>
+					<left>0</left>
+					<top>0</top>
 					<onup>9</onup>
 					<ondown>9</ondown>
 					<onright>26</onright>
@@ -260,8 +250,6 @@
 						<font>List_Settings</font>
 						<focusedcolor>Accent</focusedcolor>
 						<texturefocus>tile.png</texturefocus>
-						<textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
-						<textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>
 					</control>
 					<control type="spincontrolex" id="21">
 						<description>Groups</description>
@@ -304,15 +292,13 @@
 						<font>List_Settings</font>
 						<focusedcolor>Accent</focusedcolor>
 						<texturefocus>tile.png</texturefocus>
-						<textureradiofocus>other_textures/radiobutton2fo.png</textureradiofocus>
-						<textureradionofocus>other_textures/radiobutton2nf.png</textureradionofocus>						
 					</control>
 				</control>
 			</control>
             <!-- Search, Cancel, Defaults Buttons-->
 			<control type="grouplist" id="9000">
-                <posx>25</posx>
-				<posy>290</posy>
+                <left>25</left>
+				<top>290</top>
 				<width>145</width>
 				<height>195</height>
 				<itemgap>5</itemgap>
@@ -320,7 +306,7 @@
 				<onright>10</onright>
                 <control type="button" id="26">
                     <description>Search Button</description>
-                    <posy>0</posy>
+                    <top>0</top>
                     <width>145</width>
                     <label>137</label>
 					<textoffsetx>10</textoffsetx>
@@ -328,6 +314,7 @@
 					<align>center</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
 				</control>
                 <control type="button" id="25">
                     <description>Cancel Button</description>
@@ -338,6 +325,7 @@
 					<align>center</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
                 </control>
                 <control type="button" id="28">
                     <description>Defaults Button</description>
@@ -348,6 +336,7 @@
 					<align>center</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
                 </control>
             </control>
         </control>

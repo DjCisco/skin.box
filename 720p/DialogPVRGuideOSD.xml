@@ -9,18 +9,18 @@
             <animation type="WindowClose">
                 <effect type="slide" time="300" start="0,0" end="0,275" easing="in" tween="cubic" />
             </animation>
-            <posx>0</posx>
-            <posy>540</posy>
+            <left>0</left>
+            <top>540</top>
 			<control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
+				<left>0</left>
+				<top>0</top>
 				<width>1280</width>
 				<height>5</height>
 				<texture>button.png</texture>
 			</control>
             <control type="fixedlist" id="11">
-                <posx>0</posx>
-                <posy>5</posy>
+                <left>0</left>
+                <top>5</top>
                 <width>1280</width>
                 <height>175</height>
                 <onleft>60</onleft>
@@ -33,15 +33,15 @@
                 <scrolltime>200</scrolltime>
                 <itemlayout height="50" width="1280">
                     <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
+                        <left>0</left>
+                        <top>0</top>
                         <width>1280</width>
                         <height>50</height>
                         <texture>tile.png</texture>
                     </control>
 				    <control type="label">
-                        <posx>10</posx>
-                        <posy>0</posy>
+                        <left>10</left>
+                        <top>0</top>
                         <width>150</width>
                         <height>50</height>
                         <font>Music_Vis_Title4</font>
@@ -50,8 +50,8 @@
                         <label>$INFO[ListItem.StartTime]</label>
                     </control>
 					<control type="label">
-                        <posx>150</posx>
-                        <posy>0</posy>
+                        <left>150</left>
+                        <top>0</top>
                         <width>1130</width>
                         <height>50</height>
                         <align>left</align>
@@ -60,16 +60,16 @@
                         <label>$INFO[ListItem.Label]</label>
                     </control>
                     <control type="image">
-						<posx>1235</posx>
-						<posy>5</posy>
+						<left>1235</left>
+						<top>5</top>
 						<width>40</width>
 						<height>40</height>
 						<texture>PVRRecording.png</texture>
 						<visible>ListItem.IsRecording</visible>
 					</control>
 					<control type="image">
-						<posx>1240</posx>
-						<posy>10</posy>
+						<left>1240</left>
+						<top>10</top>
 						<width>30</width>
 						<height>30</height>
 						<texture>PVRTimer.png</texture>
@@ -78,24 +78,24 @@
                 </itemlayout>
                 <focusedlayout height="75" width="1280">
                     <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
+                        <left>0</left>
+                        <top>0</top>
                         <width>1280</width>
                         <height>75</height>
                         <texture>button.png</texture>
 						<colordiffuse>BBFFFFFF</colordiffuse>
                     </control>
 					<control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
+                        <left>0</left>
+                        <top>0</top>
                         <width>1280</width>
                         <height>75</height>
                         <texture>tile.png</texture>
 						<colordiffuse>ImageDiffuse</colordiffuse>
                     </control>
                     <control type="label">
-                        <posx>10</posx>
-                        <posy>0</posy>
+                        <left>10</left>
+                        <top>0</top>
                         <width>150</width>
                         <height>50</height>
                         <font>Music_Vis_Title4</font>
@@ -104,8 +104,8 @@
                         <label>$INFO[ListItem.StartTime]</label>
                     </control>
 					<control type="label">
-                        <posx>150</posx>
-                        <posy>0</posy>
+                        <left>150</left>
+                        <top>0</top>
                         <width>1130</width>
                         <height>50</height>
                         <align>left</align>
@@ -114,8 +114,8 @@
                         <label>$INFO[ListItem.Label]</label>
                     </control>
                     <control type="label">
-                        <posx>10</posx>
-                        <posy>40</posy>
+                        <left>10</left>
+                        <top>40</top>
                         <width>1260</width>
                         <height>25</height>
                         <align>left</align>
@@ -124,16 +124,16 @@
                         <label>$INFO[ListItem.Plot]</label>
 	                </control>
 					<control type="image">
-						<posx>1235</posx>
-						<posy>5</posy>
+						<left>1235</left>
+						<top>5</top>
 						<width>40</width>
 						<height>40</height>
 						<texture>PVRRecording.png</texture>
 						<visible>ListItem.IsRecording</visible>
 					</control>
 					<control type="image">
-						<posx>1240</posx>
-						<posy>10</posy>
+						<left>1240</left>
+						<top>10</top>
 						<width>30</width>
 						<height>30</height>
 						<texture>PVRTimer.png</texture>
@@ -143,8 +143,8 @@
                 </focusedlayout>
             </control>
             <control type="scrollbar" id="60">
-                <posx>440</posx>
-                <posy>100</posy>
+                <left>440</left>
+                <top>100</top>
                 <width>25</width>
                 <height>490</height>
                 <texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
