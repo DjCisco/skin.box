@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon 
-	id="skin.BOX14"
-	version="2.1.0"
-	name="BOX14"
+	id="skin.BOX13"
+	version="2.1.1"
+	name="BOX13"
 	provider-name="DjCisco">
 	<requires>
 		<import addon="xbmc.gui" version="5.0.1"/>

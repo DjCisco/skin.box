@@ -2141,72 +2141,6 @@
             </control>
 		</control>
     </include>        
-	<include name="SmallDialogCoordinates">
-		<left>415</left>
-        <top>235</top>
-	</include>
-	<include name="SmallDialogBackground">	
-		<control type="image">
-            <width>450</width>
-            <height>230</height>
-            <texture>button.png</texture>
-        </control>
-		<control type="group">
-			<visible>!Skin.HasSetting(ThemeBackgroundColor)</visible>
-			<control type="image">
-                <left>5</left>
-                <top>5</top>
-                <width>440</width>
-                <height>220</height>
-                <texture>other_textures/black-back.png</texture>
-            </control>
-			<control type="image">
-                <left>5</left>
-                <top>5</top>
-                <width>440</width>
-                <height>220</height>
-                <texture>other_textures/black-back.png</texture>
-            </control>
-			<control type="image">
-                <left>5</left>
-                <top>5</top>
-                <width>440</width>
-                <height>220</height>
-                <texture>other_textures/black-back.png</texture>
-            </control>
-			<control type="image">
-                <left>5</left>
-                <top>5</top>
-                <width>440</width>
-                <height>220</height>
-                <texture>music_fanart_diffuse_blue.png</texture>
-            </control>
-		</control>
-		<control type="group">
-			<visible>Skin.HasSetting(ThemeBackgroundColor)</visible>
-			<control type="image">
-                <left>5</left>
-                <top>5</top>
-                <width>440</width>
-                <height>220</height>
-                <texture>button.png</texture>
-            </control>
-			<control type="image">
-                <left>5</left>
-                <top>5</top>
-                <width>440</width>
-                <height>220</height>
-                <texture>tile.png</texture>
-            </control>
-			<control type="image">
-                <left>5</left>
-                <top>5</top>
-                <width>440</width>
-                <height>220</height>
-                <texture>music_fanart_diffuse.png</texture>
-            </control>
-		</control>
-    </include>        
 	<include name="RightMenuBackground">
 		<control type="group">
 			<visible>!Skin.HasSetting(ThemeBackgroundColor)</visible>
@@ -2411,46 +2345,6 @@
         </animation>
         <aspectratio scalediffuse="false">stretch</aspectratio>
 	</include>
-	<include name="PanelButtonTitle2ndCol">	
-		<left>170</left>
-        <top>120</top>
-        <height>30</height>
-        <width>135</width>
-        <font>Panel_Button_Title</font>
-        <align>left</align>
-	</include>
-	<include name="PanelButtonHeaderTitle2ndCol">
-		<left>310</left>
-		<top>0</top>
-		<height>25</height>
-		<width>125</width>
-		<font>Panel_Button_Title</font>
-		<align>right</align>
-	</include>
-	<include name="PanelButtonIcon2ndCol">	
-		<left>202</left>
-        <top>32</top>
-        <height>70</height>
-        <width>70</width>
-        <aspectratio scalediffuse="false">stretch</aspectratio>
-	</include>
-	<include name="PanelButtonImageNF2ndCol">
-		<left>160</left>
-		<width>155</width>
-        <height>155</height>
-        <texture background="true">tile.png</texture>
-        <aspectratio scalediffuse="false">stretch</aspectratio>
-	</include>
-	<include name="PanelButtonImageFO2ndCol">
-		<left>160</left>
-		<width>155</width>
-        <height>155</height>
-        <texture>button.png</texture>
-        <animation type="Focus" reversible="false">
-            <effect type="fade" start="0" end="100" time="400" easing="out" tween="square" />
-        </animation>
-        <aspectratio scalediffuse="false">stretch</aspectratio>
-	</include>
 	<include name="PanelRectButtonTitle">	
 		<left>10</left>
         <top>120</top>
@@ -2464,12 +2358,6 @@
         <top>22</top>
         <height>90</height>
         <width>90</width>
-        <aspectratio scalediffuse="false">stretch</aspectratio>
-	</include>
-	<include name="PanelRectButtonImageNF">
-		<width>315</width>
-        <height>155</height>
-        <texture background="true">tile.png</texture>
         <aspectratio scalediffuse="false">stretch</aspectratio>
 	</include>
 	<include name="PanelRectButtonImageFO">
@@ -5511,7 +5399,7 @@
 			<onclick>$VAR[SubMenu1BClick1]</onclick>
 			<onclick>$VAR[SubMenu1B2ndClick1]</onclick>
 			
-			<visible>!IsEmpty(Skin.String(SubMenu1B1Type)</visible>
+			<visible>!IsEmpty(Skin.String(SubMenu1B1Type))</visible>
 		 </item>
 		<item id="2">
 			<label>$VAR[SubMenu1BLabel2]</label>
@@ -5520,7 +5408,7 @@
 			<thumb>$VAR[SubMenu1BIcon2]</thumb>
 			<onclick>$VAR[SubMenu1BClick2]</onclick>
 			<onclick>$VAR[SubMenu1B2ndClick2]</onclick>
-			<visible>!IsEmpty(Skin.String(SubMenu1B2Type)</visible>
+			<visible>!IsEmpty(Skin.String(SubMenu1B2Type))</visible>
 		 </item>
 		<item id="3">
 			<label>$VAR[SubMenu1BLabel3]</label>
@@ -5529,7 +5417,7 @@
 			<thumb>$VAR[SubMenu1BIcon3]</thumb>
 			<onclick>$VAR[SubMenu1BClick3]</onclick>
 			<onclick>$VAR[SubMenu1B2ndClick3]</onclick>
-			<visible>!IsEmpty(Skin.String(SubMenu1B3Type)</visible>
+			<visible>!IsEmpty(Skin.String(SubMenu1B3Type))</visible>
 		 </item>
 		<item id="4">
 			<label>$VAR[SubMenu1BLabel4]</label>
@@ -5538,7 +5426,7 @@
 			<thumb>$VAR[SubMenu1BIcon4]</thumb>
 			<onclick>$VAR[SubMenu1BClick4]</onclick>
 			<onclick>$VAR[SubMenu1B2ndClick4]</onclick>
-			<visible>!IsEmpty(Skin.String(SubMenu1B4Type)</visible>
+			<visible>!IsEmpty(Skin.String(SubMenu1B4Type))</visible>
 		 </item>
 	</include>
 	<include name="SubMenu2B">
@@ -5549,7 +5437,7 @@
 			<thumb>$VAR[SubMenu2BIcon1]</thumb>
 			<onclick>$VAR[SubMenu2BClick1]</onclick>
 			<onclick>$VAR[SubMenu2B2ndClick1]</onclick>
-			<visible>!IsEmpty(Skin.String(SubMenu2B1Type)</visible>
+			<visible>!IsEmpty(Skin.String(SubMenu2B1Type))</visible>
 		 </item>
 		<item id="2">
 			<label>$VAR[SubMenu2BLabel2]</label>
@@ -5558,7 +5446,7 @@
 			<thumb>$VAR[SubMenu2BIcon2]</thumb>
 			<onclick>$VAR[SubMenu2BClick2]</onclick>
 			<onclick>$VAR[SubMenu2B2ndClick2]</onclick>
-			<visible>!IsEmpty(Skin.String(SubMenu2B2Type)</visible>
+			<visible>!IsEmpty(Skin.String(SubMenu2B2Type))</visible>
 		 </item>
 		<item id="3">
 			<label>$VAR[SubMenu2BLabel3]</label>
@@ -5567,7 +5455,7 @@
 			<thumb>$VAR[SubMenu2BIcon3]</thumb>
 			<onclick>$VAR[SubMenu2BClick3]</onclick>
 			<onclick>$VAR[SubMenu2B2ndClick3]</onclick>
-			<visible>!IsEmpty(Skin.String(SubMenu2B3Type)</visible>
+			<visible>!IsEmpty(Skin.String(SubMenu2B3Type))</visible>
 		 </item>
 		<item id="4">
 			<label>$VAR[SubMenu2BLabel4]</label>
@@ -5576,7 +5464,7 @@
 			<thumb>$VAR[SubMenu2BIcon4]</thumb>
 			<onclick>$VAR[SubMenu2BClick4]</onclick>
 			<onclick>$VAR[SubMenu2B2ndClick4]</onclick>
-			<visible>!IsEmpty(Skin.String(SubMenu2B4Type)</visible>
+			<visible>!IsEmpty(Skin.String(SubMenu2B4Type))</visible>
 		 </item>
 	</include>
 	<include name="SubMenu3B">
@@ -5587,7 +5475,7 @@
 			<thumb>$VAR[SubMenu3BIcon1]</thumb>
 			<onclick>$VAR[SubMenu3BClick1]</onclick>
 			<onclick>$VAR[SubMenu3B2ndClick1]</onclick>
-			<visible>!IsEmpty(Skin.String(SubMenu3B1Type)</visible>
+			<visible>!IsEmpty(Skin.String(SubMenu3B1Type))</visible>
 		 </item>
 		<item id="2">
 			<label>$VAR[SubMenu3BLabel2]</label>
@@ -5596,7 +5484,7 @@
 			<thumb>$VAR[SubMenu3BIcon2]</thumb>
 			<onclick>$VAR[SubMenu3BClick2]</onclick>
 			<onclick>$VAR[SubMenu3B2ndClick2]</onclick>
-			<visible>!IsEmpty(Skin.String(SubMenu3B2Type)</visible>
+			<visible>!IsEmpty(Skin.String(SubMenu3B2Type))</visible>
 		 </item>
 		<item id="3">
 			<label>$VAR[SubMenu3BLabel3]</label>
@@ -5605,7 +5493,7 @@
 			<thumb>$VAR[SubMenu3BIcon3]</thumb>
 			<onclick>$VAR[SubMenu3BClick3]</onclick>
 			<onclick>$VAR[SubMenu3B2ndClick3]</onclick>
-			<visible>!IsEmpty(Skin.String(SubMenu3B3Type)</visible>
+			<visible>!IsEmpty(Skin.String(SubMenu3B3Type))</visible>
 		 </item>
 		<item id="4">
 			<label>$VAR[SubMenu3BLabel4]</label>
@@ -5614,7 +5502,7 @@
 			<thumb>$VAR[SubMenu3BIcon4]</thumb>
 			<onclick>$VAR[SubMenu3BClick4]</onclick>
 			<onclick>$VAR[SubMenu3B2ndClick4]</onclick>
-			<visible>!IsEmpty(Skin.String(SubMenu3B4Type)</visible>
+			<visible>!IsEmpty(Skin.String(SubMenu3B4Type))</visible>
 		 </item>
 	</include>
 	<include name="SubMenu4B">
@@ -5625,7 +5513,7 @@
 			<thumb>$VAR[SubMenu4BIcon1]</thumb>
 			<onclick>$VAR[SubMenu4BClick1]</onclick>
 			<onclick>$VAR[SubMenu4B2ndClick1]</onclick>
-			<visible>!IsEmpty(Skin.String(SubMenu4B1Type)</visible>
+			<visible>!IsEmpty(Skin.String(SubMenu4B1Type))</visible>
 		 </item>
 		<item id="2">
 			<label>$VAR[SubMenu4BLabel2]</label>
@@ -5634,7 +5522,7 @@
 			<thumb>$VAR[SubMenu4BIcon2]</thumb>
 			<onclick>$VAR[SubMenu4BClick2]</onclick>
 			<onclick>$VAR[SubMenu4B2ndClick2]</onclick>
-			<visible>!IsEmpty(Skin.String(SubMenu4B2Type)</visible>
+			<visible>!IsEmpty(Skin.String(SubMenu4B2Type))</visible>
 		 </item>
 		<item id="3">
 			<label>$VAR[SubMenu4BLabel3]</label>
@@ -5643,7 +5531,7 @@
 			<thumb>$VAR[SubMenu4BIcon3]</thumb>
 			<onclick>$VAR[SubMenu4BClick3]</onclick>
 			<onclick>$VAR[SubMenu4B2ndClick3]</onclick>
-			<visible>!IsEmpty(Skin.String(SubMenu4B3Type)</visible>
+			<visible>!IsEmpty(Skin.String(SubMenu4B3Type))</visible>
 		 </item>
 		<item id="4">
 			<label>$VAR[SubMenu4BLabel4]</label>
@@ -5652,7 +5540,7 @@
 			<thumb>$VAR[SubMenu4BIcon4]</thumb>
 			<onclick>$VAR[SubMenu4BClick4]</onclick>
 			<onclick>$VAR[SubMenu4B2ndClick4]</onclick>
-			<visible>!IsEmpty(Skin.String(SubMenu4B4Type)</visible>
+			<visible>!IsEmpty(Skin.String(SubMenu4B4Type))</visible>
 		 </item>
 	</include>
 	<include name="SubMenu5B">
@@ -5663,7 +5551,7 @@
 			<thumb>$VAR[SubMenu5BIcon1]</thumb>
 			<onclick>$VAR[SubMenu5BClick1]</onclick>
 			<onclick>$VAR[SubMenu5B2ndClick1]</onclick>
-			<visible>!IsEmpty(Skin.String(SubMenu5B1Type)</visible>
+			<visible>!IsEmpty(Skin.String(SubMenu5B1Type))</visible>
 		 </item>
 		<item id="2">
 			<label>$VAR[SubMenu5BLabel2]</label>
@@ -5672,7 +5560,7 @@
 			<thumb>$VAR[SubMenu5BIcon2]</thumb>
 			<onclick>$VAR[SubMenu5BClick2]</onclick>
 			<onclick>$VAR[SubMenu5B2ndClick2]</onclick>
-			<visible>!IsEmpty(Skin.String(SubMenu5B2Type)</visible>
+			<visible>!IsEmpty(Skin.String(SubMenu5B2Type))</visible>
 		 </item>
 		<item id="3">
 			<label>$VAR[SubMenu5BLabel3]</label>
@@ -5681,7 +5569,7 @@
 			<thumb>$VAR[SubMenu5BIcon3]</thumb>
 			<onclick>$VAR[SubMenu5BClick3]</onclick>
 			<onclick>$VAR[SubMenu5B2ndClick3]</onclick>
-			<visible>!IsEmpty(Skin.String(SubMenu5B3Type)</visible>
+			<visible>!IsEmpty(Skin.String(SubMenu5B3Type))</visible>
 		 </item>
 		<item id="4">
 			<label>$VAR[SubMenu5BLabel4]</label>
@@ -5690,7 +5578,7 @@
 			<thumb>$VAR[SubMenu5BIcon4]</thumb>
 			<onclick>$VAR[SubMenu5BClick4]</onclick>
 			<onclick>$VAR[SubMenu5B2ndClick4]</onclick>
-			<visible>!IsEmpty(Skin.String(SubMenu5B4Type)</visible>
+			<visible>!IsEmpty(Skin.String(SubMenu5B4Type))</visible>
 		 </item>
 	</include>
 	

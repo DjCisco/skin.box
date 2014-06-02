@@ -146,13 +146,6 @@
 			<size>24</size>
 			<style>bold uppercase</style>
         </font>
-        <font>
-            <name>Window_Settings</name>
-            <filename>MC360.ttf</filename>
-            <aspect>0.8</aspect>
-            <style>bold uppercase</style>
-            <size>20</size>
-        </font>
 		 <font>
 			<name>List_PVR</name>
             <filename>MC360.ttf</filename>
@@ -274,11 +267,7 @@
 			<linespacing>1.0</linespacing>
             <size>32</size>
         </font>
-
-   
-
-
-        <font>
+		<font>
             <name>Small</name>
             <filename>GeosansLight.ttf</filename>
             <size>20</size>

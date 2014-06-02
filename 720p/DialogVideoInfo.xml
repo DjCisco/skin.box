@@ -49,7 +49,7 @@
                         <aspectratio align="right" aligny="center">scale</aspectratio>
                         <bordertexture border="5">white_box.png</bordertexture>
                         <bordersize>5</bordersize>
-                        <visible>!Control.HasFocus(50) + Container.Content(episodes)]</visible>
+                        <visible>!Control.HasFocus(50) + Container.Content(episodes)</visible>
                     </control>
 					<!-- Cover Seasons -->
 					<control type="image">

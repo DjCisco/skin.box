@@ -149,7 +149,6 @@
 							<top>10</top>
 							<width>70</width>
 							<height>70</height>
-							<height>70</height>
 							<texture fallback="DefaultUser.png">$INFO[ListItem.Icon]</texture>
 							<visible>!SubString(ListItem.Label,$LOCALIZE[20058])</visible>
 						</control>
