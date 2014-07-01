@@ -4,12 +4,16 @@
   <allowoverlay>yes</allowoverlay>
 	<controls>
 	<control type="group">
-		<animation type="WindowOpen" reversible="false">
-			<effect type="slide" end="0,-270" time="300" tween="cubic" easing="inout"/>
+		<animation type="WindowClose">
+			<effect type="fade" time="300" />
+			<effect type="slide" end="+1500,0" time="300" />
 		</animation>
+		<animation type="WindowOpen">
+			<effect type="fade" time="300" />
+			<effect type="slide" start="+1500,0" time="300" />
+		</animation>
+		<include>PanelCoordinates</include>
 		<control type="panel" id="1">
-			<top>730</top>
-			<left>50</left>
 			<width>1160</width>
 			<height>500</height>
 			<itemlayout height="50" width="50">
@@ -42,9 +46,6 @@
 				<include>MainMenuIconChooser</include>
 			</content>
 		</control>
-			
-					
-		</control>
-		
+	</control>	
 		</controls>
 </window>

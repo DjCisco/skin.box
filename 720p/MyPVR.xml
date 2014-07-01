@@ -80,7 +80,7 @@
                      </control>
                     <control id="32">
                         <type>button</type>
-                        <label>TV LIST</label>
+                        <label>$LOCALIZE[31019]</label>
                         <left>1</left>
                         <width>155</width>
                         <height>155</height>
@@ -91,7 +91,7 @@
                     </control>
                     <control type="label">
 						<include>PanelButtonTitle</include>
-                        <label>TV Channels</label>
+                        <label>19217</label>
                     </control>
                     <control type="image">
                         <include>PanelButtonIcon</include>
@@ -112,7 +112,7 @@
                      </control>
                     <control id="33">
                         <type>button</type>
-                        <label>Radio LIST</label>
+                        <label>$LOCALIZE[31020]</label>
                         <left>1</left>
                         <width>155</width>
                         <height>155</height>
@@ -123,7 +123,7 @@
                     </control>
                     <control type="label">
 						<include>PanelButtonTitle</include>
-                        <label>Radio</label>
+                        <label>19021</label>
                     </control>
                     <control type="image">
                         <include>PanelButtonIcon</include>
@@ -144,7 +144,7 @@
                      </control>
                     <control id="31">
                         <type>button</type>
-                        <label>TV GUIDE</label>
+                        <label>4</label>
                         <left>1</left>
                         <width>155</width>
                         <height>155</height>
@@ -176,7 +176,7 @@
                      </control>
                     <control id="34">
                         <type>button</type>
-                        <label>RECORDINGS</label>
+                        <label>19163</label>
                         <left>1</left>
                         <width>155</width>
                         <height>155</height>

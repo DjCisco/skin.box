@@ -55,7 +55,7 @@
 				<visible>IsEmpty(Container.FolderName)</visible>
 				<!--This control shows the label Videos -->
 				<control type="label">
-					<label>VIDEOS</label>
+					<label>3</label>
 					<left>50</left>
 					<top>215</top>
 					<height>30</height>
@@ -68,19 +68,19 @@
 				 <!--This control shows the label MUSIC -->
 				<control type="label">
 					<include>ViewMainTitle</include>
-					<label>MUSIC</label>
+					<label>2</label>
 					<visible>Window.IsActive(musiclibrary)</visible>
 				</control>
 				<!--This control shows the label MUSIC FILES -->
 				<control type="label">
 					<include>ViewMainTitle</include>
-					<label>MUSIC FILES</label>
+					<label>31002</label>
 					<visible>Window.IsActive(musicfiles)</visible>
 				</control>
 				<!--This control shows the label Programs -->
 				<control type="label">
 					<include>ViewMainTitle</include>
-					<label>PROGRAMS</label>
+					<label>0</label>
 					<visible>Window.IsActive(Programs)</visible>
 				</control>
 				<!--This control shows the label Pictures -->
@@ -92,7 +92,7 @@
 				<!--This control shows the Add-On label -->
 				<control type="label">
 					<include>ViewMainTitle</include>
-					<label>ADD-ONS</label>
+					<label>24001</label>
 					<visible>Window.IsActive(AddonBrowser)</visible>
 				</control>
 			</control>	
@@ -123,7 +123,7 @@
 					<control type="image">
 						<width>880</width>
 						<height>45</height>
-						<texture border="2">button.png</texture>
+						<texture colordiffuse="AccentDiffuse">button.png</texture>
 						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
 					</control>
 					<control type="label">

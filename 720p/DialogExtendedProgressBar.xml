@@ -29,27 +29,11 @@
             </control>
             <control type="label" id="30">
                 <description>heading</description>
-                <left>350</left>
-                <top>5</top>
-				<aligny>top</aligny>
-                <width>580</width>
-                <label></label>
-                <font>-</font>
-				<textcolor>Accent</textcolor>
-                <scroll>true</scroll>
-				<align>center</align>
+				<include>HiddenButton</include>
             </control>
             <control type="label" id="31">
                 <description>message</description>
-                <left>350</left>
-                <top>25</top>
-				<aligny>top</aligny>
-                <width>580</width>
-                <label></label>
-                <textcolor>white</textcolor>
-                <scroll>true</scroll>
-                <font>-</font>
-				<align>center</align>
+				<include>HiddenButton</include>
             </control>
 			<control type="label">
 				<left>0</left>

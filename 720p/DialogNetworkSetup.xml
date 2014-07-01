@@ -50,7 +50,6 @@
                 <width>460</width>
 				<height>40</height>
                 <align>left</align>
-                <label></label>
                 <textoffsetx>20</textoffsetx>
                 <onup>10</onup>
                 <onleft>12</onleft>
@@ -82,7 +81,6 @@
                 <top>150</top>
                 <width>610</width>
 				<height>40</height>
-                <label></label>
                 <onup>11</onup>
                 <onleft>16</onleft>
                 <onright>16</onright>

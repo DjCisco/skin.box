@@ -27,7 +27,6 @@
                     <description>Skip Back</description>
                     <width>40</width>
                     <height>40</height>
-                    <label></label>
                     <texturefocus>other_textures/osd/prevtrackgreenfo.png</texturefocus>
                     <texturenofocus>other_textures/osd/prevtracknf.png</texturenofocus>
                     <onclick>playercontrol(previous)</onclick>
@@ -36,7 +35,6 @@
                     <description>rewind</description>
                     <width>40</width>
                     <height>40</height>
-                    <label></label>
                     <texturefocus>other_textures/osd/rewindgreenfo.png</texturefocus>
                     <texturenofocus>other_textures/osd/rewindnf.png</texturenofocus>
                     <onclick>playercontrol(rewind)</onclick>
@@ -45,7 +43,6 @@
                     <description>Play/pause</description>
                     <width>40</width>
                     <height>40</height>
-                    <label></label>
                     <texturefocus>other_textures/osd/pausegreenfo.png</texturefocus>
                     <texturenofocus>other_textures/osd/pausenf.png</texturenofocus>
                     <usealttexture>Player.paused | Player.Forwarding | Player.rewinding</usealttexture>
@@ -57,7 +54,6 @@
                     <description>Stop</description>
                     <width>40</width>
                     <height>40</height>
-                    <label></label>
                     <texturefocus>other_textures/osd/stopgreenfo.png</texturefocus>
                     <texturenofocus>other_textures/osd/stopnf.png</texturenofocus>
                     <onclick>playercontrol(stop)</onclick>
@@ -66,7 +62,6 @@
                     <description>Forward</description>
                     <width>40</width>
                     <height>40</height>
-                    <label></label>
                     <texturefocus>other_textures/osd/forwardgreenfo.png</texturefocus>
                     <texturenofocus>other_textures/osd/forwardnf.png</texturenofocus>
                     <onclick>playercontrol(forward)</onclick>
@@ -75,7 +70,6 @@
                     <description>Skip Forward</description>
                     <width>40</width>
                     <height>40</height>
-                    <label></label>
                     <texturefocus>other_textures/osd/nexttrackgreenfo.png</texturefocus>
                     <texturenofocus>other_textures/osd/nexttracknf.png</texturenofocus>
                     <onclick>playercontrol(next)</onclick>

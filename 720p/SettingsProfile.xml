@@ -92,7 +92,7 @@
 				</focusedlayout>
 				<content>
 					<item id="1">
-						<label>Login</label>
+						<label>$LOCALIZE[31017]</label>
 						<onclick>noop</onclick>
 						<icon>-</icon>
 					</item>

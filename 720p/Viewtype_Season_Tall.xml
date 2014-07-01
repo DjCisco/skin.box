@@ -134,7 +134,7 @@
 						<left>155</left>
                         <width>60</width>
                         <height>60</height>
-                        <texture>button.png</texture>
+                        <texture colordiffuse="AccentDiffuse">button.png</texture>
                         <aspectratio scalediffuse="false">stretch</aspectratio>
                     </control>
 					<control type="image">

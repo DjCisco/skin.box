@@ -114,7 +114,7 @@
             </control>
 			
 			<control type="label">
-                <label>ALL</label>
+                <label>593</label>
                 <left>50</left>
                 <top>215</top>
                 <height>30</height>
@@ -126,7 +126,7 @@
             </control>
 			
 			<control type="label">
-                <label>BACK</label>
+                <label>$LOCALIZE[31004]</label>
                 <left>50</left>
                 <top>215</top>
                 <height>30</height>

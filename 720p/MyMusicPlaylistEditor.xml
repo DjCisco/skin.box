@@ -29,7 +29,7 @@
 			<control type="label">
 				<left>803</left>
 				<include>ViewMainTitle</include>	
-                <label>PLAYLIST</label>
+                <label>559</label>
             </control>
 			<control type="label">
 				<include>ViewFooterTitle</include>

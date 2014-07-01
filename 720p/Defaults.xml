@@ -2,7 +2,6 @@
 <includes>
     <!-- This defines the default settings of any label -->
 	<default type="label">
-        <label></label>
         <height>45</height>
         <align>left</align>
         <aligny>center</aligny>
@@ -15,14 +14,12 @@
 	<default type="title">
         <left>0</left>
         <top>0</top>
-        <label></label>
      </default>
     <!-- This defines the default settings of a fading label -->
 	<default type="fadelabel">
         <left>0</left>
         <top>0</top>
         <height>80</height>
-        <label></label>
         <align>left</align>
         <aligny>center</aligny>
         <font>Small</font>
@@ -52,7 +49,6 @@
         <align>center</align>
         <aligny>center</aligny>
         <font>Small</font>
-        <label></label>
         <textoffsetx>20</textoffsetx>
         <textcolor>White</textcolor>
         <focusedcolor>Accent</focusedcolor>
@@ -67,7 +63,6 @@
         <top>0</top>
         <width>300</width>
         <height>45</height>
-        <label></label>
         <textoffsetx>20</textoffsetx>
         <font>Small</font>
         <textcolor>White</textcolor>
@@ -90,7 +85,6 @@
         <align>center</align>
         <aligny>center</aligny>
         <font>Small</font>
-        <label></label>
         <textcolor>White</textcolor>
         <focusedcolor>Accent</focusedcolor>
         <disabledcolor>Red</disabledcolor>
@@ -110,7 +104,6 @@
         <top>0</top>
         <width>300</width>
         <height>45</height>
-        <label></label>
         <font>Small</font>
         <spinwidth>26</spinwidth>
         <spinheight>26</spinheight>
@@ -198,7 +191,6 @@
 	    <orientation>vertical</orientation>
     </default>
     <default type="textbox">
-        <label></label>
         <font>Small</font>
         <textcolor>white</textcolor>
         <pagecontrol>61</pagecontrol>

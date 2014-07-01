@@ -425,7 +425,7 @@
 						<font>WeatherExtrema</font>
 						<align>center</align>
                     </control>
-                    <control type="label">\
+                    <control type="label">
                         <info>Window.Property(Day5.Outlook)</info>
                         <width>145</width>
 						<left>5</left>
@@ -472,7 +472,7 @@
 						<font>WeatherExtrema</font>
 						<align>center</align>
                     </control>
-                    <control type="label">\
+                    <control type="label">
                         <info>Window.Property(Day6.Outlook)</info>
                         <width>145</width>
 						<left>5</left>
@@ -567,8 +567,7 @@
                     <width>280</width>
                     <align>left</align>
                     <font>List_Left_Menu</font>
-                    <label></label>
-                    <textcolor>-</textcolor>
+                     <textcolor>-</textcolor>
                     <focusedcolor>-</focusedcolor>
 				</control>
             </control>

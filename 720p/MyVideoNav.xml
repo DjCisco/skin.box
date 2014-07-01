@@ -116,7 +116,7 @@
                 <width>280</width>
 				<textoffsetx>10</textoffsetx>
                 <align>left</align>
-                <label>Wide List</label>
+                <label>$LOCALIZE[31018]</label>
    				<font>List_Left_Menu</font>
                 <onclick>Skin.ToggleSetting(moviewidelist)</onclick>
                 <selected>Skin.HasSetting(moviewidelist)</selected>
@@ -127,7 +127,7 @@
                 <width>280</width>
 				<textoffsetx>10</textoffsetx>
                 <align>left</align>
-                <label>Wide List</label>
+                <label>$LOCALIZE[31018]</label>
 				<font>List_Left_Menu</font>
                 <onclick>Skin.ToggleSetting(tvshowwidelist)</onclick>
                 <selected>Skin.HasSetting(tvshowwidelist)</selected>
@@ -138,7 +138,7 @@
                 <width>280</width>
 				<textoffsetx>10</textoffsetx>
                 <align>left</align>
-                <label>Wide List</label>
+                <label>$LOCALIZE[31018]</label>
 				<font>List_Left_Menu</font>
                 <onclick>Skin.ToggleSetting(episodewidelist)</onclick>
                 <selected>Skin.HasSetting(episodewidelist)</selected>

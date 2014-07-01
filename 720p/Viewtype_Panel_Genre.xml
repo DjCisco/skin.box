@@ -73,7 +73,7 @@
             </control>
             <control type="label">
 				<include>ViewMainTitle</include>
-                <label>GENRES</label>
+                <label>135</label>
             </control>
         
          </control>

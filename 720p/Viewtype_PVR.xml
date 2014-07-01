@@ -533,7 +533,7 @@
                     <align>justify</align>
                     <autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
                     <font>Panel_Description</font>
-                    <label>No Plot Available</label>
+                    <label>$LOCALIZE[31003]</label>
 					<visible>IsEmpty(Container(13).ListItem.Plot)</visible>
                 </control>
 

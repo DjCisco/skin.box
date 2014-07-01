@@ -81,7 +81,7 @@
                     <control type="image">
                         <width>395</width>
                         <height>45</height>
-                        <texture>button.png</texture>
+                        <texture colordiffuse="AccentDiffuse">button.png</texture>
                     </control>
                     <control type="label">
                         <left>20</left>
@@ -104,7 +104,7 @@
                     <control type="image">
                         <width>890</width>
                         <height>45</height>
-                        <texture>button.png</texture>
+                        <texture colordiffuse="AccentDiffuse">button.png</texture>
                     </control>
                     <control type="label">
                         <left>20</left>

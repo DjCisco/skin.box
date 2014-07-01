@@ -13,7 +13,6 @@
 				<description>Heading</description>
 				<left>25</left>
 				<top>25</top>
-				<label></label>
 				<font>Panel_Description_Title</font>
 				<width>400</width>
 				 <align>center</align>
@@ -27,7 +26,6 @@
 			   <height>100</height>
 			   <font>Panel_Description</font>
 			   <align>center</align>
-			   <label></label>
 			</control>
 			
 			<control type="progress">

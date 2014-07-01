@@ -5,7 +5,7 @@
     <allowoverlay>yes</allowoverlay>
     <controls>
         <include>GlobalOverlay</include>
-        <control type="group">
+	    <control type="group">
             <left>960</left>
             <top>0</top>
             <animation type="WindowOpen">
@@ -67,7 +67,7 @@
                 </animation>
             </control>
             <include>RightMenuBackground</include>
-			<control type="fadelabel" id="1">
+			<control type="label" id="1">
                 <description>header label</description>
                 <left>20</left>
                 <top>0</top>
@@ -118,7 +118,6 @@
                 <width>180</width>
                 <align>center</align>
                 <font>Panel_Info</font>
-                <label></label>
             </control>
             <control type="button" id="5">
                 <description>Manual</description>
@@ -169,9 +168,6 @@
                     </control>
                 </focusedlayout>
             </control>
-            
-			
-			
-		</control>
+     	</control>
     </controls>
 </window>

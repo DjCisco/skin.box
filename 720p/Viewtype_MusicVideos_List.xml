@@ -93,7 +93,7 @@
 					<control type="image">
 						<width>735</width>
 						<height>63</height>
-						<texture>button.png</texture>
+						<texture colordiffuse="AccentDiffuse">button.png</texture>
 					 </control>
 					<control type="image">
 						<width>735</width>

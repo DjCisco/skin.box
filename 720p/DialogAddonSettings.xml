@@ -106,7 +106,6 @@
                 <reverse>yes</reverse>
             </control>
             <control type="label" id="7">
-	            <label></label>
 				<height>45</height>
 				<font>List_Settings_Title</font>
 				<textcolor>Accent</textcolor>

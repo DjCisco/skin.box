@@ -5,7 +5,7 @@
     <controls>
         <control type="group">
             <animation type="WindowOpen">
-                <effect type="slide" time="300" start="0,-40" end="0,0" delay="300" easing="out" tween="cubic" />
+                <effect type="slide" time="300" start="0,-40" end="0,0" easing="out" tween="cubic" />
             </animation>
             <animation type="WindowClose">
                 <effect type="slide" time="300" start="0,0" end="0,-40" easing="in" tween="cubic" />
@@ -21,26 +21,11 @@
             </control>
             <control type="label" id="401">
                 <description>heading</description>
-                <left>350</left>
-                <top>5</top>
-                <width>580</width>
-                <label></label>
-				<font>-</font>
-				<textcolor>Accent</textcolor>
-				<aligny>top</aligny>
-				<align>center</align>
-                <scroll>true</scroll>
+				<include>HiddenButton</include>
             </control>
             <control type="label" id="402">
                 <description>message</description>
-                <left>350</left>
-                <top>25</top>
-                <width>580</width>
-                <label></label>
-                <scroll>true</scroll>
-                <font>-</font>
-				<aligny>top</aligny>
-				<align>center</align>
+                <include>HiddenButton</include>
             </control>
 			<control type="label">
 				<left>30</left>

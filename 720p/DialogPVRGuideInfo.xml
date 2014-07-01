@@ -113,7 +113,6 @@
 				</control>
 				<control type="button" id="6">
 					<description>Record</description>
-					<label></label>
 					<width>165</width>
 					<textoffsetx>10</textoffsetx>
 					<font>Panel_Hint</font>						

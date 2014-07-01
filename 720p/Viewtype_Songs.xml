@@ -99,7 +99,7 @@
                         <left>50</left>
 						<width>685</width>
                         <height>45</height>
-                        <texture>button.png</texture>
+                        <texture colordiffuse="AccentDiffuse">button.png</texture>
                     </control>
 					<control type="image">
                         <width>45</width>
@@ -116,7 +116,7 @@
 					<control type="image">
                         <width>45</width>
                         <height>45</height>
-                        <texture border="5">tile.png</texture>
+                        <texture>tile.png</texture>
                     </control>
 					<control type="image">
                         <left>750</left>

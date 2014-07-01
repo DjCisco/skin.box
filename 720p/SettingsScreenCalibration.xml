@@ -50,7 +50,6 @@
             <width>1240</width>
             <align>center</align>
 			<font>Panel_Hint</font>
-            <label></label>
         </control>
         <control type="label" id="3">
             <description>help information</description>
@@ -59,7 +58,6 @@
             <width>1240</width>
 			<font>Panel_Hint</font>
             <align>center</align>
-            <label></label>
         </control>
     </controls>
 </window>

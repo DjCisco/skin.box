@@ -11,7 +11,6 @@
                 <description>Heading</description>
                 <left>25</left>
                 <top>25</top>
-                <label></label>
                 <font>Panel_Description_Title</font>
                 <width>400</width>
                  <align>center</align>
@@ -24,7 +23,6 @@
 			   <height>100</height>
 			   <font>Panel_Description</font>
 			   <align>center</align>
-			   <label></label>
 			</control>
             <control type="button" id="10">
                 <description>Ok</description>
@@ -38,7 +36,7 @@
                 <ondown>10</ondown>
 				<font>Panel_Hint</font>
 				<focusedcolor>White</focusedcolor>
-				<texturefocus>button.png</texturefocus>
+				<texturefocus colordiffuse="AccentDiffuse">button.png</texturefocus>
 				<texturenofocus>tile.png</texturenofocus>				
             </control>
         </control>

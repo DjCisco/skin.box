@@ -357,7 +357,7 @@
                 <control type="button" id="5">
                     <description>Apply changes Button</description>
                     <width>145</width>
-                    <label>Apply</label>
+                    <label>$LOCALIZE[31025]</label>
                     <textoffsetx>10</textoffsetx>
 					<font>Panel_Hint</font>						
 					<align>center</align>

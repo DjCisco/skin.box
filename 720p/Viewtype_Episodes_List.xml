@@ -200,13 +200,13 @@
                     <control type="image">
                         <width>45</width>
                         <height>45</height>
-                        <texture border="5">button.png</texture>
+                        <texture>button.png</texture>
                     </control>
 					<control type="image">
                         <left>50</left>
 						<width>475</width>
                         <height>45</height>
-                        <texture border="5">button.png</texture>
+                        <texture colordiffuse="AccentDiffuse">button.png</texture>
                     </control>
                     <control type="image">
                         <width>45</width>
@@ -315,7 +315,7 @@
 						<left>50</left>
 						<width>815</width>
 						<height>63</height>
-						<texture>button.png</texture>
+						<texture colordiffuse="AccentDiffuse">button.png</texture>
 					 </control>
 					 <control type="image">
 						<left>50</left>

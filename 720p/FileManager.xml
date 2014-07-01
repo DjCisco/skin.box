@@ -32,7 +32,6 @@
 					<left>10</left>
 					<width>560</width>
 					<align>left</align>
-					<label></label>
 					<font>Panel_Hint</font>
 				</control>
 				<control type="list" id="20">
@@ -98,7 +97,6 @@
 					<top>588</top>
 					<width>320</width>
 					<align>left</align>
-					<label></label>
 				</control>
 				<control type="scrollbar" id="2000">
 					<left>585</left>
@@ -129,7 +127,6 @@
 					<left>10</left>
 					<width>560</width>
 					<align>left</align>
-					<label></label>
 					<font>Panel_Hint</font>
 				</control>
 				<control type="list" id="21">
@@ -195,7 +192,6 @@
 					<top>588</top>
 					<width>320</width>
 					<align>left</align>
-					<label></label>
 				</control>
 				<control type="scrollbar" id="2100">
 					<left>585</left>

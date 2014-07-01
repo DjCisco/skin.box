@@ -139,7 +139,7 @@
                         <description>Disable Home Animations</description>
                         <width>810</width>
                         <align>left</align>
-                        <label>Disable Home Animations</label>
+                        <label>$LOCALIZE[31005]</label>
                         <focusedcolor>Accent</focusedcolor>
 						<font>List_Settings</font>
                         <onclick>Skin.ToggleSetting(DisableHomeAnimations)</onclick>
@@ -149,7 +149,7 @@
                         <description>Home Menu</description>
                         <width>810</width>
                         <align>left</align>
-                        <label>Hide Home Menu Navigation Icons</label>
+                        <label>$LOCALIZE[31006]</label>
                         <focusedcolor>Accent</focusedcolor>
 						<font>List_Settings</font>
                         <onclick>Skin.ToggleSetting(HideHomeMenuIcons)</onclick>
@@ -159,7 +159,7 @@
                         <description>Disable Home Fanart</description>
                         <width>810</width>
                         <align>left</align>
-                        <label>Disable Home Fanart</label>
+                        <label>$LOCALIZE[31007]</label>
                         <focusedcolor>Accent</focusedcolor>
 						<font>List_Settings</font>
                         <onclick>Skin.ToggleSetting(DisableHomeFanart)</onclick>
@@ -169,8 +169,7 @@
 						<description>Open Customization Window</description>
                         <width>810</width>
                         <align>left</align>
-                        <label>Customize Home Menu</label>
-                        <label2></label2>
+                        <label>$LOCALIZE[31008]</label>
                         <focusedcolor>Accent</focusedcolor>
 						<font>List_Settings</font>
                         <onclick>ActivateWindow(3333,return)</onclick>
@@ -211,7 +210,7 @@
 						<description>Set Path to Music Library</description>
                         <width>810</width>
                         <align>left</align>
-                        <label>Path to Artist Fanart</label>
+                        <label>$LOCALIZE[31009]</label>
                         <focusedcolor>Accent</focusedcolor>
 						<font>List_Settings</font>
 						<onclick>Skin.Reset(ArtistsFanartPath)</onclick>
@@ -221,7 +220,7 @@
                         <description>Disable Artists Extrafanart</description>
                         <width>810</width>
                         <align>left</align>
-                        <label>Disable Artist Extrafanart during Navigation</label>
+                        <label>$LOCALIZE[31010]</label>
                         <focusedcolor>Accent</focusedcolor>
 						<font>List_Settings</font>
                         <onclick>Skin.ToggleSetting(DisableArtistExtrafanartInNavigation)</onclick>
@@ -232,7 +231,7 @@
                         <description>Toggle Video On Background</description>
                         <width>810</width>
                         <align>left</align>
-                        <label>Playing Video On Background</label>
+                        <label>$LOCALIZE[31011]</label>
                         <focusedcolor>Accent</focusedcolor>
 						<font>List_Settings</font>
                         <onclick>Skin.ToggleSetting(PlayingVideoOnBackground)</onclick>
@@ -242,7 +241,7 @@
                         <description>Toggle Text Scroll On Background</description>
                         <width>810</width>
                         <align>left</align>
-                        <label>Display Scrolling Text on Background and Music Visualization</label>
+                        <label>$LOCALIZE[31012]</label>
                         <focusedcolor>Accent</focusedcolor>
 						<font>List_Settings</font>
                         <onclick>Skin.ToggleSetting(DisplayScrollingText)</onclick>
@@ -252,7 +251,7 @@
                         <description>Toggle Bg Color Mode</description>
                         <width>810</width>
                         <align>left</align>
-                        <label>Apply Theme Color to Background</label>
+                        <label>$LOCALIZE[31013]</label>
                         <focusedcolor>Accent</focusedcolor>
 						<font>List_Settings</font>
                         <onclick>Skin.ToggleSetting(ThemeBackgroundColor)</onclick>
@@ -286,7 +285,7 @@
 						<description>Tv Tunes</description>
 						 <width>810</width>
                         <align>left</align>
-						<label>Enable TvTunes</label>
+						<label>$LOCALIZE[31014]</label>
                         <focusedcolor>Accent</focusedcolor>
 						<font>List_Settings</font>
                         <onclick>Skin.ToggleSetting(ActivateTvTunes)</onclick>
@@ -297,7 +296,7 @@
 						<description>Artist Slideshow</description>
 						 <width>810</width>
                         <align>left</align>
-						<label>Enable Artists Slideshow Addon</label>
+						<label>$LOCALIZE[31015]</label>
                         <focusedcolor>Accent</focusedcolor>
 						<font>List_Settings</font>
                         <onclick>Skin.ToggleSetting(EnableArtistSlideshowAddon)</onclick>
@@ -308,7 +307,7 @@
 						<description>Tv Show Next Aired</description>
 						 <width>810</width>
                         <align>left</align>
-						<label>Enable Tv Show Next Aired</label>
+						<label>$LOCALIZE[31016]</label>
                         <focusedcolor>Accent</focusedcolor>
 						<font>List_Settings</font>
                         <onclick>Skin.ToggleSetting(EnableTvShowNexAired)</onclick>

@@ -8,19 +8,16 @@
 			<control type="label" id="10">
 				<description>row 1 label</description>
 				<left>20</left>
-				<label></label>
 				<shadowcolor>black</shadowcolor>
 			</control>
 			<control type="label" id="11">
 				<description>row 2 label</description>
 				<left>20</left>
-				<label></label>
 				<shadowcolor>black</shadowcolor>
 			</control>
 			<control type="label" id="12">
 				<description>row 3 label</description>
 				<left>20</left>
-				<label></label>
 				<shadowcolor>black</shadowcolor>
 			</control>
 		</control>
