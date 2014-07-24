@@ -869,28 +869,13 @@
 			</control>
 	</include>
 	<include name="MovieTvShowPanelPoster">
-		<!-- Color Background with White Border -->
-		<control type="image">
-			<left>50</left>
-			<top>290</top>
-			<width>215</width>
-			<height>315</height>
-			<texture background="true">button.png</texture>
-			<fadetime>200</fadetime>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<bordersize>5</bordersize>
-			<bordertexture>white_box.png</bordertexture>
-		</control>
-		<!-- Dark Texture for Color Background  -->
 		<control type="image">
 			<left>50</left>
 			<top>290</top>
 			<width>215</width>
 			<height>315</height>
 			<texture background="true">tile.png</texture>
-			<fadetime>200</fadetime>
 			<aspectratio scalediffuse="false">scale</aspectratio>
-			<bordersize>5</bordersize>
 		</control>
 		<!-- Movie / Tv Show Poster  -->
 		<control type="image">
@@ -902,6 +887,7 @@
 			<fadetime>200</fadetime>
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<bordersize>5</bordersize>
+			<bordertexture>white_box.png</bordertexture>
 		</control>
 		<!-- Default Icon if  no Art is Available -->
 		<control type="image">
@@ -925,6 +911,7 @@
 			<fadetime>200</fadetime>
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<bordersize>5</bordersize>
+			<bordertexture>white_box.png</bordertexture>
 			<visible>IsEmpty(ListItem.Art(poster)) + !StringCompare(ListItem.Label,..) + !SubString(ListItem.Label,default)</visible>
 		</control>
 	</include>
@@ -1258,28 +1245,13 @@
 		
 	</include>
 	<include name="ArtistAlbumPanelCover">
-		<!-- Color Background with White Border -->
 		<control type="image">
 			<left>50</left>
 			<top>290</top>
 			<width>315</width>
 			<height>315</height>
-			<texture background="true">button.png</texture>
-			<fadetime>200</fadetime>
+			<texture background="true">music_fanart_diffuse.png</texture>
 			<aspectratio scalediffuse="false">scale</aspectratio>
-			<bordersize>5</bordersize>
-			<bordertexture>white_box.png</bordertexture>
-		</control>
-		<!-- Dark Texture for Color Background  -->
-		<control type="image">
-			<left>50</left>
-			<top>290</top>
-			<width>315</width>
-			<height>315</height>
-			<texture background="true">tile.png</texture>
-			<fadetime>200</fadetime>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<bordersize>5</bordersize>
 		</control>
 		<!-- Icon to evaluate if Art is found -->
 		<control type="image">
@@ -1287,7 +1259,7 @@
 			<top>290</top>
 			<width>315</width>
 			<height>315</height>
-			<texture background="true">$INFO[ListItem.Icon]</texture>
+			<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 			<aspectratio scalediffuse="false">keep</aspectratio>
 			<bordersize>35</bordersize>
 			<visible>IsEmpty(ListItem.Thumb)</visible>
@@ -1311,6 +1283,7 @@
 			<texture>$INFO[ListItem.Thumb]</texture>
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<bordersize>5</bordersize>
+			<bordertexture>white_box.png</bordertexture>
 		</control>
 	</include>
 	<include name="AlbumPanelItemLayout">
