@@ -633,6 +633,7 @@
 	</include>
   
   	<include name="SubMenuSlideAnimation">
+		
 		<animation type="Visible" condition="!Skin.HasSetting(DisableHomeAnimations)" reversible="false">
 			<effect type="slide" start="-1500" end="0" time="700" tween="cubic" easing="inout"/>
 		</animation>
@@ -2696,7 +2697,8 @@
 						</control>
 						<include>HomeWidgetThumbsFocusedEpisodeNo</include>
 					</focusedlayout>
-					<!-- This control defines the content inside the Widget Panel -->
+					<!-- This control defines the content inside the Widget Panel 		-->			
+
 						<include condition="Skin.String(HomeWidget1.Type,RandomMovies)">RandomItemsMovies</include>
 						<include condition="Skin.String(HomeWidget1.Type,RandomTvShows)">RandomItemsTvShows</include>
 						<include condition="Skin.String(HomeWidget1.Type,RandomEpisodes)">RandomItemsEpisodes</include>
@@ -2717,7 +2719,7 @@
 						<include condition="Skin.String(HomeWidget1.Type,CustomTvShows)">CustomWidget1VideoTargetPlaylist</include>
 						<include condition="Skin.String(HomeWidget1.Type,CustomEpisodes)">CustomWidget1Playlist</include>
 						<include condition="Skin.String(HomeWidget1.Type,CustomEpisodesThumbs)">CustomWidget1Playlist</include>
-			
+				
 				</control>
 				<control type="panel" id="1004">
 					<left>380</left>
@@ -2784,6 +2786,7 @@
 							<bordertexture>button.png</bordertexture>
 						</control>
 					</focusedlayout>
+			
 						<include condition="Skin.String(HomeWidget1.Type,RandomAlbums)">RandomItemsAlbums</include>
 						<include condition="Skin.String(HomeWidget1.Type,RandomSongs)">RandomItemsSongs</include>
 						<include condition="Skin.String(HomeWidget1.Type,RandomArtists)">RandomItemsArtists</include>
@@ -2799,6 +2802,8 @@
 						<include condition="Skin.String(HomeWidget1.Type,CustomArtists)">CustomWidget1MusicTargetPlaylist</include>
 						<include condition="Skin.String(HomeWidget1.Type,CustomMusicVideos)">CustomWidget1Playlist</include>
 						<include condition="Skin.String(HomeWidget1.Type,CustomMusicVideosThumbs)">CustomWidget1Playlist</include>
+
+					
 				</control>
 				<!-- This control displays the name of the current selected movie as a footer -->
 				<control type="label">

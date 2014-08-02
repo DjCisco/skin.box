@@ -42,8 +42,6 @@
                 <top>290</top>
                 <width>890</width>
                 <height>315</height>
-				<movement>3</movement>
-				<focusposition>3</focusposition>
                 <onup>503</onup>
                 <ondown>503</ondown>
                 <onright>63</onright>

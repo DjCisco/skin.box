@@ -146,7 +146,7 @@
 					<animation effect="fade" time="400">VisibleChange</animation>
 				</control>
 				<control type="label">
-					<label>[B][UPPERCASE]$INFO[ListItem.Label][/UPPERCASE][/B]</label>
+					<label>[B]$INFO[ListItem.Label][/B]</label>
 					<left>210</left>
 					<top>250</top>
 					<width>1200</width>
