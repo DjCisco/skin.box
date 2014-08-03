@@ -36,7 +36,7 @@
                 <texture>other_textures/black-back.png</texture>
             </control>
 			<!-- This Control displays the list of songs-->
-            <control type="fixedlist" id="503">
+            <control type="list" id="503">
                 <viewtype label="List">Song View</viewtype>
 				<left>370</left>
                 <top>290</top>
