@@ -6,7 +6,7 @@
 	<include file="View_52_Thumbs.xml" />
     <include file="Viewtype_PVR.xml" />
     <include file="Viewtype_Songs.xml" />
-	<include file="Viewtype_Artists.xml" />
+	<include file="Viewtype_Fanart.xml" />
 	<include file="Viewtype_Artists_List.xml" />
     <include file="Viewtype_Episodes.xml" />
     <include file="Viewtype_Episodes_List.xml" />

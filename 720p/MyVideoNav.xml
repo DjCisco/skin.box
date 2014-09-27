@@ -35,7 +35,7 @@
 			<include>Viewtype_Episodes</include><!-- id 525-->
             <include>Viewtype_Episodes_List</include><!-- id 526-->
 			
-			<include>Viewtype_Artists</include><!-- -id 527-->
+			<include>Viewtype_Fanart</include><!-- 527 -->
 			<include>Viewtype_Artists_List</include><!-- id 528-->
 			
 			<include>Viewtype_Panel_Wide</include><!-- id 530-->

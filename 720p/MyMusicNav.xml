@@ -22,7 +22,7 @@
 			<include>Viewtype_Panel_Square_List</include><!-- 508 -->
 			<include>Viewtype_Panel_Square</include><!-- 519 -->
 			<include>Viewtype_Panel_Square_Wide</include><!-- 521 -->
-			<include>Viewtype_Artists</include><!-- 527 -->
+			<include>Viewtype_Fanart</include><!-- 527 -->
 			<include>Viewtype_Artist_Albums</include><!-- 529 -->	
 			<include>Viewtype_Artists_List</include><!-- 528 -->
 			<include>Viewtype_Panel_Wide</include><!-- 530 -->
