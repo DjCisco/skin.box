@@ -108,7 +108,7 @@
 						<description>EPG OSD</description>
 						<width>40</width>
 						<height>40</height>
-						<label>EPG</label>
+						<label>$LOCALIZE[31205]</label>
 						<align>left</align>
 						<font>-</font>
 						<texturefocus colordiffuse="Accent">other_textures/osd/epg.png</texturefocus>

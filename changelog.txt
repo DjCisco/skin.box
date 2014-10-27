@@ -1,3 +1,6 @@
+[B]2.6.9[/B]
+- Fixes for Official Repo Inclusion
+
 [B]2.6.8[/B]
 - Added Extrafanart for Movies, Tv Shows, Seasons and Episodes 
 - Added Video Add-Ons Widget

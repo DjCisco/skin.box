@@ -169,7 +169,7 @@
                         <description>Enable Now Playing on Home Window</description>
                         <width>810</width>
                         <align>left</align>
-                        <label>Show Now Playing On Home</label>
+                        <label>$LOCALIZE[31207]</label>
                         <focusedcolor>Accent</focusedcolor>
 						<font>List_Settings</font>
                         <onclick>Skin.ToggleSetting(showNowPlayingOnHome)</onclick>

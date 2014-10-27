@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="6666">
 	  <defaultcontrol>1</defaultcontrol>
   <allowoverlay>yes</allowoverlay>
@@ -1550,7 +1550,7 @@
 			<focusedcolor>White</focusedcolor>
 			<texturefocus>button.png</texturefocus>
 			<texturenofocus>tile.png</texturenofocus>
-			<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeMenu)].Image,../HomeMenuIcons/$INFO[Container(1).ListItem.Label])</onclick>
+			<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeMenu)].Image,../extras/HomeMenuIcons/$INFO[Container(1).ListItem.Label])</onclick>
 			<onclick>Dialog.Close(6666)</onclick>
 		</control>
 	<control type="fixedlist" id="1">
@@ -1567,18 +1567,18 @@
 				<control type="image">
 					<width>45</width>
 					<height>45</height>
-					<texture>$INFO[ListItem.Label,../HomeMenuIcons/]</texture>
+					<texture>$INFO[ListItem.Label,../extras/HomeMenuIcons/]</texture>
 				</control>
 			</itemlayout>
 			<focusedlayout height="50" width="50">
 				<control type="image">
 					<width>45</width>
 					<height>45</height>
-					<texture colordiffuse="Accent">$INFO[ListItem.Label,../HomeMenuIcons/]</texture>
+					<texture colordiffuse="Accent">$INFO[ListItem.Label,../extras/HomeMenuIcons/]</texture>
 				</control>
 	
 			</focusedlayout>
-			<content type="url">special://skin/HomeMenuIcons/</content>
+			<content type="url">special://skin/extras/HomeMenuIcons/</content>
 		</control>
 		<control type="scrollbar" id="3">
 			<left>40</left>

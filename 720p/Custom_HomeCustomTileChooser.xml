@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="7777">
 	  <defaultcontrol>3</defaultcontrol>
   <allowoverlay>yes</allowoverlay>
@@ -134,7 +134,7 @@
 				<control type="image">
 					<width>45</width>
 					<height>45</height>
-					<texture>$INFO[ListItem.Label,../HomeTileIcons/]</texture>
+					<texture>$INFO[ListItem.Label,../extras/HomeTileIcons/]</texture>
 					<bordersize>5</bordersize>
 				</control>
 			</itemlayout>
@@ -147,12 +147,12 @@
 				<control type="image">
 					<width>45</width>
 					<height>45</height>
-					<texture>$INFO[ListItem.Label,../HomeTileIcons/]</texture>
+					<texture>$INFO[ListItem.Label,../extras/HomeTileIcons/]</texture>
 					<bordersize>5</bordersize>
 				</control>
 	
 			</focusedlayout>
-			<content type="url">special://skin/HomeTileIcons/</content>
+			<content type="url">special://skin/extras/HomeTileIcons/</content>
 		</control>
 		
 		<control type="button" id="5">
@@ -166,7 +166,7 @@
 			<focusedcolor>White</focusedcolor>
 			<texturefocus>button.png</texturefocus>
 			<texturenofocus>tile.png</texturenofocus>
-			<onclick>Skin.SetString(CustomHomeTile.Image,../HomeTileIcons/$INFO[Container(4).ListItem.Label])</onclick>
+			<onclick>Skin.SetString(CustomHomeTile.Image,../extras/HomeTileIcons/$INFO[Container(4).ListItem.Label])</onclick>
 			<onclick>Skin.ToggleSetting(ShowIconSelector)</onclick>
 			<onclick>setFocus(3,1)</onclick>
 		</control>
@@ -189,7 +189,7 @@
 			<top>290</top>
 			<width>315</width>
 			<height>315</height>
-			<texture>$INFO[Container(4).ListItem.Label,../HomeTileIcons/]</texture> 
+			<texture>$INFO[Container(4).ListItem.Label,../extras/HomeTileIcons/]</texture> 
 			<bordersize>15</bordersize>
 			<bordertexture>tile.png</bordertexture>
 		</control>

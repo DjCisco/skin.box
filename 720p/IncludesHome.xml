@@ -220,11 +220,6 @@
 						<include>PanelRectButtonIcon</include>
 						<texture>$VAR[SubMenu1Tile1.Image]</texture>
 					</control>
-					<!-- This control defines the All Movies Count Display-->
-					<control type="label">
-						<include>PanelRectButtonHeaderTitle</include>
-						<label>$VAR[SubMenu1Tile1.2ndLabel]</label>
-					</control>
 					<!-- This control defines the All Movies Button Title-->
 					<control type="label">
 						<include>PanelRectButtonTitle</include>
@@ -349,11 +344,6 @@
 						<include>PanelRectButtonIcon</include>
 						<texture>$VAR[SubMenu2Tile1.Image]</texture>
 					</control>
-					<!-- This control defines the All Movies Count Display-->
-					<control type="label">
-						<include>PanelRectButtonHeaderTitle</include>
-						<label>$VAR[SubMenu2Tile1.2ndLabel]</label>
-					</control>
 					<!-- This control defines the All Movies Button Title-->
 					<control type="label">
 								<include>PanelRectButtonTitle</include>
@@ -476,11 +466,6 @@
 					<control type="image">
 						<include>PanelRectButtonIcon</include>
 						<texture>$VAR[SubMenu3Tile1.Image]</texture>
-					</control>
-					<!-- This control defines the All Movies Count Display-->
-					<control type="label">
-						<include>PanelRectButtonHeaderTitle</include>
-						<label>$VAR[SubMenu3Tile1.2ndLabel]</label>
 					</control>
 					<!-- This control defines the All Movies Button Title-->
 					<control type="label">
@@ -605,11 +590,6 @@
 						<include>PanelRectButtonIcon</include>
 						<texture>$VAR[SubMenu4Tile1.Image]</texture>
 					</control>
-					<!-- This control defines the All Movies Count Display-->
-					<control type="label">
-						<include>PanelRectButtonHeaderTitle</include>
-						<label>$VAR[SubMenu4Tile1.2ndLabel]</label>
-					</control>
 					<!-- This control defines the All Movies Button Title-->
 					<control type="label">
 						<include>PanelRectButtonTitle</include>
@@ -732,11 +712,6 @@
 					<control type="image">
 						<include>PanelRectButtonIcon</include>
 						<texture>$VAR[SubMenu5Tile1.Image]</texture>
-					</control>
-					<!-- This control defines the All Movies Count Display-->
-					<control type="label">
-						<include>PanelRectButtonHeaderTitle</include>
-						<label>$VAR[SubMenu5Tile1.2ndLabel]</label>
 					</control>
 					<!-- This control defines the All Movies Button Title-->
 					<control type="label">
@@ -861,11 +836,6 @@
 						<include>PanelRectButtonIcon</include>
 						<texture>$VAR[SubMenu6Tile1.Image]</texture>
 					</control>
-					<!-- This control defines the All Movies Count Display-->
-					<control type="label">
-						<include>PanelRectButtonHeaderTitle</include>
-						<label>$VAR[SubMenu6Tile1.2ndLabel]</label>
-					</control>
 					<!-- This control defines the All Movies Button Title-->
 					<control type="label">
 						<include>PanelRectButtonTitle</include>
@@ -988,11 +958,6 @@
 					<control type="image">
 						<include>PanelRectButtonIcon</include>
 						<texture>$VAR[SubMenu7Tile1.Image]</texture>
-					</control>
-					<!-- This control defines the All Movies Count Display-->
-					<control type="label">
-						<include>PanelRectButtonHeaderTitle</include>
-						<label>$VAR[SubMenu7Tile1.2ndLabel]</label>
 					</control>
 					<!-- This control defines the All Movies Button Title-->
 					<control type="label">
@@ -1117,11 +1082,6 @@
 						<include>PanelRectButtonIcon</include>
 						<texture>$VAR[SubMenu8Tile1.Image]</texture>
 					</control>
-					<!-- This control defines the All Movies Count Display-->
-					<control type="label">
-						<include>PanelRectButtonHeaderTitle</include>
-						<label>$VAR[SubMenu8Tile1.2ndLabel]</label>
-					</control>
 					<!-- This control defines the All Movies Button Title-->
 					<control type="label">
 						<include>PanelRectButtonTitle</include>
@@ -1244,11 +1204,6 @@
 					<control type="image">
 						<include>PanelRectButtonIcon</include>
 						<texture>$VAR[SubMenu9Tile1.Image]</texture>
-					</control>
-					<!-- This control defines the All Movies Count Display-->
-					<control type="label">
-						<include>PanelRectButtonHeaderTitle</include>
-						<label>$VAR[SubMenu9Tile1.2ndLabel]</label>
 					</control>
 					<!-- This control defines the All Movies Button Title-->
 					<control type="label">
@@ -1373,11 +1328,6 @@
 						<include>PanelRectButtonIcon</include>
 						<texture>$VAR[SubMenu10Tile1.Image]</texture>
 					</control>
-					<!-- This control defines the All Movies Count Display-->
-					<control type="label">
-						<include>PanelRectButtonHeaderTitle</include>
-						<label>$VAR[SubMenu10Tile1.2ndLabel]</label>
-					</control>
 					<!-- This control defines the All Movies Button Title-->
 					<control type="label">
 						<include>PanelRectButtonTitle</include>
@@ -1500,11 +1450,6 @@
 					<control type="image">
 						<include>PanelRectButtonIcon</include>
 						<texture>$VAR[SubMenu11Tile1.Image]</texture>
-					</control>
-					<!-- This control defines the All Movies Count Display-->
-					<control type="label">
-						<include>PanelRectButtonHeaderTitle</include>
-						<label>$VAR[SubMenu11Tile1.2ndLabel]</label>
 					</control>
 					<!-- This control defines the All Movies Button Title-->
 					<control type="label">
@@ -1629,11 +1574,6 @@
 						<include>PanelRectButtonIcon</include>
 						<texture>$VAR[SubMenu12Tile1.Image]</texture>
 					</control>
-					<!-- This control defines the All Movies Count Display-->
-					<control type="label">
-						<include>PanelRectButtonHeaderTitle</include>
-						<label>$VAR[SubMenu12Tile1.2ndLabel]</label>
-					</control>
 					<!-- This control defines the All Movies Button Title-->
 					<control type="label">
 						<include>PanelRectButtonTitle</include>
@@ -1756,11 +1696,6 @@
 					<control type="image">
 						<include>PanelRectButtonIcon</include>
 						<texture>$VAR[SubMenu13Tile1.Image]</texture>
-					</control>
-					<!-- This control defines the All Movies Count Display-->
-					<control type="label">
-						<include>PanelRectButtonHeaderTitle</include>
-						<label>$VAR[SubMenu13Tile1.2ndLabel]</label>
 					</control>
 					<!-- This control defines the All Movies Button Title-->
 					<control type="label">
@@ -1885,11 +1820,6 @@
 						<include>PanelRectButtonIcon</include>
 						<texture>$VAR[SubMenu14Tile1.Image]</texture>
 					</control>
-					<!-- This control defines the All Movies Count Display-->
-					<control type="label">
-						<include>PanelRectButtonHeaderTitle</include>
-						<label>$VAR[SubMenu14Tile1.2ndLabel]</label>
-					</control>
 					<!-- This control defines the All Movies Button Title-->
 					<control type="label">
 						<include>PanelRectButtonTitle</include>
@@ -2012,11 +1942,6 @@
 					<control type="image">
 						<include>PanelRectButtonIcon</include>
 						<texture>$VAR[SubMenu15Tile1.Image]</texture>
-					</control>
-					<!-- This control defines the All Movies Count Display-->
-					<control type="label">
-						<include>PanelRectButtonHeaderTitle</include>
-						<label>$VAR[SubMenu15Tile1.2ndLabel]</label>
 					</control>
 					<!-- This control defines the All Movies Button Title-->
 					<control type="label">

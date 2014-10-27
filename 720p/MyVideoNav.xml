@@ -224,7 +224,7 @@
 			<texturenofocus>down_arrow.png</texturenofocus>
 			<animation effect="fade" end="100" time="10" delay="300" condition="Skin.HasSetting(showViewOptions)" reversible="false">Conditional</animation>
 			<animation effect="fade" end="0" time="100" condition="!Skin.HasSetting(showViewOptions)" reversible="false">Conditional</animation>
-			<animation effect="rotate" end="90"center="295,20" time="2000" condition="true" reversible="false">Conditional</animation>
+			<animation effect="rotate" end="90" center="295,20" time="2000" condition="true" reversible="false">Conditional</animation>
 			<visible>[System.Platform.IOS | System.Platform.Android | System.getbool(input.enablemouse)]</visible>
 		</control>
 	

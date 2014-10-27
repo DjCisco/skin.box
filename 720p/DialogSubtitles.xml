@@ -121,7 +121,7 @@
 							<width min="10" max="560">auto</width>
 							<height>30</height>
 							<font>List_Hint</font>
-							<label>Local Subtitle Available</label>
+							<label>$LOCALIZE[31206]</label>
 						</control>
 					</control>
 				</control>

@@ -4216,113 +4216,6 @@
 	<include name="CustomWidget15VideoTargetPlaylist">
 		<content target="video">$INFO[Skin.String(HomeWidget15.Custom.Path)]</content>
 	</include>	
-	<include name="RecommendedItemsEpisodesFanart">
-		<content>
-			<item id="1">
-			<onclick>noop</onclick>
-			<thumb>$INFO[Window.Property(RecommendedEpisode.1.Art(tvshow.fanart))]</thumb>
-			<visible>!IsEmpty(Window.Property(RecommendedEpisode.1.Art(tvshow.fanart)))</visible>
-		  </item>
-		  <item id="2">
-			<onclick>noop</onclick>
-			<thumb>$INFO[Window.Property(RecommendedEpisode.2.Art(tvshow.fanart))]</thumb>
-			<visible>!IsEmpty(Window.Property(RecommendedEpisode.2.Art(tvshow.fanart)))</visible>
-		  </item>
-		  <item id="3">
-			<onclick>noop</onclick>
-			<thumb>$INFO[Window.Property(RecommendedEpisode.3.Art(tvshow.fanart))]</thumb>
-			<visible>!IsEmpty(Window.Property(RecommendedEpisode.3.Art(tvshow.fanart)))</visible>
-		  </item>
-		  <item id="4">
-			<onclick>noop</onclick>
-			  <thumb>$INFO[Window.Property(RecommendedEpisode.4.Art(tvshow.fanart))]</thumb>
-			  <visible>!IsEmpty(Window.Property(RecommendedEpisode.4.Art(tvshow.fanart)))</visible>
-		  </item>
-		  <item id="5">
-			<onclick>noop</onclick>
-			  <thumb>$INFO[Window.Property(RecommendedEpisode.5.Art(tvshow.fanart))]</thumb>
-			  <visible>!IsEmpty(Window.Property(RecommendedEpisode.5.Art(tvshow.fanart)))</visible>
-		  </item>
-		  <item id="6">
-			<onclick>noop</onclick>
-			  <thumb>$INFO[Window.Property(RecommendedEpisode.6.Art(tvshow.fanart))]</thumb>
-			  <visible>!IsEmpty(Window.Property(RecommendedEpisode.6.Art(tvshow.fanart)))</visible>
-		  </item>
-		  <item id="7">
-			<onclick>noop</onclick>
-			  <thumb>$INFO[Window.Property(RecommendedEpisode.7.Art(tvshow.fanart))]</thumb>
-			  <visible>!IsEmpty(Window.Property(RecommendedEpisode.7.Art(tvshow.fanart)))</visible>
-		  </item>
-		  <item id="8">
-			<onclick>noop</onclick>
-			  <thumb>$INFO[Window.Property(RecommendedEpisode.8.Art(tvshow.fanart))]</thumb>
-			  <visible>!IsEmpty(Window.Property(RecommendedEpisode.8.Art(tvshow.fanart)))</visible>
-		  </item>
-		  <item id="9">
-			<onclick>noop</onclick>
-			  <thumb>$INFO[Window.Property(RecommendedEpisode.9.Art(tvshow.fanart))]</thumb>
-			  <visible>!IsEmpty(Window.Property(RecommendedEpisode.9.Art(tvshow.fanart)))</visible>
-		  </item>
-		  <item id="10">
-			<onclick>noop</onclick>
-			  <thumb>$INFO[Window.Property(RecommendedEpisode.10.Art(tvshow.fanart))]</thumb>
-			  <visible>!IsEmpty(Window.Property(RecommendedEpisode.10.Art(tvshow.fanart)))</visible>
-		  </item>
-		  <item id="11">
-			<onclick>noop</onclick>
-			  <thumb>$INFO[Window.Property(RecommendedEpisode.11.Art(tvshow.fanart))]</thumb>
-			  <visible>!IsEmpty(Window.Property(RecommendedEpisode.11.Art(tvshow.fanart)))</visible>
-		  </item>
-		  <item id="12">
-			<onclick>noop</onclick>
-			  <thumb>$INFO[Window.Property(RecommendedEpisode.12.Art(tvshow.fanart))]</thumb>
-			  <visible>!IsEmpty(Window.Property(RecommendedEpisode.12.Art(tvshow.fanart)))</visible>
-		  </item>
-		  <item id="13">
-			<onclick>noop</onclick>
-			  <thumb>$INFO[Window.Property(RecommendedEpisode.13.Art(tvshow.fanart))]</thumb>
-			  <visible>!IsEmpty(Window.Property(RecommendedEpisode.13.Art(tvshow.fanart)))</visible>
-		  </item>
-		  <item id="14">
-			<onclick>noop</onclick>
-			  <thumb>$INFO[Window.Property(RecommendedEpisode.14.Art(tvshow.fanart))]</thumb>
-			  <visible>!IsEmpty(Window.Property(RecommendedEpisode.14.Art(tvshow.fanart)))</visible>
-		  </item>
-		  <item id="15">
-			<onclick>noop</onclick>
-			  <thumb>$INFO[Window.Property(RecommendedEpisode.15.Art(tvshow.fanart))]</thumb>
-			  <visible>!IsEmpty(Window.Property(RecommendedEpisode.15.Art(tvshow.fanart)))</visible>
-		  </item>
-		  <item id="16">
-			<onclick>noop</onclick>
-			  <thumb>$INFO[Window.Property(RecommendedEpisode.16.Art(tvshow.fanart))]</thumb>
-			  <visible>!IsEmpty(Window.Property(RecommendedEpisode.16.Art(tvshow.fanart)))</visible>
-		  </item>
-		  <item id="17">
-			<onclick>noop</onclick>
-			  <thumb>$INFO[Window.Property(RecommendedEpisode.17.Art(tvshow.fanart))]</thumb>
-			  <visible>!IsEmpty(Window.Property(RecommendedEpisode.17.Art(tvshow.fanart)))</visible>
-		  </item>
-		  <item id="18">
-			<onclick>noop</onclick>
-			  <thumb>$INFO[Window.Property(RecommendedEpisode.18.Art(tvshow.fanart))]</thumb>
-			  <visible>!IsEmpty(Window.Property(RecommendedEpisode.18.Art(tvshow.fanart)))</visible>
-		  </item>
-		  <item id="19">
-			<onclick>noop</onclick>
-			  <thumb>$INFO[Window.Property(RecommendedEpisode.19.Art(tvshow.fanart))]</thumb>
-			  <visible>!IsEmpty(Window.Property(RecommendedEpisode.19.Art(tvshow.fanart)))</visible>
-		  </item>
-		  <item id="20">
-			<onclick>noop</onclick>
-			  <thumb>$INFO[Window.Property(RecommendedEpisode.20.Art(tvshow.fanart))]</thumb>
-			  <visible>!IsEmpty(Window.Property(RecommendedEpisode.20.Art(tvshow.fanart)))</visible>
-		  </item>
-		
-		</content>
-	
-	</include>
-	
 	<include name="SubMenu1B">
 		<item id="1">
 			<label>$VAR[SubMenu1Tile2.Label]</label>
@@ -4957,7 +4850,7 @@
 	<include name="SubMenu1Customization">
 		<item id="1">
 			<label>$VAR[SubMenu1Tile1.Label]</label>
-			<icon>$VAR[SubMenu1Tile1Image]</icon>
+			<icon>$VAR[SubMenu1Tile1.Image]</icon>
 			<thumb>$VAR[SubMenu1Tile1.Image]</thumb>
 			<property name="Title">$NUMBER[1]</property>
 			<onclick>Skin.SetString(SelectedHomeTitle,SubMenu1Tile1)</onclick>
@@ -5001,7 +4894,7 @@
 			<visible>true</visible>
 		 </item>
 		 <item id="6">
-			<label>Menu Icon</label>
+			<label>$LOCALIZE[31035]</label>
 			<icon>$VAR[MainMenu1.Image]</icon>
 			<thumb>$VAR[MainMenu1.Image]</thumb>
 			<property name="Title"></property>
@@ -5013,7 +4906,7 @@
 	<include name="SubMenu2Customization">
 		<item id="1">
 			<label>$VAR[SubMenu2Tile1.Label]</label>
-			<icon>$VAR[SubMenu2Tile1Image]</icon>
+			<icon>$VAR[SubMenu2Tile1.Image]</icon>
 			<thumb>$VAR[SubMenu2Tile1.Image]</thumb>
 			<onclick>Skin.SetString(SelectedHomeTitle,SubMenu2Tile1)</onclick>
 			<property name="Title">$NUMBER[1]</property>
@@ -5057,7 +4950,7 @@
 			<visible>true</visible>
 		 </item>
 		 <item id="6">
-			<label>Menu Icon</label>
+			<label>$LOCALIZE[31035]</label>
 			<icon>$VAR[MainMenu2.Image]</icon>
 			<thumb>$VAR[MainMenu2.Image]</thumb>
 			<property name="Title"></property>
@@ -5069,7 +4962,7 @@
 	<include name="SubMenu3Customization">
 		<item id="1">
 			<label>$VAR[SubMenu3Tile1.Label]</label>
-			<icon>$VAR[SubMenu3Tile1Image]</icon>
+			<icon>$VAR[SubMenu3Tile1.Image]</icon>
 			<thumb>$VAR[SubMenu3Tile1.Image]</thumb>
 			<onclick>Skin.SetString(SelectedHomeTitle,SubMenu3Tile1)</onclick>
 			<property name="Title">$NUMBER[1]</property>
@@ -5113,7 +5006,7 @@
 			<visible>true</visible>
 		 </item>
 		 <item id="6">
-			<label>Menu Icon</label>
+			<label>$LOCALIZE[31035]</label>
 			<icon>$VAR[MainMenu3.Image]</icon>
 			<thumb>$VAR[MainMenu3.Image]</thumb>
 			<property name="Title"></property>
@@ -5125,7 +5018,7 @@
 	<include name="SubMenu4Customization">
 		<item id="1">
 			<label>$VAR[SubMenu4Tile1.Label]</label>
-			<icon>$VAR[SubMenu4Tile1Image]</icon>
+			<icon>$VAR[SubMenu4Tile1.Image]</icon>
 			<thumb>$VAR[SubMenu4Tile1.Image]</thumb>
 			<onclick>Skin.SetString(SelectedHomeTitle,SubMenu4Tile1)</onclick>
 			<property name="Title">$NUMBER[1]</property>
@@ -5169,7 +5062,7 @@
 			<visible>true</visible>
 		 </item>
 		 <item id="6">
-			<label>Menu Icon</label>
+			<label>$LOCALIZE[31035]</label>
 			<icon>$VAR[MainMenu4.Image]</icon>
 			<thumb>$VAR[MainMenu4.Image]</thumb>
 			<property name="Title"></property>
@@ -5181,7 +5074,7 @@
 	<include name="SubMenu5Customization">
 		<item id="1">
 			<label>$VAR[SubMenu5Tile1.Label]</label>
-			<icon>$VAR[SubMenu5Tile1Image]</icon>
+			<icon>$VAR[SubMenu5Tile1.Image]</icon>
 			<thumb>$VAR[SubMenu5Tile1.Image]</thumb>
 			<onclick>Skin.SetString(SelectedHomeTitle,SubMenu5Tile1)</onclick>
 			<property name="Title">$NUMBER[1]</property>
@@ -5225,7 +5118,7 @@
 			<visible>true</visible>
 		 </item>
 		 <item id="6">
-			<label>Menu Icon</label>
+			<label>$LOCALIZE[31035]</label>
 			<icon>$VAR[MainMenu5.Image]</icon>
 			<thumb>$VAR[MainMenu5.Image]</thumb>
 			<property name="Title"></property>
@@ -5237,7 +5130,7 @@
 	<include name="SubMenu6Customization">
 		<item id="1">
 			<label>$VAR[SubMenu6Tile1.Label]</label>
-			<icon>$VAR[SubMenu6Tile1Image]</icon>
+			<icon>$VAR[SubMenu6Tile1.Image]</icon>
 			<thumb>$VAR[SubMenu6Tile1.Image]</thumb>
 			<onclick>Skin.SetString(SelectedHomeTitle,SubMenu6Tile1)</onclick>
 			<property name="Title">$NUMBER[1]</property>
@@ -5281,7 +5174,7 @@
 			<visible>true</visible>
 		 </item>
 		 <item id="6">
-			<label>Menu Icon</label>
+			<label>$LOCALIZE[31035]</label>
 			<icon>$VAR[MainMenu6.Image]</icon>
 			<thumb>$VAR[MainMenu6.Image]</thumb>
 			<property name="Title"></property>
@@ -5293,7 +5186,7 @@
 	<include name="SubMenu7Customization">
 		<item id="1">
 			<label>$VAR[SubMenu7Tile1.Label]</label>
-			<icon>$VAR[SubMenu7Tile1Image]</icon>
+			<icon>$VAR[SubMenu7Tile1.Image]</icon>
 			<thumb>$VAR[SubMenu7Tile1.Image]</thumb>
 			<onclick>Skin.SetString(SelectedHomeTitle,SubMenu7Tile1)</onclick>
 			<property name="Title">$NUMBER[1]</property>
@@ -5337,7 +5230,7 @@
 			<visible>true</visible>
 		 </item>
 		 <item id="6">
-			<label>Menu Icon</label>
+			<label>$LOCALIZE[31035]</label>
 			<icon>$VAR[MainMenu7.Image]</icon>
 			<thumb>$VAR[MainMenu7.Image]</thumb>
 			<property name="Title"></property>
@@ -5349,7 +5242,7 @@
 	<include name="SubMenu8Customization">
 		<item id="1">
 			<label>$VAR[SubMenu8Tile1.Label]</label>
-			<icon>$VAR[SubMenu8Tile1Image]</icon>
+			<icon>$VAR[SubMenu8Tile1.Image]</icon>
 			<thumb>$VAR[SubMenu8Tile1.Image]</thumb>
 			<onclick>Skin.SetString(SelectedHomeTitle,SubMenu8Tile1)</onclick>
 			<property name="Title">$NUMBER[1]</property>
@@ -5393,7 +5286,7 @@
 			<visible>true</visible>
 		 </item>
 		 <item id="6">
-			<label>Menu Icon</label>
+			<label>$LOCALIZE[31035]</label>
 			<icon>$VAR[MainMenu8.Image]</icon>
 			<thumb>$VAR[MainMenu8.Image]</thumb>
 			<property name="Title"></property>
@@ -5405,7 +5298,7 @@
 	<include name="SubMenu9Customization">
 		<item id="1">
 			<label>$VAR[SubMenu9Tile1.Label]</label>
-			<icon>$VAR[SubMenu9Tile1Image]</icon>
+			<icon>$VAR[SubMenu9Tile1.Image]</icon>
 			<thumb>$VAR[SubMenu9Tile1.Image]</thumb>
 			<onclick>Skin.SetString(SelectedHomeTitle,SubMenu9Tile1)</onclick>
 			<property name="Title">$NUMBER[1]</property>
@@ -5449,7 +5342,7 @@
 			<visible>true</visible>
 		 </item>
 		 <item id="6">
-			<label>Menu Icon</label>
+			<label>$LOCALIZE[31035]</label>
 			<icon>$VAR[MainMenu9.Image]</icon>
 			<thumb>$VAR[MainMenu9.Image]</thumb>
 			<property name="Title"></property>
@@ -5461,7 +5354,7 @@
 	<include name="SubMenu10Customization">
 		<item id="1">
 			<label>$VAR[SubMenu10Tile1.Label]</label>
-			<icon>$VAR[SubMenu10Tile1Image]</icon>
+			<icon>$VAR[SubMenu10Tile1.Image]</icon>
 			<thumb>$VAR[SubMenu10Tile1.Image]</thumb>
 			<onclick>Skin.SetString(SelectedHomeTitle,SubMenu10Tile1)</onclick>
 			<property name="Title">$NUMBER[1]</property>
@@ -5505,7 +5398,7 @@
 			<visible>true</visible>
 		 </item>
 		 <item id="6">
-			<label>Menu Icon</label>
+			<label>$LOCALIZE[31035]</label>
 			<icon>$VAR[MainMenu10.Image]</icon>
 			<thumb>$VAR[MainMenu10.Image]</thumb>
 			<property name="Title"></property>
@@ -5517,7 +5410,7 @@
 	<include name="SubMenu11Customization">
 		<item id="1">
 			<label>$VAR[SubMenu11Tile1.Label]</label>
-			<icon>$VAR[SubMenu11Tile1Image]</icon>
+			<icon>$VAR[SubMenu11Tile1.Image]</icon>
 			<thumb>$VAR[SubMenu11Tile1.Image]</thumb>
 			<onclick>Skin.SetString(SelectedHomeTitle,SubMenu11Tile1)</onclick>
 			<property name="Title">$NUMBER[1]</property>
@@ -5561,7 +5454,7 @@
 			<visible>true</visible>
 		 </item>
 		 <item id="6">
-			<label>Menu Icon</label>
+			<label>$LOCALIZE[31035]</label>
 			<icon>$VAR[MainMenu11.Image]</icon>
 			<thumb>$VAR[MainMenu11.Image]</thumb>
 			<property name="Title"></property>
@@ -5573,7 +5466,7 @@
 	<include name="SubMenu12Customization">
 		<item id="1">
 			<label>$VAR[SubMenu12Tile1.Label]</label>
-			<icon>$VAR[SubMenu12Tile1Image]</icon>
+			<icon>$VAR[SubMenu12Tile1.Image]</icon>
 			<thumb>$VAR[SubMenu12Tile1.Image]</thumb>
 			<onclick>Skin.SetString(SelectedHomeTitle,SubMenu12Tile1)</onclick>
 			<property name="Title">$NUMBER[1]</property>
@@ -5617,7 +5510,7 @@
 			<visible>true</visible>
 		 </item>
 		 <item id="6">
-			<label>Menu Icon</label>
+			<label>$LOCALIZE[31035]</label>
 			<icon>$VAR[MainMenu12.Image]</icon>
 			<thumb>$VAR[MainMenu12.Image]</thumb>
 			<property name="Title"></property>
@@ -5629,7 +5522,7 @@
 	<include name="SubMenu13Customization">
 		<item id="1">
 			<label>$VAR[SubMenu13Tile1.Label]</label>
-			<icon>$VAR[SubMenu13Tile1Image]</icon>
+			<icon>$VAR[SubMenu13Tile1.Image]</icon>
 			<thumb>$VAR[SubMenu13Tile1.Image]</thumb>
 			<onclick>Skin.SetString(SelectedHomeTitle,SubMenu13Tile1)</onclick>
 			<property name="Title">$NUMBER[1]</property>
@@ -5673,7 +5566,7 @@
 			<visible>true</visible>
 		 </item>
 		 <item id="6">
-			<label>Menu Icon</label>
+			<label>$LOCALIZE[31035]</label>
 			<icon>$VAR[MainMenu13.Image]</icon>
 			<thumb>$VAR[MainMenu13.Image]</thumb>
 			<property name="Title"></property>
@@ -5685,7 +5578,7 @@
 	<include name="SubMenu14Customization">
 		<item id="1">
 			<label>$VAR[SubMenu14Tile1.Label]</label>
-			<icon>$VAR[SubMenu14Tile1Image]</icon>
+			<icon>$VAR[SubMenu14Tile1.Image]</icon>
 			<thumb>$VAR[SubMenu14Tile1.Image]</thumb>
 			<onclick>Skin.SetString(SelectedHomeTitle,SubMenu14Tile1)</onclick>
 			<property name="Title">$NUMBER[1]</property>
@@ -5729,7 +5622,7 @@
 			<visible>true</visible>
 		 </item>
 		 <item id="6">
-			<label>Menu Icon</label>
+			<label>$LOCALIZE[31035]</label>
 			<icon>$VAR[MainMenu14.Image]</icon>
 			<thumb>$VAR[MainMenu14.Image]</thumb>
 			<property name="Title"></property>
@@ -5741,7 +5634,7 @@
 	<include name="SubMenu15Customization">
 		<item id="1">
 			<label>$VAR[SubMenu15Tile1.Label]</label>
-			<icon>$VAR[SubMenu15Tile1Image]</icon>
+			<icon>$VAR[SubMenu15Tile1.Image]</icon>
 			<thumb>$VAR[SubMenu15Tile1.Image]</thumb>
 			<onclick>Skin.SetString(SelectedHomeTitle,SubMenu15Tile1)</onclick>
 			<property name="Title">$NUMBER[1]</property>
@@ -5785,7 +5678,7 @@
 			<visible>true</visible>
 		 </item>
 		 <item id="6">
-			<label>Menu Icon</label>
+			<label>$LOCALIZE[31035]</label>
 			<icon>$VAR[MainMenu15.Image]</icon>
 			<thumb>$VAR[MainMenu15.Image]</thumb>
 			<property name="Title"></property>
