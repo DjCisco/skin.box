@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-    <allowoverlay>yes</allowoverlay>
+	<defaultcontrol always="true">120</defaultcontrol>
+    <allowoverlay>no</allowoverlay>
     <controls>
         <animation type="WindowOpen">
             <effect type="fade" start="0" end="100" time="200" delay="300" />
@@ -14,215 +15,207 @@
         <animation type="Hidden">
             <effect type="fade" start="100" end="0" time="200" />
         </animation>
-
-			<control type="image">
-                <left>0</left>
-                <top>0</top>
-                <width>1280</width>
-                <height>720</height>
-                <texture>music_fanart_diffuse_Blue.png</texture>
-            </control>
-			<control type="image">
-                <left>0</left>
-                <top>0</top>
-                <width>1280</width>
-                <height>30</height>
-                <texture>tile.png</texture>
-				<visible>!Window.IsVisible(107)</visible>
-            </control>
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>1280</width>
+			<height>720</height>
+			<texture>music_fanart_diffuse_Blue.png</texture>
+		</control>
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>1280</width>
+			<height>30</height>
+			<texture>tile.png</texture>
+			<visible>!Window.IsVisible(107)</visible>
+		</control>
+		<!-- Filename Background -->
+		<control type="image">
+			<left>0</left>
+			<top>690</top>
+			<width>1280</width>
+			<height>30</height>
+			<texture>tile.png</texture>
+		</control>
+		<control type="label">
+			<description>FileName</description>
+			<left>5</left>
+			<top>693</top>
+			<label>[COLOR Accent]$LOCALIZE[561][/COLOR]$INFO[Player.Filename, • ]</label>
+			<width>1280</width>
+			<height>25</height>
+			<align>left</align>
+			<font>Panel_Hint</font>
+		</control>
 			
-			<!-- Language Background -->
+		<!-- Subtitle Service Name -->
+		<control type="label" id="100">
+			<description>textarea</description>
+			<left>5</left>
+			<top>0</top>
+			<width>1280</width>
+			<height>25</height>
+			<align>left</align>
+			<font></font>
+		</control>
+		<!-- Nr of Subtitles Found -->
+		<control type="label" id="140">
+			<description>textarea</description>
+			<left>5</left>
+			<top>0</top>
+			<width>1280</width>
+			<height>25</height>
+			<align>left</align>
+			<font></font>
+		</control>
+		<!-- Connecting - Info - Subtitles Found Info -->
+		<control type="label">
+			<description>Subtitle Service and Nr of Subtitles Found</description>
+			<left>5</left>
+			<top>0</top>
+			<width>1280</width>
+			<height>25</height>
+			<align>left</align>
+			<font>Panel_Hint</font>
+			<label>$INFO[Control.getLabel(100)]$INFO[Control.getLabel(140), • ]</label>
+			<visible>!Window.IsVisible(107)</visible>
+		</control>
+		<!-- Available Services Group -->
+		<control type="group">
+			<animation type="Hidden">
+				<effect type="fade" time="300" />
+				<effect type="slide" end="-1000" time="300" />
+			</animation>
+			<animation type="Visible">
+				<effect type="fade" time="300" />
+				<effect type="slide" start="-1000" time="300" />
+			</animation>
+			<visible>!Window.IsVisible(addonsettings)</visible>
+			<left>940</left>
+			<!--Background for Available Services -->
 			<control type="image">
-				<left>0</left>
-				<top>680</top>
-				<width>1280</width>
+				<top>290</top>
+				<width>310</width>
+				<height>310</height>
+				<texture>tile.png</texture>
+			</control>
+			<!-- Info Text Subtitle Available -->
+			<control type="group" id="130">
+				<control type="grouplist">
+					<left></left>
+					<top>650</top>
+					<width>310</width>
+					<height>30</height>
+					<orientation>horizontal</orientation>
+					<itemgap>5</itemgap>
+					<control type="image">
+						<width>30</width>
+						<height>30</height>
+						<texture>DefaultIconInfo.png</texture>
+					</control>
+					<control type="label">
+						<description>notification</description>
+						<width min="10" max="560">auto</width>
+						<height>30</height>
+						<font>List_Hint</font>
+						<label>$LOCALIZE[31206]</label>
+					</control>
+				</control>
+			</control>
+			<!-- Logo of Service -->
+			<control type="image" id="110">
+				<description>Service Logo</description>
+				<top>540</top>
+				<width>310</width>
+				<height>60</height>
+				<bordersize>5</bordersize>
+				<aspectratio>keep</aspectratio>
+			</control>
+			<!-- Available Services Heading -->
+			<control type="label">
+				<description>Available sources label</description>
+				<top>245</top>
+				<width>310</width>
+				<label>14036</label>
+				<font>Panel_Description_Title</font>
+			</control>
+			<!-- Subtitle Services List -->
+			<control type="group">
+				<top>290</top>
+				<control type="list" id="150">
+					<left>0</left>
+					<top>0</top>
+					<width>310</width>
+					<height>390</height>
+					<onleft>120</onleft>
+					<onright>150</onright>
+					<onup>150</onup>
+					<ondown>160</ondown>
+					<scrolltime>200</scrolltime>
+					<itemlayout width="310" height="45">
+						<control type="label">
+							<left>10</left>
+							<top>5</top>
+							<aligny>top</aligny>
+							<width>290</width>
+							<font>Panel_Hint</font>
+							<info>ListItem.Label</info>
+						</control>
+					</itemlayout>
+					<focusedlayout width="310" height="45">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>310</width>
+							<height>40</height>
+							<texture colordiffuse="AccentDiffuse">button.png</texture>
+							<visible>Control.HasFocus(150)</visible>
+						</control>
+						<control type="label">
+							<left>10</left>
+							<top>5</top>
+							<aligny>top</aligny>
+							<width>290</width>
+							<info>ListItem.Label</info>
+							<font>Panel_Hint</font>
+							<selectedcolor>white</selectedcolor>
+							<visible>Control.HasFocus(150)</visible>
+						</control>
+						<control type="label">
+							<left>10</left>
+							<top>5</top>
+							<aligny>top</aligny>
+							<width>290</width>
+							<info>ListItem.Label</info>
+							<font>Panel_Hint</font>
+							<textcolor>Accent</textcolor>
+							<visible>!Control.HasFocus(150)</visible>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+			<!-- Backgrond Manual Search  -->
+			<control type="image">
+				<top>605</top>
+				<width>310</width>
 				<height>40</height>
 				<texture>tile.png</texture>
 			</control>
-
-			<control type="label">
-                <description>FileName</description>
-                <left>5</left>
-                <top>688</top>
-				<label>[COLOR Accent]$INFO[561][/COLOR]$INFO[Player.Filename, • ]</label>
-                <width>1280</width>
-                <height>25</height>
-                <align>left</align>
-                <font>Panel_Hint</font>
-            </control>
-			
-			<!-- Subtitle Service Name -->
-			<control type="label" id="100">
-                <description>textarea</description>
-                <left>5</left>
-                <top>0</top>
-                <width>1280</width>
-                <height>25</height>
-                <align>left</align>
-                <font></font>
-            </control>
-			<!-- Nr of Subtitles Found -->
-			<control type="label" id="140">
-                <description>textarea</description>
-                <left>5</left>
-                <top>0</top>
-                <width>1280</width>
-                <height>25</height>
-                <align>left</align>
-                <font></font>
-            </control>
-			<!-- Connecting - Info - Subtitles Found Info -->
-			<control type="label">
-                <description>Subtitle Service and Nr of Subtitles Found</description>
-                <left>5</left>
-                <top>0</top>
-                <width>1280</width>
-                <height>25</height>
-                <align>left</align>
-                <font>Panel_Hint</font>
-				<label>$INFO[Control.getLabel(100)]$INFO[Control.getLabel(140), • ]</label>
-				<visible>!Window.IsVisible(107)</visible>
-            </control>
-			<!-- Available Services Group -->
-			<control type="group">
-				<animation type="Hidden">
-					<effect type="fade" time="300" />
-					<effect type="slide" end="-1000" time="300" />
-				</animation>
-				<animation type="Visible">
-					<effect type="fade" time="300" />
-					<effect type="slide" start="-1000" time="300" />
-				</animation>
-				<visible>!Window.IsVisible(addonsettings)</visible>
-				<left>940</left>
-				<!--Background for Available Services -->
-				<control type="image">
-					<top>290</top>
-					<width>310</width>
-					<height>310</height>
-					<texture>tile.png</texture>
-				</control>
-				<!-- Info Text Subtitle Available -->
-				<control type="group" id="130">
-					<control type="grouplist">
-						<left></left>
-						<top>650</top>
-						<width>310</width>
-						<height>30</height>
-						<orientation>horizontal</orientation>
-						<itemgap>5</itemgap>
-						<control type="image">
-							<width>30</width>
-							<height>30</height>
-							<texture>DefaultIconInfo.png</texture>
-						</control>
-						<control type="label">
-							<description>notification</description>
-							<width min="10" max="560">auto</width>
-							<height>30</height>
-							<font>List_Hint</font>
-							<label>$LOCALIZE[31206]</label>
-						</control>
-					</control>
-				</control>
-				<!-- Logo of Service -->
-				<control type="image" id="110">
-					<description>Service Logo</description>
-					<top>540</top>
-					<width>310</width>
-					<height>60</height>
-					<bordersize>5</bordersize>
-					<aspectratio>keep</aspectratio>
-				</control>
-				<!-- Available Services Heading -->
-				<control type="label">
-					<description>Available sources label</description>
-					<top>245</top>
-					<width>310</width>
-					<label>14036</label>
-					<font>Panel_Description_Title</font>
-				</control>
-				<!-- Subtitle Services List -->
-				<control type="group">
-					<top>290</top>
-					<control type="list" id="150">
-						<left>0</left>
-						<top>0</top>
-						<width>310</width>
-						<height>390</height>
-						<onleft>120</onleft>
-						<onright>150</onright>
-						<onup>150</onup>
-						<ondown>160</ondown>
-						<scrolltime>200</scrolltime>
-						<itemlayout width="310" height="45">
-							<control type="label">
-								<left>10</left>
-								<top>5</top>
-								<aligny>top</aligny>
-								<width>290</width>
-								<font>Panel_Hint</font>
-								<info>ListItem.Label</info>
-							</control>
-						</itemlayout>
-						<focusedlayout width="310" height="45">
-							<control type="image">
-								<left>0</left>
-								<top>0</top>
-								<width>310</width>
-								<height>40</height>
-								<texture colordiffuse="AccentDiffuse">button.png</texture>
-								<visible>Control.HasFocus(150)</visible>
-							</control>
-							<control type="label">
-								<left>10</left>
-								<top>5</top>
-								<aligny>top</aligny>
-								<width>290</width>
-								<info>ListItem.Label</info>
-								<font>Panel_Hint</font>
-								<selectedcolor>white</selectedcolor>
-								<visible>Control.HasFocus(150)</visible>
-							</control>
-							<control type="label">
-								<left>10</left>
-								<top>5</top>
-								<aligny>top</aligny>
-								<width>290</width>
-								<info>ListItem.Label</info>
-								<font>Panel_Hint</font>
-								<textcolor>Accent</textcolor>
-								<visible>!Control.HasFocus(150)</visible>
-							</control>
-						</focusedlayout>
-					</control>
-				</control>
-				<!-- Backgrond Manual Search  -->
-				<control type="image">
-					<top>605</top>
-					<width>310</width>
-					<height>40</height>
-					<texture>tile.png</texture>
-				</control>
-				<control type="button" id="160">
-					<description>Manual search button</description>
-					<top>605</top>
-					<width>310</width>
-					<height>40</height>
-					<onleft>120</onleft>
-					<onright>120</onright>
-					<onup>150</onup>
-					<ondown>150</ondown>
-					<label>413</label>
-					<font>Panel_Hint</font>
-					<align>center</align>
-				</control>
-    		</control>			
-			
-			
-			
-			
-
+			<control type="button" id="160">
+				<description>Manual search button</description>
+				<top>605</top>
+				<width>310</width>
+				<height>40</height>
+				<onleft>120</onleft>
+				<onright>120</onright>
+				<onup>150</onup>
+				<ondown>150</ondown>
+				<label>413</label>
+				<font>Panel_Hint</font>
+				<align>center</align>
+			</control>
+		</control>			
 		<!-- Subtitles List Group -->
         <control type="group">
 		    <left>50</left>
@@ -247,7 +240,9 @@
 				<aligny>Top</aligny>
                 <textcolor>Accent</textcolor>
                 <label>$LOCALIZE[287]</label>
+				<visible>!IsEmpty(Container(120).ListItem.Label)</visible>
             </control>
+			
 			<!-- List of Subtitles -->
 			<control type="list" id="120">
                 <left>0</left>

@@ -57,7 +57,6 @@
                     <scrollspeed>50</scrollspeed>
 					<visible>Container.Content(Songs)</visible>
 				</control>
-         		
 				<control type="image">
 					<left>635</left>
 					<top>245</top>
@@ -66,7 +65,6 @@
 					<texture>other_textures/colorrating/$INFO[ListItem.StarRating]</texture>
 					<align>right</align>
 				</control>
-
 				<control type="grouplist">
 					<left>635</left>
 					<top>290</top>
@@ -118,7 +116,6 @@
 							
 			
 				</control>
-				
 				<!-- Left Menu -->
 				<control type="grouplist" id="9001">
                     <left>25</left>
@@ -147,6 +144,7 @@
                     </control>
                     <control type="button" id="12">
                         <description>Album Info button</description>
+						<textoffsetx>5</textoffsetx>
 						<width>145</width>
 					    <label>10523</label>
 						<font>Panel_Hint</font>

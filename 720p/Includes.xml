@@ -529,6 +529,18 @@
 					<texturebg>progresswhite.png</texturebg>
 					<midtexture>progresslime.png</midtexture>
 				</control>
+				<!--seeker for Progress Bar-->
+				<control type="slider">
+					<description>Seek Slider</description>
+					<left>110</left>
+					<top>10</top>
+					<width>870</width>
+					<height>25</height>
+					<action>seek</action>
+					<texturesliderbar>-</texturesliderbar>
+					<textureslidernib>-</textureslidernib>
+					<textureslidernibfocus>-</textureslidernibfocus>
+				</control>
 				<!-- Player Time Elapsed-->
 				<control type="label">
 					<left>0</left>
@@ -610,7 +622,7 @@
 						<font>Music_Vis_Title4</font>
 						<align>left</align>
 					</control>
-							<control type="grouplist">
+					<control type="grouplist">
 						<top>180</top>
 						<orientation>horizontal</orientation>
 						<control type="image">
@@ -796,6 +808,18 @@
 					<texturebg>progresswhite.png</texturebg>
 					<midtexture>progresslime.png</midtexture>
 				</control>
+				<!--seeker for Progress Bar-->
+				<control type="slider">
+					<description>Seek Slider</description>
+					<left>110</left>
+					<top>10</top>
+					<width>790</width>
+					<height>25</height>
+					<action>seek</action>
+					<texturesliderbar>-</texturesliderbar>
+					<textureslidernib>-</textureslidernib>
+					<textureslidernibfocus>-</textureslidernibfocus>
+				</control>				
 				<!-- Player Time Elapsed-->
 				<control type="label">
 					<left>0</left>

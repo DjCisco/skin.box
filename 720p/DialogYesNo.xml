@@ -7,7 +7,8 @@
 		<control type="group">
             <include>MediumDialogCoordinates</include>
 			<include>MediumDialogBackground</include>
-            <control type="label" id="1">
+      
+			<control type="label" id="1">
                 <description>Heading</description>
                 <left>25</left>
                 <top>25</top>
@@ -15,6 +16,7 @@
                 <width>400</width>
                  <align>center</align>
             </control>
+	
 			<control type="textbox" id="9">
 			   <description>Yes No dialog content</description>
 			   <left>25</left>
@@ -24,6 +26,7 @@
 			   <font>Panel_Description</font>
 			   <align>center</align>
 			</control>
+	
 			<control type="button" id="11">
                 <description>Yes</description>
                  <left>25</left>
@@ -54,6 +57,7 @@
 				<texturefocus colordiffuse="AccentDiffuse">button.png</texturefocus>
 				<texturenofocus>tile.png</texturenofocus>
 	            </control>
+	
         </control>
     </controls>
 </window>
