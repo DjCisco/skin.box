@@ -178,7 +178,15 @@ msgctxt "#31040"
 msgid "Visualisation Presets"
 msgstr ""
 
-#empty strings from id 31041 to 31204
+msgctxt "#31041"
+msgid "Extrafanart"
+msgstr ""
+
+msgctxt "#31042"
+msgid "Cinema"
+msgstr ""
+
+#empty strings from id 31043 to 31204
 
 msgctxt "#31205"
 msgid "EPG"

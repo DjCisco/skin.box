@@ -139,7 +139,7 @@
                         <left>485</left>
                         <top>185</top>
                         <height>30</height>
-                        <width>675</width>
+                        <width>650</width>
                         <font>Panel_Title</font>
                         <aligny>top</aligny>
                         <label>$INFO[ListItem.Label]</label>
@@ -757,7 +757,7 @@
 					<textoffsetx>10</textoffsetx>
                     <align>center</align>
 					<font>Panel_Hint</font>
-					<label>Cinema</label>
+					<label>$LOCALIZE[31042]</label>
 					<onclick>Dialog.Close(MovieInformation)</onclick>
 					<onclick>XBMC.RunScript(script.cinema.experience,movieid=$INFO[ListItem.DBID])</onclick>
 					<visible>system.hasaddon(script.cinema.experience) + Container.Content(movies)</visible>

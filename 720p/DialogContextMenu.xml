@@ -40,27 +40,25 @@
                 <font>List_Right_Menu</font>
                 <align>right</align>
             </control>
-
-		
-
 			
-	
-			
-        </control>
-		<!-- Close Button for Context Menu	-->
+			<!-- Close Button for Context Menu	-->
 			<control type="button" id="9876">
-				<animation effect="fade" time="0" delay="300">WindowOpen</animation>
-				<animation effect="fade" end="0" time="100">WindowClose</animation>
-				<animation effect="rotate" end="-90" center="985,20" time="0" condition="true" reversible="false">Conditional</animation>
+				<animation effect="rotate" end="-90" center="25,20" time="0" condition="true" reversible="false">Conditional</animation>
 				<visible>[System.Platform.IOS | System.Platform.Android | System.getbool(input.enablemouse)]</visible>
 				<top>-5</top>
-				<left>960</left>
+				<left>0</left>
 				<width>50</width>
 				<height>50</height>
 				<onclick>back</onclick>
 				<texturefocus>down_arrow.png</texturefocus>
 				<texturenofocus>down_arrow.png</texturenofocus>					
-			</control>
+			</control>		
+
+			
+	
+			
+        </control>
+
 
 	</controls>
 </window>
