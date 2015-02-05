@@ -217,6 +217,15 @@
                         <width>380</width>
 						<font>List_Unfocused</font>
                         <label>$INFO[ListItem.Label]</label>
+						<visible>IsEmpty(ListItem.Property(Addon.Broken))</visible>
+                    </control>
+					<!-- Display Text Red if Addon is broken -->
+					<control type="label">
+                        <left>10</left>
+                        <width>380</width>
+						<font>List_Unfocused</font>
+                        <label>[COLOR red]$INFO[ListItem.Label][/COLOR]</label>
+						<visible>!IsEmpty(ListItem.Property(Addon.Broken))</visible>
                     </control>
 					<!--This control shows the Addon Status Label -->
 					<control type="label">
@@ -229,13 +238,12 @@
 						<visible>!IsEmpty(ListItem.Property(Addon.status)) + IsEmpty(ListItem.Property(Addon.Broken))</visible>
 					</control>
 					<!--This control shows the Addon Broken Label -->
-					<control type="label">
-						<left>390</left>
-						<width>100</width>
-						<align>right</align>
-						<textcolor>Accent</textcolor>
-						<font>List_Unfocused</font>
-						<label>$INFO[ListItem.Property(Addon.Broken)]</label>
+					<control type="image">
+						<left>365</left>
+						<top>10</top>
+						<height>25</height>
+						<width>25</width>
+						<texture colordiffuse="FFFF0000">DefaultIconError.png</texture>
 						<visible>!IsEmpty(ListItem.Property(Addon.Broken))</visible>
 					</control>
 				</itemlayout>
@@ -245,6 +253,14 @@
                         <height>45</height>
                         <texture colordiffuse="AccentDiffuse">button.png</texture>
 						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(51)">Conditional</animation>
+						<visible>IsEmpty(ListItem.Property(Addon.Broken))</visible>
+                    </control>
+					<control type="image">
+                        <width>400</width>
+                        <height>45</height>
+                        <texture colordiffuse="FFFF0000">button.png</texture>
+						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(51)">Conditional</animation>
+						<visible>!IsEmpty(ListItem.Property(Addon.Broken))</visible>
                     </control>
                     <control type="label">
                         <left>10</left>
@@ -262,12 +278,12 @@
 						<visible>!IsEmpty(ListItem.Property(Addon.status)) + IsEmpty(ListItem.Property(Addon.Broken))</visible>
 					</control>
 					<!--This control shows the Addon Broken Label -->
-					<control type="label">
-						<left>390</left>
-						<width>100</width>
-						<align>right</align>
-						<font>List_Unfocused</font>
-						<label>$INFO[ListItem.Property(Addon.Broken)]</label>
+					<control type="image">
+						<left>365</left>
+						<top>10</top>
+						<height>25</height>
+						<width>25</width>
+						<texture>DefaultIconError.png</texture>
 						<visible>!IsEmpty(ListItem.Property(Addon.Broken))</visible>
 					</control>
                 </focusedlayout>

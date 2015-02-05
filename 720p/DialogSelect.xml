@@ -87,7 +87,6 @@
                 <ondown>3</ondown>
                 <itemlayout height="45">
                     <control type="label">
-                        <left>270</left>
                         <width>260</width>
                         <label>$INFO[ListItem.Label] $INFO[ListItem.Label2]</label>
                         <font>List_Right_Menu</font>
@@ -102,7 +101,6 @@
                         <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(3)">Conditional</animation>
                     </control>
                     <control type="label">
-                        <left>270</left>
                         <width>260</width>
                         <label>$INFO[ListItem.Label] $INFO[ListItem.Label2]</label>
 						<font>List_Right_Menu</font>
@@ -144,7 +142,6 @@
                 <ondown>3</ondown>
                 <itemlayout height="45">
                     <control type="label">
-                        <left>270</left>
                         <width>260</width>
                         <label>$INFO[ListItem.Label] $INFO[ListItem.Label2]</label>
                         <font>List_Right_Menu</font>
@@ -159,8 +156,7 @@
                         <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(6)">Conditional</animation>
                     </control>
                     <control type="label">
-                        <left>270</left>
-                        <width>260</width>
+						<width>260</width>
                         <label>$INFO[ListItem.Label] $INFO[ListItem.Label2]</label>
 						<font>List_Right_Menu</font>
 						<textcolor>Accent</textcolor>

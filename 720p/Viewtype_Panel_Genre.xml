@@ -76,7 +76,7 @@
 				<include>ViewMainTitle</include>
                 <label>135</label>
             </control>
-        
+			
          </control>
     </include>
 </includes>

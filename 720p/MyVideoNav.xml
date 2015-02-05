@@ -11,45 +11,53 @@
 	-->
 	<onload condition="Skin.HasSetting(ActivateTvTunes) + System.HasAddon(script.tvtunes)">XBMC.RunScript(script.tvtunes,backend=True)</onload>
     <controls>
+		<include>HomeBackground</include>
+        <include>BarClock</include>
 		<control type="group">
-            <include>HomeBackground</include>
-            <include>BarClock</include>
+			<include>ViewOptionsAnimation</include>
             <include>View_50_List</include><!-- id 50-->
 			<include>View_51_List</include><!-- id 51-->
 			<include>View_52_Thumbs</include><!-- id 52-->
 			<include>Viewtype_Season_Tall</include><!-- id 55-->
             <include>Viewtype_Panel_Genre</include><!-- id 56-->
 			<include>Viewtype_MusicVideos</include><!-- id 59-->
-			
 			<include>Viewtype_Songs</include><!-- 503 -->
-			
 			<include>Viewtype_Panel_Square_List</include><!-- id 508-->
 			<include>Viewtype_Panel_Square</include><!-- id 519-->
 			<include>Viewtype_Panel_Square_Wide</include><!-- id 521-->
-           
-			<include>Viewtype_Panel_Tall</include><!-- -id 522-->
+           	<include>Viewtype_Panel_Tall</include><!-- -id 522-->
             <include>Viewtype_Panel_Tall_List</include><!-- id 523-->
 			<include>Viewtype_Panel_Tall_Wide</include><!-- id 524-->
-			
 			<include>Viewtype_Episodes</include><!-- id 525-->
             <include>Viewtype_Episodes_List</include><!-- id 526-->
-			
 			<include>Viewtype_Fanart</include><!-- 527 -->
 			<include>Viewtype_Artists_List</include><!-- id 528-->
-			
 			<include>Viewtype_Panel_Wide</include><!-- id 530-->
 			<include>Viewtype_Panel_Year</include><!-- id 531-->
 			<include>Viewtype_Posters</include><!-- id 532-->
-            
-			<include>Viewtype_MusicVideos_List</include><!-- id 590 -->
+            <include>Viewtype_MusicVideos_List</include><!-- id 590 -->
 			<include>Viewtype_MusicVideosThumbs</include><!-- 533 -->
-		
 		</control>
+		
+		<control type="image">
+			<visible>Skin.HasSetting(showViewOptions)</visible>
+            <animation type="Visible">
+                <effect type="fade" time="300" start="0" end="100" />
+            </animation>
+            <animation type="Hidden">
+                <effect type="fade" time="300" start="100" end="0" />
+            </animation>
+            <include>Dimensions_Fullscreen</include>
+            <texture>other_textures/black-back.png</texture>
+        </control>
+		
+		
 		<!-- This Control shows the background of the left settings menu -->
 		<control type="group">
 		 	<animation type="Conditional" condition="!Skin.HasSetting(showViewOptions)">
                 <effect type="slide" start="0,0" end="-320,0" time="300" easing="inout" tween="cubic" />
             </animation>
+	
 			<include>LeftMenuBackground</include>
 			<control type="label">
                 <description>Menu Title</description>
@@ -103,7 +111,20 @@
                 <label>137</label>
 				<font>List_Left_Menu</font>
             </control>
-            <control type="radiobutton" id="14">
+            <control type="edit" id="19">
+                <description>mediafilter</description>
+                <height>40</height>
+                <width>280</width>
+				<textoffsetx>10</textoffsetx>
+                <textwidth>260</textwidth>
+                <align>left</align>
+				<font>List_Left_Menu</font>
+                <textcolor>white</textcolor>
+				<focusedcolor>Accent</focusedcolor>
+				<texturefocus>tile.png</texturefocus>
+                <label>587</label>
+            </control>
+			<control type="radiobutton" id="14">
                 <description>Watched Toggle</description>
                 <height>40</height>
                 <width>280</width>
@@ -112,7 +133,7 @@
                 <align>left</align>
 				<font>List_Left_Menu</font>
                 <pulseonselect>false</pulseonselect>
-                <label>$LOCALIZE[20367]</label>
+	               <label>$LOCALIZE[20367]</label>
             </control>
 			<control type="radiobutton" id="101">
                 <description>Wide List</description>

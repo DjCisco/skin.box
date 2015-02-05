@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <fonts>
 
-    <fontset id="default" idloc="571" unicode="true">
+    <fontset id="default" idloc="571">
 		<font>
             <name>Clock</name>
             <filename>MC360.ttf</filename>
@@ -282,8 +282,7 @@
             <size>220</size>
         </font>
     </fontset>
-
-	<fontset id="lowercase" idloc="31029" unicode="true">
+	<fontset id="lowercase" idloc="31029">
 		<font>
             <name>Clock</name>
             <filename>MC360.ttf</filename>

@@ -83,7 +83,6 @@
                 <ondown>450</ondown>
                 <itemlayout height="45">
                     <control type="label">
-                        <left>270</left>
                         <width>260</width>
                         <info>ListItem.Label</info>
 						<font>Panel_Info</font>
@@ -98,7 +97,6 @@
                         <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(450)">Conditional</animation>
                     </control>
                      <control type="label">
-                        <left>270</left>
                         <width>260</width>
                         <info>ListItem.Label</info>
 						<font>Panel_Info</font>

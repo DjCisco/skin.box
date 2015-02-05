@@ -39,7 +39,7 @@
                 <left>50</left>
                 <top>215</top>
                 <height>30</height>
-                <width>290</width>
+                <width>810</width>
                 <font>Panel_Title</font>
                 <align>left</align>
 				<aligny>top</aligny>
@@ -58,10 +58,10 @@
 	        </control>
             <control type="group">
                 <left>345</left>
-                <top>240</top>
+                <top>200</top>
                 <control type="label" id="21">
                     <description>CPU Text</description>
-                    <width>800</width>
+                    <width>810</width>
                     <label>$LOCALIZE[13271] $INFO[System.CPUUsage]</label>
 					<font>Panel_Hint</font>
                 </control>
@@ -69,30 +69,36 @@
                     <description>CPU BAR</description>
                     <left>0</left>
                     <top>40</top>
-                    <width>395</width>
+                    <width>810</width>
                     <info>System.CPUUsage</info>
                     <height>5</height>
                     <texturebg>progressmidgreen.png</texturebg>
                     <midtexture>progresslime.png</midtexture>
                 </control>
-                <control type="label" id="23">
+			</control>
+			<control type="group">
+                <left>345</left>
+                <top>240</top>
+				<control type="label" id="23">
                     <description>Memory Text</description>
-                    <left>415</left>
-                    <width>800</width>
+                    <left>0</left>
+                    <width>810</width>
                     <label>$LOCALIZE[22012]: $INFO[system.memory(used.percent)]</label>
 					<font>Panel_Hint</font>
                 </control>
                 <control type="progress" id="24">
-                    <left>415</left>
+                    <left>0</left>
                     <top>40</top>
                     <description>Memory BAR</description>
-                    <width>395</width>
+                    <width>810</width>
                     <info>system.memory(used)</info>
                     <height>5</height>
                     <texturebg>progressmidgreen.png</texturebg>
                     <midtexture>progresslime.png</midtexture>
                 </control>
             </control>
+			
+			
             <control type="group">
 				<control type="grouplist" id="9000">
                     <left>50</left>

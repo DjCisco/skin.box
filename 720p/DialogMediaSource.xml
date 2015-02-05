@@ -117,18 +117,22 @@
 				<align>center</align>
 				<font>Panel_Info</font>
 			</control>
-			<control type="button" id="12">
+			<control type="edit" id="12">
 				<description>Name</description>
 				<left>25</left>
 				<top>320</top>
 				<width>610</width>
+				<height>45</height>
 				<align>center</align>
-				<textoffsetx>10</textoffsetx>
+				<aligny>center</aligny>
 				<font>Panel_Info</font>
 				<texturefocus>tile.png</texturefocus>
 				<texturenofocus></texturenofocus>
+				<textcolor>white</textcolor>
+				<focusedcolor>Accent</focusedcolor>
 				<onup>10</onup>
 				<ondown>9001</ondown>
+				<label>-</label>
 			</control>
 			<control type="grouplist" id="9001">
                 <left>140</left>

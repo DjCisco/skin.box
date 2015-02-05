@@ -152,16 +152,20 @@
 					<visible>Control.HasFocus(16)</visible>
                 </control>
 			</control>
-            <control type="button" id="17">
+            <control type="edit" id="17">
                 <description>Value Button</description>
                 <left>10</left>
                 <top>150</top>
                 <width>440</width>
+				<height>45</height>
                 <onup>9001</onup>
                 <onleft>20</onleft>
                 <onright>20</onright>
                 <ondown>9000</ondown>
+				<aligny>center</aligny>
+				<textoffsetx>20</textoffsetx>
 				<font>List_Settings</font>
+				<textcolor>white</textcolor>
 				<texturefocus>tile.png</texturefocus>
 				<texturenofocus>tile.png</texturenofocus>
 				<focusedcolor>Accent</focusedcolor>
@@ -176,6 +180,8 @@
                 <onleft>17</onleft>
                 <onright>17</onright>
                 <ondown>9000</ondown>
+				<texturefocus>tile.png</texturefocus>
+				<texturenofocus>tile.png</texturenofocus>
 				<focusedcolor>Accent</focusedcolor>
 				<font>Panel_Hint</font>
             </control>

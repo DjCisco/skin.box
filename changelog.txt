@@ -1,3 +1,7 @@
+[B]3.0.0[/B]
+- Applied All Changes for Helix Compatibility
+- Added view options animation
+
 [B]2.7.1[/B]
 - Removed Widgets built with Library.Data.Provider Service due to performance issues
 - Built previous Library.Data.Provider Widgets based on Dynamic Contents and Skin.Widgets Service

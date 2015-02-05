@@ -8,11 +8,12 @@
     <controls>
         <include>HomeBackground</include>
         <include>BarClock</include>
-        <include>View_50_List</include>
-		<include>View_51_List</include>
-		<include>Viewtype_Pictures</include>
-	
-		
+		<control type="group">
+			<include>ViewOptionsAnimation</include>
+			<include>View_50_List</include>
+			<include>View_51_List</include>
+			<include>Viewtype_Pictures</include>
+		</control>
         <control type="image">
             <animation type="Conditional" condition="!Skin.HasSetting(showViewOptions)">
                 <effect type="fade" time="300" start="100" end="0" />
@@ -23,12 +24,10 @@
             <height>720</height>
             <texture border="2">other_textures/black-back.png</texture>
         </control>
-             
-		
-		<!-- This control displays a a color background behind the left settings menu -->
+		<!-- This Control shows the background of the left settings menu -->
 		<control type="group">
-			<animation type="Conditional" condition="!Skin.HasSetting(showViewOptions)">
-                <effect type="slide" start="0,0" end="-320,0" time="300" easing="out" tween="cubic" />
+		 	<animation type="Conditional" condition="!Skin.HasSetting(showViewOptions)">
+                <effect type="slide" start="0,0" end="-320,0" time="300" easing="inout" tween="cubic" />
             </animation>
 			<include>LeftMenuBackground</include>
 			<control type="label">
@@ -36,9 +35,7 @@
                 <include>LeftMenuTitle</include>
                 <label>$LOCALIZE[14018]</label>
             </control>
-		</control>	
-		
-		
+		</control>
 		<control type="grouplist" id="9000">
             <left>20</left>
             <top>70</top>
@@ -51,7 +48,7 @@
             <ondown></ondown>
             <orientation>vertical</orientation>
             <animation type="Conditional" condition="!Skin.HasSetting(showViewOptions)">
-                <effect type="slide" start="0,0" end="-305,0" time="300" easing="out" tween="cubic" />
+                <effect type="slide" start="0,0" end="-320,0" time="300" easing="inout" tween="cubic" />
             </animation>
 			<control type="button" id="2">
                 <description>view</description>
