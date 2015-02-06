@@ -65,9 +65,9 @@
 				<scrolltime>300</scrolltime>
 				<itemlayout height="45" width="290">
 					<control type="label">
-						<left>250</left>
+						<left>0</left>
 						<top>0</top>
-						<width>290</width>
+						<width>280</width>
 						<font>List_Unfocused</font>
 						<align>right</align>
 						<label>$INFO[ListItem.Label]</label>
@@ -81,9 +81,8 @@
 						<animation effect="fade" start="100" end="50" time="100" condition="!Control.HasFocus(9000)">Conditional</animation>
 					</control>
 					<control type="label">
-						<left>250</left>
 						<top>0</top>
-						<width>290</width>
+						<width>280</width>
 						<font>List_Unfocused</font>
 						<textcolor>Accent</textcolor>
 						<align>right</align>

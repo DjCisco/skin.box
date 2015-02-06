@@ -120,6 +120,7 @@
             <control type="sliderex" id="8">
                 <description>Default Slider</description>
                 <focusedcolor>Accent</focusedcolor>
+				<font>List_Settings</font>
                 <width>646</width>
 			</control>
             <control type="grouplist" id="9001">

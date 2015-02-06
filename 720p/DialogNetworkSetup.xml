@@ -43,21 +43,24 @@
                 <textureupfocus>other_textures/arrowupg.png</textureupfocus>
                 <texturedownfocus>other_textures/arrowdowng.png</texturedownfocus>
             </control>
-            <control type="button" id="11">
+            <control type="edit" id="11">
                 <description>Server Address</description>
                 <left>25</left>
                 <top>105</top>
                 <width>460</width>
 				<height>40</height>
                 <align>left</align>
+				<aligny>center</aligny>
                 <textoffsetx>20</textoffsetx>
                 <onup>10</onup>
                 <onleft>12</onleft>
                 <onright>12</onright>
                 <ondown>16</ondown>
 				<font>Panel_Info</font>
+				<textcolor>white</textcolor>
 				<focusedcolor>Accent</focusedcolor>
 				<texturenofocus>tile.png</texturenofocus>
+				<texturefocus>tile.png</texturefocus>
             </control>
             <control type="button" id="12">
                 <description>Server Browse</description>
@@ -75,7 +78,7 @@
 				<texturenofocus>tile.png</texturenofocus>
 				<focusedcolor>White</focusedcolor>
             </control>
-            <control type="button" id="16">
+            <control type="edit" id="16">
                 <description>Remote</description>
                 <left>25</left>
                 <top>150</top>
@@ -85,11 +88,15 @@
                 <onleft>16</onleft>
                 <onright>16</onright>
                 <ondown>13</ondown>
+				<textoffsetx>20</textoffsetx>
 				<font>Panel_Info</font>
+				<aligny>center</aligny>
+				<textcolor>white</textcolor>
 				<focusedcolor>Accent</focusedcolor>
 				<texturenofocus>tile.png</texturenofocus>
+				<texturefocus>tile.png</texturefocus>
             </control>
-            <control type="button" id="13">
+            <control type="edit" id="13">
                 <description>Port</description>
                 <left>25</left>
                 <top>195</top>
@@ -100,12 +107,16 @@
                 <onleft>13</onleft>
                 <onright>13</onright>
                 <ondown>14</ondown>
+				<aligny>center</aligny>
+				<textoffsetx>20</textoffsetx>
 				<font>Panel_Info</font>
+				<textcolor>white</textcolor>
 				<focusedcolor>Accent</focusedcolor>
 				<texturenofocus>tile.png</texturenofocus>
+				<texturefocus>tile.png</texturefocus>
 				
             </control>
-            <control type="button" id="14">
+            <control type="edit" id="14">
                 <description>Username</description>
                 <left>25</left>
                 <top>240</top>
@@ -117,11 +128,15 @@
                 <onleft>14</onleft>
                 <onright>14</onright>
                 <ondown>15</ondown>
+				<aligny>center</aligny>
+				<textoffsetx>20</textoffsetx>
 				<font>Panel_Info</font>
+				<textcolor>white</textcolor>
 				<focusedcolor>Accent</focusedcolor>
 				<texturenofocus>tile.png</texturenofocus>
+				<texturefocus>tile.png</texturefocus>
             </control>
-            <control type="button" id="15">
+            <control type="edit" id="15">
                 <description>password</description>
                 <left>25</left>
                 <top>285</top>
@@ -133,9 +148,13 @@
                 <onleft>15</onleft>
                 <onright>15</onright>
                 <ondown>18</ondown>
+				<aligny>center</aligny>
+				<textoffsetx>20</textoffsetx>
 				<font>Panel_Info</font>
+				<textcolor>white</textcolor>
 				<focusedcolor>Accent</focusedcolor>
 				<texturenofocus>tile.png</texturenofocus>
+				<texturefocus>tile.png</texturefocus>
             </control>
         </control>
 		<!-- OK & Cancel Buttons-->

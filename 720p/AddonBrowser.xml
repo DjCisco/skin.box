@@ -45,9 +45,12 @@
     <controls>
         <include>HomeBackground</include>
         <include>BarClock</include>
-        <include>View_50_List</include>
-		<include>View_51_List</include>
-		<include>Viewtype_Panel_Wide</include>
+		<control type="group">
+			<include>ViewOptionsAnimation</include>
+			<include>View_50_List</include>
+			<include>View_51_List</include>
+			<include>Viewtype_Panel_Wide</include>
+		</control>
         <!-- Dark Overlay when left menu is displayed -->
 		<control type="image">
             <animation type="Conditional" condition="!Skin.HasSetting(showViewOptions)">
@@ -59,22 +62,18 @@
             <height>720</height>
             <texture border="2">other_textures/black-back.png</texture>
         </control>
-		<!-- This control displays a a color background behind the left settings menu -->
+		<!-- This Control shows the background of the left settings menu -->
 		<control type="group">
-			<animation type="Conditional" condition="!Skin.HasSetting(showViewOptions)">
+		 	<animation type="Conditional" condition="!Skin.HasSetting(showViewOptions)">
                 <effect type="slide" start="0,0" end="-320,0" time="300" easing="inout" tween="cubic" />
             </animation>
 			<include>LeftMenuBackground</include>
-			<control type="fadelabel">
+			<control type="label">
                 <description>Menu Title</description>
-                <left>20</left>
-                <top>0</top>
-                <width>280</width>
-                <label>33063</label>
-                <font>Panel_Description_Title</font>
-                <align>left</align>
+                <include>LeftMenuTitle</include>
+                <label>$LOCALIZE[14018]</label>
             </control>
-		</control>	
+		</control>
 		<control type="radiobutton" id="19">
             <description>Filter (hidden)</description>
             <include>HiddenButton</include>
@@ -102,18 +101,49 @@
             </control>
 			<control type="button" id="3">
                 <description>Sort</description>
-                <width>305</width>
+                <width>280</width>
+				<textoffsetx>10</textoffsetx>
                 <align>left</align>
                 <font>List_Left_Menu</font>
             </control>
             <control type="togglebutton" id="4">
                 <description>Ascending</description>
-                <width>305</width>
+                <width>280</width>
+				<textoffsetx>10</textoffsetx>
                 <align>left</align>
                 <label>584</label>
                 <altlabel>585</altlabel>
                 <font>List_Left_Menu</font>
             </control>
+			 <control type="button" id="5">
+                <description>View</description>
+                <width>280</width>
+				<textoffsetx>10</textoffsetx>
+				<align>left</align>
+				<font>List_Left_Menu</font>
+            </control>
+			 <control type="radiobutton" id="6">
+                <description>Addon Notifications</description>
+                <height>40</height>
+                <width>280</width>
+                <textoffsetx>10</textoffsetx>
+                <textwidth>200</textwidth>
+                <align>left</align>
+				<font>List_Left_Menu</font>
+                <pulseonselect>false</pulseonselect>
+				<label>25000</label>
+            </control>
+			 <control type="radiobutton" id="7">
+                <description>Language Filter</description>
+                <height>40</height>
+                <width>280</width>
+                <textoffsetx>10</textoffsetx>
+                <textwidth>200</textwidth>
+                <align>left</align>
+				<font>List_Left_Menu</font>
+                <pulseonselect>false</pulseonselect>
+				<label>25001</label>
+             </control>
         </control>
 		<!-- Close Button for Options Menu	-->
 		<control type="button" id="9876">

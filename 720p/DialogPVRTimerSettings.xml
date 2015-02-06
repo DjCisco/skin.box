@@ -85,7 +85,7 @@
                 <textureupfocus>other_textures/arrowupg.png</textureupfocus>
                 <texturedownfocus>other_textures/arrowdowng.png</texturedownfocus>
             </control>
-            <control type="sliderex" id="10">
+            <control type="sliderex" id="13">
                 <description>Default Slider</description>
                 <font>List_Settings</font>
 				<texturefocus>tile.png</texturefocus>
@@ -93,8 +93,11 @@
             </control>
             <control type="edit" id="12">
                 <description>Default Edit</description>
+				<textoffsetx>20</textoffsetx>
+				<height>45</height>
                 <font>List_Settings</font>
 				<texturefocus>tile.png</texturefocus>
+				<textcolor>white</textcolor>
 				<focusedcolor>Accent</focusedcolor>
             </control>
         </control>

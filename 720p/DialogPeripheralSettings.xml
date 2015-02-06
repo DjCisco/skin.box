@@ -46,7 +46,7 @@
                 <font>Panel_Info</font>
 				<texturefocus>tile.png</texturefocus>
 			</control>
-			<control type="sliderex" id="10">
+			<control type="sliderex" id="13">
 				<description>Default Slider</description>
 				<align>left</align>
                 <font>Panel_Info</font>

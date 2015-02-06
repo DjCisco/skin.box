@@ -32,7 +32,7 @@
                 <height>360</height>
                 <texture>tile.png</texture>
             </control>
-			<control type="label" id="2">
+			<control type="label">
                 <description>Settings</description>
                 <top>215</top>
                 <height>30</height>
@@ -41,6 +41,20 @@
                 <align>Left</align>
 				<aligny>Top</aligny>
                 <textcolor>Accent</textcolor>
+				<label>$LOCALIZE[3] - $LOCALIZE[5]</label>
+				<visible>Window.IsVisible(123)</visible>
+            </control>
+			<control type="label">
+                <description>Settings</description>
+                <top>215</top>
+                <height>30</height>
+                <width>800</width>
+                <font>Panel_Title</font>
+                <align>Left</align>
+				<aligny>Top</aligny>
+                <textcolor>Accent</textcolor>
+				<label>$LOCALIZE[292] - $LOCALIZE[5]</label>
+				<visible>Window.IsVisible(124)</visible>
             </control>
             <control type="grouplist" id="5">
                 <description>Control Area</description>
@@ -78,7 +92,7 @@
                 <texturedownfocus>other_textures/arrowdowng.png</texturedownfocus>
 				<font>List_Settings</font>
             </control>
-            <control type="sliderex" id="10">
+            <control type="sliderex" id="13">
                 <description>Default Slider</description>
                 <align>left</align>
                 <focusedcolor>Accent</focusedcolor>

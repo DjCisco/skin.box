@@ -260,6 +260,11 @@
                 <focusedcolor>Accent</focusedcolor>
 				<font>List_Unfocused</font>
             </control>
+			<control type="sliderex" id="13">
+                <description>Default Slider</description>
+                <focusedcolor>Accent</focusedcolor>
+				<font>List_Settings</font>
+      		</control>
             <control type="image">
                 <left>1155</left>
                 <top>290</top>

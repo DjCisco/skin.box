@@ -11,7 +11,7 @@
 		
 		<control type="group">
 			<include>BigDialogCoordinates</include>
-			<control type="label">
+			<control type="label" id="2">
 				<description>Header Label</description>
 				<left>25</left>
                 <top>15</top>
@@ -19,7 +19,6 @@
 				<align>center</align>
 				<aligny>top</aligny>
                 <font>Panel_Description_Title</font>
-				<label>20043</label>
 			</control>
 			<control type="button" id="7">
                 <description>button</description>
@@ -42,6 +41,7 @@
                 <align>left</align>
                 <font>Panel_Info</font>
 			</control>
+			<!--
             <control type="sliderex" id="10">
                 <description>slider</description>
                 <height>45</height>
@@ -49,6 +49,8 @@
                 <align>left</align>
                 <font>Panel_Info</font>
 			</control>
+			
+			-->
             <control type="grouplist" id="5">
                 <description>Control Area</description>
                 <left>25</left>

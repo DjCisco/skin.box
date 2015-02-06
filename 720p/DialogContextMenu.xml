@@ -14,7 +14,6 @@
                 <effect type="slide" time="300" start="0,0" end="+320,0" easing="in" tween="cubic" />
             </animation>
 			<include>RightMenuBackground</include>
-	
 			<control type="fadelabel">
                 <description>Menu Title</description>
                 <left>20</left>
@@ -24,22 +23,22 @@
                 <font>Panel_Description_Title</font>
                 <align>right</align>
             </control>
+			<control type="grouplist" id="996">
+			<description>grouplist for context buttons</description>
+				<left>20</left>
+				<top>70</top>
+				<width>300</width>
+				<height>670</height>
+				<itemgap>2</itemgap>
+			</control>
 			<control type="button" id="1000">
-                <animation type="WindowOpen">
-                    <effect type="slide" time="300" start="+1280, +70" end="+960,+70" easing="out" tween="cubic" />
-                </animation>
-                <animation type="WindowClose">
-                    <effect type="slide" time="300" start="+960,+70" end="+1280,+70" easing="in" tween="cubic" />
-                </animation>
-                <description>Buttons</description>
-                <left>20</left>
-                <top>0</top>
-                <width>280</width>
+				<description>Buttons</description>
+				<width>280</width>
 				<onright>115</onright>
 				<textoffsetx>10</textoffsetx>
-                <font>List_Right_Menu</font>
-                <align>right</align>
-            </control>
+				<font>List_Right_Menu</font>
+				<align>right</align>
+			</control>
 			
 			<!-- Close Button for Context Menu	-->
 			<control type="button" id="9876">
@@ -53,11 +52,9 @@
 				<texturefocus>down_arrow.png</texturefocus>
 				<texturenofocus>down_arrow.png</texturenofocus>					
 			</control>		
-
-			
 	
-			
         </control>
+
 
 
 	</controls>
