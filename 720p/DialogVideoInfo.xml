@@ -701,7 +701,23 @@
                 <onleft>9000</onleft>
 				<onright condition="SubString(Control.GetLabel(5),Plot)">50</onright>
                 <orientation>vertical</orientation>
-                <control type="button" id="5">
+				<control type="button" id="8">
+                    <description>Play</description>
+                    <label>208</label>
+                    <width>130</width>
+					<textoffsetx>10</textoffsetx>
+                    <align>center</align>
+					<font>Panel_Hint</font>
+                </control>
+				 <control type="button" id="9">
+                    <description>Resume</description>
+                    <label>13404</label>
+                    <width>130</width>
+					<textoffsetx>10</textoffsetx>
+                    <align>center</align>
+					<font>Panel_Hint</font>
+                </control>
+				<control type="button" id="5">
                     <description>Plot/Cast</description>
                     <label>206</label>
                     <width>130</width>
@@ -710,23 +726,7 @@
                     <font>Panel_Hint</font>
                     <visible>!Container.Content(musicvideos)</visible>
                 </control>
-                <control type="button" id="8">
-                    <description>Play</description>
-                    <label>208</label>
-                    <width>130</width>
-					<textoffsetx>10</textoffsetx>
-                    <align>center</align>
-					<font>Panel_Hint</font>
-                </control>
-                <control type="button" id="9">
-                    <description>Resume</description>
-                    <label>13404</label>
-                    <width>130</width>
-					<textoffsetx>10</textoffsetx>
-                    <align>center</align>
-					<font>Panel_Hint</font>
-                </control>
-                <control type="button" id="11">
+                 <control type="button" id="11">
                     <description>Trailer</description>
                     <label>$LOCALIZE[20410]</label>
                     <width>130</width>

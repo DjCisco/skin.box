@@ -10,6 +10,7 @@
 	<include file="Viewtype_Artists_List.xml" />
     <include file="Viewtype_Episodes.xml" />
     <include file="Viewtype_Episodes_List.xml" />
+	<include file="Viewtype_Episodes_Wide.xml" />
     <include file="Viewtype_MusicVideos.xml" />
     <include file="Viewtype_MusicVideos_List.xml" />
 	<include file="Viewtype_MusicVideosThumbs.xml" />
@@ -246,50 +247,50 @@
 		</control>
 		<control type="label">
 			<label>$INFO[ListItem.Season,S]$INFO[ListItem.Episode,E]</label>
-			<left>205</left>
+			<left>5</left>
 			<top>120</top>
+			<width>200</width>
 			<height>30</height>
-			<width>145</width>
 			<font>Panel_Title_Footer</font>
 			<align>right</align>
 			<visible>IntegerGreaterThan(ListItem.Season,9) + IntegerGreaterThan(ListItem.Episode,9)</visible>
 		</control>
 		<control type="label">
 			<label>$INFO[ListItem.Season,S0]$INFO[ListItem.Episode,E0]</label>
-			<left>205</left>
+			<left>5</left>
 			<top>120</top>
+			<width>200</width>
 			<height>30</height>
-			<width>145</width>
 			<font>Panel_Title_Footer</font>
 			<align>right</align>
 			<visible>!IntegerGreaterThan(ListItem.Season,9) + !IntegerGreaterThan(ListItem.Episode,9)</visible>
 		</control>
 		<control type="label">
 			<label>$INFO[ListItem.Season,S0]$INFO[ListItem.Episode,E]</label>
-			<left>205</left>
+			<left>5</left>
 			<top>120</top>
+			<width>200</width>
 			<height>30</height>
-			<width>145</width>
 			<font>Panel_Title_Footer</font>
 			<align>right</align>
 			<visible>!IntegerGreaterThan(ListItem.Season,9) + IntegerGreaterThan(ListItem.Episode,9)</visible>
 		</control>
 		<control type="label">
 			<label>$INFO[ListItem.Season,S]$INFO[ListItem.Episode,E0]</label>
-			<left>205</left>
+			<left>5</left>
 			<top>120</top>
+			<width>200</width>
 			<height>30</height>
-			<width>145</width>
 			<font>Panel_Title_Footer</font>
 			<align>right</align>
 			<visible>IntegerGreaterThan(ListItem.Season,9) + !IntegerGreaterThan(ListItem.Episode,9)</visible>
 		</control>
 		<control type="label">
 			<label>$INFO[ListItem.Property(EpisodeNo)]</label>
-			<left>205</left>
+			<left>5</left>
 			<top>120</top>
+			<width>200</width>
 			<height>30</height>
-			<width>145</width>
 			<font>Panel_Title_Footer</font>
 			<align>right</align>
 		</control>
@@ -305,50 +306,50 @@
 		</control>
 		<control type="label">
 			<label>$INFO[ListItem.Season,S]$INFO[ListItem.Episode,E]</label>
-			<left>205</left>
+			<left>5</left>
 			<top>280</top>
+			<width>200</width>
 			<height>30</height>
-			<width>145</width>
 			<font>Panel_Title_Footer</font>
 			<align>right</align>
 			<visible>IntegerGreaterThan(ListItem.Season,9) + IntegerGreaterThan(ListItem.Episode,9)</visible>
 		</control>
 		<control type="label">
 			<label>$INFO[ListItem.Season,S0]$INFO[ListItem.Episode,E0]</label>
-			<left>205</left>
+			<left>5</left>
 			<top>280</top>
+			<width>200</width>
 			<height>30</height>
-			<width>145</width>
 			<font>Panel_Title_Footer</font>
 			<align>right</align>
 			<visible>!IntegerGreaterThan(ListItem.Season,9) + !IntegerGreaterThan(ListItem.Episode,9)</visible>
 		</control>
 		<control type="label">
 			<label>$INFO[ListItem.Season,S0]$INFO[ListItem.Episode,E]</label>
-			<left>205</left>
+			<left>5</left>
 			<top>280</top>
+			<width>200</width>
 			<height>30</height>
-			<width>145</width>
 			<font>Panel_Title_Footer</font>
 			<align>right</align>
 			<visible>!IntegerGreaterThan(ListItem.Season,9) + IntegerGreaterThan(ListItem.Episode,9)</visible>
 		</control>
 		<control type="label">
 			<label>$INFO[ListItem.Season,S]$INFO[ListItem.Episode,E0]</label>
-			<left>205</left>
+			<left>5</left>
 			<top>280</top>
+			<width>200</width>
 			<height>30</height>
-			<width>145</width>
 			<font>Panel_Title_Footer</font>
 			<align>right</align>
 			<visible>IntegerGreaterThan(ListItem.Season,9) + !IntegerGreaterThan(ListItem.Episode,9)</visible>
 		</control>
 		<control type="label">
 			<label>$INFO[ListItem.Property(EpisodeNo)]</label>
-			<left>205</left>
+			<left>5</left>
 			<top>280</top>
+			<width>200</width>
 			<height>30</height>
-			<width>145</width>
 			<font>Panel_Title_Footer</font>
 			<align>right</align>
 		</control>
@@ -364,10 +365,10 @@
 		</control>
 		<control type="label">
 			<label>$INFO[ListItem.Season,S]$INFO[ListItem.Episode,E]</label>
-			<left>205</left>
+			<left>5</left>
 			<top>120</top>
+			<width>200</width>
 			<height>30</height>
-			<width>145</width>
 			<font>Panel_Title_Footer</font>
 			<align>right</align>
 			<textcolor>Accent</textcolor>
@@ -375,10 +376,10 @@
 		</control>
 		<control type="label">
 			<label>$INFO[ListItem.Season,S0]$INFO[ListItem.Episode,E0]</label>
-			<left>205</left>
+			<left>5</left>
 			<top>120</top>
+			<width>200</width>
 			<height>30</height>
-			<width>145</width>
 			<font>Panel_Title_Footer</font>
 			<align>right</align>
 			<textcolor>Accent</textcolor>
@@ -386,10 +387,10 @@
 		</control>
 		<control type="label">
 			<label>$INFO[ListItem.Season,S0]$INFO[ListItem.Episode,E]</label>
-			<left>205</left>
+			<left>5</left>
 			<top>120</top>
+			<width>200</width>
 			<height>30</height>
-			<width>145</width>
 			<font>Panel_Title_Footer</font>
 			<align>right</align>
 			<textcolor>Accent</textcolor>
@@ -397,10 +398,10 @@
 		</control>
 		<control type="label">
 			<label>$INFO[ListItem.Season,S]$INFO[ListItem.Episode,E0]</label>
-			<left>205</left>
+			<left>5</left>
 			<top>120</top>
+			<width>200</width>
 			<height>30</height>
-			<width>145</width>
 			<font>Panel_Title_Footer</font>
 			<align>right</align>
 			<textcolor>Accent</textcolor>
@@ -428,10 +429,10 @@
 		</control>
 		<control type="label">
 			<label>$INFO[ListItem.Season,S]$INFO[ListItem.Episode,E]</label>
-			<left>205</left>
+			<left>5</left>
 			<top>280</top>
+			<width>200</width>
 			<height>30</height>
-			<width>145</width>
 			<font>Panel_Title_Footer</font>
 			<align>right</align>
 			<textcolor>Accent</textcolor>
@@ -439,10 +440,10 @@
 		</control>
 		<control type="label">
 			<label>$INFO[ListItem.Season,S0]$INFO[ListItem.Episode,E0]</label>
-			<left>205</left>
+			<left>5</left>
 			<top>280</top>
+			<width>200</width>
 			<height>30</height>
-			<width>145</width>
 			<font>Panel_Title_Footer</font>
 			<align>right</align>
 			<textcolor>Accent</textcolor>
@@ -450,10 +451,10 @@
 		</control>
 		<control type="label">
 			<label>$INFO[ListItem.Season,S0]$INFO[ListItem.Episode,E]</label>
-			<left>205</left>
+			<left>5</left>
 			<top>280</top>
+			<width>200</width>
 			<height>30</height>
-			<width>145</width>
 			<font>Panel_Title_Footer</font>
 			<align>right</align>
 			<textcolor>Accent</textcolor>
@@ -461,10 +462,10 @@
 		</control>
 		<control type="label">
 			<label>$INFO[ListItem.Season,S]$INFO[ListItem.Episode,E0]</label>
-			<left>205</left>
+			<left>5</left>
 			<top>280</top>
+			<width>200</width>
 			<height>30</height>
-			<width>145</width>
 			<font>Panel_Title_Footer</font>
 			<align>right</align>
 			<textcolor>Accent</textcolor>
@@ -472,10 +473,10 @@
 		</control>
 		<control type="label">
 			<label>$INFO[ListItem.Property(EpisodeNo)]</label>
-			<left>205</left>
+			<left>5</left>
 			<top>280</top>
+			<width>200</width>
 			<height>30</height>
-			<width>145</width>
 			<font>Panel_Title_Footer</font>
 			<textcolor>Accent</textcolor>
 			<align>right</align>
@@ -1131,9 +1132,9 @@
 			</control>
 			<!-- This control displays the Mpaa Rating-->
 			<control type="label">
-				<left>1145</left>
+				<left>1045</left>
 				<top>565</top>
-				<width>100</width>
+				<width>200</width>
 				<height>25</height>
 				<textcolor>Accent</textcolor>
 				<align>right</align>
@@ -1684,7 +1685,8 @@
 			</control>
 			<!-- This Displays the Current Date on the Top Right -->
 			<control type="label">
-				<label>$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits, ]</label>
+				<!--<label>$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits, ]</label>-->
+				<label>$INFO[Weather.Temperature]</label>
 				<left>1000</left>
 				<top>60</top>
 				<height>100</height>
@@ -1692,7 +1694,7 @@
 				<font>Clock_Footer</font>
 				<shadowcolor>black</shadowcolor>
 				<align>right</align>
-				<visible>!IsEmpty(Window(Weather).Property(Current.Temperature)) + Skin.HasSetting(DisplayWeatherInfo)</visible>
+				<visible>Weather.IsFetched + Skin.HasSetting(DisplayWeatherInfo)</visible>
 			</control>
 		</control>
     </include>
