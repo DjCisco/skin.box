@@ -52,7 +52,6 @@
 						<texture>icons/calendar.png</texture>
 					</control>
 					<control type="label">
-						<left>57</left>
 						<top>7</top>
 						<width>115</width>
 						<height>115</height>
@@ -79,7 +78,6 @@
 						<texture>icons/calendar.png</texture>
 					</control>
                     <control type="label">
-						<left>57</left>
 						<top>7</top>
 						<width>115</width>
 						<height>115</height>

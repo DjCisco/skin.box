@@ -49,22 +49,11 @@
                     <pauseatend>600</pauseatend>
                     <scrollspeed>50</scrollspeed>
                 </control>
-				<control type="label">
-					<description>Camera Specs</description>
-					<left>635</left>
-					<top>245</top>
-					<width>610</width>
-					<height>50</height>
-					<aligny>top</aligny>
-					<font>Panel_Title_Footer</font>
-					<label>[COLOR Accent]$INFO[ListItem.PictureCamMake][/COLOR] $INFO[ListItem.PictureCamModel]</label>
-					<scroll>true</scroll>
-                </control>
 				<!-- Picture Specs -->
 				<control type="list" id="5">
                     <left>635</left>
-                    <top>280</top>
-                    <width>585</width>
+                    <top>265</top>
+                    <width>595</width>
                     <height>315</height>
                     <onleft>noop</onleft>
                     <onright>noop</onright>
@@ -80,7 +69,7 @@
                             <info>ListItem.Label</info>
                         </control>
                         <control type="label">
-                            <left>570</left>
+                            <left>295</left>
                             <width>290</width>
                             <align>right</align>
 							<font>Panel_Description</font>
@@ -89,7 +78,7 @@
                     </itemlayout>
                     <focusedlayout height="45">
                         <control type="image">
-                            <width>585</width>
+                            <width>595</width>
                             <height>45</height>
                             <texture>other_textures/buttonfo.png</texture>
 							<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(5)">Conditional</animation>
@@ -109,7 +98,7 @@
 							<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(5)">Conditional</animation>
                         </control>
                         <control type="label">
-                            <left>570</left>
+                            <left>295</left>
                             <width>290</width>
                             <align>right</align>
                             <info>ListItem.Label2</info>
@@ -120,7 +109,7 @@
                     </focusedlayout>
                 </control>
                 <control type="scrollbar" id="64">
-                    <left>1220</left>
+                    <left>1250</left>
                     <top>280</top>
                     <width>5</width>
                     <height>315</height>

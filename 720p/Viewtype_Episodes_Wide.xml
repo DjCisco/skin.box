@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
-    <include name="Viewtype_Episodes">
+    <include name="Viewtype_Episodes_Wide">
         <control type="group">
-            <visible>Control.IsVisible(525)</visible>
-            <description>Episode List View (id=525)</description>
+            <visible>Control.IsVisible(534)</visible>
+            <description>Episode List View (id=534)</description>
             <visible>Container.Content(episodes)</visible>
             <animation type="TYPE" condition="Window.IsVisible(2003)" reversible="false">
                 <effect type="slide" end="-1500,0" time="200" />
@@ -90,10 +90,10 @@
                 <bordersize>5</bordersize>
             </control>
             <!-- Episodes Panel -->
-			<control type="panel" id="525">
+			<control type="panel" id="534">
                 <left>270</left>
                 <top>290</top>
-                <width>480</width>
+                <width>960</width>
                 <height>320</height>
                 <scrolltime>200</scrolltime>
                 <onup>525</onup>
@@ -101,7 +101,7 @@
                 <onright>63</onright>
 		        <onleft>9000</onleft>
 				<onleft>Skin.ToggleSetting(showViewOptions)</onleft>
-                <viewtype label="Thumb Info">Episodes View</viewtype>
+                <viewtype label="Thumb">Episodes View</viewtype>
                 <orientation>vertical</orientation>
                 <focusposition>4</focusposition>
                 <pagecontrol>63</pagecontrol>
@@ -290,19 +290,10 @@
                 <label>$INFO[ListItem.TVShowTitle,, • ]$INFO[ListItem.Season,$LOCALIZE[20373] ]</label>
                 <visible>Container.Content(episodes)</visible>
             </control>
-			<!-- Description Field Background-->
-            <control type="image">
-                <left>760</left>
-                <top>290</top>
-                <width>500</width>
-                <height>315</height>
-                <texture background="true">music_fanart_diffuse.png</texture>
-                <fadetime>200</fadetime>
-                <aspectratio scalediffuse="false">stretch</aspectratio>
-            </control>
+
 			<!-- List Scrollbar -->
             <control type="scrollbar" id="63">
-                <left>750</left>
+                <left>1230</left>
                 <top>290</top>
                 <width>5</width>
                 <height>315</height>
@@ -310,60 +301,6 @@
                 <showonepage>true</showonepage>
                 <orientation>vertical</orientation>
             </control>
-            <!-- EPISODE DURATION -->
-			<control type="label">
-                <left>780</left>
-                <top>300</top>
-                <width>400</width>
-                <height>50</height>
-                <font>Panel_Description_Title</font>
-                <label>$INFO[ListItem.Duration,, $LOCALIZE[31299]]</label>
-				<scroll>true</scroll>
-			</control>
-			<!-- Episode Aire Date -->
-			<control type="label">
-                <left>960</left>
-                <top>565</top>
-                <width>280</width>
-                <height>25</height>
-				<align>right</align>
-				<font>Panel_Description_Footer</font>
-                <label>[COLOR Accent]$INFO[ListItem.Premiered][/COLOR] $LOCALIZE[20416]</label>
-				<visible>!StringCompare(ListItem.Label,..)</visible>
-				
-            </control>
-			<!-- Episode Plot -->			
-            <control type="textbox">
-                <left>780</left>
-                <top>355</top>
-                <width>460</width>
-                <height>190</height>
-				<font>Panel_Description</font>
-                <align>justify</align>
-                <autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
-                <info>ListItem.Plot</info>
-     
-            </control>
-            <!-- Star Rating -->
-			<control type="image">
-                 <left>780</left>
-                <top>565</top>
-                <width>100</width>
-                <height>25</height>
-                <texture>other_textures/colorrating/$INFO[ListItem.StarRating]</texture>
-            </control>
-            <!-- MPAA Rating -->
-			<control type="label">
-                <left>1060</left>
-                <top>300</top>
-                <width>180</width>
-                <height>50</height>
-                <textcolor>Accent</textcolor>
-				<align>right</align>
-				<font>Panel_Description_Title</font>
-                <label>$INFO[ListItem.Mpaa]</label>
-            </control>
-
         </control>
     </include>
 </includes>

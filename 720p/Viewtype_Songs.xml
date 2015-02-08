@@ -55,7 +55,6 @@
 				<itemlayout height="45">
                     <!-- This Control displays the Track Number-->
 					<control type="label">
-                        <left>22</left>
                         <width>45</width>
 						<font>List_Unfocused</font>
                         <align>center</align>
@@ -85,7 +84,7 @@
                     </control>
                     <!-- This Control displays the Track Duration-->
 					<control type="label">
-                        <left>715</left>
+                        <left>625</left>
                         <align>right</align>
                         <width>100</width>
 						<font>List_Unfocused</font>
@@ -125,7 +124,6 @@
                     </control>
 					<!-- This Control displays the Focused Track Nr-->
                     <control type="label">
-                        <left>22</left>
                         <width>45</width>
                         <align>center</align>
 						<font>List_Focused</font>
@@ -158,7 +156,7 @@
                     </control>
                     <!-- This Control displays the Focused Track Duration-->
 					<control type="label">
-                        <left>715</left>
+                        <left>625</left>
                         <align>right</align>
                         <width>100</width>
 						<font>List_Focused</font>

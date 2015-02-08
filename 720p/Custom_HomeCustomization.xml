@@ -77,8 +77,7 @@
 						<texture border="2">other_textures/buttonnf.png</texture>
 					</control>
 					<control type="label">
-						<left>280</left>
-						<width>260</width>
+						<width>270</width>
 						<align>right</align>
 						<label>$INFO[ListItem.Label]</label>
 						<font>List_Unfocused</font>
@@ -92,8 +91,7 @@
 						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(1000)">Conditional</animation>
 					</control>
 					<control type="label">
-						<left>280</left>
-						<width>260</width>
+						<width>270</width>
 						<align>right</align>
 						<font>List_Unfocused</font>
 						<label>[COLOR Accent]$INFO[ListItem.Label][/COLOR]</label>

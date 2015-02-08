@@ -78,8 +78,8 @@
 						<visible>IsEmpty(ListItem.PictureResolution)</visible>
 					</control>
 					<control type="label">
-						<left>540</left>
-						<width>100</width>
+						<left>420</left>
+						<width>120</width>
 						<align>right</align>
 						<font>List_Unfocused</font>
 						<label>[COLOR Accent]$INFO[ListItem.PictureResolution][/COLOR]</label>
@@ -110,7 +110,7 @@
 						<visible>IsEmpty(ListItem.PictureResolution)</visible>
 					</control>
 					<control type="label">
-						<left>540</left>
+						<left>420</left>
 						<width>120</width>
 						<align>right</align>
 						<font>List_Focused</font>

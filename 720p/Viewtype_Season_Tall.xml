@@ -173,6 +173,7 @@
                         <height>315</height>
                         <texture>$INFO[ListItem.Icon]</texture>
 						<bordersize>5</bordersize>
+						<aspectratio>keep</aspectratio>
                         <visible>SubString(ListItem.Icon,default)</visible>
                     </control>
                     <control type="image">
@@ -214,7 +215,7 @@
                     </control>
 					<control type="label">
 					 	<top>15</top>
-						<left>185</left>
+						<left>155</left>
 						<height>60</height>
 						<width>60</width>
 						<font>Panel_Title</font>
@@ -226,7 +227,6 @@
 					</control>
 					<control type="label">
 					 	<top>15</top>
-						<left>75</left>
 						<height>55</height>
 						<width>150</width>
 						<font>Panel_Title2</font>
@@ -237,7 +237,6 @@
 					</control>
 					<control type="label">
 					 	<top>15</top>
-						<left>75</left>
 						<height>55</height>
 						<width>150</width>
 						<font>Panel_Title2</font>
@@ -248,7 +247,6 @@
 					</control>
 					<control type="label">
 					 	<top>15</top>
-						<left>75</left>
 						<height>55</height>
 						<width>150</width>
 						<font>Panel_Title2</font>
@@ -259,7 +257,6 @@
 					</control>
 					<control type="label">
 					 	<top>15</top>
-						<left>75</left>
 						<height>55</height>
 						<width>150</width>
 						<font>Panel_Title2</font>
@@ -270,7 +267,6 @@
 					</control>
 					<control type="label">
 					 	<top>15</top>
-						<left>75</left>
 						<height>55</height>
 						<width>150</width>
 						<font>Panel_Title2</font>

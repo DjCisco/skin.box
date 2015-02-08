@@ -129,7 +129,6 @@
                 <visible>Container.Content(episodes)</visible>
                 <itemlayout height="45" condition="!Skin.HasSetting(episodewidelist)">
                     <control type="label">
-                        <left>22</left>
                         <width>45</width>
                         <align>center</align>
 						<font>Panel_Description_Header</font>
@@ -192,7 +191,6 @@
                         <visible>!IsEmpty(ListItem.Episode)</visible>
                     </control>
                     <control type="label">
-                        <left>22</left>
                         <width>45</width>
                         <align>center</align>
 						<font>Panel_Description_Header</font>
@@ -242,7 +240,6 @@
                 </focusedlayout>
             	<itemlayout height="42" condition="Skin.HasSetting(episodewidelist)">
                     <control type="label">
-                        <left>22</left>
                         <width>45</width>
                         <align>center</align>
 						<font>Panel_Description_Header</font>
@@ -278,8 +275,8 @@
                         <visible>Container.Content(Episodes) + ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
                     </control>
 					<control type="label">
-							<left>930</left>
-							<width>100</width>
+							<left>870</left>
+							<width>120</width>
 							<height>30</height>
 							<align>center</align>
 							<font>Panel_Description_Header</font>
@@ -321,7 +318,6 @@
                     </control>
 					<!-- Episode Number -->
                     <control type="label">
-                        <left>22</left>
                         <width>45</width>
                         <align>center</align>
 						<height>63</height>
@@ -375,8 +371,8 @@
 						</control>
 						
 						<control type="label">
-							<left>930</left>
-							<width>100</width>
+							<left>870</left>
+							<width>120</width>
 							<height>30</height>
 							<align>center</align>
 							<font>Panel_Description_Header</font>

@@ -1,3 +1,7 @@
+[B]3.0.1[/B]
+- Corrected Label Alignment for Helix
+- Added Thumb View for Episodes
+
 [B]3.0.0[/B]
 - Applied All Changes for Helix Compatibility
 - Added view options animation
