@@ -11,7 +11,7 @@
 	-->
 	<onload condition="Skin.HasSetting(ActivateTvTunes) + System.HasAddon(script.tvtunes)">XBMC.RunScript(script.tvtunes,backend=True)</onload>
     <controls>
-		<include>HomeBackground</include>
+		<include>SkinFanart</include>
         <include>BarClock</include>
 		<control type="group">
 			<include>ViewOptionsAnimation</include>
