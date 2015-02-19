@@ -27,6 +27,8 @@
 	<include file="Viewtype_Panel_Square_Wide.xml" />
 	<include file="Viewtype_Posters.xml" />
 	<include file="Viewtype_Pictures.xml" />
+	<include file="Viewtype_Banner_List.xml" />
+	<include file="Viewtype_Banner_Wide.xml" />
     <include file="Variables.xml" />
 	<include file="VariablesHomeMenu1.xml" />
 	<include file="VariablesHomeMenu2.xml" />
@@ -2580,7 +2582,7 @@
 		<!-- Blue Image Background for Home Fanart 	-->
 		<control type="group">
 			<animation effect="fade" time="500">VisibleChange</animation>
-			<visible>!Skin.HasSetting(DisableHomeFanart) + !Window.IsVisible(favourites) + !IsEmpty(Control.GetLabel(98765)</visible>
+			<visible>!Skin.HasSetting(DisableHomeFanart) + !Window.IsVisible(favourites) + !IsEmpty(Control.GetLabel(98765))</visible>
 			<control type="image">
 				<include>Dimensions_Fullscreen</include>
 				<texture>black.png</texture>
@@ -2638,6 +2640,7 @@
 				<fadetime>1000</fadetime>
 				<texture>$VAR[SelectedWidgetItem.Fanart]</texture>
 				<colordiffuse>ImageDiffuse</colordiffuse>
+				<aspectratio>scale</aspectratio>
 				<visible>![Player.HasVideo() + skin.HasSetting(PlayingVideoOnBackground)]</visible>
 			</control>
 	</include>		
@@ -4165,7 +4168,7 @@
 	  <item id="1">
           <label>$INFO[Window.Property(RecentAlbum.1.Title)] </label>
           <label2>$INFO[Window.Property(RecentAlbum.1.Artist)]</label2>
-          <onclick>$INFO[Window(Home).Property(RecentAlbum.1.Play)]</onclick>RecentAlbum.%d.Year
+          <onclick>$INFO[Window(Home).Property(RecentAlbum.1.Play)]</onclick>
           <thumb>$INFO[Window.Property(RecentAlbum.1.Thumb)]</thumb>
 		  <property name="AlbumYear">$INFO[Window.Property(RecentAlbum.1.Year)]</property>
           <property name="Fanart">$INFO[Window.Property(RecentAlbum.1.Fanart)]</property>
@@ -6663,15 +6666,22 @@
 			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
 			<onclick>Dialog.Close(4444)</onclick>
 		 </item>
-		  <item id="38">
+		 <item id="38">
+			<label>$LOCALIZE[31043]</label>
+			<icon>icons/SkinSettings.png</icon>
+			<thumb>icons/SkinSettings.png</thumb>
+			<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeTitle)].Type,SkinSettings)</onclick>
+			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
+			<onclick>Dialog.Close(4444)</onclick>
+		 </item>
+		  <item id="39">
 			<label>$LOCALIZE[31024]</label>
 			<icon>DefaultAddCustom.png</icon>
 			<thumb>DefaultAddCustom.png</thumb>
 			<onclick>Dialog.Close(4444)</onclick>
 			<onclick>ActivateWindow(7777,return)</onclick>
-			
 		 </item>
-		 <item id="39">
+		 <item id="40">
 			<label>$LOCALIZE[117]</label>
 			<icon>DefaultDelete.png</icon>
 			<thumb>DefaultDelete.png</thumb>
