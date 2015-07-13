@@ -58,7 +58,7 @@
 				<font>Music_Vis_Title</font>
 				<label>$INFO[ListItem.Label]</label>
 				<shadowcolor>FF000000</shadowcolor>
-				<visible>IsEmpty(Control.GetLabel(1234)</visible>
+				<visible>IsEmpty(Control.GetLabel(1234))</visible>
 			</control>
 
 			<!--This control defines the scrollbar controlling the large list list -->
