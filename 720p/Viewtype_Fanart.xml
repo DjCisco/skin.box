@@ -6,6 +6,7 @@
 			<description>Artists View (id=527)</description>
             <visible>Container.Content(artists) | Container.Content(movies) | Container.Content(tvshows)</visible>
             <!--This control defines the list that will display the items -->
+			      
 			<control type="fixedlist" id="527">
                 <visible>[Container.Content(artists) | Container.Content(movies) | Container.Content(tvshows)]  + [SubString(Container.FolderPath,videodb://) | SubString(Container.FolderPath,musicdb://)]</visible>
 				 <animation type="TYPE" condition="Window.IsVisible(2001) | Window.IsVisible(2003) | Window.IsVisible(139) | Window.IsVisible(136)" reversible="false">
@@ -36,7 +37,7 @@
                 <pagecontrol>60</pagecontrol>
                 <viewtype label="Fanart">Fanart</viewtype>
                 <scrolltime>200</scrolltime>
-                <itemlayout width="1000" height="50">
+          		<itemlayout width="1000" height="50">
                     <control type="label">
 						<width>1200</width>
 						<font>Music_Vis_Title4</font>
@@ -44,11 +45,12 @@
 						<label>[COLOR Accent]$INFO[ListItem.Label][/COLOR]</label>
 						<animation effect="fade" start="100" end="50" condition="Control.HasFocus(527)">Conditional</animation>
 						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(527)">Conditional</animation>
+						<visible>![Skin.HasSetting(showCearLogoView) + Container.Content(tvshows)]</visible>
                     </control>
 				</itemlayout>
                 <focusedlayout width="1000" height="100">
-                    <control type="label">
-					<left>20</left>
+					<control type="label">
+						<left>20</left>
 						<width>1200</width>
 						<height>90</height>
 						<aligny>center</aligny>
@@ -56,10 +58,33 @@
                         <label>$INFO[ListItem.Label]</label>
 						<shadowcolor>FF000000</shadowcolor>
 						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(527)">Conditional</animation>
+						<visible>![Skin.HasSetting(showCearLogoView) + Container.Content(tvshows)]</visible>
                     </control>
 					
-                </focusedlayout>
-            </control>	
+                </focusedlayout>            
+			</control>	
+			
+			<control type="image" id="1234">
+				<left>20</left>
+				<top>400</top>
+				<height>400</height>
+				<width>400</width>				
+				<texture>$INFO[ListItem.Path,,logo.png]</texture>
+				<aspectratio>keep</aspectratio>
+				<visible>Skin.HasSetting(showCearLogoView) + Container.Content(tvshows)</visible>
+			</control>
+			<control type="label">
+				<left>20</left>
+				<bottom>40</bottom>
+				<width>1200</width>
+				<height>90</height>
+				<aligny>center</aligny>
+				<font>Music_Vis_Title</font>
+				<label>$INFO[ListItem.Label]</label>
+				<shadowcolor>FF000000</shadowcolor>
+				<visible>IsEmpty(Control.GetLabel(1234) + Skin.HasSetting(showCearLogoView) + Container.Content(tvshows)</visible>
+			</control>
+
 			<!--This control defines the scrollbar controlling the large list list -->
 				<control type="scrollbar" id="60">
 				 <animation type="TYPE" condition="Window.IsVisible(2001) | Window.IsVisible(2003) | Window.IsVisible(139) | Window.IsVisible(136)" reversible="false">
