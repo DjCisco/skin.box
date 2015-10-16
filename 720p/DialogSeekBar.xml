@@ -3,15 +3,6 @@
     <defaultcontrol always="true">901</defaultcontrol>
     <allowoverlay>yes</allowoverlay>
     <visible>[VideoPlayer.IsFullscreen | Window.IsVisible(visualisation)] + [Player.Seeking | Player.DisplayAfterSeek | Player.paused | Player.Forwarding | Player.rewinding]</visible>
-    <!--
-	<onload condition="Player.HasVideo + !Player.DisplayAfterSeek">ActivateWindow(videoosd)</onload>
-	<onload condition="Player.HasVideo + Player.DisplayAfterSeek + !VideoPlayer.Content(livetv)">ActivateWindow(fullscreeninfo)</onload>
-	<onload condition="Player.HasAudio">ActivateWindow(musicosd)</onload>
-	<onunload condition="Window.IsActive(videoosd)">Dialog.Close(videoosd)</onunload>
-	<onunload condition="Window.IsActive(musicosd)">Dialog.Close(musicosd)</onunload>
-	<onunload condition="Window.IsActive(fullscreeninfo)">Dialog.Close(fullscreeninfo)</onunload>
-	
-	-->
 	<controls>
         <control type="group">
             <top>150</top>

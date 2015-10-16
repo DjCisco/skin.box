@@ -17,7 +17,7 @@
 			<control type="group">
 				<left>185</left>
 				<!-- Heading -->
-				<control type="label">
+				<control type="label" id="2">
 					<top>215</top>
 					<height>30</height>
 					<width>800</width>
@@ -25,7 +25,6 @@
 					<align>Left</align>
 					<aligny>Top</aligny>
 					<textcolor>Accent</textcolor>
-					<label>$LOCALIZE[21432]</label>
 				</control>
 				<!-- Playlist Name -->
 				<control type="edit" id="12">

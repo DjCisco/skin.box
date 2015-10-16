@@ -332,7 +332,7 @@
                             <control type="label">
                                 <left>15</left>
                                 <width>540</width>
-                                <info>ListItem.Label</info>
+                                <label>$INFO[ListItem.Label]$INFO[ListItem.Label2, $LOCALIZE[20347] ,]</label>
 								<font>Panel_Description</font>
                             </control>
                         </itemlayout>
@@ -352,7 +352,7 @@
                             <control type="label">
                                 <left>15</left>
                                 <width>540</width>
-                                <info>ListItem.Label</info>
+                                <label>$INFO[ListItem.Label]$INFO[ListItem.Label2, $LOCALIZE[20347] ,]</label>
                                 <font>Panel_Description</font>
 								<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
                             </control>
