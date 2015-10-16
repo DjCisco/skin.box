@@ -281,6 +281,12 @@
             <filename>GeosansLight.ttf</filename>
             <size>220</size>
         </font>
+	<font>
+            <name>ScreensaverClock</name>
+            <filename>MC360.ttf</filename>
+            <aspect>0.8</aspect>
+            <size>100</size>
+        </font>        
     </fontset>
 	<fontset id="lowercase" idloc="31029">
 		<font>
@@ -561,6 +567,12 @@
             <filename>GeosansLight.ttf</filename>
             <size>220</size>
         </font>
+	<font>
+            <name>ScreensaverClock</name>
+            <filename>MC360.ttf</filename>
+            <aspect>0.8</aspect>
+            <size>100</size>
+        </font>          
     </fontset>
 
 	
