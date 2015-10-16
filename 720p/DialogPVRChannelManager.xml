@@ -77,7 +77,7 @@
                     <scrolltime>200</scrolltime>
                     <itemlayout height="45" width="350">
                         <control type="label">
-							<left>22</left>
+							<left>0</left>
 							<width>45</width>
 							<align>center</align>
 							<font>List_Unfocused</font>
@@ -105,7 +105,7 @@
                             <animation effect="fade" start="100" end="50" time="0" condition="!Control.HasFocus(20)">conditional</animation>
                         </control>
                         <control type="label">
-							<left>22</left>
+							<left>0</left>
 							<width>45</width>
 							<align>center</align>
 							<font>List_Focused</font>
@@ -252,24 +252,6 @@
 				<onleft>7</onleft>
 				<orientation>vertical</orientation>
 				<control type="button" id="31">
-					<description>Edit channel Button</description>
-					<width>230</width>
-					<font>Panel_Info</font>
-					<label>19203</label>
-					<texturefocus>button.png</texturefocus>
-					<texturenofocus>tile.png</texturenofocus>
-					<focusedcolor>White</focusedcolor>
-				</control>
-				<control type="button" id="32">
-					<description>Delete channel Button</description>
-					<width>230</width>
-					<font>Panel_Info</font>
-					<label>19211</label>
-					<texturefocus>button.png</texturefocus>
-					<texturenofocus>tile.png</texturenofocus>
-					<focusedcolor>White</focusedcolor>
-				</control>
-				<control type="button" id="33">
 					<description>New channel Button</description>
 					<width>230</width>
 					<font>Panel_Info</font>

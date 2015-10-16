@@ -190,7 +190,23 @@ msgctxt "#31043"
 msgid "Customize"
 msgstr ""
 
-#empty strings from id 31044 to 31204
+msgctxt "#31044"
+msgid "Show Hidden Channels"
+msgstr ""
+
+msgctxt "#31045"
+msgid "Sort: Ascending"
+msgstr "Sort: Ascending"
+
+msgctxt "#31046"
+msgid "Sort: Descending"
+msgstr "Sort: Descending"
+
+msgctxt "#31047"
+msgid "Hide"
+msgstr "Hide"
+
+#empty strings from id 31048 to 31204
 
 msgctxt "#31205"
 msgid "EPG"

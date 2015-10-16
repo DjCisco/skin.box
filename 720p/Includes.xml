@@ -105,7 +105,7 @@
 					<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVGuide)</onclick>
 					<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioGuide)</onclick>
 				</control>
-				 <control type="button" id="300">
+				<control type="button" id="300">
 					<description>Recordings</description>
 					<width>280</width>
 					<textoffsetx>10</textoffsetx>
@@ -115,7 +115,7 @@
 					<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVRecordings)</onclick>
 					<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioRecordings)</onclick>
 				</control>
-				 <control type="button" id="400">
+				<control type="button" id="400">
 					<description>Timer</description>
 					<width>280</width>
 					<textoffsetx>10</textoffsetx>
@@ -125,7 +125,7 @@
 					<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimers)</onclick>
 					<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimers)</onclick>
 				</control>
-				 <control type="button" id="500">
+				<control type="button" id="500">
 					<description>Search</description>
 					<width>280</width>
 					<textoffsetx>10</textoffsetx>
@@ -135,9 +135,7 @@
 					<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVSearch)</onclick>
 					<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioSearch)</onclick>
 				</control>
-				
-				
-					<control type="button" id="28">
+				<control type="button" id="28">
 						<description>Channel Groups</description>
 						<width>280</width>
 						<textoffsetx>10</textoffsetx>
@@ -145,16 +143,16 @@
 						<font>List_Left_Menu</font>
 						<label>-</label>
 					</control>
-					<control type="radiobutton" id="5">
-						<description>Group recording items by folder structure</description>
-						<width>280</width>
-						<textoffsetx>10</textoffsetx>
-						<align>left</align>
-						<font>List_Left_Menu</font>
-						<label>19270</label>
-						<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
-					</control>
-					<control type="button" id="2">
+				<control type="radiobutton" id="5">
+					<description>Group recording items by folder structure</description>
+					<width>280</width>
+					<textoffsetx>10</textoffsetx>
+					<align>left</align>
+					<font>List_Left_Menu</font>
+					<label>19270</label>
+					<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
+				</control>
+				<control type="button" id="2">
 						<description>View As button</description>
 						<width>280</width>
 						<textoffsetx>10</textoffsetx>
@@ -162,7 +160,7 @@
 						<font>List_Left_Menu</font>
 						<label>-</label>
 					</control>
-					<control type="button" id="3">
+				<control type="button" id="3">
 						<description>Sort by button</description>
 						<width>280</width>
 						<textoffsetx>10</textoffsetx>
@@ -170,16 +168,47 @@
 						<font>List_Left_Menu</font>
 						<label>103</label>
 					</control>
-					<control type="togglebutton" id="4">
+				<control type="togglebutton" id="4">
 						<description>Sort asc</description>
 						<alttexturefocus border="5">tile.png</alttexturefocus>
 						<alttexturenofocus>-</alttexturenofocus>
-						<label>31051</label>
-						<altlabel>31050</altlabel>
+						<textoffsetx>10</textoffsetx>
+						<align>left</align>
+						<font>List_Left_Menu</font>
+						<label>31046</label>
+						<altlabel>31045</altlabel>
 						<usealttexture>Container.SortDirection(Ascending)</usealttexture>
-					</control>
-					
-			
+				</control>
+
+				<control type="radiobutton" id="31">
+					<description>Filter</description>
+					<width>280</width>
+					<textoffsetx>10</textoffsetx>
+					<align>left</align>
+					<label>587</label>
+					<selected>Container.Filtered</selected>
+					<font>List_Left_Menu</font>
+					<onclick>right</onclick>
+					<visible>Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)</visible>
+				</control>
+				<control type="radiobutton" id="6">
+					<description>Show hidden files</description>
+					<width>280</width>
+					<textoffsetx>10</textoffsetx>
+					<align>left</align>
+					<font>List_Left_Menu</font>
+					<label>31044</label>
+					<visible>Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)</visible>
+				</control>
+				<control type="radiobutton" id="7">
+					<description>Show deleted recordings</description>
+					<width>280</width>
+					<textoffsetx>10</textoffsetx>
+					<align>left</align>
+					<font>List_Left_Menu</font>
+					<label>19184</label>
+					<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
+				</control>
 			</control>
 			<!-- Close Button for Options Menu	-->
 			<control type="button" id="9876">

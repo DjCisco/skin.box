@@ -14,7 +14,7 @@
                 <height>315</height>
 				<texture>tile.png</texture>
 			</control>
-			<control type="label" id="1">
+			<control type="label" id="2">
 				<description>Header Label</description>
 				<left>25</left>
                 <top>15</top>
@@ -22,7 +22,6 @@
                 <align>center</align>
 				<aligny>top</aligny>
                 <font>Panel_Description_Title</font>
-				<label>5</label>
 			</control>
 			<control type="button" id="7">
 				<description>Default Button</description>

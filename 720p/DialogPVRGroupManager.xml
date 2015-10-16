@@ -159,7 +159,7 @@
                     <scrolltime>200</scrolltime>
                     <itemlayout height="45">
                         <control type="label">
-                            <left>22</left>
+                            <left>0</left>
                             <width>45</width>
                             <align>center</align>
 							<font>List_Unfocused</font>
@@ -188,7 +188,7 @@
 							<visible>Control.HasFocus(11)</visible>
                         </control>
 			           <control type="label">
-                            <left>22</left>
+                            <left>0</left>
                             <width>45</width>
                             <align>center</align>
 							<font>List_Focused</font>
@@ -205,7 +205,7 @@
 							<textcolor>Accent</textcolor>
                         </control>
 						 <control type="label">
-                            <left>22</left>
+                            <left>0</left>
                             <width>45</width>
                             <align>center</align>
 							<font>List_Unfocused</font>
@@ -284,7 +284,7 @@
                     <scrolltime>200</scrolltime>
                     <itemlayout height="45">
                         <control type="label">
-                            <left>22</left>
+                            <left>0</left>
                             <width>45</width>
 							<font>List_Unfocused</font>
                             <align>center</align>
@@ -313,7 +313,7 @@
                             <visible>Control.HasFocus(12)</visible>
                         </control>
 			            <control type="label">
-                            <left>22</left>
+                            <left>0</left>
                             <width>45</width>
 							<font>List_Focused</font>
                             <align>center</align>
@@ -330,7 +330,7 @@
 							<visible>Control.HasFocus(12)</visible>							
                         </control>
 						<control type="label">
-                            <left>22</left>
+                            <left>0</left>
                             <width>45</width>
 							<font>List_Unfocused</font>
                             <align>center</align>
@@ -365,7 +365,7 @@
                 <left>25</left>
 				<top>290</top>
 				<width>145</width>
-				<height>195</height>
+				<height>250</height>
 				<itemgap>5</itemgap>
                 <orientation>vertical</orientation>
                 <onleft>12</onleft>
@@ -383,7 +383,18 @@
 					<texturenofocus>tile.png</texturenofocus>
 					<focusedcolor>White</focusedcolor>
                 </control>
-                <control type="button" id="26">
+                <control type="radiobutton" id="25">
+					<description>Hide Group</description>
+					<description>OK</description>
+                    <width>145</width>
+                    <label>31047</label>
+                    <textoffsetx>10</textoffsetx>
+					<font>Panel_Hint</font>						
+					<align>center</align>
+					<texturefocus>button.png</texturefocus>
+					<texturenofocus>tile.png</texturenofocus>
+				</control>
+				<control type="button" id="26">
                     <description>Add Group</description>
                     <width>145</width>
                     <label>15019</label>
