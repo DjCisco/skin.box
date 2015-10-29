@@ -273,7 +273,7 @@
         <!-- Required for system -->
         <font>
             <name>font13</name>
-            <filename>GeosansLight.ttf</filename>
+            <filename>MC360.ttf</filename>
             <size>20</size>
         </font>
         <font>
@@ -281,6 +281,52 @@
             <filename>GeosansLight.ttf</filename>
             <size>220</size>
         </font>
+		<font>
+            <name>ScreensaverClock</name>
+           <filename>MC360.ttf</filename>
+           <aspect>0.8</aspect>
+           <size>100</size>
+       </font>
+       <font>
+           <name>NUnextup</name>
+           <filename>MC360.ttf</filename>
+           <aspect>0.8</aspect>
+       	<style>bold</style>
+           <size>46</size>
+       </font>
+       <font>
+           <name>NUtitle</name>
+           <filename>MC360.ttf</filename>
+           <aspect>0.8</aspect>
+       	<style>bold</style>
+           <size>34</size>
+       </font>
+       <font>
+           <name>NUseasonepisode</name>
+           <filename>MC360.ttf</filename>
+           <aspect>0.8</aspect>
+           <size>27</size>
+       </font>
+       <font>
+           <name>NUplot</name>
+           <filename>MC360.ttf</filename>
+           <aspect>0.8</aspect>
+           <size>22</size>
+       </font>
+       <font>
+           <name>NUcountdown</name>
+           <filename>MC360.ttf</filename>
+           <aspect>0.8</aspect>
+           <style>bold</style>
+           <size>80</size>
+       </font>        
+       <font>
+           <name>NUplaycancel</name>
+           <filename>MC360.ttf</filename>
+           <aspect>0.8</aspect>
+           <style>bold</style>
+           <size>28</size>
+       </font>	   
     </fontset>
 	<fontset id="lowercase" idloc="31029">
 		<font>
@@ -562,6 +608,4 @@
             <size>220</size>
         </font>
     </fontset>
-
-	
 </fonts>
