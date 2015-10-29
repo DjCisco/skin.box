@@ -1,3 +1,7 @@
+[B]3.3.1[/B]
+- Added Next Up Support (thans to Zang74)
+- Corrected Empty Video Playlist Error
+
 [B]3.3.0[/B]
 - Implemeneted Changes for Isengard
 
