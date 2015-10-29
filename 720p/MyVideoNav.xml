@@ -248,7 +248,7 @@
                 <label>13350</label>
 				<font>List_Left_Menu</font>
 				<onclick>ActivateWindow(videoplaylist)</onclick>
-				<visible>Player.HasVideo</visible>
+				<visible>[Window.IsActive(videolibrary) + !StringCompare(Playlist.Length(video),0)] | [[Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)] + !StringCompare(Playlist.Length(music),0)]</visible>
             </control>
 			<control type="togglebutton" id="20">
                 <description>Update Libray and Stop Scanning</description>
