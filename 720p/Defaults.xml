@@ -96,6 +96,9 @@
 		<textureradioonnofocus>other_textures/radiobutton2fo.png</textureradioonnofocus>
 		<textureradioofffocus>other_textures/radiobutton2nf.png</textureradioofffocus>
 		<textureradiooffnofocus>other_textures/radiobutton2nf.png</textureradiooffnofocus>
+		<textureradioondisabled>other_textures/radiobuttonfo.png</textureradioondisabled>
+		<textureradiooffdisabled>other_textures/radiobuttonnf.png</textureradiooffdisabled>
+		
         <textoffsetx>20</textoffsetx>
         <pulseonselect>false</pulseonselect>
     </default>
@@ -109,11 +112,13 @@
         <spinheight>26</spinheight>
         <texturenofocus border="2">other_textures/buttonnf.png</texturenofocus>
         <texturefocus border="5">other_textures/buttonfo.png</texturefocus>
-        <textureup>other_textures/arrowupnf.png</textureup>
-        <texturedown>other_textures/arrowdownnf.png</texturedown>
-        <textureupfocus>other_textures/arrowupfo.png</textureupfocus>
-        <texturedownfocus>other_textures/arrowdownfo.png</texturedownfocus>
-        <textcolor>White</textcolor>
+        <textureup>other_textures/arrowupfo.png</textureup>
+        <texturedown>other_textures/arrowdownfo.png</texturedown>
+        <textureupfocus>other_textures/arrowupg.png</textureupfocus>
+        <texturedownfocus>other_textures/arrowdowng.png</texturedownfocus>
+		<textureupdisabled>other_textures/arrowupnf.png</textureupdisabled>
+		<texturedowndisabled>other_textures/arrowdownnf.png</texturedowndisabled>
+		<textcolor>White</textcolor>
         <focusedcolor>White</focusedcolor>
         <disabledcolor>Red</disabledcolor>
         <textoffsetx>20</textoffsetx>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window type="buttonMenu" id="111">
     <defaultcontrol always="true">3110</defaultcontrol>
-    <allowoverlay>yes</allowoverlay>
+     
     <controls>
 	<!-- This Window appears on the right, when the Shutdown button in the Home Menu is pressed or the letter S is pressed -->
         <include>GlobalOverlay</include>

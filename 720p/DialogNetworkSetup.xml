@@ -2,7 +2,7 @@
 <window id="128">
     <!-- Window to add a New Network Location -->
 	<defaultcontrol always="true">10</defaultcontrol>
-    <allowoverlay>yes</allowoverlay>
+     
     <controls>
         <include>GlobalOverlay</include>
         <!-- Dialog Background -->

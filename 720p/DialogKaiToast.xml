@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window id="107">
-    <allowoverlay>yes</allowoverlay>
+     
     <controls>
         <control type="group">
             <animation type="WindowOpen">
@@ -42,37 +42,7 @@
 				<width>25</width>
 				<height>25</height>
 				<aspectratio>keep</aspectratio>
-				<texture>DefaultFile.png</texture>
-			</control>
-			<control type="image" id="403">
-				<description>avatar</description>
-				<left>2</left>
-				<top>2</top>
-				<width>25</width>
-				<height>25</height>
-				<aspectratio>keep</aspectratio>
-				<visible>false</visible>
-				<texture>DefaultIconInfo.png</texture>
-			</control>
-			<control type="image" id="404">
-				<description>avatar</description>
-				<left>2</left>
-				<top>2</top>
-				<width>25</width>
-				<height>25</height>
-				<aspectratio>keep</aspectratio>
-				<visible>false</visible>
-				<texture>DefaultIconWarning.png</texture>
-			</control>
-			<control type="image" id="405">
-				<description>avatar</description>
-				<left>2</left>
-				<top>2</top>
-				<width>25</width>
-				<height>25</height>
-				<aspectratio>keep</aspectratio>
-				<visible>false</visible>
-				<texture>DefaultIconError.png</texture>
+				<texture></texture>
 			</control>
 		</control>
     </controls>

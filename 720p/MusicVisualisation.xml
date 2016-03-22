@@ -106,7 +106,7 @@
 			<include>BackgroundTextScroll</include>
 			<!-- Info Display -->
 			<control type="group">
-				<visible>[Player.ShowInfo | Window.IsActive(musicosd) | Window.IsVisible(script-cu-lrclyrics-main.xml)] + !Window.IsVisible(AddonSettings) + !Window.IsVisible(SelectDialog) + !Window.IsVisible(VisualisationPresetList)</visible>
+				<visible>[Player.ShowInfo | Window.IsActive(musicosd) | Window.IsVisible(script-cu-lrclyrics-main.xml)] + !Window.IsVisible(AddonSettings) + !Window.IsVisible(SelectDialog)</visible>
 				<!-- Info Background / Album /Artist / Track -->
 				<control type="Group">
 					<animation effect="slide" start="1010" end="0" time="900" tween="cubic" easing="out" delay="0">WindowOpen</animation>
@@ -114,7 +114,7 @@
 					<!--Info Background -->
 					<control type="image">
 						<description>Music bar</description>
-						<animation effect="zoom" end="0,0,1280,680" time="300" condition="Window.IsVisible(script-cu-lrclyrics-main.xml)">Conditional</animation>
+						<animation effect="zoom" end="0,0,1280,680" time="300" condition="Skin.HasSetting(showLyricsDialog)">Conditional</animation>
 						<left>0</left>
 						<top>440</top>
 						<width>1280</width>

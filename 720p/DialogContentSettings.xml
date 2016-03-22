@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window id="132">
     <defaultcontrol always="true">20</defaultcontrol>
-    <allowoverlay>yes</allowoverlay>
+     
     <controls>
 		<include condition="!Window.IsVisible(DialogAddonSettings.xml)">GlobalOverlay</include>
 		<control type="group">

@@ -3,7 +3,7 @@
      <defaultcontrol>50</defaultcontrol>
 	<onload>Skin.Reset(showViewOptions)</onload>
 	<onunload>Skin.Reset(showViewOptions)</onunload>	
-    <allowoverlay>yes</allowoverlay>
+     
 	<views>50</views>
     <controls>
         <include>SkinFanart</include>

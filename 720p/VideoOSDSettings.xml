@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window id="123">
     <defaultcontrol always="true">5</defaultcontrol>
-    <allowoverlay>yes</allowoverlay>
+     
     <controls>
         <animation type="WindowOpen">
             <effect type="fade" start="0" end="100" time="200" delay="300" />
@@ -25,6 +25,14 @@
             <left>50</left>
             <animation effect="fade" start="100" end="0" time="400" condition="Window.IsVisible(SliderDialog) | Window.IsVisible(FileBrowser)">Conditional</animation>
             
+			
+			 <animation type="TYPE" condition="Window.IsVisible(DialogAudioDSPSettings.xml)" reversible="false">
+                <effect type="slide" end="-1500,0" time="200" />
+            </animation>
+            <animation type="TYPE" condition="!Window.IsVisible(DialogAudioDSPSettings.xml)" reversible="false">
+                <effect type="slide" start="-1500,0" time="200" />
+            </animation>
+			
 			<!-- Background -->
 			<control type="image">
                 <top>290</top>
@@ -49,11 +57,6 @@
                 <height>360</height>
                 <itemgap>0</itemgap>
                 <orientation>vertical</orientation>
-                <pagecontrol>60</pagecontrol>
-                <onleft>28</onleft>
-                <onright>28</onright>
-                <onup>28</onup>
-                <ondown>28</ondown>
 			</control>
             <control type="button" id="7">
                 <description>Default Button</description>

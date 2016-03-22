@@ -25,7 +25,7 @@
 				<control type="image">
 					<width>305</width>
 					<height>45</height>
-					<texture>other_textures/black-back.png</texture>
+					<texture>tile.png</texture>
 					<fadetime>200</fadetime>
 					<aspectratio scalediffuse="false">stretch</aspectratio>
 				</control>
@@ -34,7 +34,7 @@
                     <top>50</top>
                     <width>305</width>
                     <height>270</height>
-                    <texture>music_fanart_diffuse.png</texture>
+                    <texture>tile.png</texture>
                     <fadetime>200</fadetime>
                 </control>
                 <control type="label">
@@ -117,7 +117,7 @@
 				<control type="image">
 					<width>350</width>
 					<height>45</height>
-					<texture>other_textures/black-back.png</texture>
+					<texture>tile.png</texture>
 					<fadetime>200</fadetime>
 					<aspectratio scalediffuse="false">stretch</aspectratio>
 				</control>
@@ -133,7 +133,7 @@
                     <top>50</top>
                     <width>300</width>
                     <height>270</height>
-                    <texture>music_fanart_diffuse.png</texture>
+                    <texture>tile.png</texture>
                     <fadetime>200</fadetime>
                     <aspectratio scalediffuse="false">stretch</aspectratio>
                 </control>
@@ -243,7 +243,7 @@
 				<control type="image">
 					<width>350</width>
 					<height>45</height>
-					<texture>other_textures/black-back.png</texture>
+					<texture>tile.png</texture>
 					<fadetime>200</fadetime>
 					<aspectratio scalediffuse="false">stretch</aspectratio>
 				</control>
@@ -259,7 +259,7 @@
                     <top>50</top>
                     <width>300</width>
                     <height>270</height>
-                    <texture>music_fanart_diffuse.png</texture>
+                    <texture>tile.png</texture>
                     <fadetime>200</fadetime>
                     <aspectratio scalediffuse="false">stretch</aspectratio>
                 </control>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window id="4">
     <defaultcontrol always="true">378</defaultcontrol>
-    <allowoverlay>yes</allowoverlay>
+     
     <controls>
         <include>SkinFanart</include>
 		<include>BarClock</include>

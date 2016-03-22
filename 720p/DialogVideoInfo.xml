@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window id="2003">
     <defaultcontrol always="true">9000</defaultcontrol>
-    <allowoverlay>yes</allowoverlay>
+     
     <controls>
         <control type="group">
             <animation type="WindowClose">
@@ -684,7 +684,15 @@
 					<onclick>Dialog.Close(MovieInformation)</onclick>
 					<onclick>XBMC.RunScript(script.cinema.experience,movieid=$INFO[ListItem.DBID])</onclick>
 					<visible>system.hasaddon(script.cinema.experience) + Container.Content(movies)</visible>
-</control>
+					</control>
+                    <control type="button" id="7">
+                        <description>Rating</description>
+							<textoffsetx>5</textoffsetx>
+							<width>130</width>
+							<label>38023</label>
+							<font>Panel_Hint</font>
+                        <align>center</align>
+                    </control>
             </control>
         </control>
     
