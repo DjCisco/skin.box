@@ -251,64 +251,75 @@
                     </control>
 					<!-- Video Info icons -->
 					<control type="grouplist">
-                        <left>485</left>
+                        <left>465</left>
                         <top>555</top>
-                        <width>745</width>
+                        <width>785</width>
                         <height>44</height>
-						<align>center</align>
+							<align>center</align>
                         <itemgap>0</itemgap>
                         <orientation>horizontal</orientation>
        
 						<control type="image">
-                            <description>Video rez Image</description>
-                            <width>100</width>
-                            <height>50</height>
+							<description>Video rez Image</description>
+                            <width>78</width>
+                            <height>44</height>
                             <aspectratio>keep</aspectratio>
                             <texture>$INFO[ListItem.VideoResolution,other_textures/flagging/video/,.png]</texture>
-                        </control>
+                       </control>
                         <control type="image">
                             <description>Video Codec Image</description>
-                            <width>100</width>
-                            <height>50</height>
+                            <width>78</width>
+                            <height>44</height>
                             <aspectratio>keep</aspectratio>
                             <texture>$INFO[ListItem.VideoCodec,other_textures/flagging/video/,.png]</texture>
                         </control>
                         <control type="image">
                             <description>Video Source Image</description>
-                            <width>100</width>
-                            <height>50</height>
+                            <width>78</width>
+                            <height>44</height>
                             <aspectratio>keep</aspectratio>
-                            <texture>$VAR[VideoSourceImage]</texture>
+                            <texture fallback="other_textures/flagging/videos/unknown.png">$VAR[VideoSourceImage]</texture>
                         </control>
                         <control type="image">
                             <description>Mpaa Rating</description>
-                            <width>100</width>
-                            <height>50</height>
+                            <width>78</width>
+                            <height>44</height>
                             <aspectratio>keep</aspectratio>
                             <texture>$INFO[ListItem.mpaa,other_textures/flagging/ratings/,.png]</texture>
 							<visible>!IsEmpty(Listitem.mpaa)</visible>
                         </control>
                         <control type="image">
                             <description>Audio Codec Image</description>
-                            <width>100</width>
-                            <height>50</height>
+                            <width>78</width>
+                            <height>44</height>
                             <aspectratio>keep</aspectratio>
                             <texture>$INFO[ListItem.AudioCodec,other_textures/flagging/audio/,.png]</texture>
                         </control>
                         <control type="image">
                             <description>Audio Channels Image</description>
-                            <width>100</width>
-                            <height>50</height>
+                            <width>78</width>
+                            <height>44</height>
                             <aspectratio>keep</aspectratio>
                             <texture>$INFO[ListItem.AudioChannels,other_textures/flagging/audio/,.png]</texture>
                         </control>						
                         <control type="image">
                             <description>Aspectratio Image</description>
-                            <width>100</width>
-                            <height>50</height>
+                            <width>78</width>
+                            <height>44</height>
                             <aspectratio>keep</aspectratio>
                             <texture colordiffuse="FFFFFFFF">$INFO[ListItem.VideoAspect,other_textures/flagging/aspectratio/,.png]</texture>
                         </control>
+						  <control type="image">
+                            <description>Aspectratio Image</description>
+                            <width>78</width>
+                            <height>44</height>
+						       <aspectratio>keep</aspectratio>
+                            <texture colordiffuse="FFFFFFFF">other_textures/flagging/videos/3d.png</texture>
+								<visible>ListItem.IsStereoscopic</visible>
+                        </control>
+						
+						
+						
 					</control>
                     <!-- Cast List -->
 					<control type="list" id="50">

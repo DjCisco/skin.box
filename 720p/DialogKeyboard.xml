@@ -3,30 +3,23 @@
     <defaultcontrol always="true">300</defaultcontrol>
      
     <controls>
-
-        <include>GlobalOverlay</include>
-
+		<include>GlobalOverlay</include>
 		<control type="group">
-            <visible>!Window.IsVisible(numericinput)</visible>
-            <animation type="WindowOpen">
-                <effect type="slide" time="400" start="0,720" end="0,190" easing="out" tween="cubic" />
-            </animation>
-            <animation type="WindowClose">
-                <effect type="slide" time="400" start="0,190" end="0,720" easing="in" tween="cubic" />
-            </animation>
-       
-
-
-	
-			<control type="image">
+			<visible>!Window.IsVisible(numericinput)</visible>
+			<animation type="WindowOpen">
+				<effect type="slide" time="400" start="0,720" end="0,190" easing="out" tween="cubic" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="slide" time="400" start="0,190" end="0,720" easing="in" tween="cubic" />
+			</animation>
+       	<control type="image">
                 <left>217</left>
                 <top>0</top>
                 <width>845</width>
                 <height>60</height>
                 <aspectratio>stretch</aspectratio>
                 <texture>button.png</texture>
-       			</control>
-			
+			</control>
 			<control type="image">
                 <left>222</left>
                 <top>5</top>
@@ -35,40 +28,19 @@
                 <aspectratio>stretch</aspectratio>
                 <texture border="20">black.png</texture>
                 <colordiffuse>Diffuse3</colordiffuse>
-            </control>
-	        
-			
-			<control type="edit" id="312">
-                <description>Edit Text</description>
-                <top>5</top>
+			</control>
+	       <control type="edit" id="312">
+				<description>Edit Text</description>
+				<top>5</top>
 				<left>222</left>
-                <width>835</width>
-                <height>50</height>
+				<width>835</width>
+				<height>50</height>
    				<aligny>center</aligny>
 				<align>center</align>
 				<textcolor>White</textcolor>
 				<font>List_Settings</font>
-            </control>
-<!--
-				<control type="image">
-					<left>217</left>
-					<top>60</top>
-					<width>845</width>
-					<height>280</height>
-					<aspectratio>stretch</aspectratio>
-					<texture>button.png</texture>
-       			</control>
-				<control type="image">
-					<left>217</left>
-					<top>60</top>
-					<width>845</width>
-					<height>280</height>
-					<aspectratio>stretch</aspectratio>
-					<texture>tile.png</texture>
-       			</control>
-				-->
-				
-						<control type="group">
+			</control>
+			<control type="group">
 				<visible>!Skin.HasSetting(ThemeBackgroundColor)</visible>
 				<control type="image">
 					<left>217</left>
@@ -115,30 +87,20 @@
 					<height>280</height>
 					<texture>tile.png</texture>
 				</control>
-
 			</control>	
-
-            	
-				
-			
-            <control type="group">
-                <top>75</top>
+			<control type="group">
+				<top>75</top>
 				<left>222</left>
-				
-				
-
-				
 				<!-- 1st row -->
 				<control type="grouplist" id="1000">
 					<itemgap>5</itemgap>
 					<orientation>horizontal</orientation>
 					<width>1280</width>
-
 					<control type="button" id="309">
 						<description>Layout button</description>
 						<label>20177</label>
-						<onup>8</onup>
-						<ondown></ondown>
+						<onup>301</onup>
+						<ondown>302</ondown>
 						<width>175</width>
 						<height>50</height>
 						<texturenofocus>tile.png</texturenofocus>
@@ -186,7 +148,7 @@
 					</control>
 					<control type="button" id="103">
 						<description>(0,3) key button</description>
-						<onup>32</onup>
+						<onup>8</onup>
 						<ondown>123</ondown>
 						<width>50</width>
 						<height>50</height>
@@ -222,7 +184,7 @@
 					</control>
 					<control type="button" id="106">
 						<description>(0,6) key button</description>
-						<onup>8</onup>
+						<onup>305</onup>
 						<ondown>126</ondown>
 						<width>50</width>
 						<height>50</height>
@@ -234,7 +196,7 @@
 					</control>
 					<control type="button" id="107">
 						<description>(0,7) key button</description>
-						<onup>8</onup>
+						<onup>306</onup>
 						<ondown>127</ondown>
 						<width>50</width>
 						<height>50</height>
@@ -246,7 +208,7 @@
 					</control>
 					<control type="button" id="108">
 						<description>(0,8) key button</description>
-						<onup>305</onup>
+						<onup>300</onup>
 						<ondown>128</ondown>
 						<width>50</width>
 						<height>50</height>
@@ -258,7 +220,7 @@
 					</control>
 					<control type="button" id="109">
 						<description>(0,9) key button</description>
-						<onup>305</onup>
+						<onup>300</onup>
 						<ondown>129</ondown>
 						<width>50</width>
 						<height>50</height>
@@ -270,7 +232,7 @@
 					</control>
 					<control type="button" id="110">
 						<description>(0,10) key button</description>
-						<onup>306</onup>
+						<onup>300</onup>
 						<ondown>130</ondown>
 						<width>50</width>
 						<height>50</height>
@@ -282,7 +244,7 @@
 					</control>
 					<control type="button" id="111">
 						<description>(0,11) key button</description>
-						<onup>306</onup>
+						<onup>300</onup>
 						<ondown>131</ondown>
 						<width>50</width>
 						<height>50</height>
@@ -302,7 +264,7 @@
 					<control type="radiobutton" id="302">
 						<description>SHIFT button</description>
 						<label>20178</label>
-						<onup>140</onup>
+						<onup>309</onup>
 						<ondown>303</ondown>
 						<width>175</width>
 						<height>50</height>
@@ -427,9 +389,7 @@
 					<control type="button" id="129">
 						<description>(1,9) key button</description>
 						<onup>109</onup>
-						<ondown condition="!IsEmpty(Control.getLabel(149))">149</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(149)) + !IsEmpty(Control.getLabel(148))">148</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(149)) + IsEmpty(Control.getLabel(148))+ !IsEmpty(Control.getLabel(147))">147</ondown>
+						<ondown>149</ondown>
 						<width>50</width>
 						<height>50</height>
 						<texturenofocus>tile.png</texturenofocus>
@@ -441,10 +401,7 @@
 					<control type="button" id="130">
 						<description>(1,10) key button</description>
 						<onup>110</onup>
-						<ondown condition="!IsEmpty(Control.getLabel(150))">150</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(150)) + !IsEmpty(Control.getLabel(149))">149</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(150)) + IsEmpty(Control.getLabel(149)) + !IsEmpty(Control.getLabel(148))">148</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(150)) + IsEmpty(Control.getLabel(149)) + IsEmpty(Control.getLabel(148))+ !IsEmpty(Control.getLabel(147))">147</ondown>
+						<ondown>150</ondown>
 						<width>50</width>
 						<height>50</height>
 						<texturenofocus>tile.png</texturenofocus>
@@ -456,12 +413,7 @@
 					<control type="button" id="131">
 						<description>(1,11) key button</description>
 						<onup>111</onup>
-						<ondown condition="!IsEmpty(Control.getLabel(151))">151</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(151)) + !IsEmpty(Control.getLabel(150))">150</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(151)) + IsEmpty(Control.getLabel(150)) + !IsEmpty(Control.getLabel(149))">149</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(151)) + IsEmpty(Control.getLabel(150)) + IsEmpty(Control.getLabel(149)) + !IsEmpty(Control.getLabel(148))">148</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(151)) + IsEmpty(Control.getLabel(150)) + IsEmpty(Control.getLabel(149)) + IsEmpty(Control.getLabel(148)) + !IsEmpty(Control.getLabel(147))">147</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(151)) + IsEmpty(Control.getLabel(150)) + IsEmpty(Control.getLabel(149)) + IsEmpty(Control.getLabel(148)) + IsEmpty(Control.getLabel(147)) + !IsEmpty(Control.getLabel(146))">146</ondown>
+						<ondown>151</ondown>
 						<width>50</width>
 						<height>50</height>
 						<texturenofocus>tile.png</texturenofocus>
@@ -481,7 +433,7 @@
 						<description>CAPS LOCK button</description>
 						<label>20179</label>
 						<onup>302</onup>
-						<ondown></ondown>
+						<ondown>307</ondown>
 						<width>175</width>
 						<height>50</height>
 						<texturenofocus>tile.png</texturenofocus>
@@ -521,8 +473,7 @@
 					<control type="button" id="142">
 						<description>(2,2) key button</description>
 						<onup>122</onup>						
-						<ondown condition=" !IsEmpty(Control.getLabel(162))">162</ondown>
-						<ondown condition=" IsEmpty(Control.getLabel(162)) + !IsEmpty(Control.getLabel(161))">161</ondown>
+						<ondown>162</ondown>
 						<width>50</width>
 						<height>50</height>
 						<texturenofocus>tile.png</texturenofocus>
@@ -534,9 +485,7 @@
 					<control type="button" id="143">
 						<description>(2,3) key button</description>
 						<onup>123</onup>
-						<ondown condition="!IsEmpty(Control.getLabel(163))">163</ondown>
-						<ondown condition=" IsEmpty(Control.getLabel(163)) + !IsEmpty(Control.getLabel(162))">162</ondown>
-						<ondown condition=" IsEmpty(Control.getLabel(163)) +  IsEmpty(Control.getLabel(162)) + !IsEmpty(Control.getLabel(161))">161</ondown>
+						<ondown>163</ondown>
 						<width>50</width>
 						<height>50</height>
 						<texturenofocus>tile.png</texturenofocus>
@@ -548,10 +497,7 @@
 					<control type="button" id="144">
 						<description>(2,4) key button</description>
 						<onup>124</onup>
-						<ondown condition="!IsEmpty(Control.getLabel(164))">164</ondown>
-						<ondown condition=" IsEmpty(Control.getLabel(164)) + !IsEmpty(Control.getLabel(163))">163</ondown>
-						<ondown condition=" IsEmpty(Control.getLabel(164)) +  IsEmpty(Control.getLabel(163)) + !IsEmpty(Control.getLabel(162))">162</ondown>
-						<ondown condition=" IsEmpty(Control.getLabel(164)) +  IsEmpty(Control.getLabel(163)) +  IsEmpty(Control.getLabel(162)) + !IsEmpty(Control.getLabel(161))">161</ondown>
+						<ondown>164</ondown>
 						<width>50</width>
 						<height>50</height>
 						<texturenofocus>tile.png</texturenofocus>
@@ -563,11 +509,7 @@
 					<control type="button" id="145">
 						<description>(2,5) key button</description>
 						<onup>125</onup>
-						<ondown condition="!IsEmpty(Control.getLabel(165))">165</ondown>
-						<ondown condition=" IsEmpty(Control.getLabel(165)) + !IsEmpty(Control.getLabel(164))">164</ondown>
-						<ondown condition=" IsEmpty(Control.getLabel(165)) +  IsEmpty(Control.getLabel(164)) + !IsEmpty(Control.getLabel(163))">163</ondown>
-						<ondown condition=" IsEmpty(Control.getLabel(165)) +  IsEmpty(Control.getLabel(164)) +  IsEmpty(Control.getLabel(163)) + !IsEmpty(Control.getLabel(162))">162</ondown>
-						<ondown condition=" IsEmpty(Control.getLabel(165)) +  IsEmpty(Control.getLabel(164)) +  IsEmpty(Control.getLabel(163)) +  IsEmpty(Control.getLabel(162)) + !IsEmpty(Control.getLabel(161))">161</ondown>
+						<ondown>165</ondown>
 						<width>50</width>
 						<height>50</height>
 						<texturenofocus>tile.png</texturenofocus>
@@ -579,12 +521,7 @@
 					<control type="button" id="146">
 						<description>(2,6) key button</description>
 						<onup>126</onup>
-						<ondown condition="!IsEmpty(Control.getLabel(166))">166</ondown>
-						<ondown condition=" IsEmpty(Control.getLabel(166)) + !IsEmpty(Control.getLabel(165))">165</ondown>
-						<ondown condition=" IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) + !IsEmpty(Control.getLabel(164))">164</ondown>
-						<ondown condition=" IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) +  IsEmpty(Control.getLabel(164)) + !IsEmpty(Control.getLabel(163))">163</ondown>
-						<ondown condition=" IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) +  IsEmpty(Control.getLabel(164)) +  IsEmpty(Control.getLabel(163)) + !IsEmpty(Control.getLabel(162))">162</ondown>
-						<ondown condition=" IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) +  IsEmpty(Control.getLabel(164)) +  IsEmpty(Control.getLabel(163)) +  IsEmpty(Control.getLabel(162)) + !IsEmpty(Control.getLabel(161))">161</ondown>
+						<ondown>166</ondown>
 						<width>50</width>
 						<height>50</height>
 						<texturenofocus>tile.png</texturenofocus>
@@ -596,13 +533,7 @@
 					<control type="button" id="147">
 						<description>(2,7) key button</description>
 						<onup>127</onup>
-						<ondown condition="!IsEmpty(Control.getLabel(167))">167</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(167)) + !IsEmpty(Control.getLabel(166))">166</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) + !IsEmpty(Control.getLabel(165))">165</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) + !IsEmpty(Control.getLabel(164))">164</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) +  IsEmpty(Control.getLabel(164)) + !IsEmpty(Control.getLabel(163))">163</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) +  IsEmpty(Control.getLabel(164)) +  IsEmpty(Control.getLabel(163)) + !IsEmpty(Control.getLabel(162))">162</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) +  IsEmpty(Control.getLabel(164)) +  IsEmpty(Control.getLabel(163)) +  IsEmpty(Control.getLabel(162)) + !IsEmpty(Control.getLabel(161))">161</ondown>
+						<ondown>167</ondown>
 						<width>50</width>
 						<height>50</height>
 						<texturenofocus>tile.png</texturenofocus>
@@ -614,14 +545,7 @@
 					<control type="button" id="148">
 						<description>(2,8) key button</description>
 						<onup>128</onup>
-						<ondown condition="!IsEmpty(Control.getLabel(168))">168</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(168)) + !IsEmpty(Control.getLabel(167))">167</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(168)) + IsEmpty(Control.getLabel(167)) + !IsEmpty(Control.getLabel(166))">166</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(168)) + IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) + !IsEmpty(Control.getLabel(165))">165</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(168)) + IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) + !IsEmpty(Control.getLabel(164))">164</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(168)) + IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) +  IsEmpty(Control.getLabel(164)) + !IsEmpty(Control.getLabel(163))">163</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(168)) + IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) +  IsEmpty(Control.getLabel(164)) +  IsEmpty(Control.getLabel(163)) + !IsEmpty(Control.getLabel(162))">162</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(168)) + IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) +  IsEmpty(Control.getLabel(164)) +  IsEmpty(Control.getLabel(163)) +  IsEmpty(Control.getLabel(162)) + !IsEmpty(Control.getLabel(161))">161</ondown>
+						<ondown>168</ondown>
 						<width>50</width>
 						<height>50</height>
 						<texturenofocus>tile.png</texturenofocus>
@@ -633,16 +557,8 @@
 					<control type="button" id="149">
 						<description>(2,9) key button</description>
 						<onup>129</onup>
-						<ondown condition="!IsEmpty(Control.getLabel(169))">169</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(169)) + !IsEmpty(Control.getLabel(168))">168</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(169)) + IsEmpty(Control.getLabel(168)) + !IsEmpty(Control.getLabel(167))">167</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(169)) + IsEmpty(Control.getLabel(168)) + IsEmpty(Control.getLabel(167)) + !IsEmpty(Control.getLabel(166))">166</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(169)) + IsEmpty(Control.getLabel(168)) + IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) + !IsEmpty(Control.getLabel(165))">165</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(169)) + IsEmpty(Control.getLabel(168)) + IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) + !IsEmpty(Control.getLabel(164))">164</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(169)) + IsEmpty(Control.getLabel(168)) + IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) +  IsEmpty(Control.getLabel(164)) + !IsEmpty(Control.getLabel(163))">163</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(169)) + IsEmpty(Control.getLabel(168)) + IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) +  IsEmpty(Control.getLabel(164)) +  IsEmpty(Control.getLabel(163)) + !IsEmpty(Control.getLabel(162))">162</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(169)) + IsEmpty(Control.getLabel(168)) + IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) +  IsEmpty(Control.getLabel(164)) +  IsEmpty(Control.getLabel(163)) +  IsEmpty(Control.getLabel(162)) + !IsEmpty(Control.getLabel(161))">161</ondown>
-						<width>50</width>
+						<ondown>169</ondown>
+					<width>50</width>
 						<height>50</height>
 						<texturenofocus>tile.png</texturenofocus>
 						<texturefocus>button.png</texturefocus>
@@ -653,17 +569,7 @@
 					<control type="button" id="150">
 						<description>(2,10) key button</description>
 						<onup>130</onup>
-						<ondown condition="!IsEmpty(Control.getLabel(170))">170</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(170)) + !IsEmpty(Control.getLabel(169))">169</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(170)) + IsEmpty(Control.getLabel(169)) + !IsEmpty(Control.getLabel(168))">168</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(170)) + IsEmpty(Control.getLabel(169)) + IsEmpty(Control.getLabel(168)) + !IsEmpty(Control.getLabel(167))">167</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(170)) + IsEmpty(Control.getLabel(169)) + IsEmpty(Control.getLabel(168)) + IsEmpty(Control.getLabel(167)) + !IsEmpty(Control.getLabel(166))">166</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(170)) + IsEmpty(Control.getLabel(169)) + IsEmpty(Control.getLabel(168)) + IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) + !IsEmpty(Control.getLabel(165))">165</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(170)) + IsEmpty(Control.getLabel(169)) + IsEmpty(Control.getLabel(168)) + IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) + !IsEmpty(Control.getLabel(164))">164</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(170)) + IsEmpty(Control.getLabel(169)) + IsEmpty(Control.getLabel(168)) + IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) +  IsEmpty(Control.getLabel(164)) + !IsEmpty(Control.getLabel(163))">163</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(170)) + IsEmpty(Control.getLabel(169)) + IsEmpty(Control.getLabel(168)) + IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) +  IsEmpty(Control.getLabel(164)) +  IsEmpty(Control.getLabel(163)) + !IsEmpty(Control.getLabel(162))">162</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(170)) + IsEmpty(Control.getLabel(169)) + IsEmpty(Control.getLabel(168)) + IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) +  IsEmpty(Control.getLabel(164)) +  IsEmpty(Control.getLabel(163)) +  IsEmpty(Control.getLabel(162)) + !IsEmpty(Control.getLabel(161))">161</ondown>
-						
+						<ondown>170</ondown>
 						<width>50</width>
 						<height>50</height>
 						<texturenofocus>tile.png</texturenofocus>
@@ -675,18 +581,7 @@
 					<control type="button" id="151">
 						<description>(2,11) key button</description>
 						<onup>131</onup>
-						<ondown condition="!IsEmpty(Control.getLabel(171))">171</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(171)) + !IsEmpty(Control.getLabel(170))">170</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(171)) + IsEmpty(Control.getLabel(170)) + !IsEmpty(Control.getLabel(169))">169</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(171)) + IsEmpty(Control.getLabel(170)) + IsEmpty(Control.getLabel(169)) + !IsEmpty(Control.getLabel(168))">168</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(171)) + IsEmpty(Control.getLabel(170)) + IsEmpty(Control.getLabel(169)) + IsEmpty(Control.getLabel(168)) + !IsEmpty(Control.getLabel(167))">167</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(171)) + IsEmpty(Control.getLabel(170)) + IsEmpty(Control.getLabel(169)) + IsEmpty(Control.getLabel(168)) + IsEmpty(Control.getLabel(167)) + !IsEmpty(Control.getLabel(166))">166</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(171)) + IsEmpty(Control.getLabel(170)) + IsEmpty(Control.getLabel(169)) + IsEmpty(Control.getLabel(168)) + IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) + !IsEmpty(Control.getLabel(165))">165</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(171)) + IsEmpty(Control.getLabel(170)) + IsEmpty(Control.getLabel(169)) + IsEmpty(Control.getLabel(168)) + IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) + !IsEmpty(Control.getLabel(164))">164</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(171)) + IsEmpty(Control.getLabel(170)) + IsEmpty(Control.getLabel(169)) + IsEmpty(Control.getLabel(168)) + IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) +  IsEmpty(Control.getLabel(164)) + !IsEmpty(Control.getLabel(163))">163</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(171)) + IsEmpty(Control.getLabel(170)) + IsEmpty(Control.getLabel(169)) + IsEmpty(Control.getLabel(168)) + IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) +  IsEmpty(Control.getLabel(164)) +  IsEmpty(Control.getLabel(163)) + !IsEmpty(Control.getLabel(162))">162</ondown>
-						<ondown condition="IsEmpty(Control.getLabel(171)) + IsEmpty(Control.getLabel(170)) + IsEmpty(Control.getLabel(169)) + IsEmpty(Control.getLabel(168)) + IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) +  IsEmpty(Control.getLabel(164)) +  IsEmpty(Control.getLabel(163)) +  IsEmpty(Control.getLabel(162)) + !IsEmpty(Control.getLabel(161))">161</ondown>
-						
+						<ondown>171</ondown>
 						<width>50</width>
 						<height>50</height>
 						<texturenofocus>tile.png</texturenofocus>
@@ -695,17 +590,17 @@
 						<focusedcolor>black</focusedcolor>
 						<textoffsetx>0</textoffsetx>
 					</control>
-			</control>
+				</control>
 				<!-- 4th row -->
 				<control type="grouplist" id="4000">
 					<top>165</top>
 					<itemgap>5</itemgap>
 					<orientation>horizontal</orientation>
 					<width>1280</width>
-										<control type="button" id="307">
+					<control type="button" id="307">
 						<description>IP Input button</description>
-						<onup>302</onup>
-						<ondown></ondown>
+						<onup>303</onup>
+						<ondown>301</ondown>
 						<label>IP</label>
 						<width>85</width>
 						<height>50</height>
@@ -719,8 +614,8 @@
 					<control type="radiobutton" id="304">
 						<description>Symbols button</description>
 						<label>@#!*   </label>
-						<onup>302</onup>
-						<ondown></ondown>
+						<onup>303</onup>
+						<ondown>301</ondown>
 						<width>85</width>
 						<height>50</height>
 						<texturenofocus>tile.png</texturenofocus>
@@ -733,7 +628,6 @@
 						<font>List_Settings</font>
 						<focusedcolor>black</focusedcolor>
 					</control>
-				
 					<control type="button" id="160">
 						<description>(3,0) key button</description>
 						<onup>140</onup>
@@ -773,7 +667,7 @@
 					<control type="button" id="163">
 						<description>(3,3) key button</description>
 						<onup>143</onup>
-						<ondown>32</ondown>
+						<ondown>8</ondown>
 						<width>50</width>
 						<height>50</height>
 						<texturenofocus>tile.png</texturenofocus>
@@ -785,7 +679,7 @@
 					<control type="button" id="164">
 						<description>(3,4) key button</description>
 						<onup>144</onup>
-						<ondown>32</ondown>
+						<ondown>8</ondown>
 						<width>50</width>
 						<height>50</height>
 						<texturenofocus>tile.png</texturenofocus>
@@ -797,7 +691,7 @@
 					<control type="button" id="165">
 						<description>(3,5) key button</description>
 						<onup>145</onup>
-						<ondown>32</ondown>
+						<ondown>8</ondown>
 						<width>50</width>
 						<height>50</height>
 						<texturenofocus>tile.png</texturenofocus>
@@ -809,7 +703,7 @@
 					<control type="button" id="166">
 						<description>(3,6) key button</description>
 						<onup>146</onup>
-						<ondown>32</ondown>
+						<ondown>305</ondown>
 						<width>50</width>
 						<height>50</height>
 						<texturenofocus>tile.png</texturenofocus>
@@ -821,7 +715,7 @@
 					<control type="button" id="167">
 						<description>(3,7) key button</description>
 						<onup>147</onup>
-						<ondown>32</ondown>
+						<ondown>306</ondown>
 						<width>50</width>
 						<height>50</height>
 						<texturenofocus>tile.png</texturenofocus>
@@ -833,7 +727,7 @@
 					<control type="button" id="168">
 						<description>(3,8) key button</description>
 						<onup>148</onup>
-						<ondown>32</ondown>
+						<ondown>300</ondown>
 						<width>50</width>
 						<height>50</height>
 						<texturenofocus>tile.png</texturenofocus>
@@ -845,7 +739,7 @@
 					<control type="button" id="169">
 						<description>(3,9) key button</description>
 						<onup>149</onup>
-						<ondown>32</ondown>
+						<ondown>300</ondown>
 						<width>50</width>
 						<height>50</height>
 						<texturenofocus>tile.png</texturenofocus>
@@ -857,7 +751,7 @@
 					<control type="button" id="170">
 						<description>(3,10) key button</description>
 						<onup>150</onup>
-						<ondown>32</ondown>
+						<ondown>300</ondown>
 						<width>50</width>
 						<height>50</height>
 						<texturenofocus>tile.png</texturenofocus>
@@ -869,8 +763,7 @@
 					<control type="button" id="171">
 						<description>(3,11) key button</description>
 						<onup>151</onup>
-						<ondown>32</ondown>
-						<width>50</width>
+300						<width>50</width>
 						<height>50</height>
 						<texturenofocus>tile.png</texturenofocus>
 						<texturefocus>button.png</texturefocus>
@@ -878,7 +771,6 @@
 						<focusedcolor>black</focusedcolor>
 						<textoffsetx>0</textoffsetx>
 					</control>
-			
 				</control>
 				<!-- 5th row -->
 				<control type="grouplist" id="5000">
@@ -888,11 +780,13 @@
 					<width>1280</width>
 					<control type="button" id="301">
 						<description>CANCEL button</description>
+						<onup>307</onup>
+						<ondown>309</ondown>
 						<width>175</width>
 						<height>50</height>
 						<texturenofocus>tile.png</texturenofocus>
 						<texturefocus>button.png</texturefocus>
-						<label></label>
+						<label>222</label>
 						<font>List_Settings</font>
 						<align>center</align>
 						<aligny>center</aligny>
@@ -900,9 +794,9 @@
 						<ondown></ondown>
 						<focusedcolor>black</focusedcolor>
 					</control>
-
 					<control type="button" id="32">
 						<description>SPACE button</description>
+						
 						<label>20182</label>
 						<width>160</width>
 						<height>50</height>
@@ -912,36 +806,15 @@
 						<aligny>center</aligny>
 						<font>List_Settings</font>
 						<focusedcolor>black</focusedcolor>
-						<onup condition="!IsEmpty(Control.getLabel(171))">166</onup>
-						<onup condition=" IsEmpty(Control.getLabel(171)) + !IsEmpty(Control.getLabel(170))">165</onup>
-						<onup condition=" IsEmpty(Control.getLabel(171)) +  IsEmpty(Control.getLabel(170)) + !IsEmpty(Control.getLabel(169))">165</onup>
-						<onup condition=" IsEmpty(Control.getLabel(171)) +  IsEmpty(Control.getLabel(170)) +  IsEmpty(Control.getLabel(169)) + !IsEmpty(Control.getLabel(168))">164</onup>
-						<onup condition=" IsEmpty(Control.getLabel(171)) +  IsEmpty(Control.getLabel(170)) +  IsEmpty(Control.getLabel(169)) +  IsEmpty(Control.getLabel(168)) + !IsEmpty(Control.getLabel(167))">164</onup>
-						<onup condition=" IsEmpty(Control.getLabel(171)) +  IsEmpty(Control.getLabel(170)) +  IsEmpty(Control.getLabel(169)) +  IsEmpty(Control.getLabel(168)) +  IsEmpty(Control.getLabel(167)) + !IsEmpty(Control.getLabel(166))">163</onup>
-						<onup condition=" IsEmpty(Control.getLabel(171)) +  IsEmpty(Control.getLabel(170)) +  IsEmpty(Control.getLabel(169)) +  IsEmpty(Control.getLabel(168)) +  IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) + !IsEmpty(Control.getLabel(165))">163</onup>
-						<onup condition=" IsEmpty(Control.getLabel(171)) +  IsEmpty(Control.getLabel(170)) +  IsEmpty(Control.getLabel(169)) +  IsEmpty(Control.getLabel(168)) +  IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) + !IsEmpty(Control.getLabel(164))">162</onup>
-						<onup condition=" IsEmpty(Control.getLabel(171)) +  IsEmpty(Control.getLabel(170)) +  IsEmpty(Control.getLabel(169)) +  IsEmpty(Control.getLabel(168)) +  IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) +  IsEmpty(Control.getLabel(164)) + !IsEmpty(Control.getLabel(163))">162</onup>
-						<onup condition=" IsEmpty(Control.getLabel(171)) +  IsEmpty(Control.getLabel(170)) +  IsEmpty(Control.getLabel(169)) +  IsEmpty(Control.getLabel(168)) +  IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) +  IsEmpty(Control.getLabel(164)) +  IsEmpty(Control.getLabel(163)) + !IsEmpty(Control.getLabel(162))">161</onup>
-						<onup condition=" IsEmpty(Control.getLabel(171)) +  IsEmpty(Control.getLabel(170)) +  IsEmpty(Control.getLabel(169)) +  IsEmpty(Control.getLabel(168)) +  IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) +  IsEmpty(Control.getLabel(164)) +  IsEmpty(Control.getLabel(163)) +  IsEmpty(Control.getLabel(162)) + !IsEmpty(Control.getLabel(161))">161</onup>
-						<onup condition=" IsEmpty(Control.getLabel(171)) +  IsEmpty(Control.getLabel(170)) +  IsEmpty(Control.getLabel(169)) +  IsEmpty(Control.getLabel(168)) +  IsEmpty(Control.getLabel(167)) +  IsEmpty(Control.getLabel(166)) +  IsEmpty(Control.getLabel(165)) +  IsEmpty(Control.getLabel(164)) +  IsEmpty(Control.getLabel(163)) +  IsEmpty(Control.getLabel(162)) +  IsEmpty(Control.getLabel(161)) + !IsEmpty(Control.getLabel(160))">160</onup>
+						<onup>160</onup>
+						<ondown>100</ondown>
 						<ondown></ondown>
 					</control>
 					<control type="button" id="8">
 						<description>BACKSPACE button</description>
 						<label>20181</label>
-						<onup condition="!IsEmpty(Control.getLabel(151))">151</onup>
-						<onup condition="IsEmpty(Control.getLabel(151)) + !IsEmpty(Control.getLabel(150))">150</onup>
-						<onup condition="IsEmpty(Control.getLabel(151)) + IsEmpty(Control.getLabel(150)) + !IsEmpty(Control.getLabel(149))">149</onup>
-						<onup condition="IsEmpty(Control.getLabel(151)) + IsEmpty(Control.getLabel(150)) + IsEmpty(Control.getLabel(149)) + !IsEmpty(Control.getLabel(148))">148</onup>
-						<onup condition="IsEmpty(Control.getLabel(151)) + IsEmpty(Control.getLabel(150)) + IsEmpty(Control.getLabel(149)) + IsEmpty(Control.getLabel(148)) + !IsEmpty(Control.getLabel(147))">147</onup>
-						<onup condition="IsEmpty(Control.getLabel(151)) + IsEmpty(Control.getLabel(150)) + IsEmpty(Control.getLabel(149)) + IsEmpty(Control.getLabel(148)) + IsEmpty(Control.getLabel(147)) + !IsEmpty(Control.getLabel(146))">146</onup>
-						<onup condition="IsEmpty(Control.getLabel(151)) + IsEmpty(Control.getLabel(150)) + IsEmpty(Control.getLabel(149)) + IsEmpty(Control.getLabel(148)) + IsEmpty(Control.getLabel(147)) + IsEmpty(Control.getLabel(146)) + !IsEmpty(Control.getLabel(145))">145</onup>
-						<onup condition="IsEmpty(Control.getLabel(151)) + IsEmpty(Control.getLabel(150)) + IsEmpty(Control.getLabel(149)) + IsEmpty(Control.getLabel(148)) + IsEmpty(Control.getLabel(147)) + IsEmpty(Control.getLabel(146)) + IsEmpty(Control.getLabel(145)) + !IsEmpty(Control.getLabel(144))">144</onup>
-						<onup condition="IsEmpty(Control.getLabel(151)) + IsEmpty(Control.getLabel(150)) + IsEmpty(Control.getLabel(149)) + IsEmpty(Control.getLabel(148)) + IsEmpty(Control.getLabel(147)) + IsEmpty(Control.getLabel(146)) + IsEmpty(Control.getLabel(145)) + IsEmpty(Control.getLabel(144)) + !IsEmpty(Control.getLabel(143))">143</onup>
-						<onup condition="IsEmpty(Control.getLabel(151)) + IsEmpty(Control.getLabel(150)) + IsEmpty(Control.getLabel(149)) + IsEmpty(Control.getLabel(148)) + IsEmpty(Control.getLabel(147)) + IsEmpty(Control.getLabel(146)) + IsEmpty(Control.getLabel(145)) + IsEmpty(Control.getLabel(144)) + IsEmpty(Control.getLabel(143)) + !IsEmpty(Control.getLabel(142))">142</onup>
-						<onup condition="IsEmpty(Control.getLabel(151)) + IsEmpty(Control.getLabel(150)) + IsEmpty(Control.getLabel(149)) + IsEmpty(Control.getLabel(148)) + IsEmpty(Control.getLabel(147)) + IsEmpty(Control.getLabel(146)) + IsEmpty(Control.getLabel(145)) + IsEmpty(Control.getLabel(144)) + IsEmpty(Control.getLabel(143)) + IsEmpty(Control.getLabel(142)) + !IsEmpty(Control.getLabel(141))">141</onup>
-						<onup condition="IsEmpty(Control.getLabel(151)) + IsEmpty(Control.getLabel(150)) + IsEmpty(Control.getLabel(149)) + IsEmpty(Control.getLabel(148)) + IsEmpty(Control.getLabel(147)) + IsEmpty(Control.getLabel(146)) + IsEmpty(Control.getLabel(145)) + IsEmpty(Control.getLabel(144)) + IsEmpty(Control.getLabel(143)) + IsEmpty(Control.getLabel(142)) + IsEmpty(Control.getLabel(141)) + !IsEmpty(Control.getLabel(140))">140</onup>
-						<ondown>300</ondown>
+						<onup>163</onup>
+						<ondown>103</ondown>
 						<width>160</width>
 						<height>50</height>
 						<texturenofocus>tile.png</texturenofocus>
@@ -962,8 +835,8 @@
 						<texturefocus>button.png</texturefocus>
 						<font>List_Settings</font>
 						<focusedcolor>black</focusedcolor>
-						<onup>8</onup>
-						<ondown></ondown>
+						<onup>166</onup>
+						<ondown>106</ondown>
 					</control>
 					<control type="button" id="306">
 						<description>next button</description>
@@ -976,10 +849,10 @@
 						<texturefocus>button.png</texturefocus>
 						<font>List_Settings</font>
 						<focusedcolor>black</focusedcolor>
-						<onup>8</onup>
-						<ondown></ondown>
+						<onup>167</onup>
+						<ondown>107</ondown>
 					</control>
-							<control type="button" id="300">
+					<control type="button" id="300">
 						<description>DONE button</description>
 						<width>105</width>
 						<height>50</height>
@@ -989,12 +862,10 @@
 						<font>List_Settings</font>
 						<align>center</align>
 						<aligny>center</aligny>
-						<onup>8</onup>
-						<ondown></ondown>
+						<onup>168</onup>
+						<ondown>108</ondown>
 						<focusedcolor>black</focusedcolor>
 					</control>
-
-
 				</control>
 			</control>
         </control>

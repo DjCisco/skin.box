@@ -1255,6 +1255,7 @@
 	</include>
 	<include name="MovieTvShowPanelItemLayout">
 		<itemlayout width="105" height="160">
+					
 			<!-- This Control Display the A Transparent Background behind the Movie or Tv Show Poster -->
 			<control type="image">
 				<width>100</width>
@@ -1298,25 +1299,81 @@
 				<left>40</left>
 				<width>60</width>
 				<height>60</height>
-				<texture>watched.png</texture>
+				<texture>OverlayWatchedPanel.png</texture>
 				<animation type="Focus" reversible="false">
 					<effect type="zoom" center="0,0" start="80" end="120" time="400" tween="back" easing="out" />
 					<effect type="fade" start="80" end="100" time="400" />
 				</animation>
-				<visible>[Container.Content(movies) + stringcompare(ListItem.Overlay,OverlayWatched.png)] | [!Container.Content(movies) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
+				<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
 			</control>
 			<!-- This Control Displays the Watching Icon on the Top Right Corner of an Item of the Panel -->
 			<control type="image">
 				<left>40</left>
 				<width>60</width>
 				<height>60</height>
-				<texture>watching.png</texture>
+				<texture>OverlayWatchingPanel.png</texture>
 				<animation type="Focus" reversible="false">
 					<effect type="zoom" center="0,0" start="80" end="120" time="400" tween="back" easing="out" />
 					<effect type="fade" start="80" end="100" time="400" />
 				</animation>
-				<visible>[Container.Content(movies) + ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)] | [!Container.Content(movies) + ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
+				<visible>ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
 			</control>
+			
+			
+				<control type="image">
+				<top>95</top>
+				<left>0</left>
+				<width>60</width>
+				<height>60</height>
+				<texture>Overlay3DPanel.png</texture>
+				<animation type="Focus" reversible="false">
+					<effect type="zoom" center="0,0" start="80" end="120" time="400" tween="back" easing="out" />
+					<effect type="fade" start="80" end="100" time="400" />
+				</animation>
+				<visible>ListItem.IsStereoscopic</visible>
+				</control>
+				
+				
+							<control type="image">
+				<top>95</top>
+				<left>0</left>
+				<width>60</width>
+				<height>60</height>
+				<texture>OverlayHDPanel.png</texture>
+				<animation type="Focus" reversible="false">
+					<effect type="zoom" center="0,0" start="80" end="120" time="400" tween="back" easing="out" />
+					<effect type="fade" start="80" end="100" time="400" />
+				</animation>
+				<visible>IntegerGreaterThan(ListItem.VideoResolution,699) + !ListItem.IsStereoscopic</visible>
+				</control>
+				
+											<control type="image">
+				<top>95</top>
+				<left>0</left>
+				<width>60</width>
+				<height>60</height>
+				<texture>Overlay4KPanel.png</texture>
+				<animation type="Focus" reversible="false">
+					<effect type="zoom" center="0,0" start="80" end="120" time="400" tween="back" easing="out" />
+					<effect type="fade" start="80" end="100" time="400" />
+				</animation>
+				<visible>StringCompare(ListItem.VideoResolution,4K) + !ListItem.IsStereoscopic</visible>
+				</control>
+				
+			<control type="image">
+				<left>40</left>
+				<width>60</width>
+				<height>60</height>
+				<texture>OverlayNewPanel.png</texture>
+				<animation type="Focus" reversible="false">
+					<effect type="zoom" center="0,0" start="80" end="120" time="400" tween="back" easing="out" />
+					<effect type="fade" start="80" end="100" time="400" />
+				</animation>
+				<visible>!stringcompare(ListItem.Overlay,OverlayWatched.png) + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.Label)]</visible>
+                    </control>
+			
+			
+
 		</itemlayout>
 	</include>
 	<include name="MovieTvShowPanelFocusedLayout">
@@ -1328,6 +1385,7 @@
 				<texture>button.png</texture>
 				<aspectratio>scale</aspectratio>
 			</control>
+
 			<!-- This Control displays the current poster once the item has been selected -->
 			<control type="image">
 				<left></left>
@@ -1369,12 +1427,12 @@
 				<top>-</top>
 				<width>60</width>
 				<height>60</height>
-				<texture>watched.png</texture>
+				<texture>OverlayWatchedPanel.png</texture>
 				<animation type="Focus" reversible="false">
 					<effect type="zoom" center="100,0" start="80" end="120" time="400" tween="back" easing="out" />
 					<effect type="fade" start="80" end="100" time="400" />
 				</animation>
-				<visible>[Container.Content(movies) + stringcompare(ListItem.Overlay,OverlayWatched.png)] | [!Container.Content(movies) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
+				<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
 			</control>
 			 <!-- This Control Displays the watching Icon -->
 			<control type="image">
@@ -1382,13 +1440,65 @@
 				<top>-</top>
 				<width>60</width>
 				<height>60</height>
-				<texture>watching.png</texture>
+				<texture>OverlayWatchingPanel.png</texture>
 				<animation type="Focus" reversible="false">
 					<effect type="zoom" center="100,0" start="80" end="120" time="400" tween="back" easing="out" />
 					<effect type="fade" start="80" end="100" time="400" />
 				</animation>
-				<visible>[Container.Content(movies) + ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)] | [!Container.Content(movies) + ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
+				<visible>ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png</visible>
 			</control>
+
+			
+			<control type="image">
+				<top>95</top>
+				<left>0</left>
+				<width>60</width>
+				<height>60</height>
+				<texture>Overlay3DPanel.png</texture>
+				<animation type="Focus" reversible="false">
+					<effect type="zoom" center="0,155" start="80" end="120" time="400" tween="back" easing="out" />
+					<effect type="fade" start="80" end="100" time="400" />
+				</animation>
+				<visible>ListItem.IsStereoscopic</visible>
+			</control>
+			<control type="image">
+				<top>95</top>
+				<left>0</left>
+				<width>60</width>
+				<height>60</height>
+				<texture>OverlayHDPanel.png</texture>
+				<animation type="Focus" reversible="false">
+					<effect type="zoom" center="0,155" start="80" end="120" time="400" tween="back" easing="out" />
+					<effect type="fade" start="80" end="100" time="400" />
+				</animation>
+				<visible>IntegerGreaterThan(ListItem.VideoResolution,699) + !ListItem.IsStereoscopic</visible>
+			</control>
+			
+						<control type="image">
+				<top>95</top>
+				<left>0</left>
+				<width>60</width>
+				<height>60</height>
+				<texture>Overlay4KPanel.png</texture>
+				<animation type="Focus" reversible="false">
+					<effect type="zoom" center="0,155" start="80" end="120" time="400" tween="back" easing="out" />
+					<effect type="fade" start="80" end="100" time="400" />
+				</animation>
+				<visible>StringCompare(ListItem.VideoResolution,4K) + !ListItem.IsStereoscopic</visible>
+			</control>
+			
+			<control type="image">
+				<left>40</left>
+				<top>-</top>
+				<width>60</width>
+				<height>60</height>
+				<texture>OverlayNewPanel.png</texture>
+				<animation type="Focus" reversible="false">
+					<effect type="zoom" center="100,0" start="80" end="120" time="400" tween="back" easing="out" />
+					<effect type="fade" start="80" end="100" time="400" />
+				</animation>
+				<visible>!stringcompare(ListItem.Overlay,OverlayWatched.png) + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.Label)]</visible>
+                    </control>
 		</focusedlayout>
 	</include>
 	<include name="ArtistAlbumPanelDescription">
