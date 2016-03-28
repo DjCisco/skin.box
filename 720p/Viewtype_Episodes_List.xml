@@ -155,22 +155,22 @@
                         <label>$INFO[ListItem.Label]</label>
 						<visible>IsEmpty(ListItem.Title)</visible>
 	                </control>
-                    <control type="image">
-                        <left>490</left>
-                        <top>13</top>
-                        <width>18</width>
-                        <height>15</height>
-                        <texture>watchedpanel.png</texture>
-                        <visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
-                    </control>
-                    <control type="image">
-                        <left>490</left>
-                        <top>13</top>
-                        <width>18</width>
-                        <height>15</height>
-                        <texture>watchingpanel.png</texture>
-                        <visible>ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
-                    </control>
+						<control type="image">
+							<left>480</left>
+							<width>45</width>
+							<height>45</height>
+							<bordersize>5</bordersize>
+							<texture>OverlayWatchedList.png</texture>
+							<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						</control>
+						<control type="image">
+							<left>480</left>
+							<width>45</width>
+							<height>45</height>
+							<bordersize>5</bordersize>
+							<texture>OverlayWatchingList.png</texture>
+							<visible>ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						</control>
                 </itemlayout>
                 <focusedlayout height="45" condition="!Skin.HasSetting(episodewidelist)">
                     <control type="image">
@@ -197,22 +197,22 @@
 						<selectedcolor>White</selectedcolor>
                         <label>$INFO[ListItem.Episode]</label>
                     </control>
-                    <control type="image">
-                        <left>490</left>
-                        <top>13</top>
-                        <width>18</width>
-                        <height>15</height>
-                        <texture>watchedpanel.png</texture>
-                        <visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
-                    </control>
-                    <control type="image">
-                        <left>490</left>
-                        <top>13</top>
-                        <width>18</width>
-                        <height>15</height>
-                        <texture>watchingpanel.png</texture>
-                        <visible>ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
-                    </control>
+						<control type="image">
+							<left>480</left>
+							<width>45</width>
+							<height>45</height>
+							<bordersize>5</bordersize>
+							<texture>OverlayWatchedList.png</texture>
+							<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						</control>
+						<control type="image">
+							<left>480</left>
+							<width>45</width>
+							<height>45</height>
+							<bordersize>5</bordersize>
+							<texture>OverlayWatchingList.png</texture>
+							<visible>ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						</control>
                     <control type="label">
                         <left>65</left>
                         <width>415</width>
@@ -251,22 +251,22 @@
                         <label>$INFO[ListItem.Label]</label>
 						<visible>IsEmpty(ListItem.Title)</visible>
                     </control>
-                    <control type="image">
-                        <left>840</left>
-						<top>7</top>
-						<width>18</width>
-						<height>15</height>
-                        <texture>watchedpanel.png</texture>
-                        <visible>[Container.Content(Episodes) + stringcompare(ListItem.Overlay,OverlayWatched.png)] | [Container.Content(TVShows) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
-                    </control>
-                    <control type="image">
-                        <left>840</left>
-						<top>7</top>
-						<width>18</width>
-						<height>15</height>
-                        <texture>watchingpanel.png</texture>
-                        <visible>Container.Content(Episodes) + ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
-                    </control>
+						<control type="image">
+							<left>823</left>
+							<width>42</width>
+							<height>42</height>
+							<bordersize>5</bordersize>
+							<texture>OverlayWatchedList.png</texture>
+							<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						</control>
+						<control type="image">
+							<left>823</left>
+							<width>42</width>
+							<height>42</height>
+							<bordersize>5</bordersize>
+							<texture>OverlayWatchingList.png</texture>
+							<visible>ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						</control>
 					<control type="label">
 							<left>870</left>
 							<width>120</width>
@@ -319,22 +319,24 @@
 						<aligny>center</aligny>
                         <label>$INFO[ListItem.Episode]</label>
                     </control>
-                    <control type="image">
-                        <left>840</left>
-						<top>7</top>
-						<width>18</width>
-						<height>15</height>
-                        <texture>watchedpanel.png</texture>
-                        <visible>[Container.Content(Episodes) + stringcompare(ListItem.Overlay,OverlayWatched.png)] | [Container.Content(TVShows) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
-                    </control>
-                    <control type="image">
-                        <left>840</left>
-						<top>7</top>
-						<width>18</width>
-						<height>15</height>
-                        <texture>watchingpanel.png</texture>
-                        <visible>Container.Content(Episodes) + ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
-                    </control>
+						<control type="image">
+							<top>10</top>
+							<left>823</left>
+							<width>42</width>
+							<height>42</height>
+							<bordersize>5</bordersize>
+							<texture>OverlayWatchedList.png</texture>
+							<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						</control>
+						<control type="image">
+							<top>10</top>
+							<left>823</left>
+							<width>42</width>
+							<height>42</height>
+							<bordersize>5</bordersize>
+							<texture>OverlayWatchingList.png</texture>
+							<visible>ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						</control>
                     <control type="label">
                         <left>65</left>
                         <width>790</width>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window id="135">
-    <defaultcontrol always="true">10</defaultcontrol>
-    <allowoverlay>yes</allowoverlay>
+    <defaultcontrol always="true">9001</defaultcontrol>
+     
     <controls>
         <control type="group">
             <visible>!Window.IsActive(visualisation)</visible>
@@ -128,69 +128,31 @@
                     <onright>9001</onright>
                     <onleft>9001</onleft>
                     <orientation>vertical</orientation>
-                    <control type="button" id="10">
-                        <description>Ok button</description>
-						<width>145</width>
-					    <label>186</label>
-						<font>Panel_Hint</font>
-                        <align>center</align>
-                    </control>
-                    <control type="button" id="11">
-                        <description>Cancel button</description>
-						<width>145</width>
-					    <label>222</label>
-						<font>Panel_Hint</font>
-                        <align>center</align>
-                    </control>
                     <control type="button" id="12">
-                        <description>Album Info button</description>
-						<textoffsetx>5</textoffsetx>
-						<width>145</width>
-					    <label>10523</label>
-						<font>Panel_Hint</font>
+                        <description>Album Info</description>
+							<textoffsetx>5</textoffsetx>
+							<width>145</width>
+							<label>31048</label>
+							<font>Panel_Hint</font>
                         <align>center</align>
                     </control>
                     <control type="button" id="13">
-                        <description>Poster button</description>
-						<width>145</width>
-						<font>Panel_Hint</font>
-                        <label>$LOCALIZE[31723]</label>
+                        <description>Thumbnail</description>
+							<width>145</width>
+							<label>31049</label>
+							<font>Panel_Hint</font>
+                        <align>center</align>
+                    </control>
+                    <control type="button" id="7">
+                        <description>Rating</description>
+							<textoffsetx>5</textoffsetx>
+							<width>145</width>
+							<label>38023</label>
+							<font>Panel_Hint</font>
                         <align>center</align>
                     </control>
                 </control>
-                <!-- Rating control -->
-				<control type="button" id="14">
-                    <description>Decrease Rating</description>
-                    <left>70</left>
-                    <top>427</top>
-                    <width>33</width>
-                    <height>22</height>
-					<align>right</align>
-                    <onclick>DecreaseRating</onclick>
-                    <texturenofocus>other_textures/arrowdownfo.png</texturenofocus>
-                    <texturefocus>other_textures/arrowdowng.png</texturefocus>
-                    <onleft>15</onleft>
-                    <onright>15</onright>
-                    <onup>13</onup>
-                    <ondown>10</ondown>
-                </control>
-                <!-- Rating control -->				
-                <control type="button" id="15">
-                    <description>Increase Rating</description>
-                    <left>110</left>
-                    <top>427</top>
-                    <width>33</width>
-                    <height>22</height>
-					<align>right</align>
-                    <onclick>IncreaseRating</onclick>
-                    <texturenofocus>other_textures/arrowupfo.png</texturenofocus>
-                    <texturefocus>other_textures/arrowupg.png</texturefocus>
-                    <onleft>14</onleft>
-                    <onright>14</onright>
-                    <onup>13</onup>
-                    <ondown>10</ondown>
-                </control>
-            </control>
+			</control>
         </control>
     </controls>
 </window>

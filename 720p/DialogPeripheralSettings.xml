@@ -1,6 +1,6 @@
 <window id="10150">
 	<defaultcontrol>28</defaultcontrol>
-	<allowoverlay>yes</allowoverlay>
+	 
 	<controls>
 		<include>GlobalOverlay</include>
 	

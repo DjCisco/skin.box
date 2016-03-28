@@ -2,7 +2,7 @@
 <window type="dialog" id="400">
 	<visible>Player.HasMedia + Window.IsActive(PlayerControls) + !Window.IsActive(FullscreenVideo) + !Window.IsActive(Visualisation)</visible>
     <defaultcontrol always="true">403</defaultcontrol>
-    <allowoverlay>yes</allowoverlay>
+     
     <controls>
         <control type="group">
 			<visible>Player.HasMedia</visible>

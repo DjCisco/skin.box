@@ -206,7 +206,15 @@ msgctxt "#31047"
 msgid "Hide"
 msgstr "Hide"
 
-#empty strings from id 31048 to 31204
+msgctxt "#31048"
+msgid "Album Info"
+msgstr ""
+
+msgctxt "#31049"
+msgid "Get Thumb"
+msgstr ""
+
+#empty strings from id 31050 to 31204
 
 msgctxt "#31205"
 msgid "EPG"

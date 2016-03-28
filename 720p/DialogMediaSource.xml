@@ -2,7 +2,7 @@
 <window id="129">
     <!-- Window to select and brosw for a path of a source -->
 	<defaultcontrol always="true">10</defaultcontrol>
-    <allowoverlay>yes</allowoverlay>
+     
     <controls>
         <include>GlobalOverlay</include>
 	       

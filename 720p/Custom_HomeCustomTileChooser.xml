@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="7777">
 	  <defaultcontrol>3</defaultcontrol>
-  <allowoverlay>yes</allowoverlay>
+   
   	<onunload>Skin.Reset(CustomHomeTile.Path)</onunload>
 	<onunload>Skin.Reset(CustomHomeTile.Type)</onunload>
 	<onunload>Skin.Reset(CustomHomeTile.Image)</onunload>

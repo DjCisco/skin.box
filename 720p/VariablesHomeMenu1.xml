@@ -228,51 +228,7 @@
 		<value condition="Skin.String(SubMenu1Tile1.Type,SkinSettings)">ActivateWindow(skinsettings)</value>		
 		<value>noop</value>
 	</variable>
-	<variable  name="SubMenu1Tile1.2ndAction">
-		<value condition="Skin.String(SubMenu1Tile1.Type,Favourite)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,PlaylistVideo)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,PlaylistAudio)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,addon)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,RecentylAddedMovies)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,RecentylAddedEpisodes)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,RecentylAddedAlbums)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,RecentylAddedMusicVideos)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,MusicLibrary)">back</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,VideoLibrary)">back</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,MovieLibrary)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,TVShowLibrary)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,MusicVideoLibrary)">back</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,MusicVideos)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,Artists)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,MovieActors)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,TvShowActors)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,Directors)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,Albums)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,Movies)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,TvShows)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,VideoPlaylists)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,MusicPlaylists)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,VideoAddons)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,MusicAddons)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,MusicVideos)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,MusicFiles)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,TvChannels)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,RadioChannels)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,EPG)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,Recordings)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,Timers)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,PlayDisc)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,EjectDisc)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,Weather)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,Favourites)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,Pictures)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,Programs)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,Settings)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,FileManager)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,Shutdown)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile1.Type,SkinSettings)">noop</value>		
-		<value>noop</value>
-	</variable>
+
 	<variable  name="SubMenu1Tile2.Label">
 		<value condition="Skin.String(SubMenu1Tile2.Type,Favourite)">$INFO[Skin.String(SubMenu1Tile2.Label)]</value>
 		<value condition="Skin.String(SubMenu1Tile2.Type,PlaylistVideo)">$INFO[Skin.String(SubMenu1Tile2.Label)]</value>
@@ -408,51 +364,7 @@
 		<value condition="Skin.String(SubMenu1Tile2.Type,SkinSettings)">ActivateWindow(skinsettings)</value>		
 		<value>noop</value>
 	</variable>
-	<variable  name="SubMenu1Tile2.2ndAction">
-		<value condition="Skin.String(SubMenu1Tile2.Type,Favourite)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,PlaylistVideo)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,PlaylistAudio)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,addon)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,RecentylAddedMovies)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,RecentylAddedEpisodes)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,RecentylAddedAlbums)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,RecentylAddedMusicVideos)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,MusicLibrary)">back</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,VideoLibrary)">back</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,MovieLibrary)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,TVShowLibrary)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,MusicVideoLibrary)">back</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,MusicVideos)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,Artists)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,MovieActors)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,TvShowActors)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,Directors)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,Albums)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,Movies)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,TvShows)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,VideoPlaylists)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,MusicPlaylists)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,VideoAddons)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,MusicAddons)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,MusicVideos)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,MusicFiles)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,TvChannels)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,RadioChannels)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,EPG)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,Recordings)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,Timers)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,PlayDisc)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,EjectDisc)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,Weather)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,Favourites)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,Pictures)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,Programs)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,Settings)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,FileManager)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,Shutdown)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile2.Type,SkinSettings)">noop</value>		
-		<value>noop</value>
-	</variable>
+
 	<variable  name="SubMenu1Tile3.Label">
 		<value condition="Skin.String(SubMenu1Tile3.Type,Favourite)">$INFO[Skin.String(SubMenu1Tile3.Label)]</value>
 		<value condition="Skin.String(SubMenu1Tile3.Type,PlaylistVideo)">$INFO[Skin.String(SubMenu1Tile3.Label)]</value>
@@ -588,51 +500,7 @@
 		<value condition="Skin.String(SubMenu1Tile3.Type,SkinSettings)">ActivateWindow(skinsettings)</value>		
 		<value>noop</value>
 	</variable>
-	<variable  name="SubMenu1Tile3.2ndAction">
-		<value condition="Skin.String(SubMenu1Tile3.Type,Favourite)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,PlaylistVideo)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,PlaylistAudio)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,addon)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,RecentylAddedMovies)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,RecentylAddedEpisodes)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,RecentylAddedAlbums)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,RecentylAddedMusicVideos)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,MusicLibrary)">back</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,VideoLibrary)">back</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,MovieLibrary)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,TVShowLibrary)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,MusicVideoLibrary)">back</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,MusicVideos)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,Artists)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,MovieActors)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,TvShowActors)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,Directors)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,Albums)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,Movies)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,TvShows)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,VideoPlaylists)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,MusicPlaylists)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,VideoAddons)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,MusicAddons)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,MusicVideos)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,MusicFiles)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,TvChannels)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,RadioChannels)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,EPG)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,Recordings)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,Timers)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,PlayDisc)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,EjectDisc)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,Weather)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,Favourites)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,Pictures)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,Programs)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,Settings)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,FileManager)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,Shutdown)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile3.Type,SkinSettings)">noop</value>		
-		<value>noop</value>
-	</variable>
+
 	<variable  name="SubMenu1Tile4.Label">
 		<value condition="Skin.String(SubMenu1Tile4.Type,Favourite)">$INFO[Skin.String(SubMenu1Tile4.Label)]</value>
 		<value condition="Skin.String(SubMenu1Tile4.Type,PlaylistVideo)">$INFO[Skin.String(SubMenu1Tile4.Label)]</value>
@@ -768,51 +636,7 @@
 		<value condition="Skin.String(SubMenu1Tile4.Type,SkinSettings)">ActivateWindow(skinsettings)</value>		
 		<value>noop</value>
 	</variable>
-	<variable  name="SubMenu1Tile4.2ndAction">
-		<value condition="Skin.String(SubMenu1Tile4.Type,Favourite)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,PlaylistVideo)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,PlaylistAudio)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,addon)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,RecentylAddedMovies)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,RecentylAddedEpisodes)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,RecentylAddedAlbums)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,RecentylAddedMusicVideos)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,MusicLibrary)">back</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,VideoLibrary)">back</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,MovieLibrary)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,TVShowLibrary)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,MusicVideoLibrary)">back</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,MusicVideos)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,Artists)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,MovieActors)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,TvShowActors)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,Directors)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,Albums)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,Movies)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,TvShows)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,VideoPlaylists)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,MusicPlaylists)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,VideoAddons)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,MusicAddons)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,MusicVideos)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,MusicFiles)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,TvChannels)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,RadioChannels)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,EPG)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,Recordings)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,Timers)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,PlayDisc)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,EjectDisc)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,Weather)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,Favourites)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,Pictures)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,Programs)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,Settings)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,FileManager)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,Shutdown)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile4.Type,SkinSettings)">noop</value>		
-		<value>noop</value>
-	</variable>
+
 	<variable  name="SubMenu1Tile5.Label">
 		<value condition="Skin.String(SubMenu1Tile5.Type,Favourite)">$INFO[Skin.String(SubMenu1Tile5.Label)]</value>
 		<value condition="Skin.String(SubMenu1Tile5.Type,PlaylistVideo)">$INFO[Skin.String(SubMenu1Tile5.Label)]</value>
@@ -948,52 +772,7 @@
 		<value condition="Skin.String(SubMenu1Tile5.Type,SkinSettings)">ActivateWindow(skinsettings)</value>		
 		<value>noop</value>
 	</variable>
-	<variable  name="SubMenu1Tile5.2ndAction">
-		<value condition="Skin.String(SubMenu1Tile5.Type,Favourite)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,PlaylistVideo)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,PlaylistAudio)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,addon)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,RecentylAddedMovies)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,RecentylAddedEpisodes)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,RecentylAddedAlbums)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,RecentylAddedMusicVideos)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,MusicLibrary)">back</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,VideoLibrary)">back</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,MovieLibrary)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,TVShowLibrary)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,MusicVideoLibrary)">back</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,MusicVideos)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,Artists)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,MovieActors)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,TvShowActors)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,Directors)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,Albums)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,Movies)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,TvShows)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,VideoPlaylists)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,MusicPlaylists)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,VideoAddons)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,MusicAddons)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,MusicVideos)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,MusicFiles)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,TvChannels)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,RadioChannels)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,EPG)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,Recordings)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,Timers)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,PlayDisc)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,EjectDisc)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,Weather)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,Favourites)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,Pictures)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,Programs)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,Settings)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,FileManager)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,Shutdown)">noop</value>
-		<value condition="Skin.String(SubMenu1Tile5.Type,SkinSettings)">noop</value>		
-		<value>noop</value>
-	</variable>
-	
+
 	<!-- Home Widget 1 Labels -->
 	<variable  name="HomeWidget1.Label">
 		<value condition="Skin.String(HomeWidget1.Type,RandomMovies)">$LOCALIZE[31738]</value>

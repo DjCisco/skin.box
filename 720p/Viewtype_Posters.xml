@@ -65,27 +65,68 @@
                         <texture>music_fanart_diffuse.png</texture>
 					    <aspectratio scalediffuse="false">scale</aspectratio>
                         <bordersize>5</bordersize>
-                     </control>
+					</control>
                     <control type="image">
                         <left>150</left>
                         <top>5</top>
                         <width>60</width>
                         <height>60</height>
-                        <texture>watched.png</texture>
+                        <texture>OverlayWatchedPanel.png</texture>
                         <animation type="Focus" reversible="false">
-                            <effect type="zoom" center="0,0" start="80" end="120" time="400" tween="back" easing="out" />
+                            <effect type="zoom" center="0,215" start="80" end="120" time="400" tween="back" easing="out" />
                             <effect type="fade" start="80" end="100" time="400" />
                         </animation>
-                        <visible>[Container.Content(Seasons) + stringcompare(ListItem.Overlay,OverlayWatched.png)] | [Container.Content(TVShows) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
+                        <visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+                    </control>
+					   <control type="image">
+                        <left>150</left>
+                        <top>5</top>
+                        <width>60</width>
+                        <height>60</height>
+                        <texture>OverlayWatchingPanel.png</texture>
+                        <animation type="Focus" reversible="false">
+                            <effect type="zoom" center="0,215" start="80" end="120" time="400" tween="back" easing="out" />
+                            <effect type="fade" start="80" end="100" time="400" />
+                        </animation>
+                        <visible>ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
                     </control>
 					<control type="image">
-                        <width>215</width>
-                        <height>315</height>
-                        <texture>new.png</texture>
-                        <colordiffuse>PanelDiffuse</colordiffuse>
-                        <bordersize>5</bordersize>
-                        <visible>Container.Content(TVShows) + !Skin.HasSetting(HideNewEpisodes) + !stringcompare(ListItem.Overlay,OverlayWatched.png) + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.Label)]</visible>
+                        <left>135</left>
+                        <top>5</top>
+                        <width>75</width>
+                        <height>75</height>
+                        <texture>OverlayNewPanel.png</texture>
+                        <animation type="Focus" reversible="false">
+                            <effect type="zoom" center="0,215" start="80" end="120" time="400" tween="back" easing="out" />
+                            <effect type="fade" start="80" end="100" time="400" />
+                        </animation>
+                        <visible>!stringcompare(ListItem.Overlay,OverlayWatched.png) + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.Label)]</visible>
                     </control>
+					<control type="image">
+				<top>250</top>
+				<left>5</left>
+				<width>60</width>
+				<height>60</height>
+				<texture>Overlay3DPanel.png</texture>
+					<visible>ListItem.IsStereoscopic</visible>
+			</control>
+			<control type="image">
+				<top>250</top>
+				<left>5</left>
+				<width>60</width>
+				<height>60</height>
+				<texture>OverlayHDPanel.png</texture>
+					<visible>IntegerGreaterThan(ListItem.VideoResolution,699) + !ListItem.IsStereoscopic</visible>
+			</control>
+			
+						<control type="image">
+				<top>250</top>
+				<left>5</left>
+				<width>60</width>
+				<height>60</height>
+				<texture>Overlay4KPanel.png</texture>
+				<visible>StringCompare(ListItem.VideoResolution,4K) + !ListItem.IsStereoscopic</visible>
+			</control>
 						
                 </itemlayout>
                 <focusedlayout width="220" height="315">
@@ -116,46 +157,59 @@
                         <width>215</width>
                         <height>315</height>
                         <texture>$INFO[ListItem.Icon]</texture>
+							<aspectratio scalediffuse="false">keep</aspectratio>
 						<bordersize>5</bordersize>
                         <visible>SubString(ListItem.Icon,default)</visible>
                     </control>
                     <control type="image">
-                        <left>151</left>
+                        <left>150</left>
                         <top>5</top>
                         <width>60</width>
                         <height>60</height>
-                        <texture>watched.png</texture>
-						  <animation type="Focus" reversible="false">
-                            <effect type="zoom" center="215,75" start="80" end="120" time="400" tween="back" easing="out" />
-                            <effect type="fade" start="80" end="100" time="400" />
-                        </animation>
-                
-                        <visible>[[Container.Content(Seasons) + stringcompare(ListItem.Overlay,OverlayWatched.png)] | [Container.Content(TVShows) + stringcompare(ListItem.Overlay,OverlayWatched.png)]] + !SubString(ListItem.Icon,default)</visible>
+                        <texture>OverlayWatchedPanel.png</texture>
+	                     <visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
                     </control>
                     <control type="image">
-                        <left>181</left>
-                        <width>18</width>
-                        <height>15</height>
-                        <texture>watchedpanel.png</texture>
-                        <animation type="Focus" reversible="false">
-                            <effect type="zoom" center="216,74" start="80" end="120" time="400" tween="back" easing="out" />
-                            <effect type="fade" start="80" end="100" time="400" />
-                        </animation>
-                        <visible>[[Container.Content(Seasons) + stringcompare(ListItem.Overlay,OverlayWatched.png)] | [Container.Content(TVShows) + stringcompare(ListItem.Overlay,OverlayWatched.png)]] + SubString(ListItem.Icon,default)</visible>
+                        <left>150</left>
+                        <top>5</top>
+                        <width>60</width>
+                        <height>60</height>
+                        <texture>OverlayWatchingPanel.png</texture>
+                         <visible>ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
                     </control>
                     <control type="image">
-                        <left>88</left>
-                        <top>130</top>
-                        <width>20</width>
-                        <height>20</height>
-                        <texture>new.png</texture>
-                        <animation type="Focus" reversible="false">
-                            <effect type="zoom" center="49,72" start="80" end="120" time="400" tween="back" easing="out" />
-                            <effect type="fade" start="80" end="100" time="400" />
-                        </animation>
-                        <visible>Container.Content(TVShows) + !Skin.HasSetting(HideNewEpisodes) + !stringcompare(ListItem.Overlay,OverlayWatched.png) + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.Label)]</visible>
+                        <left>135</left>
+                        <top>5</top>
+                        <width>75</width>
+                        <height>75</height>
+                        <texture>OverlayNewPanel.png</texture>
+                        <visible>!stringcompare(ListItem.Overlay,OverlayWatched.png) + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.Label)]</visible>
                     </control>
-					
+					<control type="image">
+				<top>250</top>
+				<left>5</left>
+				<width>60</width>
+				<height>60</height>
+				<texture>Overlay3DPanel.png</texture>
+					<visible>ListItem.IsStereoscopic</visible>
+			</control>
+			<control type="image">
+				<top>250</top>
+				<left>5</left>
+				<width>60</width>
+				<height>60</height>
+				<texture>OverlayHDPanel.png</texture>
+					<visible>IntegerGreaterThan(ListItem.VideoResolution,699) + !ListItem.IsStereoscopic</visible>
+			</control>
+			
+						<control type="image">
+				<top>250</top>
+				<left>5</left>
+				<width>60</width>
+				<height>60</height>
+				<texture>Overlay4KPanel.png</texture>
+				<visible>StringCompare(ListItem.VideoResolution,4K) + !ListItem.IsStereoscopic</visible>
+			</control>
 					
 					
 								

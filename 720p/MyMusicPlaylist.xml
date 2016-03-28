@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window id="500">
     <defaultcontrol always="true">503</defaultcontrol>
-    <allowoverlay>yes</allowoverlay>
+     
     <views>503</views>
     <controls>
         <include>SkinFanart</include>

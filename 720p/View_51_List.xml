@@ -198,8 +198,8 @@
             </control>
 			<!--This control defines the list that will display the items -->
 			<control type="list" id="51">
-                <visible>[[Window.IsActive(videolibrary) | Window.IsActive(musiclibrary)] + Container.Content(addons)] | [[Window.IsActive(Programs) | Window.IsActive(Pictures) | Window.IsActive(addonbrowser)] + !IsEmpty(Container.FolderName) ]</visible>
-                <left>370</left>
+                <include>ListInfoVisibility</include>
+				<left>370</left>
                 <top>290</top>
                 <width>880</width>
                 <height>315</height>

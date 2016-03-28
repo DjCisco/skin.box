@@ -1,6 +1,8 @@
 <window>
 	<allowoverlay>no</allowoverlay>
 	<defaultcontrol always="false">101</defaultcontrol>
+	<onload>Skin.ToggleSetting(showLyricsDialog)</onload>
+	<onunload>Skin.Reset(showLyricsDialog)</onunload>
 	<coordinates>
 		<system>1</system>
 		<left>0</left>
@@ -8,12 +10,14 @@
 	</coordinates>
 	<controls>
 		<control type="group">
-			<!--
+			<visible>Skin.HasSetting(showLyricsDialog) + !Window.IsVisible(AddonSettings)</visible>
+		
+	
 			
 			<animation effect="fade" start="0" end="100" time="300" tween="quadratic" easing="out" condition="!Player.ShowCodec">WindowOpen</animation>
 			<animation effect="fade" start="0" end="100" time="300" delay="0" tween="quadratic" easing="out" condition="Player.ShowCodec">WindowOpen</animation>
 			<animation effect="fade" start="100" end="0" time="300" tween="quadratic" easing="out">WindowClose</animation>
-			-->
+	
 			
 			<!--XBMC Lyrics Label-->			
 			<control type="label">

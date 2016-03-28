@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window id="115">
     <defaultcontrol always="true">901</defaultcontrol>
-    <allowoverlay>yes</allowoverlay>
+     
     <visible>[VideoPlayer.IsFullscreen | Window.IsVisible(visualisation)] + [Player.Seeking | Player.DisplayAfterSeek | Player.paused | Player.Forwarding | Player.rewinding]</visible>
 	<controls>
         <control type="group">

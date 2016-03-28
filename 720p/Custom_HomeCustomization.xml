@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="3333">
 	  <defaultcontrol>1000</defaultcontrol>
-  <allowoverlay>yes</allowoverlay>
 	<onload>SetFocus(1000)</onload>
 	<onunload>Skin.Reset(showHomeCustomizationHiddenMenu)</onunload>
 	<controls>

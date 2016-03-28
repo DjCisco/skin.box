@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window id="146">
     <defaultcontrol always="true">9000</defaultcontrol>
-    <allowoverlay>yes</allowoverlay>
+     
     <controls>
 		<control type="grouplist" id="9000">
 		
@@ -24,7 +24,7 @@
 			<top>615</top>
 			<width>1210</width>
 			<height>45</height>
-			<itemgap>5</itemgap>
+			<itemgap>6</itemgap>
 			<onup>noop</onup>
 			<ondown>noop</ondown>
 			<onright>9000</onright>
@@ -32,7 +32,7 @@
 			<orientation>horizontal</orientation>
 			<control type="button" id="6">
 				<description>Install Uninstall Addon button</description>
-				<width>146</width>
+				<width>160</width>
 				<height>40</height>
 				<label>24022</label>
 				<font>Panel_Hint</font>
@@ -44,7 +44,7 @@
 			</control>
 			<control type="button" id="7">
 				<description>Enbale Disable Addon button</description>
-				<width>146</width>
+				<width>160</width>
 				<height>40</height>
 				<label>24021</label>
 				<font>Panel_Hint</font>
@@ -56,7 +56,7 @@
 			</control>
 			<control type="button" id="9">
 				<description>Addon Settings</description>
-				<width>146</width>
+				<width>160</width>
 				<height>40</height>
 				<label>24020</label>
 				<font>Panel_Hint</font>
@@ -69,7 +69,7 @@
 			</control>
 			<control type="button" id="8">
 				<description>Update Addon button</description>
-				<width>146</width>
+				<width>160</width>
 				<height>40</height>
 				<label>24069</label>
 				<textoffsetx>10</textoffsetx>
@@ -81,7 +81,7 @@
 			</control>
 			<control type="button" id="10">
 				<description>Changelog button</description>
-				<width>146</width>
+				<width>160</width>
 				<height>40</height>
 				<label>24036</label>
 				<font>Panel_Hint</font>
@@ -91,21 +91,9 @@
 				<focusedcolor>white</focusedcolor>				
 				<textoffsetx>10</textoffsetx>
 			</control>
-			<control type="button" id="11">
-				<description>Cancel button</description>
-				<width>146</width>
-				<height>40</height>
-				<label>24048</label>
-				<font>Panel_Hint</font>
-				<align>center</align>
-				<texturenofocus>tile.png</texturenofocus>
-				<texturefocus>button.png</texturefocus>
-				<focusedcolor>white</focusedcolor>				
-				<textoffsetx>10</textoffsetx>
-			</control>
 			<control type="button" id="12">
 				<description>Launch Button</description>
-				<width>146</width>
+				<width>160</width>
 				<height>40</height>
 				<label>518</label>
 				<font>Panel_Hint</font>
@@ -115,11 +103,11 @@
 				<focusedcolor>white</focusedcolor>				
 				<textoffsetx>10</textoffsetx>
 			</control>
-			<control type="button" id="13">
-				<description>Cancel button</description>
-				<width>148</width>
+			<control type="radiobutton" id="13">
+				<description>Auto Update Button</description>
+				<width>214</width>
 				<height>40</height>
-				<label>222</label>
+				<label>21340</label>
 				<font>Panel_Hint</font>
 				<align>center</align>
 				<onclick>back</onclick>

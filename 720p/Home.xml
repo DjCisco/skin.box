@@ -3,7 +3,7 @@
     <defaultcontrol always="true">100</defaultcontrol>
 	<onload>Skin.Reset(showHomeHiddenMenu)</onload>
 	<onunload>Skin.Reset(showHomeHiddenMenu)</onunload>
-	<allowoverlay>yes</allowoverlay>
+	 
 	<controls>
 	<include>SkinBackground</include>
 	<include>HomeMenuBackground</include>
@@ -59,17 +59,77 @@
 				<effect type="slide" start="+1500,0" end="0,0" time="300" />
 			</animation>
 			
-			<include>SubMenu1</include>
-			<include>SubMenu2</include>
-			<include>SubMenu3</include>
-			<include>SubMenu4</include>
-			<include>SubMenu5</include>
-			<include>SubMenu6</include>
-			<include>SubMenu7</include>
-			<include>SubMenu8</include>
-			<include>SubMenu9</include>
-			<include>SubMenu10</include>
-	
+			<include name="SubMenu">
+				<param name="MenuNr" value="1" />
+				<param name="SubMenuId" value="1000" />
+				<param name="PanelId" value="1001" />
+				<param name="PosterWidgetId" value="1003" />
+				<param name="ThumbWidgetId" value="1004" />
+			</include>
+			<include name="SubMenu">
+				<param name="MenuNr" value="2" />
+				<param name="SubMenuId" value="2000" />
+				<param name="PanelId" value="2001" />
+				<param name="PosterWidgetId" value="2003" />
+				<param name="ThumbWidgetId" value="2004" />
+			</include>
+			<include name="SubMenu">
+				<param name="MenuNr" value="3" />
+				<param name="SubMenuId" value="3000" />
+				<param name="PanelId" value="3001" />
+				<param name="PosterWidgetId" value="3003" />
+				<param name="ThumbWidgetId" value="3004" />
+			</include>
+			<include name="SubMenu">
+				<param name="MenuNr" value="4" />
+				<param name="SubMenuId" value="4000" />
+				<param name="PanelId" value="4001" />
+				<param name="PosterWidgetId" value="4003" />
+				<param name="ThumbWidgetId" value="4004" />
+			</include>
+			<include name="SubMenu">
+				<param name="MenuNr" value="5" />
+				<param name="SubMenuId" value="5000" />
+				<param name="PanelId" value="5001" />
+				<param name="PosterWidgetId" value="5003" />
+				<param name="ThumbWidgetId" value="5004" />
+			</include>
+			<include name="SubMenu">
+				<param name="MenuNr" value="6" />
+				<param name="SubMenuId" value="6000" />
+				<param name="PanelId" value="6001" />
+				<param name="PosterWidgetId" value="6003" />
+				<param name="ThumbWidgetId" value="6004" />
+			</include>
+			<include name="SubMenu">
+				<param name="MenuNr" value="7" />
+				<param name="SubMenuId" value="7000" />
+				<param name="PanelId" value="7001" />
+				<param name="PosterWidgetId" value="7003" />
+				<param name="ThumbWidgetId" value="7004" />
+			</include>
+			<include name="SubMenu">
+				<param name="MenuNr" value="8" />
+				<param name="SubMenuId" value="8000" />
+				<param name="PanelId" value="8001" />
+				<param name="PosterWidgetId" value="8003" />
+				<param name="ThumbWidgetId" value="8004" />
+			</include>
+			<include name="SubMenu">
+				<param name="MenuNr" value="9" />
+				<param name="SubMenuId" value="9000" />
+				<param name="PanelId" value="9001" />
+				<param name="PosterWidgetId" value="9003" />
+				<param name="ThumbWidgetId" value="9004" />
+			</include>
+			<include name="SubMenu">
+				<param name="MenuNr" value="10" />
+				<param name="SubMenuId" value="100000" />
+				<param name="PanelId" value="10001" />
+				<param name="PosterWidgetId" value="10003" />
+				<param name="ThumbWidgetId" value="10004" />
+			</include>
+			
 			<include>Widget1</include>
 			<include>Widget2</include>
 			<include>Widget3</include>

@@ -60,10 +60,15 @@
 		<visible>Container.Content(Songs) | SubString(Container.FolderPath,musicdb://singles) | Window.IsActive(musicplaylist)</visible>
 	</include>
 	<include name="ListVisibility">
-		 <visible>[
+		 <visible>
+		 
+		 !Container.Content(addons) + [
+		 
+		 [
 				!SubString(Container.FolderPath,videodb://) + 
 				!SubString(Container.FolderPath,musicdb://) + 
 				!SubString(Container.FolderPath,library://) + 
+				!SubString(Container.FolderPath,addons://) + 
 				!IsEmpty(Container.FolderName)
 				] | Container.Content(directors) | 
 					Container.Content(actors)| 
@@ -75,10 +80,18 @@
 					Window.IsActive(programs) |
 					SubString(Container.FolderPath,playlistvideo://) |
 					SubString(Container.FolderPath,library://music/top100)
+					
+					]
 				
 		</visible>
 	</include>
-	
+	<include name="ListInfoVisibility">
+		<visible>
+		[[Window.IsActive(videolibrary) | Window.IsActive(musiclibrary) | Window.IsVisible(addonbrowser)] + Container.Content(addons)] | 
+			[[Window.IsActive(Programs) | Window.IsActive(Pictures) ] + !IsEmpty(Container.FolderName) ]
+		</visible>
+		   
+	</include>
 	<include name="ThumbsVisibility">
 		<visible>	[SubString(Container.FolderPath,plugin://) | 
 					SubString(Container.FolderPath,playlistvideo://)| 
@@ -97,7 +110,6 @@
 		</visible>
 				
 	</include>
-	
 	<include name="PanelsVisibility">
 		<visible>	
 				[Window.IsVisible(videolibrary) | 
@@ -111,13 +123,12 @@
 				StringCompare(Container.FolderPath,library://video/tvshows/) | 
 				StringCompare(Container.FolderPath,videodb://musicvideos/) | 
 				StringCompare(Container.FolderPath,library://video/musicvideos/) | 
-				StringCompare(Container.FolderPath,library://music/musicvideos/)] 
+				StringCompare(Container.FolderPath,library://music/musicvideos/) |
+	
+				[!Container.Content(addons) + Window.IsVisible(addonbrowser)]
+				] 
 			</visible>
     </include>          
-	
-	
-	
-	
 	<include name="PVRSideMenu">
 		<control type="image">
 				<visible>Skin.HasSetting(showViewOptions)</visible>
@@ -1250,6 +1261,7 @@
 	</include>
 	<include name="MovieTvShowPanelItemLayout">
 		<itemlayout width="105" height="160">
+					
 			<!-- This Control Display the A Transparent Background behind the Movie or Tv Show Poster -->
 			<control type="image">
 				<width>100</width>
@@ -1293,25 +1305,81 @@
 				<left>40</left>
 				<width>60</width>
 				<height>60</height>
-				<texture>watched.png</texture>
+				<texture>OverlayWatchedPanel.png</texture>
 				<animation type="Focus" reversible="false">
 					<effect type="zoom" center="0,0" start="80" end="120" time="400" tween="back" easing="out" />
 					<effect type="fade" start="80" end="100" time="400" />
 				</animation>
-				<visible>[Container.Content(movies) + stringcompare(ListItem.Overlay,OverlayWatched.png)] | [!Container.Content(movies) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
+				<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
 			</control>
 			<!-- This Control Displays the Watching Icon on the Top Right Corner of an Item of the Panel -->
 			<control type="image">
 				<left>40</left>
 				<width>60</width>
 				<height>60</height>
-				<texture>watching.png</texture>
+				<texture>OverlayWatchingPanel.png</texture>
 				<animation type="Focus" reversible="false">
 					<effect type="zoom" center="0,0" start="80" end="120" time="400" tween="back" easing="out" />
 					<effect type="fade" start="80" end="100" time="400" />
 				</animation>
-				<visible>[Container.Content(movies) + ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)] | [!Container.Content(movies) + ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
+				<visible>ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
 			</control>
+			
+			
+				<control type="image">
+				<top>95</top>
+				<left>0</left>
+				<width>60</width>
+				<height>60</height>
+				<texture>Overlay3DPanel.png</texture>
+				<animation type="Focus" reversible="false">
+					<effect type="zoom" center="0,0" start="80" end="120" time="400" tween="back" easing="out" />
+					<effect type="fade" start="80" end="100" time="400" />
+				</animation>
+				<visible>ListItem.IsStereoscopic</visible>
+				</control>
+				
+				
+							<control type="image">
+				<top>95</top>
+				<left>0</left>
+				<width>60</width>
+				<height>60</height>
+				<texture>OverlayHDPanel.png</texture>
+				<animation type="Focus" reversible="false">
+					<effect type="zoom" center="0,0" start="80" end="120" time="400" tween="back" easing="out" />
+					<effect type="fade" start="80" end="100" time="400" />
+				</animation>
+				<visible>IntegerGreaterThan(ListItem.VideoResolution,699) + !ListItem.IsStereoscopic</visible>
+				</control>
+				
+											<control type="image">
+				<top>95</top>
+				<left>0</left>
+				<width>60</width>
+				<height>60</height>
+				<texture>Overlay4KPanel.png</texture>
+				<animation type="Focus" reversible="false">
+					<effect type="zoom" center="0,0" start="80" end="120" time="400" tween="back" easing="out" />
+					<effect type="fade" start="80" end="100" time="400" />
+				</animation>
+				<visible>StringCompare(ListItem.VideoResolution,4K) + !ListItem.IsStereoscopic</visible>
+				</control>
+				
+			<control type="image">
+				<left>40</left>
+				<width>60</width>
+				<height>60</height>
+				<texture>OverlayNewPanel.png</texture>
+				<animation type="Focus" reversible="false">
+					<effect type="zoom" center="0,0" start="80" end="120" time="400" tween="back" easing="out" />
+					<effect type="fade" start="80" end="100" time="400" />
+				</animation>
+				<visible>!stringcompare(ListItem.Overlay,OverlayWatched.png) + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.Label)]</visible>
+                    </control>
+			
+			
+
 		</itemlayout>
 	</include>
 	<include name="MovieTvShowPanelFocusedLayout">
@@ -1323,6 +1391,7 @@
 				<texture>button.png</texture>
 				<aspectratio>scale</aspectratio>
 			</control>
+
 			<!-- This Control displays the current poster once the item has been selected -->
 			<control type="image">
 				<left></left>
@@ -1364,12 +1433,12 @@
 				<top>-</top>
 				<width>60</width>
 				<height>60</height>
-				<texture>watched.png</texture>
+				<texture>OverlayWatchedPanel.png</texture>
 				<animation type="Focus" reversible="false">
 					<effect type="zoom" center="100,0" start="80" end="120" time="400" tween="back" easing="out" />
 					<effect type="fade" start="80" end="100" time="400" />
 				</animation>
-				<visible>[Container.Content(movies) + stringcompare(ListItem.Overlay,OverlayWatched.png)] | [!Container.Content(movies) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
+				<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
 			</control>
 			 <!-- This Control Displays the watching Icon -->
 			<control type="image">
@@ -1377,13 +1446,65 @@
 				<top>-</top>
 				<width>60</width>
 				<height>60</height>
-				<texture>watching.png</texture>
+				<texture>OverlayWatchingPanel.png</texture>
 				<animation type="Focus" reversible="false">
 					<effect type="zoom" center="100,0" start="80" end="120" time="400" tween="back" easing="out" />
 					<effect type="fade" start="80" end="100" time="400" />
 				</animation>
-				<visible>[Container.Content(movies) + ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)] | [!Container.Content(movies) + ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
+				<visible>ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png</visible>
 			</control>
+
+			
+			<control type="image">
+				<top>95</top>
+				<left>0</left>
+				<width>60</width>
+				<height>60</height>
+				<texture>Overlay3DPanel.png</texture>
+				<animation type="Focus" reversible="false">
+					<effect type="zoom" center="0,155" start="80" end="120" time="400" tween="back" easing="out" />
+					<effect type="fade" start="80" end="100" time="400" />
+				</animation>
+				<visible>ListItem.IsStereoscopic</visible>
+			</control>
+			<control type="image">
+				<top>95</top>
+				<left>0</left>
+				<width>60</width>
+				<height>60</height>
+				<texture>OverlayHDPanel.png</texture>
+				<animation type="Focus" reversible="false">
+					<effect type="zoom" center="0,155" start="80" end="120" time="400" tween="back" easing="out" />
+					<effect type="fade" start="80" end="100" time="400" />
+				</animation>
+				<visible>IntegerGreaterThan(ListItem.VideoResolution,699) + !ListItem.IsStereoscopic</visible>
+			</control>
+			
+						<control type="image">
+				<top>95</top>
+				<left>0</left>
+				<width>60</width>
+				<height>60</height>
+				<texture>Overlay4KPanel.png</texture>
+				<animation type="Focus" reversible="false">
+					<effect type="zoom" center="0,155" start="80" end="120" time="400" tween="back" easing="out" />
+					<effect type="fade" start="80" end="100" time="400" />
+				</animation>
+				<visible>StringCompare(ListItem.VideoResolution,4K) + !ListItem.IsStereoscopic</visible>
+			</control>
+			
+			<control type="image">
+				<left>40</left>
+				<top>-</top>
+				<width>60</width>
+				<height>60</height>
+				<texture>OverlayNewPanel.png</texture>
+				<animation type="Focus" reversible="false">
+					<effect type="zoom" center="100,0" start="80" end="120" time="400" tween="back" easing="out" />
+					<effect type="fade" start="80" end="100" time="400" />
+				</animation>
+				<visible>!stringcompare(ListItem.Overlay,OverlayWatched.png) + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.Label)]</visible>
+                    </control>
 		</focusedlayout>
 	</include>
 	<include name="ArtistAlbumPanelDescription">
@@ -1709,6 +1830,1158 @@
 			<animation type="Conditional" condition="Window.IsActive(151) | Window.IsActive(138) | Window.IsActive(107)">
 				<effect type="slide" time="300" end="0,40" easing="out" tween="cubic"/>
 			</animation>
+			<control type="grouplist">
+				<top>80</top>
+					
+				<visible>false</visible>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Media Window</label>
+				<visible>Window.IsMedia()</visible>
+			</control>
+						
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Player Content: Music Videos</label>
+				<visible>VideoPlayer.Content(musicvideos)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Player Content: Movies</label>
+				<visible>VideoPlayer.Content(movies)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Player Content: Episodes</label>
+				<visible>VideoPlayer.Content(episodes)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Player Content: Live Tv</label>
+				<visible>VideoPlayer.Content(livetv)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Player Content: Files</label>
+				<visible>VideoPlayer.Content(files)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Player Content: Music Videos</label>
+				<visible>VideoPlayer.Content(musicvideos)</visible>
+			</control>
+					
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Player: Media</label>
+				<visible>Player.HasMedia</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Player: Video</label>
+				<visible>Player.HasVideo</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Player: Audio</label>
+				<visible>Player.HasAudioo</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Player: Internet Stream</label>
+				<visible>Player.IsInternetStream</visible>
+			</control>
+			
+			<!-- Content Labels -->
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Files</label>
+				<visible>Container.Content(files)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Pictures</label>
+				<visible>Container.Content(pictures)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Movies</label>
+				<visible>Container.Content(movies)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Tv Shows</label>
+				<visible>Container.Content(tvshows)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Songs</label>
+				<visible>Container.Content(songs)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Albums</label>
+				<visible>Container.Content(albums)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Music Videos</label>
+				<visible>Container.Content(musicvideos)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: artists</label>
+				<visible>Container.Content(artists)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Years</label>
+				<visible>Container.Content(years)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Genres</label>
+				<visible>Container.Content(genres)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Playlists</label>
+				<visible>Container.Content(playlists)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Seasons</label>
+				<visible>Container.Content(seasons)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Episodes</label>
+				<visible>Container.Content(episodes)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Actors</label>
+				<visible>Container.Content(actors)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Plugins</label>
+				<visible>Container.Content(plugins)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Studios</label>
+				<visible>Container.Content(studios)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Directors</label>
+				<visible>Container.Content(directors)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: tags</label>
+				<visible>Container.Content(tags)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Sets</label>
+				<visible>Container.Content(sets)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Add-Ons</label>
+				<visible>Container.Content(addons)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF00FF00</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Content: Pictures</label>
+				<visible>Container.Content(pictures)</visible>
+			</control>
+			
+			<!-- Window labels -->
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>AddonBrowser.xml</label>
+				<visible>Window.IsVisible(AddonBrowser.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>CustomSettings.xml</label>
+				<visible>Window.IsVisible(CustomSettings.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>FileManager.xml</label>
+				<visible>Window.IsVisible(FileManager.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Home.xml</label>
+				<visible>Window.IsVisible(Home.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>LoginScreen.xml</label>
+				<visible>Window.IsVisible(LoginScreen.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>MyMusicNav.xml</label>
+				<visible>Window.IsVisible(MyMusicNav.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>MyMusicPlaylist.xml</label>
+				<visible>Window.IsVisible(MyMusicPlaylist.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>MyMusicPlaylistEditor.xml</label>
+				<visible>Window.IsVisible(MyMusicPlaylistEditor.xml)</visible>
+			</control>
+
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>MyPics.xml</label>
+				<visible>Window.IsVisible(MyPics.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>MyPrograms.xml</label>
+				<visible>Window.IsVisible(MyPrograms.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>MyPVR.xml</label>
+				<visible>Window.IsVisible(MyPVR.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>MyVideoNav.xml</label>
+				<visible>Window.IsVisible(MyVideoNav.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>MyVideoPlaylist.xml</label>
+				<visible>Window.IsVisible(MyVideoPlaylist.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>MyWeather.xml</label>
+				<visible>Window.IsVisible(MyWeather.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>Settings.xml</label>
+				<visible>Window.IsVisible(Settings.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>SettingsCategory.xml</label>
+				<visible>Window.IsVisible(SettingsCategory.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>SettingsProfile.xml</label>
+				<visible>Window.IsVisible(SettingsProfile.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>VideoFullScreen.xml</label>
+				<visible>Window.IsVisible(VideoFullScreen.xml)</visible>
+			</control>
+
+			<!-- Dialog labels -->
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogAddonInfo.xml</label>
+				<visible>Window.IsVisible(DialogAddonInfo.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogAddonSettings.xml</label>
+				<visible>Window.IsVisible(DialogAddonSettings.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogAlbumInfo.xml</label>
+				<visible>Window.IsVisible(DialogAlbumInfo.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogBusy.xml</label>
+				<visible>Window.IsVisible(DialogBusy.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogButtonMenu.xml</label>
+				<visible>Window.IsVisible(DialogButtonMenu.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogContentSettings.xml</label>
+				<visible>Window.IsVisible(DialogContentSettings.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogContextMenu.xml</label>
+				<visible>Window.IsVisible(DialogContextMenu.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogExtendedProgressBar.xml</label>
+				<visible>Window.IsVisible(DialogExtendedProgressBar.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogFavourites.xml</label>
+				<visible>Window.IsVisible(DialogFavourites.xml)</visible>
+			</control>
+
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogFullScreenInfo.xml</label>
+				<visible>Window.IsVisible(DialogFullScreenInfo.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogKaiToast.xml</label>
+				<visible>Window.IsVisible(DialogKaiToast.xml)</visible>
+			</control>
+
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogKeyboard.xml</label>
+				<visible>Window.IsVisible(DialogKeyboard.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogMediaSource.xml</label>
+				<visible>Window.IsVisible(DialogMediaSource.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogMusicScan.xml</label>
+				<visible>Window.IsVisible(DialogMusicScan.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogMuteBug.xml</label>
+				<visible>Window.IsVisible(DialogMuteBug.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogNetworkSetup.xml</label>
+				<visible>Window.IsVisible(DialogNetworkSetup.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogNumeric.xml</label>
+				<visible>Window.IsVisible(DialogNumeric.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogOK.xml</label>
+				<visible>Window.IsVisible(DialogOK.xml)</visible>
+			</control>
+
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogPeripheralSettings.xml</label>
+				<visible>Window.IsVisible(DialogPeripheralSettings.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogPictureInfo.xml</label>
+				<visible>Window.IsVisible(DialogPictureInfo.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogProgress.xml</label>
+				<visible>Window.IsVisible(DialogProgress.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogPVRChannelManager.xml</label>
+				<visible>Window.IsVisible(DialogPVRChannelManager.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogPVRChannelsOSD.xml</label>
+				<visible>Window.IsVisible(DialogPVRChannelsOSD.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogPVRGroupManager.xml</label>
+				<visible>Window.IsVisible(DialogPVRGroupManager.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogPVRGuideOSD.xml</label>
+				<visible>Window.IsVisible(DialogPVRGuideOSD.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogPVRGuideSearch.xml</label>
+				<visible>Window.IsVisible(DialogPVRGuideSearch.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogPVRTimerSettings.xml</label>
+				<visible>Window.IsVisible(DialogPVRTimerSettings.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogSeekbar.xml</label>
+				<visible>Window.IsVisible(DialogSeekbar.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogSelect.xml</label>
+				<visible>Window.IsVisible(DialogSelect.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogSlider.xml</label>
+				<visible>Window.IsVisible(DialogSlider.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogSongInfo.xml</label>
+				<visible>Window.IsVisible(DialogSongInfo.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogTextViewer.xml</label>
+				<visible>Window.IsVisible(DialogTextViewer.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogVideoInfo.xml</label>
+				<visible>Window.IsVisible(DialogVideoInfo.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogVideoScan.xml</label>
+				<visible>Window.IsVisible(DialogVideoScan.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogVolumeBar.xml</label>
+				<visible>Window.IsVisible(DialogVolumeBar.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>DialogYesNo.xml</label>
+				<visible>Window.IsVisible(DialogYesNo.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>FileBrowser.xml</label>
+				<visible>Window.IsVisible(FileBrowser.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>LockSettings.xml</label>
+				<visible>Window.IsVisible(LockSettings.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>MusicOSD.xml</label>
+				<visible>Window.IsVisible(MusicOSD.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>MusicVisualisation.xml</label>
+				<visible>Window.IsVisible(MusicVisualisation.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>PlayerControls.xml</label>
+				<visible>Window.IsVisible(PlayerControls.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>ProfileSettings.xml</label>
+				<visible>Window.IsVisible(ProfileSettings.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>SettingsScreenCalibration.xml</label>
+				<visible>Window.IsVisible(SettingsScreenCalibration.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>SettingsSystemInfo.xml</label>
+				<visible>Window.IsVisible(SettingsSystemInfo.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>SlideShow.xml</label>
+				<visible>Window.IsVisible(SlideShow.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>SmartPlaylistEditor.xml</label>
+				<visible>Window.IsVisible(SmartPlaylistEditor.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>SmartPlaylistRule.xml</label>
+				<visible>Window.IsVisible(SmartPlaylistRule.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>VideoOSD.xml</label>
+				<visible>Window.IsVisible(VideoOSD.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>VideoOSDBookmarks.xml</label>
+				<visible>Window.IsVisible(VideoOSDBookmarks.xml)</visible>
+			</control>
+
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<align>left</align>
+				<label>VideoOSDSettings.xml</label>
+				<visible>Window.IsVisible(VideoOSDSettings.xml)</visible>
+			</control>
+			
+			
+			
+			<!-- Control label -->
+			<control type="label">
+				<width>640</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<label>Label: $INFO[System.CurrentControl]</label>
+		
+			</control>
+			
+			<!-- Folder Nmame -->
+			<control type="label">
+				<width>1240</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<label>Folder Name : $INFO[Container.FolderName]</label>
+
+			</control>
+
+			<!-- Path label -->
+			<control type="label">
+				<right>20</right>
+				<top>48</top>
+				<width>1240</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<label>Folder Path: $INFO[Container.FolderPath]</label>
+
+			</control>
+	</control>
+			
 			<!-- This Displays the Current Time on the Top Right -->
 			<control type="label">
 				<label>$INFO[System.Time(hh:mm)][COLOR Accent]$INFO[System.Time(xx), ][/COLOR]</label>
@@ -4512,427 +5785,45 @@
 	
 	</include>
 		
-	<include name="SubMenu1B">
+	<include name="SubMenuB">
 		<item id="1">
-			<label>$VAR[SubMenu1Tile2.Label]</label>
-			<icon>$VAR[SubMenu1Tile2.Image]</icon>
-			<thumb>$VAR[SubMenu1Tile2.Image]</thumb>
-			<onclick>$VAR[SubMenu1Tile2.Action]</onclick>
-			<onclick>$VAR[SubMenu1Tile2.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu1Tile2.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu1Tile2.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu1Tile2.Type))</visible>
+			<label>$VAR[SubMenu$PARAM[SubMenuNr]Tile2.Label]</label>
+			<icon>$VAR[SubMenu$PARAM[SubMenuNr]Tile2.Image]</icon>
+			<thumb>$VAR[SubMenu$PARAM[SubMenuNr]Tile2.Image]</thumb>
+			<onclick>$VAR[SubMenu$PARAM[SubMenuNr]Tile2.Action]</onclick>
+			<property name="Type">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile2.Type)]</property>
+			<property name="ImageType">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile2.ImageType)]</property>
+			<visible>!IsEmpty(Skin.String(SubMenu$PARAM[SubMenuNr]Tile2.Type))</visible>
 		 </item>
 		<item id="2">
-			<label>$VAR[SubMenu1Tile3.Label]</label>
-			<icon>$VAR[SubMenu1Tile3.Image]</icon>
-			<thumb>$VAR[SubMenu1Tile3.Image]</thumb>
-			<onclick>$VAR[SubMenu1Tile3.Action]</onclick>
-			<onclick>$VAR[SubMenu1Tile3.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu1Tile3.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu1Tile3.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu1Tile3.Type))</visible>
+			<label>$VAR[SubMenu$PARAM[SubMenuNr]Tile3.Label]</label>
+			<icon>$VAR[SubMenu$PARAM[SubMenuNr]Tile3.Image]</icon>
+			<thumb>$VAR[SubMenu$PARAM[SubMenuNr]Tile3.Image]</thumb>
+			<onclick>$VAR[SubMenu$PARAM[SubMenuNr]Tile3.Action]</onclick>
+			<property name="Type">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile3.Type)]</property>
+			<property name="ImageType">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile3.ImageType)]</property>
+			<visible>!IsEmpty(Skin.String(SubMenu$PARAM[SubMenuNr]Tile3.Type))</visible>
 		 </item>
 		<item id="3">
-			<label>$VAR[SubMenu1Tile4.Label]</label>
-			<icon>$VAR[SubMenu1Tile4.Image]</icon>
-			<thumb>$VAR[SubMenu1Tile4.Image]</thumb>
-			<onclick>$VAR[SubMenu1Tile4.Action]</onclick>
-			<onclick>$VAR[SubMenu1Tile4.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu1Tile4.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu1Tile4.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu1Tile4.Type))</visible>
+			<label>$VAR[SubMenu$PARAM[SubMenuNr]Tile4.Label]</label>
+			<icon>$VAR[SubMenu$PARAM[SubMenuNr]Tile4.Image]</icon>
+			<thumb>$VAR[SubMenu$PARAM[SubMenuNr]Tile4.Image]</thumb>
+			<onclick>$VAR[SubMenu$PARAM[SubMenuNr]Tile4.Action]</onclick>
+			<property name="Type">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile4.Type)]</property>
+			<property name="ImageType">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile4.ImageType)]</property>
+			<visible>!IsEmpty(Skin.String(SubMenu$PARAM[SubMenuNr]Tile4.Type))</visible>
 		 </item>
 		<item id="4">
-			<label>$VAR[SubMenu1Tile5.Label]</label>
-			<icon>$VAR[SubMenu1Tile5.Image]</icon>
-			<thumb>$VAR[SubMenu1Tile5.Image]</thumb>
-			<onclick>$VAR[SubMenu1Tile5.Action]</onclick>
-			<onclick>$VAR[SubMenu1Tile5.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu1Tile5.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu1Tile5.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu1Tile5.Type))</visible>
+			<label>$VAR[SubMenu$PARAM[SubMenuNr]Tile5.Label]</label>
+			<icon>$VAR[SubMenu$PARAM[SubMenuNr]Tile5.Image]</icon>
+			<thumb>$VAR[SubMenu$PARAM[SubMenuNr]Tile5.Image]</thumb>
+			<onclick>$VAR[SubMenu$PARAM[SubMenuNr]Tile5.Action]</onclick>
+			<property name="Type">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile5.Type)]</property>
+			<property name="ImageType">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile5.ImageType)]</property>
+			<visible>!IsEmpty(Skin.String(SubMenu$PARAM[SubMenuNr]Tile5.Type))</visible>
 		 </item>
 	</include>
-	<include name="SubMenu2B">
-		<item id="1">
-			<label>$VAR[SubMenu2Tile2.Label]</label>
-			<icon>$VAR[SubMenu2Tile2.Image]</icon>
-			<thumb>$VAR[SubMenu2Tile2.Image]</thumb>
-			<onclick>$VAR[SubMenu2Tile2.Action]</onclick>
-			<onclick>$VAR[SubMenu2Tile2.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu2Tile2.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu2Tile2.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu2Tile2.Type))</visible>
-		 </item>
-		<item id="2">
-			<label>$VAR[SubMenu2Tile3.Label]</label>
-			<icon>$VAR[SubMenu2Tile3.Image]</icon>
-			<thumb>$VAR[SubMenu2Tile3.Image]</thumb>
-			<onclick>$VAR[SubMenu2Tile3.Action]</onclick>
-			<onclick>$VAR[SubMenu2Tile3.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu2Tile3.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu2Tile3.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu2Tile3.Type))</visible>
-		 </item>
-		<item id="3">
-			<label>$VAR[SubMenu2Tile4.Label]</label>
-			<icon>$VAR[SubMenu2Tile4.Image]</icon>
-			<thumb>$VAR[SubMenu2Tile4.Image]</thumb>
-			<onclick>$VAR[SubMenu2Tile4.Action]</onclick>
-			<onclick>$VAR[SubMenu2Tile4.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu2Tile4.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu2Tile4.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu2Tile4.Type))</visible>
-		 </item>
-		<item id="4">
-			<label>$VAR[SubMenu2Tile5.Label]</label>
-			<icon>$VAR[SubMenu2Tile5.Image]</icon>
-			<thumb>$VAR[SubMenu2Tile5.Image]</thumb>
-			<onclick>$VAR[SubMenu2Tile5.Action]</onclick>
-			<onclick>$VAR[SubMenu2Tile5.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu2Tile5.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu2Tile5.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu2Tile5.Type))</visible>
-		 </item>
-	</include>
-	<include name="SubMenu3B">
-		<item id="1">
-			<label>$VAR[SubMenu3Tile2.Label]</label>
-			<icon>$VAR[SubMenu3Tile2.Image]</icon>
-			<thumb>$VAR[SubMenu3Tile2.Image]</thumb>
-			<onclick>$VAR[SubMenu3Tile2.Action]</onclick>
-			<onclick>$VAR[SubMenu3Tile2.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu3Tile2.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu3Tile2.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu3Tile2.Type))</visible>
-		 </item>
-		<item id="2">
-			<label>$VAR[SubMenu3Tile3.Label]</label>
-			<icon>$VAR[SubMenu3Tile3.Image]</icon>
-			<thumb>$VAR[SubMenu3Tile3.Image]</thumb>
-			<onclick>$VAR[SubMenu3Tile3.Action]</onclick>
-			<onclick>$VAR[SubMenu3Tile3.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu3Tile3.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu3Tile3.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu3Tile3.Type))</visible>
-		 </item>
-		<item id="3">
-			<label>$VAR[SubMenu3Tile4.Label]</label>
-			<icon>$VAR[SubMenu3Tile4.Image]</icon>
-			<thumb>$VAR[SubMenu3Tile4.Image]</thumb>
-			<onclick>$VAR[SubMenu3Tile4.Action]</onclick>
-			<onclick>$VAR[SubMenu3Tile4.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu3Tile4.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu3Tile4.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu3Tile4.Type))</visible>
-		 </item>
-		<item id="4">
-			<label>$VAR[SubMenu3Tile5.Label]</label>
-			<icon>$VAR[SubMenu3Tile5.Image]</icon>
-			<thumb>$VAR[SubMenu3Tile5.Image]</thumb>
-			<onclick>$VAR[SubMenu3Tile5.Action]</onclick>
-			<onclick>$VAR[SubMenu3Tile5.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu3Tile5.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu3Tile5.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu3Tile5.Type))</visible>
-		 </item>
-	</include>
-	<include name="SubMenu4B">
-		<item id="1">
-			<label>$VAR[SubMenu4Tile2.Label]</label>
-			<icon>$VAR[SubMenu4Tile2.Image]</icon>
-			<thumb>$VAR[SubMenu4Tile2.Image]</thumb>
-			<onclick>$VAR[SubMenu4Tile2.Action]</onclick>
-			<onclick>$VAR[SubMenu4Tile2.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu4Tile2.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu4Tile2.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu4Tile2.Type))</visible>
-		 </item>
-			<item id="2">
-			<label>$VAR[SubMenu4Tile3.Label]</label>
-			<icon>$VAR[SubMenu4Tile3.Image]</icon>
-			<thumb>$VAR[SubMenu4Tile3.Image]</thumb>
-			<onclick>$VAR[SubMenu4Tile3.Action]</onclick>
-			<onclick>$VAR[SubMenu4Tile3.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu4Tile3.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu4Tile3.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu4Tile3.Type))</visible>
-		 </item>
-		<item id="3">
-			<label>$VAR[SubMenu4Tile4.Label]</label>
-			<icon>$VAR[SubMenu4Tile4.Image]</icon>
-			<thumb>$VAR[SubMenu4Tile4.Image]</thumb>
-			<onclick>$VAR[SubMenu4Tile4.Action]</onclick>
-			<onclick>$VAR[SubMenu4Tile4.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu4Tile4.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu4Tile4.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu4Tile4.Type))</visible>
-		 </item>
-		<item id="4">
-			<label>$VAR[SubMenu4Tile5.Label]</label>
-			<icon>$VAR[SubMenu4Tile5.Image]</icon>
-			<thumb>$VAR[SubMenu4Tile5.Image]</thumb>
-			<onclick>$VAR[SubMenu4Tile5.Action]</onclick>
-			<onclick>$VAR[SubMenu4Tile5.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu4Tile5.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu4Tile5.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu4Tile5.Type))</visible>
-		 </item>
-	</include>
-	<include name="SubMenu5B">
-		<item id="1">
-			<label>$VAR[SubMenu5Tile2.Label]</label>
-			<icon>$VAR[SubMenu5Tile2.Image]</icon>
-			<thumb>$VAR[SubMenu5Tile2.Image]</thumb>
-			<onclick>$VAR[SubMenu5Tile2.Action]</onclick>
-			<onclick>$VAR[SubMenu5Tile2.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu5Tile2.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu5Tile2.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu5Tile2.Type))</visible>
-		 </item>
-			<item id="2">
-			<label>$VAR[SubMenu5Tile3.Label]</label>
-			<icon>$VAR[SubMenu5Tile3.Image]</icon>
-			<thumb>$VAR[SubMenu5Tile3.Image]</thumb>
-			<onclick>$VAR[SubMenu5Tile3.Action]</onclick>
-			<onclick>$VAR[SubMenu5Tile3.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu5Tile3.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu5Tile3.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu5Tile3.Type))</visible>
-		 </item>
-		<item id="3">
-			<label>$VAR[SubMenu5Tile4.Label]</label>
-			<icon>$VAR[SubMenu5Tile4.Image]</icon>
-			<thumb>$VAR[SubMenu5Tile4.Image]</thumb>
-			<onclick>$VAR[SubMenu5Tile4.Action]</onclick>
-			<onclick>$VAR[SubMenu5Tile4.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu5Tile4.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu5Tile4.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu5Tile4.Type))</visible>
-		 </item>
-		<item id="4">
-			<label>$VAR[SubMenu5Tile5.Label]</label>
-			<icon>$VAR[SubMenu5Tile5.Image]</icon>
-			<thumb>$VAR[SubMenu5Tile5.Image]</thumb>
-			<onclick>$VAR[SubMenu5Tile5.Action]</onclick>
-			<onclick>$VAR[SubMenu5Tile5.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu5Tile5.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu5Tile5.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu5Tile5.Type))</visible>
-		 </item>
-	</include>
-	<include name="SubMenu6B">
-		<item id="1">
-			<label>$VAR[SubMenu6Tile2.Label]</label>
-			<icon>$VAR[SubMenu6Tile2.Image]</icon>
-			<thumb>$VAR[SubMenu6Tile2.Image]</thumb>
-			<onclick>$VAR[SubMenu6Tile2.Action]</onclick>
-			<onclick>$VAR[SubMenu6Tile2.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu6Tile2.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu6Tile2.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu6Tile2.Type))</visible>
-		 </item>
-			<item id="2">
-			<label>$VAR[SubMenu6Tile3.Label]</label>
-			<icon>$VAR[SubMenu6Tile3.Image]</icon>
-			<thumb>$VAR[SubMenu6Tile3.Image]</thumb>
-			<onclick>$VAR[SubMenu6Tile3.Action]</onclick>
-			<onclick>$VAR[SubMenu6Tile3.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu6Tile3.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu6Tile3.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu6Tile3.Type))</visible>
-		 </item>
-		<item id="3">
-			<label>$VAR[SubMenu6Tile4.Label]</label>
-			<icon>$VAR[SubMenu6Tile4.Image]</icon>
-			<thumb>$VAR[SubMenu6Tile4.Image]</thumb>
-			<onclick>$VAR[SubMenu6Tile4.Action]</onclick>
-			<onclick>$VAR[SubMenu6Tile4.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu6Tile4.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu6Tile4.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu6Tile4.Type))</visible>
-		 </item>
-		<item id="4">
-			<label>$VAR[SubMenu6Tile5.Label]</label>
-			<icon>$VAR[SubMenu6Tile5.Image]</icon>
-			<thumb>$VAR[SubMenu6Tile5.Image]</thumb>
-			<onclick>$VAR[SubMenu6Tile5.Action]</onclick>
-			<onclick>$VAR[SubMenu6Tile5.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu6Tile5.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu6Tile5.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu6Tile5.Type))</visible>
-		 </item>
-	</include>
-	<include name="SubMenu7B">
-		<item id="1">
-			<label>$VAR[SubMenu7Tile2.Label]</label>
-			<icon>$VAR[SubMenu7Tile2.Image]</icon>
-			<thumb>$VAR[SubMenu7Tile2.Image]</thumb>
-			<onclick>$VAR[SubMenu7Tile2.Action]</onclick>
-			<onclick>$VAR[SubMenu7Tile2.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu7Tile2.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu7Tile2.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu7Tile2.Type))</visible>
-		 </item>
-			<item id="2">
-			<label>$VAR[SubMenu7Tile3.Label]</label>
-			<icon>$VAR[SubMenu7Tile3.Image]</icon>
-			<thumb>$VAR[SubMenu7Tile3.Image]</thumb>
-			<onclick>$VAR[SubMenu7Tile3.Action]</onclick>
-			<onclick>$VAR[SubMenu7Tile3.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu7Tile3.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu7Tile3.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu7Tile3.Type))</visible>
-		 </item>
-		<item id="3">
-			<label>$VAR[SubMenu7Tile4.Label]</label>
-			<icon>$VAR[SubMenu7Tile4.Image]</icon>
-			<thumb>$VAR[SubMenu7Tile4.Image]</thumb>
-			<onclick>$VAR[SubMenu7Tile4.Action]</onclick>
-			<onclick>$VAR[SubMenu7Tile4.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu7Tile4.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu7Tile4.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu7Tile4.Type))</visible>
-		 </item>
-		<item id="4">
-			<label>$VAR[SubMenu7Tile5.Label]</label>
-			<icon>$VAR[SubMenu7Tile5.Image]</icon>
-			<thumb>$VAR[SubMenu7Tile5.Image]</thumb>
-			<onclick>$VAR[SubMenu7Tile5.Action]</onclick>
-			<onclick>$VAR[SubMenu7Tile5.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu7Tile5.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu7Tile5.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu7Tile5.Type))</visible>
-		 </item>
-	</include>
-	<include name="SubMenu8B">
-		<item id="1">
-			<label>$VAR[SubMenu8Tile2.Label]</label>
-			<icon>$VAR[SubMenu8Tile2.Image]</icon>
-			<thumb>$VAR[SubMenu8Tile2.Image]</thumb>
-			<onclick>$VAR[SubMenu8Tile2.Action]</onclick>
-			<onclick>$VAR[SubMenu8Tile2.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu8Tile2.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu8Tile2.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu8Tile2.Type))</visible>
-		 </item>
-			<item id="2">
-			<label>$VAR[SubMenu8Tile3.Label]</label>
-			<icon>$VAR[SubMenu8Tile3.Image]</icon>
-			<thumb>$VAR[SubMenu8Tile3.Image]</thumb>
-			<onclick>$VAR[SubMenu8Tile3.Action]</onclick>
-			<onclick>$VAR[SubMenu8Tile3.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu8Tile3.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu8Tile3.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu8Tile3.Type))</visible>
-		 </item>
-		<item id="3">
-			<label>$VAR[SubMenu8Tile4.Label]</label>
-			<icon>$VAR[SubMenu8Tile4.Image]</icon>
-			<thumb>$VAR[SubMenu8Tile4.Image]</thumb>
-			<onclick>$VAR[SubMenu8Tile4.Action]</onclick>
-			<onclick>$VAR[SubMenu8Tile4.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu8Tile4.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu8Tile4.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu8Tile4.Type))</visible>
-		 </item>
-		<item id="4">
-			<label>$VAR[SubMenu8Tile5.Label]</label>
-			<icon>$VAR[SubMenu8Tile5.Image]</icon>
-			<thumb>$VAR[SubMenu8Tile5.Image]</thumb>
-			<onclick>$VAR[SubMenu8Tile5.Action]</onclick>
-			<onclick>$VAR[SubMenu8Tile5.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu8Tile5.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu8Tile5.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu8Tile5.Type))</visible>
-		 </item>
-	</include>
-	<include name="SubMenu9B">
-		<item id="1">
-			<label>$VAR[SubMenu9Tile2.Label]</label>
-			<icon>$VAR[SubMenu9Tile2.Image]</icon>
-			<thumb>$VAR[SubMenu9Tile2.Image]</thumb>
-			<onclick>$VAR[SubMenu9Tile2.Action]</onclick>
-			<onclick>$VAR[SubMenu9Tile2.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu9Tile2.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu9Tile2.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu9Tile2.Type))</visible>
-		 </item>
-			<item id="2">
-			<label>$VAR[SubMenu9Tile3.Label]</label>
-			<icon>$VAR[SubMenu9Tile3.Image]</icon>
-			<thumb>$VAR[SubMenu9Tile3.Image]</thumb>
-			<onclick>$VAR[SubMenu9Tile3.Action]</onclick>
-			<onclick>$VAR[SubMenu9Tile3.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu9Tile3.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu9Tile3.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu9Tile3.Type))</visible>
-		 </item>
-		<item id="3">
-			<label>$VAR[SubMenu9Tile4.Label]</label>
-			<icon>$VAR[SubMenu9Tile4.Image]</icon>
-			<thumb>$VAR[SubMenu9Tile4.Image]</thumb>
-			<onclick>$VAR[SubMenu9Tile4.Action]</onclick>
-			<onclick>$VAR[SubMenu9Tile4.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu9Tile4.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu9Tile4.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu9Tile4.Type))</visible>
-		 </item>
-		<item id="4">
-			<label>$VAR[SubMenu9Tile5.Label]</label>
-			<icon>$VAR[SubMenu9Tile5.Image]</icon>
-			<thumb>$VAR[SubMenu9Tile5.Image]</thumb>
-			<onclick>$VAR[SubMenu9Tile5.Action]</onclick>
-			<onclick>$VAR[SubMenu9Tile5.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu9Tile5.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu9Tile5.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu9Tile5.Type))</visible>
-		 </item>
-	</include>
-	<include name="SubMenu10B">
-		<item id="1">
-			<label>$VAR[SubMenu10Tile2.Label]</label>
-			<icon>$VAR[SubMenu10Tile2.Image]</icon>
-			<thumb>$VAR[SubMenu10Tile2.Image]</thumb>
-			<onclick>$VAR[SubMenu10Tile2.Action]</onclick>
-			<onclick>$VAR[SubMenu10Tile2.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu10Tile2.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu10Tile2.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu10Tile2.Type))</visible>
-		 </item>
-			<item id="2">
-			<label>$VAR[SubMenu10Tile3.Label]</label>
-			<icon>$VAR[SubMenu10Tile3.Image]</icon>
-			<thumb>$VAR[SubMenu10Tile3.Image]</thumb>
-			<onclick>$VAR[SubMenu10Tile3.Action]</onclick>
-			<onclick>$VAR[SubMenu10Tile3.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu10Tile3.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu10Tile3.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu10Tile3.Type))</visible>
-		 </item>
-		<item id="3">
-			<label>$VAR[SubMenu10Tile4.Label]</label>
-			<icon>$VAR[SubMenu10Tile4.Image]</icon>
-			<thumb>$VAR[SubMenu10Tile4.Image]</thumb>
-			<onclick>$VAR[SubMenu10Tile4.Action]</onclick>
-			<onclick>$VAR[SubMenu10Tile4.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu10Tile4.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu10Tile4.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu10Tile4.Type))</visible>
-		 </item>
-		<item id="4">
-			<label>$VAR[SubMenu10Tile5.Label]</label>
-			<icon>$VAR[SubMenu10Tile5.Image]</icon>
-			<thumb>$VAR[SubMenu10Tile5.Image]</thumb>
-			<onclick>$VAR[SubMenu10Tile5.Action]</onclick>
-			<onclick>$VAR[SubMenu10Tile5.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu10Tile5.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu10Tile5.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu10Tile5.Type))</visible>
-		 </item>
-	</include>
-
+	
 	<include name="SubMenu1Customization">
 		<item id="1">
 			<label>$VAR[SubMenu1Tile1.Label]</label>

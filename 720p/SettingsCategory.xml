@@ -45,7 +45,7 @@
 	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(SideMenuTile5.Type,Settings)</onload>
 	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(SideMenuTile6.Type,Shutdown)</onload>
 	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(FirstSkinRun,Configured)</onload>
-    <allowoverlay>yes</allowoverlay>
+     
     <controls>
         <include>SkinFanart</include>
         <include>BarClock</include>
@@ -62,6 +62,12 @@
                 <effect type="slide" end="-1500,0" time="200" />
             </animation>
             <animation type="TYPE" condition="!Window.IsVisible(DialogPVRGroupManager.xml)" reversible="false">
+                <effect type="slide" start="-1500,0" time="200" />
+            </animation>
+			<animation type="TYPE" condition="Window.IsVisible(DialogAudioDSPManager.xml)" reversible="false">
+                <effect type="slide" end="-1500,0" time="200" />
+            </animation>
+            <animation type="TYPE" condition="!Window.IsVisible(DialogAudioDSPManager.xml)" reversible="false">
                 <effect type="slide" start="-1500,0" time="200" />
             </animation>
             <animation type="WindowClose">

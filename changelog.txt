@@ -1,3 +1,6 @@
+[B]4.0.0[/B]
+- Migration to Kodi Jarvis
+
 [B]3.3.3[/B]
 - Bug Fix Compilations/singles/Top 100/ recently added and played albums/ music videos
 

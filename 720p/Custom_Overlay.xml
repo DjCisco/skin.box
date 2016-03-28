@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="50">
 	<zorder>2</zorder>
-	<visible>!Window.IsVisible(startup)</visible>
+	<visible>true</visible>
 	<controls>
 
 		<!-- Global debug grid -->
@@ -26,8 +26,7 @@
 			<width>780</width>
 			<height>450</height>
 			<itemgap>12</itemgap>
-			<visible>Skin.HasSetting(DebugInfo)</visible>
-				
+
 			<control type="label">
 				<width>780</width>
 				<height>21</height>
@@ -471,16 +470,6 @@
 				<visible>Window.IsVisible(MyMusicPlaylistEditor.xml)</visible>
 			</control>
 
-			<control type="label">
-				<width>780</width>
-				<height>21</height>
-				<textcolor>FF0000FF</textcolor>
-				<shadowcolor>FF000000</shadowcolor>
-				<font>List_Settings</font>
-				<align>left</align>
-				<label>MyMusicSongs.xml</label>
-				<visible>Window.IsVisible(MyMusicSongs.xml)</visible>
-			</control>
 
 			<control type="label">
 				<width>780</width>
@@ -693,16 +682,6 @@
 				<visible>Window.IsVisible(DialogFavourites.xml)</visible>
 			</control>
 
-			<control type="label">
-				<width>780</width>
-				<height>21</height>
-				<textcolor>FFFF0000</textcolor>
-				<shadowcolor>FF000000</shadowcolor>
-				<font>List_Settings</font>
-				<align>left</align>
-				<label>DialogFileStacking.xml</label>
-				<visible>Window.IsVisible(DialogFileStacking.xml)</visible>
-			</control>
 
 			<control type="label">
 				<width>780</width>
@@ -726,27 +705,6 @@
 				<visible>Window.IsVisible(DialogKaiToast.xml)</visible>
 			</control>
 
-			<control type="label">
-				<width>780</width>
-				<height>21</height>
-				<textcolor>FFFF0000</textcolor>
-				<shadowcolor>FF000000</shadowcolor>
-				<font>List_Settings</font>
-				<align>left</align>
-				<label>DialogKaraokeSongSelector.xml</label>
-				<visible>Window.IsVisible(DialogKaraokeSongSelector.xml)</visible>
-			</control>
-
-			<control type="label">
-				<width>780</width>
-				<height>21</height>
-				<textcolor>FFFF0000</textcolor>
-				<shadowcolor>FF000000</shadowcolor>
-				<font>List_Settings</font>
-				<align>left</align>
-				<label>DialogKaraokeSongSelectorLarge.xml</label>
-				<visible>Window.IsVisible(DialogKaraokeSongSelectorLarge.xml)</visible>
-			</control>
 
 			<control type="label">
 				<width>780</width>
@@ -825,16 +783,6 @@
 				<visible>Window.IsVisible(DialogOK.xml)</visible>
 			</control>
 
-			<control type="label">
-				<width>780</width>
-				<height>21</height>
-				<textcolor>FFFF0000</textcolor>
-				<shadowcolor>FF000000</shadowcolor>
-				<font>List_Settings</font>
-				<align>left</align>
-				<label>DialogPeripheralManager.xml</label>
-				<visible>Window.IsVisible(DialogPeripheralManager.xml)</visible>
-			</control>
 
 			<control type="label">
 				<width>780</width>
@@ -909,17 +857,6 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>List_Settings</font>
 				<align>left</align>
-				<label>DialogPVRGuideInfo.xml</label>
-				<visible>Window.IsVisible(DialogPVRGuideInfo.xml)</visible>
-			</control>
-
-			<control type="label">
-				<width>780</width>
-				<height>21</height>
-				<textcolor>FFFF0000</textcolor>
-				<shadowcolor>FF000000</shadowcolor>
-				<font>List_Settings</font>
-				<align>left</align>
 				<label>DialogPVRGuideOSD.xml</label>
 				<visible>Window.IsVisible(DialogPVRGuideOSD.xml)</visible>
 			</control>
@@ -933,17 +870,6 @@
 				<align>left</align>
 				<label>DialogPVRGuideSearch.xml</label>
 				<visible>Window.IsVisible(DialogPVRGuideSearch.xml)</visible>
-			</control>
-
-			<control type="label">
-				<width>780</width>
-				<height>21</height>
-				<textcolor>FFFF0000</textcolor>
-				<shadowcolor>FF000000</shadowcolor>
-				<font>List_Settings</font>
-				<align>left</align>
-				<label>DialogPVRRecordingInfo.xml</label>
-				<visible>Window.IsVisible(DialogPVRRecordingInfo.xml)</visible>
 			</control>
 
 			<control type="label">
@@ -1085,30 +1011,8 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>List_Settings</font>
 				<align>left</align>
-				<label>MusicKaraokeLyrics.xml</label>
-				<visible>Window.IsVisible(MusicKaraokeLyrics.xml)</visible>
-			</control>
-
-			<control type="label">
-				<width>780</width>
-				<height>21</height>
-				<textcolor>FFFF0000</textcolor>
-				<shadowcolor>FF000000</shadowcolor>
-				<font>List_Settings</font>
-				<align>left</align>
 				<label>MusicOSD.xml</label>
 				<visible>Window.IsVisible(MusicOSD.xml)</visible>
-			</control>
-
-			<control type="label">
-				<width>780</width>
-				<height>21</height>
-				<textcolor>FFFF0000</textcolor>
-				<shadowcolor>FF000000</shadowcolor>
-				<font>List_Settings</font>
-				<align>left</align>
-				<label>MusicOverlay.xml</label>
-				<visible>Window.IsVisible(MusicOverlay.xml)</visible>
 			</control>
 
 			<control type="label">
@@ -1231,66 +1135,44 @@
 				<label>VideoOSDSettings.xml</label>
 				<visible>Window.IsVisible(VideoOSDSettings.xml)</visible>
 			</control>
-
+		
+			<!-- Control label -->
 			<control type="label">
-				<width>780</width>
+				<top>15</top>
+				<width>640</width>
 				<height>21</height>
-				<textcolor>FFFF0000</textcolor>
+				<textcolor>FF0000FF</textcolor>
 				<shadowcolor>FF000000</shadowcolor>
 				<font>List_Settings</font>
-				<align>left</align>
-				<label>VideoOverlay.xml</label>
-				<visible>Window.IsVisible(VideoOverlay.xml)</visible>
-			</control>
-
-			<control type="label">
-				<width>780</width>
-				<height>21</height>
-				<textcolor>FFFF0000</textcolor>
-				<shadowcolor>FF000000</shadowcolor>
-				<font>List_Settings</font>
-				<align>left</align>
-				<label>VisualisationPresetList.xml</label>
-				<visible>Window.IsVisible(VisualisationPresetList.xml)</visible>
+				<label>$INFO[System.CurrentControl]</label>
+		
 			</control>
 			
-		<!-- Control label -->
-		<control type="label">
-			<top>15</top>
-			<width>640</width>
-			<height>21</height>
-			<textcolor>FF0000FF</textcolor>
-			<shadowcolor>FF000000</shadowcolor>
-			<font>List_Settings</font>
-			<label>$INFO[System.CurrentControl]</label>
-			<visible>Skin.HasSetting(DebugInfo)</visible>
-		</control>
-		
-		<!-- Folder Nmame -->
-		<control type="label">
-			<width>1240</width>
-			<height>21</height>
-			<textcolor>FFFF0000</textcolor>
-			<shadowcolor>FF000000</shadowcolor>
-			<font>List_Settings</font>
-			<label>$INFO[Container.FolderName]</label>
-			<visible>Skin.HasSetting(DebugInfo)</visible>
-		</control>
+			<!-- Folder Nmame -->
+			<control type="label">
+				<width>1240</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<label>$INFO[Container.FolderName]</label>
 
-		<!-- Path label -->
-		<control type="label">
-			<right>20</right>
-			<top>48</top>
-			<width>1240</width>
-			<height>21</height>
-			<textcolor>FFFF0000</textcolor>
-			<shadowcolor>FF000000</shadowcolor>
-			<font>List_Settings</font>
-			<label>$INFO[Container.FolderPath]</label>
-			<visible>Skin.HasSetting(DebugInfo)</visible>
-		</control>
-		
-		
+			</control>
+
+			<!-- Path label -->
+			<control type="label">
+				<right>20</right>
+				<top>48</top>
+				<width>1240</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>List_Settings</font>
+				<label>$INFO[Container.FolderPath]</label>
+
+			</control>
+			
+			
 		
 		</control>
 
