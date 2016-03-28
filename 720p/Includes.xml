@@ -60,7 +60,11 @@
 		<visible>Container.Content(Songs) | SubString(Container.FolderPath,musicdb://singles) | Window.IsActive(musicplaylist)</visible>
 	</include>
 	<include name="ListVisibility">
-		 <visible>[
+		 <visible>
+		 
+		 !Container.Content(addons) + [
+		 
+		 [
 				!SubString(Container.FolderPath,videodb://) + 
 				!SubString(Container.FolderPath,musicdb://) + 
 				!SubString(Container.FolderPath,library://) + 
@@ -76,6 +80,8 @@
 					Window.IsActive(programs) |
 					SubString(Container.FolderPath,playlistvideo://) |
 					SubString(Container.FolderPath,library://music/top100)
+					
+					]
 				
 		</visible>
 	</include>
@@ -1825,7 +1831,9 @@
 				<effect type="slide" time="300" end="0,40" easing="out" tween="cubic"/>
 			</animation>
 			<control type="grouplist">
-<top>80</top>			
+				<top>80</top>
+					
+				<visible>false</visible>
 
 			<control type="label">
 				<width>780</width>
@@ -5777,427 +5785,45 @@
 	
 	</include>
 		
-	<include name="SubMenu1B">
+	<include name="SubMenuB">
 		<item id="1">
-			<label>$VAR[SubMenu1Tile2.Label]</label>
-			<icon>$VAR[SubMenu1Tile2.Image]</icon>
-			<thumb>$VAR[SubMenu1Tile2.Image]</thumb>
-			<onclick>$VAR[SubMenu1Tile2.Action]</onclick>
-			<onclick>$VAR[SubMenu1Tile2.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu1Tile2.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu1Tile2.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu1Tile2.Type))</visible>
+			<label>$VAR[SubMenu$PARAM[SubMenuNr]Tile2.Label]</label>
+			<icon>$VAR[SubMenu$PARAM[SubMenuNr]Tile2.Image]</icon>
+			<thumb>$VAR[SubMenu$PARAM[SubMenuNr]Tile2.Image]</thumb>
+			<onclick>$VAR[SubMenu$PARAM[SubMenuNr]Tile2.Action]</onclick>
+			<property name="Type">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile2.Type)]</property>
+			<property name="ImageType">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile2.ImageType)]</property>
+			<visible>!IsEmpty(Skin.String(SubMenu$PARAM[SubMenuNr]Tile2.Type))</visible>
 		 </item>
 		<item id="2">
-			<label>$VAR[SubMenu1Tile3.Label]</label>
-			<icon>$VAR[SubMenu1Tile3.Image]</icon>
-			<thumb>$VAR[SubMenu1Tile3.Image]</thumb>
-			<onclick>$VAR[SubMenu1Tile3.Action]</onclick>
-			<onclick>$VAR[SubMenu1Tile3.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu1Tile3.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu1Tile3.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu1Tile3.Type))</visible>
+			<label>$VAR[SubMenu$PARAM[SubMenuNr]Tile3.Label]</label>
+			<icon>$VAR[SubMenu$PARAM[SubMenuNr]Tile3.Image]</icon>
+			<thumb>$VAR[SubMenu$PARAM[SubMenuNr]Tile3.Image]</thumb>
+			<onclick>$VAR[SubMenu$PARAM[SubMenuNr]Tile3.Action]</onclick>
+			<property name="Type">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile3.Type)]</property>
+			<property name="ImageType">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile3.ImageType)]</property>
+			<visible>!IsEmpty(Skin.String(SubMenu$PARAM[SubMenuNr]Tile3.Type))</visible>
 		 </item>
 		<item id="3">
-			<label>$VAR[SubMenu1Tile4.Label]</label>
-			<icon>$VAR[SubMenu1Tile4.Image]</icon>
-			<thumb>$VAR[SubMenu1Tile4.Image]</thumb>
-			<onclick>$VAR[SubMenu1Tile4.Action]</onclick>
-			<onclick>$VAR[SubMenu1Tile4.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu1Tile4.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu1Tile4.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu1Tile4.Type))</visible>
+			<label>$VAR[SubMenu$PARAM[SubMenuNr]Tile4.Label]</label>
+			<icon>$VAR[SubMenu$PARAM[SubMenuNr]Tile4.Image]</icon>
+			<thumb>$VAR[SubMenu$PARAM[SubMenuNr]Tile4.Image]</thumb>
+			<onclick>$VAR[SubMenu$PARAM[SubMenuNr]Tile4.Action]</onclick>
+			<property name="Type">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile4.Type)]</property>
+			<property name="ImageType">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile4.ImageType)]</property>
+			<visible>!IsEmpty(Skin.String(SubMenu$PARAM[SubMenuNr]Tile4.Type))</visible>
 		 </item>
 		<item id="4">
-			<label>$VAR[SubMenu1Tile5.Label]</label>
-			<icon>$VAR[SubMenu1Tile5.Image]</icon>
-			<thumb>$VAR[SubMenu1Tile5.Image]</thumb>
-			<onclick>$VAR[SubMenu1Tile5.Action]</onclick>
-			<onclick>$VAR[SubMenu1Tile5.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu1Tile5.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu1Tile5.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu1Tile5.Type))</visible>
+			<label>$VAR[SubMenu$PARAM[SubMenuNr]Tile5.Label]</label>
+			<icon>$VAR[SubMenu$PARAM[SubMenuNr]Tile5.Image]</icon>
+			<thumb>$VAR[SubMenu$PARAM[SubMenuNr]Tile5.Image]</thumb>
+			<onclick>$VAR[SubMenu$PARAM[SubMenuNr]Tile5.Action]</onclick>
+			<property name="Type">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile5.Type)]</property>
+			<property name="ImageType">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile5.ImageType)]</property>
+			<visible>!IsEmpty(Skin.String(SubMenu$PARAM[SubMenuNr]Tile5.Type))</visible>
 		 </item>
 	</include>
-	<include name="SubMenu2B">
-		<item id="1">
-			<label>$VAR[SubMenu2Tile2.Label]</label>
-			<icon>$VAR[SubMenu2Tile2.Image]</icon>
-			<thumb>$VAR[SubMenu2Tile2.Image]</thumb>
-			<onclick>$VAR[SubMenu2Tile2.Action]</onclick>
-			<onclick>$VAR[SubMenu2Tile2.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu2Tile2.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu2Tile2.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu2Tile2.Type))</visible>
-		 </item>
-		<item id="2">
-			<label>$VAR[SubMenu2Tile3.Label]</label>
-			<icon>$VAR[SubMenu2Tile3.Image]</icon>
-			<thumb>$VAR[SubMenu2Tile3.Image]</thumb>
-			<onclick>$VAR[SubMenu2Tile3.Action]</onclick>
-			<onclick>$VAR[SubMenu2Tile3.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu2Tile3.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu2Tile3.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu2Tile3.Type))</visible>
-		 </item>
-		<item id="3">
-			<label>$VAR[SubMenu2Tile4.Label]</label>
-			<icon>$VAR[SubMenu2Tile4.Image]</icon>
-			<thumb>$VAR[SubMenu2Tile4.Image]</thumb>
-			<onclick>$VAR[SubMenu2Tile4.Action]</onclick>
-			<onclick>$VAR[SubMenu2Tile4.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu2Tile4.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu2Tile4.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu2Tile4.Type))</visible>
-		 </item>
-		<item id="4">
-			<label>$VAR[SubMenu2Tile5.Label]</label>
-			<icon>$VAR[SubMenu2Tile5.Image]</icon>
-			<thumb>$VAR[SubMenu2Tile5.Image]</thumb>
-			<onclick>$VAR[SubMenu2Tile5.Action]</onclick>
-			<onclick>$VAR[SubMenu2Tile5.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu2Tile5.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu2Tile5.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu2Tile5.Type))</visible>
-		 </item>
-	</include>
-	<include name="SubMenu3B">
-		<item id="1">
-			<label>$VAR[SubMenu3Tile2.Label]</label>
-			<icon>$VAR[SubMenu3Tile2.Image]</icon>
-			<thumb>$VAR[SubMenu3Tile2.Image]</thumb>
-			<onclick>$VAR[SubMenu3Tile2.Action]</onclick>
-			<onclick>$VAR[SubMenu3Tile2.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu3Tile2.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu3Tile2.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu3Tile2.Type))</visible>
-		 </item>
-		<item id="2">
-			<label>$VAR[SubMenu3Tile3.Label]</label>
-			<icon>$VAR[SubMenu3Tile3.Image]</icon>
-			<thumb>$VAR[SubMenu3Tile3.Image]</thumb>
-			<onclick>$VAR[SubMenu3Tile3.Action]</onclick>
-			<onclick>$VAR[SubMenu3Tile3.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu3Tile3.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu3Tile3.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu3Tile3.Type))</visible>
-		 </item>
-		<item id="3">
-			<label>$VAR[SubMenu3Tile4.Label]</label>
-			<icon>$VAR[SubMenu3Tile4.Image]</icon>
-			<thumb>$VAR[SubMenu3Tile4.Image]</thumb>
-			<onclick>$VAR[SubMenu3Tile4.Action]</onclick>
-			<onclick>$VAR[SubMenu3Tile4.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu3Tile4.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu3Tile4.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu3Tile4.Type))</visible>
-		 </item>
-		<item id="4">
-			<label>$VAR[SubMenu3Tile5.Label]</label>
-			<icon>$VAR[SubMenu3Tile5.Image]</icon>
-			<thumb>$VAR[SubMenu3Tile5.Image]</thumb>
-			<onclick>$VAR[SubMenu3Tile5.Action]</onclick>
-			<onclick>$VAR[SubMenu3Tile5.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu3Tile5.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu3Tile5.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu3Tile5.Type))</visible>
-		 </item>
-	</include>
-	<include name="SubMenu4B">
-		<item id="1">
-			<label>$VAR[SubMenu4Tile2.Label]</label>
-			<icon>$VAR[SubMenu4Tile2.Image]</icon>
-			<thumb>$VAR[SubMenu4Tile2.Image]</thumb>
-			<onclick>$VAR[SubMenu4Tile2.Action]</onclick>
-			<onclick>$VAR[SubMenu4Tile2.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu4Tile2.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu4Tile2.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu4Tile2.Type))</visible>
-		 </item>
-			<item id="2">
-			<label>$VAR[SubMenu4Tile3.Label]</label>
-			<icon>$VAR[SubMenu4Tile3.Image]</icon>
-			<thumb>$VAR[SubMenu4Tile3.Image]</thumb>
-			<onclick>$VAR[SubMenu4Tile3.Action]</onclick>
-			<onclick>$VAR[SubMenu4Tile3.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu4Tile3.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu4Tile3.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu4Tile3.Type))</visible>
-		 </item>
-		<item id="3">
-			<label>$VAR[SubMenu4Tile4.Label]</label>
-			<icon>$VAR[SubMenu4Tile4.Image]</icon>
-			<thumb>$VAR[SubMenu4Tile4.Image]</thumb>
-			<onclick>$VAR[SubMenu4Tile4.Action]</onclick>
-			<onclick>$VAR[SubMenu4Tile4.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu4Tile4.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu4Tile4.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu4Tile4.Type))</visible>
-		 </item>
-		<item id="4">
-			<label>$VAR[SubMenu4Tile5.Label]</label>
-			<icon>$VAR[SubMenu4Tile5.Image]</icon>
-			<thumb>$VAR[SubMenu4Tile5.Image]</thumb>
-			<onclick>$VAR[SubMenu4Tile5.Action]</onclick>
-			<onclick>$VAR[SubMenu4Tile5.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu4Tile5.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu4Tile5.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu4Tile5.Type))</visible>
-		 </item>
-	</include>
-	<include name="SubMenu5B">
-		<item id="1">
-			<label>$VAR[SubMenu5Tile2.Label]</label>
-			<icon>$VAR[SubMenu5Tile2.Image]</icon>
-			<thumb>$VAR[SubMenu5Tile2.Image]</thumb>
-			<onclick>$VAR[SubMenu5Tile2.Action]</onclick>
-			<onclick>$VAR[SubMenu5Tile2.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu5Tile2.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu5Tile2.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu5Tile2.Type))</visible>
-		 </item>
-			<item id="2">
-			<label>$VAR[SubMenu5Tile3.Label]</label>
-			<icon>$VAR[SubMenu5Tile3.Image]</icon>
-			<thumb>$VAR[SubMenu5Tile3.Image]</thumb>
-			<onclick>$VAR[SubMenu5Tile3.Action]</onclick>
-			<onclick>$VAR[SubMenu5Tile3.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu5Tile3.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu5Tile3.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu5Tile3.Type))</visible>
-		 </item>
-		<item id="3">
-			<label>$VAR[SubMenu5Tile4.Label]</label>
-			<icon>$VAR[SubMenu5Tile4.Image]</icon>
-			<thumb>$VAR[SubMenu5Tile4.Image]</thumb>
-			<onclick>$VAR[SubMenu5Tile4.Action]</onclick>
-			<onclick>$VAR[SubMenu5Tile4.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu5Tile4.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu5Tile4.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu5Tile4.Type))</visible>
-		 </item>
-		<item id="4">
-			<label>$VAR[SubMenu5Tile5.Label]</label>
-			<icon>$VAR[SubMenu5Tile5.Image]</icon>
-			<thumb>$VAR[SubMenu5Tile5.Image]</thumb>
-			<onclick>$VAR[SubMenu5Tile5.Action]</onclick>
-			<onclick>$VAR[SubMenu5Tile5.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu5Tile5.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu5Tile5.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu5Tile5.Type))</visible>
-		 </item>
-	</include>
-	<include name="SubMenu6B">
-		<item id="1">
-			<label>$VAR[SubMenu6Tile2.Label]</label>
-			<icon>$VAR[SubMenu6Tile2.Image]</icon>
-			<thumb>$VAR[SubMenu6Tile2.Image]</thumb>
-			<onclick>$VAR[SubMenu6Tile2.Action]</onclick>
-			<onclick>$VAR[SubMenu6Tile2.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu6Tile2.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu6Tile2.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu6Tile2.Type))</visible>
-		 </item>
-			<item id="2">
-			<label>$VAR[SubMenu6Tile3.Label]</label>
-			<icon>$VAR[SubMenu6Tile3.Image]</icon>
-			<thumb>$VAR[SubMenu6Tile3.Image]</thumb>
-			<onclick>$VAR[SubMenu6Tile3.Action]</onclick>
-			<onclick>$VAR[SubMenu6Tile3.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu6Tile3.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu6Tile3.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu6Tile3.Type))</visible>
-		 </item>
-		<item id="3">
-			<label>$VAR[SubMenu6Tile4.Label]</label>
-			<icon>$VAR[SubMenu6Tile4.Image]</icon>
-			<thumb>$VAR[SubMenu6Tile4.Image]</thumb>
-			<onclick>$VAR[SubMenu6Tile4.Action]</onclick>
-			<onclick>$VAR[SubMenu6Tile4.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu6Tile4.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu6Tile4.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu6Tile4.Type))</visible>
-		 </item>
-		<item id="4">
-			<label>$VAR[SubMenu6Tile5.Label]</label>
-			<icon>$VAR[SubMenu6Tile5.Image]</icon>
-			<thumb>$VAR[SubMenu6Tile5.Image]</thumb>
-			<onclick>$VAR[SubMenu6Tile5.Action]</onclick>
-			<onclick>$VAR[SubMenu6Tile5.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu6Tile5.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu6Tile5.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu6Tile5.Type))</visible>
-		 </item>
-	</include>
-	<include name="SubMenu7B">
-		<item id="1">
-			<label>$VAR[SubMenu7Tile2.Label]</label>
-			<icon>$VAR[SubMenu7Tile2.Image]</icon>
-			<thumb>$VAR[SubMenu7Tile2.Image]</thumb>
-			<onclick>$VAR[SubMenu7Tile2.Action]</onclick>
-			<onclick>$VAR[SubMenu7Tile2.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu7Tile2.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu7Tile2.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu7Tile2.Type))</visible>
-		 </item>
-			<item id="2">
-			<label>$VAR[SubMenu7Tile3.Label]</label>
-			<icon>$VAR[SubMenu7Tile3.Image]</icon>
-			<thumb>$VAR[SubMenu7Tile3.Image]</thumb>
-			<onclick>$VAR[SubMenu7Tile3.Action]</onclick>
-			<onclick>$VAR[SubMenu7Tile3.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu7Tile3.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu7Tile3.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu7Tile3.Type))</visible>
-		 </item>
-		<item id="3">
-			<label>$VAR[SubMenu7Tile4.Label]</label>
-			<icon>$VAR[SubMenu7Tile4.Image]</icon>
-			<thumb>$VAR[SubMenu7Tile4.Image]</thumb>
-			<onclick>$VAR[SubMenu7Tile4.Action]</onclick>
-			<onclick>$VAR[SubMenu7Tile4.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu7Tile4.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu7Tile4.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu7Tile4.Type))</visible>
-		 </item>
-		<item id="4">
-			<label>$VAR[SubMenu7Tile5.Label]</label>
-			<icon>$VAR[SubMenu7Tile5.Image]</icon>
-			<thumb>$VAR[SubMenu7Tile5.Image]</thumb>
-			<onclick>$VAR[SubMenu7Tile5.Action]</onclick>
-			<onclick>$VAR[SubMenu7Tile5.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu7Tile5.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu7Tile5.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu7Tile5.Type))</visible>
-		 </item>
-	</include>
-	<include name="SubMenu8B">
-		<item id="1">
-			<label>$VAR[SubMenu8Tile2.Label]</label>
-			<icon>$VAR[SubMenu8Tile2.Image]</icon>
-			<thumb>$VAR[SubMenu8Tile2.Image]</thumb>
-			<onclick>$VAR[SubMenu8Tile2.Action]</onclick>
-			<onclick>$VAR[SubMenu8Tile2.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu8Tile2.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu8Tile2.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu8Tile2.Type))</visible>
-		 </item>
-			<item id="2">
-			<label>$VAR[SubMenu8Tile3.Label]</label>
-			<icon>$VAR[SubMenu8Tile3.Image]</icon>
-			<thumb>$VAR[SubMenu8Tile3.Image]</thumb>
-			<onclick>$VAR[SubMenu8Tile3.Action]</onclick>
-			<onclick>$VAR[SubMenu8Tile3.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu8Tile3.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu8Tile3.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu8Tile3.Type))</visible>
-		 </item>
-		<item id="3">
-			<label>$VAR[SubMenu8Tile4.Label]</label>
-			<icon>$VAR[SubMenu8Tile4.Image]</icon>
-			<thumb>$VAR[SubMenu8Tile4.Image]</thumb>
-			<onclick>$VAR[SubMenu8Tile4.Action]</onclick>
-			<onclick>$VAR[SubMenu8Tile4.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu8Tile4.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu8Tile4.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu8Tile4.Type))</visible>
-		 </item>
-		<item id="4">
-			<label>$VAR[SubMenu8Tile5.Label]</label>
-			<icon>$VAR[SubMenu8Tile5.Image]</icon>
-			<thumb>$VAR[SubMenu8Tile5.Image]</thumb>
-			<onclick>$VAR[SubMenu8Tile5.Action]</onclick>
-			<onclick>$VAR[SubMenu8Tile5.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu8Tile5.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu8Tile5.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu8Tile5.Type))</visible>
-		 </item>
-	</include>
-	<include name="SubMenu9B">
-		<item id="1">
-			<label>$VAR[SubMenu9Tile2.Label]</label>
-			<icon>$VAR[SubMenu9Tile2.Image]</icon>
-			<thumb>$VAR[SubMenu9Tile2.Image]</thumb>
-			<onclick>$VAR[SubMenu9Tile2.Action]</onclick>
-			<onclick>$VAR[SubMenu9Tile2.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu9Tile2.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu9Tile2.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu9Tile2.Type))</visible>
-		 </item>
-			<item id="2">
-			<label>$VAR[SubMenu9Tile3.Label]</label>
-			<icon>$VAR[SubMenu9Tile3.Image]</icon>
-			<thumb>$VAR[SubMenu9Tile3.Image]</thumb>
-			<onclick>$VAR[SubMenu9Tile3.Action]</onclick>
-			<onclick>$VAR[SubMenu9Tile3.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu9Tile3.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu9Tile3.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu9Tile3.Type))</visible>
-		 </item>
-		<item id="3">
-			<label>$VAR[SubMenu9Tile4.Label]</label>
-			<icon>$VAR[SubMenu9Tile4.Image]</icon>
-			<thumb>$VAR[SubMenu9Tile4.Image]</thumb>
-			<onclick>$VAR[SubMenu9Tile4.Action]</onclick>
-			<onclick>$VAR[SubMenu9Tile4.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu9Tile4.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu9Tile4.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu9Tile4.Type))</visible>
-		 </item>
-		<item id="4">
-			<label>$VAR[SubMenu9Tile5.Label]</label>
-			<icon>$VAR[SubMenu9Tile5.Image]</icon>
-			<thumb>$VAR[SubMenu9Tile5.Image]</thumb>
-			<onclick>$VAR[SubMenu9Tile5.Action]</onclick>
-			<onclick>$VAR[SubMenu9Tile5.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu9Tile5.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu9Tile5.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu9Tile5.Type))</visible>
-		 </item>
-	</include>
-	<include name="SubMenu10B">
-		<item id="1">
-			<label>$VAR[SubMenu10Tile2.Label]</label>
-			<icon>$VAR[SubMenu10Tile2.Image]</icon>
-			<thumb>$VAR[SubMenu10Tile2.Image]</thumb>
-			<onclick>$VAR[SubMenu10Tile2.Action]</onclick>
-			<onclick>$VAR[SubMenu10Tile2.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu10Tile2.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu10Tile2.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu10Tile2.Type))</visible>
-		 </item>
-			<item id="2">
-			<label>$VAR[SubMenu10Tile3.Label]</label>
-			<icon>$VAR[SubMenu10Tile3.Image]</icon>
-			<thumb>$VAR[SubMenu10Tile3.Image]</thumb>
-			<onclick>$VAR[SubMenu10Tile3.Action]</onclick>
-			<onclick>$VAR[SubMenu10Tile3.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu10Tile3.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu10Tile3.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu10Tile3.Type))</visible>
-		 </item>
-		<item id="3">
-			<label>$VAR[SubMenu10Tile4.Label]</label>
-			<icon>$VAR[SubMenu10Tile4.Image]</icon>
-			<thumb>$VAR[SubMenu10Tile4.Image]</thumb>
-			<onclick>$VAR[SubMenu10Tile4.Action]</onclick>
-			<onclick>$VAR[SubMenu10Tile4.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu10Tile4.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu10Tile4.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu10Tile4.Type))</visible>
-		 </item>
-		<item id="4">
-			<label>$VAR[SubMenu10Tile5.Label]</label>
-			<icon>$VAR[SubMenu10Tile5.Image]</icon>
-			<thumb>$VAR[SubMenu10Tile5.Image]</thumb>
-			<onclick>$VAR[SubMenu10Tile5.Action]</onclick>
-			<onclick>$VAR[SubMenu10Tile5.2ndAction]</onclick>
-			<property name="Type">$INFO[Skin.String(SubMenu10Tile5.Type)]</property>
-			<property name="ImageType">$INFO[Skin.String(SubMenu10Tile5.ImageType)]</property>
-			<visible>!IsEmpty(Skin.String(SubMenu10Tile5.Type))</visible>
-		 </item>
-	</include>
-
+	
 	<include name="SubMenu1Customization">
 		<item id="1">
 			<label>$VAR[SubMenu1Tile1.Label]</label>
