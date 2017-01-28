@@ -54,7 +54,7 @@
 						<width>400</width>
 						<height>75</height>
 						<texture>tile.png</texture>
-						<visible>IsEmpty(ListItem.Art(banner)) + [StringCompare(ListItem.Label,..) | SubString(ListItem.Label,default)]</visible>
+						<visible>String.IsEmpty(ListItem.Art(banner)) + [String.IsEqual(ListItem.Label,..) | String.Contains(ListItem.Label,default)]</visible>
 					</control>
 					<control type="image">
 						<width>400</width>
@@ -63,7 +63,7 @@
 						<bordersize>5</bordersize>
 						<aspectratio>keep</aspectratio>
 						<colordiffuse>ImageDiffuse</colordiffuse>
-						<visible>IsEmpty(ListItem.Art(banner)) + [StringCompare(ListItem.Label,..) | SubString(ListItem.Label,default)]</visible>
+						<visible>String.IsEmpty(ListItem.Art(banner)) + [String.IsEqual(ListItem.Label,..) | String.Contains(ListItem.Label,default)]</visible>
 					</control>
 					<control type="image">
 						<width>400</width>
@@ -80,7 +80,7 @@
 						<bordersize>5</bordersize>
 						<bordertexture>tile.png</bordertexture>
 						<aspectratio>scale</aspectratio>
-						<visible>IsEmpty(ListItem.Art(banner))</visible>
+						<visible>String.IsEmpty(ListItem.Art(banner))</visible>
 					</control>
 					<!-- This Control Displays the Watched Icon on the Top Right Corner of an Item of the Panel -->
 					<control type="image">
@@ -92,7 +92,7 @@
 							<effect type="zoom" center="0,0" start="80" end="120" time="400" tween="back" easing="out" />
 							<effect type="fade" start="80" end="100" time="400" />
 						</animation>
-						<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout height="80"  width="405">
@@ -100,7 +100,7 @@
 						<width>400</width>
 						<height>75</height>
 						<texture>button.png</texture>
-						<visible>IsEmpty(ListItem.Art(banner)) + [StringCompare(ListItem.Label,..) | SubString(ListItem.Label,default)]</visible>
+						<visible>String.IsEmpty(ListItem.Art(banner)) + [String.IsEqual(ListItem.Label,..) | String.Contains(ListItem.Label,default)]</visible>
 					</control>
 					<control type="image">
 						<width>400</width>
@@ -108,7 +108,7 @@
 						<texture>$INFO[ListItem.Icon]</texture>
 						<bordersize>5</bordersize>
 						<aspectratio>keep</aspectratio>
-						<visible>IsEmpty(ListItem.Art(banner)) + [StringCompare(ListItem.Label,..) | SubString(ListItem.Label,default)]</visible>
+						<visible>String.IsEmpty(ListItem.Art(banner)) + [String.IsEqual(ListItem.Label,..) | String.Contains(ListItem.Label,default)]</visible>
 					</control>
 					
 					<control type="image">
@@ -126,7 +126,7 @@
 						<bordersize>5</bordersize>
 						<bordertexture>button.png</bordertexture>
 						<aspectratio>scale</aspectratio>
-						<visible>IsEmpty(ListItem.Art(banner))</visible>
+						<visible>String.IsEmpty(ListItem.Art(banner))</visible>
 					</control>
 					<!-- This Control Displays the watched Icon -->
 					<control type="image">
@@ -138,7 +138,7 @@
 							<effect type="zoom" center="400,0" start="80" end="100" time="400" tween="back" easing="out" />
 							<effect type="fade" start="80" end="100" time="400" />
 						</animation>
-						<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 					</control>
 				</focusedlayout>
 			</control>

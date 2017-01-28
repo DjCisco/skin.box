@@ -148,7 +148,7 @@
    				<font>List_Left_Menu</font>
                 <onclick>Skin.ToggleSetting(moviewidelist)</onclick>
                 <selected>Skin.HasSetting(moviewidelist)</selected>
-				<visible>SubString(Control.GetLabel(2),List Info) + Container.Content(movies)</visible>
+				<visible>String.Contains(Control.GetLabel(2),List Info) + Container.Content(movies)</visible>
 			</control>
 			<control type="radiobutton" id="102">
                 <description>Wide List</description>
@@ -159,7 +159,7 @@
 				<font>List_Left_Menu</font>
                 <onclick>Skin.ToggleSetting(tvshowwidelist)</onclick>
                 <selected>Skin.HasSetting(tvshowwidelist)</selected>
-				<visible>SubString(Control.GetLabel(2),List Info) + Container.Content(tvshows)</visible>
+				<visible>String.Contains(Control.GetLabel(2),List Info) + Container.Content(tvshows)</visible>
 			</control>
 			<control type="radiobutton" id="103">
                  <description>Wide List</description>
@@ -170,7 +170,7 @@
 				<font>List_Left_Menu</font>
                 <onclick>Skin.ToggleSetting(episodewidelist)</onclick>
                 <selected>Skin.HasSetting(episodewidelist)</selected>
-				<visible>SubString(Control.GetLabel(2),List Info) + Container.Content(episodes)</visible>
+				<visible>String.Contains(Control.GetLabel(2),List Info) + Container.Content(episodes)</visible>
 			</control>
 			<control type="radiobutton" id="105">
                  <description>Wide List</description>
@@ -246,7 +246,7 @@
                 <label>13350</label>
 				<font>List_Left_Menu</font>
 				<onclick>ActivateWindow(videoplaylist)</onclick>
-				<visible>[Window.IsActive(videolibrary) + !StringCompare(Playlist.Length(video),0)] | [[Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)] + !StringCompare(Playlist.Length(music),0)]</visible>
+				<visible>[Window.IsActive(Videos) + !String.IsEqual(Playlist.Length(video),0)] | [Window.IsActive(Music) + !String.IsEqual(Playlist.Length(music),0)]</visible>
             </control>
 			<control type="togglebutton" id="20">
                 <description>Update Libray and Stop Scanning</description>

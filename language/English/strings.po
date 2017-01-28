@@ -262,7 +262,89 @@ msgctxt "#31299"
 msgid "Min"
 msgstr ""
 
-#empty strings from id 31300 to 31324
+msgctxt "#31300"
+msgid "Poster"
+msgstr ""
+
+msgctxt "#31301"
+msgid "Cover"
+msgstr ""
+
+msgctxt "#31302"
+msgid "Episode Thumb"
+msgstr ""
+
+msgctxt "#31303"
+msgid "Music Video Thumb"
+msgstr ""
+
+msgctxt "#31304"
+msgid "Artist Thumb"
+msgstr ""
+
+#empty strings from id 31305 to 31310
+
+msgctxt "#31311"
+msgid "Exodus"
+msgstr ""
+
+msgctxt "#31312"
+msgid "SALTS"
+msgstr ""
+
+msgctxt "31313"
+msgid "Genesis"
+msgstr ""
+
+msgctxt "#31314"
+msgid "IceFilms"
+msgstr ""
+
+msgctxt "#31315"
+msgid "1Channel"
+msgstr ""
+
+#empty strings from id 31316 to 31330
+
+msgctxt "#31331"
+msgid "Featured"
+msgstr ""
+
+msgctxt "#31332"
+msgid "Popular"
+msgstr ""
+
+msgctxt "#31333"
+msgid "Boxoffice"
+msgstr ""
+
+msgctxt "#31334"
+msgid "Oscars"
+msgstr ""
+
+msgctxt "#31335"
+msgid "In Theaters"
+msgstr ""
+
+msgctxt "#31336"
+msgid "Trending"
+msgstr ""
+
+msgctxt "#31337"
+msgid "Top Rated"
+msgstr ""
+
+msgctxt "#31338"
+msgid "Anticipated"
+msgstr ""
+
+msgctxt "#31339"
+msgid "Airing Today"
+msgstr ""
+
+msgctxt "#31340"
+msgid "New"
+msgstr ""
 
 
 #empty strings from id 31326 to 31505

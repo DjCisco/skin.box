@@ -33,21 +33,11 @@
                 <texture>tile.png</texture>
             </control>
             <control type="label">
-                <label>$LOCALIZE[5]</label>
+                <label>$LOCALIZE[14210]</label>
                 <left>50</left>
                 <top>215</top>
                 <height>30</height>
-                <width>290</width>
-                <font>Panel_Title</font>
-                <align>left</align>
-				<aligny>top</aligny>
-            </control>
-            <control type="label">
-                <label>[COLOR Accent]$LOCALIZE[13200][/COLOR]</label>
-                <left>345</left>
-                <top>215</top>
-                <height>30</height>
-                <width>810</width>
+                <width>1000</width>
                 <font>Panel_Title</font>
                 <align>left</align>
 				<aligny>top</aligny>
@@ -149,7 +139,7 @@
 							<width>70</width>
 							<height>70</height>
 							<texture fallback="DefaultUser.png">$INFO[ListItem.Icon]</texture>
-							<visible>!SubString(ListItem.Label,$LOCALIZE[20058])</visible>
+							<visible>!String.Contains(ListItem.Label,$LOCALIZE[20058])</visible>
 						</control>
 						<control type="image">
 							<left>10</left>
@@ -157,7 +147,7 @@
 							<width>70</width>
 							<height>70</height>
 							<texture>defaultaddsource.png</texture>
-							<visible>SubString(ListItem.Label,$LOCALIZE[20058])</visible>
+							<visible>String.Contains(ListItem.Label,$LOCALIZE[20058])</visible>
 						</control>
 						<control type="label">
 							<left>110</left>
@@ -188,7 +178,7 @@
 							<width>70</width>
 							<height>70</height>
 							<texture fallback="DefaultUser.png">$INFO[Listitem.Thumb]</texture>
-							<visible>!SubString(ListItem.Label,$LOCALIZE[20058])</visible>
+							<visible>!String.Contains(ListItem.Label,$LOCALIZE[20058])</visible>
 						</control>
 						<control type="image">
 							<left>10</left>
@@ -196,7 +186,7 @@
 							<width>70</width>
 							<height>70</height>
 							<texture>defaultaddsource.png</texture>
-							<visible>SubString(ListItem.Label,$LOCALIZE[20058])</visible>
+							<visible>String.Contains(ListItem.Label,$LOCALIZE[20058])</visible>
 						</control>
 						<control type="label">
 							<left>110</left>

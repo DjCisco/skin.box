@@ -1,4 +1,7 @@
-[B]4.0.1[/B]
+[B]5.0.0[/B]
+- Release for Kodi Kryption
+
+[B]4.0.2[/B]
 - Bugfix: Fault View for Videos
 - Enabled Fullscreen Video on Home
 

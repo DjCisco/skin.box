@@ -115,114 +115,72 @@
             </control>
 			<!-- Display Settings as Label -->
 			<control type="label">
-                <label>$LOCALIZE[5]</label>
+                <label>$LOCALIZE[14201]</label>
                 <left>50</left>
                 <top>215</top>
                 <height>30</height>
-                <width>290</width>
+                <width>1000</width>
                 <font>Panel_Title</font>
                 <align>left</align>
 				<aligny>top</aligny>
+				<visible>Window.IsActive(playersettings)</visible>
             </control>
-            <control type="label">
-                <label>[COLOR Accent]$LOCALIZE[31703][/COLOR]</label>
-                <left>345</left>
+			<control type="label">
+                <label>$LOCALIZE[14205]</label>
+                <left>50</left>
                 <top>215</top>
                 <height>30</height>
-                <width>450</width>
+                <width>1000</width>
                 <font>Panel_Title</font>
                 <align>left</align>
 				<aligny>top</aligny>
-                <visible>SubString(System.CurrentWindow,$LOCALIZE[10021])</visible>
+				<visible>Window.IsActive(pvrsettings)</visible>
             </control>
-            <control type="label">
-                <label>[COLOR Accent]$LOCALIZE[480][/COLOR]</label>
-                <left>345</left>
+			<control type="label">
+                <label>$LOCALIZE[14207]</label>
+                <left>50</left>
                 <top>215</top>
                 <height>30</height>
-                <width>450</width>
+                <width>1000</width>
                 <font>Panel_Title</font>
                 <align>left</align>
 				<aligny>top</aligny>
-                <visible>Window.IsActive(10019)</visible>
+				<visible>Window.IsActive(interfacesettings)</visible>
             </control>
-            <control type="label">
-                <label>[COLOR Accent]$LOCALIZE[705][/COLOR]</label>
-                <left>345</left>
+			<control type="label">
+                <label>$LOCALIZE[14208]</label>
+                <left>50</left>
                 <top>215</top>
                 <height>30</height>
-                <width>450</width>
+                <width>1000</width>
                 <font>Panel_Title</font>
                 <align>left</align>
 				<aligny>top</aligny>
-                <visible>Window.IsActive(10018)</visible>
+				<visible>Window.IsActive(servicesettings)</visible>
             </control>
-            <control type="label">
-                <label>[COLOR Accent]$LOCALIZE[10006][/COLOR]</label>
-                <left>345</left>
+			<control type="label">
+                <label>$LOCALIZE[14209]</label>
+                <left>50</left>
                 <top>215</top>
                 <height>30</height>
-                <width>450</width>
+                <width>1000</width>
                 <font>Panel_Title</font>
                 <align>left</align>
 				<aligny>top</aligny>
-                <visible>Window.IsActive(10017)</visible>
+				<visible>Window.IsActive(systemsettings)</visible>
             </control>
-            <control type="label">
-                <label>[COLOR Accent]$LOCALIZE[13000][/COLOR]</label>
-                <left>345</left>
+			<control type="label">
+                <label>$LOCALIZE[14212]</label>
+                <left>50</left>
                 <top>215</top>
                 <height>30</height>
-                <width>450</width>
+                <width>1000</width>
                 <font>Panel_Title</font>
                 <align>left</align>
 				<aligny>top</aligny>
-                <visible>Window.IsActive(10016)</visible>
+				<visible>Window.IsActive(mediasettings)</visible>
             </control>
-            <control type="label">
-                <label>[COLOR Accent]$LOCALIZE[2][/COLOR]</label>
-                <left>345</left>
-                <top>215</top>
-                <height>30</height>
-                <width>450</width>
-                <font>Panel_Title</font>
-                <align>left</align>
-				<aligny>top</aligny>
-                <visible>Window.IsActive(10015)</visible>
-            </control>
-            <control type="label">
-                <label>[COLOR Accent]$LOCALIZE[8][/COLOR]</label>
-                <left>345</left>
-                <top>215</top>
-                <height>30</height>
-                <width>450</width>
-                <font>Panel_Title</font>
-                <align>left</align>
-				<aligny>top</aligny>
-                <visible>Window.IsActive(10014)</visible>
-            </control>
-            <control type="label">
-                <label>[COLOR Accent]$LOCALIZE[0][/COLOR]</label>
-                <left>345</left>
-                <top>215</top>
-                <height>30</height>
-                <width>450</width>
-                <font>Panel_Title</font>
-                <align>left</align>
-				<aligny>top</aligny>
-                <visible>Window.IsActive(10013)</visible>
-            </control>
-            <control type="label">
-                <label>[COLOR Accent]$LOCALIZE[1][/COLOR]</label>
-                <left>345</left>
-                <top>215</top>
-                <height>30</height>
-                <width>450</width>
-                <font>Panel_Title</font>
-                <align>left</align>
-				<aligny>top</aligny>
-                <visible>Window.IsActive(10012)</visible>
-            </control>
+
             <control type="grouplist" id="3">
                 <description>Button Area</description>
                 <left>100</left>
@@ -249,6 +207,18 @@
                 <ondown>5</ondown>
                 <orientation>vertical</orientation>
 
+            </control>
+			<control type="image" id="11">
+                <description>Default Separator</description>
+                <height>2</height>
+				<texture>white_box.png</texture>
+            </control>
+			<control type="label" id="14">
+                <description>Default Button</description>
+				<textoffsetx>20</textoffsetx>
+                <align>left</align>
+                <focusedcolor>Accent</focusedcolor>
+				<font>Panel_Hint</font>
             </control>
             <control type="button" id="7">
                 <description>Default Button</description>

@@ -34,13 +34,13 @@
 			<control type="label">
 				<include>ViewFooterTitle</include>
 				<label>ALBUM [COLOR Accent]$INFO[Container(50).ListItem.Album][/COLOR]</label>
-				<visible>!IsEmpty(Container(50).ListItem.Duration) + Control.HasFocus(50)</visible>
+				<visible>!String.IsEmpty(Container(50).ListItem.Duration) + Control.HasFocus(50)</visible>
 			</control>
 			<control type="label">
 				<left>803</left>
 				<include>ViewFooterTitle</include>
 				<label>ALBUM [COLOR Accent]$INFO[Container(100).ListItem.Album][/COLOR]</label>
-				<visible>!IsEmpty(Container(100).ListItem.Duration) + Control.HasFocus(100)</visible>
+				<visible>!String.IsEmpty(Container(100).ListItem.Duration) + Control.HasFocus(100)</visible>
 			</control>
 			<!-- Left Panel -->
             <control type="group">
@@ -147,7 +147,7 @@
                     <fadetime>200</fadetime>
                     <aspectratio scalediffuse="false">stretch</aspectratio>
                     <bordersize>5</bordersize>
-					<visible>!SubString(Container(50).ListItem.Icon,default) + Control.HasFocus(50)</visible>
+					<visible>!String.Contains(Container(50).ListItem.Icon,default) + Control.HasFocus(50)</visible>
                 </control>
 				<control type="image">
 					<width>315</width>
@@ -156,7 +156,7 @@
                     <fadetime>200</fadetime>
                     <aspectratio scalediffuse="false">stretch</aspectratio>
                     <bordersize>5</bordersize>
-					<visible>!SubString(Container(100).ListItem.Icon,default)  + Control.HasFocus(100)</visible>
+					<visible>!String.Contains(Container(100).ListItem.Icon,default)  + Control.HasFocus(100)</visible>
                 </control>
 				
 				<!-- Default Icon Images-->
@@ -167,7 +167,7 @@
                     <fadetime>200</fadetime>
                     <aspectratio scalediffuse="false">keep</aspectratio>
                     <bordersize>35</bordersize>
-					<visible>SubString(Container(50).ListItem.Icon,default) + Control.HasFocus(50) </visible>
+					<visible>String.Contains(Container(50).ListItem.Icon,default) + Control.HasFocus(50) </visible>
                 </control>
 				<control type="image">
 					<width>315</width>
@@ -176,7 +176,7 @@
                     <fadetime>200</fadetime>
                     <aspectratio scalediffuse="false">keep</aspectratio>
                     <bordersize>35</bordersize>
-					<visible>SubString(Container(100).ListItem.Icon,default) + Control.HasFocus(100) </visible>
+					<visible>String.Contains(Container(100).ListItem.Icon,default) + Control.HasFocus(100) </visible>
                 </control>
 				<control type="image">
 					<left>5</left>

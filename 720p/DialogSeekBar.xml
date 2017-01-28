@@ -110,7 +110,7 @@
         <control type="group">
             
             <top>150</top>
-            <visible>!IsEmpty(Player.CacheLevel) + Player.Caching</visible>
+            <visible>!String.IsEmpty(Player.CacheLevel) + Player.Caching</visible>
             <!--
 			<control type="image">
                 <description>Busy animation</description>

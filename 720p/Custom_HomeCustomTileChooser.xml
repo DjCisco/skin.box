@@ -44,13 +44,13 @@
 		<control type="label">
 			<include>ViewMainTitle</include>
 			<label>$LOCALIZE[504]</label>
-			<visible>IsEmpty(Control.getLabel(1))</visible>
+			<visible>String.IsEmpty(Control.getLabel(1))</visible>
 		</control>
 		<control type="label">
 			<include>ViewMainTitle</include>
 			<label>$LOCALIZE[504]</label>
 			<textcolor>Accent</textcolor>
-			<visible>IsEmpty(Control.getLabel(1)) + Control.HasFocus(1)</visible>
+			<visible>String.IsEmpty(Control.getLabel(1)) + Control.HasFocus(1)</visible>
 		</control>
 		<control type="button" id="2">
 			<include>PanelCoordinates</include>

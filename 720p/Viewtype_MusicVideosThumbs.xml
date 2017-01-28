@@ -59,7 +59,7 @@
                         <texture>$INFO[ListItem.Icon]</texture>
                         <aspectratio>keep</aspectratio>
 						<bordersize>20</bordersize>
-						<visible>StringCompare(ListItem.Label,..)</visible>
+						<visible>String.IsEqual(ListItem.Label,..)</visible>
                     </control>
 					<control type="image">
                         <width>260</width>
@@ -67,7 +67,7 @@
                         <texture>$INFO[ListItem.Thumb]</texture>
                         <aspectratio>scale</aspectratio>
 						<bordersize>5</bordersize>
-						<visible>!StringCompare(ListItem.Label,..)</visible>
+						<visible>!String.IsEqual(ListItem.Label,..)</visible>
                     </control>
 					<control type="image">
 						<left>5</left>
@@ -76,7 +76,7 @@
                         <height>30</height>
                         <texture>black.png</texture>
 						<colordiffuse>CCFFFFFF</colordiffuse>
-						<visible>!StringCompare(ListItem.Label,..)</visible>
+						<visible>!String.IsEqual(ListItem.Label,..)</visible>
                     </control>						
 					 <control type="label">
 						<font>List_Unfocused</font>
@@ -97,7 +97,7 @@
                         <texture>$INFO[ListItem.Icon]</texture>
                         <aspectratio>keep</aspectratio>
 						<bordersize>20</bordersize>
-						<visible>StringCompare(ListItem.Label,..)</visible>
+						<visible>String.IsEqual(ListItem.Label,..)</visible>
                     </control>
 					<control type="image">
                         <left>0</left>
@@ -107,7 +107,7 @@
                         <texture>$INFO[ListItem.Thumb]</texture>
                         <aspectratio>scale</aspectratio>
 						<bordersize>5</bordersize>
-                        <visible>!StringCompare(ListItem.Label,..)</visible>
+                        <visible>!String.IsEqual(ListItem.Label,..)</visible>
                     </control>
                     <control type="image">
 						<left>5</left>
@@ -116,7 +116,7 @@
                         <height>30</height>
                         <texture>black.png</texture>
 						<colordiffuse>CCFFFFFF</colordiffuse>
-						<visible>!StringCompare(ListItem.Label,..)</visible>
+						<visible>!String.IsEqual(ListItem.Label,..)</visible>
                     </control>					
                     <control type="label">
 						<font>List_Unfocused</font>
@@ -161,7 +161,7 @@
 					<texture>button.png</texture>
 					<aspectratio>stretch</aspectratio>
 					<bordersize>5</bordersize>
-					<visible>StringCompare(ListItem.Label,..) | IsEmpty(ListItem.Icon)</visible>
+					<visible>String.IsEqual(ListItem.Label,..) | String.IsEmpty(ListItem.Icon)</visible>
 				</control>
 				<control type="image">
 					<left>50</left>
@@ -171,7 +171,7 @@
 					<texture>tile.png</texture>
 					<aspectratio>stretch</aspectratio>
 					<bordersize>5</bordersize>
-					<visible>StringCompare(ListItem.Label,..) | IsEmpty(ListItem.Icon)</visible>
+					<visible>String.IsEqual(ListItem.Label,..) | String.IsEmpty(ListItem.Icon)</visible>
 				</control>
 				<!-- This Control displays  the Main Album Poster-->
 				<control type="image">
@@ -181,7 +181,7 @@
 					<height>215</height>
 					<texture>$INFO[ListItem.Icon]</texture>
 					<aspectratio>scale</aspectratio>
-					<visible>StringCompare(ListItem.Label,..) </visible>
+					<visible>String.IsEqual(ListItem.Label,..) </visible>
 				</control>
 				<!-- This Control displays  the Main Album Poster-->
 				<control type="image">
@@ -192,7 +192,7 @@
 					<texture>$INFO[ListItem.Art(poster)]</texture>
 					<aspectratio>scale</aspectratio>
 					<bordersize>5</bordersize>
-					<visible>!StringCompare(ListItem.Label,..)</visible>
+					<visible>!String.IsEqual(ListItem.Label,..)</visible>
 				</control>
 				<!-- This Control display the artist name and album below the main poster-->
 				<control type="label" id="144">

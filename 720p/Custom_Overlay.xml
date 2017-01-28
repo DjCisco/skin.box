@@ -612,8 +612,8 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>List_Settings</font>
 				<align>left</align>
-				<label>DialogAlbumInfo.xml</label>
-				<visible>Window.IsVisible(DialogAlbumInfo.xml)</visible>
+				<label>DialogMusicInfo.xml</label>
+				<visible>Window.IsVisible(DialogMusicInfo.xml)</visible>
 			</control>
 
 			<control type="label">
@@ -923,8 +923,8 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>List_Settings</font>
 				<align>left</align>
-				<label>DialogSongInfo.xml</label>
-				<visible>Window.IsVisible(DialogSongInfo.xml)</visible>
+				<label>DialogMusicInfo.xml</label>
+				<visible>Window.IsVisible(DialogMusicInfo.xml)</visible>
 			</control>
 
 			<control type="label">

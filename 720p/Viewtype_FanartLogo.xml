@@ -8,7 +8,7 @@
             <!--This control defines the list that will display the items -->
 			      
 			<control type="fixedlist" id="539">
-                <visible> [Container.Content(movies) | Container.Content(tvshows)]  + SubString(Container.FolderPath,videodb://)</visible>
+                <visible> [Container.Content(movies) | Container.Content(tvshows)]  + String.Contains(Container.FolderPath,videodb://)</visible>
 				 <animation type="TYPE" condition="Window.IsVisible(2001) | Window.IsVisible(2003) | Window.IsVisible(139) | Window.IsVisible(136)" reversible="false">
 					<effect type="slide" end="-1500,0" time="300" />
 				</animation>
@@ -58,7 +58,7 @@
 				<font>Music_Vis_Title</font>
 				<label>$INFO[ListItem.Label]</label>
 				<shadowcolor>FF000000</shadowcolor>
-				<visible>IsEmpty(Control.GetLabel(1234))</visible>
+				<visible>String.IsEmpty(Control.GetLabel(1234))</visible>
 			</control>
 
 			<!--This control defines the scrollbar controlling the large list list -->

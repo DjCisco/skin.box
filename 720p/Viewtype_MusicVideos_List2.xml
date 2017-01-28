@@ -63,7 +63,7 @@
                         <width>730</width>
 						<font>List_Unfocused</font>
                         <label>$INFO[ListItem.Label]</label>
-						<visible>StringCompare(ListItem.Label,..)</visible>
+						<visible>String.IsEqual(ListItem.Label,..)</visible>
 					</control>
 					<control type="label">
                         <left>590</left>
@@ -78,7 +78,7 @@
                         <width>18</width>
                         <height>15</height>
                         <texture>watchedpanel.png</texture>
-                        <visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+                        <visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
                     </control>
                     <control type="image">
                         <left>540</left>
@@ -86,7 +86,7 @@
                         <width>18</width>
                         <height>15</height>
                         <texture>watchingpanel.png</texture>
-                        <visible>ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+                        <visible>ListItem.IsResumable + !String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
                     </control>
 				</itemlayout>
                 <focusedlayout height="63">
@@ -150,7 +150,7 @@
 						<top>32</top>
 						<width>100</width>
 						<height>25</height>
-						<texture>other_textures/colorrating/$INFO[ListItem.StarRating]</texture>
+						<texture>$VAR[ItemStarRating]</texture>
 					</control>
 					<control type="label">
                         <left>10</left>
@@ -160,7 +160,7 @@
 							<selectedcolor>White</selectedcolor>
 							<aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
-						<visible>StringCompare(ListItem.Label,..)</visible>
+						<visible>String.IsEqual(ListItem.Label,..)</visible>
 					</control>
                     <control type="image">
                         <left>540</left>
@@ -168,7 +168,7 @@
                         <width>18</width>
                         <height>15</height>
                         <texture>watchedpanel.png</texture>
-                        <visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+                        <visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
                     </control>
                     <control type="image">
                         <left>540</left>
@@ -176,7 +176,7 @@
                         <width>18</width>
                         <height>15</height>
                         <texture>watchingpanel.png</texture>
-                        <visible>ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+                        <visible>ListItem.IsResumable + !String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
                     </control>
 				</focusedlayout>
             </control>
@@ -207,7 +207,7 @@
 					<texture>button.png</texture>
 					<aspectratio>stretch</aspectratio>
 					<bordersize>5</bordersize>
-					<visible>StringCompare(ListItem.Label,..) | IsEmpty(ListItem.Icon)</visible>
+					<visible>String.IsEqual(ListItem.Label,..) | String.IsEmpty(ListItem.Icon)</visible>
 				</control>
 				<control type="image">
 					<left>50</left>
@@ -217,7 +217,7 @@
 					<texture>tile.png</texture>
 					<aspectratio>stretch</aspectratio>
 					<bordersize>5</bordersize>
-					<visible>StringCompare(ListItem.Label,..) | IsEmpty(ListItem.Icon)</visible>
+					<visible>String.IsEqual(ListItem.Label,..) | String.IsEmpty(ListItem.Icon)</visible>
 				</control>
 				<!-- This Control displays  the Main Album Poster-->
 				<control type="image">
@@ -227,7 +227,7 @@
 					<height>215</height>
 					<texture>$INFO[ListItem.Icon]</texture>
 					<aspectratio>scale</aspectratio>
-					<visible>StringCompare(ListItem.Label,..)</visible>
+					<visible>String.IsEqual(ListItem.Label,..)</visible>
 				</control>
 				<!-- This Control displays  the Main Album Poster-->
 				<control type="image">
@@ -238,7 +238,7 @@
 					<texture>$INFO[ListItem.Thumb]</texture>
 					<aspectratio>scale</aspectratio>
 					<bordersize>5</bordersize>
-					<visible>!StringCompare(ListItem.Label,..)</visible>
+					<visible>!String.IsEqual(ListItem.Label,..)</visible>
 				</control>
 				<!-- This Control display the artist name below the main poster-->
 				<control type="label" id="144">

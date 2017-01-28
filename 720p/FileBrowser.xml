@@ -90,7 +90,7 @@
                 <animation type="WindowClose">
                     <effect type="slide" time="300" start="0,0" end="+1165,0" easing="in" tween="cubic" />
                 </animation>
-				<visible>IsEmpty(Container(450).ListItem.Thumb)</visible>
+				<visible>String.IsEmpty(Container(450).ListItem.Thumb)</visible>
             </control>
 		
 			<control type="label" id="411">

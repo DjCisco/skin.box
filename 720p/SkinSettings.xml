@@ -366,7 +366,7 @@
 						<font>List_Settings</font>
                         <onclick>Skin.ToggleSetting(DisableArtistExtrafanartInNavigation)</onclick>
                         <selected>Skin.HasSetting(DisableArtistExtrafanartInNavigation)</selected>
-						<visible>!IsEmpty(Skin.String(ArtistsFanartPath))</visible>
+						<visible>!String.IsEmpty(Skin.String(ArtistsFanartPath))</visible>
                     </control>
 					<control type="radiobutton" id="205">
                         <description>Toggle Video On Background</description>

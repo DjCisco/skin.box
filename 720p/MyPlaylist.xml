@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<window id="500">
-    <defaultcontrol always="true">503</defaultcontrol>
+<window>
+    <defaultcontrol always="true">600</defaultcontrol>
      
-    <views>503</views>
+    <views>503,600</views>
     <controls>
         <include>SkinFanart</include>
         <include>BarClock</include>
@@ -11,6 +11,7 @@
             <include>BackgroundTextScroll</include>
         </control>
         <include>Viewtype_Songs</include>
+		<include>View_VideoPlaylist</include><!-- id 600-->
         <control type="image">
             <animation type="Conditional" condition="!ControlGroup(9000).HasFocus() | Window.IsActive(PlayerControls)">
                 <effect type="fade" time="300" start="100" end="0" />
@@ -53,6 +54,13 @@
             <animation type="Conditional" condition="!Skin.HasSetting(showViewOptions)">
                 <effect type="slide" start="0,0" end="-320,0" time="300" easing="inout" tween="cubic" />
             </animation>
+			<control type="button" id="2">
+                <description>View</description>
+                <width>280</width>
+				<textoffsetx>10</textoffsetx>
+				<align>left</align>
+                <font>List_Left_Menu</font>
+            </control>
             <control type="button" id="3">
                 <description>Sort</description>
                 <width>280</width>

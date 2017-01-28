@@ -48,7 +48,7 @@
                         <aspectratio>scale</aspectratio>
 						<colordiffuse>ImageDiffuse</colordiffuse>
                         <bordersize>5</bordersize>
-						<visible>IsEmpty(ListItem.Icon)</visible>
+						<visible>String.IsEmpty(ListItem.Icon)</visible>
                     </control>
 					<control type="image">
 						<left>5</left>
@@ -77,7 +77,7 @@
                         <texture>tile.png</texture>
                         <aspectratio>scale</aspectratio>
                        	<bordersize>5</bordersize>
-						<visible>IsEmpty(ListItem.Icon)</visible>
+						<visible>String.IsEmpty(ListItem.Icon)</visible>
                     </control>
                 	<control type="image">
                         <width>155</width>
@@ -93,7 +93,7 @@
                         <texture>defaultfolder.png</texture>
                         <aspectratio>scale</aspectratio>
                         <bordersize>5</bordersize>
-						<visible>IsEmpty(ListItem.Icon)</visible>
+						<visible>String.IsEmpty(ListItem.Icon)</visible>
                     </control>
 					<control type="image">
 						<left>5</left>
@@ -169,7 +169,7 @@
                 <bordersize>5</bordersize>
 				<bordertexture>white_box.png</bordertexture>
 				<align>right</align>
-				<visible>IsEmpty(ListItem.Icon)</visible>
+				<visible>String.IsEmpty(ListItem.Icon)</visible>
             </control>
 			<control type="image">
                 <left>50</left>
@@ -181,7 +181,7 @@
                 <aspectratio scalediffuse="false">keep</aspectratio>
                 <bordersize>5</bordersize>
 				<align>right</align>
-				<visible>IsEmpty(ListItem.Icon)</visible>
+				<visible>String.IsEmpty(ListItem.Icon)</visible>
             </control>
 			<control type="image">
                 <left>50</left>
@@ -193,7 +193,7 @@
                 <aspectratio scalediffuse="false">keep</aspectratio>
                 <bordersize>5</bordersize>
 				<align>right</align>
-				<visible>IsEmpty(ListItem.Icon)</visible>
+				<visible>String.IsEmpty(ListItem.Icon)</visible>
             </control>
 
         </control>
