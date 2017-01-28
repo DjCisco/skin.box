@@ -57,7 +57,7 @@
 						<width>18</width>
 						<height>15</height>
 						<texture>watchedpanel.png</texture>
-						<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout height="44">
@@ -82,7 +82,7 @@
 						<height>15</height>
 						<texture>watchedpanel.png</texture>
 						<colordiffuse>FF000000</colordiffuse>
-						<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 					</control>					
 					<control type="image">
 						<left>710</left>
@@ -90,7 +90,7 @@
 						<width>18</width>
 						<height>15</height>
 						<texture>watchedpanel.png</texture>
-						<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 					</control>
 				</focusedlayout>
 			</control>
@@ -122,7 +122,7 @@
 				<width>740</width>
 				<height>140</height>
 				<texture>tile.png</texture>
-				<visible>IsEmpty(ListItem.Art(banner)) + [StringCompare(ListItem.Label,..) | SubString(ListItem.Label,default)]</visible>
+				<visible>String.IsEmpty(ListItem.Art(banner)) + [String.IsEqual(ListItem.Label,..) | String.Contains(ListItem.Label,default)]</visible>
 			</control>
 			<control type="image">
 				<left>50</left>
@@ -133,7 +133,7 @@
 				<bordersize>5</bordersize>
 				<aspectratio>keep</aspectratio>
 				<colordiffuse>ImageDiffuse</colordiffuse>
-				<visible>IsEmpty(ListItem.Art(banner)) + [StringCompare(ListItem.Label,..) | SubString(ListItem.Label,default)]</visible>
+				<visible>String.IsEmpty(ListItem.Art(banner)) + [String.IsEqual(ListItem.Label,..) | String.Contains(ListItem.Label,default)]</visible>
 			</control>
 
 			<include>MovieTvShowPanelDescription</include>

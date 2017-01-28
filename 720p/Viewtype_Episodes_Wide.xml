@@ -37,7 +37,7 @@
                 <texture background="true">$INFO[ListItem.Icon]</texture>
                 <fadetime>200</fadetime>
                 <aspectratio scalediffuse="false">keep</aspectratio>
-                <visible>IsEmpty(ListItem.Art(tvshow.poster))</visible>
+                <visible>String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
                 <bordersize>5</bordersize>
             </control>
 			 <!-- Main Poster from Poster-->
@@ -48,7 +48,7 @@
                 <height>315</height>
                 <texture background="true">$INFO[ListItem.Art(tvshow.poster)]</texture>
                 <aspectratio scalediffuse="false">scale</aspectratio>
-                <visible>!StringCompare(ListItem.Label,..)</visible>
+                <visible>!String.IsEqual(ListItem.Label,..)</visible>
                 <bordersize>5</bordersize>
 				<bordertexture>white_box.png</bordertexture>
             </control>
@@ -61,7 +61,7 @@
                 <height>315</height>
                 <texture fallback="blank.png" background="true">$INFO[ListItem.Path]$INFO[ListItem.Season,../season0,-poster.jpg]</texture>
                 <aspectratio scalediffuse="false">scale</aspectratio>
-                <visible>!StringCompare(ListItem.Label,..) + !IntegerGreaterThan(ListItem.Season,9)"</visible>
+                <visible>!String.IsEqual(ListItem.Label,..) + !Integer.IsGreater(ListItem.Season,9)"</visible>
                 <bordersize>5</bordersize>
             </control>
 			<control type="image" id="9201">
@@ -71,7 +71,7 @@
                 <height>315</height>
                 <texture fallback="blank.png" background="true">$INFO[ListItem.Path]$INFO[ListItem.Season,../season,-poster.jpg]</texture>
                 <aspectratio scalediffuse="false">scale</aspectratio>
-                <visible>!StringCompare(ListItem.Label,..) + IntegerGreaterThan(ListItem.Season,9)"</visible>
+                <visible>!String.IsEqual(ListItem.Label,..) + Integer.IsGreater(ListItem.Season,9)"</visible>
                 <bordersize>5</bordersize>
             </control>
 			-->
@@ -86,7 +86,7 @@
                 <texture background="true">defaultvideo.png</texture>
                 <fadetime>200</fadetime>
                 <aspectratio scalediffuse="false">keep</aspectratio>
-                <visible>IsEmpty(ListItem.Icon)</visible>
+                <visible>String.IsEmpty(ListItem.Icon)</visible>
                 <bordersize>5</bordersize>
             </control>
             <!-- Episodes Panel -->
@@ -122,7 +122,7 @@
                         <texture>$INFO[ListItem.Icon]</texture>
                         <aspectratio>keep</aspectratio>
                         <bordersize>25</bordersize>
-						<visible>StringCompare(ListItem.Label,..)</visible>
+						<visible>String.IsEqual(ListItem.Label,..)</visible>
                     </control>
                     <!-- Episode Image -->
 					<control type="image">
@@ -131,7 +131,7 @@
                         <texture>$INFO[ListItem.Icon]</texture>
                         <aspectratio>scale</aspectratio>
                         <bordersize>5</bordersize>
-						<visible>!StringCompare(ListItem.Label,..)</visible>
+						<visible>!String.IsEqual(ListItem.Label,..)</visible>
                     </control>
 					<!-- Darken Image -->
 					<control type="image">
@@ -162,7 +162,7 @@
                             <effect type="zoom" center="0,0" start="80" end="120" time="400" tween="back" easing="out" />
                             <effect type="fade" start="80" end="100" time="400" />
                         </animation>
-                        <visible>[Container.Content(Episodes) + stringcompare(ListItem.Overlay,OverlayWatched.png)] | [Container.Content(TVShows) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
+                        <visible>[Container.Content(Episodes) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)] | [Container.Content(TVShows) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)]</visible>
                     </control>
                     <control type="image">
                         <left>175</left>
@@ -174,7 +174,7 @@
                             <effect type="zoom" center="0,0" start="80" end="120" time="400" tween="back" easing="out" />
                             <effect type="fade" start="80" end="100" time="400" />
                         </animation>
-                        <visible>Container.Content(Episodes) + ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+                        <visible>Container.Content(Episodes) + ListItem.IsResumable + !String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
                     </control>
                 </itemlayout>
                 <!-- Focused Item layout -->
@@ -192,7 +192,7 @@
 						<texture>tile.png</texture>
                         <aspectratio>scale</aspectratio>
 						<bordersize>5</bordersize>
-						<visible>StringCompare(ListItem.Label,..)</visible>						
+						<visible>String.IsEqual(ListItem.Label,..)</visible>						
                     </control>
 					<!-- Default Icon Image -->
 					<control type="image">
@@ -201,7 +201,7 @@
                         <texture>$INFO[ListItem.Icon]</texture>
                         <aspectratio>keep</aspectratio>
                         <bordersize>25</bordersize>
-						<visible>StringCompare(ListItem.Label,..)</visible>
+						<visible>String.IsEqual(ListItem.Label,..)</visible>
                     </control>
 					
 					
@@ -212,7 +212,7 @@
                         <texture>$INFO[ListItem.Icon]</texture>
                         <aspectratio>scale</aspectratio>
 						<bordersize>5</bordersize>
-						<visible>!StringCompare(ListItem.Label,..)</visible>
+						<visible>!String.IsEqual(ListItem.Label,..)</visible>
 					</control>
 
 					<control type="image">
@@ -222,7 +222,7 @@
                         <height>40</height>
 						<texture>button.png</texture>
                         <aspectratio>scale</aspectratio>
-						<visible>!StringCompare(ListItem.Label,..)</visible>
+						<visible>!String.IsEqual(ListItem.Label,..)</visible>
                     </control>
 					<!-- Episode Number -->
 			        <control type="label">
@@ -245,7 +245,7 @@
                             <effect type="zoom" center="235,0" start="80" end="120" time="400" tween="back" easing="out" />
                             <effect type="fade" start="80" end="100" time="400" />
                         </animation>
-                        <visible>[Container.Content(Episodes) + stringcompare(ListItem.Overlay,OverlayWatched.png)] | [Container.Content(TVShows) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
+                        <visible>[Container.Content(Episodes) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)] | [Container.Content(TVShows) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)]</visible>
                     </control>
                     <control type="image">
                         <left>175</left>
@@ -257,7 +257,7 @@
                             <effect type="zoom" center="235,0" start="80" end="120" time="400" tween="back" easing="out" />
                             <effect type="fade" start="80" end="100" time="400" />
                         </animation>
-                        <visible>Container.Content(Episodes) + ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+                        <visible>Container.Content(Episodes) + ListItem.IsResumable + !String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
                     </control>
                 </focusedlayout>
             </control>

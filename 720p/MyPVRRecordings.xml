@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window id="601">
-     <defaultcontrol>50</defaultcontrol>
+     <defaultcontrol always="true">50</defaultcontrol>
 	<onload>Skin.Reset(showViewOptions)</onload>
 	<onunload>Skin.Reset(showViewOptions)</onunload>	
      
@@ -127,7 +127,7 @@
                     <autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
                     <font>Panel_Description</font>
                     <label>$LOCALIZE[31003]</label>
-					<visible>IsEmpty(Container(13).ListItem.Plot)</visible>
+					<visible>String.IsEmpty(Container(13).ListItem.Plot)</visible>
                 </control>
 
             </control>

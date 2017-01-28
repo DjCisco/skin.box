@@ -121,6 +121,16 @@
 					<texturenofocus>tile.png</texturenofocus>
 					<focusedcolor>White</focusedcolor>
 				</control>
+				<control type="button" id="9">
+					<description>add Timer</description>
+					<width>165</width>
+					<textoffsetx>10</textoffsetx>
+					<font>Panel_Hint</font>						
+					<align>center</align>
+					<texturefocus>button.png</texturefocus>
+					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
+				</control>
 				<control type="image">
 					<texture>$INFO[ListItem.Icon]</texture>
 					<width>165</width>

@@ -191,7 +191,7 @@
 							<aspectratio>scale</aspectratio>
 							<colordiffuse>ImageDiffuse</colordiffuse>
 							<bordersize>5</bordersize>
-							<visible>!SubString(ListItem.Icon,unknown-user)</visible>
+							<visible>!String.Contains(ListItem.Icon,unknown-user)</visible>
 						</control>
 						<control type="image">
 								<left>17</left>
@@ -201,7 +201,7 @@
 							<aspectratio scalediffuse="false">stretch</aspectratio>
 							<texture>DefaultUser.png</texture>
 							<colordiffuse>ImageDiffuse</colordiffuse>
-							<visible>SubString(ListItem.Icon,unknown-user)</visible>
+							<visible>String.Contains(ListItem.Icon,unknown-user)</visible>
 						</control>
 					</itemlayout>
 					<focusedlayout width="160" height="160">
@@ -240,7 +240,7 @@
 								<texture>$INFO[ListItem.Icon]</texture>
 								<aspectratio>scale</aspectratio>
 								<bordersize>5</bordersize>
-								<visible>!SubString(ListItem.Icon,unknown-user)</visible>
+								<visible>!String.Contains(ListItem.Icon,unknown-user)</visible>
 							</control>
 							<control type="image">
 								<left>17</left>
@@ -249,7 +249,7 @@
 								<width>120</width>
 								<aspectratio scalediffuse="false">stretch</aspectratio>
 								<texture>DefaultUser.png</texture>
-								<visible>SubString(ListItem.Icon,unknown-user)</visible>
+								<visible>String.Contains(ListItem.Icon,unknown-user)</visible>
 							</control>
 						</control>
 					</focusedlayout>

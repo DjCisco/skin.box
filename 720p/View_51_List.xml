@@ -3,10 +3,10 @@
     <include name="View_51_List">
         <control type="group">
             <visible>Control.IsVisible(51)</visible>
-            <animation type="TYPE" condition="Window.IsVisible(2001) | Window.IsVisible(139) | Window.IsVisible(136) | Window.IsVisible(addonsettings)" reversible="false">
+            <animation type="TYPE" condition="Window.IsVisible(2001) | Window.IsVisible(139) | Window.IsVisible(136) | Window.IsVisible(addonsettings) | Window.IsVisible(addoninformation)" reversible="false">
                 <effect type="slide" end="-1500,0" time="200" />
             </animation>
-            <animation type="TYPE" condition="!Window.IsVisible(2001) + !Window.IsVisible(139) + !Window.IsVisible(136) + !Window.IsVisible(addonsettings)" reversible="false">
+            <animation type="TYPE" condition="!Window.IsVisible(2001) + !Window.IsVisible(139) + !Window.IsVisible(136) + !Window.IsVisible(addonsettings) + !Window.IsVisible(addoninformation)" reversible="false">
                 <effect type="slide" start="-1500,0" time="200" />
             </animation>
             <animation type="WindowClose">
@@ -58,8 +58,8 @@
 					<align>left</align>
 					<scroll>true</scroll>
 					<font>Panel_Description_Footer</font>
-					<label>$LOCALIZE[21863]: [COLOR Accent]$INFO[ListItem.Property(Addon.Creator)][/COLOR]</label>
-					<visible>!IsEmpty(ListItem.Property(Addon.Creator))</visible>
+					<label>$LOCALIZE[21863]: [COLOR Accent]$INFO[ListItem.AddonCreator][/COLOR]</label>
+					<visible>!String.IsEmpty(ListItem.AddonCreator)</visible>
 				</control>
 				<!--This control shows the label of the date of a picture on the bottom of the description field -->
 				<control type="label">
@@ -69,7 +69,7 @@
 					<height>25</height>
 					<font>Panel_Description_Footer</font>
 					<label>[COLOR Accent]$INFO[ListItem.PictureDateTime, [COLOR white]$LOCALIZE[552]: [/COLOR]][/COLOR]</label>
-					<visible>Window.IsVisible(Pictures) + !IsEmpty(ListItem.PicturePath)</visible>
+					<visible>Window.IsVisible(Pictures) + !String.IsEmpty(ListItem.PicturePath)</visible>
 				</control>
 				<!--This control shows the Addon Version or the Picture resolution on the top right of the description field -->
 				<control type="label">
@@ -81,11 +81,11 @@
 					<align>right</align>
 					<font>Panel_Description_Title</font>
 					<visible>true</visible>
-					<label>[COLOR Accent]$INFO[ListItem.Property(Addon.Version)]$INFO[ListItem.PictureResolution][/COLOR]</label>
+					<label>[COLOR Accent]$INFO[ListItem.AddonVersion]$INFO[ListItem.PictureResolution][/COLOR]</label>
 				</control>
 				<!--This control shows labels for Addd-on items-->			
 				<control type="group">
-					<visible>!IsEmpty(ListItem.Property(Addon.Name))</visible>
+					<visible>!String.IsEmpty(ListItem.AddonName)</visible>
 					<!--This control shows the label Description -->
 					<control type="label">
 						<left>800</left>
@@ -103,7 +103,7 @@
 						<height>50</height>
 						<scroll>true</scroll>
 						<font>Panel_Description</font>
-						<label>[COLOR Accent]$INFO[ListItem.Property(Addon.Summary)][/COLOR]</label>
+						<label>[COLOR Accent]$INFO[ListItem.AddonSummary][/COLOR]</label>
 					</control>
 					<!--This control shows the Item Description -->
 					<control type="textbox">
@@ -112,7 +112,7 @@
 						<width>445</width>
 						<height>180</height>
 						<font>Panel_Description</font>
-						<info>ListItem.Property(Addon.Description)</info>
+						<info>ListItem.AddonDescription</info>
 						<align>justify</align>
 						<aligny>top</aligny>
 						<autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
@@ -120,7 +120,7 @@
 				</control>
 				<!--This control shows labels for picture items-->
 				<control type="group">
-					<visible>Window.IsVisible(Pictures) + !IsEmpty(ListItem.PicturePath)</visible>
+					<visible>Window.IsVisible(Pictures) + !String.IsEmpty(ListItem.PicturePath)</visible>
 					<!-- This control shows the label Description-->
 					<control type="label">
 						<left>800</left>
@@ -129,7 +129,7 @@
 						<height>50</height>
 						<font>Panel_Description_Title</font>
 						<label>$LOCALIZE[21821]</label>
-						<visible>!IsEmpty(ListItem.Description) | !IsEmpty(ListItem.PictureComment)</visible>
+						<visible>!String.IsEmpty(ListItem.Description) | !String.IsEmpty(ListItem.PictureComment)</visible>
 					</control>
 					<!-- This control shows the label Information-->
 					<control type="label">
@@ -139,7 +139,7 @@
 						<height>50</height>
 						<font>Panel_Description_Title</font>
 						<label>$LOCALIZE[19033]</label>
-						<visible>IsEmpty(ListItem.Description) + IsEmpty(ListItem.PictureComment)</visible>
+						<visible>String.IsEmpty(ListItem.Description) + String.IsEmpty(ListItem.PictureComment)</visible>
 					</control>
 					<!-- This control shows the Picture Caption-->
 					<control type="label">
@@ -171,7 +171,7 @@
 						<info>ListItem.PictureDesc</info>
 						<align>justify</align>
 						<autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
-						<visible>!IsEmpty(ListItem.PictureDesc)</visible>
+						<visible>!String.IsEmpty(ListItem.PictureDesc)</visible>
 					</control>
 					 <!-- This control shows the Picture Comment-->
 					<control type="textbox">
@@ -183,7 +183,7 @@
 						<info>ListItem.PictureComment</info>
 						<align>justify</align>
 						<autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
-						<visible>IsEmpty(ListItem.PictureDesc)</visible>
+						<visible>String.IsEmpty(ListItem.PictureDesc)</visible>
 					</control>
             </control>
 				<!--This control defines the scrollbar controlling the small list -->
@@ -217,7 +217,7 @@
                         <width>380</width>
 						<font>List_Unfocused</font>
                         <label>$INFO[ListItem.Label]</label>
-						<visible>IsEmpty(ListItem.Property(Addon.Broken))</visible>
+						<visible>String.IsEmpty(ListItem.AddonDisclaimer)</visible>
                     </control>
 					<!-- Display Text Red if Addon is broken -->
 					<control type="label">
@@ -225,7 +225,7 @@
                         <width>380</width>
 						<font>List_Unfocused</font>
                         <label>[COLOR red]$INFO[ListItem.Label][/COLOR]</label>
-						<visible>!IsEmpty(ListItem.Property(Addon.Broken))</visible>
+						<visible>!String.IsEmpty(ListItem.AddonDisclaimer)</visible>
                     </control>
 					<!--This control shows the Addon Status Label -->
 					<control type="label">
@@ -235,7 +235,7 @@
 						<textcolor>Accent</textcolor>
 						<font>List_Unfocused</font>
 						<label>$INFO[ListItem.Property(Addon.status)]</label>
-						<visible>!IsEmpty(ListItem.Property(Addon.status)) + IsEmpty(ListItem.Property(Addon.Broken))</visible>
+						<visible>!String.IsEmpty(ListItem.Property(Addon.status)) + String.IsEmpty(ListItem.AddonDisclaimer)</visible>
 					</control>
 					<!--This control shows the Addon Broken Label -->
 					<control type="image">
@@ -244,7 +244,7 @@
 						<height>25</height>
 						<width>25</width>
 						<texture colordiffuse="FFFF0000">DefaultIconError.png</texture>
-						<visible>!IsEmpty(ListItem.Property(Addon.Broken))</visible>
+						<visible>!String.IsEmpty(ListItem.AddonDisclaimer)</visible>
 					</control>
 				</itemlayout>
                 <focusedlayout width="400" height="45">
@@ -253,14 +253,14 @@
                         <height>45</height>
                         <texture colordiffuse="AccentDiffuse">button.png</texture>
 						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(51)">Conditional</animation>
-						<visible>IsEmpty(ListItem.Property(Addon.Broken))</visible>
+						<visible>String.IsEmpty(ListItem.AddonDisclaimer)</visible>
                     </control>
 					<control type="image">
                         <width>400</width>
                         <height>45</height>
                         <texture colordiffuse="FFFF0000">button.png</texture>
 						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(51)">Conditional</animation>
-						<visible>!IsEmpty(ListItem.Property(Addon.Broken))</visible>
+						<visible>!String.IsEmpty(ListItem.AddonDisclaimer)</visible>
                     </control>
                     <control type="label">
                         <left>10</left>
@@ -275,7 +275,7 @@
 						<align>right</align>
 						<font>List_Unfocused</font>
 						<label>$INFO[ListItem.Property(Addon.status)]</label>
-						<visible>!IsEmpty(ListItem.Property(Addon.status)) + IsEmpty(ListItem.Property(Addon.Broken))</visible>
+						<visible>!String.IsEmpty(ListItem.Property(Addon.status)) + String.IsEmpty(ListItem.AddonDisclaimer)</visible>
 					</control>
 					<!--This control shows the Addon Broken Label -->
 					<control type="image">
@@ -284,7 +284,7 @@
 						<height>25</height>
 						<width>25</width>
 						<texture>DefaultIconError.png</texture>
-						<visible>!IsEmpty(ListItem.Property(Addon.Broken))</visible>
+						<visible>!String.IsEmpty(ListItem.AddonDisclaimer)</visible>
 					</control>
                 </focusedlayout>
 			</control>

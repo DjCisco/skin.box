@@ -5,6 +5,11 @@
 		<control type="grouplist">
 			<left>20</left>
 			<top>20</top>
+			<control type="label" id="1">
+				<left>20</left>
+				<label>$INFO[Player.SeekNumeric]</label>
+				<shadowcolor>black</shadowcolor>
+			</control>
 			<control type="label" id="10">
 				<description>row 1 label</description>
 				<left>20</left>

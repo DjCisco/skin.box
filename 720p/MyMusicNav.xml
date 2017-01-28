@@ -107,7 +107,7 @@
        			<font>List_Left_Menu</font>
                 <onclick>Skin.ToggleSetting(musicwidelist)</onclick>
                 <selected>Skin.HasSetting(musicwidelist)</selected>
-				<visible>SubString(Control.GetLabel(2),List Info) + Container.Content(albums)</visible>
+				<visible>String.Contains(Control.GetLabel(2),List Info) + Container.Content(albums)</visible>
             </control>
 			<control type="radiobutton" id="102">
                 <description>Wide List</description>
@@ -118,7 +118,7 @@
 				<font>List_Left_Menu</font>
                 <onclick>Skin.ToggleSetting(musicartistswidelist)</onclick>
                 <selected>Skin.HasSetting(musicartistswidelist)</selected>
-				<visible>SubString(Control.GetLabel(2),List Info) + Container.Content(artists)</visible>
+				<visible>String.Contains(Control.GetLabel(2),List Info) + Container.Content(artists)</visible>
             </control>
 			<control type="button" id="103">
                 <description>Now Playing</description>

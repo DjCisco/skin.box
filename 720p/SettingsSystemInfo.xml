@@ -150,6 +150,13 @@
                         <focusedcolor>Accent</focusedcolor>
 						<font>List_Unfocused</font>
                     </control>
+					<control type="button" id="100">
+                        <description>Privacy Policy</description>
+                        <width>300</width>
+                        <align>right</align>
+                        <focusedcolor>Accent</focusedcolor>
+						<font>List_Unfocused</font>
+                    </control>
                 </control>
                 <control type="grouplist">
                     <left>355</left>
@@ -157,6 +164,8 @@
                     <width>810</width>
                     <height>370</height>
 					<itemgap>2</itemgap>
+						<font>List_Settings</font>
+                    </control>
                     <control type="label" id="2">
                         <description>Label 2</description>
                         <width>810</width>

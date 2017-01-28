@@ -47,7 +47,7 @@
                         <height>315</height>
                         <texture>tile.png</texture>
                         <aspectratio scalediffuse="false">stretch</aspectratio>
-                        <visible>!StringCompare(ListItem.Title, )</visible>
+                        <visible>!String.IsEqual(ListItem.Title, )</visible>
                     </control>
                     <control type="image">
                         <top>75</top>
@@ -56,7 +56,7 @@
                         <texture>$INFO[ListItem.Art(poster)]</texture>
 					    <aspectratio scalediffuse="false">scale</aspectratio>
                         <bordersize>5</bordersize>
-                        <visible>!SubString(ListItem.Icon,default)</visible>
+                        <visible>!String.Contains(ListItem.Icon,default)</visible>
                     </control>
                     <control type="image">
                         <top>75</top>
@@ -65,7 +65,7 @@
                         <texture>$INFO[ListItem.Icon]</texture>
                         <aspectratio scalediffuse="false">keep</aspectratio>
                         <bordersize>5</bordersize>
-                        <visible>SubString(ListItem.Icon,default)</visible>
+                        <visible>String.Contains(ListItem.Icon,default)</visible>
                     </control>
 					<control type="image">
                         <top>75</top>
@@ -85,7 +85,7 @@
                             <effect type="zoom" center="0,0" start="80" end="120" time="400" tween="back" easing="out" />
                             <effect type="fade" start="80" end="100" time="400" />
                         </animation>
-                        <visible> stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+                        <visible> String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
                     </control>
 					<control type="image">
                         <left></left>
@@ -95,7 +95,7 @@
                         <texture>new.png</texture>
                         <colordiffuse>PanelDiffuse</colordiffuse>
                         <bordersize>5</bordersize>
-                        <visible>Container.Content(TVShows) + !Skin.HasSetting(HideNewEpisodes) + !stringcompare(ListItem.Overlay,OverlayWatched.png) + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.Label)]</visible>
+                        <visible>Container.Content(TVShows) + !Skin.HasSetting(HideNewEpisodes) + !String.IsEqual(ListItem.Overlay,OverlayWatched.png) + [String.IsEqual(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.Label)]</visible>
                     </control>
 						
                 </itemlayout>
@@ -114,7 +114,7 @@
                         <texture>tile.png</texture>
                         <aspectratio scalediffuse="false">stretch</aspectratio>
 						<bordersize>5</bordersize>
-                        <visible>StringCompare(ListItem.Label,..)</visible>
+                        <visible>String.IsEqual(ListItem.Label,..)</visible>
                     </control>
 					<control type="image">
 						<top>15</top>
@@ -147,7 +147,7 @@
                         <height>40</height>
                         <texture>DefaultTvShows.png</texture>
                         <aspectratio scalediffuse="false">stretch</aspectratio>
-                        <visible>StringCompare(ListItem.Title,$LOCALIZE[20366]) | StringCompare(ListItem.Title,$LOCALIZE[20381]) | StringCompare(ListItem.label,..)</visible>
+                        <visible>String.IsEqual(ListItem.Title,$LOCALIZE[20366]) | String.IsEqual(ListItem.Title,$LOCALIZE[20381]) | String.IsEqual(ListItem.label,..)</visible>
                     </control>
 					<control type="image">
 						<top>25</top>
@@ -156,7 +156,7 @@
                         <height>40</height>
                         <texture>DefaultMovies.png</texture>
                         <aspectratio scalediffuse="false">stretch</aspectratio>
-                        <visible>IsEmpty(ListItem.Season) + !IsEmpty(ListItem.Title) + !StringCompare(ListItem.Title,$LOCALIZE[20366]) + !StringCompare(ListItem.Title,$LOCALIZE[20381])</visible>
+                        <visible>String.IsEmpty(ListItem.Season) + !String.IsEmpty(ListItem.Title) + !String.IsEqual(ListItem.Title,$LOCALIZE[20366]) + !String.IsEqual(ListItem.Title,$LOCALIZE[20381])</visible>
                     </control>
 					<control type="image">
 						<top>75</top>
@@ -165,7 +165,7 @@
                         <texture>$INFO[ListItem.Art(poster)]</texture>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <bordersize>5</bordersize>
-                        <visible>!SubString(ListItem.Icon,default)</visible>
+                        <visible>!String.Contains(ListItem.Icon,default)</visible>
                     </control>
                     <control type="image">
                         <top>75</top>
@@ -174,7 +174,7 @@
                         <texture>$INFO[ListItem.Icon]</texture>
 						<bordersize>5</bordersize>
 						<aspectratio>keep</aspectratio>
-                        <visible>SubString(ListItem.Icon,default)</visible>
+                        <visible>String.Contains(ListItem.Icon,default)</visible>
                     </control>
                     <control type="image">
                         <left>151</left>
@@ -187,7 +187,7 @@
                             <effect type="fade" start="80" end="100" time="400" />
                         </animation>
                 
-                        <visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+                        <visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
                     </control>
                      <control type="image">
                         <left>88</left>
@@ -199,7 +199,7 @@
                             <effect type="zoom" center="49,72" start="80" end="120" time="400" tween="back" easing="out" />
                             <effect type="fade" start="80" end="100" time="400" />
                         </animation>
-                        <visible>!stringcompare(ListItem.Overlay,OverlayWatched.png) + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.Label)]</visible>
+                        <visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png) + [String.IsEqual(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.Label)]</visible>
                     </control>
 					<control type="label">
 					 	<top>15</top>
@@ -211,7 +211,7 @@
 						<align>center</align>
 						<label>$INFO[ListItem.Season]</label>
 						<shadowcolor>55000000</shadowcolor>
-						<visible>!IsEmpty(ListItem.Season)</visible>
+						<visible>!String.IsEmpty(ListItem.Season)</visible>
 					</control>
 					<control type="label">
 					 	<top>15</top>
@@ -221,7 +221,7 @@
 						<aligny>center</aligny>
 						<align>center</align>
 						<label>$LOCALIZE[20373]</label>
-						<visible>!IsEmpty(ListItem.Season)</visible>
+						<visible>!String.IsEmpty(ListItem.Season)</visible>
 					</control>
 					<control type="label">
 					 	<top>15</top>
@@ -231,7 +231,7 @@
 						<aligny>center</aligny>
 						<align>center</align>
 						<label>$INFO[ListItem.Label]</label>
-						<visible>StringCompare(ListItem.Title,$LOCALIZE[20381])</visible>
+						<visible>String.IsEqual(ListItem.Title,$LOCALIZE[20381])</visible>
 					</control>
 					<control type="label">
 					 	<top>15</top>
@@ -241,7 +241,7 @@
 						<aligny>center</aligny>
 						<align>center</align>
 						<label>$LOCALIZE[31741]</label>
-						<visible>StringCompare(ListItem.Label,.. )</visible>
+						<visible>String.IsEqual(ListItem.Label,.. )</visible>
 					</control>
 					<control type="label">
 					 	<top>15</top>
@@ -251,7 +251,7 @@
 						<aligny>center</aligny>
 						<align>center</align>
 						<label>$LOCALIZE[20338]</label>
-						<visible>IsEmpty(ListItem.Season) + !IsEmpty(ListItem.Title) + !StringCompare(ListItem.Title,$LOCALIZE[20366] ) + !StringCompare(ListItem.Title,$LOCALIZE[20381])</visible>
+						<visible>String.IsEmpty(ListItem.Season) + !String.IsEmpty(ListItem.Title) + !String.IsEqual(ListItem.Title,$LOCALIZE[20366] ) + !String.IsEqual(ListItem.Title,$LOCALIZE[20381])</visible>
 					</control>
 					<control type="label">
 					 	<top>15</top>
@@ -261,7 +261,7 @@
 						<aligny>center</aligny>
 						<align>center</align>
 						<label>$LOCALIZE[31740]</label>
-						<visible>stringcompare(ListItem.Label,$LOCALIZE[20366])</visible>
+						<visible>String.IsEqual(ListItem.Label,$LOCALIZE[20366])</visible>
 					</control>
 				</focusedlayout>
             </control>
@@ -275,7 +275,7 @@
 				<aligny>top</aligny>
                 <font>Panel_Hint</font>
                 <label>$LOCALIZE[20360] [COLOR Accent]$INFO[ListItem.Property(TotalEpisodes)][/COLOR] $LOCALIZE[16101] [COLOR Accent]$INFO[ListItem.Property(UnWatchedEpisodes)][/COLOR]</label>
-				<visible>!IsEmpty(ListItem.Season) | StringCompare(ListItem.Title,$LOCALIZE[20366]) | StringCompare(ListItem.Title,$LOCALIZE[20381])</visible>
+				<visible>!String.IsEmpty(ListItem.Season) | String.IsEqual(ListItem.Title,$LOCALIZE[20366]) | String.IsEqual(ListItem.Title,$LOCALIZE[20381])</visible>
 
             </control>
 			
@@ -289,7 +289,7 @@
 				<aligny>top</aligny>
                 <font>Panel_Hint</font>
                 <label>$INFO[ListItem.Label]</label>
-				<visible>IsEmpty(ListItem.Season) + !IsEmpty(ListItem.Title) + !StringCompare(ListItem.Title,$LOCALIZE[20366] ) + !StringCompare(ListItem.Title,$LOCALIZE[20381])</visible>
+				<visible>String.IsEmpty(ListItem.Season) + !String.IsEmpty(ListItem.Title) + !String.IsEqual(ListItem.Title,$LOCALIZE[20366] ) + !String.IsEqual(ListItem.Title,$LOCALIZE[20381])</visible>
 
             </control>
 			

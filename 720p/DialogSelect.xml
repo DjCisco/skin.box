@@ -9,7 +9,7 @@
 
 		    <control type="group">
 			
-				<visible>!Window.IsVisible(numericinput)</visible>
+			<visible>!Window.IsVisible(numericinput)</visible>
             <animation type="WindowOpen">
                 <effect type="slide" time="400" start="1280" end="0" easing="out" tween="cubic" />
             </animation>
@@ -58,7 +58,7 @@
 			</control>	
 
 		<control type="group">	
-			<visible>!IsEmpty(Container(3).ListItem.Thumb) | !IsEmpty(Container(6).ListItem.Thumb)</visible>
+			<visible>!String.IsEmpty(Container(3).ListItem.Thumb) | !String.IsEmpty(Container(6).ListItem.Thumb)</visible>
 			<control type="image">
 				<left>50</left>
 				<top>70</top>
@@ -70,7 +70,7 @@
 		
 		
 		<control type="group">	
-			<visible>IsEmpty(Container(3).ListItem.Thumb) + IsEmpty(Container(6).ListItem.Thumb)</visible>
+			<visible>String.IsEmpty(Container(3).ListItem.Thumb) + String.IsEmpty(Container(6).ListItem.Thumb)</visible>
 			<control type="image">
 				<left>50</left>
 				<top>70</top>
@@ -103,7 +103,7 @@
 				<onleft>5</onleft>
 				<onup>3</onup>
                 <ondown>3</ondown>
-                <itemlayout height="45" condition="!IsEmpty(Container(3).ListItem.Thumb)">
+                <itemlayout height="45" condition="!String.IsEmpty(Container(3).ListItem.Thumb)">
                     <control type="label">
 							<left>10</left>
                         <width>570</width>
@@ -112,7 +112,7 @@
              
                     </control>
                 </itemlayout>
-                <focusedlayout height="45" condition="!IsEmpty(Container(3).ListItem.Thumb)">
+                <focusedlayout height="45" condition="!String.IsEmpty(Container(3).ListItem.Thumb)">
                     <control type="image">
                         <width>590</width>
                         <height>45</height>
@@ -128,7 +128,7 @@
 
                     </control>
                 </focusedlayout>
-				<itemlayout height="45" condition="IsEmpty(Container(3).ListItem.Thumb)">
+				<itemlayout height="45" condition="String.IsEmpty(Container(3).ListItem.Thumb)">
                     <control type="label">
 							<left>10</left>
                         <width>1160</width>
@@ -137,7 +137,7 @@
              
                     </control>
                 </itemlayout>
-                <focusedlayout height="45" condition="IsEmpty(Container(3).ListItem.Thumb)">
+                <focusedlayout height="45" condition="String.IsEmpty(Container(3).ListItem.Thumb)">
                     <control type="image">
                         <width>1180</width>
                         <height>45</height>
@@ -174,7 +174,7 @@
 					<onleft>5</onleft>
 					<onup>6</onup>
                 <ondown>6</ondown>
-       <itemlayout height="45" condition="!IsEmpty(Container(6).ListItem.Thumb)">
+       <itemlayout height="45" condition="!String.IsEmpty(Container(6).ListItem.Thumb)">
                     <control type="label">
 							<left>10</left>
                         <width>570</width>
@@ -183,7 +183,7 @@
              
                     </control>
                 </itemlayout>
-                <focusedlayout height="45" condition="!IsEmpty(Container(6).ListItem.Thumb)">
+                <focusedlayout height="45" condition="!String.IsEmpty(Container(6).ListItem.Thumb)">
                     <control type="image">
                         <width>590</width>
                         <height>45</height>
@@ -199,7 +199,7 @@
 
                     </control>
                 </focusedlayout>
-				<itemlayout height="45" condition="IsEmpty(Container(6).ListItem.Thumb)">
+				<itemlayout height="45" condition="String.IsEmpty(Container(6).ListItem.Thumb)">
                     <control type="label">
 							<left>10</left>
                         <width>1160</width>
@@ -208,7 +208,7 @@
              
                     </control>
                 </itemlayout>
-                <focusedlayout height="45" condition="IsEmpty(Container(6).ListItem.Thumb)">
+                <focusedlayout height="45" condition="String.IsEmpty(Container(6).ListItem.Thumb)">
                     <control type="image">
                         <width>1180</width>
                         <height>45</height>
@@ -238,7 +238,7 @@
                 <aspectratio align="center" aligny="center">keep</aspectratio>
                 <bordertexture border="5">white_box.png</bordertexture>
                 <bordersize>5</bordersize>
-                <visible>!IsEmpty(Container(3).ListItem(0).Icon)</visible>
+                <visible>!String.IsEmpty(Container(3).ListItem(0).Icon)</visible>
                 <animation type="WindowOpen">
                     <effect type="slide" time="300" start="+1165, 0" end="0,0" easing="out" tween="cubic" />
                 </animation>
@@ -257,7 +257,7 @@
               <bordersize>5</bordersize>
 				<bordertexture>white_box.png</bordertexture>
 				
-                <visible>!IsEmpty(Container(3).ListItem.Thumb)</visible>
+                <visible>!String.IsEmpty(Container(3).ListItem.Thumb)</visible>
                 <animation type="WindowOpen">
                     <effect type="slide" time="300" start="+1165, 0" end="0,0" easing="out" tween="cubic" />
                 </animation>
@@ -275,7 +275,7 @@
                 <aspectratio align="center" aligny="center">keep</aspectratio>
                 <bordersize>5</bordersize>
 				<bordertexture>white_box.png</bordertexture>
-                <visible>!IsEmpty(Container(6).ListItem.Thumb)</visible>
+                <visible>!String.IsEmpty(Container(6).ListItem.Thumb)</visible>
                 <animation type="WindowOpen">
                     <effect type="slide" time="300" start="+1165, 0" end="0,0" easing="out" tween="cubic" />
                 </animation>
@@ -289,7 +289,24 @@
                 <left>50</left>
                 <top>615</top>
                 <width>160</width>
-                <label>368</label>
+                <label></label>
+                <onup>3</onup>
+                <ondown>3</ondown>
+				<onright>7</onright>
+				<onleft>7</onleft>	
+				<font>Panel_Hint</font>
+				<focusedcolor>White</focusedcolor>
+				<texturefocus>button.png</texturefocus>
+				<texturenofocus>tile.png</texturenofocus>
+            </control>
+			<control type="button" id="7">
+                <description>Cancel</description>
+                <left>215</left>
+                <top>615</top>
+                <width>160</width>
+                <label></label>
+				<onright>5</onright>
+				<onleft>5</onleft>				
                 <onup>3</onup>
                 <ondown>3</ondown>
 				<font>Panel_Hint</font>

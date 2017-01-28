@@ -153,6 +153,7 @@
         <top>0</top>
         <height>45</height>
         <width>300</width>
+		<orientation>horizontal</orientation> 
         <texturenofocus>other_textures/buttonnf.png</texturenofocus>
         <texturefocus>other_textures/buttonfo.png</texturefocus>
         <sliderwidth>150</sliderwidth>
@@ -181,6 +182,7 @@
         <top>0</top>
         <width>420</width>
         <height>15</height>
+		<orientation>horizontal</orientation> 
         <texturefocus>-</texturefocus>
         <texturenofocus>-</texturenofocus>
         <texturesliderbar>other_textures/osd/slider_bg_2.png</texturesliderbar>

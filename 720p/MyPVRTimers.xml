@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window id="601">
-     <defaultcontrol>50</defaultcontrol>
+     <defaultcontrol always="true">50</defaultcontrol>
 	<onload>Skin.Reset(showViewOptions)</onload>
 	<onunload>Skin.Reset(showViewOptions)</onunload>	
      
@@ -27,7 +27,13 @@
 
 			<control type="label">
                 <include>ViewMainTitle</include>	
-                <label>$LOCALIZE[31710]</label>
+                <label>$LOCALIZE[19138]</label>
+				<visible>Window.IsVisible(TVTimerRules) | Window.IsVisible(RadioTimerRules)</visible>
+            </control>
+			<control type="label">
+                <include>ViewMainTitle</include>	
+                <label>$LOCALIZE[19040]</label>
+				<visible>Window.IsVisible(TVTimers) | Window.IsVisible(RadioTimers)</visible>
             </control>
 			<!-- Backgrounds -->
             <control type="group">

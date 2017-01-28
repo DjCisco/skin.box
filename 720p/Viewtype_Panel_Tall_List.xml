@@ -78,7 +78,7 @@
 							<height>45</height>
 							<bordersize>5</bordersize>
 							<texture>OverlayWatchedList.png</texture>
-							<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 						<control type="image">
 							<left>475</left>
@@ -86,7 +86,7 @@
 							<height>45</height>
 							<bordersize>5</bordersize>
 							<texture>OverlayWatchingList.png</texture>
-							<visible>ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>ListItem.IsResumable + !String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 						<control type="image">
 							<left>430</left>
@@ -95,7 +95,7 @@
 							<bordersize>5</bordersize>
 							<texture>Overlay3DList.png</texture>
 							<visible>ListItem.IsStereoscopic</visible>
-							<animation type="TYPE" condition="!stringcompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable" reversible="false">
+							<animation type="TYPE" condition="!String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable" reversible="false">
 								<effect type="slide" start="45" end="45" time="50" />
 							</animation>
 						</control>
@@ -105,8 +105,8 @@
 							<height>45</height>
 							<bordersize>5</bordersize>
 							<texture>OverlayHDList.png</texture>
-							<visible>IntegerGreaterThan(ListItem.VideoResolution,699) + !ListItem.IsStereoscopic</visible>
-								<animation type="TYPE" condition="!stringcompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable" reversible="false">
+							<visible>Integer.IsGreater(ListItem.VideoResolution,699) + !ListItem.IsStereoscopic</visible>
+								<animation type="TYPE" condition="!String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable" reversible="false">
 								<effect type="slide" start="45"  end="45" time="50" />
 							</animation>
 						</control>
@@ -116,8 +116,8 @@
 							<height>45</height>
 							<bordersize>5</bordersize>
 							<texture>Overlay4KList.png</texture>
-							<visible>StringCompare(ListItem.VideoResolution,4K) + !ListItem.IsStereoscopic</visible>
-								<animation type="TYPE" condition="!stringcompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable" reversible="false">
+							<visible>String.IsEqual(ListItem.VideoResolution,4K) + !ListItem.IsStereoscopic</visible>
+								<animation type="TYPE" condition="!String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable" reversible="false">
 								<effect type="slide" start="45" end="45" time="50" />
 							</animation>
 						</control>
@@ -144,7 +144,7 @@
 							<height>45</height>
 							<bordersize>5</bordersize>
 							<texture>OverlayWatchedList.png</texture>
-							<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 						<control type="image">
 							<left>475</left>
@@ -152,7 +152,7 @@
 							<height>45</height>
 							<bordersize>5</bordersize>
 							<texture>OverlayWatchingList.png</texture>
-							<visible>ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>ListItem.IsResumable + !String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 						<control type="image">
 							<left>430</left>
@@ -161,7 +161,7 @@
 							<bordersize>5</bordersize>
 							<texture>Overlay3DList.png</texture>
 							<visible>ListItem.IsStereoscopic</visible>
-							<animation type="TYPE" condition="!stringcompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable" reversible="false">
+							<animation type="TYPE" condition="!String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable" reversible="false">
 								<effect type="slide" start="45" end="45" time="50" />
 							</animation>
 						</control>
@@ -171,8 +171,8 @@
 							<height>45</height>
 							<bordersize>5</bordersize>
 							<texture>OverlayHDList.png</texture>
-							<visible>IntegerGreaterThan(ListItem.VideoResolution,699) + !ListItem.IsStereoscopic</visible>
-								<animation type="TYPE" condition="!stringcompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable" reversible="false">
+							<visible>Integer.IsGreater(ListItem.VideoResolution,699) + !ListItem.IsStereoscopic</visible>
+								<animation type="TYPE" condition="!String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable" reversible="false">
 								<effect type="slide" start="45"  end="45" time="50" />
 							</animation>
 						</control>
@@ -182,8 +182,8 @@
 							<height>45</height>
 							<bordersize>5</bordersize>
 							<texture>Overlay4KList.png</texture>
-							<visible>StringCompare(ListItem.VideoResolution,4K) + !ListItem.IsStereoscopic</visible>
-								<animation type="TYPE" condition="!stringcompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable" reversible="false">
+							<visible>String.IsEqual(ListItem.VideoResolution,4K) + !ListItem.IsStereoscopic</visible>
+								<animation type="TYPE" condition="!String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable" reversible="false">
 								<effect type="slide" start="45" end="45" time="50" />
 							</animation>
 						</control>
@@ -214,7 +214,7 @@
 							<height>42</height>
 							<bordersize>5</bordersize>
 							<texture>OverlayWatchedList.png</texture>
-							<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 						<control type="image">
 							<left>823</left>
@@ -222,7 +222,7 @@
 							<height>42</height>
 							<bordersize>5</bordersize>
 							<texture>OverlayWatchingList.png</texture>
-							<visible>ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>ListItem.IsResumable + !String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 						<control type="image">
 							<left>781</left>
@@ -231,7 +231,7 @@
 							<bordersize>5</bordersize>
 							<texture>Overlay3DList.png</texture>
 							<visible>ListItem.IsStereoscopic</visible>
-							<animation type="TYPE" condition="!stringcompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable" reversible="false">
+							<animation type="TYPE" condition="!String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable" reversible="false">
 								<effect type="slide" start="42" end="42" time="50" />
 							</animation>
 						</control>
@@ -241,8 +241,8 @@
 							<height>42</height>
 							<bordersize>5</bordersize>
 							<texture>OverlayHDList.png</texture>
-							<visible>IntegerGreaterThan(ListItem.VideoResolution,699) + !ListItem.IsStereoscopic</visible>
-								<animation type="TYPE" condition="!stringcompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable" reversible="false">
+							<visible>Integer.IsGreater(ListItem.VideoResolution,699) + !ListItem.IsStereoscopic</visible>
+								<animation type="TYPE" condition="!String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable" reversible="false">
 								<effect type="slide" start="42"  end="42" time="50" />
 							</animation>
 						</control>
@@ -252,8 +252,8 @@
 							<height>42</height>
 							<bordersize>5</bordersize>
 							<texture>Overlay4KList.png</texture>
-							<visible>StringCompare(ListItem.VideoResolution,4K) + !ListItem.IsStereoscopic</visible>
-								<animation type="TYPE" condition="!stringcompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable" reversible="false">
+							<visible>String.IsEqual(ListItem.VideoResolution,4K) + !ListItem.IsStereoscopic</visible>
+								<animation type="TYPE" condition="!String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable" reversible="false">
 								<effect type="slide" start="42" end="42" time="50" />
 							</animation>
 						</control>
@@ -323,7 +323,7 @@
 						<font>List_Hint</font>
 						<selectedcolor>White</selectedcolor>
 						<label>$INFO[ListItem.Property(TotalSeasons),, $LOCALIZE[33054]$COMMA ]$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]</label>
-						<visible>!Container.Content(movies) + IntegerGreaterThan(ListItem.Property(TotalSeasons),1) + IntegerGreaterThan(ListItem.Property(TotalEpisodes),1)</visible>
+						<visible>!Container.Content(movies) + Integer.IsGreater(ListItem.Property(TotalSeasons),1) + Integer.IsGreater(ListItem.Property(TotalEpisodes),1)</visible>
 					</control>
 					<control type="label">
 						<left>25</left>
@@ -334,7 +334,7 @@
 						<font>List_Hint</font>
 						<selectedcolor>White</selectedcolor>
 						<label>$INFO[ListItem.Property(TotalSeasons),, $LOCALIZE[20373]$COMMA ]$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]</label>
-						<visible>!Container.Content(movies) + !IntegerGreaterThan(ListItem.Property(TotalSeasons),1) + IntegerGreaterThan(ListItem.Property(TotalEpisodes),1)</visible>
+						<visible>!Container.Content(movies) + !Integer.IsGreater(ListItem.Property(TotalSeasons),1) + Integer.IsGreater(ListItem.Property(TotalEpisodes),1)</visible>
 					</control>
 					<control type="label">
 						<left>25</left>
@@ -345,7 +345,7 @@
 						<font>List_Hint</font>
 						<selectedcolor>White</selectedcolor>
 						<label>$INFO[ListItem.Property(TotalSeasons),, $LOCALIZE[33054]$COMMA ]$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20359]]</label>
-						<visible>!Container.Content(movies) + IntegerGreaterThan(ListItem.Property(TotalSeasons),1) + !IntegerGreaterThan(ListItem.Property(TotalEpisodes),1)</visible>
+						<visible>!Container.Content(movies) + Integer.IsGreater(ListItem.Property(TotalSeasons),1) + !Integer.IsGreater(ListItem.Property(TotalEpisodes),1)</visible>
 					</control>
 					<control type="label">
 						<left>25</left>
@@ -356,7 +356,7 @@
 						<font>List_Hint</font>
 						<selectedcolor>White</selectedcolor>
 						<label>$INFO[ListItem.Property(TotalSeasons),, $LOCALIZE[20373]$COMMA ]$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20359]]</label>
-						<visible>!Container.Content(movies) + !IntegerGreaterThan(ListItem.Property(TotalSeasons),1) + !IntegerGreaterThan(ListItem.Property(TotalEpisodes),1)</visible>
+						<visible>!Container.Content(movies) + !Integer.IsGreater(ListItem.Property(TotalSeasons),1) + !Integer.IsGreater(ListItem.Property(TotalEpisodes),1)</visible>
 					</control>
 						<control type="image">
 							<top>10</top>
@@ -365,7 +365,7 @@
 							<height>42</height>
 							<bordersize>5</bordersize>
 							<texture>OverlayWatchedList.png</texture>
-							<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 						<control type="image">
 							<top>10</top>
@@ -374,7 +374,7 @@
 							<height>42</height>
 							<bordersize>5</bordersize>
 							<texture>OverlayWatchingList.png</texture>
-							<visible>ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>ListItem.IsResumable + !String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 						<control type="image">
 							<top>10</top>
@@ -384,7 +384,7 @@
 							<bordersize>5</bordersize>
 							<texture>Overlay3DList.png</texture>
 							<visible>ListItem.IsStereoscopic</visible>
-							<animation type="TYPE" condition="!stringcompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable" reversible="false">
+							<animation type="TYPE" condition="!String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable" reversible="false">
 								<effect type="slide" start="42" end="42" time="50" />
 							</animation>
 						</control>
@@ -395,8 +395,8 @@
 							<height>42</height>
 							<bordersize>5</bordersize>
 							<texture>OverlayHDList.png</texture>
-							<visible>IntegerGreaterThan(ListItem.VideoResolution,699) + !ListItem.IsStereoscopic</visible>
-								<animation type="TYPE" condition="!stringcompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable" reversible="false">
+							<visible>Integer.IsGreater(ListItem.VideoResolution,699) + !ListItem.IsStereoscopic</visible>
+								<animation type="TYPE" condition="!String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable" reversible="false">
 								<effect type="slide" start="42"  end="42" time="50" />
 							</animation>
 						</control>
@@ -407,8 +407,8 @@
 							<height>42</height>
 							<bordersize>5</bordersize>
 							<texture>Overlay4KList.png</texture>
-							<visible>StringCompare(ListItem.VideoResolution,4K) + !ListItem.IsStereoscopic</visible>
-								<animation type="TYPE" condition="!stringcompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable" reversible="false">
+							<visible>String.IsEqual(ListItem.VideoResolution,4K) + !ListItem.IsStereoscopic</visible>
+								<animation type="TYPE" condition="!String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable" reversible="false">
 								<effect type="slide" start="42" end="42" time="50" />
 							</animation>
 						</control>
@@ -418,7 +418,7 @@
 						<top>32</top>
 						<width>100</width>
 						<height>30</height>
-						<texture>other_textures/colorrating/$INFO[ListItem.StarRating]</texture>
+						<texture>$VAR[ItemStarRating]</texture>
 						<visible>[Container.Content(movies) | Container.Content(tvshows)]</visible>
 					</control>
 				</focusedlayout>

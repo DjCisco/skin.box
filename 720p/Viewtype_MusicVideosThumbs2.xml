@@ -59,7 +59,7 @@
                         <texture>$INFO[ListItem.Icon]</texture>
                         <aspectratio>keep</aspectratio>
 						<bordersize>20</bordersize>
-						<visible>StringCompare(ListItem.Label,..)</visible>
+						<visible>String.IsEqual(ListItem.Label,..)</visible>
                     </control>
 					<control type="image">
                         <width>235</width>
@@ -67,7 +67,7 @@
                         <texture>$INFO[ListItem.Thumb]</texture>
                         <aspectratio>scale</aspectratio>
 						<bordersize>5</bordersize>
-						<visible>!StringCompare(ListItem.Label,..)</visible>
+						<visible>!String.IsEqual(ListItem.Label,..)</visible>
                     </control>
 					<control type="image">
 						<left>5</left>
@@ -76,7 +76,7 @@
                         <height>30</height>
                         <texture>black.png</texture>
 						<colordiffuse>CCFFFFFF</colordiffuse>
-						<visible>!StringCompare(ListItem.Label,..)</visible>
+						<visible>!String.IsEqual(ListItem.Label,..)</visible>
                     </control>						
 					 <control type="label">
 						<left>10</left>
@@ -98,7 +98,7 @@
                         <texture>$INFO[ListItem.Icon]</texture>
                         <aspectratio>keep</aspectratio>
 						<bordersize>20</bordersize>
-						<visible>StringCompare(ListItem.Label,..)</visible>
+						<visible>String.IsEqual(ListItem.Label,..)</visible>
                     </control>
 					<control type="image">
                         <left>0</left>
@@ -108,7 +108,7 @@
                         <texture>$INFO[ListItem.Thumb]</texture>
                         <aspectratio>scale</aspectratio>
 						<bordersize>5</bordersize>
-                        <visible>!StringCompare(ListItem.Label,..)</visible>
+                        <visible>!String.IsEqual(ListItem.Label,..)</visible>
                     </control>
                     <control type="image">
 						<left>5</left>
@@ -117,7 +117,7 @@
                         <height>30</height>
                         <texture>black.png</texture>
 						<colordiffuse>CCFFFFFF</colordiffuse>
-						<visible>!StringCompare(ListItem.Label,..)</visible>
+						<visible>!String.IsEqual(ListItem.Label,..)</visible>
                     </control>					
                     <control type="label">
 						<left>10</left>

@@ -20,7 +20,7 @@
                     <left>50</left>
                     <top>215</top>
                     <height>30</height>
-                    <width>250</width>
+                    <width>1000</width>
                     <font>Panel_Title</font>
                     <align>left</align>
 					<aligny>top</aligny>
@@ -73,27 +73,27 @@
                     <content>
                         <item id="1">
                             <description>Appearance</description>
-                            <label>480</label>
+                            <label>14206</label>
 							<thumb>DefaultAppearance.png</thumb>
-							<onclick>activatewindow(AppearanceSettings)</onclick>
+							<onclick>activatewindow(InterfaceSettings)</onclick>
                         </item>
                         <item id="2">
-                            <description>Videos</description>
-                            <label>3</label>
-							<thumb>DefaultVideo.png</thumb>
-                            <onclick>activatewindow(VideosSettings)</onclick>
+                            <description>Media</description>
+                            <label>14211</label>
+							<thumb>DefaultMedia.png</thumb>
+                            <onclick>activatewindow(MediaSettings)</onclick>
                         </item>
                         <item id="3">
                             <description>Live TV</description>
-                            <label>$LOCALIZE[31703]</label>
+                            <label>$LOCALIZE[14204]</label>
 							<thumb>DefaultTvChannels.png</thumb>
                             <onclick>activatewindow(PVRSettings,return)</onclick>
                         </item>
                         <item id="4">
-                            <description>Music</description>
-                            <label>2</label>
-							<thumb>DefaultAudio.png</thumb>
-                            <onclick>activatewindow(MusicSettings,return)</onclick>
+                            <description>Player</description>
+                            <label>14200</label>
+							<thumb>DefaultPlayer.png</thumb>
+                            <onclick>activatewindow(PlayerSettings,return)</onclick>
                         </item>
                         <item id="5">
                             <description>Addons</description>
@@ -102,42 +102,30 @@
                             <onclick>activatewindow(AddonBrowser)</onclick>
                         </item>
                         <item id="6">
-                            <description>Pictures</description>
-                            <label>1</label>
-							<thumb>DefaultPicture.png</thumb>
-                            <onclick>activatewindow(PicturesSettings,return)</onclick>
+                            <description>Services</description>
+                            <label>14036</label>
+                            <thumb>DefaultServices.png</thumb>
+                            <onclick>activatewindow(ServiceSettings,return)</onclick>
                         </item>
                         <item id="7">
-                            <description>Weather</description>
-                            <label>8</label>
-							<thumb>DefaultWeather.png</thumb>
-                            <onclick>activatewindow(WeatherSettings,return)</onclick>
-                        </item>
-                        <item id="8">
-                            <description>Network</description>
-                            <label>705</label>
-                            <thumb>DefaultNetwork.png</thumb>
-                            <onclick>activatewindow(NetworkSettings,return)</onclick>
-                        </item>
-                        <item id="9">
                             <description>System</description>
                             <label>13000</label>
 						   <thumb>DefaultSystem.png</thumb>
                             <onclick>activatewindow(SystemSettings,return)</onclick>
                         </item>
-                        <item id="10">
+                        <item id="8">
                             <description>Profiles</description>
                             <label>13200</label>
                             <thumb>DefaultUser.png</thumb>
                             <onclick>activatewindow(Profiles,return)</onclick>
                         </item>
-                        <item id="11">
+                        <item id="9">
                             <description>System Info</description>
                             <label>130</label>
                             <thumb>DefaultInfo.png</thumb>
                             <onclick>activatewindow(7,return)</onclick>
                         </item>
-						<item id="12">
+						<item id="10">
                             <description>File Manager</description>
                             <label>7</label>
                             <thumb>icons/FileManager.png</thumb>

@@ -41,7 +41,7 @@
                         <height>315</height>
                         <texture>tile.png</texture>
                         <aspectratio scalediffuse="false">stretch</aspectratio>
-                        <visible>!StringCompare(ListItem.Title, )</visible>
+                        <visible>!String.IsEqual(ListItem.Title, )</visible>
                     </control>
                     <control type="image">
                         <width>215</width>
@@ -49,7 +49,7 @@
                         <texture>$INFO[ListItem.Art(poster)]</texture>
 					    <aspectratio scalediffuse="false">scale</aspectratio>
                         <bordersize>5</bordersize>
-                        <visible>!SubString(ListItem.Icon,default)</visible>
+                        <visible>!String.Contains(ListItem.Icon,default)</visible>
                     </control>
                     <control type="image">
                         <width>215</width>
@@ -57,7 +57,7 @@
                         <texture>$INFO[ListItem.Icon]</texture>
 		                <aspectratio scalediffuse="false">keep</aspectratio>
                         <bordersize>5</bordersize>
-                        <visible>SubString(ListItem.Icon,default)</visible>
+                        <visible>String.Contains(ListItem.Icon,default)</visible>
                     </control>
 					<control type="image">
                         <width>215</width>
@@ -76,7 +76,7 @@
                             <effect type="zoom" center="0,215" start="80" end="120" time="400" tween="back" easing="out" />
                             <effect type="fade" start="80" end="100" time="400" />
                         </animation>
-                        <visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+                        <visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
                     </control>
 					   <control type="image">
                         <left>150</left>
@@ -88,7 +88,7 @@
                             <effect type="zoom" center="0,215" start="80" end="120" time="400" tween="back" easing="out" />
                             <effect type="fade" start="80" end="100" time="400" />
                         </animation>
-                        <visible>ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+                        <visible>ListItem.IsResumable + !String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
                     </control>
 					<control type="image">
                         <left>135</left>
@@ -100,7 +100,7 @@
                             <effect type="zoom" center="0,215" start="80" end="120" time="400" tween="back" easing="out" />
                             <effect type="fade" start="80" end="100" time="400" />
                         </animation>
-                        <visible>!stringcompare(ListItem.Overlay,OverlayWatched.png) + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.Label)]</visible>
+                        <visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png) + [String.IsEqual(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.Label)]</visible>
                     </control>
 					<control type="image">
 				<top>250</top>
@@ -116,7 +116,7 @@
 				<width>60</width>
 				<height>60</height>
 				<texture>OverlayHDPanel.png</texture>
-					<visible>IntegerGreaterThan(ListItem.VideoResolution,699) + !ListItem.IsStereoscopic</visible>
+					<visible>Integer.IsGreater(ListItem.VideoResolution,699) + !ListItem.IsStereoscopic</visible>
 			</control>
 			
 						<control type="image">
@@ -125,7 +125,7 @@
 				<width>60</width>
 				<height>60</height>
 				<texture>Overlay4KPanel.png</texture>
-				<visible>StringCompare(ListItem.VideoResolution,4K) + !ListItem.IsStereoscopic</visible>
+				<visible>String.IsEqual(ListItem.VideoResolution,4K) + !ListItem.IsStereoscopic</visible>
 			</control>
 						
                 </itemlayout>
@@ -143,7 +143,7 @@
                         <texture>tile.png</texture>
                         <aspectratio scalediffuse="false">stretch</aspectratio>
 						<bordersize>5</bordersize>
-                        <visible>StringCompare(ListItem.Label,..)</visible>
+                        <visible>String.IsEqual(ListItem.Label,..)</visible>
                     </control>
 					<control type="image">
 						<width>215</width>
@@ -151,7 +151,7 @@
                         <texture>$INFO[ListItem.Art(poster)]</texture>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <bordersize>5</bordersize>
-                        <visible>!SubString(ListItem.Icon,default)</visible>
+                        <visible>!String.Contains(ListItem.Icon,default)</visible>
                     </control>
                     <control type="image">
                         <width>215</width>
@@ -159,7 +159,7 @@
                         <texture>$INFO[ListItem.Icon]</texture>
 							<aspectratio scalediffuse="false">keep</aspectratio>
 						<bordersize>5</bordersize>
-                        <visible>SubString(ListItem.Icon,default)</visible>
+                        <visible>String.Contains(ListItem.Icon,default)</visible>
                     </control>
                     <control type="image">
                         <left>150</left>
@@ -167,7 +167,7 @@
                         <width>60</width>
                         <height>60</height>
                         <texture>OverlayWatchedPanel.png</texture>
-	                     <visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+	                     <visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
                     </control>
                     <control type="image">
                         <left>150</left>
@@ -175,7 +175,7 @@
                         <width>60</width>
                         <height>60</height>
                         <texture>OverlayWatchingPanel.png</texture>
-                         <visible>ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+                         <visible>ListItem.IsResumable + !String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
                     </control>
                     <control type="image">
                         <left>135</left>
@@ -183,7 +183,7 @@
                         <width>75</width>
                         <height>75</height>
                         <texture>OverlayNewPanel.png</texture>
-                        <visible>!stringcompare(ListItem.Overlay,OverlayWatched.png) + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.Label)]</visible>
+                        <visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png) + [String.IsEqual(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.Label) | String.IsEqual(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.Label)]</visible>
                     </control>
 					<control type="image">
 				<top>250</top>
@@ -199,7 +199,7 @@
 				<width>60</width>
 				<height>60</height>
 				<texture>OverlayHDPanel.png</texture>
-					<visible>IntegerGreaterThan(ListItem.VideoResolution,699) + !ListItem.IsStereoscopic</visible>
+					<visible>Integer.IsGreater(ListItem.VideoResolution,699) + !ListItem.IsStereoscopic</visible>
 			</control>
 			
 						<control type="image">
@@ -208,7 +208,7 @@
 				<width>60</width>
 				<height>60</height>
 				<texture>Overlay4KPanel.png</texture>
-				<visible>StringCompare(ListItem.VideoResolution,4K) + !ListItem.IsStereoscopic</visible>
+				<visible>String.IsEqual(ListItem.VideoResolution,4K) + !ListItem.IsStereoscopic</visible>
 			</control>
 					
 					
@@ -226,39 +226,39 @@
                 <include>ViewFooterTitle</include>
                 <font>Panel_Title_Footer</font>
 				<label>SEASONS [COLOR Accent]$INFO[ListItem.Property(TotalSeasons),,[COLOR White] • [/COLOR]][/COLOR]EPISODES [COLOR Accent]$INFO[ListItem.Property(TotalEpisodes),,[COLOR White] • [/COLOR]][/COLOR]UNWATCHED [COLOR Accent]$INFO[ListItem.Property(UnWatchedEpisodes)][/COLOR]</label>
-			    <visible>[IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)] + Container.Content(tvshows)</visible>
+			    <visible>[Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0)] + Container.Content(tvshows)</visible>
             </control>
 			<!-- Display total seasons, total episodes and last played in case unwatched episodes is 0 -->
 			<control type="label">
                 <include>ViewFooterTitle</include>
                 <font>Panel_Title_Footer</font>
 				<label>SEASONS [COLOR Accent]$INFO[ListItem.Property(TotalSeasons),,[COLOR White] • [/COLOR]][/COLOR]EPISODES [COLOR Accent]$INFO[ListItem.Property(TotalEpisodes),,[COLOR White] • [/COLOR]][/COLOR][COLOR Accent]$INFO[ListItem.LastPlayed,[COLOR White][UPPERCASE]$LOCALIZE[568][/UPPERCASE]: [/COLOR]][/COLOR]</label>
-			    <visible>Container.Content(tvshows) + StringCompare(ListItem.Property(UnWatchedEpisodes),0)</visible>
+			    <visible>Container.Content(tvshows) + String.IsEqual(ListItem.Property(UnWatchedEpisodes),0)</visible>
             </control>
 			<!-- This controls displays the tagline of the movie below the Movie Title -->
 			<control type="label">
                 <include>ViewFooterTitle</include>
                 <textcolor>White</textcolor>
                 <label>$INFO[ListItem.Tagline]</label>
-                <visible>!IsEmpty(ListItem.Tagline) + Container.Content(Movies)</visible>
+                <visible>!String.IsEmpty(ListItem.Tagline) + Container.Content(Movies)</visible>
             </control>
             <!-- This controls displays the director of a Movie instead of the tagline, if there is no tagline -->
 			<control type="label">
                 <include>ViewFooterTitle</include>
                 <label>[UPPERCASE][COLOR White]$LOCALIZE[20339][/COLOR]  [COLOR Accent]$INFO[ListItem.Director][/COLOR][/UPPERCASE]</label>
-				<visible>IsEmpty(ListItem.Tagline) + Container.Content(Movies) + !SubString(ListItem.Icon,default) + !IsEmpty(ListItem.Director)</visible>
+				<visible>String.IsEmpty(ListItem.Tagline) + Container.Content(Movies) + !String.Contains(ListItem.Icon,default) + !String.IsEmpty(ListItem.Director)</visible>
             </control>
             <!-- This controls displays the Duration of the Movie if no director or Tagline are available if the strig "min" is part of the duration-->
 			<control type="label">
                 <include>ViewFooterTitle</include>
                 <label>$INFO[ListItem.Duration]</label>
-                <visible>!IsEmpty(ListItem.Duration) + SubString(ListItem.Duration,$LOCALIZE[31299]) + IsEmpty(ListItem.Director) + IsEmpty(ListItem.Tagline) + Container.Content(Movies)</visible>
+                <visible>!String.IsEmpty(ListItem.Duration) + String.Contains(ListItem.Duration,$LOCALIZE[31299]) + String.IsEmpty(ListItem.Director) + String.IsEmpty(ListItem.Tagline) + Container.Content(Movies)</visible>
             </control>
             <!-- This controls displays the Duration of the Movie if no director or Tagline are available -->
 			<control type="label">
                 <include>ViewFooterTitle</include>
                 <label>$INFO[ListItem.Duration,, [UPPERCASE]$LOCALIZE[31299][/UPPERCASE]]</label>
-                <visible>!IsEmpty(ListItem.Duration) + IsEmpty(ListItem.Director) + IsEmpty(ListItem.Tagline) + Container.Content(Movies)</visible>
+                <visible>!String.IsEmpty(ListItem.Duration) + String.IsEmpty(ListItem.Director) + String.IsEmpty(ListItem.Tagline) + Container.Content(Movies)</visible>
             </control>
             
 			

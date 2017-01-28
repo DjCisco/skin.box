@@ -72,7 +72,7 @@
                         <width>730</width>
 						<font>List_Unfocused</font>
                         <label>$INFO[ListItem.Label]</label>
-						<visible>StringCompare(ListItem.Label,..)</visible>
+						<visible>String.IsEqual(ListItem.Label,..)</visible>
 					</control>
                     <!-- This Control displays the Track Rating-->
 					<control type="image">
@@ -80,7 +80,7 @@
                         <top>10</top>
                         <width>100</width>
                         <height>25</height>
-						<texture>other_textures/colorrating/$INFO[ListItem.StarRating]</texture>
+						<texture>other_textures/colorrating/$INFO[ListItem.UserRating,rating,.png]</texture>
                     </control>
                     <!-- This Control displays the Track Duration-->
 					<control type="label">
@@ -135,7 +135,7 @@
 						<font>List_Focused</font>
 						<selectedcolor>White</selectedcolor>
                         <label>$INFO[ListItem.Label]</label>
-						<visible>StringCompare(ListItem.Label,..)</visible>
+						<visible>String.IsEqual(ListItem.Label,..)</visible>
                     </control>
                     <!-- This Control displays the Focused Track Rating-->
 					<control type="image">
@@ -143,17 +143,9 @@
                         <top>11</top>
                         <width>100</width>
                         <height>25</height>
-						<texture>other_textures/colorrating/$INFO[ListItem.StarRating]</texture>
-						<colordiffuse>FF000000</colordiffuse>
-                    </control>
-					<control type="image">
-                        <left>770</left>
-                        <top>10</top>
-                        <width>100</width>
-                        <height>25</height>
-						<texture>other_textures/colorrating/$INFO[ListItem.StarRating]</texture>
-                    </control>
-                    <!-- This Control displays the Focused Track Duration-->
+						<texture>other_textures/leftrating/$INFO[ListItem.UserRating,rating,.png]</texture>
+			        </control>
+	                <!-- This Control displays the Focused Track Duration-->
 					<control type="label">
                         <left>625</left>
                         <align>right</align>
@@ -202,6 +194,7 @@
                 <aligny>top</aligny>
 				<align>left</align>
             </control>
+
 
             <include>ArtistAlbumPanelCover</include>
 			

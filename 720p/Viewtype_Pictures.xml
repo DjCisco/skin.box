@@ -49,7 +49,7 @@
 			</control>
 			<!--This control defines the list that will display the items -->
 			<control type="list" id="533">
-                <visible>Window.IsActive(Pictures) + !Container.Content(addons) + !IsEmpty(Container.Foldername)</visible>
+                <visible>Window.IsActive(Pictures) + !Container.Content(addons) + !String.IsEmpty(Container.Foldername)</visible>
                 <left>50</left>
                 <top>290</top>
                 <width>550</width>
@@ -68,14 +68,14 @@
 						<width>400</width>
 						<font>List_Unfocused</font>
 						<label>$INFO[ListItem.Label]</label>
-						<visible>!IsEmpty(ListItem.PictureResolution)</visible>
+						<visible>!String.IsEmpty(ListItem.PictureResolution)</visible>
 					</control>
 					<control type="label">
 						<left>15</left>
 						<width>520</width>
 						<font>List_Unfocused</font>
 						<label>$INFO[ListItem.Label]</label>
-						<visible>IsEmpty(ListItem.PictureResolution)</visible>
+						<visible>String.IsEmpty(ListItem.PictureResolution)</visible>
 					</control>
 					<control type="label">
 						<left>420</left>
@@ -98,7 +98,7 @@
 						<selectedcolor>White</selectedcolor>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
-						<visible>!IsEmpty(ListItem.PictureResolution)</visible>
+						<visible>!String.IsEmpty(ListItem.PictureResolution)</visible>
 					</control>
 					<control type="label">
 						<left>15</left>
@@ -107,7 +107,7 @@
 						<selectedcolor>White</selectedcolor>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
-						<visible>IsEmpty(ListItem.PictureResolution)</visible>
+						<visible>String.IsEmpty(ListItem.PictureResolution)</visible>
 					</control>
 					<control type="label">
 						<left>420</left>
@@ -142,7 +142,7 @@
 				<texture>button.png</texture>
 				<bordersize>5</bordersize>
 				<bordertexture>white_box.png</bordertexture>
-				<visible>IsEmpty(ListItem.Thumb)</visible>
+				<visible>String.IsEmpty(ListItem.Thumb)</visible>
 			</control>
 			<control type="image">
 				<left>615</left>
@@ -151,7 +151,7 @@
                 <height>315</height>
 				<texture>tile.png</texture>
 				<bordersize>5</bordersize>
-				<visible>IsEmpty(ListItem.Thumb)</visible>
+				<visible>String.IsEmpty(ListItem.Thumb)</visible>
 			</control>
 			<control type="image">
 				<left>615</left>
@@ -160,7 +160,7 @@
                 <height>315</height>
 				<texture>$INFO[ListItem.ActualIcon]</texture>
 				<bordersize>35</bordersize>
-				<visible>IsEmpty(ListItem.Thumb)</visible>
+				<visible>String.IsEmpty(ListItem.Thumb)</visible>
 			</control>
 			
 		</control>

@@ -198,7 +198,7 @@
                 <label>13350</label>
 				<font>List_Left_Menu</font>
 				<onclick>ActivateWindow(videoplaylist)</onclick>
-				<visible>[Window.IsActive(videolibrary) + !StringCompare(Playlist.Length(video),0)] | [[Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)] + !StringCompare(Playlist.Length(music),0)]</visible>
+				<visible>[Window.IsActive(Videos) + !String.IsEqual(Playlist.Length(video),0)] | [Window.IsActive(Music)+ !String.IsEqual(Playlist.Length(music),0)]</visible>
             </control>
 
 		</control>

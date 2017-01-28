@@ -37,7 +37,7 @@
 				<height>145</height>
 				<texture>DefaultTvChannels.png</texture>
 				<bordersize>20</bordersize>
-                <visible>IsEmpty(Window.Property(IsRadio))</visible>
+                <visible>String.IsEmpty(Window.Property(IsRadio))</visible>
             </control>
             <control type="image">
 				<left>25</left>
@@ -46,7 +46,7 @@
 				<height>145</height>
 				<texture>DefaultRadio.png</texture>
 				<bordersize>20</bordersize>
-				<visible>!IsEmpty(Window.Property(IsRadio))</visible>
+				<visible>!String.IsEmpty(Window.Property(IsRadio))</visible>
             </control>
             <!-- Channel List -->
 			<control type="group">
@@ -284,7 +284,7 @@
 				<control type="button" id="34">
 					<description>TV/Radio Button</description>
 					<width>230</width>
-					<visible>IsEmpty(Window.Property(IsRadio))</visible>
+					<visible>String.IsEmpty(Window.Property(IsRadio))</visible>
 					<label>19024</label>
 					<font>Panel_Info</font>
 					<texturefocus>button.png</texturefocus>
@@ -294,7 +294,7 @@
 				<control type="button" id="34">
 					<description>TV/Radio Button</description>
 					<width>230</width>
-					<visible>!IsEmpty(Window.Property(IsRadio))</visible>
+					<visible>!String.IsEmpty(Window.Property(IsRadio))</visible>
 					<label>19023</label>
 					<font>Panel_Info</font>
 					<texturefocus>button.png</texturefocus>

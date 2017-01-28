@@ -53,13 +53,13 @@
 					<aspectratio aligny="top">stretch</aspectratio>
 					<imagepath background="true">walls</imagepath>
 					<animation effect="fade" start="0" end="100" time="550" delay="0" tween="sine" easing="inout">VisibleChange</animation>
-					<visible>IsEmpty(Control.getLabel(9870)) + IsEmpty(Control.getLabel(9872)) + IsEmpty(Control.getLabel(9874))</visible>	
+					<visible>String.IsEmpty(Control.getLabel(9870)) + String.IsEmpty(Control.getLabel(9872)) + String.IsEmpty(Control.getLabel(9874))</visible>	
 				</control>
 				<control type="image">
 					<include>Dimensions_Fullscreen</include>
 					<aspectratio scalediffuse="false">stretch</aspectratio>
 					<texture>music_fanart_diffuse.png</texture>
-					<visible>IsEmpty(Control.getLabel(9870)) + IsEmpty(Control.getLabel(9872)) + IsEmpty(Control.getLabel(9874))</visible>						
+					<visible>String.IsEmpty(Control.getLabel(9870)) + String.IsEmpty(Control.getLabel(9872)) + String.IsEmpty(Control.getLabel(9874))</visible>						
 				</control>				
 				<!-- Artist Fanart from Music Player in Case no Fanart.jpg in Album Folder-->
 				<control type="image" id="9874">
@@ -67,7 +67,7 @@
 					<include>Dimensions_Fullscreen</include>
 					<texture>$INFO[MusicPlayer.Property(Fanart_Image)]</texture>
 					<animation effect="fade" start="0" end="100" time="550" delay="0" tween="sine" easing="inout">VisibleChange</animation>
-					<visible>IsEmpty(Control.getLabel(9870)) + IsEmpty(Control.getLabel(9872))</visible>	
+					<visible>String.IsEmpty(Control.getLabel(9870)) + String.IsEmpty(Control.getLabel(9872))</visible>	
 					<fadetime>600</fadetime>
 				</control>
 				 <!-- Artist Fanart from cd Folder if no extrafanart folder is available-->
@@ -76,12 +76,12 @@
 					<include>Dimensions_Fullscreen</include>
 					<texture>$INFO[Player.FolderPath]fanart.jpg</texture>
 					<animation effect="fade" start="0" end="100" time="550" delay="0" tween="sine" easing="inout">VisibleChange</animation>
-					<visible>IsEmpty(Control.getLabel(9870)) | IsEmpty(Skin.String(ArtistsFanartPath))</visible>			
+					<visible>String.IsEmpty(Control.getLabel(9870)) | String.IsEmpty(Skin.String(ArtistsFanartPath))</visible>			
 					<fadetime>600</fadetime>
 				</control>
 				<!-- Display Aritst Fanart from extrafanrt folder in Music Libray Path-->
 				<control type="multiimage" id ="9870">
-					<animation type="Conditional" condition="!IsEmpty(Control.getLabel(8870))">
+					<animation type="Conditional" condition="!String.IsEmpty(Control.getLabel(8870))">
 						<effect type="fade" start="0" end="100" time="550" delay="0" tween="sine" easing="inout" />
 					</animation>
 					<include>Dimensions_Fullscreen</include>
@@ -91,7 +91,7 @@
 					<pauseatend>0</pauseatend>
 					<loop>true</loop>
 					<imagepath>$INFO[Skin.String(ArtistsFanartPath)]$INFO[MusicPlayer.Artist,,/extrafanart/]</imagepath>
-					<visible>!IsEmpty(Skin.String(ArtistsFanartPath))</visible>
+					<visible>!String.IsEmpty(Skin.String(ArtistsFanartPath))</visible>
 				 </control>
 			</control>
 			<control type="visualisation" id="2">
@@ -165,7 +165,7 @@
 								<width>140</width>
 								<height>60</height>
 								<aspectratio align="left">keep</aspectratio>
-								<texture>other_textures/colorrating/$INFO[Player.StarRating]</texture>
+								<texture>other_textures/colorrating/$INFO[MusicPlayer.UserRating,rating,.png]</texture>
 							</control>
 					</control>
 				</control>
@@ -236,7 +236,7 @@
 						<height>230</height>
 						<texture diffuse="CDMask.png">$INFO[MusicPlayer.cover]</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>IsEmpty(Control.getLabel(55))</visible>
+						<visible>String.IsEmpty(Control.getLabel(55))</visible>
 					</control>
 					-->
 				
