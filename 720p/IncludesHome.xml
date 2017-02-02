@@ -3615,48 +3615,6 @@
 	
 	</include>
 
-<include name="PlugInContentWidgets">
-	<item id="1">
-		<label>Exodus</label>
-		<label2>Popular Movies</label2>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Type,CustomMovies)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Layout,Poster)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Label,Exodus: Popular)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Custom.Path,plugin://plugin.video.exodus/?action=movies&url=popular)</onclick>
-	 </item>
-	<item id="2">
-		<label>Exodus</label>
-		<label2>Boxoffice Movies</label2>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Type,CustomMovies)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Layout,Poster)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Label,Exodus: Boxoffice)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Custom.Path,plugin://plugin.video.exodus/?action=movies&url=boxoffice)</onclick>
-	 </item>
-	<item id="3">
-		<label>Exodus</label>
-		<label2>Oscar Movies</label2>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Type,CustomMovies)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Layout,Poster)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Label,Exodus: Oscars)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Custom.Path,plugin://plugin.video.exodus/?action=movies&url=oscars)</onclick>
-	 </item>
-	<item id="4">
-		<label>Exodus</label>
-		<label2>In Theaters Movies</label2>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Type,CustomMovies)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Layout,Poster)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Label,Exodus: In Theaters)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Custom.Path,plugin://plugin.video.exodus/?action=movies&url=theaters)</onclick>
-	 </item>
-	<item id="5">
-		<label>Exodus</label>
-		<label2>Featured Movies</label2>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Type,CustomMovies)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Layout,Poster)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Label,Exodus: Featured)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Custom.Path,plugin://plugin.video.exodus/?action=movies&url=featured)</onclick>
-	 </item>
-</include>
 <include name="MovieWidgets">
 		<item id="2">
 			<label2>$LOCALIZE[31300]</label2>
@@ -4051,93 +4009,11 @@
  </include> 
 <include name="AddonContentWidgets">
 	<item id="1">
-		<label>$LOCALIZE[31311]</label>
-		<label2>$LOCALIZE[20342] • $LOCALIZE[31332]</label2>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Type,CustomMovies)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Layout,Poster)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Label,$LOCALIZE[31311] • $LOCALIZE[31332])</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Custom.Path,plugin://plugin.video.exodus/?action=movies&url=popular)</onclick>
-		<onclick>Dialog.Close(5555)</onclick>
-	 </item>
-	<item id="2">
-		<label>$LOCALIZE[31311]</label>
-		<label2>$LOCALIZE[20342] • $LOCALIZE[31333]</label2>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Type,CustomMovies)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Layout,Poster)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Label,$LOCALIZE[31311] • $LOCALIZE[31333])</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Custom.Path,plugin://plugin.video.exodus/?action=movies&url=boxoffice)</onclick>
-		<onclick>Dialog.Close(5555)</onclick>
-	 </item>
-	<item id="3">
-		<label>$LOCALIZE[31311]</label>
-		<label2>$LOCALIZE[20342] • $LOCALIZE[31334]</label2>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Type,CustomMovies)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Layout,Poster)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Label,$LOCALIZE[31311] • $LOCALIZE[31334])</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Custom.Path,plugin://plugin.video.exodus/?action=movies&url=oscars)</onclick>
-		<onclick>Dialog.Close(5555)</onclick>
-	 </item>
-	<item id="4">
-		<label>$LOCALIZE[31311]</label>
-		<label2>$LOCALIZE[20342] • $LOCALIZE[31335]</label2>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Type,CustomMovies)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Layout,Poster)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Label,$LOCALIZE[31311] • $LOCALIZE[31335])</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Custom.Path,plugin://plugin.video.exodus/?action=movies&url=theaters)</onclick>
-		<onclick>Dialog.Close(5555)</onclick>
-	 </item>
-	<item id="5">
-		<label>$LOCALIZE[31311]</label>
-		<label2>$LOCALIZE[20342] • $LOCALIZE[31331]</label2>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Type,CustomMovies)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Layout,Poster)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Label,$LOCALIZE[31311] • $LOCALIZE[31331])</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Custom.Path,plugin://plugin.video.exodus/?action=movies&url=featured)</onclick>
-		<onclick>Dialog.Close(5555)</onclick>
-	 </item>
-	 <item id="6">
-		<label>$LOCALIZE[31311]</label>
-		<label2>$LOCALIZE[20342] • $LOCALIZE[31333]</label2>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Type,CustomMovies)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Layout,Poster)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Label,$LOCALIZE[31311] • $LOCALIZE[31333])</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Custom.Path,plugin://plugin.video.exodus/?action=tvshows&url=popular)</onclick>
-		<onclick>Dialog.Close(5555)</onclick>
-	 </item>
-	<item id="7">
-		<label>$LOCALIZE[31311]</label>
-		<label2>$LOCALIZE[20342] • $LOCALIZE[31334]</label2>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Type,CustomMovies)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Layout,Poster)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Label,$LOCALIZE[31311] • $LOCALIZE[31334])</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Custom.Path,plugin://plugin.video.exodus/?action=tvshows&url=rating)</onclick>
-		<onclick>Dialog.Close(5555)</onclick>
-	 </item>
-	<item id="8">
-		<label>$LOCALIZE[31311]</label>
-		<label2>$LOCALIZE[20342] • $LOCALIZE[31335]</label2>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Type,CustomMovies)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Layout,Poster)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Label,$LOCALIZE[31311] • $LOCALIZE[31335])</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Custom.Path,plugin://plugin.video.exodus/?action=tvshows&url=airing)</onclick>
-		<onclick>Dialog.Close(5555)</onclick>
-	 </item>
-	<item id="9">
-		<label>$LOCALIZE[31311]</label>
-		<label2>$LOCALIZE[20342] • $LOCALIZE[31331]</label2>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Type,CustomMovies)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Layout,Poster)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Label,$LOCALIZE[31311] • $LOCALIZE[31331])</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Custom.Path,plugin://plugin.video.exodus/?action=tvshows&url=premiere)</onclick>
-		<onclick>Dialog.Close(5555)</onclick>
-	 </item>
-	 
-	<item id="9">
 		<label>YouTube</label>
 		<label2>Popular Right Now</label2>
 		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Type,CustomEpisodes)</onclick>
 		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Layout,Thumb)</onclick>
-		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Label,Yutube Popuar Right Now)</onclick>
+		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Label,Youtube Popular Right Now)</onclick>
 		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Custom.Path,plugin://plugin.video.youtube/special/popular_right_now/)</onclick>
 		<onclick>Dialog.Close(5555)</onclick>
 	 </item>	 

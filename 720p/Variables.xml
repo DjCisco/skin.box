@@ -1,5 +1,35 @@
 <includes>
 
+	<!-- Custom Widget Label for Customization Window-->
+	<variable name="CustomHomeWidgetLabel">    
+		<value condition="Skin.String(SelectedHomeWidget,HomeWidget1)">$INFO[Skin.String(HomeWidget1.Label)]</value>
+		<value condition="Skin.String(SelectedHomeWidget,HomeWidget2)">$INFO[Skin.String(HomeWidget2.Label)]</value>
+		<value condition="Skin.String(SelectedHomeWidget,HomeWidget3)">$INFO[Skin.String(HomeWidget3.Label)]</value>
+		<value condition="Skin.String(SelectedHomeWidget,HomeWidget4)">$INFO[Skin.String(HomeWidget4.Label)]</value>
+		<value condition="Skin.String(SelectedHomeWidget,HomeWidget5)">$INFO[Skin.String(HomeWidget5.Label)]</value>
+		<value condition="Skin.String(SelectedHomeWidget,HomeWidget6)">$INFO[Skin.String(HomeWidget6.Label)]</value>
+		<value condition="Skin.String(SelectedHomeWidget,HomeWidget7)">$INFO[Skin.String(HomeWidget7.Label)]</value>
+		<value condition="Skin.String(SelectedHomeWidget,HomeWidget8)">$INFO[Skin.String(HomeWidget8.Label)]</value>
+		<value condition="Skin.String(SelectedHomeWidget,HomeWidget9)">$INFO[Skin.String(HomeWidget9.Label)]</value>
+		<value condition="Skin.String(SelectedHomeWidget,HomeWidget10)">$INFO[Skin.String(HomeWidget10.Label)]</value>
+		<value></value> 
+	</variable>
+	
+		<!-- Custom Widget Path for Customization Window-->
+	<variable name="CustomHomeWidgetPath">    
+		<value condition="Skin.String(SelectedHomeWidget,HomeWidget1)">$INFO[Skin.String(HomeWidget1.Custom.Path)]</value>
+		<value condition="Skin.String(SelectedHomeWidget,HomeWidget2)">$INFO[Skin.String(HomeWidget2.Custom.Path)]</value>
+		<value condition="Skin.String(SelectedHomeWidget,HomeWidget3)">$INFO[Skin.String(HomeWidget3.Custom.Path)]</value>
+		<value condition="Skin.String(SelectedHomeWidget,HomeWidget4)">$INFO[Skin.String(HomeWidget4.Custom.Path)]</value>
+		<value condition="Skin.String(SelectedHomeWidget,HomeWidget5)">$INFO[Skin.String(HomeWidget5.Custom.Path)]</value>
+		<value condition="Skin.String(SelectedHomeWidget,HomeWidget6)">$INFO[Skin.String(HomeWidget6.Custom.Path)]</value>
+		<value condition="Skin.String(SelectedHomeWidget,HomeWidget7)">$INFO[Skin.String(HomeWidget7.Custom.Path)]</value>
+		<value condition="Skin.String(SelectedHomeWidget,HomeWidget8)">$INFO[Skin.String(HomeWidget8.Custom.Path)]</value>
+		<value condition="Skin.String(SelectedHomeWidget,HomeWidget9)">$INFO[Skin.String(HomeWidget9.Custom.Path)]</value>
+		<value condition="Skin.String(SelectedHomeWidget,HomeWidget10)">$INFO[Skin.String(HomeWidget10.Custom.Path)]</value>
+		<value></value> 
+	</variable>
+
 	<variable name="VideoSourcePlayerImage">
 		<value condition="String.Contains(Player.FilenameAndPath,bluray) | String.Contains(Player.FilenameAndPath,bdrip) | String.Contains(Player.FilenameAndPath,brrip)">other_textures/flagging/video/bluray.png</value>
 		<value condition="String.Contains(Player.FilenameAndPath,hddvd)">other_textures/flagging/video/hddvd.png</value>

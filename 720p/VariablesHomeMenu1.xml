@@ -1,4 +1,5 @@
 <includes>
+
 	<!-- Main Menu Labels-->
 	<variable name="MainMenu1.Label">    
 		<value condition="!String.IsEmpty(Skin.String(HomeMenu1.Label))">$INFO[Skin.String(HomeMenu1.Label)]</value>
@@ -9,9 +10,90 @@
 		<value condition="!Skin.String(HomeMenu1.Image,)">$INFO[Skin.String(HomeMenu1.Image)]</value>
 		<value>HomeIcons/Empty.png</value> 
 	</variable>
-	
-	
-	
+		<!-- Main Menu Actions -->
+	<variable  name="MainMenu1.Action">
+		<value condition="Skin.String(MainMenu1.Type,Favourite)">$INFO[Skin.String(MainMenu1.Path)]</value>
+		<value condition="Skin.String(MainMenu1.Type,PlaylistVideo)">ActivateWindow(Videos,$INFO[Skin.String(MainMenu1.Path)],return)</value>
+		<value condition="Skin.String(MainMenu1.Type,PlaylistAudio)">ActivateWindow(Music,$INFO[Skin.String(MainMenu1.Path)],return)</value>
+		<value condition="Skin.String(MainMenu1.Type,addon)">RunAddon($INFO[Skin.String(MainMenu1.Path)])</value>
+		<value condition="Skin.String(MainMenu1.Type,RecentylAddedMovies)">ActivateWindow(Videos, RecentlyAddedMovies,return)</value>
+		<value condition="Skin.String(MainMenu1.Type,RecentylAddedEpisodes)">ActivateWindow(Videos, RecentlyAddedEpisodes,return)</value>
+		<value condition="Skin.String(MainMenu1.Type,RecentylAddedAlbums)">ActivateWindow(Music, RecentlyAddedAlbums,return)</value>
+		<value condition="Skin.String(MainMenu1.Type,MusicLibrary)">ActivateWindow(Music,Root,return)</value>
+		<value condition="Skin.String(MainMenu1.Type,VideoLibrary)">ActivateWindow(Videos,Root,return)</value>
+		<value condition="Skin.String(MainMenu1.Type,MovieLibrary)">ActivateWindow(Videos,Movies,return)</value>
+		<value condition="Skin.String(MainMenu1.Type,TVShowLibrary)">ActivateWindow(Videos,TvShows,return)</value>
+		<value condition="Skin.String(MainMenu1.Type,Artists)">ActivateWindow(Music,Artists,return)</value>
+		<value condition="Skin.String(MainMenu1.Type,MovieActors)">ActivateWindow(Videos, MovieActors,return)</value>
+		<value condition="Skin.String(MainMenu1.Type,TvShowActors)">ActivateWindow(Videos, TvShowActors,return)</value>
+		<value condition="Skin.String(MainMenu1.Type,Directors)">ActivateWindow(Videos, MovieDirectors,return)</value>
+		<value condition="Skin.String(MainMenu1.Type,Albums)">ActivateWindow(Music,Albums,return)</value>
+		<value condition="Skin.String(MainMenu1.Type,Movies)">ActivateWindow(Videos,MovieTitles,return)</value>
+		<value condition="Skin.String(MainMenu1.Type,TvShows)">ActivateWindow(Videos,tvshowtitles,return)</value>
+		<value condition="Skin.String(MainMenu1.Type,VideoPlaylists)">ActivateWindow(Videos, Playlists,return)</value>
+		<value condition="Skin.String(MainMenu1.Type,MusicPlaylists)">ActivateWindow(Music, Playlists,return)</value>
+		<value condition="Skin.String(MainMenu1.Type,VideoAddons)">ActivateWindow(Videos,Addons,return)</value>
+		<value condition="Skin.String(MainMenu1.Type,MusicAddons)">ActivateWindow(Music,Addons,return)</value>
+		<value condition="Skin.String(MainMenu1.Type,MusicVideos)">ActivateWindow(Videos,MusicVideoTitles,return)</value>
+		<value condition="Skin.String(MainMenu1.Type,MusicFiles)">ActivateWindow(Music,Files,return)</value>
+		<value condition="Skin.String(MainMenu1.Type,TvChannels)">ActivateWindow(TVChannels)</value>
+		<value condition="Skin.String(MainMenu1.Type,RadioChannels)">ActivateWindow(RadioChannels)</value>
+		<value condition="Skin.String(MainMenu1.Type,EPG)">ActivateWindow(TVGuide)</value>
+		<value condition="Skin.String(MainMenu1.Type,Recordings)">ActivateWindow(TVRecordings)</value>
+		<value condition="Skin.String(MainMenu1.Type,Timers)">ActivateWindow(TVTimers)</value>
+		<value condition="Skin.String(MainMenu1.Type,PlayDisc)">XBMC.PlayDVD()</value>
+		<value condition="Skin.String(MainMenu1.Type,EjectDisc)">XBMC.EjectTray()</value>
+		<value condition="Skin.String(MainMenu1.Type,Weather)">ActivateWindow(Weather,return)</value>
+		<value condition="Skin.String(MainMenu1.Type,Favourites)">ActivateWindow(Favourites,return)</value>
+		<value condition="Skin.String(MainMenu1.Type,Pictures)">ActivateWindow(Pictures)</value>
+		<value condition="Skin.String(MainMenu1.Type,Programs)">ActivateWindow(Programs)</value>
+		<value condition="Skin.String(MainMenu1.Type,Settings)">ActivateWindow(Settings, return)</value>
+		<value condition="Skin.String(MainMenu1.Type,FileManager)">ActivateWindow(filemanager)</value>
+		<value condition="Skin.String(MainMenu1.Type,Shutdown)">ActivateWindow(shutdownmenu)</value>
+		<value>noop</value>
+	</variable>
+	<variable  name="MainMenu1.2ndAction">
+		<value condition="Skin.String(MainMenu1.Type,Favourite)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,PlaylistVideo)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,PlaylistAudio)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,addon)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,RecentylAddedMovies)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,RecentylAddedEpisodes)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,RecentylAddedAlbums)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,MusicLibrary)">back</value>
+		<value condition="Skin.String(MainMenu1.Type,VideoLibrary)">back</value>
+		<value condition="Skin.String(MainMenu1.Type,MovieLibrary)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,TVShowLibrary)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,Artists)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,MovieActors)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,TvShowActors)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,Directors)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,Albums)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,Movies)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,TvShows)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,VideoPlaylists)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,MusicPlaylists)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,VideoAddons)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,MusicAddons)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,MusicVideos)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,MusicFiles)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,TvChannels)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,RadioChannels)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,EPG)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,Recordings)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,Timers)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,PlayDisc)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,EjectDisc)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,Weather)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,Favourites)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,Pictures)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,Programs)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,Settings)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,FileManager)">noop</value>
+		<value condition="Skin.String(MainMenu1.Type,Shutdown)">noop</value>
+		<value>noop</value>
+	</variable>
+
 	<!-- SubMenu 1 -->
 	<variable  name="SubMenu1Tile1.Label">
 		<value condition="Skin.String(SubMenu1Tile1.Type,Favourite)">$INFO[Skin.String(SubMenu1Tile1.Label)]</value>
