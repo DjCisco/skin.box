@@ -77,19 +77,12 @@
             <itemgap>0</itemgap>
 			<onright>Skin.Reset(showViewOptions)</onright>
             <onright>50</onright>
-            <onup></onup>
-            <ondown></ondown>
+            <onup>noop</onup>
+            <ondown>noop</ondown>
             <orientation>vertical</orientation>
             <animation type="Conditional" condition="!Skin.HasSetting(showViewOptions)">
                 <effect type="slide" start="0,0" end="-320,0" time="300" easing="inout" tween="cubic" />
             </animation>
-			<control type="button" id="10">
-                <description>All Videos Watched Unwatched</description>
-                <width>280</width>
-				<textoffsetx>10</textoffsetx>
-				<align>left</align>
-				<font>List_Left_Menu</font>
-            </control>
 			<control type="button" id="2">
                 <description>View</description>
                 <width>280</width>
@@ -97,7 +90,14 @@
 				<align>left</align>
 				<font>List_Left_Menu</font>
             </control>
-            <control type="button" id="3">
+            <control type="button" id="10">
+                <description>All Videos Watched Unwatched</description>
+                <width>280</width>
+				<textoffsetx>10</textoffsetx>
+				<align>left</align>
+				<font>List_Left_Menu</font>
+            </control>
+			<control type="button" id="3">
                 <description>Sort</description>
                 <width>280</width>
 				<textoffsetx>10</textoffsetx>
