@@ -1324,8 +1324,8 @@
 				<itemgap>0</itemgap>
 				<onright>Skin.Reset(showViewOptions)</onright>
 				<onright>50</onright>
-				<onup></onup>
-				<ondown></ondown>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
 				<orientation>vertical</orientation>
 				<animation type="Conditional" condition="!Skin.HasSetting(showViewOptions)">
 					<effect type="slide" start="0,0" end="-320,0" time="300" easing="inout" tween="cubic" />
@@ -4305,10 +4305,10 @@
 		</control>
 	</include>
 	<include name="BackgroundTextScroll">
-        <animation effect="fade" time="5000" easing="out" tween="quadratic">Visible</animation>
-        <animation effect="fade" time="5000" easing="out" tween="quadratic">WindowOpen</animation>
-        <animation effect="fade" time="1000" easing="out" tween="quadratic">Hidden</animation>
-        <animation effect="fade" time="1000" easing="out" tween="quadratic">WindowClose</animation>
+        <animation effect="fade" time="300" easing="out" tween="quadratic">Visible</animation>
+        <animation effect="fade" time="300" easing="out" tween="quadratic">WindowOpen</animation>
+        <animation effect="fade" time="300" easing="out" tween="quadratic">Hidden</animation>
+        <animation effect="fade" time="300" easing="out" tween="quadratic">WindowClose</animation>
         <!-- This displays the Currently playing Music Album and Artist as scrolling Text during Music Visualization Display -->
 		<control type="group">
             <visible>Window.IsVisible(2006) + Skin.HasSetting(DisplayScrollingText)</visible>
@@ -4883,7 +4883,7 @@
         <height>155</height>
         <texture>button.png</texture>
         <animation type="Focus" reversible="false">
-            <effect type="fade" start="0" end="100" time="400" easing="out" tween="square" />
+            <effect type="fade" start="0" end="100" time="400" easing="out" tween="linear" />
         </animation>
         <aspectratio scalediffuse="false">stretch</aspectratio>
 		<colordiffuse>AccentDiffuse</colordiffuse>
@@ -4928,7 +4928,7 @@
         <height>155</height>
         <texture>button.png</texture>
         <animation type="Focus" reversible="false">
-            <effect type="fade" start="0" end="100" time="400" easing="out" tween="square" />
+            <effect type="fade" start="0" end="100" time="400" easing="out" tween="linear" />
         </animation>
         <aspectratio scalediffuse="false">stretch</aspectratio>
 		<colordiffuse>AccentDiffuse</colordiffuse>
@@ -4953,7 +4953,7 @@
         <height>155</height>
         <texture>button.png</texture>
         <animation type="Focus" reversible="false">
-            <effect type="fade" start="0" end="100" time="400" easing="out" tween="square" />
+            <effect type="fade" start="0" end="100" time="400" easing="out" tween="linear" />
         </animation>
         <aspectratio scalediffuse="false">stretch</aspectratio>
 		<colordiffuse>AccentDiffuse</colordiffuse>
