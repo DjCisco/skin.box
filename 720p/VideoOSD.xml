@@ -82,6 +82,21 @@
 					<onup>noop</onup>
 					<ondown>noop</ondown>
 					<visible>!Window.IsVisible(osdvideosettings) + !Window.IsVisible(osdaudiosettings) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(subtitlesearch)</visible>
+					<control type="button" id="21">
+						<description>Exit FullSCreen</description>
+						<top>5</top>
+						<left>1050</left>
+						<width>40</width>
+						<height>40</height>
+						<ondown>15</ondown>
+						<label></label>
+						<font>-</font>
+						<texturefocus colordiffuse="Accent">other_textures/osd/minimize.png</texturefocus>
+                        <texturenofocus>other_textures/osd/minimize.png</texturenofocus>
+						<onclick>Dialog.Close(all,true)</onclick>
+						<onclick>ParentDir</onclick>
+						<visible>System.Platform.IOS | System.Platform.Android | System.getbool(input.enablemouse)</visible>
+					</control>
 					<control type="button" id="1">
 						<description>Bookmarks</description>
 						<width>40</width>

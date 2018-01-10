@@ -608,7 +608,7 @@
             <size>220</size>
         </font>
     </fontset>
-	<fontset id="Roboto default" idloc="31050">
+	<fontset id="Roboto default" idloc="572">
 		<font>
             <name>Clock</name>
             <filename>Roboto-Thin.ttf</filename>
@@ -935,7 +935,7 @@
            <size>28</size>
        </font>	   
     </fontset>
-	<fontset id="Roboto lowercase" idloc="31051">
+	<fontset id="Roboto lowercase" idloc="31030">
 		<font>
             <name>Clock</name>
             <filename>Roboto-Thin.ttf</filename>
