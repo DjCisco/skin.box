@@ -1512,7 +1512,6 @@
 			Container.Content(countries) | 
 			Container.Content(tags) |
 			[Container.Content("") + String.Contains(Container.FolderPath,plugin://)]|
-			[Container.Content("Empty") + String.Contains(Container.FolderPath,plugin://)]|
 			String.Contains(Container.FolderPath,library://music/top100) |
 			Window.IsActive(videoplaylist) |
 			[Window.IsActive(programs) + !Container.Content(addons)] |
@@ -3029,7 +3028,7 @@
     </include>
     <!-- This Displays the Time and Date on the Top Right -->
 	<include name="BarClock">
-		<include>DebugInfo</include>
+		<!--<include>DebugInfo</include>-->
 		<control type="group">
 			<animation type="Conditional" condition="Window.IsActive(151) | Window.IsActive(138) | Window.IsActive(107)">
 				<effect type="slide" time="300" end="0,40" easing="out" tween="cubic"/>

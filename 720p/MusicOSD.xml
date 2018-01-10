@@ -279,9 +279,7 @@
                         <texturenofocus>other_textures/osd/minimize.png</texturenofocus>
 						<onclick>Dialog.Close(all,true)</onclick>
 						<onclick>ParentDir</onclick>
-						<visible>System.Platform.IOS | System.Platform.Android | System.getbool(input.enablemouse)</visible>
 					</control>
-
                  </control>
             </control>
         </control>
