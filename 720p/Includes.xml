@@ -3029,7 +3029,7 @@
     </include>
     <!-- This Displays the Time and Date on the Top Right -->
 	<include name="BarClock">
-		<include>DebugInfo</include>
+		<!--<include>DebugInfo</include>-->
 		<control type="group">
 			<animation type="Conditional" condition="Window.IsActive(151) | Window.IsActive(138) | Window.IsActive(107)">
 				<effect type="slide" time="300" end="0,40" easing="out" tween="cubic"/>
