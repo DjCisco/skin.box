@@ -126,6 +126,31 @@ Window is setup as follows:
 			<top>302</top>
 			<width>745</width>
 			<height>250</height>
+			<visible>false</visible>
+        </control>
+        <!-- Fanart List -->
+		<control type="wraplist" id=112>
+            <description>Fanart Slideshow List</description>
+            <top>-1280</top>
+            <left>-720</left>
+            <orientation>horizontal</orientation>
+            <scrolltime>10000</scrolltime>
+            <autoscroll>True</autoscroll>
+            <itemlayout width="0" height="0"></itemlayout>
+            <focusedlayout width="0" height="0"></focusedlayout>
+        </control>
+        <!-- Description -->
+		<control type="textbox" id=104>
+			<description>Plot</description>
+			<left>485</left>
+			<top>302</top>
+			<width>745</width>
+			<height>250</height>
+			<align>justify</align>
+			<font>Panel_Description</font>
+			<!--<scrolltime>200</scrolltime>
+			<autoscroll delay="3000" time="1000" repeat="10000"></autoscroll>-->
+			<label>$INFO[Container(113).ListItem.Property(rom_plot)]</label>
         </control>
         <!-- Logo -->
 		<control type="image" id=103>
