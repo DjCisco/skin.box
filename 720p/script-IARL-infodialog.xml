@@ -1,61 +1,10 @@
-<!-- Zach Morris  IARL Default InfoDialog
-Window is setup as follows:
-<control type="list" id=113>  #A listitem which can be hidden, but contains all the selected games metadata, properties included:
-'label' = Rom Name
-'fanart_image' = The first available fanart
-'banner' = The first available banner
-'clearlogo' = The first available logo
-'poster' = The first available boxart
-'tag' = game Tag, Example:  Mario (USA, Rom Hack) Tag = USA, Rom Hack
-'rating' = game rating
-'perspective' = game perspective
-'esrb' = ESRB
-'rom_name' = Rom Name
-'rom_icon' = Icon / Clear Logo
-'rom_thumbnail' = Thumbnail
-'rom_title' = Title
-'rom_studio' = Studio
-'rom_genre' = Genre
-'rom_date' = Release Date, typically MM/DD/YYYY
-'rom_year' = Release Year, typically YYYY
-'rom_plot' = Game Plot
-'rom_trailer'= Game Trailer / YouTube ID
-'rom_label' = Label for the game from the listitem, this can change based on IARL settings user has setup
-'nplayers' = Number of Players
-'rom_size' = Size of game in bytes
-'emu_name' = Name of current game list, Example:  Nintendo Entertainment System
-'emu_boxart' = Boxart for current game list
-'emu_banner' = Banner for current game list
-'emu_fanart' = Fanart for current game list
-'emu_logo' = Logo for current game list
-'emu_trailer' = Trailer / YouTube ID for current game list
-'emu_category' = Category for current game list
-'emu_plot' = Plot for current game list
-
-<control type="textbox" id=3007> #Game Title
-<control type="textbox" id=3008> #Game Genre
-<control type="textbox" id=3009> #Game Number of players
-<control type="textbox" id=3010> #Game Studio
-
-<control type="wraplist" id=111>
-<description>Poster Slideshow List</description>  #Art on the left of the screen in the default window, all boxarts and carts in a slideshow
-<control type="wraplist" id=112>  #Art on the right of the screen in the default window, all fanarts and snapshots in a slideshow
-<description>Fanart Slideshow List</description>
-
-<control type="button" id="3001"> #Download only button
-<control type="button" id="3002"> #Download and Launch
-<control type="button" id="3003"> #Close Window
-<control type="button" id="3005"> #Play Trailer
-<control type="button" id="3006"> #Stop Trailer
-<control type="button" id="3011"> #Control Grabber to avoid 'double taps' on controllers that can instantly close the window after its opened
--->
 <?xml version="1.0" encoding="UTF-8"?>
 <window  type="dialog" id="4069">
     <defaultcontrol>9000</defaultcontrol>
     <controls>
 		<include>SkinFanart</include>
 		<!-- Fanart -->
-		<control type="image" id=102>
+		<control type="image" id="102">
             <description>Fanart Slideshow Image</description>
             <include>Dimensions_Fullscreen</include>
             <aspectratio>scale</aspectratio>
@@ -79,7 +28,7 @@ Window is setup as follows:
 			<texture>music_fanart_diffuse.png</texture>
 		</control>
 		<!-- Data List -->
-		<control type="list" id=113>
+		<control type="list" id="113">
             <description>Invisible List for Info</description>
             <posx>1</posx>
             <posy>1</posy>
@@ -87,7 +36,7 @@ Window is setup as follows:
             <focusedlayout width="0" height="0"></focusedlayout>
         </control>
         <!-- Poster List -->
-		<control type="wraplist" id=111>
+		<control type="wraplist" id="111">
             <description>Poster Slideshow List</description>
             <top>-1280</top>
             <left>-720</left>
@@ -98,7 +47,7 @@ Window is setup as follows:
             <focusedlayout width="0" height="0"></focusedlayout>
         </control>
         <!-- Poster -->
-		<control type="image" id=101>
+		<control type="image" id="101">
              <description>Cover for Movies and Tv Shows</description>
 			<left>165</left>
 			<top>180</top>
@@ -120,7 +69,7 @@ Window is setup as follows:
 			<visible>Player.HasVideo</visible>
 		</control>
 	   <!-- Trailer Window -->
-		<control type="videowindow" id=105>
+		<control type="videowindow" id="105">
             <description>Trailer Window</description>
             <left>485</left>
 			<top>302</top>
@@ -129,7 +78,7 @@ Window is setup as follows:
 			<visible>false</visible>
         </control>
         <!-- Fanart List -->
-		<control type="wraplist" id=112>
+		<control type="wraplist" id="112">
             <description>Fanart Slideshow List</description>
             <top>-1280</top>
             <left>-720</left>
@@ -140,7 +89,7 @@ Window is setup as follows:
             <focusedlayout width="0" height="0"></focusedlayout>
         </control>
         <!-- Description -->
-		<control type="textbox" id=104>
+		<control type="textbox" id="104">
 			<description>Plot</description>
 			<left>485</left>
 			<top>302</top>
@@ -153,7 +102,7 @@ Window is setup as follows:
 			<label>$INFO[Container(113).ListItem.Property(rom_plot)]</label>
         </control>
         <!-- Logo -->
-		<control type="image" id=103>
+		<control type="image" id="103">
             <description>Logo Image</description>
             <left>25</left>
 			<top>100</top>
@@ -306,7 +255,7 @@ Window is setup as follows:
 			<texture>$VAR[IarlEsrb]</texture>
 		</control>
 		<!-- OLD Game Title -->
-		<control type="textbox" id=3007>
+		<control type="textbox" id="3007">
            <description>Title</description>
            <posx>5</posx>
            <posy>5</posy>
@@ -319,14 +268,14 @@ Window is setup as follows:
            <onright>3001</onright>
            <visible>false</visible>
            <colordiffuse>FFFFFFFF</colordiffuse>
-           <font>font14</font>
+           <font>Panel_Hint</font>
            <textcolor>black</textcolor>
            <scrolltime>200</scrolltime>
            <autoscroll delay="3000" time="1000" repeat="10000"></autoscroll>
            <label>$INFO[Container(113).ListItem.Property(rom_name)]</label>
        </control>
         <!-- OLD Game Genre -->
-		<control type="textbox" id=3008>
+		<control type="textbox" id="3008">
            <description>Genre</description>
            <posx>350</posx>
            <posy>5</posy>
@@ -339,14 +288,14 @@ Window is setup as follows:
            <onright>3001</onright>
            <visible>false</visible>
            <colordiffuse>FFFFFFFF</colordiffuse>
-           <font>font14</font>
+           <font>Panel_Hint</font>
            <textcolor>black</textcolor>
            <scrolltime>200</scrolltime>
            <autoscroll delay="3000" time="1000" repeat="10000"></autoscroll>
            <label>Unknown</label>
        </control>
         <!-- OLD Players Nr-->
-		<control type="textbox" id=3009>
+		<control type="textbox" id="3009">
            <description>Players</description>
            <posx>795</posx>
            <posy>5</posy>
@@ -359,14 +308,14 @@ Window is setup as follows:
            <onright>3001</onright>
            <visible>false</visible>
            <colordiffuse>FFFFFFFF</colordiffuse>
-           <font>font14</font>
+           <font>Panel_Hint</font>
            <textcolor>black</textcolor>
            <scrolltime>200</scrolltime>
            <autoscroll delay="3000" time="1000" repeat="10000"></autoscroll>
            <label>Unknown</label>
        </control>
         <!-- OLD Studio -->
-		<control type="textbox" id=3010>
+		<control type="textbox" id="3010">
            <description>Studio</description>
            <posx>1000</posx>
            <posy>5</posy>
@@ -379,7 +328,7 @@ Window is setup as follows:
            <onright>3001</onright>
            <visible>false</visible>
            <colordiffuse>FFFFFFFF</colordiffuse>
-           <font>font14</font>
+           <font>Panel_Hint</font>
            <textcolor>black</textcolor>
            <scrolltime>200</scrolltime>
            <autoscroll delay="3000" time="1000" repeat="10000"></autoscroll>
