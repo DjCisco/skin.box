@@ -391,6 +391,8 @@
 		<value>noop</value>
 	</variable>
 </include>
+
+
 <include name="MainMenu">
 	<item id="1">
 		<label>$VAR[MainMenu1.Label]</label>
@@ -2778,7 +2780,7 @@
 					<onleft>100000</onleft>
 					<onright>10004</onright>
 					<orientation>vertical</orientation>
-					<pagecontrol>14215</pagecontrol>
+					<pagecontrol>10006</pagecontrol>
 					<focusposition>0</focusposition>
 					<scrolltime tween="cubic" easing="out">400</scrolltime>
 					<itemlayout width="160" height="160"  condition="Skin.String(HomeWidget10.Layout,Cover)">
@@ -2861,7 +2863,7 @@
 					<orientation>vertical</orientation>
 					<visible>Control.HasFocus(10003)</visible>
 				</control>
-				<control type="scrollbar" id="14215">
+				<control type="scrollbar" id="10006">
 					<left>370</left>
 					<top>290</top>
 					<width>5</width>
@@ -4017,7 +4019,7 @@
 <include name="AddonContentWidgets">
 	<item id="1">
 		<label>YouTube</label>
-		<label2>$LOCALIZE[31052]<label2>
+		<label2>$LOCALIZE[31052]</label2>
 		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Type,CustomEpisodesThumbs)</onclick>
 		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Layout,Thumb)</onclick>
 		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Label,Youtube: $LOCALIZE[31052])</onclick>
