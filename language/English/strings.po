@@ -454,3 +454,7 @@ msgstr ""
 msgctxt "#31741"
 msgid "Back"
 msgstr ""
+
+msgctxt "#31742"
+msgid "Special Features"
+msgstr ""
