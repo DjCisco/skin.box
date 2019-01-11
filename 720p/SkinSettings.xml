@@ -75,7 +75,7 @@
                 <onright>99</onright>
                 <scrolltime>0</scrolltime>
                 <orientation>vertical</orientation>
-                <pagecontrol>-</pagecontrol>
+                <pagecontrol></pagecontrol>
                 <itemlayout height="46" width="290">
                     <control type="image">
                         <width>300</width>

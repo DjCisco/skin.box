@@ -50,7 +50,7 @@
                 <onup>11</onup>
                 <scrolltime>200</scrolltime>
                 <viewtype label="536">icon</viewtype>
-                <pagecontrol>-</pagecontrol>
+                <pagecontrol></pagecontrol>
                 <orientation>vertical</orientation>
                 <itemlayout height="180" width="225">
                     <control type="image">

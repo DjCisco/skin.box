@@ -197,20 +197,8 @@
                         <aligny>top</aligny>
                         <font>Panel_Title_Footer</font>
                         <textcolor>white</textcolor>
-                        <label>$INFO[ListItem.Duration,, • ]$INFO[ListItem.Genre]</label>
-                        <visible>String.IsEqual(ListItem.DBType,movie) +  String.Contains(ListItem.Duration,$LOCALIZE[31299])</visible>
-                    </control>
-					<!-- Duration and Movie & Tv Show Genre -->
-					<control type="label">
-                        <left>485</left>
-                        <top>245</top>
-                        <width>745</width>
-                        <height>50</height>
-                        <aligny>top</aligny>
-                        <font>Panel_Title_Footer</font>
-                        <textcolor>white</textcolor>
-                        <label>$INFO[ListItem.Duration,, $LOCALIZE[31299] • ]$INFO[ListItem.Genre]</label>
-                        <visible>String.IsEqual(ListItem.DBType,movie) +  !String.Contains(ListItem.Duration,$LOCALIZE[31299])</visible>
+                        <label>$INFO[ListItem.Duration(mins),, $LOCALIZE[31299] • ]$INFO[ListItem.Genre]</label>
+                        <visible>String.IsEqual(ListItem.DBType,movie)</visible>
                     </control>
 					 <!-- Tv Show Genre -->
 					<control type="label">
@@ -221,7 +209,7 @@
                         <aligny>top</aligny>
                         <font>Panel_Title_Footer</font>
                         <textcolor>white</textcolor>
-                        <label>$INFO[ListItem.Genre]</label>
+                        <label>$INFO[ListItem.Genre]</label> 
                         <visible>String.IsEqual(ListItem.DBType,tvshow)</visible>
                     </control>
                     <!-- Tv Show Title Season & Episode Nr -->
@@ -638,7 +626,7 @@
                 <top>240</top>
                 <width>130</width>
                 <height>430</height>
-                <itemgap>-</itemgap>
+                <itemgap></itemgap>
                 <onup>9000</onup>
                 <ondown>9000</ondown>
                 <onleft>9000</onleft>

@@ -196,10 +196,10 @@
 				<top>650</top>
 				<subtype>page</subtype>
 				<font>Panel_Hint</font>
-				<textureup>-</textureup>
-                <textureupfocus>-</textureupfocus>
-                <texturedown>-</texturedown>
-                <texturedownfocus>-</texturedownfocus>
+				<textureup></textureup>
+                <textureupfocus></textureupfocus>
+                <texturedown></texturedown>
+                <texturedownfocus></texturedownfocus>
 				<onleft>120</onleft>
 				<onright>120</onright>
 				<ondown>120</ondown>

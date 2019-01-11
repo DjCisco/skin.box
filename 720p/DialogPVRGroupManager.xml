@@ -163,7 +163,7 @@
                             <width>45</width>
                             <align>center</align>
 							<font>List_Unfocused</font>
-                            <label>$INFO[ListItem.ChannelNumber]</label>
+                            <label>$INFO[ListItem.ChannelNumberLabel]</label>
                         </control>
                         <control type="label">
                             <left>65</left>
@@ -192,7 +192,7 @@
                             <width>45</width>
                             <align>center</align>
 							<font>List_Focused</font>
-                            <label>$INFO[ListItem.ChannelNumber]</label>
+                            <label>$INFO[ListItem.ChannelNumberLabel]</label>
 							<visible>Control.HasFocus(11)</visible>
 							<textcolor>Accent</textcolor>
                         </control>
@@ -209,7 +209,7 @@
                             <width>45</width>
                             <align>center</align>
 							<font>List_Unfocused</font>
-                            <label>$INFO[ListItem.ChannelNumber]</label>
+                            <label>$INFO[ListItem.ChannelNumberLabel]</label>
 							<visible>!Control.HasFocus(11)</visible>
                         </control>
                         <control type="label">
@@ -288,7 +288,7 @@
                             <width>45</width>
 							<font>List_Unfocused</font>
                             <align>center</align>
-                            <label>$INFO[ListItem.ChannelNumber]</label>
+                            <label>$INFO[ListItem.ChannelNumberLabel]</label>
                         </control>
                         <control type="label">
                             <left>65</left>
@@ -317,7 +317,7 @@
                             <width>45</width>
 							<font>List_Focused</font>
                             <align>center</align>
-                            <label>$INFO[ListItem.ChannelNumber]</label>
+                            <label>$INFO[ListItem.ChannelNumberLabel]</label>
 							<textcolor>Accent</textcolor>
 							<visible>Control.HasFocus(12)</visible>
                         </control>
@@ -334,7 +334,7 @@
                             <width>45</width>
 							<font>List_Unfocused</font>
                             <align>center</align>
-                            <label>$INFO[ListItem.ChannelNumber]</label>
+                            <label>$INFO[ListItem.ChannelNumberLabel]</label>
 							<visible>!Control.HasFocus(12)</visible>
                         </control>
                         <control type="label">
@@ -372,6 +372,8 @@
                 <onright>13</onright>
                 <onup>9000</onup>
                 <ondown>9000</ondown>
+				
+				
                 <control type="button" id="29">
                     <description>OK</description>
                     <width>145</width>
@@ -383,6 +385,18 @@
 					<texturenofocus>tile.png</texturenofocus>
 					<focusedcolor>White</focusedcolor>
                 </control>
+				<control type="togglebutton" id="34">
+					<description>TV Radio Groups toggle</description>
+					<width>145</width>
+					<textoffsetx>10</textoffsetx>
+					<font>Panel_Hint</font>						
+					<align>center</align>
+					<label>19174 </label>
+					<altlabel>19173</altlabel>
+					<texturefocus>button.png</texturefocus>
+					<texturenofocus>tile.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
+				</control>
                 <control type="radiobutton" id="25">
 					<description>Hide Group</description>
 					<description>OK</description>

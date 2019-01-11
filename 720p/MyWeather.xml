@@ -4,15 +4,15 @@
      
     <controls>
         <control type="button" id="50">
-            <texturefocus>-</texturefocus>
-            <texturenofocus>-</texturenofocus>
+            <texturefocus></texturefocus>
+            <texturenofocus></texturenofocus>
             <onleft>7000</onleft>
 			<onright>60</onright>
             <onclick>noop</onclick>
         </control>
 		<control type="button" id="60">
-            <texturefocus>-</texturefocus>
-            <texturenofocus>-</texturenofocus>
+            <texturefocus></texturefocus>
+            <texturenofocus></texturenofocus>
             <onleft>50</onleft>
             <onclick>noop</onclick>
         </control>
@@ -569,8 +569,8 @@
                     <width>280</width>
                     <align>left</align>
                     <font>List_Left_Menu</font>
-                     <textcolor>-</textcolor>
-                    <focusedcolor>-</focusedcolor>
+                     <textcolor></textcolor>
+                    <focusedcolor></focusedcolor>
 				</control>
             </control>
             <control type="label">

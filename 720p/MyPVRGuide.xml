@@ -4,13 +4,18 @@
 	<onload>Skin.Reset(showViewOptions)</onload>
 	<onunload>Skin.Reset(showViewOptions)</onunload>	
      
-	<views>10,11,12,13</views>
+	<views>10</views>
     <controls>
         <include>SkinFanart</include>
         <include>BarClock</include>
 		
 		
-		<control type="group"><visible>![Window.IsVisible(2003) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogFavourites.xml)]</visible><include>NowPlayingControls</include><include>TouchscreenNavigation</include></control>        <control type="group">
+		<control type="group">
+			<visible>![Window.IsVisible(2003) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogFavourites.xml)]</visible>
+			<include>NowPlayingControls</include>
+			<include>TouchscreenNavigation</include>
+		</control>        
+		<control type="group">
             <animation type="TYPE" condition="Window.IsVisible(DialogPVRInfo.xml) | Window.IsVisible(DialogPVRGuideSearch.xml) | Window.IsVisible(DialogPVRGroupManager.xml)" reversible="false">
                 <effect type="slide" end="-1500,0" time="200" />
             </animation>
@@ -27,10 +32,16 @@
             </animation>
 			<include>ViewOptionsAnimation</include>
             <control type="group" id="50">
+				
 				<include>EPGTimelineView</include>
+				<!--
                 <include>LiveTVGuideChannelView</include>
-                <include>LiveTVGuideNowView</include>
+				<include>LiveTVGuideNowView</include>
 				<include>LiveTVGuideNextView</include>
+				-->
+				
+
+			
             </control>
         </control>
 		

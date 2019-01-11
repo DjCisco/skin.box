@@ -21,12 +21,6 @@
             <animation type="TYPE" condition="!Window.IsVisible(DialogPVRGroupManager.xml)" reversible="false">
                 <effect type="slide" start="-1500,0" time="200" />
             </animation>
-			<animation type="TYPE" condition="Window.IsVisible(DialogAudioDSPManager.xml)" reversible="false">
-                <effect type="slide" end="-1500,0" time="200" />
-            </animation>
-            <animation type="TYPE" condition="!Window.IsVisible(DialogAudioDSPManager.xml)" reversible="false">
-                <effect type="slide" start="-1500,0" time="200" />
-            </animation>
             <animation type="WindowClose">
                 <effect type="fade" time="300" />
                 <effect type="slide" end="+1500,0" time="300" />

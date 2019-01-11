@@ -3,7 +3,7 @@
 
 	<include name="HomeWidgetThumbsEpisodeNo">
 		<control type="group">
-			<visible>!IsEmpty(ListItem.Season)+!IsEmpty(ListItem.Episode)</visible>
+			<visible>!String.IsEmpty(ListItem.Season)+!String.IsEmpty(ListItem.Episode)</visible>
 			<control type="image">
 				<left>5</left>
 				<top>120</top>
@@ -124,7 +124,7 @@
 	</include>
 	<include name="HomeWidgetThumbsFocusedEpisodeNo">
 		<control type="group">
-			<visible>!IsEmpty(ListItem.Season)+!IsEmpty(ListItem.Episode)</visible>
+			<visible>!String.IsEmpty(ListItem.Season)+!String.IsEmpty(ListItem.Episode)</visible>
 			<control type="image">
 				<left>5</left>
 				<top>120</top>

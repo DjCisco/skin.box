@@ -30,7 +30,7 @@
                     <width>74</width>
                     <height>74</height>
                     <label>210</label>
-                    <font>-</font>
+                    <font></font>
                     <onleft>noop</onleft>
                     <onright>14</onright>
                     <onup>100</onup>
@@ -46,7 +46,7 @@
                     <width>40</width>
                     <height>40</height>
                     <label>31036</label>
-                    <font>-</font>
+                    <font></font>
                     <onleft>13</onleft>
                     <onright>15</onright>
                     <onup>100</onup>
@@ -63,7 +63,7 @@
                     <height>66</height>
                     <label>31037</label>
                     <altlabel>208</altlabel>
-                    <font>-</font>
+                    <font></font>
                     <onleft>14</onleft>
                     <onright>16</onright>
                     <onup>100</onup>
@@ -82,7 +82,7 @@
                     <width>40</width>
                     <height>40</height>
                     <label>31038</label>
-                    <font>-</font>
+                    <font></font>
                     <onleft>15</onleft>
                     <onright>17</onright>
                     <onup>100</onup>
@@ -100,7 +100,7 @@
                     <width>40</width>
                     <height>40</height>
                     <label>31039</label>
-                    <font>-</font>
+                    <font></font>
                     <onleft>16</onleft>
                     <onright>18</onright>
                     <onup>100</onup>
@@ -115,7 +115,7 @@
                     <width>74</width>
                     <height>74</height>
                     <label>209</label>
-                    <font>-</font>
+                    <font></font>
                     <onleft>17</onleft>
                     <onright>18</onright>
                     <onup>100</onup>
@@ -188,9 +188,9 @@
 						<height>40</height>
 						<ondown>15</ondown>
 						<label>$LOCALIZE[486]$INFO[Playlist.Repeat, : ]</label>
-						<font>-</font>
-						<texturefocus>-</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<font></font>
+						<texturefocus></texturefocus>
+						<texturenofocus></texturenofocus>
 						<onclick>PlayerControl(Repeat)</onclick>
 					</control>
 					 <control type="togglebutton" id="21">
@@ -199,7 +199,7 @@
                         <height>40</height>
                         <ondown>15</ondown>
                         <label>$LOCALIZE[590]$INFO[Playlist.Random, : ]</label>
-                        <font>-</font>
+                        <font></font>
                         <texturefocus colordiffuse="Accent">other_textures/osd/shuffleoff.png</texturefocus>
                         <texturenofocus>other_textures/osd/shuffleoff.png</texturenofocus>
                         <usealttexture>Playlist.IsRandom</usealttexture>
@@ -213,7 +213,7 @@
 						<height>40</height>
 						<ondown>15</ondown>
 						<label>10517</label>
-						<font>-</font>
+						<font></font>
 						<texturefocus colordiffuse="Accent">other_textures/OSD/playlist.png</texturefocus>
 						<texturenofocus>other_textures/OSD/playlist.png</texturenofocus>
 						<onclick>Close</onclick>
@@ -239,7 +239,7 @@
                         <height>40</height>
                         <ondown>15</ondown>
                         <label>12006</label>
-                        <font>-</font>
+                        <font></font>
                         <texturefocus colordiffuse="Accent">other_textures/osd/visualisation.png</texturefocus>
                         <texturenofocus>other_textures/osd/visualisation.png</texturenofocus>
 						<visible>Skin.HasSetting(Visualization)</visible>
@@ -250,7 +250,7 @@
                         <height>40</height>
                         <ondown>15</ondown>
                         <label>$LOCALIZE[250] $LOCALIZE[21417]</label>
-                        <font>-</font>
+                        <font></font>
                         <texturefocus colordiffuse="Accent">other_textures/osd/presetsettings.png</texturefocus>
                         <texturenofocus>other_textures/osd/presetsettings.png</texturenofocus>
                         <onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
@@ -262,7 +262,7 @@
                         <height>40</height>
                         <ondown>15</ondown>
                         <label>31040</label>
-                        <font>-</font>
+                        <font></font>
                         <texturefocus colordiffuse="Accent">other_textures/osd/presets.png</texturefocus>
                         <texturenofocus>other_textures/osd/presets.png</texturenofocus>
                         <onclick>ActivateWindow(122)</onclick>
@@ -274,7 +274,7 @@
 						<height>40</height>
 						<ondown>15</ondown>
 						<label></label>
-						<font>-</font>
+						<font></font>
 						<texturefocus colordiffuse="Accent">other_textures/osd/minimize.png</texturefocus>
                         <texturenofocus>other_textures/osd/minimize.png</texturenofocus>
 						<onclick>Dialog.Close(all,true)</onclick>

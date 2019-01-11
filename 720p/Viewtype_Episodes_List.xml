@@ -387,7 +387,7 @@
 							<align>left</align>
 							<font>List_Hint</font>
 							<selectedcolor>White</selectedcolor>
-							<label>$INFO[ListItem.Duration,, $LOCALIZE[31299]]</label>
+							<label>$INFO[ListItem.Duration(mins),, $LOCALIZE[31299]]</label>
 						</control>
                 </focusedlayout>
             
@@ -457,7 +457,7 @@
 					<width>420</width>
 					<height>50</height>
 					<font>Panel_Description_Title</font>
-					<label>$INFO[ListItem.Duration,, $LOCALIZE[31299]]</label>
+					<label>$INFO[ListItem.Duration(mins),, $LOCALIZE[31299]]</label>
 					<visible>!String.IsEqual(ListItem.Label,.. )</visible>
 				</control>
 				<control type="textbox">

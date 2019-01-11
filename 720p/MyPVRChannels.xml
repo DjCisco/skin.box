@@ -147,7 +147,7 @@
                         <width>45</width>
                         <align>center</align>
 						<font>List_PVR</font>
-                        <label>[B]$INFO[ListItem.ChannelNumber][/B]</label>
+                        <label>[B]$INFO[ListItem.ChannelNumberLabel][/B]</label>
                     </control>
                     <control type="label">
                         <left>60</left>
@@ -191,7 +191,7 @@
 						<aligny>center</aligny>
 						<font>List_PVR</font>
 						<selectedcolor>white</selectedcolor>
-                        <label>[B]$INFO[ListItem.ChannelNumber][/B]</label>
+                        <label>[B]$INFO[ListItem.ChannelNumberLabel][/B]</label>
                     </control>
                     <control type="label">
                         <left>60</left>

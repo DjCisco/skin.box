@@ -28,7 +28,7 @@
 				<font>List_Settings</font>
 				<textcolor>white</textcolor>
 				<aligny>center</aligny>
-				<label>-</label>
+				<label></label>
 				<textoffsetx>10</textoffsetx>
 				<onright>21</onright>
 				<onleft>21</onleft>
@@ -40,12 +40,12 @@
 				<left>0</left>
 				<top>155</top>
 				<subtype>page</subtype>
-				<font>-</font>
+				<font></font>
 				<onright>9000</onright>
 				<onleft>9000</onleft>
 				<ondown>21</ondown>
 				<onup>21</onup>
-				<textcolor>-</textcolor>
+				<textcolor></textcolor>
 				<showonepage>true</showonepage>
 			</control>
 			<control type="textbox" id="22">
@@ -57,7 +57,7 @@
 				<font>List_Settings</font>
 				<align>justify</align>
 				<pagecontrol>60</pagecontrol>
-				<label>-</label>
+				<label></label>
 			</control>
 		</control>
 		<control type="grouplist" id="9000">

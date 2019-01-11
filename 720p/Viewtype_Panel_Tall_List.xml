@@ -301,7 +301,7 @@
 						<align>left</align>
 						<font>List_Hint</font>
 						<selectedcolor>White</selectedcolor>
-						<label>$INFO[ListItem.Duration,, $LOCALIZE[31299]]</label>
+						<label>$INFO[ListItem.Duration(mins),, $LOCALIZE[31299]]</label>
 						<visible>Container.Content(Movies)</visible>
 					</control>
 					<control type="label">

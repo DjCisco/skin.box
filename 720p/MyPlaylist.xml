@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-    <defaultcontrol always="true">600</defaultcontrol>
+    <defaultcontrol>600</defaultcontrol>
 	<onload>Skin.Reset(showViewOptions)</onload>
 	<onunload>Skin.Reset(showViewOptions)</onunload>	
-    <views>503,600</views>
+    <views>600</views>
     <controls>
 	
         <include>SkinFanart</include>
@@ -13,8 +13,7 @@
 		<control type="group"><visible>![Window.IsVisible(2003) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogFavourites.xml)]</visible><include>NowPlayingControls</include><include>TouchscreenNavigation</include></control>        <control type="group">
 			<include>ViewOptionsAnimation</include>
 			<include>BackgroundTextScroll</include>
-       		<include>Viewtype_Songs</include>
-			<include>View_VideoPlaylist</include><!-- id 600-->
+    		<include>View_Playlist</include><!-- id 600-->
 		 </control>
 		<control type="image">
 			<visible>Skin.HasSetting(showViewOptions)</visible>
@@ -52,7 +51,7 @@
             <height>500</height>
             <itemgap>0</itemgap>
 			<onright>Skin.Reset(showViewOptions)</onright>
-            <onright>503</onright>
+            <onright>600</onright>
             <onup>noop</onup>
             <ondown>noop</ondown>
             <orientation>vertical</orientation>

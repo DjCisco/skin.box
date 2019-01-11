@@ -134,7 +134,7 @@
                         <align>center</align>
 						<aligny>center</aligny>
 						<font>Music_Vis_Title4</font>
-                        <label>$INFO[ListItem.ChannelNumber]</label>
+                        <label>$INFO[ListItem.ChannelNumberLabel]</label>
                     </control>
                     <control type="label">
                         <left>75</left>
@@ -215,7 +215,7 @@
                         <align>center</align>
 						<aligny>center</aligny>
 						<font>Music_Vis_Title4</font>
-                        <label>$INFO[ListItem.ChannelNumber]</label>
+                        <label>$INFO[ListItem.ChannelNumberLabel]</label>
 						<selectedcolor>White</selectedcolor>
                     </control>
                     <control type="label">
