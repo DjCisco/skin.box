@@ -167,7 +167,7 @@
                     </control>
 	                <control type="image">
                         <left>175</left>
-                        <top>-</top>
+                        <top></top>
                         <width>60</width>
                         <height>60</height>
                         <texture>watched.png</texture>
@@ -179,7 +179,7 @@
                     </control>
                     <control type="image">
                         <left>175</left>
-                        <top>-</top>
+                        <top></top>
                         <width>60</width>
                         <height>60</height>
                         <texture>watching.png</texture>
@@ -330,7 +330,7 @@
                 <width>400</width>
                 <height>50</height>
                 <font>Panel_Description_Title</font>
-                <label>$INFO[ListItem.Duration,, $LOCALIZE[31299]]</label>
+                <label>$INFO[ListItem.Duration(mins),, $LOCALIZE[31299]]</label>
 				<scroll>true</scroll>
 			</control>
 			<!-- Episode Aire Date -->

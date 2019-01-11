@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window id="10140">
-    <defaultcontrol always="true">9</defaultcontrol>
+    <defaultcontrol always="true">3</defaultcontrol>
      
     <controls>
         <control type="group">
@@ -52,49 +52,49 @@
                 <align>left</align>
 				<aligny>top</aligny>
             </control>
-            <control type="grouplist" id="9">
+            <control type="grouplist" id="3">
                 <description>button area</description>
                 <left>50</left>
                 <top>290</top>
                 <width>290</width>
                 <height>360</height>
                 <itemgap>0</itemgap>
-                <onleft>10</onleft>
-                <onright>2</onright>
-                <onup>9</onup>
-                <ondown>9</ondown>
+                <onleft>28</onleft>
+                <onright>5</onright>
+                <onup>3</onup>
+                <ondown>3</ondown>
             </control>
-            <control type="grouplist" id="2">
+            <control type="grouplist" id="5">
                 <description>control area</description>
                 <left>345</left>
                 <top>290</top>
                 <width>750</width>
                 <height>360</height>
                 <itemgap>0</itemgap>
-                <onup>2</onup>
-                <ondown>2</ondown>
-                <onleft>9</onleft>
-                <onright>10</onright>
+                <onup>5</onup>
+                <ondown>5</ondown>
+                <onleft>3</onleft>
+                <onright>28</onright>
             </control>
-            <control type="button" id="13">
+            <control type="button" id="10">
                 <description>Default Category Button</description>
                 <align>right</align>
 				<font>List_Unfocused</font>
                 <focusedcolor>Accent</focusedcolor>
             </control>
-            <control type="button" id="3">
+            <control type="button" id="7">
                 <description>Default Button</description>
                 <align>left</align>
 				<font>List_Settings</font>
                 <focusedcolor>Accent</focusedcolor>
             </control>
-            <control type="radiobutton" id="4">
+            <control type="radiobutton" id="8">
                 <description>Default RadioButton</description>
                 <align>left</align>
 				<font>List_Settings</font>
                 <focusedcolor>Accent</focusedcolor>
             </control>
-            <control type="spincontrolex" id="5">
+            <control type="spincontrolex" id="9">
                 <description>Default spincontrolex</description>
                 <align>left</align>
 				<font>List_Settings</font>
@@ -105,19 +105,19 @@
                 <texturedownfocus>other_textures/arrowdowng.png</texturedownfocus>
                 <reverse>yes</reverse>
             </control>
-            <control type="label" id="7">
+            <control type="label" id="14">
 				<height>45</height>
 				<font>List_Settings_Title</font>
 				<textcolor>Accent</textcolor>
 				<textoffsetx>10</textoffsetx>
 				<align>left</align>
 			</control>
-            <control type="image" id="6">
+            <control type="image" id="11">
                 <description>Default Seperator</description>
                 <height>0</height>
-                <texture>-</texture>
+                <texture></texture>
             </control>
-            <control type="sliderex" id="8">
+            <control type="sliderex" id="13">
                 <description>Default Slider</description>
                 <focusedcolor>Accent</focusedcolor>
 				<font>List_Settings</font>
@@ -128,42 +128,42 @@
                 <top>290</top>
                 <itemgap>4</itemgap>
                 <orientation>vertical</orientation>
-                <control type="button" id="10">
+                <control type="button" id="28">
                     <description>OK Button</description>
                     <width>145</width>
                     <label>186</label>
-                    <onleft>2</onleft>
-                    <onright>9</onright>
-                    <onup>2</onup>
-                    <ondown>11</ondown>
+                    <onleft>5</onleft>
+                    <onright>3</onright>
+                    <onup>5</onup>
+                    <ondown>29</ondown>
 					<focusedcolor>White</focusedcolor>
 					<font>Panel_Hint</font>
 					<align>center</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
                 </control>
-                <control type="button" id="11">
+                <control type="button" id="29">
                     <description>Cancel Button</description>
                     <width>145</width>
                     <label>222</label>
-                    <onleft>2</onleft>
-                    <onright>9</onright>
-                    <onup>10</onup>
-                    <ondown>12</ondown>
+                    <onleft>5</onleft>
+                    <onright>3</onright>
+                    <onup>28</onup>
+                    <ondown>30</ondown>
 					<focusedcolor>White</focusedcolor>
 					<font>Panel_Hint</font>
 					<align>center</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>tile.png</texturenofocus>
                 </control>
-                <control type="button" id="12">
+                <control type="button" id="30">
                     <description>Defaults Button</description>
                     <width>145</width>
                     <label>409</label>
-                    <onleft>2</onleft>
-                    <onright>9</onright>
-                    <onup>11</onup>
-                    <ondown>2</ondown>
+                    <onleft>5</onleft>
+                    <onright>3</onright>
+                    <onup>29</onup>
+                    <ondown>5</ondown>
 					<focusedcolor>White</focusedcolor>
 					<font>Panel_Hint</font>
 					<align>center</align>

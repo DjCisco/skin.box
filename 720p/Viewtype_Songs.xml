@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
     <include name="Viewtype_Songs">
-		
 		<control type="group">
-           
-			<visible>Control.IsVisible(503)</visible>
+        	<visible>Control.IsVisible(503)</visible>
 			<visible>Container.Content(songs)</visible>
             <animation type="TYPE" condition="Window.IsVisible(135)" reversible="false">
                 <effect type="slide" end="-1500,0" time="200" />
@@ -19,7 +17,8 @@
              <animation type="WindowClose">
                 <effect type="slide" end="+1500,0" time="300" />
             </animation>
-            <!-- This Control displays the background behind the track title-->
+   			
+			<!-- This Control displays the background behind the  song title-->
 			<control type="image">
                 <left>420</left>
                 <top>290</top>
@@ -43,6 +42,7 @@
                 <height>315</height>
                 <texture>other_textures/black-back.png</texture>
             </control>
+						
 			<!-- This Control displays the list of songs-->
             <control type="list" id="503">
                 <viewtype label="List">Song View</viewtype>
@@ -67,7 +67,7 @@
 						<font>List_Unfocused</font>
                         <align>center</align>
                         <label>$INFO[ListItem.TrackNumber]</label>
-                    </control>
+                    </control>					
 					<!-- This Control displays the Track Title-->
                     <control type="label">
                         <left>65</left>
@@ -148,7 +148,7 @@
                         <label>$INFO[ListItem.Title]</label>
 						<shadowcolor>FF000000</shadowcolor>
 					</control>
-						<control type="label">
+					<control type="label">
                         <left>65</left>
                         <width>730</width>
 						<font>List_Focused</font>

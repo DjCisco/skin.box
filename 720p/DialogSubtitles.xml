@@ -243,7 +243,7 @@
                 <onright>150</onright>
                 <onup>120</onup>
                 <ondown>120</ondown>
-                <pagecontrol>-</pagecontrol>
+                <pagecontrol></pagecontrol>
                 <scrolltime>200</scrolltime>
                 <itemlayout width="885" height="45">
 					<!-- Language Background -->

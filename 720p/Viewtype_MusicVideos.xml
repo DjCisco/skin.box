@@ -85,7 +85,7 @@
                     </control>
                     <control type="image">
                         <left>95</left>
-                        <top>-</top>
+                        <top></top>
                         <width>60</width>
                         <height>60</height>
                         <texture>watched.png</texture>
@@ -97,7 +97,7 @@
                     </control>
                     <control type="image">
                         <left>95</left>
-                        <top>-</top>
+                        <top></top>
                         <width>60</width>
                         <height>60</height>
                         <texture>watching.png</texture>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
-
    
    <include name="EPGTimelineView">
         <control type="group">
@@ -16,6 +15,7 @@
                 <include>ViewMainTitle</include>	
                 <label>[COLOR Accent]$LOCALIZE[19032][/COLOR]</label>
             </control>
+
 			<!-- Main EPG Background -->
 			<control type="group">
 				<include>PanelCoordinates</include>
@@ -81,7 +81,7 @@
 						<width>45</width>
                         <align>center</align>
 						<font>List_Unfocused</font>
-                        <label>$INFO[ListItem.ChannelNumber]</label>
+                        <label>$INFO[ListItem.ChannelNumberLabel]</label>
                     </control>
                     <control type="label" id="1">
                         <left>60</left>
@@ -123,7 +123,7 @@
                         <width>45</width>
                         <align>center</align>
 						<font>List_Unfocused</font>
-                        <label>$INFO[ListItem.ChannelNumber]</label>
+                        <label>$INFO[ListItem.ChannelNumberLabel]</label>
                     </control>
                     <control type="label" id="1">
 						<top>4</top>
@@ -201,6 +201,7 @@
             </control>
         </control>
     </include>
+	<!--
     <include name="LiveTVGuideChannelView">
         <control type="group">
             <description>TV Guide Channel</description>
@@ -365,7 +366,7 @@
                             <height>72</height>
                             <align>justify</align>
 							<font>Panel_Description</font>
-                            <pagecontrol>-</pagecontrol>
+                            <pagecontrol></pagecontrol>
                             <info>ListItem.Plot</info>
                         </control>
 						<control type="image">
@@ -423,7 +424,7 @@
     <include name="LiveTVGuideNowView">
         	<control type="group">
             <description>TV Guide Now</description>
-            <visible>Control.IsVisible(11)</visible>
+            <visible>Control.IsVisible(14)</visible>
             <control type="label">
 				<include>ViewMainTitle</include>	
                 <left>395</left>
@@ -479,14 +480,14 @@
 					<height>43</height>
                     <label>[B]$LOCALIZE[369][/B]</label>
                 </control>
-                <control type="list" id="11">
+                <control type="list" id="14">
 					<viewtype label="19030">EPG Now</viewtype>
                     <left>0</left>
                     <top>45</top>
                     <width>1204</width>
                     <height>270</height>
-                    <onup>11</onup>
-                    <ondown>11</ondown>
+                    <onup>14</onup>
+                    <ondown>14</ondown>
                     <onleft>9000</onleft>
 					<onleft>Skin.ToggleSetting(showViewOptions)</onleft>
                     <pagecontrol>76</pagecontrol>
@@ -622,7 +623,7 @@
                             <height>72</height>
                             <align>justify</align>
 							<font>Panel_Description</font>
-                            <pagecontrol>-</pagecontrol>
+                            <pagecontrol></pagecontrol>
                             <info>ListItem.Plot</info>
                         </control>
                     </focusedlayout>
@@ -645,7 +646,7 @@
     </include>
 	<include name="LiveTVGuideNextView">
 		<control type="group">
-		<description>TV Guide Now</description>
+		<description>TV Guide Next</description>
 		<visible>Control.IsVisible(12)</visible>
 		<control type="label">
 			<include>ViewMainTitle</include>	
@@ -845,7 +846,7 @@
 						<height>72</height>
 						<align>justify</align>
 						<font>Panel_Description</font>
-						<pagecontrol>-</pagecontrol>
+						<pagecontrol></pagecontrol>
 						<info>ListItem.Plot</info>
 					</control>
 				</focusedlayout>
@@ -866,4 +867,5 @@
 		</control>
 	</control>
     </include>
-</includes>
+-->
+	</includes>

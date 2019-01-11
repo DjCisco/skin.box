@@ -857,8 +857,8 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>List_Settings</font>
 				<align>left</align>
-				<label>DialogPVRGuideOSD.xml</label>
-				<visible>Window.IsVisible(DialogPVRGuideOSD.xml)</visible>
+				<label>DialogPVRChannelGuide.xml</label>
+				<visible>Window.IsVisible(DialogPVRChannelGuide.xml)</visible>
 			</control>
 
 			<control type="label">

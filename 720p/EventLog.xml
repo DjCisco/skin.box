@@ -169,7 +169,7 @@
                 <width>280</width>
 				<textoffsetx>10</textoffsetx>
                 <align>left</align>
-                <label>-</label>
+                <label></label>
 				<font>List_Left_Menu</font>
             </control>
 			<control type="radiobutton" id="22">
@@ -181,7 +181,7 @@
                 <align>left</align>
 				<font>List_Left_Menu</font>
                 <pulseonselect>false</pulseonselect>
-	               <label>-</label>
+	               <label></label>
             </control>
 				<control type="button" id="21">
                 <description>Level button</description>

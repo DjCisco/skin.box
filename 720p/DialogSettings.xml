@@ -11,6 +11,7 @@
         <animation type="WindowClose">
             <effect type="fade" start="100" end="0" time="200" />
         </animation>
+		<visible>!Window.IsVisible(SliderDialog) + !Window.IsVisible(SubtitleSearch) </visible>
 	<!--
 			<animation type="WindowOpen">
                 <effect type="slide" time="400" start="1280" end="0" easing="out" tween="cubic" />
@@ -26,7 +27,7 @@
 		</control>
 		<!-- Solid Background 	-->
 		<control type="group">
-			<visible>!Skin.HasSetting(ThemeBackgroundColor) + !Window.Is(osdvideosettings) + !Window.Is(osdaudiosettings)</visible>
+			<visible>!Skin.HasSetting(ThemeBackgroundColor) + !Window.Is(osdvideosettings) + !Window.Is(osdaudiosettings) + !Window.Is(osdsubtitlesettings)</visible>
 			<control type="image">
 				<width>1280</width>
 				<height>720</height>
@@ -50,11 +51,8 @@
 			
 		</control>
 		
-		
-		
-		
 		<control type="group">
-			<visible>Skin.HasSetting(ThemeBackgroundColor) + !Window.Is(osdvideosettings) + !Window.Is(osdaudiosettings)</visible>
+			<visible>Skin.HasSetting(ThemeBackgroundColor) + !Window.Is(osdvideosettings) + !Window.Is(osdaudiosettings) + !Window.Is(osdsubtitlesettings)</visible>
 			<control type="image">
 			<width>1280</width>
 				<height>720</height>

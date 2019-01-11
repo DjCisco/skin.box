@@ -248,16 +248,10 @@
                 <label>[UPPERCASE][COLOR White]$LOCALIZE[20339][/COLOR]  [COLOR Accent]$INFO[ListItem.Director][/COLOR][/UPPERCASE]</label>
 				<visible>String.IsEmpty(ListItem.Tagline) + Container.Content(Movies) + !String.Contains(ListItem.Icon,default) + !String.IsEmpty(ListItem.Director)</visible>
             </control>
-            <!-- This controls displays the Duration of the Movie if no director or Tagline are available if the strig "min" is part of the duration-->
-			<control type="label">
-                <include>ViewFooterTitle</include>
-                <label>$INFO[ListItem.Duration]</label>
-                <visible>!String.IsEmpty(ListItem.Duration) + String.Contains(ListItem.Duration,$LOCALIZE[31299]) + String.IsEmpty(ListItem.Director) + String.IsEmpty(ListItem.Tagline) + Container.Content(Movies)</visible>
-            </control>
             <!-- This controls displays the Duration of the Movie if no director or Tagline are available -->
 			<control type="label">
                 <include>ViewFooterTitle</include>
-                <label>$INFO[ListItem.Duration,, [UPPERCASE]$LOCALIZE[31299][/UPPERCASE]]</label>
+                <label>$INFO[ListItem.Duration(mins),, [UPPERCASE]$LOCALIZE[31299][/UPPERCASE]]</label>
                 <visible>!String.IsEmpty(ListItem.Duration) + String.IsEmpty(ListItem.Director) + String.IsEmpty(ListItem.Tagline) + Container.Content(Movies)</visible>
             </control>
           

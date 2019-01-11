@@ -160,7 +160,7 @@
 				<onright>2000</onright>
 				<scrolltime>0</scrolltime>
 				<orientation>vertical</orientation>
-				<pagecontrol>-</pagecontrol>
+				<pagecontrol></pagecontrol>
 				<itemlayout height="45" width="300">
 					<control type="image">
 						<width>300</width>

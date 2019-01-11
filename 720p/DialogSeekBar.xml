@@ -2,7 +2,7 @@
 <window id="115">
     <defaultcontrol always="true">901</defaultcontrol>
      
-    <visible>[VideoPlayer.IsFullscreen | Window.IsVisible(visualisation)] + [Player.Seeking | Player.DisplayAfterSeek | Player.paused | Player.Forwarding | Player.rewinding]</visible>
+    <visible>[VideoPlayer.IsFullscreen | Window.IsVisible(visualisation)] + [Player.Seeking | Player.DisplayAfterSeek | Player.paused | Player.Forwarding | Player.rewinding | !String.IsEmpty(Player.SeekNumeric) | !String.IsEmpty(PVR.ChannelNumberInput)]</visible>
 	<controls>
         <control type="group">
             <top>150</top>
@@ -107,6 +107,19 @@
                 <visible>player.rewinding32x</visible>
             </control>
         </control>
+		
+		<control type="label">
+			<top>70</top>
+			<width>1280</width>
+			<height>150</height>
+			<align>center</align>
+			<aligny>top</aligny>
+			<font>SeekBarState</font>
+			<textcolor>Accent</textcolor>
+			<label>$INFO[PVR.ChannelNumberInput]</label>
+			<visible>!String.IsEmpty(PVR.ChannelNumberInput)</visible>
+		</control>
+		
         <control type="group">
             
             <top>150</top>
@@ -134,42 +147,12 @@
             </control>
         </control>
 				<!-- This Displays the Current Time on the Top Right 		-->
-				<control type="label">
-					<label>$INFO[System.Time(hh:mm)][COLOR Accent]$INFO[System.Time(xx), ][/COLOR]</label>
-					<right>5</right>
-					<top>-5</top>
-					<height>30</height>
-					<width>270</width>
-					<font>Clock</font>
-					<align>right</align>
-					<aligny>top</aligny>
-					<shadowcolor>black</shadowcolor>
+				<control type="group">
+					<visible>player.paused</visible>
+					<include>BarClock</include>
 				</control>
-								<!-- This Displays the Current Date on the Top Right -->
-				<control type="label">
-					<label> $INFO[System.Date(ddd)] • [COLOR Accent]$INFO[System.Date(mmm)] $INFO[System.Date(dd)][/COLOR]</label>
-					<left>1000</left>
-					<top>30</top>
-					<height>100</height>
-					<width>270</width>
-					<font>Clock_Footer</font>
-					<shadowcolor>black</shadowcolor>
-					<align>right</align>
-					<visible>!Skin.HasSetting(DisplayWeatherInfo)</visible>
-				</control>
-				<!-- This Displays the Current Weather on the Top Right -->
-				<control type="label">
-					<!--<label>$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits, ]</label>-->
-					<label>$INFO[Weather.Temperature] • $INFO[System.Date(ddd)] • [COLOR Accent]$INFO[System.Date(mmm)] $INFO[System.Date(dd)][/COLOR]</label>
-					<left>1000</left>
-					<top>30</top>
-					<height>100</height>
-					<width>270</width>
-					<font>Clock_Footer</font>
-					<shadowcolor>black</shadowcolor>
-					<align>right</align>
-					<visible>Weather.IsFetched + Skin.HasSetting(DisplayWeatherInfo)</visible>
-				</control>
+			
+			
 			<!-- Progress Bar -->
 			<control type="group">	
 				<animation effect="slide" start="0,70" end="0,0" time="1200" tween="cubic" easing="out">Visible</animation>

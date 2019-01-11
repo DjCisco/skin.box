@@ -36,13 +36,13 @@
 		<left>0</left>
         <top>0</top>
 		-->
-		<width>-</width>
-        <height>-</height>
+		<width></width>
+        <height></height>
 		<!--
         <align>center</align>
         <aligny>center</aligny>
 		-->
-        <texture>-</texture>
+        <texture></texture>
     </default>
 	<!-- This defines the default settings of a Button -->
     <default type="button">
@@ -176,10 +176,10 @@
         <left>150</left>
         <top>325</top>
         <texturebg border="6">other_textures/osd/progressback.png</texturebg>
-        <lefttexture>-</lefttexture>
+        <lefttexture></lefttexture>
         <midtexture border="6">other_textures/osd/progressmid.png</midtexture>
-        <righttexture>-</righttexture>
-        <overlaytexture>-</overlaytexture>
+        <righttexture></righttexture>
+        <overlaytexture></overlaytexture>
     </default>
     <default type="slider">
         <left>0</left>
@@ -187,8 +187,8 @@
         <width>420</width>
         <height>15</height>
 		<orientation>horizontal</orientation> 
-        <texturefocus>-</texturefocus>
-        <texturenofocus>-</texturenofocus>
+        <texturefocus></texturefocus>
+        <texturenofocus></texturenofocus>
         <texturesliderbar>other_textures/osd/slider_bg_2.png</texturesliderbar>
         <textureslidernib border="2">other_textures/osd/slidernibnf.png</textureslidernib>
         <textureslidernibfocus border="2">other_textures/osd/slidernibfo.png</textureslidernibfocus>

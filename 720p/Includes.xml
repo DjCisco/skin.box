@@ -34,7 +34,7 @@
 	<include file="Viewtype_Pictures.xml" />
 	<include file="Viewtype_Banner_List.xml" />
 	<include file="Viewtype_Banner_Wide.xml" />
-	<include file="View_VideoPlaylist.xml" />
+	<include file="View_Playlist.xml" />
     <include file="Variables.xml" />
 	<include file="VariablesHomeMenu1.xml" />
 	<include file="VariablesHomeMenu2.xml" />
@@ -204,7 +204,7 @@
 					<align>right</align>
 					<aligny>top</aligny>
 					<font>Panel_Hint</font>
-					<visible>[System.Platform.IOS | System.Platform.Android]  |  [!System.Platform.IOS + !System.Platform.Android + System.getbool(input.enablemouse)]</visible>
+					<visible>[System.Platform.IOS | System.Platform.Android]  |  [!System.Platform.IOS + !System.Platform.Android + System.getbool(input.enablemouse)] | Window.IsActive(PlayerControls)</visible>
 				 </control>
 				 <control type="label">
 					<description>Player Times</description>
@@ -215,7 +215,7 @@
 					<align>right</align>
 					<aligny>top</aligny>
 					<font>Panel_Hint</font>
-					<visible>[!System.Platform.IOS + !System.Platform.Android + !System.getbool(input.enablemouse)]</visible>
+					<visible>[!System.Platform.IOS + !System.Platform.Android + !System.getbool(input.enablemouse)] + !Window.IsActive(PlayerControls)</visible>
 				 </control>
 				 <control type="label">
 					<description>Player Times</description>
@@ -226,7 +226,7 @@
 					<align>left</align>
 					<aligny>top</aligny>
 					<font>Panel_Hint</font>
-					<visible>[!System.Platform.IOS + !System.Platform.Android + !System.getbool(input.enablemouse)]</visible>
+					<visible>[!System.Platform.IOS + !System.Platform.Android + !System.getbool(input.enablemouse)] + !Window.IsActive(PlayerControls)</visible>
 				 </control>
 				<control type="progress">
 					<description>Progressbar</description>
@@ -241,7 +241,7 @@
 			</control>
 			<!-- Start and End Time for PVR Program -->
 			<control type="group">
-				<visible>VideoPlayer.Content(livetv) +  !IsEmpty(VideoPlayer.Title)</visible>
+				<visible>VideoPlayer.Content(livetv) +  !String.IsEmpty(VideoPlayer.Title)</visible>
 				<control type="label">
 					<description>PVR Program Start Time</description>
 					<left>1035</left>
@@ -276,7 +276,7 @@
 				<effect t
 				-->
 			<control type="grouplist">
-				<visible>[System.Platform.IOS | System.Platform.Android]  |  [!System.Platform.IOS + !System.Platform.Android + System.getbool(input.enablemouse)]</visible>
+				<visible>[[System.Platform.IOS | System.Platform.Android]  |  [!System.Platform.IOS + !System.Platform.Android + System.getbool(input.enablemouse)]] + !Window.IsActive(PlayerControls)</visible>
 				<left>10</left>
 				<top>685</top>
 				<align>left</align>
@@ -321,6 +321,7 @@
 					<texturefocus colordiffuse="Accent">other_textures/osd/npNext.png</texturefocus>
 					<texturenofocus>other_textures/osd/npNext.png</texturenofocus>
 					<onclick>playercontrol(next)</onclick>
+					<visible>!VideoPlayer.Content(livetv) + [Integer.IsGreater(Playlist.Length(video),1) | Integer.IsGreater(Playlist.Length(music),1)]</visible>
 				</control>
 			
 			
@@ -476,8 +477,7 @@
 						<textoffsetx>10</textoffsetx>
 						<align>left</align>
 						<font>List_Left_Menu</font>
-						<label>-</label>
-					</control>
+				</control>
 				<control type="radiobutton" id="5">
 					<description>Group recording items by folder structure</description>
 					<width>280</width>
@@ -493,7 +493,7 @@
 						<textoffsetx>10</textoffsetx>
 						<align>left</align>
 						<font>List_Left_Menu</font>
-						<label>-</label>
+						<label></label>
 					</control>
 				<control type="button" id="3">
 						<description>Sort by button</description>
@@ -506,7 +506,7 @@
 				<control type="togglebutton" id="4">
 						<description>Sort asc</description>
 						<alttexturefocus border="5">tile.png</alttexturefocus>
-						<alttexturenofocus>-</alttexturenofocus>
+						<alttexturenofocus></alttexturenofocus>
 						<textoffsetx>10</textoffsetx>
 						<align>left</align>
 						<font>List_Left_Menu</font>
@@ -542,6 +542,15 @@
 					<align>left</align>
 					<font>List_Left_Menu</font>
 					<label>19184</label>
+					<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
+				</control>
+				<control type="button" id="10">
+					<description>Watched Unwtached Recordings</description>
+					<width>280</width>
+					<textoffsetx>10</textoffsetx>
+					<align>left</align>
+					<font>List_Left_Menu</font>
+					<label>20367</label>
 					<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
 				</control>
 			</control>
@@ -848,9 +857,9 @@
 					<width>870</width>
 					<height>25</height>
 					<action>seek</action>
-					<texturesliderbar>-</texturesliderbar>
-					<textureslidernib>-</textureslidernib>
-					<textureslidernibfocus>-</textureslidernibfocus>
+					<texturesliderbar></texturesliderbar>
+					<textureslidernib></textureslidernib>
+					<textureslidernibfocus></textureslidernibfocus>
 				</control>
 				<!-- Player Time Elapsed-->
 				<control type="label">
@@ -1047,9 +1056,9 @@
 					<width>790</width>
 					<height>25</height>
 					<action>seek</action>
-					<texturesliderbar>-</texturesliderbar>
-					<textureslidernib>-</textureslidernib>
-					<textureslidernibfocus>-</textureslidernibfocus>
+					<texturesliderbar></texturesliderbar>
+					<textureslidernib></textureslidernib>
+					<textureslidernibfocus></textureslidernibfocus>
 				</control>				
 				<!-- Player Time Elapsed-->
 				<control type="label">
@@ -1128,16 +1137,6 @@
 				<label>$INFO[ListItem.Property(TotalSeasons),, $LOCALIZE[20373]$COMMA ]$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20359]]</label>
 				<visible>!Container.Content(movies) + !Integer.IsGreater(ListItem.Property(TotalSeasons),1) + !Integer.IsGreater(ListItem.Property(TotalEpisodes),1)</visible>
 			</control>
-			<!-- This control displays the duration of a Movie in the description field only if the duration itself already contains the string "min"-->
-			<control type="label">
-				<left>825</left>
-				<top>300</top>
-				<width>420</width>
-				<height>50</height>
-				<font>Panel_Description_Title</font>
-				<label>$INFO[ListItem.Duration]</label>
-				<visible>!String.IsEmpty(ListItem.Duration) + String.Contains(ListItem.Duration,$LOCALIZE[31299]) + Container.Content(movies)</visible>
-			</control>
 			<!-- This control displays the duration of a Movie in the description field-->
 			<control type="label">
 				<left>825</left>
@@ -1145,8 +1144,8 @@
 				<width>420</width>
 				<height>50</height>
 				<font>Panel_Description_Title</font>
-				<label>$INFO[ListItem.Duration,, $LOCALIZE[31299]]</label>
-				<visible>!String.IsEmpty(ListItem.Duration) + Container.Content(movies)</visible>
+				<label>$INFO[ListItem.Duration(mins),, $LOCALIZE[31299]]</label>
+				<visible>!String.IsEmpty(ListItem.Duration)</visible>
 			</control>
 			  <!-- This control displays the rating of Movie Tv Show or Episode-->
 			<control type="image">
@@ -1437,7 +1436,7 @@
 			<!-- This Control Displays the watched Icon -->
 			<control type="image">
 				<left>40</left>
-				<top>-</top>
+				<top></top>
 				<width>60</width>
 				<height>60</height>
 				<texture>OverlayWatchedPanel.png</texture>
@@ -1450,7 +1449,7 @@
 			 <!-- This Control Displays the watching Icon -->
 			<control type="image">
 				<left>40</left>
-				<top>-</top>
+				<top></top>
 				<width>60</width>
 				<height>60</height>
 				<texture>OverlayWatchingPanel.png</texture>
@@ -1502,7 +1501,7 @@
 			
 			<control type="image">
 				<left>40</left>
-				<top>-</top>
+				<top></top>
 				<width>60</width>
 				<height>60</height>
 				<texture>OverlayNewPanel.png</texture>
@@ -1828,8 +1827,8 @@
         <top>-20</top>
         <width>1</width>
         <height>1</height>
-        <texturenofocus>-</texturenofocus>
-        <texturefocus>-</texturefocus>
+        <texturenofocus></texturenofocus>
+        <texturefocus></texturefocus>
     </include>
     <!-- This Displays the Time and Date on the Top Right -->
 	<include name="BarClock">
@@ -1873,6 +1872,18 @@
 				<shadowcolor>black</shadowcolor>
 				<align>right</align>
 				<visible>Weather.IsFetched + Skin.HasSetting(DisplayWeatherInfo)</visible>
+			</control>
+			<control type="label">
+				<top>85</top>
+				<right>10</right>
+				<width>1280</width>
+				<height>150</height>
+				<align>right</align>
+				<aligny>top</aligny>
+				<font>Clock</font>
+				<textcolor>Accent</textcolor>
+				<label>$INFO[PVR.ChannelNumberInput]</label>
+				<visible>!String.IsEmpty(PVR.ChannelNumberInput)</visible>
 			</control>
 		
 		</control>

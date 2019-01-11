@@ -104,7 +104,7 @@
                     <top>240</top>
                     <width>145</width>
                     <height>430</height>
-                    <itemgap>-</itemgap>
+                    <itemgap></itemgap>
                     <onup>9000</onup>
                     <ondown>9000</ondown>
                     <onright>9000</onright>
@@ -149,6 +149,13 @@
 				<align>center</align>
 				<label></label>
 			</control>
+			<control type="button" id="10">
+				<description>Dependencies</description>
+				<width>145</width>
+				<font>Panel_Hint</font>						
+				<align>center</align>
+				<label>$LOCALIZE[39024]</label>
+			</control>
 			<control type="radiobutton" id="13">
 				<description>Auto Update Button</description>
 				<width>145</width>
@@ -156,6 +163,7 @@
 				<align>center</align>
 				<label></label>
 			</control>
+
 		
 				
 				

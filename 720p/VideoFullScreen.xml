@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window id="2005">
-    <defaultcontrol>-</defaultcontrol>
+    <defaultcontrol></defaultcontrol>
     <controls>
 		<control type="grouplist">
 			<left>20</left>

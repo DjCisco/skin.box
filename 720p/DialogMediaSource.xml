@@ -132,7 +132,7 @@
 				<focusedcolor>Accent</focusedcolor>
 				<onup>10</onup>
 				<ondown>9001</ondown>
-				<label>-</label>
+				<label></label>
 			</control>
 			<control type="grouplist" id="9001">
                 <left>140</left>

@@ -16,7 +16,7 @@
 		</control>
 		<!-- Solid Background 	-->
 		<control type="group">
-			<visible>!Skin.HasSetting(ThemeBackgroundColor) + !Window.Is(osdvideosettings) + !Window.Is(osdaudiosettings)</visible>
+			<visible>!Skin.HasSetting(ThemeBackgroundColor) + !Window.Is(osdvideosettings) + !Window.Is(osdaudiosettings) + !Window.Is(osdsubtitlesettings)</visible>
 			<control type="image">
 				<width>1280</width>
 				<height>720</height>
