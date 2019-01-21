@@ -1,3 +1,6 @@
+[B]6.0.0[/B]
+- Added all changes for Kodi Leia Repo inclusion
+
 [B]5.0.7[/B]
 - Corrected Widget Chooser missing labels
 - Improvements in PVR Now Playng and OSD Channels

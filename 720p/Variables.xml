@@ -1,5 +1,16 @@
 <includes>
 
+		<!-- Custom Widget Label for Customization Window-->
+	<variable name="MainWindowTitle">    
+		<value condition="Window.IsActive(Games)">$LOCALIZE[10821]</value>
+		<value condition="Window.IsActive(Music)">$LOCALIZE[2]</value>
+		<value condition="Window.IsActive(musicfiles)">$LOCALIZE[31002]</value>
+		<value condition="Window.IsActive(Programs)">$LOCALIZE[350]</value>
+		<value condition="Window.IsActive(Pictures)">$LOCALIZE[1]</value>
+		<value condition="Window.IsActive(AddonBrowser)">$LOCALIZE[24001]</value>
+		<value>$LOCALIZE[3]</value> <!-- Videos-->
+	</variable>
+
 	<!-- Custom Widget Label for Customization Window-->
 	<variable name="CustomHomeWidgetLabel">    
 		<value condition="Skin.String(SelectedHomeWidget,HomeWidget1)">$INFO[Skin.String(HomeWidget1.Label)]</value>

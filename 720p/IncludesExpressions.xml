@@ -3,6 +3,7 @@
 
 	<expression name="isVideos">[Window.IsVisible(Videos) + String.IsEmpty(Container.FolderName)]</expression>
 	<expression name="isMusic">[Window.IsVisible(Music) + String.IsEmpty(Container.FolderName)]</expression>
+	<expression name="isGames">[Window.IsVisible(Games) + String.IsEmpty(Container.FolderName)]</expression>
 	<expression name="isAddonBrowser">[String.Contains(Container.FolderPath,addons://) + String.IsEmpty(Container.Content)]</expression>
 	<expression name="isVideoFiles">String.IsEqual(Container.FolderPath,sources://video/)</expression>
 	<expression name="isMusicFiles">String.IsEqual(Container.FolderPath,sources://music/)</expression>

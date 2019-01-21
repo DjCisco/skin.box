@@ -221,9 +221,9 @@
 						<onclick>Skin.SetString(SubMenu4Tile3.Type,RadioChannels)</onclick>
 						<onclick>Skin.SetString(SubMenu4Tile4.Type,Recordings)</onclick>
 						<onclick>Skin.SetString(SubMenu4Tile5.Type,Timers)</onclick>
-						<onclick>Skin.Reset(SubMenu5Tile1.Type)</onclick>
-						<onclick>Skin.Reset(SubMenu5Tile2.Type)</onclick>
-						<onclick>Skin.Reset(SubMenu5Tile3.Type)</onclick>
+						<onclick>Skin.SetString(SubMenu5Tile1.Type,Games)</onclick>
+						<onclick>Skin.SetString(SubMenu5Tile2.Type,GameAddons)</onclick>
+						<onclick>Skin.SetString(SubMenu5Tile3.Type,GameSettings)</onclick>
 						<onclick>Skin.Reset(SubMenu5Tile4.Type)</onclick>
 						<onclick>Skin.Reset(SubMenu5Tile5.Type)</onclick>
 						<onclick>Skin.Reset(SubMenu6Tile1.Type)</onclick>
@@ -265,7 +265,7 @@
 						<onclick>Skin.SetString(HomeMenu2.Label,Tv Shows)</onclick>
 						<onclick>Skin.SetString(HomeMenu3.Label,Music)</onclick>
 						<onclick>Skin.SetString(HomeMenu4.Label,Live Tv)</onclick>
-						<onclick>Skin.Reset(HomeMenu5.Label)</onclick>
+						<onclick>Skin.SetString(HomeMenu5.Label,Games)</onclick>
 						<onclick>Skin.Reset(HomeMenu6.Label)</onclick>
 						<onclick>Skin.Reset(HomeMenu7.Label)</onclick>
 						<onclick>Skin.Reset(HomeMenu8.Label)</onclick>
@@ -275,7 +275,7 @@
 						<onclick>Skin.SetString(HomeMenu2.Image,HomeIcons/TvShows.png)</onclick>
 						<onclick>Skin.SetString(HomeMenu3.Image,HomeIcons/Music.png)</onclick>
 						<onclick>Skin.SetString(HomeMenu4.Image,HomeIcons/LiveTv.png)</onclick>
-						<onclick>Skin.Reset(HomeMenu5.Image)</onclick>
+						<onclick>Skin.SetString(HomeMenu5.Image,HomeIcons/Games.png)</onclick>
 						<onclick>Skin.Reset(HomeMenu6.Image)</onclick>
 						<onclick>Skin.Reset(HomeMenu7.Image)</onclick>
 						<onclick>Skin.Reset(HomeMenu8.Image)</onclick>
@@ -305,7 +305,7 @@
 						<onclick>Skin.Reset(SideMenuTile12.Type)</onclick>
 						<onclick>Skin.Reset(SideMenuTile13.Type)</onclick>
 						<onclick>Skin.Reset(SideMenuTile14.Type)</onclick>
-						<onclick>Skin.SetString(HomeWidget1.Type,RecentMovies)</onclick>
+						<onclick>Skin.SetString(HomeWidget1.Type,RandomMovies)</onclick>
 						<onclick>Skin.SetString(HomeWidget1.Layout,Poster)</onclick>
 						<onclick>Skin.SetString(HomeWidget2.Type,RecentTvShows)</onclick>
 						<onclick>Skin.SetString(HomeWidget2.Layout,Poster)</onclick>

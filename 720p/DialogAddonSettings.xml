@@ -14,6 +14,9 @@
                 <effect type="fade" time="300"/>
                 <effect type="slide" start="+1500,0" time="300" />
             </animation>
+
+			<include condition="Player.HasGame + VideoPlayer.IsFullScreen">SkinTransparentBackground</include>
+			
 			<control type="image">
                 <description>background image</description>
                 <left>50</left>

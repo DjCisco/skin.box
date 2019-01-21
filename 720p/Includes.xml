@@ -35,6 +35,7 @@
 	<include file="Viewtype_Banner_List.xml" />
 	<include file="Viewtype_Banner_Wide.xml" />
 	<include file="View_Playlist.xml" />
+	<include file="IncludesHome.xml" />
     <include file="Variables.xml" />
 	<include file="VariablesHomeMenu1.xml" />
 	<include file="VariablesHomeMenu2.xml" />
@@ -47,7 +48,6 @@
 	<include file="VariablesHomeMenu9.xml" />
 	<include file="VariablesHomeMenu10.xml" />
 	<include file="VariablesHomeSideMenu.xml" />
-	<include file="IncludesHome.xml" />
 	<include file="IncludesDebugInfo.xml" />
 	<include file="script-IARL-infodialog.xml" />
 	<include name="TouchscreenNavigation">
@@ -192,6 +192,26 @@
 					</control>
 			</control>
 			
+			<!-- Games -->
+			<control type="group">
+					<left>0</left>
+					<top>685</top>
+					<visible>Player.HasGame</visible>
+					<control type="label">
+						<left>240</left>
+						<top>0</top>
+						<align>center</align>
+						<description>Now Playing Game</description>
+						<width>800</width>
+						<label>Game [COLOR Accent]$INFO[Player.Title][/COLOR]</label>
+						<scroll>true</scroll>
+						<font>Panel_Hint</font>
+						<aligny>top</aligny>
+					</control>
+			</control>
+			
+			
+			
 			<!--Player Times for Movie, Tv Shows, Music, -->
 			<control type="group">
 				 <visible>!VideoPlayer.Content(livetv)</visible>
@@ -330,7 +350,8 @@
 	</include>
 	<include name="ListVisibility">
 		 <visible>!$EXP[isVideos] + 
-				!$EXP[isMusic] +  
+		 		!$EXP[isMusic] +  
+				!$EXP[isGames] +  
 				!$EXP[isAddonBrowser] + 
 				!$EXP[isVideoFiles] + 
 				!$EXP[isMusicFiles] + 
@@ -356,7 +377,8 @@
 	</include>
 	<include name="PanelsVisibility">
 		<visible>$EXP[isVideos] | 
-				$EXP[isMusic] | 
+				$EXP[isMusic] |
+				$EXP[isGames] |
 				$EXP[isAddonBrowser] | 
 				$EXP[isVideoFiles] | 
 				$EXP[isMusicFiles] | 
@@ -2216,6 +2238,11 @@
 			<include>Dimensions_Fullscreen</include>
 			<visible>!SlideShow.IsActive + Player.HasVideo() + Skin.HasSetting(PlayingVideoOnBackground) + !VideoPlayer.IsFullscreen</visible>
         </control>
+		<control type="gamewindow">
+			<description>video</description>
+			<include>Dimensions_Fullscreen</include>
+			<visible>!SlideShow.IsActive + Player.HasGame() + Skin.HasSetting(PlayingVideoOnBackground)</visible>
+        </control>
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
 			<texture>music_fanart_diffuse_blue.png</texture>
@@ -3645,6 +3672,14 @@
 			<onclick>Dialog.Close(4444)</onclick>
 		 </item>
 		<item id="18">
+			<label>$LOCALIZE[36921]</label>
+			<icon>DefaultMusicSongs.png</icon>
+			<thumb>DefaultMusicSongs.png</thumb>
+			<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeTitle)].Type,Songs)</onclick>
+			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
+			<onclick>Dialog.Close(4444)</onclick>
+		 </item>
+		<item id="19">
 			<label>$LOCALIZE[342]</label>
 			<icon>DefaultMovies.png</icon>
 			<thumb>DefaultMovies.png</thumb>
@@ -3652,7 +3687,7 @@
 			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
 			<onclick>Dialog.Close(4444)</onclick>
 		 </item>
-		<item id="19">
+		<item id="20">
 			<label>$LOCALIZE[20343]</label>
 			<icon>DefaultTVShows.png</icon>
 			<thumb>DefaultTVShows.png</thumb>
@@ -3660,7 +3695,7 @@
 			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
 			<onclick>Dialog.Close(4444)</onclick>
 		 </item>
-		<item id="20">
+		<item id="21">
 			<label>$LOCALIZE[20012]</label>
 			<icon>DefaultVideoPlaylists.png</icon>
 			<thumb>DefaultVideoPlaylists.png</thumb>
@@ -3668,7 +3703,7 @@
 			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
 			<onclick>Dialog.Close(4444)</onclick>
 		 </item>
-		<item id="21">
+		<item id="22">
 			<label>$LOCALIZE[20011]</label>
 			<icon>DefaultMusicPlaylists.png</icon>
 			<thumb>DefaultMusicPlaylists.png</thumb>
@@ -3676,7 +3711,15 @@
 			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
 			<onclick>Dialog.Close(4444)</onclick>
 		 </item>
-		 <item id="22">
+		 <item id="23">
+			<label>$LOCALIZE[10821]</label>
+			<icon>DefaultGameController.png</icon>
+			<thumb>DefaultGameController.png</thumb>
+			<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeTitle)].Type,Games)</onclick>
+			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
+			<onclick>Dialog.Close(4444)</onclick>
+		 </item>
+		 <item id="24">
 			<label>$LOCALIZE[10040]</label>
 			<icon>DefaultAddon.png</icon>
 			<thumb>DefaultAddon.png</thumb>
@@ -3684,7 +3727,7 @@
 			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
 			<onclick>Dialog.Close(4444)</onclick>
 		 </item>
-		<item id="22">
+		<item id="25">
 			<label>$LOCALIZE[1037]</label>
 			<icon>DefaultAddonVideo.png</icon>
 			<thumb>DefaultAddonVideo.png</thumb>
@@ -3692,7 +3735,7 @@
 			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
 			<onclick>Dialog.Close(4444)</onclick>
 		 </item>
-		<item id="23">
+		<item id="26">
 			<label>$LOCALIZE[1038]</label>
 			<icon>DefaultAddonMusic.png</icon>
 			<thumb>DefaultAddonMusic.png</thumb>
@@ -3700,7 +3743,15 @@
 			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
 			<onclick>Dialog.Close(4444)</onclick>
 		 </item>
-		<item id="24">
+		 	<item id="27">
+			<label>$LOCALIZE[35049]</label>
+			<icon>DefaultAddonGame.png</icon>
+			<thumb>DefaultAddonGame.png</thumb>
+			<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeTitle)].Type,GameAddons)</onclick>
+			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
+			<onclick>Dialog.Close(4444)</onclick>
+		</item>		 
+		<item id="28">
 			<label>$LOCALIZE[31703]</label>
 			<label2>$LOCALIZE[19217]</label2>
 			<icon>DefaultTvChannels.png</icon>
@@ -3709,7 +3760,7 @@
 			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
 			<onclick>Dialog.Close(4444)</onclick>
 		 </item>
-		<item id="25">
+		<item id="29">
 			<label>$LOCALIZE[31703]</label>
 			<label2>$LOCALIZE[19216]</label2>
 			<icon>DefaultRadio.png</icon>
@@ -3718,7 +3769,7 @@
 			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
 			<onclick>Dialog.Close(4444)</onclick>
 		 </item>
-		<item id="26">
+		<item id="30">
 			<label>$LOCALIZE[31703]</label>
 			<label2>$LOCALIZE[19069]</label2>
 			<icon>DefaultEPG.png</icon>
@@ -3727,7 +3778,7 @@
 			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
 			<onclick>Dialog.Close(4444)</onclick>
 		 </item>
-		<item id="27">
+		<item id="31">
 			<label>$LOCALIZE[31703]</label>
 			<label2>$LOCALIZE[19163]</label2>
 			<icon>DefaultTvRecordings.png</icon>
@@ -3736,7 +3787,7 @@
 			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
 			<onclick>Dialog.Close(4444)</onclick>
 		 </item>
-		<item id="28">
+		<item id="32">
 			<label>$LOCALIZE[31703]</label>
 			<label2>$LOCALIZE[31710]</label2>
 			<icon>DefaultTimer.png</icon>
@@ -3745,7 +3796,7 @@
 			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
 			<onclick>Dialog.Close(4444)</onclick>
 		 </item>
-		<item id="29">
+		<item id="33">
 			<label>$LOCALIZE[341]</label>
 			<icon>icons/music.png</icon>
 			<thumb>icons/music.png</thumb>
@@ -3753,7 +3804,7 @@
 			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
 			<onclick>Dialog.Close(4444)</onclick>
 		 </item>
-		<item id="30">
+		<item id="34">
 			<label>$LOCALIZE[13391]</label>
 			<icon>eject.png</icon>
 			<thumb>eject.png</thumb>
@@ -3761,7 +3812,7 @@
 			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
 			<onclick>Dialog.Close(4444)</onclick>
 		 </item>
-		<item id="31">
+		<item id="35">
 			<label>$LOCALIZE[8]</label>
 			<icon>DefaultWeather.png</icon>
 			<thumb>DefaultWeather.png</thumb>
@@ -3769,7 +3820,7 @@
 			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
 			<onclick>Dialog.Close(4444)</onclick>
 		 </item>
-		<item id="32">
+		<item id="36">
 			<label>$LOCALIZE[1036]</label>
 			<icon>top.png</icon>
 			<thumb>top.png</thumb>
@@ -3777,7 +3828,7 @@
 			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
 			<onclick>Dialog.Close(4444)</onclick>
 		 </item>
-		<item id="33">
+		<item id="37">
 			<label>$LOCALIZE[1]</label>
 			<icon>DefaultPicture.png</icon>
 			<thumb>DefaultPicture.png</thumb>
@@ -3785,7 +3836,7 @@
 			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
 			<onclick>Dialog.Close(4444)</onclick>
 		 </item>
-		<item id="34">
+		<item id="38">
 			<label>$LOCALIZE[0]</label>
 			<icon>DefaultProgram.png</icon>
 			<thumb>DefaultProgram.png</thumb>
@@ -3793,7 +3844,7 @@
 			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
 			<onclick>Dialog.Close(4444)</onclick>
 		 </item>
-		<item id="35">
+		<item id="39">
 			<label>$LOCALIZE[10004]</label>
 			<icon>icons/Settings.png</icon>
 			<thumb>icons/Settings.png</thumb>
@@ -3801,7 +3852,16 @@
 			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
 			<onclick>Dialog.Close(4444)</onclick>
 		 </item>
-		<item id="36">
+		<item id="40">
+			<label>$LOCALIZE[10022]</label>
+			<label>$LOCALIZE[10004]</label>
+			<icon>icons/GameSettings.png</icon>
+			<thumb>icons/GameSettings.png</thumb>
+			<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeTitle)].Type,GameSettings)</onclick>
+			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
+			<onclick>Dialog.Close(4444)</onclick>
+		 </item>		 
+		<item id="41">
 			<label>$LOCALIZE[7]</label>
 			<icon>icons/FileManager.png</icon>
 			<thumb>icons/FileManager.png</thumb>
@@ -3809,7 +3869,7 @@
 			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
 			<onclick>Dialog.Close(4444)</onclick>
 		 </item>
-		 <item id="37">
+		 <item id="42">
 			<label>$LOCALIZE[13005]</label>
 			<icon>icons/Power.png</icon>
 			<thumb>icons/Power.png</thumb>
@@ -3817,7 +3877,7 @@
 			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
 			<onclick>Dialog.Close(4444)</onclick>
 		 </item>
-		 <item id="38">
+		 <item id="43">
 			<label>$LOCALIZE[31043]</label>
 			<icon>icons/SkinSettings.png</icon>
 			<thumb>icons/SkinSettings.png</thumb>
@@ -3825,14 +3885,14 @@
 			<onclick>Skin.Reset($INFO[Skin.String(SelectedHomeTitle)].ImageType)</onclick>
 			<onclick>Dialog.Close(4444)</onclick>
 		 </item>
-		  <item id="39">
+		  <item id="44">
 			<label>$LOCALIZE[31024]</label>
 			<icon>DefaultAddCustom.png</icon>
 			<thumb>DefaultAddCustom.png</thumb>
 			<onclick>Dialog.Close(4444)</onclick>
 			<onclick>ActivateWindow(7777,return)</onclick>
 		 </item>
-		 <item id="40">
+		 <item id="45">
 			<label>$LOCALIZE[117]</label>
 			<icon>DefaultDelete.png</icon>
 			<thumb>DefaultDelete.png</thumb>
@@ -3850,7 +3910,7 @@
 			<thumb>DefaultFolderBack.png</thumb>
 			<onclick>Dialog.Close(5555)</onclick>
 		 </item>
-		<item id="42">
+		<item id="2">
 			<label>$LOCALIZE[117]</label>
 			<label2></label2>
 			<icon>DefaultDelete.png</icon>
