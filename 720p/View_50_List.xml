@@ -53,7 +53,11 @@
 			<!--This control shows the label in case no Folder Name is Available -->
 			<control type="group">
 				<visible>String.IsEmpty(Container.FolderName)</visible>
-				<!--This control shows the label Videos -->
+				<control type="label">
+					<include>ViewMainTitle</include>
+					<label>$VAR[MainWindowTitle]</label>
+				</control>
+				<!--This control shows the label Videos 
 				<control type="label">
 					<label>3</label>
 					<left>50</left>
@@ -63,39 +67,45 @@
 					<font>Panel_Title</font>
 					<aligny>top</aligny>
 					<align>left</align>
-					<visible>!Window.IsVisible(Pictures) + !Window.IsVisible(Programs) + !Window.IsActive(Music) + !Window.IsActive(addonBrowser)</visible>
+					<visible>!Window.IsVisible(Games) + !Window.IsVisible(Pictures) + !Window.IsVisible(Programs) + !Window.IsActive(Music) + !Window.IsActive(addonBrowser)</visible>
 				</control>
-				 <!--This control shows the label MUSIC -->
+				 This control shows the label MUSIC 
+				<control type="label">
+					<include>ViewMainTitle</include>
+					<label>Games</label>
+					<visible>Window.IsActive(Games)</visible>
+				</control>
+				 This control shows the label MUSIC 
 				<control type="label">
 					<include>ViewMainTitle</include>
 					<label>2</label>
 					<visible>Window.IsActive(Music)</visible>
-				</control>
+				</control> -->
 				<!--This control shows the label MUSIC FILES ToReview
 				<control type="label">
 					<include>ViewMainTitle</include>
 					<label>31002</label>
 					<visible>Window.IsActive(musicfiles)</visible>
 				</control>
-				 -->
-				<!--This control shows the label Programs -->
+				 
+				This control shows the label Programs 
 				<control type="label">
 					<include>ViewMainTitle</include>
 					<label>0</label>
 					<visible>Window.IsActive(Programs)</visible>
 				</control>
-				<!--This control shows the label Pictures -->
+				This control shows the label Pictures
 				<control type="label">
 					<include>ViewMainTitle</include>
 					<label>$LOCALIZE[1]</label>
 					<visible>Window.IsActive(Pictures)</visible>
 				</control>
-				<!--This control shows the Add-On label -->
+				<!--This control shows the Add-On label
 				<control type="label">
 					<include>ViewMainTitle</include>
 					<label>24001</label>
 					<visible>Window.IsActive(AddonBrowser)</visible>
-				</control>
+				</control>-->
 			</control>	
 			<!--This control defines the list that will display the items -->
 			<control type="list" id="50">

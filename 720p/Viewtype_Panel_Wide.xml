@@ -66,32 +66,18 @@
 			
 			
 			<!--This control shows the label Music -->
-			<control type="label">
-				<include>ViewMainTitle</include>
-                <label>2</label>
-				<visible>Window.IsActive(Music) + String.IsEmpty(Container.FolderName)</visible>
+			<control type="group">
+				<visible>String.IsEmpty(Container.FolderName)</visible>
+				<control type="label">
+					<include>ViewMainTitle</include>
+					<label>$VAR[MainWIndowTitle]</label>
+				</control>
 			</control>
-							
 			<control type="label">
 				<include>ViewMainTitle</include>
                 <label>$INFO[Container.FolderName]</label>
             </control>
-			
-			
-			<!--This control shows the label Videos -->
-			<control type="label">
-                <label>10025</label>
-                <left>50</left>
-                <top>215</top>
-                <height>30</height>
-                <width>884</width>
-                <font>Panel_Title</font>
-				<aligny>top</aligny>
-				<align>left</align>
-                <visible>String.IsEmpty(Container.FolderName) + [!Window.IsActive(addonbrowser) + !Window.IsActive(Pictures) + !Window.IsActive(Programs)] + !Window.IsActive(Music)</visible>
-            </control>
-			
-			
+	
 			     
          </control>
     </include>

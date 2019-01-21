@@ -254,6 +254,8 @@
 		</control>		
 	</include>
 
+<!--
+	
 <include name="SubMenuTileVariables">
 	<variable  name="SubMenu$PARAM[MenuNr]Tile$PARAM[TileNr].Label">
 		<value condition="Skin.String(SubMenu$PARAM[MenuNr]Tile$PARAM[TileNr].Type,Favourite)">$INFO[Skin.String(SubMenu$PARAM[MenuNr]Tile$PARAM[TileNr].Label)]</value>
@@ -297,7 +299,8 @@
 		<value condition="Skin.String(SubMenu$PARAM[MenuNr]Tile$PARAM[TileNr].Type,Settings)">$LOCALIZE[10004]</value>
 		<value condition="Skin.String(SubMenu$PARAM[MenuNr]Tile$PARAM[TileNr].Type,FileManager)">$LOCALIZE[7]</value>
 		<value condition="Skin.String(SubMenu$PARAM[MenuNr]Tile$PARAM[TileNr].Type,Shutdown)">$LOCALIZE[13005]</value>
-		<value condition="Skin.String(SubMenu$PARAM[MenuNr]Tile$PARAM[TileNr].Type,SkinSettings)">$LOCALIZE[31043]</value>		
+		<value condition="Skin.String(SubMenu$PARAM[MenuNr]Tile$PARAM[TileNr].Type,SkinSettings)">$LOCALIZE[31043]</value>
+		<value condition="Skin.String(SubMenu$PARAM[MenuNr]Tile$PARAM[TileNr].Type,Games)">$LOCALIZE[10821]</value>		
 		<value>$LOCALIZE[504]</value>
 	</variable>
 	<variable  name="SubMenu$PARAM[MenuNr]Tile$PARAM[TileNr].Image">
@@ -342,7 +345,8 @@
 		<value condition="Skin.String(SubMenu$PARAM[MenuNr]Tile$PARAM[TileNr].Type,Settings)">icons/Settings.png</value>
 		<value condition="Skin.String(SubMenu$PARAM[MenuNr]Tile$PARAM[TileNr].Type,FileManager)">icons/FileManager.png</value>
 		<value condition="Skin.String(SubMenu$PARAM[MenuNr]Tile$PARAM[TileNr].Type,Shutdown)">icons/Power.png</value>
-		<value condition="Skin.String(SubMenu$PARAM[MenuNr]Tile$PARAM[TileNr].Type,SkinSettings)">icons/skinSettings.png</value>		
+		<value condition="Skin.String(SubMenu$PARAM[MenuNr]Tile$PARAM[TileNr].Type,SkinSettings)">icons/skinSettings.png</value>
+		<value condition="Skin.String(SubMenu$PARAM[MenuNr]Tile$PARAM[TileNr].Type,Games)">DefaultGameController.png</value>		
 		<value>defaultaddsource.png</value>
 	</variable>
 	<variable  name="SubMenu$PARAM[MenuNr]Tile$PARAM[TileNr].Action">
@@ -387,103 +391,57 @@
 		<value condition="Skin.String(SubMenu$PARAM[MenuNr]Tile$PARAM[TileNr].Type,Settings)">ActivateWindow(Settings, return)</value>
 		<value condition="Skin.String(SubMenu$PARAM[MenuNr]Tile$PARAM[TileNr].Type,FileManager)">ActivateWindow(filemanager)</value>
 		<value condition="Skin.String(SubMenu$PARAM[MenuNr]Tile$PARAM[TileNr].Type,Shutdown)">ActivateWindow(shutdownmenu)</value>
-		<value condition="Skin.String(SubMenu$PARAM[MenuNr]Tile$PARAM[TileNr].Type,SkinSettings)">ActivateWindow(skinsettings)</value>		
+		<value condition="Skin.String(SubMenu$PARAM[MenuNr]Tile$PARAM[TileNr].Type,SkinSettings)">ActivateWindow(skinsettings)</value>
+		<value condition="Skin.String(SubMenu$PARAM[MenuNr]Tile$PARAM[TileNr].Type,Games)">ActivateWindow(games)</value>			
 		<value>noop</value>
 	</variable>
 </include>
 
+-->
+
+<include name="MainMenuItem">
+	<item id="$PARAM[ItemNr]">
+		<label>$VAR[MainMenu$PARAM[ItemNr].Label]</label>
+		<icon>$VAR[MainMenu$PARAM[ItemNr].Image]</icon>
+		<thumb>$VAR[MainMenu$PARAM[ItemNr].Image]</thumb>
+		<onclick>$VAR[MainMenu$PARAM[ItemNr].Action]</onclick>
+		<onclick>$VAR[MainMenu$PARAM[ItemNr].2ndAction]</onclick>
+		<property name="SelectedMainMenu">MainMenu$PARAM[ItemNr]</property>
+		<visible>Skin.HasSetting(EnableHomeMenu$PARAM[ItemNr])</visible>
+	</item>
+</include>
 
 <include name="MainMenu">
-	<item id="1">
-		<label>$VAR[MainMenu1.Label]</label>
-		<icon>$VAR[MainMenu1.Image]</icon>
-		<thumb>$VAR[MainMenu1.Image]</thumb>
-		<onclick>$VAR[MainMenu1.Action]</onclick>
-		<onclick>$VAR[MainMenu1.2ndAction]</onclick>
-		<property name="SelectedMainMenu">MainMenu1</property>
-		<visible>Skin.HasSetting(EnableHomeMenu1)</visible>
-	</item>
-	<item id="2">
-		<label>$VAR[MainMenu2.Label]</label>
-		<icon>$VAR[MainMenu2.Image]</icon>
-		<thumb>$VAR[MainMenu2.Image]</thumb>
-		<onclick>$VAR[MainMenu2.Action]</onclick>
-		<onclick>$VAR[MainMenu2.2ndAction]</onclick>
-		<property name="SelectedMainMenu">MainMenu2</property>
-		<visible>Skin.HasSetting(EnableHomeMenu2)</visible>
-	</item>		
-	<item id="3">
-		<label>$VAR[MainMenu3.Label]</label>
-		<icon>$VAR[MainMenu3.Image]</icon>
-		<thumb>$VAR[MainMenu3.Image]</thumb>
-		<onclick>$VAR[MainMenu3.Action]</onclick>
-		<onclick>$VAR[MainMenu3.2ndAction]</onclick>
-		<property name="SelectedMainMenu">MainMenu3</property>
-		<visible>Skin.HasSetting(EnableHomeMenu3)</visible>
-	</item>
-	<item id="4">
-		<label>$VAR[MainMenu4.Label]</label>
-		<icon>$VAR[MainMenu4.Image]</icon>
-		<thumb>$VAR[MainMenu4.Image]</thumb>
-		<onclick>$VAR[MainMenu4.Action]</onclick>
-		<onclick>$VAR[MainMenu4.2ndAction]</onclick>
-		<property name="SelectedMainMenu">MainMenu4</property>
-		<visible>Skin.HasSetting(EnableHomeMenu4)</visible>
-	</item>
-	<item id="5">
-		<label>$VAR[MainMenu5.Label]</label>
-		<icon>$VAR[MainMenu5.Image]</icon>
-		<thumb>$VAR[MainMenu5.Image]</thumb>
-		<onclick>$VAR[MainMenu5.Action]</onclick>
-		<onclick>$VAR[MainMenu5.2ndAction]</onclick>
-		<property name="SelectedMainMenu">MainMenu5</property>
-		<visible>Skin.HasSetting(EnableHomeMenu5)</visible>
-	</item>
-	<item id="6">
-		<label>$VAR[MainMenu6.Label]</label>
-		<icon>$VAR[MainMenu6.Image]</icon>
-		<thumb>$VAR[MainMenu6.Image]</thumb>
-		<onclick>$VAR[MainMenu6.Action]</onclick>
-		<onclick>$VAR[MainMenu6.2ndAction]</onclick>
-		<property name="SelectedMainMenu">MainMenu6</property>
-		<visible>Skin.HasSetting(EnableHomeMenu6)</visible>
-	</item>
-	<item id="7">
-		<label>$VAR[MainMenu7.Label]</label>
-		<icon>$VAR[MainMenu7.Image]</icon>
-		<thumb>$VAR[MainMenu7.Image]</thumb>
-		<onclick>$VAR[MainMenu7.Action]</onclick>
-		<onclick>$VAR[MainMenu7.2ndAction]</onclick>
-		<property name="SelectedMainMenu">MainMenu7</property>
-		<visible>Skin.HasSetting(EnableHomeMenu7)</visible>
-	</item>
-	<item id="8">
-		<label>$VAR[MainMenu8.Label]</label>
-		<icon>$VAR[MainMenu8.Image]</icon>
-		<thumb>$VAR[MainMenu8.Image]</thumb>
-		<onclick>$VAR[MainMenu8.Action]</onclick>
-		<onclick>$VAR[MainMenu8.2ndAction]</onclick>
-		<property name="SelectedMainMenu">MainMenu8</property>
-		<visible>Skin.HasSetting(EnableHomeMenu8)</visible>
-	</item>
-	<item id="9">
-		<label>$VAR[MainMenu9.Label]</label>
-		<icon>$VAR[MainMenu9.Image]</icon>
-		<thumb>$VAR[MainMenu9.Image]</thumb>
-		<onclick>$VAR[MainMenu9.Action]</onclick>
-		<onclick>$VAR[MainMenu9.2ndAction]</onclick>
-		<property name="SelectedMainMenu">MainMenu9</property>
-		<visible>Skin.HasSetting(EnableHomeMenu9)</visible>
-	</item>
-	<item id="10">
-		<label>$VAR[MainMenu10.Label]</label>
-		<icon>$VAR[MainMenu10.Image]</icon>
-		<thumb>$VAR[MainMenu10.Image]</thumb>
-		<onclick>$VAR[MainMenu10.Action]</onclick>
-		<onclick>$VAR[MainMenu10.2ndAction]</onclick>
-		<property name="SelectedMainMenu">MainMenu10</property>
-		<visible>Skin.HasSetting(EnableHomeMenu10)</visible>
-	</item>
+	<include content="MainMenuItem">
+		<param name="ItemNr" value="1"/>
+	</include>
+	<include content="MainMenuItem">
+		<param name="ItemNr" value="2"/>
+	</include>	
+	<include content="MainMenuItem">
+		<param name="ItemNr" value="3"/>
+	</include>	
+	<include content="MainMenuItem">
+		<param name="ItemNr" value="4"/>
+	</include>	
+	<include content="MainMenuItem">
+		<param name="ItemNr" value="5"/>
+	</include>	
+	<include content="MainMenuItem">
+		<param name="ItemNr" value="6"/>
+	</include>	
+	<include content="MainMenuItem">
+		<param name="ItemNr" value="7"/>
+	</include>	
+	<include content="MainMenuItem">
+		<param name="ItemNr" value="8"/>
+	</include>	
+	<include content="MainMenuItem">
+		<param name="ItemNr" value="9"/>
+	</include>	
+	<include content="MainMenuItem">
+		<param name="ItemNr" value="10"/>
+	</include>	
 </include>
 <include name="SubMenuSlideAnimation">
 	<animation type="Visible" condition="!Skin.HasSetting(DisableHomeAnimations)" reversible="false">
@@ -494,15 +452,55 @@
 	</animation>
 </include>
 <include name="WidgetSlideAnimation">
-		<animation type="Visible" condition="!Skin.HasSetting(DisableHomeAnimations)" reversible="false">
-			<effect type="slide" start="2500" end="0" time="700" tween="cubic" easing="inout"/>
-		</animation>
-		<animation type="Hidden" condition="!Skin.HasSetting(DisableHomeAnimations)" reversible="false">
-			<effect type="slide" start="0" end="2500" time="700" tween="cubic" easing="inout"/>
-		</animation>
-	</include>	
+	<animation type="Visible" condition="!Skin.HasSetting(DisableHomeAnimations)" reversible="false">
+		<effect type="slide" start="2500" end="0" time="700" tween="cubic" easing="inout"/>
+	</animation>
+	<animation type="Hidden" condition="!Skin.HasSetting(DisableHomeAnimations)" reversible="false">
+		<effect type="slide" start="0" end="2500" time="700" tween="cubic" easing="inout"/>
+	</animation>
+</include>	
 
+<include name="SubMenuB">
 	
+	<item id="1">
+		<label>$VAR[SubMenu$PARAM[SubMenuNr]Tile2.Label]</label>
+		<icon>$VAR[SubMenu$PARAM[SubMenuNr]Tile2.Image]</icon>
+		<thumb>$VAR[SubMenu$PARAM[SubMenuNr]Tile2.Image]</thumb>
+		<onclick>$VAR[SubMenu$PARAM[SubMenuNr]Tile2.Action]</onclick>
+		<property name="Type">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile2.Type)]</property>
+		<property name="ImageType">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile2.ImageType)]</property>
+		<visible>!String.IsEmpty(Skin.String(SubMenu$PARAM[SubMenuNr]Tile2.Type))</visible>
+	 </item>
+	<item id="2">
+		<label>$VAR[SubMenu$PARAM[SubMenuNr]Tile3.Label]</label>
+		<icon>$VAR[SubMenu$PARAM[SubMenuNr]Tile3.Image]</icon>
+		<thumb>$VAR[SubMenu$PARAM[SubMenuNr]Tile3.Image]</thumb>
+		<onclick>$VAR[SubMenu$PARAM[SubMenuNr]Tile3.Action]</onclick>
+		<property name="Type">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile3.Type)]</property>
+		<property name="ImageType">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile3.ImageType)]</property>
+		<visible>!String.IsEmpty(Skin.String(SubMenu$PARAM[SubMenuNr]Tile3.Type))</visible>
+	 </item>
+	<item id="3">
+		<label>$VAR[SubMenu$PARAM[SubMenuNr]Tile4.Label]</label>
+		<icon>$VAR[SubMenu$PARAM[SubMenuNr]Tile4.Image]</icon>
+		<thumb>$VAR[SubMenu$PARAM[SubMenuNr]Tile4.Image]</thumb>
+		<onclick>$VAR[SubMenu$PARAM[SubMenuNr]Tile4.Action]</onclick>
+		<property name="Type">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile4.Type)]</property>
+		<property name="ImageType">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile4.ImageType)]</property>
+		<visible>!String.IsEmpty(Skin.String(SubMenu$PARAM[SubMenuNr]Tile4.Type))</visible>
+	 </item>
+	<item id="4">
+		<label>$VAR[SubMenu$PARAM[SubMenuNr]Tile5.Label]</label>
+		<icon>$VAR[SubMenu$PARAM[SubMenuNr]Tile5.Image]</icon>
+		<thumb>$VAR[SubMenu$PARAM[SubMenuNr]Tile5.Image]</thumb>
+		<onclick>$VAR[SubMenu$PARAM[SubMenuNr]Tile5.Action]</onclick>
+		<property name="Type">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile5.Type)]</property>
+		<property name="ImageType">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile5.ImageType)]</property>
+		<visible>!String.IsEmpty(Skin.String(SubMenu$PARAM[SubMenuNr]Tile5.Type))</visible>
+	 </item>
+
+</include>
+
 	<include name="SubMenu">			
 		<!-- Home SubMenu$PARAM[MenuNr] -->
 		<control type="group">
@@ -627,44 +625,6 @@
 			</control>
 		</control>  
 	</include>
-	<include name="SubMenuB">
-	<item id="1">
-		<label>$VAR[SubMenu$PARAM[SubMenuNr]Tile2.Label]</label>
-		<icon>$VAR[SubMenu$PARAM[SubMenuNr]Tile2.Image]</icon>
-		<thumb>$VAR[SubMenu$PARAM[SubMenuNr]Tile2.Image]</thumb>
-		<onclick>$VAR[SubMenu$PARAM[SubMenuNr]Tile2.Action]</onclick>
-		<property name="Type">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile2.Type)]</property>
-		<property name="ImageType">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile2.ImageType)]</property>
-		<visible>!String.IsEmpty(Skin.String(SubMenu$PARAM[SubMenuNr]Tile2.Type))</visible>
-	 </item>
-	<item id="2">
-		<label>$VAR[SubMenu$PARAM[SubMenuNr]Tile3.Label]</label>
-		<icon>$VAR[SubMenu$PARAM[SubMenuNr]Tile3.Image]</icon>
-		<thumb>$VAR[SubMenu$PARAM[SubMenuNr]Tile3.Image]</thumb>
-		<onclick>$VAR[SubMenu$PARAM[SubMenuNr]Tile3.Action]</onclick>
-		<property name="Type">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile3.Type)]</property>
-		<property name="ImageType">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile3.ImageType)]</property>
-		<visible>!String.IsEmpty(Skin.String(SubMenu$PARAM[SubMenuNr]Tile3.Type))</visible>
-	 </item>
-	<item id="3">
-		<label>$VAR[SubMenu$PARAM[SubMenuNr]Tile4.Label]</label>
-		<icon>$VAR[SubMenu$PARAM[SubMenuNr]Tile4.Image]</icon>
-		<thumb>$VAR[SubMenu$PARAM[SubMenuNr]Tile4.Image]</thumb>
-		<onclick>$VAR[SubMenu$PARAM[SubMenuNr]Tile4.Action]</onclick>
-		<property name="Type">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile4.Type)]</property>
-		<property name="ImageType">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile4.ImageType)]</property>
-		<visible>!String.IsEmpty(Skin.String(SubMenu$PARAM[SubMenuNr]Tile4.Type))</visible>
-	 </item>
-	<item id="4">
-		<label>$VAR[SubMenu$PARAM[SubMenuNr]Tile5.Label]</label>
-		<icon>$VAR[SubMenu$PARAM[SubMenuNr]Tile5.Image]</icon>
-		<thumb>$VAR[SubMenu$PARAM[SubMenuNr]Tile5.Image]</thumb>
-		<onclick>$VAR[SubMenu$PARAM[SubMenuNr]Tile5.Action]</onclick>
-		<property name="Type">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile5.Type)]</property>
-		<property name="ImageType">$INFO[Skin.String(SubMenu$PARAM[SubMenuNr]Tile5.ImageType)]</property>
-		<visible>!String.IsEmpty(Skin.String(SubMenu$PARAM[SubMenuNr]Tile5.Type))</visible>
-	 </item>
-</include>
 
 <include name="WidgetPosterAndThumbContent">
 	<include condition="Skin.String(HomeWidget$PARAM[WidgetNr].Type,RandomMovies)">RandomItemsMovies</include>

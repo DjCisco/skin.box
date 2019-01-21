@@ -39,79 +39,150 @@
 			</control>
 			
 		</control>
-		
-		
-		
-                <control type="label">
-                    <description>Controller types heading</description>
-                    <top>90</top>
-                    <left>15</left>
-                    <width>330</width>
-                    <height>25</height>
-                    <font>Panel_Hint</font>
-                    <label>$LOCALIZE[35050]</label>
-                    <align>center</align>
-                    <aligny>center</aligny>
-                </control>
-                <control type="grouplist" id="3">
-                    <description>Controller types grouplist</description>
-                    <left>15</left>
-                    <top>130</top>
-                    <width>330</width>
-                    <height>540</height>
-                    <onleft>9001</onleft>
-                    <onright>5</onright>
-                    <onup>3</onup>
-                    <ondown>3</ondown>
-                </control>
-                <control type="button" id="10">
-                    <description>Default controller types button</description>
-                    <width>200</width>
-					<label></label>
-					<font>Panel_Hint</font>
-					<focusedcolor>White</focusedcolor>
-					<texturefocus>button.png</texturefocus>
-					<texturenofocus>tile.png</texturenofocus>
-				</control>
-                <control type="gamecontroller" id="31">
-                    <left>390</left>
-                    <top>210</top>
-                    <width>547</width>
-                    <height>343</height>
-                </control>
-                <control type="label">
-                    <description>Feature types heading</description>
-                    <top>90</top>
-                    <left>995</left>
-                    <width>330</width>
-                    <height>25</height>
-                    <font>Panel_Hint</font>
-                    <label>$LOCALIZE[35059]</label>
-                    <align>center</align>
-                    <aligny>center</aligny>
-                </control>
-				<control type="label" id ="8">
-                    <description>Settings Category Label</description>
-                    <height>25</height>
-                    <font>Panel_Hint</font>
-                    <label></label>
-                </control>
-				<control type="image" id ="9">
-                    <description>Settings Category Separator</description>
-                    <texture>Panel_Hint</texture>
-                </control>
-                <control type="grouplist" id="5">
-                    <description>Feature types grouplist</description>
-                    <left>995</left>
-                    <top>130</top>
-                    <width>330</width>
-                    <height>540</height>
-                    <onleft>3</onleft>
-                    <onright>61</onright>
-                    <onup>5</onup>
-                    <ondown>5</ondown>
-                    <pagecontrol>61</pagecontrol>
-                </control>
+		<control type="image">
+			<left>100</left>
+			<top>70</top>
+			<width>300</width>
+			<height>35</height>
+			<texture>button.png</texture>
+		</control>
+		<control type="label">
+			<description>Controller types heading</description>
+			<left>100</left>
+             <top>70</top>
+			<width>300</width>
+			<height>35</height>
+			<font>Panel_Hint</font>
+			<label>$LOCALIZE[35050]</label>
+			<align>center</align>
+			<aligny>center</aligny>
+		</control>		
+		<!-- Controller List Background -->
+		<control type="image">
+			<left>100</left>
+			<top>110</top>
+			<width>300</width>
+			<height>430</height>
+			<texture>tile.png</texture>
+		</control>
+		<!-- Controller List-->
+		<control type="grouplist" id="3">
+			<description>Controller types grouplist</description>
+			<left>100</left>
+			<top>110</top>
+			<width>300</width>
+			<height>430</height>
+			<onleft>9001</onleft>
+			<onright>5</onright>
+			<onup>3</onup>
+			<ondown>3</ondown>
+		</control>
+		<!-- Controller Btn Template -->
+		<control type="button" id="10">
+			<description>Default controller types button</description>
+			<width>300</width>
+			<height>35</height>
+			<label></label>
+			<font>List_Settings</font>
+			<focusedcolor>Accent</focusedcolor>
+			<texturefocus>tile.png</texturefocus>
+		</control>
+		<!-- Features List Background -->
+		<control type="image">
+			<right>100</right>
+			<top>70</top>
+			<width>300</width>
+			<height>35</height>
+			<texture>button.png</texture>
+		</control>
+		<control type="label">
+			<description>Feature types heading</description>
+			<right>100</right>
+			<top>70</top>
+			<width>300</width>
+			<height>35</height>
+			<font>Panel_Hint</font>
+			<label>$LOCALIZE[35059]</label>
+			<align>center</align>
+			<aligny>center</aligny>
+		</control>
+  
+		<!-- Features List Background -->
+		<control type="image">
+			<right>100</right>
+			<top>110</top>
+			<width>300</width>
+			<height>430</height>
+			<texture>tile.png</texture>
+		</control>
+		<!-- Features List -->
+		<control type="grouplist" id="5">
+			<description>Feature types grouplist</description>
+			<right>100</right>
+			<top>110</top>
+			<width>300</width>
+			<height>430</height>
+			<onleft>3</onleft>
+			<onright>9001</onright>
+			<onup>5</onup>
+			<ondown>5</ondown>
+			<pagecontrol>61</pagecontrol>
+		</control>
+		<control type="label" id ="8">
+			<description>Settings Category Label</description>
+			<textoffsetx>10</textoffsetx>
+			<height>35</height>
+			<font>Panel_Hint</font>
+			<label></label>
+		</control>
+		<control type="image" id ="9">
+			<description>Settings Category Separator</description>
+			<height>2</height>
+			<texture>white_box.png</texture>
+		</control>
+		<control type="button" id="7">
+			<description>Default feature types button</description>
+			<width>300</width>
+			<height>35</height>
+			<font>List_Settings</font>
+			<focusedcolor>Accent</focusedcolor>
+			<texturefocus>tile.png</texturefocus>
+		</control>
+		<!-- Game Controller Image Background -->
+		<control type="image">
+			<left>405</left>
+			<top>70</top>
+			<width>470</width>
+			<height>470</height>
+			<texture>tile.png</texture>
+		</control>
+		<!-- Game Controller Image -->
+	  <control type="gamecontroller" id="31">
+			<left>405</left>
+			<top>70</top>
+			<width>470</width>
+			<height>470</height>
+			<bordersize>5</bordersize>
+			
+		</control>
+		<!-- Game Controller Desccription Background -->
+		<control type="image">
+			<left>100</left>
+			<top>545</top>
+			<width>1080</width>
+			<height>90</height>
+			<texture>tile.png</texture>
+		</control>
+		<control type="textbox" id="32">
+			<left>110</left>
+			<top>555</top>
+			<width>1060</width>
+			<height>70</height>
+			<font>Panel_Description</font>
+			<description>Controller description</description>
+		</control>
+
+		  
                 <control type="scrollbar" id="61">
                     <left>1330</left>
                     <top>130</top>
@@ -121,19 +192,13 @@
                     <onright>9001</onright>
                     <orientation>vertical</orientation>
                 </control>
-                <control type="button" id="7">
-                    <description>Default feature types button</description>
-                  <width>200</width>
-					<font>Panel_Hint</font>
-					<focusedcolor>White</focusedcolor>
-					<texturefocus>button.png</texturefocus>
-					<texturenofocus>tile.png</texturenofocus>
-                </control>
+ 
             <control type="grouplist" id="9001">
                 <left>0</left>
-                <top>600</top>
-                <onleft>5</onleft>
-                <onright>3</onright>
+                <top>640</top>
+                <onleft>9001</onleft>
+                <onright>9001</onright>
+				<onup>5</onup>
 				<align>center</align>
 				<orientation>horizontal</orientation>
 				<control type="button" id="20">
@@ -148,7 +213,7 @@
 				<control type="button" id="19">
 					<description>Reset</description>
 					<width>160</width>
-					<label>10035</label>
+					<label>$LOCALIZE[13007]</label>
 					<font>Panel_Hint</font>
 					<focusedcolor>White</focusedcolor>
 					<texturefocus>button.png</texturefocus>
@@ -167,6 +232,24 @@
 					<description>help</description>
 					<width>160</width>
 					<label>10043</label>
+					<font>Panel_Hint</font>
+					<focusedcolor>White</focusedcolor>
+					<texturefocus>button.png</texturefocus>
+					<texturenofocus>tile.png</texturenofocus>
+				</control>
+				<control type="button" id="21">
+					<description>help</description>
+					<width>160</width>
+					<label>$LOCALIZE[35019]</label>
+					<font>Panel_Hint</font>
+					<focusedcolor>White</focusedcolor>
+					<texturefocus>button.png</texturefocus>
+					<texturenofocus>tile.png</texturenofocus>
+				</control>
+				<control type="button" id="22">
+					<description>help</description>
+					<width>160</width>
+					<label>$LOCALIZE[35021]</label>
 					<font>Panel_Hint</font>
 					<focusedcolor>White</focusedcolor>
 					<texturefocus>button.png</texturefocus>

@@ -158,7 +158,7 @@
 				<animation effect="slide" start="0,70" end="0,0" time="1200" tween="cubic" easing="out">Visible</animation>
 				<animation effect="slide" start="0,0" end="0,70" time="100" tween="cubic" easing="in">Hidden</animation>
 				<top>685</top>
-				<visible>!Window.IsActive(videoosd) + !Window.IsActive(fullscreeninfo)</visible>
+				<visible>!Window.IsActive(videoosd) + !Window.IsActive(fullscreeninfo) + !Player.HasGame</visible>
 				<!-- Background for Progress Bar -->
 				<control type="image">
 					<description>black bar</description>

@@ -75,10 +75,11 @@
 		<control type="panel" id="3">
 			<top>290</top>
 			<left>370</left>
-			<width>480</width>
+			<width>640</width>
 			<height>320</height>
 			<onleft>2</onleft>
 			<onright>9000</onright>
+			<orientation>horizontal</orientation>
 			<itemlayout width="160" height="160">
 				<control type="image">
 					<include>PanelButtonImageNF</include>
@@ -210,7 +211,7 @@
 		</control>
 		
 		<control type="grouplist" id="9000">
-                <left>860</left>
+                <left>1020</left>
                 <top>290</top>
                 <itemgap>4</itemgap>
                 <orientation>vertical</orientation>

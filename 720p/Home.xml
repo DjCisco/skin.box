@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window id="0">
     <defaultcontrol always="true">100</defaultcontrol>
+	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(HomeWidget1.Type,RandomMovies)</onload>
 	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(HomeWidget2.Type,RandomEpisodesThumbs)</onload>
 	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(HomeWidget3.Type,RandomAlbums)</onload>
 	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(HomeWidget1.Layout,Poster)</onload>
@@ -25,16 +26,22 @@
 	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(SubMenu4Tile2.Type,EPG)</onload>
 	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(SubMenu4Tile3.Type,RadioChannels)</onload>
 	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(SubMenu4Tile4.Type,Recordings)</onload>
-	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(SubMenu4Tile5.Type,Timers)</onload>	
+	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(SubMenu4Tile5.Type,Timers)</onload>
+	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(SubMenu3Tile5.Type,MusicAddons)</onload>
+	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(SubMenu5Tile1.Type,Games)</onload>
+	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(SubMenu5Tile2.Type,GameAddons)</onload>
+	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(SubMenu5Tile3.Type,GameSettings)</onload>	
 	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(HomeWidget1.Type,RandomMovies)</onload>
 	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(HomeMenu1.Label,Movies)</onload>
 	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(HomeMenu2.Label,Tv Shows)</onload>
 	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(HomeMenu3.Label,Music)</onload>
 	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(HomeMenu4.Label,Live TV)</onload>
+	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(HomeMenu5.Label,Games)</onload>
 	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(HomeMenu1.Image,HomeIcons/Movies.png)</onload>
 	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(HomeMenu2.Image,HomeIcons/TvShows.png)</onload>
 	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(HomeMenu3.Image,HomeIcons/Music.png)</onload>
 	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(HomeMenu4.Image,HomeIcons/LiveTv.png)</onload>
+	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(HomeMenu5.Image,HomeIcons/Games.png)</onload>
 	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(SideMenuTile1.Type,Weather)</onload>
 	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(SideMenuTile2.Type,Pictures)</onload>
 	<onload condition="!Skin.String(FirstSkinRun)">Skin.SetString(SideMenuTile3.Type,Programs)</onload>
