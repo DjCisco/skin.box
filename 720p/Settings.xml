@@ -133,7 +133,13 @@
                             <thumb>icons/FileManager.png</thumb>
                             <onclick>ActivateWindow(filemanager)</onclick>
                         </item>
-                    </content>
+						<item id="11">
+                            <description>Games</description>
+                            <label>$LOCALIZE[10821]</label>
+                            <thumb>DefaultGameController.png</thumb>
+                            <onclick>ActivateWindow(gamesettings,return)</onclick>
+                        </item>
+	                </content>
                 </control>
             </control>
     </controls>
