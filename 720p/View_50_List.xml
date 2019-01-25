@@ -18,17 +18,6 @@
                 <effect type="slide" start="+1500,0" time="300" />
             </animation>
 			
-            <!--This control shows the label of the folder name -->
-			<control type="label">
-                <label>$INFO[Container.FolderName]</label>
-                <left>50</left>
-                <top>215</top>
-                <height>30</height>
-                <width>1200</width>
-                <font>Panel_Title</font>
-				<aligny>top</aligny>
-				<align>left</align>
-            </control>
 		<!-- Group Displaying elements for Large List-->
 			<control type="group">
 				<!--This control displays  larger background behind the item list -->
@@ -50,14 +39,12 @@
 					<orientation>vertical</orientation>
 				</control>
 			</control>
-			<!--This control shows the label in case no Folder Name is Available -->
-			<control type="group">
-				<visible>String.IsEmpty(Container.FolderName)</visible>
-				<control type="label">
-					<include>ViewMainTitle</include>
-					<label>$VAR[MainWindowTitle]</label>
-				</control>
-			</control>	
+			<!--This control shows the Main label -->
+			<control type="label">
+				<include>ViewMainTitle</include>
+				<label>$VAR[MainWindowTitle]</label>
+			</control>
+	
 			<!--This control defines the list that will display the items -->
 			<control type="list" id="50">
 				<include>ListVisibility</include>

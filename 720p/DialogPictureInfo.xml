@@ -132,7 +132,7 @@
             <control type="list" id="5">
                 <left>20</left>
                 <top>50</top>
-                <width>425</width>
+                <width>825</width>
                 <height>720</height>
                 <onleft>10</onleft>
                 <onright>10</onright>
@@ -141,7 +141,7 @@
                 <visible>Window.IsActive(slideshow)</visible>
                 <itemlayout height="45">
 					<control type="image">
-                        <width>425</width>
+                        <width>825</width>
                         <height>40</height>
                         <texture>tile.png</texture>
                     </control>
@@ -153,8 +153,8 @@
                         <font>List_Unfocused</font>
                     </control>
                     <control type="label">
-                        <left>415</left>
-                        <width>200</width>
+                        <left>215</left>
+                        <width>600</width>
 						<height>40</height>
                         <align>right</align>
                         <info>ListItem.Label2</info>
@@ -163,7 +163,7 @@
                 </itemlayout>
                 <focusedlayout height="45">
                     <control type="image">
-                        <width>425</width>
+                        <width>825</width>
                         <height>40</height>
                         <texture>tile.png</texture>
                     </control>
@@ -176,8 +176,8 @@
 						<textcolor>Accent</textcolor>
                     </control>
                     <control type="label">
-                        <left>415</left>
-                        <width>200</width>
+                        <left>215</left>
+                        <width>600</width>
 						<height>40</height>
                         <align>right</align>
                         <info>ListItem.Label2</info>

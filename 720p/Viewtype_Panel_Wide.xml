@@ -65,18 +65,13 @@
             </control>
 			
 			
-			<!--This control shows the label Music -->
-			<control type="group">
-				<visible>String.IsEmpty(Container.FolderName)</visible>
-				<control type="label">
-					<include>ViewMainTitle</include>
-					<label>$VAR[MainWIndowTitle]</label>
-				</control>
-			</control>
+			<!--This control shows the Main Label -->
 			<control type="label">
 				<include>ViewMainTitle</include>
-                <label>$INFO[Container.FolderName]</label>
-            </control>
+				<label>$VAR[MainWindowTitle]</label>
+			</control>
+
+	
 	
 			     
          </control>

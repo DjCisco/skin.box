@@ -2,6 +2,16 @@
 <includes>
 
 <include name="DebugInfo">
+		
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>1280</width>
+			<height>720</height>
+			<texture>special://skin/extras/debuggrid720.png</texture>
+		</control>
+
+		
 		<control type="grouplist">
 			<left>15</left>
 			<top>15</top>
@@ -930,7 +940,9 @@
 			</control>
 		
 		</control>
-</include>
+
+
+		</include>
 	
 	
 </includes>

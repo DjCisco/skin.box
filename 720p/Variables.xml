@@ -2,13 +2,13 @@
 
 		<!-- Custom Widget Label for Customization Window-->
 	<variable name="MainWindowTitle">    
-		<value condition="Window.IsActive(Games)">$LOCALIZE[10821]</value>
-		<value condition="Window.IsActive(Music)">$LOCALIZE[2]</value>
-		<value condition="Window.IsActive(musicfiles)">$LOCALIZE[31002]</value>
-		<value condition="Window.IsActive(Programs)">$LOCALIZE[350]</value>
-		<value condition="Window.IsActive(Pictures)">$LOCALIZE[1]</value>
-		<value condition="Window.IsActive(AddonBrowser)">$LOCALIZE[24001]</value>
-		<value>$LOCALIZE[3]</value> <!-- Videos-->
+		<value condition="String.IsEmpty(Container.FolderName) + Window.IsActive(Games)">$LOCALIZE[10821]</value>
+		<value condition="String.IsEmpty(Container.FolderName) + Window.IsActive(Music)">$LOCALIZE[2]</value>
+		<value condition="String.IsEmpty(Container.FolderName) + Window.IsActive(Programs)">$LOCALIZE[350]</value>
+		<value condition="String.IsEmpty(Container.FolderName) + Window.IsActive(Pictures)">$LOCALIZE[1]</value>
+		<value condition="String.IsEmpty(Container.FolderName) + Window.IsActive(AddonBrowser)">$LOCALIZE[24001]</value>
+		<value condition="String.IsEmpty(Container.FolderName)">$LOCALIZE[3]</value><!-- Videos-->
+		<value>$INFO[Container.FolderName]</value>	
 	</variable>
 
 	<!-- Custom Widget Label for Customization Window-->
