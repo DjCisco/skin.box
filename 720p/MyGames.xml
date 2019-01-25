@@ -4,7 +4,7 @@
 	<onload>Skin.Reset(showViewOptions)</onload>
 	<onunload>Skin.Reset(showViewOptions)</onunload>	
      
-    <views>50,51,530</views>
+    <views>50,51,523,530</views>
 	<onload condition="Skin.HasSetting(ActivateTvTunes) + System.HasAddon(script.tvtunes)">XBMC.RunScript(script.tvtunes,backend=True)</onload>
     <controls>
 		<include>SkinFanart</include>
@@ -13,6 +13,7 @@
 			<include>ViewOptionsAnimation</include>
             <include>View_50_List</include><!-- id 50-->
 			<include>View_51_List</include><!-- id 55-->
+			<include>Viewtype_Panel_Tall_List</include><!-- id 55-->
 			<include>Viewtype_Panel_Wide</include><!-- id 530-->
 		</control>
 		<include>BarClock</include>

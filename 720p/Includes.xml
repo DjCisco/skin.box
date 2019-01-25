@@ -49,7 +49,6 @@
 	<include file="VariablesHomeMenu10.xml" />
 	<include file="VariablesHomeSideMenu.xml" />
 	<include file="IncludesDebugInfo.xml" />
-	<include file="script-IARL-infodialog.xml" />
 	<include name="TouchscreenNavigation">
 		<control type="group">
 		<visible>[!Skin.HasSetting(HideGlobalTouchControls) + [System.Platform.IOS | System.Platform.Android]]  |  [!System.Platform.IOS + !System.Platform.Android + System.getbool(input.enablemouse) + !Skin.HasSetting(HideGlobalTouchControls)]</visible>
