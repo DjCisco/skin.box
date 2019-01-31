@@ -666,6 +666,18 @@
 					<font>Panel_Hint</font>
                     <visible>String.IsEqual(ListItem.DBType,movie)</visible>
                 </control>
+                <control type="togglebutton" id="9146">
+                    <description>Special Features button</description>
+                    <label>$LOCALIZE[31742]</label>
+                    <width>130</width>
+                    <textoffsetx>10</textoffsetx>
+                    <align>center</align>
+                    <font>Panel_Hint</font>
+                    <visible>System.HasAddon(plugin.video.specialfeatures)</visible>
+                    <visible>String.IsEqual(Window(home).Property(SpecialFeatures.Visible),true)</visible>
+                    <onclick>Action(close)</onclick>
+                    <onclick>RunScript(plugin.video.specialfeatures,listitem)</onclick>
+                </control>
                 <control type="button" id="6">
                     <description>Refresh</description>
                     <label>184</label>
