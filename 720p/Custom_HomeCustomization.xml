@@ -7,7 +7,11 @@
 		<include>SkinFanart</include>
 		
 		
-		<control type="group"><visible>![Window.IsVisible(2003) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogFavourites.xml)]</visible><include>NowPlayingControls</include><include>TouchscreenNavigation</include></control>
+		<control type="group">
+			<visible>![Window.IsVisible(2003) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogFavourites.xml)]</visible>
+			<include>NowPlayingControls</include>
+			<include>TouchscreenNavigation</include>
+		</control>
 		
 		<!-- Custom Background Display 	-->
 		<control type="group">
@@ -46,68 +50,68 @@
 			<animation type="Conditional" condition="Skin.HasSetting(showHomeCustomizationHiddenMenu)">
 				<effect type="slide" start="0,0" end="785,0" time="200" />
 			</animation>
-			<animation type="Conditional" condition="Window.IsActive(4444) | Window.IsActive(5555) | Window.IsActive(6666) | Window.IsActive(7777) | Window.IsActive(8888)" reversible="true">
-				<effect type="slide" end="+2035" time="300" tween="cubic" easing="inout"/>
-			</animation>
-	<!-- BG Selection Buttons -->
-	<control type="grouplist">
-			<onleft>2000</onleft>
-			<top>20</top>
-			<left>1190</left>
-			<orientation>vertical</orientation>
-		<!-- Background Customization Button -->
-		<control type="button"  id="3000">
-			<width>70</width>
-			<height>70</height>
-			<label></label>
-			<font>Panel_Hint</font>
-			<focusedcolor>White</focusedcolor>
-			<texturefocus colordiffuse="Accent">icons/addBackground.png</texturefocus>
-			<texturenofocus>icons/addBackground.png</texturenofocus>
-			<onclick condition="Container(1000).Hasfocus(1)">Skin.SetImage(HomeMenu1.Background)</onclick>
-			<onclick condition="Container(1000).Hasfocus(2)">Skin.SetImage(HomeMenu2.Background)</onclick>
-			<onclick condition="Container(1000).Hasfocus(3)">Skin.SetImage(HomeMenu3.Background)</onclick>
-			<onclick condition="Container(1000).Hasfocus(4)">Skin.SetImage(HomeMenu4.Background)</onclick>
-			<onclick condition="Container(1000).Hasfocus(5)">Skin.SetImage(HomeMenu5.Background)</onclick>
-			<onclick condition="Container(1000).Hasfocus(6)">Skin.SetImage(HomeMenu6.Background)</onclick>
-			<onclick condition="Container(1000).Hasfocus(7)">Skin.SetImage(HomeMenu7.Background)</onclick>
-			<onclick condition="Container(1000).Hasfocus(8)">Skin.SetImage(HomeMenu8.Background)</onclick>
-			<onclick condition="Container(1000).Hasfocus(9)">Skin.SetImage(HomeMenu9.Background)</onclick>
-			<onclick condition="Container(1000).Hasfocus(10)">Skin.SetImage(HomeMenu10.Background)</onclick>
-		</control>
-		<!-- Background Customization Button -->
-		<control type="button"  id="4000">
-			<width>70</width>
-			<height>70</height>
-			<label></label>
-			<font>Panel_Hint</font>
-			<focusedcolor>White</focusedcolor>
-			<texturefocus colordiffuse="Accent">icons/deleteBackground.png</texturefocus>
-			<texturenofocus>icons/deleteBackground.png</texturenofocus>
-			<onclick condition="Container(1000).Hasfocus(1)">Skin.Reset(HomeMenu1.Background)</onclick>
-			<onclick condition="Container(1000).Hasfocus(2)">Skin.Reset(HomeMenu2.Background)</onclick>
-			<onclick condition="Container(1000).Hasfocus(3)">Skin.Reset(HomeMenu3.Background)</onclick>
-			<onclick condition="Container(1000).Hasfocus(4)">Skin.Reset(HomeMenu4.Background)</onclick>
-			<onclick condition="Container(1000).Hasfocus(5)">Skin.Reset(HomeMenu5.Background)</onclick>
-			<onclick condition="Container(1000).Hasfocus(6)">Skin.Reset(HomeMenu6.Background)</onclick>
-			<onclick condition="Container(1000).Hasfocus(7)">Skin.Reset(HomeMenu7.Background)</onclick>
-			<onclick condition="Container(1000).Hasfocus(8)">Skin.Reset(HomeMenu8.Background)</onclick>
-			<onclick condition="Container(1000).Hasfocus(9)">Skin.Reset(HomeMenu9.Background)</onclick>
-			<onclick condition="Container(1000).Hasfocus(10)">Skin.Reset(HomeMenu10.Background)</onclick>
-			<visible>[Skin.String(HomeMenu1.Background) + Container(1000).Hasfocus(1)] |
-					[Skin.String(HomeMenu2.Background) + Container(1000).Hasfocus(2)] |
-					[Skin.String(HomeMenu3.Background) + Container(1000).Hasfocus(3)] |
-					[Skin.String(HomeMenu4.Background) + Container(1000).Hasfocus(4)] |
-					[Skin.String(HomeMenu5.Background) + Container(1000).Hasfocus(5)] |
-					[Skin.String(HomeMenu6.Background) + Container(1000).Hasfocus(6)] |
-					[Skin.String(HomeMenu7.Background) + Container(1000).Hasfocus(7)] |
-					[Skin.String(HomeMenu8.Background) + Container(1000).Hasfocus(8)] |
-					[Skin.String(HomeMenu9.Background) + Container(1000).Hasfocus(9)] |
-					[Skin.String(HomeMenu10.Background) + Container(1000).Hasfocus(10)]
-			</visible>
-	</control>	
-	</control>	
-					
+				<animation type="Conditional" condition="Window.IsActive(4444) | Window.IsActive(5555) | Window.IsActive(6666) | Window.IsActive(7777) | Window.IsActive(8888) | Window.IsActive(1199)" reversible="true">
+					<effect type="slide" end="+2035" time="300" tween="cubic" easing="inout"/>
+				</animation>
+			<!-- BG Selection Buttons -->
+			<control type="grouplist">
+					<onleft>2000</onleft>
+					<top>20</top>
+					<left>1190</left>
+					<orientation>vertical</orientation>
+				<!-- Background Customization Button -->
+				<control type="button"  id="3000">
+					<width>70</width>
+					<height>70</height>
+					<label></label>
+					<font>Panel_Hint</font>
+					<focusedcolor>White</focusedcolor>
+					<texturefocus colordiffuse="Accent">icons/addBackground.png</texturefocus>
+					<texturenofocus>icons/addBackground.png</texturenofocus>
+					<onclick condition="Container(1000).Hasfocus(1)">Skin.SetImage(HomeMenu1.Background)</onclick>
+					<onclick condition="Container(1000).Hasfocus(2)">Skin.SetImage(HomeMenu2.Background)</onclick>
+					<onclick condition="Container(1000).Hasfocus(3)">Skin.SetImage(HomeMenu3.Background)</onclick>
+					<onclick condition="Container(1000).Hasfocus(4)">Skin.SetImage(HomeMenu4.Background)</onclick>
+					<onclick condition="Container(1000).Hasfocus(5)">Skin.SetImage(HomeMenu5.Background)</onclick>
+					<onclick condition="Container(1000).Hasfocus(6)">Skin.SetImage(HomeMenu6.Background)</onclick>
+					<onclick condition="Container(1000).Hasfocus(7)">Skin.SetImage(HomeMenu7.Background)</onclick>
+					<onclick condition="Container(1000).Hasfocus(8)">Skin.SetImage(HomeMenu8.Background)</onclick>
+					<onclick condition="Container(1000).Hasfocus(9)">Skin.SetImage(HomeMenu9.Background)</onclick>
+					<onclick condition="Container(1000).Hasfocus(10)">Skin.SetImage(HomeMenu10.Background)</onclick>
+				</control>
+				<!-- Background Customization Button -->
+				<control type="button"  id="4000">
+					<width>70</width>
+					<height>70</height>
+					<label></label>
+					<font>Panel_Hint</font>
+					<focusedcolor>White</focusedcolor>
+					<texturefocus colordiffuse="Accent">icons/deleteBackground.png</texturefocus>
+					<texturenofocus>icons/deleteBackground.png</texturenofocus>
+					<onclick condition="Container(1000).Hasfocus(1)">Skin.Reset(HomeMenu1.Background)</onclick>
+					<onclick condition="Container(1000).Hasfocus(2)">Skin.Reset(HomeMenu2.Background)</onclick>
+					<onclick condition="Container(1000).Hasfocus(3)">Skin.Reset(HomeMenu3.Background)</onclick>
+					<onclick condition="Container(1000).Hasfocus(4)">Skin.Reset(HomeMenu4.Background)</onclick>
+					<onclick condition="Container(1000).Hasfocus(5)">Skin.Reset(HomeMenu5.Background)</onclick>
+					<onclick condition="Container(1000).Hasfocus(6)">Skin.Reset(HomeMenu6.Background)</onclick>
+					<onclick condition="Container(1000).Hasfocus(7)">Skin.Reset(HomeMenu7.Background)</onclick>
+					<onclick condition="Container(1000).Hasfocus(8)">Skin.Reset(HomeMenu8.Background)</onclick>
+					<onclick condition="Container(1000).Hasfocus(9)">Skin.Reset(HomeMenu9.Background)</onclick>
+					<onclick condition="Container(1000).Hasfocus(10)">Skin.Reset(HomeMenu10.Background)</onclick>
+					<visible>[Skin.String(HomeMenu1.Background) + Container(1000).Hasfocus(1)] |
+							[Skin.String(HomeMenu2.Background) + Container(1000).Hasfocus(2)] |
+							[Skin.String(HomeMenu3.Background) + Container(1000).Hasfocus(3)] |
+							[Skin.String(HomeMenu4.Background) + Container(1000).Hasfocus(4)] |
+							[Skin.String(HomeMenu5.Background) + Container(1000).Hasfocus(5)] |
+							[Skin.String(HomeMenu6.Background) + Container(1000).Hasfocus(6)] |
+							[Skin.String(HomeMenu7.Background) + Container(1000).Hasfocus(7)] |
+							[Skin.String(HomeMenu8.Background) + Container(1000).Hasfocus(8)] |
+							[Skin.String(HomeMenu9.Background) + Container(1000).Hasfocus(9)] |
+							[Skin.String(HomeMenu10.Background) + Container(1000).Hasfocus(10)]
+					</visible>
+			</control>	
+			</control>	
+						
 			<control type="image">
 				<description>background image</description>
 				<left>50</left>
@@ -137,7 +141,7 @@
                 <align>left</align>
 				<aligny>top</aligny>
             </control>
-				<control type="label">
+			<control type="label">
                 <label> $INFO[Container(1000).Page][COLOR Accent]$INFO[Control.GetLabel(1000)][/COLOR]</label>
                 <left>345</left>
                 <top>215</top>
@@ -356,7 +360,9 @@
 								</control>									
 							</focusedlayout>
 							<content>
-								<include>SubMenu1Customization</include>
+								<include content="SubMenuCustomization">
+									<param name="SubMenuNr" value="1" />
+								</include>
 							</content>	
 						</control>
 				</control>
@@ -472,7 +478,9 @@
 								</control>									
 							</focusedlayout>
 							<content>
-								<include>SubMenu2Customization</include>
+								<include content="SubMenuCustomization">
+									<param name="SubMenuNr" value="2" />
+								</include>
 							</content>	
 						</control>					
 				</control>
@@ -588,7 +596,9 @@
 								</control>									
 							</focusedlayout>
 							<content>
-								<include>SubMenu3Customization</include>
+								<include content="SubMenuCustomization">
+									<param name="SubMenuNr" value="3" />
+								</include>
 							</content>	
 						</control>		 	
 				</control>
@@ -704,7 +714,9 @@
 								</control>									
 							</focusedlayout>
 							<content>
-								<include>SubMenu4Customization</include>
+								<include content="SubMenuCustomization">
+									<param name="SubMenuNr" value="4" />
+								</include>
 							</content>	
 						</control>					
 						
@@ -821,7 +833,9 @@
 								</control>									
 							</focusedlayout>
 							<content>
-								<include>SubMenu5Customization</include>
+								<include content="SubMenuCustomization">
+									<param name="SubMenuNr" value="5" />
+								</include>
 							</content>	
 						</control>					
 				</control>
@@ -937,7 +951,9 @@
 								</control>									
 							</focusedlayout>
 							<content>
-								<include>SubMenu6Customization</include>
+								<include content="SubMenuCustomization">
+									<param name="SubMenuNr" value="6" />
+								</include>
 							</content>	
 						</control>					
 				</control>
@@ -1053,7 +1069,9 @@
 								</control>									
 							</focusedlayout>
 							<content>
-								<include>SubMenu7Customization</include>
+								<include content="SubMenuCustomization">
+									<param name="SubMenuNr" value="7" />
+								</include>
 							</content>	
 						</control>					
 				</control>
@@ -1169,7 +1187,9 @@
 								</control>									
 							</focusedlayout>
 							<content>
-								<include>SubMenu8Customization</include>
+								<include content="SubMenuCustomization">
+									<param name="SubMenuNr" value="8" />
+								</include>
 							</content>	
 						</control>
 				</control>			
@@ -1285,7 +1305,9 @@
 								</control>									
 							</focusedlayout>
 							<content>
-								<include>SubMenu9Customization</include>
+									<include content="SubMenuCustomization">
+										<param name="SubMenuNr" value="9" />
+									</include>
 							</content>	
 						</control>					
 				</control>
@@ -1401,14 +1423,18 @@
 								</control>									
 							</focusedlayout>
 							<content>
-								<include>SubMenu10Customization</include>
+									<include content="SubMenuCustomization">
+										<param name="SubMenuNr" value="10" />
+									</include>
+	
 							</content>	
 						</control>					
 				</control>
 			</control>
+
 		</control>	
 		<control type="group">
-			<animation type="Conditional" condition="Window.IsActive(4444) | Window.IsActive(5555) | Window.IsActive(6666) | Window.IsActive(7777) | Window.IsActive(8888)" reversible="true">
+			<animation type="Conditional" condition="Window.IsActive(4444) | Window.IsActive(5555) | Window.IsActive(6666) | Window.IsActive(7777) | Window.IsActive(8888) | Window.IsActive(1199)" reversible="true">
 				<effect type="slide" end="+2035" time="300" tween="cubic" easing="inout"/>
 			</animation>
 				<control type="panel" id="51">
