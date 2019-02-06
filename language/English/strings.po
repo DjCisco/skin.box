@@ -305,11 +305,11 @@ msgstr ""
 #empty strings from id 31305 to 31310
 
 msgctxt "#31311"
-msgid "Exodus"
+msgid "Skin Icon"
 msgstr ""
 
 msgctxt "#31312"
-msgid "SALTS"
+msgid "User Icon"
 msgstr ""
 
 msgctxt "31313"
