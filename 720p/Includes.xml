@@ -1175,7 +1175,7 @@
 				<height>50</height>
 				<font>Panel_Description_Title</font>
 				<label>$INFO[ListItem.Duration(mins),, $LOCALIZE[31299]]</label>
-				<visible>!String.IsEmpty(ListItem.Duration)</visible>
+				<visible>!String.IsEmpty(ListItem.Duration) + Container.Content(movies)</visible>
 			</control>
 			  <!-- This control displays the rating of Movie Tv Show or Episode-->
 			<control type="image">
@@ -1893,7 +1893,7 @@
 			<!-- This Displays the Current Weather on the Top Right -->
 			<control type="label">
 				<!--<label>$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits, ]</label>-->
-				<label>$INFO[Weather.Temperature] • $INFO[System.Date(ddd)] • [COLOR Accent]$INFO[System.Date(mmm)] $INFO[System.Date(dd)][/COLOR]</label>
+				<label>$INFO[Weather.Temperature,, • ]$INFO[System.Date(ddd)] • [COLOR Accent]$INFO[System.Date(mmm)] $INFO[System.Date(dd)][/COLOR]</label>
 				<left>1000</left>
 				<top>30</top>
 				<height>100</height>
@@ -1901,7 +1901,7 @@
 				<font>Clock_Footer</font>
 				<shadowcolor>black</shadowcolor>
 				<align>right</align>
-				<visible>Weather.IsFetched + Skin.HasSetting(DisplayWeatherInfo)</visible>
+				<visible>Skin.HasSetting(DisplayWeatherInfo)</visible>
 			</control>
 			<control type="label">
 				<top>85</top>
@@ -1913,7 +1913,31 @@
 				<font>Clock</font>
 				<textcolor>Accent</textcolor>
 				<label>$INFO[PVR.ChannelNumberInput]</label>
-				<visible>!String.IsEmpty(PVR.ChannelNumberInput)</visible>
+				<visible>!String.IsEmpty(PVR.ChannelNumberInput) + !System.HasAlarm(shutdowntimer)</visible>
+			</control>
+			<control type="label">
+				<top>125</top>
+				<right>10</right>
+				<width>1280</width>
+				<height>150</height>
+				<align>right</align>
+				<aligny>top</aligny>
+				<font>Clock</font>
+				<textcolor>Accent</textcolor>
+				<label>$INFO[PVR.ChannelNumberInput]</label>
+				<visible>!String.IsEmpty(PVR.ChannelNumberInput) + System.HasAlarm(shutdowntimer)</visible>
+			</control>
+			 <control type="label" id="3118">
+				<description>Alarm Time</description>
+				<top>95</top>
+				<right>10</right>
+				<width>1280</width>
+				<height>150</height>
+				<align>right</align>
+				<aligny>top</aligny>
+				<label>$LOCALIZE[13005] • [COLOR Accent]$INFO[System.Alarmpos][/COLOR]</label>
+				<visible>System.HasAlarm(shutdowntimer)</visible>
+				<font>Clock_Footer</font>
 			</control>
 		
 		</control>
