@@ -390,7 +390,7 @@
 						<control type="button" id="202">
 							<width>805</width>
 							<align>left</align>
-							<label>Menu Action: $VAR[MainMenu2.Action]</label>
+							<label>$LOCALIZE[31221]: $VAR[MainMenu2.Action]</label>
 							<focusedcolor>Accent</focusedcolor>
 							<font>List_Settings</font>
 							<onclick>Skin.SetString(SelectedMainMenu,MainMenu2)</onclick>
@@ -399,14 +399,14 @@
 						<control type="button" id="203">
 							<width>805</width>
 							<align>left</align>
-							<label>Menu Label: $VAR[MainMenu2.Label]</label>
+							<label>$LOCALIZE[31222]: $VAR[MainMenu2.Label]</label>
 							<font>List_Settings</font>
 							<onclick>Skin.SetString(HomeMenu2.Label)</onclick>
 						</control>
 						<control type="button" id="204">
 							<width>805</width>
 							<align>left</align>
-							<label>Menu Widget: $INFO[Skin.String(HomeWidget2.Type)]</label>
+							<label>$LOCALIZE[31223]: $INFO[Skin.String(HomeWidget2.Type)]</label>
 							<font>List_Settings</font>
 							<onclick>Skin.SetString(SelectedHomeWidget,HomeWidget2)</onclick>
 							<onclick>ActivateWindow(5555,return)</onclick>
@@ -508,7 +508,7 @@
 						<control type="button" id="302">
 							<width>805</width>
 							<align>left</align>
-							<label>Menu Action: $VAR[MainMenu3.Action]</label>
+							<label>$LOCALIZE[31221]: $VAR[MainMenu3.Action]</label>
 							<focusedcolor>Accent</focusedcolor>
 							<font>List_Settings</font>
 							<onclick>Skin.SetString(SelectedMainMenu,MainMenu3)</onclick>
@@ -517,14 +517,14 @@
 						<control type="button" id="303">
 							<width>805</width>
 							<align>left</align>
-							<label>Menu Label: $VAR[MainMenu3.Label]</label>
+							<label>$LOCALIZE[31222]: $VAR[MainMenu3.Label]</label>
 							<font>List_Settings</font>
 							<onclick>Skin.SetString(HomeMenu3.Label)</onclick>
 						</control>
 						<control type="button" id="304">
 							<width>805</width>
 							<align>left</align>
-							<label>Menu Widget: $INFO[Skin.String(HomeWidget3.Type)]</label>
+							<label>$LOCALIZE[31223]: $INFO[Skin.String(HomeWidget3.Type)]</label>
 							<font>List_Settings</font>
 							<onclick>Skin.SetString(SelectedHomeWidget,HomeWidget3)</onclick>
 							<onclick>ActivateWindow(5555,return)</onclick>
@@ -626,7 +626,7 @@
 						<control type="button" id="402">
 							<width>805</width>
 							<align>left</align>
-							<label>Menu Action: $VAR[MainMenu4.Action]</label>
+							<label>$LOCALIZE[31221]: $VAR[MainMenu4.Action]</label>
 							<focusedcolor>Accent</focusedcolor>
 							<font>List_Settings</font>
 							<onclick>Skin.SetString(SelectedMainMenu,MainMenu4)</onclick>
@@ -635,14 +635,14 @@
 						<control type="button" id="403">
 							<width>805</width>
 							<align>left</align>
-							<label>Menu Label: $VAR[MainMenu4.Label]</label>
+							<label>$LOCALIZE[31222]: $VAR[MainMenu4.Label]</label>
 							<font>List_Settings</font>
 							<onclick>Skin.SetString(HomeMenu4.Label)</onclick>
 						</control>
 						<control type="button" id="404">
 							<width>805</width>
 							<align>left</align>
-							<label>Menu Widget: $INFO[Skin.String(HomeWidget4.Type)]</label>
+							<label>$LOCALIZE[31223]: $INFO[Skin.String(HomeWidget4.Type)]</label>
 							<font>List_Settings</font>
 							<onclick>Skin.SetString(SelectedHomeWidget,HomeWidget4)</onclick>
 							<onclick>ActivateWindow(5555,return)</onclick>
@@ -745,7 +745,7 @@
 						<control type="button" id="502">
 							<width>805</width>
 							<align>left</align>
-							<label>Menu Action: $VAR[MainMenu5.Action]</label>
+							<label>$LOCALIZE[31221]: $VAR[MainMenu5.Action]</label>
 							<focusedcolor>Accent</focusedcolor>
 							<font>List_Settings</font>
 							<onclick>Skin.SetString(SelectedMainMenu,MainMenu5)</onclick>
@@ -754,14 +754,14 @@
 						<control type="button" id="503">
 							<width>805</width>
 							<align>left</align>
-							<label>Menu Label: $VAR[MainMenu5.Label]</label>
+							<label>$LOCALIZE[31222]: $VAR[MainMenu5.Label]</label>
 							<font>List_Settings</font>
 							<onclick>Skin.SetString(HomeMenu5.Label)</onclick>
 						</control>
 						<control type="button" id="504">
 							<width>805</width>
 							<align>left</align>
-							<label>Menu Widget: $INFO[Skin.String(HomeWidget5.Type)]</label>
+							<label>$LOCALIZE[31223]: $INFO[Skin.String(HomeWidget5.Type)]</label>
 							<font>List_Settings</font>
 							<onclick>Skin.SetString(SelectedHomeWidget,HomeWidget5)</onclick>
 							<onclick>ActivateWindow(5555,return)</onclick>
@@ -863,7 +863,7 @@
 						<control type="button" id="602">
 							<width>805</width>
 							<align>left</align>
-							<label>Menu Action: $VAR[MainMenu6.Action]</label>
+							<label>$LOCALIZE[31221]: $VAR[MainMenu6.Action]</label>
 							<focusedcolor>Accent</focusedcolor>
 							<font>List_Settings</font>
 							<onclick>Skin.SetString(SelectedMainMenu,MainMenu6)</onclick>
@@ -872,14 +872,14 @@
 						<control type="button" id="603">
 							<width>805</width>
 							<align>left</align>
-							<label>Menu Label: $VAR[MainMenu6.Label]</label>
+							<label>$LOCALIZE[31222]: $VAR[MainMenu6.Label]</label>
 							<font>List_Settings</font>
 							<onclick>Skin.SetString(HomeMenu6.Label)</onclick>
 						</control>
 						<control type="button" id="604">
 							<width>805</width>
 							<align>left</align>
-							<label>Menu Widget: $INFO[Skin.String(HomeWidget6.Type)]</label>
+							<label>$LOCALIZE[31223]: $INFO[Skin.String(HomeWidget6.Type)]</label>
 							<font>List_Settings</font>
 							<onclick>Skin.SetString(SelectedHomeWidget,HomeWidget6)</onclick>
 							<onclick>ActivateWindow(5555,return)</onclick>
@@ -981,7 +981,7 @@
 						<control type="button" id="702">
 							<width>805</width>
 							<align>left</align>
-							<label>Menu Action: $VAR[MainMenu7.Action]</label>
+							<label>$LOCALIZE[31221]: $VAR[MainMenu7.Action]</label>
 							<focusedcolor>Accent</focusedcolor>
 							<font>List_Settings</font>
 							<onclick>Skin.SetString(SelectedMainMenu,MainMenu7)</onclick>
@@ -990,14 +990,14 @@
 						<control type="button" id="703">
 							<width>805</width>
 							<align>left</align>
-							<label>Menu Label: $VAR[MainMenu7.Label]</label>
+							<label>$LOCALIZE[31222]: $VAR[MainMenu7.Label]</label>
 							<font>List_Settings</font>
 							<onclick>Skin.SetString(HomeMenu7.Label)</onclick>
 						</control>
 						<control type="button" id="704">
 							<width>805</width>
 							<align>left</align>
-							<label>Menu Widget: $INFO[Skin.String(HomeWidget7.Type)]</label>
+							<label>$LOCALIZE[31223]: $INFO[Skin.String(HomeWidget7.Type)]</label>
 							<font>List_Settings</font>
 							<onclick>Skin.SetString(SelectedHomeWidget,HomeWidget7)</onclick>
 							<onclick>ActivateWindow(5555,return)</onclick>
@@ -1099,7 +1099,7 @@
 						<control type="button" id="802">
 							<width>805</width>
 							<align>left</align>
-							<label>Menu Action: $VAR[MainMenu8.Action]</label>
+							<label>$LOCALIZE[31221]: $VAR[MainMenu8.Action]</label>
 							<focusedcolor>Accent</focusedcolor>
 							<font>List_Settings</font>
 							<onclick>Skin.SetString(SelectedMainMenu,MainMenu8)</onclick>
@@ -1108,14 +1108,14 @@
 						<control type="button" id="803">
 							<width>805</width>
 							<align>left</align>
-							<label>Menu Label: $VAR[MainMenu8.Label]</label>
+							<label>$LOCALIZE[31222]: $VAR[MainMenu8.Label]</label>
 							<font>List_Settings</font>
 							<onclick>Skin.SetString(HomeMenu8.Label)</onclick>
 						</control>
 						<control type="button" id="804">
 							<width>805</width>
 							<align>left</align>
-							<label>Menu Widget: $INFO[Skin.String(HomeWidget8.Type)]</label>
+							<label>$LOCALIZE[31223]: $INFO[Skin.String(HomeWidget8.Type)]</label>
 							<font>List_Settings</font>
 							<onclick>Skin.SetString(SelectedHomeWidget,HomeWidget8)</onclick>
 							<onclick>ActivateWindow(5555,return)</onclick>
@@ -1217,7 +1217,7 @@
 						<control type="button" id="902">
 							<width>805</width>
 							<align>left</align>
-							<label>Menu Action: $VAR[MainMenu9.Action]</label>
+							<label>$LOCALIZE[31221]: $VAR[MainMenu9.Action]</label>
 							<focusedcolor>Accent</focusedcolor>
 							<font>List_Settings</font>
 							<onclick>Skin.SetString(SelectedMainMenu,MainMenu9)</onclick>
@@ -1226,14 +1226,14 @@
 						<control type="button" id="903">
 							<width>805</width>
 							<align>left</align>
-							<label>Menu Label: $VAR[MainMenu9.Label]</label>
+							<label>$LOCALIZE[31222]: $VAR[MainMenu9.Label]</label>
 							<font>List_Settings</font>
 							<onclick>Skin.SetString(HomeMenu9.Label)</onclick>
 						</control>
 						<control type="button" id="904">
 							<width>805</width>
 							<align>left</align>
-							<label>Menu Widget: $INFO[Skin.String(HomeWidget9.Type)]</label>
+							<label>$LOCALIZE[31223]: $INFO[Skin.String(HomeWidget9.Type)]</label>
 							<font>List_Settings</font>
 							<onclick>Skin.SetString(SelectedHomeWidget,HomeWidget9)</onclick>
 							<onclick>ActivateWindow(5555,return)</onclick>
@@ -1335,7 +1335,7 @@
 						<control type="button" id="1002">
 							<width>805</width>
 							<align>left</align>
-							<label>Menu Action: $VAR[MainMenu10.Action]</label>
+							<label>$LOCALIZE[31221]: $VAR[MainMenu10.Action]</label>
 							<focusedcolor>Accent</focusedcolor>
 							<font>List_Settings</font>
 							<onclick>Skin.SetString(SelectedMainMenu,MainMenu10)</onclick>
@@ -1344,14 +1344,14 @@
 						<control type="button" id="1003">
 							<width>805</width>
 							<align>left</align>
-							<label>Menu Label: $VAR[MainMenu10.Label]</label>
+							<label>$LOCALIZE[31222]: $VAR[MainMenu10.Label]</label>
 							<font>List_Settings</font>
 							<onclick>Skin.SetString(HomeMenu10.Label)</onclick>
 						</control>
 						<control type="button" id="1004">
 							<width>805</width>
 							<align>left</align>
-							<label>Menu Widget: $INFO[Skin.String(HomeWidget10.Type)]</label>
+							<label>$LOCALIZE[31223]: $INFO[Skin.String(HomeWidget10.Type)]</label>
 							<font>List_Settings</font>
 							<onclick>Skin.SetString(SelectedHomeWidget,HomeWidget10)</onclick>
 							<onclick>ActivateWindow(5555,return)</onclick>

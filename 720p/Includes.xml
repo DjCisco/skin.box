@@ -128,7 +128,7 @@
 						<left>240</left>
 						<top>0</top>
 						<width>800</width>
-						<label>Film [COLOR Accent]$INFO[VideoPlayer.Title][COLOR White]$INFO[VideoPlayer.Year, • ,][/COLOR]$INFO[VideoPlayer.Tagline,[COLOR White] • [/COLOR],][/COLOR]</label>
+						<label>$LOCALIZE[20338] [COLOR Accent]$INFO[VideoPlayer.Title][COLOR White]$INFO[VideoPlayer.Year, • ,][/COLOR]$INFO[VideoPlayer.Tagline,[COLOR White] • [/COLOR],][/COLOR]</label>
 						<scroll>true</scroll>
 						<font>Panel_Hint</font>
 						<align>center</align>
@@ -201,7 +201,7 @@
 						<align>center</align>
 						<description>Now Playing Game</description>
 						<width>800</width>
-						<label>Game [COLOR Accent]$INFO[Player.Title][/COLOR]</label>
+						<label>$LCOALIZE[31215] [COLOR Accent]$INFO[Player.Title][/COLOR]</label>
 						<scroll>true</scroll>
 						<font>Panel_Hint</font>
 						<aligny>top</aligny>
