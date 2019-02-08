@@ -145,7 +145,7 @@
                     </item>
 					<item id="11">
                         <description>Custom Tiles Widget</description>
-                        <label>Custom Tiles</label>
+                        <label>$LOCALIZE[31224]</label>
                         <onclick>noop</onclick>
                     </item>	
 					<item id="12">
@@ -593,7 +593,7 @@
 						<description>Set Custom Tile</description>
                         <width>810</width>
                         <align>left</align>
-                        <label>Custom Tiles</label>
+                        <label>$LOCALIZE[31224]</label>
                         <focusedcolor>Accent</focusedcolor>
 						<font>List_Settings</font>
 						<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Type,CustomTiles)</onclick>
