@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
-    <include name="Viewtype_Episodes_Wide">
+    <include name="Viewtype_RecentEpisodes">
         <control type="group">
-            <visible>Control.IsVisible(534)</visible>
-            <description>Episode List View (id=534)</description>
-            <visible>$EXP[isEpisodeList]</visible>
+            <visible>Control.IsVisible(561)</visible>
+            <description>Episode List View (id=561)</description>
+            <visible>$EXP[isRecentEpisodeList]</visible>
             <animation type="TYPE" condition="Window.IsVisible(2003)" reversible="false">
                 <effect type="slide" end="-1500,0" time="200" />
             </animation>
@@ -53,6 +53,19 @@
 				<bordertexture>white_box.png</bordertexture>
             </control>
 			
+			<control type="image">
+                <left>50</left>
+                <top>290</top>
+                <width>215</width>
+                <height>315</height>
+                <texture background="true">$VAR[SeasonPoster]</texture>
+                <aspectratio scalediffuse="false">scale</aspectratio>
+                <visible>!String.IsEqual(ListItem.Label,..)</visible>
+                <bordersize>5</bordersize>
+				<bordertexture>white_box.png</bordertexture>
+            </control>
+			
+			
 			 <!-- 
 			<control type="image" id="9200">
                 <left>50</left>
@@ -90,10 +103,10 @@
                 <bordersize>5</bordersize>
             </control>
             <!-- Episodes Panel -->
-			<control type="panel" id="534">
+			<control type="panel" id="561">
                 <left>270</left>
                 <top>290</top>
-                <width>960</width>
+                <width>480</width>
                 <height>320</height>
                 <scrolltime>200</scrolltime>
                 <onup>525</onup>
@@ -101,11 +114,11 @@
                 <onright>63</onright>
 		        <onleft>9000</onleft>
 				<onleft>Skin.ToggleSetting(showViewOptions)</onleft>
-                <viewtype label="Thumb">Episodes View</viewtype>
+                <viewtype label="Thumb Info">Episodes View</viewtype>
                 <orientation>vertical</orientation>
                 <focusposition>4</focusposition>
                 <pagecontrol>63</pagecontrol>
-                <visible>$EXP[isEpisodeList]</visible>
+                <visible>$EXP[isRecentEpisodeList]</visible>
                  <!-- Unfocused Item layout -->
 				<itemlayout width="240" height="160">
                     <!-- Dark Episode Background -->
@@ -143,21 +156,31 @@
 		            </control>
 					<!-- Episode Number -->
 			        <control type="label">
-                        <label>$INFO[ListItem.Episode]</label>
-                        <top>115</top>
-                        <left>195</left>
-						<height>40</height>
-                        <width>40</width>
-                        <font>Panel_Title_Footer</font>
+                        <label>$VAR[SeasonAndEpisodeNumber]</label>
+                        <width>235</width>
+                        <height>155</height>
+                        <font>Panel_Title</font>
                         <align>center</align>
 						<aligny>center</aligny>
+						<textcolor>CCFFFFFF</textcolor>
+					 </control>
+					 <control type="label">
+                        <label>$INFO[ListItem.TVShowTitle]</label>
+                        <top>115</top>
+                        <left>10</left>
+						<height>40</height>
+                        <width>215</width>
+                        <font>Panel_Description_Footer</font>
+                        <align>center</align>
+						<aligny>center</aligny>
+						<scroll>true</scroll>
                     </control>
 	                <control type="image">
                         <left>175</left>
                         <top></top>
                         <width>60</width>
                         <height>60</height>
-                        <texture>watched.png</texture>
+                        <texture>OverlayWatchedPanel.png</texture>
                         <animation type="Unfocus" reversible="false">
                             <effect type="zoom" center="0,0" start="80" end="120" time="400" tween="back" easing="out" />
                             <effect type="fade" start="80" end="100" time="400" />
@@ -169,7 +192,7 @@
                         <top></top>
                         <width>60</width>
                         <height>60</height>
-                        <texture>watching.png</texture>
+                        <texture>OverlayWatchingPanel.png</texture>
                         <animation type="Unfocus" reversible="false">
                             <effect type="zoom" center="0,0" start="80" end="120" time="400" tween="back" easing="out" />
                             <effect type="fade" start="80" end="100" time="400" />
@@ -216,31 +239,42 @@
 					</control>
 
 					<control type="image">
-						<left>195</left>
 						<top>115</top>
-                        <width>40</width>
+                        <width>235</width>
                         <height>40</height>
 						<texture>button.png</texture>
                         <aspectratio>scale</aspectratio>
 						<visible>!String.IsEqual(ListItem.Label,..)</visible>
                     </control>
 					<!-- Episode Number -->
+
 			        <control type="label">
-                        <label>$INFO[ListItem.Episode]</label>
-                        <top>115</top>
-                        <left>195</left>
-						<height>40</height>
-                        <width>40</width>
-                        <font>Panel_Title_Footer</font>
+                        <label>$VAR[SeasonAndEpisodeNumber]</label>
+                        <width>235</width>
+                        <height>155</height>
+                        <font>Panel_Title</font>
                         <align>center</align>
 						<aligny>center</aligny>
+						<textcolor>CCFFFFFF</textcolor>
+		             </control>
+					 <control type="label">
+                        <label>$INFO[ListItem.TVShowTitle]</label>
+                        <top>115</top>
+                        <left>10</left>
+						<height>40</height>
+                        <width>215</width>
+                        <font>Panel_Description_Footer</font>
+                        <align>center</align>
+						<aligny>center</aligny>
+						<scroll>true</scroll>
                     </control>
+					
 				    <control type="image">
                         <left>175</left>
                         <top>0</top>
                         <width>60</width>
                         <height>60</height>
-                        <texture>watched.png</texture>
+                        <texture>OverlayWatchedPanel.png</texture>
                         <animation type="Focus" reversible="false">
                             <effect type="zoom" center="235,0" start="80" end="120" time="400" tween="back" easing="out" />
                             <effect type="fade" start="80" end="100" time="400" />
@@ -252,7 +286,7 @@
                         <top>0</top>
                         <width>60</width>
                         <height>60</height>
-                        <texture>watching.png</texture>
+                        <texture>OverlayWatchingPanel.png</texture>
                         <animation type="Focus" reversible="false">
                             <effect type="zoom" center="235,0" start="80" end="120" time="400" tween="back" easing="out" />
                             <effect type="fade" start="80" end="100" time="400" />
@@ -278,22 +312,19 @@
                 <label>$INFO[ListItem.Title]</label>
 				<visible>Container.Content(episodes)</visible>
             </control>
-			<!-- Tv Show Title & Season -->
-			<control type="label">
-	            <left>50</left>
-                <top>610</top>
-                <width>600</width>
-                <height>50</height>
-                <align>left</align>
-				<aligny>top</aligny>
-                <font>Panel_Title_Footer</font>
-                <label>$INFO[ListItem.TVShowTitle,, • ]$INFO[ListItem.Season,$LOCALIZE[20373] ]</label>
-                <visible>Container.Content(episodes)</visible>
+			<!-- Description Field Background-->
+            <control type="image">
+                <left>760</left>
+                <top>290</top>
+                <width>500</width>
+                <height>315</height>
+                <texture background="true">music_fanart_diffuse.png</texture>
+                <fadetime>200</fadetime>
+                <aspectratio scalediffuse="false">stretch</aspectratio>
             </control>
-
 			<!-- List Scrollbar -->
             <control type="scrollbar" id="63">
-                <left>1230</left>
+                <left>750</left>
                 <top>290</top>
                 <width>5</width>
                 <height>315</height>
@@ -301,6 +332,73 @@
                 <showonepage>true</showonepage>
                 <orientation>vertical</orientation>
             </control>
+            <!-- EPISODE DURATION -->
+			<control type="label">
+                <left>780</left>
+                <top>300</top>
+                <width>400</width>
+                <height>50</height>
+                <font>Panel_Description_Title</font>
+                <label>$INFO[ListItem.Duration(mins),, $LOCALIZE[31299]]</label>
+				<scroll>true</scroll>
+			</control>
+			<!-- Episode Aire Date -->
+			<control type="label">
+                <left>960</left>
+                <top>565</top>
+                <width>280</width>
+                <height>25</height>
+				<align>right</align>
+				<font>Panel_Description_Footer</font>
+                <label>[COLOR Accent]$INFO[ListItem.Premiered][/COLOR] $LOCALIZE[20416]</label>
+				<visible>!String.IsEqual(ListItem.Label,..)</visible>
+				
+            </control>
+			<!-- Episode Plot -->			
+            <control type="textbox">
+                <left>780</left>
+                <top>355</top>
+                <width>460</width>
+                <height>190</height>
+				<font>Panel_Description</font>
+                <align>justify</align>
+                <autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
+                <info>ListItem.Plot</info>
+     
+            </control>
+            <!-- Star Rating -->
+			<control type="image">
+                 <left>780</left>
+                <top>565</top>
+                <width>100</width>
+                <height>25</height>
+                <texture>$VAR[ItemStarRating]</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<visible>!Skin.HasSetting(ShowNumericalRatingForTvShows)</visible>
+            </control>
+			<control type="label">
+				<left>780</left>
+				<top>565</top>
+				<width>200</width>
+				<height>25</height>
+				<textcolor>Accent</textcolor>
+				<align>left</align>
+				<font>Panel_Description_Footer</font>
+				<label>$INFO[ListItem.Rating,[COLOR=white]$LOCALIZE[563] [/COLOR]]</label>
+				<visible>Skin.HasSetting(ShowNumericalRatingForTvShows)</visible>
+			</control>
+            <!-- MPAA Rating -->
+			<control type="label">
+                <left>1060</left>
+                <top>300</top>
+                <width>180</width>
+                <height>50</height>
+                <textcolor>Accent</textcolor>
+				<align>right</align>
+				<font>Panel_Description_Title</font>
+                <label>$INFO[ListItem.Mpaa]</label>
+            </control>
+
         </control>
     </include>
 </includes>
