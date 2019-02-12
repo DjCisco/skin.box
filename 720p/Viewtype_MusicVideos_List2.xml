@@ -236,7 +236,7 @@
 					<top>290</top>
 					<width>475</width>
 					<height>315</height>
-					<texture>$INFO[ListItem.Thumb]</texture>
+					<texture>$INFO[ListItem.Art(thumb)]</texture>
 					<aspectratio>scale</aspectratio>
 					<bordersize>5</bordersize>
 					<visible>!String.IsEqual(ListItem.Label,..)</visible>

@@ -12,8 +12,11 @@
 	<include file="Viewtype_Artists_List.xml" />
 	<include file="Viewtype_Directors_List.xml" />
     <include file="Viewtype_Episodes.xml" />
+	<include file="Viewtype_RecentEpisodes.xml" />
     <include file="Viewtype_Episodes_List.xml" />
+    <include file="Viewtype_RecentEpisodes_List.xml" />	
 	<include file="Viewtype_Episodes_Wide.xml" />
+	<include file="Viewtype_RecentEpisodes_Wide.xml" />
     <include file="Viewtype_MusicVideos.xml" />
     <include file="Viewtype_MusicVideos_List.xml" />
 	<include file="Viewtype_MusicVideos_List2.xml" />
@@ -371,7 +374,8 @@
 				!$EXP[isMovieList] +
 				!$EXP[isTvShowList] + 
 				!$EXP[isSeasonList] + 
-				!$EXP[isEpisodeList] + 
+				!$EXP[isEpisodeList] +
+				!$EXP[isRecentEpisodeList] + 
 				!$EXP[isMusicVideoList] + 
 				!$EXP[isSongList] + 
 				!$EXP[isAlbumList] + 
@@ -1295,7 +1299,7 @@
 			<top>290</top>
 			<width>215</width>
 			<height>315</height>
-			<texture background="true">$INFO[ListItem.Thumb]</texture>
+			<texture background="true">$INFO[ListItem.Art(thumb)]</texture>
 			<fadetime>200</fadetime>
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<bordersize>5</bordersize>
@@ -1339,7 +1343,7 @@
 				<top></top>
 				<width>100</width>
 				<height>155</height>
-				<texture background="true">$INFO[ListItem.Thumb]</texture>
+				<texture background="true">$INFO[ListItem.Art(thumb)]</texture>
 				<aspectratio scalediffuse="false">scale</aspectratio>
 				<bordersize>5</bordersize>
 				<visible>String.IsEmpty(ListItem.Art(poster)) + !String.IsEqual(ListItem.Label,..) + !String.Contains(ListItem.Label,default)</visible>
@@ -1773,7 +1777,7 @@
 			<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 			<aspectratio scalediffuse="false">keep</aspectratio>
 			<bordersize>35</bordersize>
-			<visible>String.IsEmpty(ListItem.Thumb)</visible>
+			<visible>String.IsEmpty(ListItem.Art(thumb))</visible>
 		</control>
 		<control type="image">
 			<left>50</left>
@@ -1791,10 +1795,10 @@
 			<top>290</top>
 			<width>315</width>
 			<height>315</height>
-			<texture>$INFO[ListItem.Thumb]</texture>
+			<texture>$INFO[ListItem.Art(thumb)]</texture>
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<bordersize>35</bordersize>
-			<visible>String.Contains(ListItem.Thumb,Default)</visible>
+			<visible>String.Contains(ListItem.Art(thumb),Default)</visible>
 		</control>
 		<!-- Album or Artist Image -->
 		<control type="image">
@@ -1802,11 +1806,11 @@
 			<top>290</top>
 			<width>315</width>
 			<height>315</height>
-			<texture>$INFO[ListItem.Thumb]</texture>
+			<texture>$INFO[ListItem.Art(thumb)]</texture>
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<bordersize>5</bordersize>
 			<bordertexture>white_box.png</bordertexture>
-			<visible>!String.Contains(ListItem.Thumb,Default)</visible>
+			<visible>!String.Contains(ListItem.Art(thumb),Default)</visible>
 		</control>
 	</include>
 	<include name="AlbumPanelItemLayout">
@@ -1824,7 +1828,7 @@
 				<top></top>
 				<width>75</width>
 				<height>75</height>
-				<texture background="true">$INFO[ListItem.Thumb]</texture>
+				<texture background="true">$INFO[ListItem.Art(thumb)]</texture>
 				<bordersize>5</bordersize>
 				<aspectratio scalediffuse="false">stretch</aspectratio>
 			</control>
@@ -1836,7 +1840,7 @@
 				<texture background="true">$INFO[ListItem.Icon]</texture>
 				<bordersize>10</bordersize>
 				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<visible>String.IsEmpty(ListItem.Thumb)</visible>
+				<visible>String.IsEmpty(ListItem.Art(thumb))</visible>
 			</control>
 		</itemlayout>
 	</include>
@@ -1855,7 +1859,7 @@
 				<top></top>
 				<width>75</width>
 				<height>75</height>
-				<texture background="true">$INFO[ListItem.Thumb]</texture>
+				<texture background="true">$INFO[ListItem.Art(thumb)]</texture>
 				<bordersize>5</bordersize>
 				<aspectratio scalediffuse="false">stretch</aspectratio>
 			</control>
@@ -1867,7 +1871,7 @@
 				<texture background="true">$INFO[ListItem.Icon]</texture>
 				<bordersize>10</bordersize>
 				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<visible>String.IsEmpty(ListItem.Thumb)</visible>
+				<visible>String.IsEmpty(ListItem.Art(thumb))</visible>
 			</control>
 		</focusedlayout>
 	</include>

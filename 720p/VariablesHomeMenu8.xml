@@ -1115,6 +1115,7 @@
 	<value condition="Skin.String(HomeWidget8.Type,CustomMovies)">$INFO[Skin.String(HomeWidget8.Label)]</value>
 	<value condition="Skin.String(HomeWidget8.Type,CustomTvShows)">$INFO[Skin.String(HomeWidget8.Label)]</value>
 	<value condition="Skin.String(HomeWidget8.Type,CustomTiles)">$INFO[Skin.String(HomeWidget8.Label)]</value>
+	<value condition="Skin.String(HomeWidget8.Type,Weather)">$INFO[Skin.String(HomeWidget8.Label)]</value>
 	<value>$LOCALIZE[504]</value>
 </variable>
 <variable name="HomeWidget8.Footer">
@@ -1159,50 +1160,52 @@
 	<value condition="Skin.String(HomeWidget8.Type,CustomMovies)">$INFO[Container(800003).ListItem.Label]$INFO[Container(800003).ListItem.Year, • ]</value>
 	<value condition="Skin.String(HomeWidget8.Type,CustomTvShows)">$INFO[Container(800003).ListItem.Label]$INFO[Container(800003).ListItem.Year, • ]</value>
 	<value condition="Skin.String(HomeWidget8.Type,CustomTiles)">$INFO[Container(800004).ListItem.Label]</value>
+	<value condition="Skin.String(HomeWidget8.Type,Weather)">$INFO[ListItem.Label]</value>
 	<value>$LOCALIZE[504]</value>
 </variable>
 <variable name="HomeWidget8.Image">
-	<value condition="Skin.String(HomeWidget8.Type,RandomMovies)">$INFO[ListItem.Thumb]</value>
+	<value condition="Skin.String(HomeWidget8.Type,RandomMovies)">$INFO[ListItem.Art(thumb)]</value>
 	<value condition="Skin.String(HomeWidget8.Type,RandomTvShows)">$INFO[ListItem.Art(poster)]</value>
 	<value condition="Skin.String(HomeWidget8.Type,RandomEpisodes)">$INFO[ListItem.Art(tvshow.poster)]</value>
-	<value condition="Skin.String(HomeWidget8.Type,RandomEpisodesThumbs)">$INFO[ListItem.Thumb]</value>
-	<value condition="Skin.String(HomeWidget8.Type,RandomAlbums)">$INFO[ListItem.Thumb]</value>
-	<value condition="Skin.String(HomeWidget8.Type,RandomSongs)">$INFO[ListItem.Thumb]</value>
+	<value condition="Skin.String(HomeWidget8.Type,RandomEpisodesThumbs)">$INFO[ListItem.Art(thumb)]</value>
+	<value condition="Skin.String(HomeWidget8.Type,RandomAlbums)">$INFO[ListItem.Art(thumb)]</value>
+	<value condition="Skin.String(HomeWidget8.Type,RandomSongs)">$INFO[ListItem.Art(thumb)]</value>
 	<value condition="Skin.String(HomeWidget8.Type,RandomArtists)">$INFO[ListItem.Icon]</value>
 	<value condition="Skin.String(HomeWidget8.Type,RandomMusicVideos)">$INFO[ListItem.Art(poster)]</value>
-	<value condition="Skin.String(HomeWidget8.Type,RandomMusicVideosThumbs)">$INFO[ListItem.Thumb]</value>
-	<value condition="Skin.String(HomeWidget8.Type,InProgressMovies)">$INFO[ListItem.Thumb]</value>
+	<value condition="Skin.String(HomeWidget8.Type,RandomMusicVideosThumbs)">$INFO[ListItem.Art(thumb)]</value>
+	<value condition="Skin.String(HomeWidget8.Type,InProgressMovies)">$INFO[ListItem.Art(thumb)]</value>
 	<value condition="Skin.String(HomeWidget8.Type,InProgressTvShows)">$INFO[ListItem.Art(poster)]</value>
 	<value condition="Skin.String(HomeWidget8.Type,InProgressEpisodes)">$INFO[ListItem.Art(tvshow.poster)]</value>
-	<value condition="Skin.String(HomeWidget8.Type,InProgressEpisodesThumbs)">$INFO[ListItem.Thumb]</value>
-	<value condition="Skin.String(HomeWidget8.Type,UnwatchedMovies)">$INFO[ListItem.Thumb]</value>
+	<value condition="Skin.String(HomeWidget8.Type,InProgressEpisodesThumbs)">$INFO[ListItem.Art(thumb)]</value>
+	<value condition="Skin.String(HomeWidget8.Type,UnwatchedMovies)">$INFO[ListItem.Art(thumb)]</value>
 	<value condition="Skin.String(HomeWidget8.Type,UnwatchedEpisodes)">$INFO[ListItem.Art(tvshow.poster)]</value>
-	<value condition="Skin.String(HomeWidget8.Type,UnwatchedEpisodesThumbs)">$INFO[ListItem.Thumb]</value>
-	<value condition="Skin.String(HomeWidget8.Type,RecentMovies)">$INFO[ListItem.Thumb]</value>
+	<value condition="Skin.String(HomeWidget8.Type,UnwatchedEpisodesThumbs)">$INFO[ListItem.Art(thumb)]</value>
+	<value condition="Skin.String(HomeWidget8.Type,RecentMovies)">$INFO[ListItem.Art(thumb)]</value>
 	<value condition="Skin.String(HomeWidget8.Type,RecentTvShows)">$INFO[ListItem.Art(poster)]</value>
 	<value condition="Skin.String(HomeWidget8.Type,RecentEpisodes)">$INFO[ListItem.Art(tvshow.poster)]</value>
-	<value condition="Skin.String(HomeWidget8.Type,RecentEpisodesThumbs)">$INFO[ListItem.Thumb]</value>
-	<value condition="Skin.String(HomeWidget8.Type,RecommendedEpisodes)">$INFO[ListItem.Thumb]</value>
-	<value condition="Skin.String(HomeWidget8.Type,RecommendedEpisodesThumbs)">$INFO[ListItem.Thumb]</value>
-	<value condition="Skin.String(HomeWidget8.Type,RecentAlbums)">$INFO[ListItem.Thumb]</value>
+	<value condition="Skin.String(HomeWidget8.Type,RecentEpisodesThumbs)">$INFO[ListItem.Art(thumb)]</value>
+	<value condition="Skin.String(HomeWidget8.Type,RecommendedEpisodes)">$INFO[ListItem.Art(thumb)]</value>
+	<value condition="Skin.String(HomeWidget8.Type,RecommendedEpisodesThumbs)">$INFO[ListItem.Art(thumb)]</value>
+	<value condition="Skin.String(HomeWidget8.Type,RecentAlbums)">$INFO[ListItem.Art(thumb)]</value>
 	<value condition="Skin.String(HomeWidget8.Type,RecentMusicVideos)">$INFO[ListItem.Art(poster)]</value>
-	<value condition="Skin.String(HomeWidget8.Type,RecentMusicVideosThumbs)">$INFO[ListItem.Thumb]</value>
-	<value condition="Skin.String(HomeWidget8.Type,MostPlayedAlbums)">$INFO[ListItem.Thumb]</value>
-	<value condition="Skin.String(HomeWidget8.Type,MostPlayedSongs)">$INFO[ListItem.Thumb]</value>
-	<value condition="Skin.String(HomeWidget8.Type,VideoAddons)">$INFO[ListItem.Thumb]</value>
-	<value condition="Skin.String(HomeWidget8.Type,MusicAddons)">$INFO[ListItem.Thumb]</value>
-	<value condition="Skin.String(HomeWidget8.Type,GameAddons)">$INFO[ListItem.Thumb]</value>
-	<value condition="Skin.String(HomeWidget8.Type,NextAiredTvShows)">$INFO[ListItem.Thumb]</value>
-	<value condition="Skin.String(HomeWidget8.Type,CustomAlbums)">$INFO[ListItem.Thumb]</value>
-	<value condition="Skin.String(HomeWidget8.Type,CustomSongs)">$INFO[ListItem.Thumb]</value>
+	<value condition="Skin.String(HomeWidget8.Type,RecentMusicVideosThumbs)">$INFO[ListItem.Art(thumb)]</value>
+	<value condition="Skin.String(HomeWidget8.Type,MostPlayedAlbums)">$INFO[ListItem.Art(thumb)]</value>
+	<value condition="Skin.String(HomeWidget8.Type,MostPlayedSongs)">$INFO[ListItem.Art(thumb)]</value>
+	<value condition="Skin.String(HomeWidget8.Type,VideoAddons)">$INFO[ListItem.Art(thumb)]</value>
+	<value condition="Skin.String(HomeWidget8.Type,MusicAddons)">$INFO[ListItem.Art(thumb)]</value>
+	<value condition="Skin.String(HomeWidget8.Type,GameAddons)">$INFO[ListItem.Art(thumb)]</value>
+	<value condition="Skin.String(HomeWidget8.Type,NextAiredTvShows)">$INFO[ListItem.Art(thumb)]</value>
+	<value condition="Skin.String(HomeWidget8.Type,CustomAlbums)">$INFO[ListItem.Art(thumb)]</value>
+	<value condition="Skin.String(HomeWidget8.Type,CustomSongs)">$INFO[ListItem.Art(thumb)]</value>
 	<value condition="Skin.String(HomeWidget8.Type,CustomArtists)">$INFO[ListItem.Icon]</value>
 	<value condition="Skin.String(HomeWidget8.Type,CustomMusicVideos)">$INFO[ListItem.Art(poster)]</value>
-	<value condition="Skin.String(HomeWidget8.Type,CustomMusicVideosThumbs)">$INFO[ListItem.Thumb]</value>
+	<value condition="Skin.String(HomeWidget8.Type,CustomMusicVideosThumbs)">$INFO[ListItem.Art(thumb)]</value>
 	<value condition="Skin.String(HomeWidget8.Type,CustomEpisodes)">$INFO[ListItem.Art(tvshow.poster)]</value>
-	<value condition="Skin.String(HomeWidget8.Type,CustomEpisodesThumbs)">$INFO[ListItem.Thumb]</value>
-	<value condition="Skin.String(HomeWidget8.Type,CustomMovies)">$INFO[ListItem.Thumb]</value>
+	<value condition="Skin.String(HomeWidget8.Type,CustomEpisodesThumbs)">$INFO[ListItem.Art(thumb)]</value>
+	<value condition="Skin.String(HomeWidget8.Type,CustomMovies)">$INFO[ListItem.Art(thumb)]</value>
 	<value condition="Skin.String(HomeWidget8.Type,CustomTvShows)">$INFO[ListItem.Art(poster)]</value>
-	<value condition="Skin.String(HomeWidget8.Type,CustomTiles)">$INFO[ListItem.Thumb]</value>
+	<value condition="Skin.String(HomeWidget8.Type,CustomTiles)">$INFO[ListItem.Art(thumb)]</value>
+	<value condition="Skin.String(HomeWidget8.Type,Weather)">$INFO[ListItem.Art(thumb)]</value>
 	<value>$INFO[ListItem.Icon]</value>
 </variable>
 <variable name="HomeWidget8Tile1.Label">
