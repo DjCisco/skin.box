@@ -81,7 +81,10 @@
 		<visible>Skin.HasSetting(showNowPlayingOnHome) + [Player.HasAudio | Player.HasVideo]</visible>
     </control>
 	<include>BarClock</include>
-	<control type="group"><visible>![Window.IsVisible(2003) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogFavourites.xml)]</visible><include>NowPlayingControls</include></control>	  
+	<control type="group">
+		<visible>![Window.IsVisible(2003) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogFavourites.xml)]</visible>
+	<include>NowPlayingControls</include>
+	</control>	  
 	<!--Group SubMenus / Widgets / Side Menu -->
 	<control type="group">
 		<animation type="Conditional" condition="Control.HasFocus(100) + Skin.HasSetting(showHomeZoomAnimation)">
@@ -94,10 +97,10 @@
 		<!-- This Control defines the Group of elements conforming the SubMenus and Widgets-->
 		<control type="group">
 		
-			           <animation type="TYPE" condition="Window.IsVisible(2003) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)" reversible="false">
+			<animation type="TYPE" condition="Window.IsVisible(2003) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonSettings.xml)  | Window.IsVisible(DialogPVRInfo.xml) | Window.IsVisible(DialogPVRChannelGuide.xml)" reversible="false">
                 <effect type="slide" end="-1500,0" time="200" />
             </animation>
-            <animation type="TYPE" condition="!Window.IsVisible(2003) + !Window.IsVisible(DialogAddonInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)" reversible="false">
+            <animation type="TYPE" condition="!Window.IsVisible(2003) + !Window.IsVisible(DialogAddonInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogAddonSettings.xml) + !Window.IsVisible(DialogPVRInfo.xml) + !Window.IsVisible(DialogPVRChannelGuide.xml)" reversible="false">
                 <effect type="slide" start="-1500,0" time="200" />
             </animation>
 		
@@ -349,6 +352,8 @@
                     </control>
                 </focusedlayout>
 				<include>WeatherWidgetContent</include>
+				
+				
 			</control>
 	
 		<!-- 6 Day Forecast Full Widget-->
@@ -813,7 +818,7 @@
 		<animation effect="slide" start="-55" end="0" time="200" delay="100" condition="!Window.IsVisible(favourites)" reversible="false">conditional</animation>
 		<control type="group">
 			<animation effect="slide" start="-55" end="0" time="200" delay="300">Visible</animation>
-			<visible>!Skin.HasSetting(showHomeHiddenMenu) + !Window.IsVisible(2003) + !Window.IsVisible(DialogAddonInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)</visible>
+			<visible>!Skin.HasSetting(showHomeHiddenMenu) + !Window.IsVisible(2003) + !Window.IsVisible(DialogAddonInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogAddonSettings.xml) + !Window.IsVisible(DialogPVRInfo.xml) + !Window.IsVisible(DialogPVRChannelGuide.xml)</visible>
 			<control type="button" id="6789">
 				<left>0</left>
 				<top>400</top>
@@ -840,7 +845,7 @@
 		</control>
 		<control type="group">
 			<animation effect="slide" start="-55" end="0" time="200" delay="300">Visible</animation>
-			<visible>Skin.HasSetting(showHomeHiddenMenu)+ !Window.IsVisible(2003) + !Window.IsVisible(DialogAddonInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)</visible>
+			<visible>Skin.HasSetting(showHomeHiddenMenu)+ !Window.IsVisible(2003) + !Window.IsVisible(DialogAddonInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogAddonSettings.xml) + !Window.IsVisible(DialogPVRInfo.xml) + !Window.IsVisible(DialogPVRChannelGuide.xml)</visible>
 			<control type="button" id="9876">
 				<left>0</left>
 				<top>400</top>
@@ -909,10 +914,10 @@
 		</animation>		
 		
 		
-	   <animation type="TYPE" condition="Window.IsVisible(2003)| Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)" reversible="false">
+	   <animation type="TYPE" condition="Window.IsVisible(2003)| Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonSettings.xml) | Window.IsVisible(DialogPVRInfo.xml) | Window.IsVisible(DialogPVRChannelGuide.xml)" reversible="false">
                 <effect type="slide" end="-1500,0" time="200" />
             </animation>
-		<animation type="TYPE" condition="!Window.IsVisible(2003) + !Window.IsVisible(DialogAddonInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)" reversible="false">
+		<animation type="TYPE" condition="!Window.IsVisible(2003) + !Window.IsVisible(DialogAddonInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogAddonSettings.xml) + !Window.IsVisible(DialogPVRInfo.xml) + !Window.IsVisible(DialogPVRChannelGuide.xml)" reversible="false">
 			<effect type="slide" start="-1500,0" time="200" />
 		</animation>
 		

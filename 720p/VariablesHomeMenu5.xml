@@ -1116,6 +1116,7 @@
 	<value condition="Skin.String(HomeWidget5.Type,CustomTvShows)">$INFO[Skin.String(HomeWidget5.Label)]</value>
 	<value condition="Skin.String(HomeWidget5.Type,CustomTiles)">$INFO[Skin.String(HomeWidget5.Label)]</value>
 	<value condition="Skin.String(HomeWidget5.Type,Weather)">$INFO[Skin.String(HomeWidget5.Label)]</value>
+	<value condition="Skin.String(HomeWidget5.Type,LastPlayedTv)">$LOCALIZE[568]</value>
 	<value>$LOCALIZE[504]</value>
 </variable>
 <variable name="HomeWidget5.Footer">
@@ -1161,6 +1162,7 @@
 	<value condition="Skin.String(HomeWidget5.Type,CustomTvShows)">$INFO[Container(500003).ListItem.Label]$INFO[Container(500003).ListItem.Year, • ]</value>
 	<value condition="Skin.String(HomeWidget5.Type,CustomTiles)">$INFO[Container(500004).ListItem.Label]</value>
 	<value condition="Skin.String(HomeWidget5.Type,Weather)">$INFO[ListItem.Label]</value>
+	<value condition="Skin.String(HomeWidget5.Type,LastPlayedTv)">$INFO[ListItem.Label]</value>
 	<value>$LOCALIZE[504]</value>
 </variable>
 <variable name="HomeWidget5.Image">
@@ -1170,7 +1172,7 @@
 	<value condition="Skin.String(HomeWidget5.Type,RandomEpisodesThumbs)">$INFO[ListItem.Art(thumb)]</value>
 	<value condition="Skin.String(HomeWidget5.Type,RandomAlbums)">$INFO[ListItem.Art(thumb)]</value>
 	<value condition="Skin.String(HomeWidget5.Type,RandomSongs)">$INFO[ListItem.Art(thumb)]</value>
-	<value condition="Skin.String(HomeWidget5.Type,RandomArtists)">$INFO[ListItem.Icon]</value>
+	<value condition="Skin.String(HomeWidget5.Type,RandomArtists)">$INFO[ListItem.Art(thumb)]</value>
 	<value condition="Skin.String(HomeWidget5.Type,RandomMusicVideos)">$INFO[ListItem.Art(poster)]</value>
 	<value condition="Skin.String(HomeWidget5.Type,RandomMusicVideosThumbs)">$INFO[ListItem.Art(thumb)]</value>
 	<value condition="Skin.String(HomeWidget5.Type,InProgressMovies)">$INFO[ListItem.Art(thumb)]</value>
@@ -1197,7 +1199,7 @@
 	<value condition="Skin.String(HomeWidget5.Type,NextAiredTvShows)">$INFO[ListItem.Art(thumb)]</value>
 	<value condition="Skin.String(HomeWidget5.Type,CustomAlbums)">$INFO[ListItem.Art(thumb)]</value>
 	<value condition="Skin.String(HomeWidget5.Type,CustomSongs)">$INFO[ListItem.Art(thumb)]</value>
-	<value condition="Skin.String(HomeWidget5.Type,CustomArtists)">$INFO[ListItem.Icon]</value>
+	<value condition="Skin.String(HomeWidget5.Type,CustomArtists)">$INFO[ListItem.Art(thumb)]</value>
 	<value condition="Skin.String(HomeWidget5.Type,CustomMusicVideos)">$INFO[ListItem.Art(poster)]</value>
 	<value condition="Skin.String(HomeWidget5.Type,CustomMusicVideosThumbs)">$INFO[ListItem.Art(thumb)]</value>
 	<value condition="Skin.String(HomeWidget5.Type,CustomEpisodes)">$INFO[ListItem.Art(tvshow.poster)]</value>
@@ -1206,6 +1208,7 @@
 	<value condition="Skin.String(HomeWidget5.Type,CustomTvShows)">$INFO[ListItem.Art(poster)]</value>
 	<value condition="Skin.String(HomeWidget5.Type,CustomTiles)">$INFO[ListItem.Art(thumb)]</value>
 	<value condition="Skin.String(HomeWidget5.Type,Weather)">$INFO[ListItem.Art(thumb)]</value>
+	<value condition="Skin.String(HomeWidget5.Type,LastPlayedTv)">$INFO[ListItem.Art(thumb)]</value>
 	<value>$INFO[ListItem.Icon]</value>
 </variable>
 <variable name="HomeWidget5Tile1.Label">

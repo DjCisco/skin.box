@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
-    <include name="Viewtype_Panel_Square_List">
+    <include name="Viewtype_Panel_Square_ListInfo">
         <control type="group">
-            <visible>Control.IsVisible(566)</visible>
+            <visible>Control.IsVisible(508)</visible>
             <animation type="TYPE" condition="Window.IsVisible(2001)" reversible="false">
                 <effect type="slide" end="-1500,0" time="200" />
             </animation>
@@ -22,49 +22,40 @@
             <control type="image">
                 <left>370</left>
                 <top>290</top>
-                <width>890</width>
+                <width>395</width>
                 <height>315</height>
                 <texture>music_fanart_diffuse.png</texture>
                 <fadetime>200</fadetime>
                 <aspectratio scalediffuse="false">stretch</aspectratio>
             </control>
             <!-- This Control defines the album list-->
-			<control type="list" id="566">
-                <viewtype label="List">Album List</viewtype>
+			<control type="list" id="508">
+                <viewtype label="List Info">Album List</viewtype>
                 <left>370</left>
                 <top>290</top>
                 <width>890</width>
                 <height>315</height>
                 <scrolltime>200</scrolltime>
-				<onup>566</onup>
-				<ondown>566</ondown>
+				<onup>508</onup>
+				<ondown>508</ondown>
                 <onleft>9000</onleft>
 				<onleft>Skin.ToggleSetting(showViewOptions)</onleft>
-                <onright>5661</onright>
-                <pagecontrol>5661</pagecontrol>
+                <onright>5081</onright>
+                <pagecontrol>5081</pagecontrol>
 				<visible>$EXP[isAlbumList]</visible>
-     			<!-- This Control defines the unfocused wide item layout-->
-				<itemlayout height="45" width="890">
+                <!-- This Control defines the unfocused item layout-->
+				<itemlayout height="45" width="395">
 					<control type="label">
                         <left>20</left>
-                        <width>890</width>
+                        <width>355</width>
 						<font>List_Unfocused</font>
                         <label>$INFO[ListItem.Label]</label>
-	                </control>
-					<control type="label">
-						<left>720</left>
-						<width>160</width>
-						<height>50</height>
-						<textcolor>Accent</textcolor>
-						<align>right</align>
-						<font>Panel_Hint</font>
-						<label>$INFO[ListItem.Year]</label>
 					</control>
                 </itemlayout>
-				<!-- This Control defines the focused wide item layout-->
-                <focusedlayout height="45" width="890">
+				<!-- This Control defines the focused item layout-->
+                <focusedlayout height="45" width="395">
                     <control type="image">
-                        <width>890</width>
+                        <width>395</width>
                         <height>45</height>
                         <texture colordiffuse="AccentDiffuse">button.png</texture>
                     </control>
@@ -75,17 +66,8 @@
                         <label>$INFO[ListItem.Label]</label>
 						<shadowcolor>FF000000</shadowcolor>
                     </control>
-					<control type="label">
-						<left>720</left>
-						<width>160</width>
-						<height>50</height>
-						<align>right</align>
-						<font>Panel_Hint</font>
-						<label>$INFO[ListItem.Year]</label>
-						<shadowcolor>FF000000</shadowcolor>
-					</control>
                 </focusedlayout>
-            </control>
+			</control>
 		
 			
 			<include>ArtistAlbumPanelCover</include>
@@ -95,6 +77,23 @@
                 <label>$VAR[PanelFooterText]</label>
             </control>
              
+			
+		
+			<!-- Album Description Elements -->
+
+				<!-- This Control defines the scrollbar of the Album list-->
+				<control type="scrollbar" id="5081">
+					<left>770</left>
+					<top>290</top>
+					<width>5</width>
+					<height>315</height>
+					<onleft>508</onleft>
+					<showonepage>true</showonepage>
+					<orientation>vertical</orientation>
+				</control>
+				
+				<include>ArtistAlbumPanelDescription</include>	
+
 			<!-- Letter for Scrolling -->
 			<control type="label">
                 <left>796</left>
@@ -110,15 +109,7 @@
                 <visible>Container.Scrolling + !container.content(songs)</visible>
             </control>
 
-			<control type="scrollbar" id="5661">
-				<left>1265</left>
-				<top>290</top>
-				<width>5</width>
-				<height>315</height>
-				<onleft>566</onleft>
-				<showonepage>true</showonepage>
-				<orientation>vertical</orientation>
-			</control>
+
         </control>
     </include>
 </includes>

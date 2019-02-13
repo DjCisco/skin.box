@@ -344,6 +344,7 @@
 <include name="WidgetCoverAndLargeThumbContent">
 	<include condition="Skin.String(HomeWidget$PARAM[WidgetNr].Type,VideoAddons)">VideoAddons</include>
 	<include condition="Skin.String(HomeWidget$PARAM[WidgetNr].Type,MusicAddons)">MusicAddons</include>
+	<include condition="Skin.String(HomeWidget$PARAM[WidgetNr].Type,LastPlayedTv)">LastPlayedTvChannels</include>
 	<include condition="Skin.String(HomeWidget$PARAM[WidgetNr].Type,RandomAlbums)">RandomItemsAlbums</include>
 	<include condition="Skin.String(HomeWidget$PARAM[WidgetNr].Type,RandomSongs)">RandomItemsSongs</include>
 	<include condition="Skin.String(HomeWidget$PARAM[WidgetNr].Type,RandomArtists)">RandomItemsArtists</include>
@@ -716,7 +717,7 @@
 						<control type="image">
 							<include>PanelButtonIcon</include>
 							<texture>$INFO[ListItem.Art(thumb)]</texture>
-							<visible>!String.IsEqual(ListItem.Property(ImageType),FullIcon)</visible>
+							<visible>!String.IsEqual(ListItem.Property(ImageType),FullIcon) + !String.IsEqual(Skin.String(HomeWidget$PARAM[MenuNr].Type),LastPlayedTv)</visible>
 						</control>
 						<control type="label">
 							<label>$INFO[ListItem.Label]</label>
@@ -728,15 +729,33 @@
 							<texture>$INFO[ListItem.Art(thumb)]</texture>
 							<visible>String.IsEqual(ListItem.Property(ImageType),FullIcon)</visible>
 						</control>
+						<control type="image">
+							<left>20</left>
+							<top>5</top>
+							<height>115</height>
+							<width>115</width>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<texture fallback="DefaultKodiLogo.png">$INFO[ListItem.Art(thumb)]</texture>
+							<visible>String.IsEqual(Skin.String(HomeWidget$PARAM[MenuNr].Type),LastPlayedTv)</visible>
+						</control>
 					</itemlayout>
-				<focusedlayout width="160" height="160" condition="String.IsEqual(Skin.String(HomeWidget$PARAM[MenuNr].Layout),Tile)">>
+				<focusedlayout width="160" height="160" condition="String.IsEqual(Skin.String(HomeWidget$PARAM[MenuNr].Layout),Tile)">
 					<control type="image">
 						<include>PanelButtonImageFO</include>
 					</control>
 					<control type="image">
+						<left>20</left>
+						<top>5</top>
+						<height>115</height>
+						<width>115</width>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<texture fallback="DefaultKodiLogo.png">$INFO[ListItem.Art(thumb)]</texture>
+						<visible>String.IsEqual(Skin.String(HomeWidget$PARAM[MenuNr].Type),LastPlayedTv)</visible>
+					</control>
+					<control type="image">
 						<include>PanelButtonIcon</include>
 						<texture>$INFO[ListItem.Art(thumb)]</texture>
-						<visible>!String.IsEqual(ListItem.Property(ImageType),FullIcon)</visible>
+						<visible>!String.IsEqual(ListItem.Property(ImageType),FullIcon) + !String.IsEqual(Skin.String(HomeWidget$PARAM[MenuNr].Type),LastPlayedTv)</visible>
 					</control>
 					<control type="label">
 						<label>$INFO[ListItem.Label]</label>
@@ -882,11 +901,16 @@
 		<content target="videos">special://skin/Playlists/RecentTvShows.xsp</content>
 	</include>
 	<include name="RecentItemsEpisodes">
-		  <content>special://skin/Playlists/RecentEpisodes.xsp</content>
+		  <content>videodb://recentlyaddedepisodes/</content>
 	</include>
 	<include name="RecentItemsEpisodesThumbs">
-		  <content>special://skin/Playlists/RecentEpisodes.xsp</content>
+		  <content>videodb://recentlyaddedepisodes/</content>
 	 </include>
+	 <include name="LastPlayedTvChannels">
+		<content target="videos">pvr://channels/tv/*?view=lastplayed</content>
+	 </include>
+
+	 
 	<include name="RecommendedItemsEpisodesThumbs">
        <content>
 	  <item id="1">
@@ -1885,15 +1909,26 @@
 		 </item>
 </include>
 <include name="ArtistWidgets">
-		 <item id="23">
-			<label2>$LOCALIZE[31304]</label2>
-			<label>$LOCALIZE[31738]</label>
-			<icon>DefaultArtist.png</icon>
-			<thumb>DefaultArtist.png</thumb>
-			<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Type,RandomArtists)</onclick>
-			<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Layout,Cover)</onclick>
-			<onclick>Dialog.Close(5555)</onclick>
-		 </item>
+	 <item id="23">
+		<label2>$LOCALIZE[31304]</label2>
+		<label>$LOCALIZE[31738]</label>
+		<icon>DefaultArtist.png</icon>
+		<thumb>DefaultArtist.png</thumb>
+		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Type,RandomArtists)</onclick>
+		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Layout,Cover)</onclick>
+		<onclick>Dialog.Close(5555)</onclick>
+	 </item>
+</include>
+<include name="PVRWidgets">
+	 <item id="1">
+		<label2>$LOCALIZE[10070]</label2>
+		<label>$LOCALIZE[568]</label>
+		<icon>DefaultTvChannels.png</icon>
+		<thumb>DefaultTvChannels.png</thumb>
+		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Type,LastPlayedTv)</onclick>
+		<onclick>Skin.SetString($INFO[Skin.String(SelectedHomeWidget)].Layout,Tile)</onclick>
+		<onclick>Dialog.Close(5555)</onclick>
+	 </item>
 </include>
 <include name="SongWidgets">
 
