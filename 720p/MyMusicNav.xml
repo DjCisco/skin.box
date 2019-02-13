@@ -107,28 +107,6 @@
                 <label>589</label>
                 <font>List_Left_Menu</font>
             </control>
-			<control type="radiobutton" id="101">
-                <description>Wide List</description>
-                <width>280</width>
-				<textoffsetx>10</textoffsetx>
-                <align>left</align>
-                <label>$LOCALIZE[31018]</label>
-       			<font>List_Left_Menu</font>
-                <onclick>Skin.ToggleSetting(musicwidelist)</onclick>
-                <selected>Skin.HasSetting(musicwidelist)</selected>
-				<visible>String.Contains(Control.GetLabel(2),List Info) + Container.Content(albums)</visible>
-            </control>
-			<control type="radiobutton" id="102">
-                <description>Wide List</description>
-                <width>280</width>
-				<textoffsetx>10</textoffsetx>
-                <align>left</align>
-                <label>$LOCALIZE[31018]</label>
-				<font>List_Left_Menu</font>
-                <onclick>Skin.ToggleSetting(musicartistswidelist)</onclick>
-                <selected>Skin.HasSetting(musicartistswidelist)</selected>
-				<visible>String.Contains(Control.GetLabel(2),List Info) + Container.Content(artists)</visible>
-            </control>
 			<control type="button" id="103">
                 <description>Now Playing</description>
                 <width>280</width>
