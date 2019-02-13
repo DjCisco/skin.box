@@ -39,12 +39,12 @@
 					<aspectratio scalediffuse="false">stretch</aspectratio>
 				</control>
 			<!--This control defines the scrollbar controlling the small list -->
-			<control type="scrollbar" id="60">
+			<control type="scrollbar" id="5331">
 				<left>605</left>
 				<top>290</top>
 				<width>5</width>
 				<height>315</height>
-				<onleft>51</onleft>
+				<onleft>533</onleft>
 				<orientation>vertical</orientation>
 			</control>
 			<!--This control defines the list that will display the items -->
@@ -56,10 +56,10 @@
                 <height>315</height>
                 <onleft>9000</onleft>
 				<onleft>Skin.ToggleSetting(showViewOptions)</onleft>
-				<onright>60</onright>
-                <onup>50</onup>
-                <ondown>50</ondown>
-                <pagecontrol>60</pagecontrol>
+				<onright>5331</onright>
+                <onup>533</onup>
+                <ondown>533</ondown>
+                <pagecontrol>5331</pagecontrol>
                 <viewtype label="List Pics">List Pics</viewtype>
                 <scrolltime>200</scrolltime>
 				<itemlayout height="45">

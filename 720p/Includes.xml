@@ -10,11 +10,14 @@
 	<include file="Viewtype_Fanart.xml" />
 	<include file="Viewtype_FanartLogo.xml" />
 	<include file="Viewtype_Artists_List.xml" />
+	<include file="Viewtype_Artists_ListInfo.xml" />
 	<include file="Viewtype_Directors_List.xml" />
     <include file="Viewtype_Episodes.xml" />
 	<include file="Viewtype_RecentEpisodes.xml" />
     <include file="Viewtype_Episodes_List.xml" />
-    <include file="Viewtype_RecentEpisodes_List.xml" />	
+	<include file="Viewtype_Episodes_ListInfo.xml" />	
+    <include file="Viewtype_RecentEpisodes_List.xml" />
+	<include file="Viewtype_RecentEpisodes_ListInfo.xml" />	
 	<include file="Viewtype_Episodes_Wide.xml" />
 	<include file="Viewtype_RecentEpisodes_Wide.xml" />
     <include file="Viewtype_MusicVideos.xml" />
@@ -25,6 +28,7 @@
 	<include file="Viewtype_Artist_Albums.xml" />
 	<include file="Viewtype_Panel_Tall.xml" />
 	<include file="Viewtype_Panel_Tall_List.xml" />
+	<include file="Viewtype_Panel_Tall_ListInfo.xml" />
 	<include file="Viewtype_Panel_Tall_Wide.xml" />
     <include file="Viewtype_Panel_Genre.xml" />
 	<include file="Viewtype_Panel_Year.xml" />
@@ -32,6 +36,7 @@
     <include file="Viewtype_Season_Tall.xml" />
     <include file="Viewtype_Panel_Square.xml" />
     <include file="Viewtype_Panel_Square_List.xml" />
+	<include file="Viewtype_Panel_Square_ListInfo.xml" />
 	<include file="Viewtype_Panel_Square_Wide.xml" />
 	<include file="Viewtype_Posters.xml" />
 	<include file="Viewtype_Pictures.xml" />
@@ -2933,9 +2938,10 @@
         <aspectratio scalediffuse="false">stretch</aspectratio>
 	</include>
 	<include name="PanelButtonFullIcon">	
-		<width>155</width>
-        <height>155</height>
-		<bordersize>5</bordersize>
+		<width>145</width>
+        <height>145</height>
+		<top>5</top>
+		<left>5</left>
 		<aspectratio>stretch</aspectratio>
 	</include>
 	<include name="PanelButtonImageNF">
@@ -4616,7 +4622,6 @@
     
 	
 	</include>
-  
 
   </includes>
   

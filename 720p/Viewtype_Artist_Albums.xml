@@ -95,9 +95,6 @@
 						<visible>String.IsEmpty(ListItem.Art(thumb))</visible>
 					</control>
                 </focusedlayout>
-            
-			
-			
 			</control>
 			
 			 <!-- This Control displays the Name of the Album on Top of the Main Poster-->
