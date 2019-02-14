@@ -316,7 +316,11 @@ msgctxt "#31224"
 msgid "Custom Tiles"
 msgstr ""
 
-#empty strings from id 31225 to 31298
+msgctxt "#31225"
+msgid "Kodi Command"
+msgstr ""
+
+#empty strings from id 31226 to 31298
 
 msgctxt "#31299"
 msgid "Min"
