@@ -3641,6 +3641,13 @@
 			<onclick>RunScript(script.favourites,property=CustomHomeTile)</onclick>
 			<visible>System.HasAddon(script.favourites)</visible>
 		 </item>
+		 <item id="8">
+			<label>$LOCALIZE[31225]</label>
+			<icon>DefaultKodiLogo.png</icon>
+			<thumb>DefaultKodiLogo.png</thumb>
+			<onclick>Skin.SetString(CustomHomeTile.Type,UserTile)</onclick>
+			<onclick>Skin.SetString(CustomHomeTile.Path)</onclick>
+		 </item>
 	</include>
 
 	<include name="MainMenuActionChooser">
