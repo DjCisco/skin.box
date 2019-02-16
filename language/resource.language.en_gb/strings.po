@@ -306,7 +306,7 @@ msgstr ""
 
 msgctxt "#31222"
 msgid "Menu Label"
-msgstr ""#
+msgstr ""
 
 msgctxt "#31223"
 msgid "Menu Widget"
