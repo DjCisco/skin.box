@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
-    <include name="Viewtype_Episodes_List">
+    <include name="Viewtype_Episodes_ListInfo">
         <control type="group">
             <visible>Control.IsVisible(526)</visible>
             <description>Episode List View (id=526)</description>

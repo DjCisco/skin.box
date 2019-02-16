@@ -622,6 +622,8 @@
                     <bordersize>5</bordersize>
                     <bordertexture>tile.png</bordertexture>
                 </control>
+				
+	
 				<control type="group">
 						<visible>String.IsEqual(Skin.String(HomeWidget$PARAM[MenuNr].Type),UnwatchedEpisodes) | String.IsEqual(Skin.String(HomeWidget$PARAM[MenuNr].Type),RecentEpisodes) | String.IsEqual(Skin.String(HomeWidget$PARAM[MenuNr].Type),RandomEpisodes) | String.IsEqual(Skin.String(HomeWidget$PARAM[MenuNr].Type),InProgressEpisodes) | String.IsEqual(Skin.String(HomeWidget$PARAM[MenuNr].Type),RecommendedEpisodes) | String.IsEqual(Skin.String(HomeWidget$PARAM[MenuNr].Type),CustomEpisodes)</visible>
 						<include>HomeWidgetPostersEpisodeNo</include>
@@ -1921,7 +1923,7 @@
 </include>
 <include name="PVRWidgets">
 	 <item id="1">
-		<label2>$LOCALIZE[10070]</label2>
+		<label2>$LOCALIZE[10700]</label2>
 		<label>$LOCALIZE[568]</label>
 		<icon>DefaultTvChannels.png</icon>
 		<thumb>DefaultTvChannels.png</thumb>
