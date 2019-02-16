@@ -1,5 +1,5 @@
 # XBMC Media Center language file
-# Addon Name: nbox
+# Addon Name: BOX
 # Addon id: skin.box
 # Addon Provider: DjCisco
 msgid ""
