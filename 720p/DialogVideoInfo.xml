@@ -366,7 +366,7 @@
                                 <texture>$INFO[ListItem.Icon]</texture>
 								<bordersize>5</bordersize>
 								<aspectratio>keep</aspectratio>
-								<visible>String.IsEmpty(ListItem.Art(thumb)</visible>
+								<visible>String.IsEmpty(ListItem.Art(thumb))</visible>
 					        </control>
 							<control type="label">
                                 <left>5</left>
@@ -432,7 +432,7 @@
 								<bordersize>5</bordersize>
 								<aspectratio>keep</aspectratio>
                                 <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
-								<visible>String.IsEmpty(ListItem.Art(thumb)</visible>
+								<visible>String.IsEmpty(ListItem.Art(thumb))</visible>
 					        </control>
 							<control type="label">
                                 <left>5</left>
