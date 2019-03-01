@@ -16,7 +16,7 @@
                 <left>0</left>
                 <top>10</top>
 				
-							<control type="label">
+			<control type="label">
 				<height>60</height>
 				<width>60</width>
 				<label>-</label>
@@ -24,6 +24,7 @@
 				<top>0</top>
 				<font>Panel_Description_Title</font>
 				<aligny>center</aligny>
+				<visible>System.getbool(input.enablemouse)</visible>
 			</control>
 			<control type="slider">
 				<left>500</left>
@@ -48,6 +49,7 @@
 				<top>0</top>
 				<font>Panel_Description_Title</font>
 				<aligny>center</aligny>
+				<visible>System.getbool(input.enablemouse)</visible>
 			</control>
 		
 				
