@@ -3,6 +3,7 @@
 - Corrected Addon Settings Display
 - Corrected Addon Info Overlay on Thumbs List
 - Corrected Now Playing Label for Internet Stream Content
+- Added Progress Indicator to EPG
 
 [B]6.3.1[/B]
 - Bugfix CU LRC Lyrics
