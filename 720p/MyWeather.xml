@@ -15,6 +15,10 @@
             <texturenofocus></texturenofocus>
             <onleft>50</onleft>
             <onclick>noop</onclick>
+			<left>50</left>
+            <top>290</top>
+	        <width>155</width>
+            <height>315</height>
         </control>
         <include>SkinFanart</include>
         <control type="image">
