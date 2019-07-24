@@ -509,7 +509,7 @@
                 <effect type="slide" start="+1500,0" time="300" />
             </animation>
 			<include>ViewFooterTitle</include>
-			<label>[COLOR Accent]$LOCALIZE[31208][/COLOR] $INFO[Window(Weather).Property(Updated)]</label>
+			<label>[COLOR Accent]$LOCALIZE[31212][/COLOR] $INFO[Window(Weather).Property(Updated)]</label>
 		</control>
 		
         <control type="image">

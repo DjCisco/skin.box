@@ -28,7 +28,7 @@ msgctxt "#31039"
 msgid "Fast Forward"
 msgstr "Premotaj unapred"
 
-msgctxt "#31208"
+msgctxt "#31212"
 msgid "Last Updated"
 msgstr "Poslednje ažuriranje"
 
