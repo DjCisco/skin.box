@@ -36,7 +36,7 @@ msgctxt "#31039"
 msgid "Fast Forward"
 msgstr "快轉"
 
-msgctxt "#31208"
+msgctxt "#31212"
 msgid "Last Updated"
 msgstr "最後更新"
 
