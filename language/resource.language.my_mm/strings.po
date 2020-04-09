@@ -28,7 +28,7 @@ msgctxt "#31039"
 msgid "Fast Forward"
 msgstr "အရှေ့သို့အနည်းငယ်ရစ်မည်"
 
-msgctxt "#31208"
+msgctxt "#31212"
 msgid "Last Updated"
 msgstr "နောက်ဆုံး Update ဖြစ်ခဲ့စဉ်"
 

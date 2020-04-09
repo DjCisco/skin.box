@@ -36,7 +36,7 @@ msgctxt "#31039"
 msgid "Fast Forward"
 msgstr "முன்சுற்று"
 
-msgctxt "#31208"
+msgctxt "#31212"
 msgid "Last Updated"
 msgstr "கடைசியாக புதுபித்தது"
 
