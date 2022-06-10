@@ -1,8 +1,8 @@
 <addon id="skin.box" name="BOX" provider-name="DjCisco" version="6.4.2">
 	<requires>
-		<import addon="xbmc.gui" version="5.14.0" />
+		<import addon="xbmc.gui" version="5.15.0" />
 		<import addon="script.favourites" version="6.0.1" />
-		<import addon="service.skin.widgets" version="0.0.29" />
+		<import addon="service.skin.widgets" version="0.0.33" />
 	</requires>
 	<extension debugging="false" effectslowdown="1.00" point="xbmc.gui.skin">
 		<res aspect="16:9" default="true" folder="720p" height="720" width="1280" />
